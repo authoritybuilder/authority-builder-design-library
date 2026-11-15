@@ -75,7 +75,8 @@ Each entry folder holds:
 - **Links only you can finish are listed, not hidden.** A checkout, a podcast app or a social profile needs your own account. Those links point at `example.com/connect/…` and are counted in `LAUNCH.md`, so none is forgotten.
 - **Ready to be found.** The sites carry no `noindex`. The library keeps its fictional brands out of search with host settings in the root `netlify.toml`, so a site you copy out is ready for Google the moment it has your address on it.
 - **A person on every page.** Your face has a place on the first screen, beside the About story, under the closing button, and on the contact, booking and thank-you pages. Client faces sit beside their words.
-- **Measured, not assumed.** Every site scores 97 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures. The same run checks that a button is on the first screen of a phone and that no form field is small enough to make a phone zoom in.
+- **Measured, not assumed.** Every site scores 98 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures. The same run checks that a button is on the first screen of a phone and that no form field is small enough to make a phone zoom in.
+- **Plain words.** Every main page's body copy is measured on the Flesch-Kincaid scale. All of them read at school grade 6.2 or below, the range a large landing-page benchmark links to the highest conversion.
 - **Readable over the painting.** A contrast checker cannot read text over a picture, so `src/legible.mjs` measures every line of text against the pixels behind it, on a desktop and a phone. Every line clears WCAG AA.
 
 What a site cannot contain is you. The demo brand, the sample proof and the template policies are yours to replace, and each site says so in a visible note in its footer until you do.
@@ -136,11 +137,12 @@ What a site cannot contain is you. The demo brand, the sample proof and the temp
 
 ## The Research
 
-The library draws on four bodies of work, all listed with sources on the research page:
+The library draws on five bodies of work, all listed with sources on the research page:
 
 - **Behaviour and decision science:** Kahneman and Tversky, Cialdini, Fogg, Ariely, Thaler, Berger, Deci and Ryan.
 - **Page and interface laws:** Nielsen Norman Group's eyetracking research and the Laws of UX.
 - **Marketing and copy:** Schwartz, Ogilvy, Caples, Hopkins, Dunford, Ries and Trout, Hormozi, Brunson, Miller, Rackham, Voss.
+- **Design and conversion benchmarks:** Unbounce's landing page benchmark on reading level (read second-hand and labelled that way), current writing on editorial web typography, and published reviews of high-performing coaching pages. Sources are in [CREDITS.md](CREDITS.md).
 - **Search and AI answers:** Google's own documentation and current reporting on it, including the retirement of FAQ rich results on 7 May 2026 and Google's May 2026 guide to its generative AI features.
 
 Search rules change often. Before you rely on any rule here, check Google's current documentation. If this library and Google disagree, Google wins.

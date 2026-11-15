@@ -34,11 +34,19 @@ input,select,textarea{font-size:max(16px,1rem)}
 :root{--hh:76px}
 .hdw{position:sticky;top:0;z-index:20;min-height:var(--hh);display:grid;align-items:center;color:var(--ink);background:color-mix(in srgb,var(--bg) 84%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
 .hd{padding-block:.7rem;width:100%}
-/* over a painted hero the header starts clear and frosts over as the page scrolls. Browsers without scroll timelines keep the frosted header */
+/* over a painted hero the menu floats as a bar of glass, shaped like the theme's buttons, and turns to frosted paper as the page scrolls.
+   Browsers without scroll timelines get the frosted bar from the start */
+.over{--hh:90px}
+.over .hdw{background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;pointer-events:none;padding:12px clamp(10px,2vw,22px) 0}
+.over .hd{pointer-events:auto;max-width:1180px;padding:.5rem .6rem .5rem clamp(1rem,2vw,1.5rem);border-radius:var(--rb);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);
+background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}
 @supports(animation-timeline:scroll()){
-.over .hdw{background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--h0);animation:hdw linear both;animation-timeline:scroll();animation-range:0 160px}
-@keyframes hdw{to{background:color-mix(in srgb,var(--bg) 84%,transparent);border-color:color-mix(in srgb,var(--line) 60%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink)}}
+.over .hd{background:var(--g0);border-color:rgba(255,255,255,.28);color:var(--h0);box-shadow:none;animation:hdw linear both;animation-timeline:scroll();animation-range:0 180px}
+@keyframes hdw{to{background:color-mix(in srgb,var(--bg) 88%,transparent);border-color:color-mix(in srgb,var(--line) 70%,transparent);color:var(--ink);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}}
+/* the painting drifts closer as the hero scrolls away */
+@media(prefers-reduced-motion:no-preference){.hero.bleed picture.art img{transform-origin:50% 100%;animation:drift linear both;animation-timeline:scroll();animation-range:0 900px}@keyframes drift{to{transform:scale(1.1)}}}
 }
+.o-light{--g0:rgba(10,14,26,.3)}.o-dark{--g0:rgba(255,255,255,.6)}
 .o-light{--h0:#fff}.o-dark{--h0:var(--ink)}
 .mnav{display:none;position:relative}.mnav summary{list-style:none;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),12px)}
 .mnav summary::-webkit-details-marker{display:none}.mnav ul{position:absolute;right:0;top:56px;min-width:230px;background:var(--card);color:var(--ink);border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),14px);padding:.5rem;box-shadow:0 24px 48px -20px rgba(0,0,0,.4)}
@@ -53,7 +61,7 @@ input,select,textarea{font-size:max(16px,1rem)}
 .bleed::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;-webkit-mask-image:none!important;mask-image:none!important}
 .t-light{--ink:#fff;--ink2:rgba(255,255,255,.92);--line:rgba(255,255,255,.38);--accent-t:#fff;color:#fff}
 /* each veil is tuned so every line of text measures at least 4.5 to 1 against the picture behind it (3 to 1 for large type). src/legible.mjs checks it */
-.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.64) 0,rgba(6,10,22,.6) 58%,rgba(6,10,22,.3) 82%,rgba(6,10,22,.08))}
+.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.66) 0,rgba(6,10,22,.64) 62%,rgba(6,10,22,.4) 84%,rgba(6,10,22,.1))}
 .hsplit.t-light::before,.hform.t-light::before,.hstage.t-light::before{background:linear-gradient(90deg,rgba(6,10,22,.78) 0,rgba(6,10,22,.7) 42%,rgba(6,10,22,.22) 70%,rgba(6,10,22,0) 90%),linear-gradient(180deg,rgba(6,10,22,.6) 0,rgba(6,10,22,.44) 11%,rgba(6,10,22,0) 30%)}
 .t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.86) 0,rgba(255,255,255,.82) 58%,rgba(255,255,255,.42) 80%,rgba(255,255,255,0) 97%)}
 .hsplit.t-dark::before,.hform.t-dark::before,.hstage.t-dark::before{background:linear-gradient(90deg,rgba(255,255,255,.9) 0,rgba(255,255,255,.84) 42%,rgba(255,255,255,.26) 68%,rgba(255,255,255,0) 86%),linear-gradient(180deg,rgba(255,255,255,.7) 0,rgba(255,255,255,.5) 11%,rgba(255,255,255,0) 30%)}
@@ -111,6 +119,12 @@ input,select,textarea{font-size:max(16px,1rem)}
 @media(max-width:860px){.float.f2{right:-4px;top:5%}}
 /* buttons and forms */
 .btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
+:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.cta.bleed h2{font-size:clamp(2.2rem,calc(5.2vw*var(--hs)),calc(4.2rem*var(--hs)))}
+.stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
+/* the brand name, very large and very quiet, closes every page */
+.ft{overflow:hidden}.ft-mark{font-family:var(--fd);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);line-height:.82;white-space:nowrap;text-align:center;
+font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em;user-select:none}.ft-mark::before{content:attr(data-mark)}.ft .ft-mark{color:color-mix(in srgb,var(--dark-ink) 11%,transparent)}   /* decoration, drawn by the stylesheet so it is not read out or indexed twice */
 .btn:not(.ghost)::after{content:"";width:.44em;height:.44em;border-top:2px solid;border-right:2px solid;rotate:45deg;margin-left:.1em;transition:translate .2s}
 .btn:not(.ghost):hover::after{translate:3px -3px}
 .formcard{position:relative;border-top:4px solid var(--accent);box-shadow:0 34px 64px -34px rgba(0,0,0,.42)}
@@ -140,7 +154,7 @@ input,select,textarea{font-size:max(16px,1rem)}
 """.replace("GRAIN", GRAIN)
 
 THEME_POLISH = {
-    "warm_editorial": ":root{--atmo:radial-gradient(52% 60% at 90% 6%,#F1D6B4 0,transparent 70%),radial-gradient(40% 50% at 0 100%,#EADCC3,transparent 70%)}"
+    "warm_editorial": ".card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}" ":root{--atmo:radial-gradient(52% 60% at 90% 6%,#F1D6B4 0,transparent 70%),radial-gradient(40% 50% at 0 100%,#EADCC3,transparent 70%)}"
                       ".eyebrow::before{content:\"\";display:inline-block;width:30px;height:1px;background:currentColor;margin-right:.8em;vertical-align:middle}"
                       ".center .eyebrow::before,.hcenter .eyebrow::before,.cta .eyebrow::before{display:none}"
                       ".card{border-radius:12px}.hs-v .ph{box-shadow:0 0 0 10px var(--bg),0 0 0 11px var(--line),0 44px 70px -30px rgba(60,30,10,.55)}",
@@ -156,7 +170,7 @@ THEME_POLISH = {
              "main>.bento:first-child{position:relative;isolation:isolate}main>.bento:first-child::before{content:\"\";position:absolute;inset:-90px 0 0;z-index:-1;background:var(--atmo);opacity:.8}"
              ".tile{transition:translate .25s,box-shadow .25s}.tile:hover{translate:0 -5px;box-shadow:0 24px 44px -24px rgba(20,22,26,.4)}"
              ".card{box-shadow:0 1px 2px rgba(20,22,26,.05),0 20px 40px -28px rgba(20,22,26,.32)}.tile .ph{box-shadow:none}",
-    "soft_organic": ":root{--atmo:radial-gradient(44% 56% at 96% 4%,#E4EBDD 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3DCCB,transparent 70%)}"
+    "soft_organic": ".card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}" ":root{--atmo:radial-gradient(44% 56% at 96% 4%,#E4EBDD 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3DCCB,transparent 70%)}"
                     ".sec.alt{border-radius:clamp(28px,5vw,64px);margin-inline:clamp(8px,2vw,28px)}.hero .ph.person,.split .ph.person{border-radius:48% 52% 46% 54% / 56% 50% 50% 44%}",
     "bright_playful": ":root{--atmo:radial-gradient(circle at 5% 30%,#FFD23F 0 26px,transparent 27px),radial-gradient(circle at 96% 78%,#3B6BFF 0 16px,transparent 17px),"
                       "radial-gradient(circle at 60% 6%,#FF5A4F 0 11px,transparent 12px),radial-gradient(circle at 40% 96%,#FF9A76 0 15px,transparent 16px)}"
@@ -167,7 +181,7 @@ THEME_POLISH = {
                   ".cards .n{font-size:3.4rem;color:transparent;-webkit-text-stroke:1.5px var(--accent)}"
                   ".hero .ph{box-shadow:0 0 0 1px #2F2F37,0 44px 84px -30px rgba(242,181,68,.4)}"
                   ".ph.scene .i-d{fill:#08080A}.ph.scene .i-c{fill:#F4F1EA}.ph.scene .i-2{fill:#2A2620}",
-    "corporate_calm": ":root{--atmo:linear-gradient(#E9EEF3 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,#E9EEF3 1px,transparent 1px) 0 0/56px 56px}"
+    "corporate_calm": ".card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}" ":root{--atmo:linear-gradient(#E9EEF3 1px,transparent 1px) 0 0/56px 56px,linear-gradient(90deg,#E9EEF3 1px,transparent 1px) 0 0/56px 56px}"
                       ".hero::before{-webkit-mask-image:radial-gradient(70% 85% at 72% 18%,#000,transparent);mask-image:radial-gradient(70% 85% at 72% 18%,#000,transparent)}"
                       ".hero .ph{box-shadow:0 1px 2px rgba(20,33,61,.08),0 44px 74px -36px rgba(20,33,61,.5)}",
     "magazine": ".hdw{border-bottom:3px double var(--ink)}"

@@ -16,6 +16,22 @@ CRAWLERS = ["Googlebot", "Bingbot", "OAI-SearchBot", "ChatGPT-User", "GPTBot", "
 FICTION = "This is a fictional brand, so there is nothing live to look at. Check it for your own business."
 
 
+def reading_grade(doc):
+    """Flesch-Kincaid grade of the page's sentences: the paragraphs, list items and quotes inside <main>. Syllables are counted by vowel groups."""
+    body = re.sub(r"<(script|style|svg|form|nav)\b.*?</\1>", " ", doc.split("<main", 1)[-1].split("</main>", 1)[0], flags=re.S)
+    parts = [re.sub(r"\s+", " ", htmllib.unescape(re.sub(r"<[^>]+>", " ", x))).strip() for x in re.findall(r"<(?:p|li|blockquote)\b[^>]*>(.*?)</(?:p|li|blockquote)>", body, flags=re.S)]
+    parts = [x for x in parts if len(x.split()) >= 6]
+    words = sents = syl = 0
+    for x in parts:
+        ws = re.findall(r"[A-Za-z][A-Za-z'’]*", x)
+        words += len(ws)
+        sents += max(1, len(re.findall(r"[.!?]+(?=\s|$)", x)))
+        syl += sum(max(1, len(re.findall(r"[aeiouy]+", re.sub(r"(?:es|ed|e)$", "", w.lower())) or [1])) for w in ws)
+    if words < 80:
+        return None, words
+    return round(0.39 * words / sents + 11.8 * syl / words - 15.59, 1), words
+
+
 def visible(doc):
     doc = re.sub(r"<(script|style|svg)\b.*?</\1>", " ", doc, flags=re.S)
     doc = re.sub(r"<!--.*?-->", " ", doc, flags=re.S)
@@ -197,6 +213,11 @@ def run(P, site, speed=None, legible=None):
         year = 2027 if m < 11 else 2026
         if datetime.date(year, m, int(day)).strftime("%A") != wd:
             wrong.append(f"{wd} {day} {mon} {year}")
+    g, gw = reading_grade(main)
+    if g is not None:
+        add(C, "Plain words", GOOD if g <= 8 else YOURS,
+            f"The {gw} words of body copy on the main page read at about school grade {max(g, 1):g} on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, "
+            f"found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy." + ("" if g <= 8 else " This page is above that, so shorten the long sentences when you rewrite it."))
     add(C, "Dates and weekdays agree", GOOD if not wrong else "Fix",
         "Every weekday named beside a date is the right one for the coming year." if not wrong else "Wrong weekday: " + ", ".join(wrong))
     imgs = re.findall(r"<img\b[^>]*>", main)

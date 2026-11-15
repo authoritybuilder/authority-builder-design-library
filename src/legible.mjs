@@ -116,7 +116,7 @@ for (const dir of readdirSync(ROOT).filter(d => /^\d{3}-/.test(d) && existsSync(
     await page.setViewport({ width: w, height: h, deviceScaleFactor: 1 });
     await page.goto(`http://127.0.0.1:${port}/${dir}/site/index.html`, { waitUntil: 'load' });
     // entrance animation is switched off, and the phone bar that stays pinned to the screen is hidden so it does not cover a long capture
-    await page.addStyleTag({ content: '*:not(.hdw){animation:none!important;transition:none!important}.sticky{display:none!important}' });
+    await page.addStyleTag({ content: '*:not(.hd){animation:none!important;transition:none!important}.sticky{display:none!important}' });
     await page.evaluate(async () => {
       document.querySelectorAll('img').forEach(i => { i.loading = 'eager'; });
       await Promise.all([...document.images].map(i => i.decode().catch(() => 0)));

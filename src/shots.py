@@ -31,7 +31,7 @@ def still(page):
     """A copy with entrance animations and the web-font request removed, so captures are steady and use installed fonts."""
     t = page.read_text()
     t = re.sub(r'<link href="https://fonts.googleapis.com[^>]+>', "", t)
-    t = t.replace("</head>", "<style>*:not(.hdw){animation:none!important}</style></head>").replace('decoding="async"', 'decoding="sync"').replace('loading="lazy"', 'loading="eager"')
+    t = t.replace("</head>", "<style>*:not(.hd){animation:none!important}</style></head>").replace('decoding="async"', 'decoding="sync"').replace('loading="lazy"', 'loading="eager"')
     f = page.parent / "_shot.html"
     f.write_text(t)
     return f

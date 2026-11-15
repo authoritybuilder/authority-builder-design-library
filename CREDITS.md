@@ -12,7 +12,9 @@ The gallery format is adapted from **robonuggets-design-inspo** by RoboNuggets.
 
 ## Fonts
 
-All typefaces are loaded from Google Fonts under their open licences: Newsreader, DM Sans, Cormorant Garamond, Jost, Archivo, Inter, Bricolage Grotesque, Instrument Sans, DM Serif Display, Nunito Sans, Syne, Plus Jakarta Sans, Bebas Neue, Manrope, Source Serif 4, IBM Plex Sans, IBM Plex Mono, Playfair Display, Libre Franklin, Caprasimo, Space Grotesk, Caveat and Fraunces.
+All typefaces are loaded from Google Fonts under their open licences: Instrument Serif, Inter, Cormorant Garamond, Jost, Archivo, Bricolage Grotesque, Instrument Sans, Fraunces, Nunito Sans, Syne, Plus Jakarta Sans, Bebas Neue, Manrope, Source Serif 4, IBM Plex Sans, IBM Plex Mono, Bodoni Moda, Libre Franklin, Caprasimo, Space Grotesk and Caveat.
+
+The 10 pairings follow 1 rule: an expressive display face for the headline over a quiet, highly readable sans for everything else. 3 were changed in November 2026 after a review of current editorial typography: Instrument Serif replaced Newsreader, Fraunces replaced DM Serif Display and Bodoni Moda replaced Playfair Display.
 
 ## Paintings, Illustrations And Icons
 
@@ -27,6 +29,13 @@ A painting can stay on a site you launch. The photo placeholders are there to be
 ## Research
 
 Books are cited beside each principle on the research page (`canon/index.html`). Web sources read in November 2026 are listed at the foot of that page.
+
+Sources read for the design and conversion review in November 2026:
+
+- Unbounce, Conversion Benchmark Report (41,000 landing pages), on reading level and conversion, as reported by Apexure (https://www.apexure.com/blog/landing-page-conversion-rate-benchmarks-by-industry) and Colorlib (https://colorlib.com/wp/landing-page-statistics/). Unbounce's own method is at https://unbounce.com/conversion-benchmark-report/methodology/. The figure is second-hand, so each audit table says so.
+- Made Good Designs, Web Typography Trends 2026 (https://madegooddesigns.com/web-typography-trends-2026/), on the return of display serifs set over a plain sans.
+- Thrive Themes, 7 Coaching Landing Page Examples (https://thrivethemes.com/coaching-landing-page-examples/), on 1 focused offer per page, a benefit-led headline, real proof and 1 clear action.
+- The robonuggets-design-inspo samples themselves, studied again for technique only: full-bleed painted heroes, a floating glass menu, pill-shaped controls, tightly tracked display type and very small, widely tracked labels.
 
 The research applied to each page type is listed, with links, on that page's notes and collected on the research page. These are benchmarks published by testing firms and software vendors, and several are reported second-hand. They are credited as findings, not reproduced.
 

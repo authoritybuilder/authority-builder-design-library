@@ -23,7 +23,7 @@
 <link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -57,24 +57,25 @@
  ]
 }
 </script>
-<style>:root{--bg:#F7F2E8;--bg2:#EEE4D3;--ink:#221C16;--ink2:#5B5045;--line:#D8CCB6;--card:#FFFDF8;--accent:#A8431F;--accent-ink:#FFF8EF;--accent-t:#983A18;--accent2:#2F5D50;--dark:#241C16;--dark-ink:#F4EBDD;--dark-accent:#EBA884;--ph1:#E9CFAF;--ph2:#C98C64;--fd:'Newsreader',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;--fa:'DM Sans',system-ui,sans-serif;--r:6px;--rb:999px;--hw:500;--hls:-0.022em;--hlh:1.04;--htt:none;--hs:1;--bw:1px;--shadow:none;--phr:999px 999px 6px 6px}
+<style>:root{--bg:#F7F2E8;--bg2:#EEE4D3;--ink:#221C16;--ink2:#5B5045;--line:#D8CCB6;--card:#FFFDF8;--accent:#A8431F;--accent-ink:#FFF8EF;--accent-t:#983A18;--accent2:#2F5D50;--dark:#241C16;--dark-ink:#F4EBDD;--dark-accent:#EBA884;--ph1:#E9CFAF;--ph2:#C98C64;--fd:'Instrument Serif',Georgia,serif;--fb:'Inter',system-ui,sans-serif;--fa:'Inter',system-ui,sans-serif;--r:6px;--rb:999px;--hw:400;--hls:-0.018em;--hlh:1.02;--htt:none;--hs:1.08;--bw:1px;--shadow:none;--phr:999px 999px 6px 6px}
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
-body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-kerning:normal;overflow-x:clip}
+p,li{text-wrap:pretty}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--hw);letter-spacing:var(--hls);line-height:var(--hlh);text-transform:var(--htt);text-wrap:balance}
-h1{font-size:clamp(2.5rem,calc(6.3vw*var(--hs)),calc(5rem*var(--hs)))}
-h2{font-size:clamp(1.85rem,calc(3.9vw*var(--hs)),calc(3.05rem*var(--hs)))}
+h1{font-size:clamp(2.55rem,calc(6.7vw*var(--hs)),calc(5.5rem*var(--hs)))}
+h2{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.4rem*var(--hs)))}
 h3{font-size:1.28rem;line-height:1.2}
 p{text-wrap:pretty}
 p+p{margin-top:1em}
 .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
-.sec{padding-block:clamp(64px,9vw,120px)}
+.sec{padding-block:clamp(68px,10vw,144px)}
 .alt{background:var(--bg2)}
 .dark{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark));--card:color-mix(in srgb,var(--dark-ink) 7%,var(--dark));--accent-t:var(--dark-accent)}
 .center{text-align:center}.center .lead,.center p{margin-inline:auto}
-.lead{font-size:clamp(1.1rem,1.55vw,1.28rem);color:var(--ink2);max-width:58ch;line-height:1.55}
-.eyebrow{font-family:var(--fa);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-t);margin-bottom:1rem}
+.lead{font-size:clamp(1.12rem,1.6vw,1.32rem);color:var(--ink2);max-width:56ch;line-height:1.52;text-wrap:pretty}
+.eyebrow{font-family:var(--fa);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-t);margin-bottom:1rem}
 .sh{margin-bottom:clamp(32px,4.5vw,56px);max-width:780px}.sh.center{margin-inline:auto}.sh .lead{margin-top:1.1rem}
 .fine{font-size:.84rem;color:var(--ink2)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:.82em 1.6em;border-radius:var(--rb);background:var(--accent);color:var(--accent-ink);border:var(--bw) solid var(--accent);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;transition:transform .15s ease}
@@ -229,11 +230,19 @@ input,select,textarea{font-size:max(16px,1rem)}
 :root{--hh:76px}
 .hdw{position:sticky;top:0;z-index:20;min-height:var(--hh);display:grid;align-items:center;color:var(--ink);background:color-mix(in srgb,var(--bg) 84%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
 .hd{padding-block:.7rem;width:100%}
-/* over a painted hero the header starts clear and frosts over as the page scrolls. Browsers without scroll timelines keep the frosted header */
+/* over a painted hero the menu floats as a bar of glass, shaped like the theme's buttons, and turns to frosted paper as the page scrolls.
+   Browsers without scroll timelines get the frosted bar from the start */
+.over{--hh:90px}
+.over .hdw{background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;pointer-events:none;padding:12px clamp(10px,2vw,22px) 0}
+.over .hd{pointer-events:auto;max-width:1180px;padding:.5rem .6rem .5rem clamp(1rem,2vw,1.5rem);border-radius:var(--rb);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);
+background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}
 @supports(animation-timeline:scroll()){
-.over .hdw{background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;color:var(--h0);animation:hdw linear both;animation-timeline:scroll();animation-range:0 160px}
-@keyframes hdw{to{background:color-mix(in srgb,var(--bg) 84%,transparent);border-color:color-mix(in srgb,var(--line) 60%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:var(--ink)}}
+.over .hd{background:var(--g0);border-color:rgba(255,255,255,.28);color:var(--h0);box-shadow:none;animation:hdw linear both;animation-timeline:scroll();animation-range:0 180px}
+@keyframes hdw{to{background:color-mix(in srgb,var(--bg) 88%,transparent);border-color:color-mix(in srgb,var(--line) 70%,transparent);color:var(--ink);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}}
+/* the painting drifts closer as the hero scrolls away */
+@media(prefers-reduced-motion:no-preference){.hero.bleed picture.art img{transform-origin:50% 100%;animation:drift linear both;animation-timeline:scroll();animation-range:0 900px}@keyframes drift{to{transform:scale(1.1)}}}
 }
+.o-light{--g0:rgba(10,14,26,.3)}.o-dark{--g0:rgba(255,255,255,.6)}
 .o-light{--h0:#fff}.o-dark{--h0:var(--ink)}
 .mnav{display:none;position:relative}.mnav summary{list-style:none;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),12px)}
 .mnav summary::-webkit-details-marker{display:none}.mnav ul{position:absolute;right:0;top:56px;min-width:230px;background:var(--card);color:var(--ink);border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),14px);padding:.5rem;box-shadow:0 24px 48px -20px rgba(0,0,0,.4)}
@@ -248,7 +257,7 @@ input,select,textarea{font-size:max(16px,1rem)}
 .bleed::before{content:"";position:absolute;inset:0;z-index:-2;pointer-events:none;-webkit-mask-image:none!important;mask-image:none!important}
 .t-light{--ink:#fff;--ink2:rgba(255,255,255,.92);--line:rgba(255,255,255,.38);--accent-t:#fff;color:#fff}
 /* each veil is tuned so every line of text measures at least 4.5 to 1 against the picture behind it (3 to 1 for large type). src/legible.mjs checks it */
-.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.64) 0,rgba(6,10,22,.6) 58%,rgba(6,10,22,.3) 82%,rgba(6,10,22,.08))}
+.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.66) 0,rgba(6,10,22,.64) 62%,rgba(6,10,22,.4) 84%,rgba(6,10,22,.1))}
 .hsplit.t-light::before,.hform.t-light::before,.hstage.t-light::before{background:linear-gradient(90deg,rgba(6,10,22,.78) 0,rgba(6,10,22,.7) 42%,rgba(6,10,22,.22) 70%,rgba(6,10,22,0) 90%),linear-gradient(180deg,rgba(6,10,22,.6) 0,rgba(6,10,22,.44) 11%,rgba(6,10,22,0) 30%)}
 .t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.86) 0,rgba(255,255,255,.82) 58%,rgba(255,255,255,.42) 80%,rgba(255,255,255,0) 97%)}
 .hsplit.t-dark::before,.hform.t-dark::before,.hstage.t-dark::before{background:linear-gradient(90deg,rgba(255,255,255,.9) 0,rgba(255,255,255,.84) 42%,rgba(255,255,255,.26) 68%,rgba(255,255,255,0) 86%),linear-gradient(180deg,rgba(255,255,255,.7) 0,rgba(255,255,255,.5) 11%,rgba(255,255,255,0) 30%)}
@@ -306,6 +315,12 @@ input,select,textarea{font-size:max(16px,1rem)}
 @media(max-width:860px){.float.f2{right:-4px;top:5%}}
 /* buttons and forms */
 .btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
+:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.cta.bleed h2{font-size:clamp(2.2rem,calc(5.2vw*var(--hs)),calc(4.2rem*var(--hs)))}
+.stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
+/* the brand name, very large and very quiet, closes every page */
+.ft{overflow:hidden}.ft-mark{font-family:var(--fd);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);line-height:.82;white-space:nowrap;text-align:center;
+font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em;user-select:none}.ft-mark::before{content:attr(data-mark)}.ft .ft-mark{color:color-mix(in srgb,var(--dark-ink) 11%,transparent)}   /* decoration, drawn by the stylesheet so it is not read out or indexed twice */
 .btn:not(.ghost)::after{content:"";width:.44em;height:.44em;border-top:2px solid;border-right:2px solid;rotate:45deg;margin-left:.1em;transition:translate .2s}
 .btn:not(.ghost):hover::after{translate:3px -3px}
 .formcard{position:relative;border-top:4px solid var(--accent);box-shadow:0 34px 64px -34px rgba(0,0,0,.42)}
@@ -334,7 +349,7 @@ input,select,textarea{font-size:max(16px,1rem)}
 @media print{.sticky,.ann{display:none}}
 .bleed .card{--ink:#221C16;--ink2:#5B5045;--line:#D8CCB6;--accent-t:#983A18;color:#221C16;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 h1 em,h2 em{font-style:italic;font-weight:400;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.eyebrow{letter-spacing:.2em}.card{box-shadow:0 1px 0 var(--line)}
-:root{--atmo:radial-gradient(52% 60% at 90% 6%,#F1D6B4 0,transparent 70%),radial-gradient(40% 50% at 0 100%,#EADCC3,transparent 70%)}.eyebrow::before{content:"";display:inline-block;width:30px;height:1px;background:currentColor;margin-right:.8em;vertical-align:middle}.center .eyebrow::before,.hcenter .eyebrow::before,.cta .eyebrow::before{display:none}.card{border-radius:12px}.hs-v .ph{box-shadow:0 0 0 10px var(--bg),0 0 0 11px var(--line),0 44px 70px -30px rgba(60,30,10,.55)}
+.card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}:root{--atmo:radial-gradient(52% 60% at 90% 6%,#F1D6B4 0,transparent 70%),radial-gradient(40% 50% at 0 100%,#EADCC3,transparent 70%)}.eyebrow::before{content:"";display:inline-block;width:30px;height:1px;background:currentColor;margin-right:.8em;vertical-align:middle}.center .eyebrow::before,.hcenter .eyebrow::before,.cta .eyebrow::before{display:none}.card{border-radius:12px}.hs-v .ph{box-shadow:0 0 0 10px var(--bg),0 0 0 11px var(--line),0 44px 70px -30px rgba(60,30,10,.55)}
 </style>
 </head>
 <body class="over o-light has-sticky">
@@ -366,7 +381,8 @@ h1 em,h2 em{font-style:italic;font-weight:400;color:var(--accent-t)}.dark h1 em,
 <div><h2>The Fine Print</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li><li><a href="refunds.html">Refund Policy</a></li></ul></div>
 </div><div class="ft-s"><p>hello@wrenandfield.example &nbsp;·&nbsp; Melbourne, Victoria &nbsp;·&nbsp; ABN 00 000 000 000</p>
 <!-- DEMO NOTE: delete the next line when the site is yours -->
-<p class="demo">Demo content. Wren &amp; Field is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div></div></footer>
+<p class="demo">Demo content. Wren &amp; Field is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
+<div class="ft-mark" aria-hidden="true" style="--n:12" data-mark="Wren &amp; Field"></div></div></footer>
 <!-- Mobile action bar: the main action stays in reach of the thumb -->
 <div class="sticky"><span><b>Free 25-minute fit call</b><br>No pitch. A clear no is fine.</span><a class="btn" href="book.html">Book A Call</a></div>
 </body>

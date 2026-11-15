@@ -93,14 +93,14 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 0.9 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 2.0 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 8ms. |
-| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 0ms. |
+| Lighthouse scores | **Good** | Performance 99, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
-| A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 665px down. |
+| A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 663px down. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 50px tall. 6 were measured. |
-| Page weight | **Good** | The HTML is 34KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 36KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data

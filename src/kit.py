@@ -205,21 +205,22 @@ def vis(v, main=False):
 BASE_CSS = r"""
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
-body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-kerning:normal;overflow-x:clip}
+p,li{text-wrap:pretty}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--hw);letter-spacing:var(--hls);line-height:var(--hlh);text-transform:var(--htt);text-wrap:balance}
-h1{font-size:clamp(2.5rem,calc(6.3vw*var(--hs)),calc(5rem*var(--hs)))}
-h2{font-size:clamp(1.85rem,calc(3.9vw*var(--hs)),calc(3.05rem*var(--hs)))}
+h1{font-size:clamp(2.55rem,calc(6.7vw*var(--hs)),calc(5.5rem*var(--hs)))}
+h2{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.4rem*var(--hs)))}
 h3{font-size:1.28rem;line-height:1.2}
 p{text-wrap:pretty}
 p+p{margin-top:1em}
 .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
-.sec{padding-block:clamp(64px,9vw,120px)}
+.sec{padding-block:clamp(68px,10vw,144px)}
 .alt{background:var(--bg2)}
 .dark{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark));--card:color-mix(in srgb,var(--dark-ink) 7%,var(--dark));--accent-t:var(--dark-accent)}
 .center{text-align:center}.center .lead,.center p{margin-inline:auto}
-.lead{font-size:clamp(1.1rem,1.55vw,1.28rem);color:var(--ink2);max-width:58ch;line-height:1.55}
-.eyebrow{font-family:var(--fa);font-size:.8rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-t);margin-bottom:1rem}
+.lead{font-size:clamp(1.12rem,1.6vw,1.32rem);color:var(--ink2);max-width:56ch;line-height:1.52;text-wrap:pretty}
+.eyebrow{font-family:var(--fa);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-t);margin-bottom:1rem}
 .sh{margin-bottom:clamp(32px,4.5vw,56px);max-width:780px}.sh.center{margin-inline:auto}.sh .lead{margin-top:1.1rem}
 .fine{font-size:.84rem;color:var(--ink2)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:.82em 1.6em;border-radius:var(--rb);background:var(--accent);color:var(--accent-ink);border:var(--bw) solid var(--accent);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;transition:transform .15s ease}

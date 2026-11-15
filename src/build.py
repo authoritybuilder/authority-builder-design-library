@@ -312,7 +312,8 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 <div><h2>The Fine Print</h2><ul>{fine}</ul></div>
 </div><div class="ft-s"><p>{e(b.get("contact", "hello@" + b["domain"]))} &nbsp;·&nbsp; {e(b.get("where", "Australia"))} &nbsp;·&nbsp; ABN 00 000 000 000</p>{disc}
 <!-- DEMO NOTE: delete the next line when the site is yours -->
-<p class="demo">Demo content. {e(b["name"])} is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div></div></footer>{sticky}
+<p class="demo">Demo content. {e(b["name"])} is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
+<div class="ft-mark" aria-hidden="true" style="--n:{max(8, len(b["name"]))}" data-mark="{e(b["name"])}"></div></div></footer>{sticky}
 </body>
 </html>
 """

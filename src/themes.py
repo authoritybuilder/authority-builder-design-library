@@ -10,13 +10,13 @@ THEMES = {
     "warm_editorial": dict(
         label="Warm Editorial",
         mood="Paper tones, a bookish serif, italic emphasis. Feels like a considered letter.",
-        pair="Newsreader + DM Sans",
-        fonts=gf("Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400..600", "DM+Sans:wght@400;500;700"),
+        pair="Instrument Serif + Inter",
+        fonts=gf("Instrument+Serif:ital@0;1", "Inter:wght@400;500;600;700"),
         v={"bg": "#F7F2E8", "bg2": "#EEE4D3", "ink": "#221C16", "ink2": "#5B5045", "line": "#D8CCB6", "card": "#FFFDF8",
            "accent": "#A8431F", "accent-ink": "#FFF8EF", "accent-t": "#983A18", "accent2": "#2F5D50",
            "dark": "#241C16", "dark-ink": "#F4EBDD", "dark-accent": "#EBA884", "ph1": "#E9CFAF", "ph2": "#C98C64",
-           "fd": "'Newsreader',Georgia,serif", "fb": "'DM Sans',system-ui,sans-serif", "fa": "'DM Sans',system-ui,sans-serif",
-           "r": "6px", "rb": "999px", "hw": "500", "hls": "-0.022em", "hlh": "1.04", "htt": "none", "hs": "1", "bw": "1px",
+           "fd": "'Instrument Serif',Georgia,serif", "fb": "'Inter',system-ui,sans-serif", "fa": "'Inter',system-ui,sans-serif",
+           "r": "6px", "rb": "999px", "hw": "400", "hls": "-0.018em", "hlh": "1.02", "htt": "none", "hs": "1.08", "bw": "1px",
            "shadow": "none", "phr": "999px 999px 6px 6px"},
         css="h1 em,h2 em{font-style:italic;font-weight:400;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}"
             ".eyebrow{letter-spacing:.2em}.card{box-shadow:0 1px 0 var(--line)}",
@@ -68,13 +68,13 @@ THEMES = {
     "soft_organic": dict(
         label="Soft Organic",
         mood="Sage, cream and clay with soft blob shapes. Calm, human and unhurried.",
-        pair="DM Serif Display + Nunito Sans",
-        fonts=gf("DM+Serif+Display:ital@0;1", "Nunito+Sans:wght@400;600;700;800"),
+        pair="Fraunces + Nunito Sans",
+        fonts=gf("Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700", "Nunito+Sans:wght@400;600;700;800"),
         v={"bg": "#FAF6EE", "bg2": "#E4EBDD", "ink": "#26352B", "ink2": "#51625A", "line": "#CDD8C5", "card": "#FFFFFF",
            "accent": "#2F5A40", "accent-ink": "#FAF6EE", "accent-t": "#2F5A40", "accent2": "#C9744F",
            "dark": "#26352B", "dark-ink": "#F3EFE4", "dark-accent": "#E9B899", "ph1": "#E9C9AE", "ph2": "#C9906C",
-           "fd": "'DM Serif Display',Georgia,serif", "fb": "'Nunito Sans',system-ui,sans-serif", "fa": "'Nunito Sans',system-ui,sans-serif",
-           "r": "28px", "rb": "999px", "hw": "400", "hls": "-0.012em", "hlh": "1.06", "htt": "none", "hs": "1.02", "bw": "1px",
+           "fd": "'Fraunces',Georgia,serif", "fb": "'Nunito Sans',system-ui,sans-serif", "fa": "'Nunito Sans',system-ui,sans-serif",
+           "r": "28px", "rb": "999px", "hw": "500", "hls": "-0.032em", "hlh": "1.03", "htt": "none", "hs": "1.02", "bw": "1px",
            "shadow": "0 12px 30px rgba(38,53,43,.07)", "phr": "58% 42% 55% 45% / 48% 55% 45% 52%"},
         css="h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.eyebrow{font-weight:800;letter-spacing:.14em}"
             ".card{border-color:transparent}.ph.scene{border-radius:28px}",
@@ -124,13 +124,13 @@ THEMES = {
     "magazine": dict(
         label="Magazine",
         mood="Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.",
-        pair="Playfair Display + Libre Franklin",
-        fonts=gf("Playfair+Display:ital,wght@0,400..900;1,400..900", "Libre+Franklin:wght@400;500;600;700"),
+        pair="Bodoni Moda + Libre Franklin",
+        fonts=gf("Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900", "Libre+Franklin:wght@400;500;600;700"),
         v={"bg": "#FFFFFF", "bg2": "#F5F2EC", "ink": "#111111", "ink2": "#4F4F4F", "line": "#111111", "card": "#FFFFFF",
            "accent": "#C8102E", "accent-ink": "#FFFFFF", "accent-t": "#C8102E", "accent2": "#111111",
            "dark": "#111111", "dark-ink": "#F5F2EC", "dark-accent": "#FF8A9B", "ph1": "#E3DED4", "ph2": "#B4AC9C",
-           "fd": "'Playfair Display',Georgia,serif", "fb": "'Libre Franklin',system-ui,sans-serif", "fa": "'Libre Franklin',system-ui,sans-serif",
-           "r": "0px", "rb": "0px", "hw": "800", "hls": "-0.022em", "hlh": "1.02", "htt": "none", "hs": "1.04", "bw": "1px",
+           "fd": "'Bodoni Moda',Georgia,serif", "fb": "'Libre Franklin',system-ui,sans-serif", "fa": "'Libre Franklin',system-ui,sans-serif",
+           "r": "0px", "rb": "0px", "hw": "700", "hls": "-0.03em", "hlh": "1", "htt": "none", "hs": "1.04", "bw": "1px",
            "shadow": "none", "phr": "0px"},
         css="h1 em,h2 em{font-style:italic;font-weight:500;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}"
             ".eyebrow{font-weight:700;letter-spacing:.16em}.sh{border-top:3px solid var(--ink);padding-top:1rem}.dark .sh{border-color:var(--dark-ink)}"

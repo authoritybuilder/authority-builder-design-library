@@ -2,7 +2,7 @@
 
 **Group:** Trust And Content  
 **For:** Coach, Creator, Consultant  
-**Style:** Magazine (Playfair Display + Libre Franklin)  
+**Style:** Magazine (Bodoni Moda + Libre Franklin)  
 **Sample brand:** Hattie Lindqvist (fictional)
 
 An article layout built to be read, cited and acted on: a short answer at the top, first-hand examples, a clear byline and 1 next step.
@@ -85,6 +85,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “How To Write A Coaching Bio That Gets You Booked”. It is plain text, not a rotating or animated headline. |
 | The content is in the HTML, not drawn by JavaScript | **Good** | 741 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
+| Plain words | **Good** | The 414 words of body copy on the main page read at about school grade 5.3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
 | Images are sized, described and sent in a phone size | **Good** | 3 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: 49KB for phones and 165KB for desktops. 3 photo files, the largest 113KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 3 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
@@ -96,15 +97,15 @@ An article layout built to be read, cited and acted on: a short answer at the to
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.1 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.8 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 5ms. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 31ms. |
 | Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
-| A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Email Me The Template”) is 4698px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
+| A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Email Me The Template”) is 4748px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
-| Page weight | **Good** | The HTML is 47KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 49KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -180,7 +181,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
-Fonts: Playfair Display + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
+Fonts: Bodoni Moda + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

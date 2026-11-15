@@ -1,13 +1,13 @@
 {
  "001": {
   "desktop": {
-   "lines": 33,
+   "lines": 34,
    "body": 6.3,
-   "large": 7.1,
+   "large": 6.6,
    "fails": []
   },
   "phone": {
-   "lines": 33,
+   "lines": 36,
    "body": 6.3,
    "large": 9.2,
    "fails": []
@@ -22,7 +22,7 @@
   },
   "phone": {
    "lines": 31,
-   "body": 10.1,
+   "body": 9.9,
    "large": 10.5,
    "fails": []
   }
@@ -30,7 +30,7 @@
  "003": {
   "desktop": {
    "lines": 6,
-   "body": 7.5,
+   "body": 7.4,
    "large": 7.4,
    "fails": []
   },
@@ -44,14 +44,14 @@
  "004": {
   "desktop": {
    "lines": 28,
-   "body": 6.2,
+   "body": 5.8,
    "large": 7,
    "fails": []
   },
   "phone": {
-   "lines": 31,
+   "lines": 32,
    "body": 6,
-   "large": 8.2,
+   "large": 7.9,
    "fails": []
   }
  },
@@ -59,41 +59,41 @@
   "desktop": {
    "lines": 18,
    "body": 7.5,
-   "large": 7.3,
+   "large": 7.2,
    "fails": []
   },
   "phone": {
-   "lines": 12,
-   "body": 8.1,
-   "large": 9.2,
+   "lines": 13,
+   "body": 8,
+   "large": 9.1,
    "fails": []
   }
  },
  "006": {
   "desktop": {
    "lines": 23,
-   "body": 12,
+   "body": 11.7,
    "large": 11.3,
    "fails": []
   },
   "phone": {
-   "lines": 22,
-   "body": 13.1,
+   "lines": 21,
+   "body": 13,
    "large": 12.8,
    "fails": []
   }
  },
  "007": {
   "desktop": {
-   "lines": 22,
-   "body": 6.7,
-   "large": 4.8,
+   "lines": 20,
+   "body": 6.8,
+   "large": 4.9,
    "fails": []
   },
   "phone": {
    "lines": 30,
    "body": 6.9,
-   "large": 4.9,
+   "large": 5,
    "fails": []
   }
  },
@@ -101,7 +101,7 @@
   "desktop": {
    "lines": 23,
    "body": 5.8,
-   "large": 4.8,
+   "large": 4.6,
    "fails": []
   },
   "phone": {
@@ -113,23 +113,23 @@
  },
  "009": {
   "desktop": {
-   "lines": 19,
-   "body": 7.1,
-   "large": 5.4,
+   "lines": 20,
+   "body": 7,
+   "large": 5.3,
    "fails": []
   },
   "phone": {
-   "lines": 22,
+   "lines": 23,
    "body": 7.2,
-   "large": 5.6,
+   "large": 6.4,
    "fails": []
   }
  },
  "010": {
   "desktop": {
    "lines": 11,
-   "body": 6.3,
-   "large": 5.7,
+   "body": 7.4,
+   "large": 6.4,
    "fails": []
   },
   "phone": {
@@ -141,13 +141,13 @@
  },
  "011": {
   "desktop": {
-   "lines": 23,
+   "lines": 24,
    "body": 6.8,
    "large": 5.5,
    "fails": []
   },
   "phone": {
-   "lines": 24,
+   "lines": 25,
    "body": 6.9,
    "large": 5.9,
    "fails": []
@@ -161,7 +161,7 @@
    "fails": []
   },
   "phone": {
-   "lines": 16,
+   "lines": 17,
    "body": 5.9,
    "large": 5.6,
    "fails": []
@@ -185,7 +185,7 @@
   "desktop": {
    "lines": 13,
    "body": 7.6,
-   "large": 4.6,
+   "large": 4.5,
    "fails": []
   },
   "phone": {
@@ -203,7 +203,7 @@
    "fails": []
   },
   "phone": {
-   "lines": 22,
+   "lines": 23,
    "body": 13.7,
    "large": 14.1,
    "fails": []
@@ -212,8 +212,8 @@
  "016": {
   "desktop": {
    "lines": 18,
-   "body": 6.7,
-   "large": 7,
+   "body": 6.6,
+   "large": 6.9,
    "fails": []
   },
   "phone": {
@@ -227,13 +227,13 @@
   "desktop": {
    "lines": 16,
    "body": 7.5,
-   "large": 7.5,
+   "large": 7.6,
    "fails": []
   },
   "phone": {
    "lines": 19,
-   "body": 7.6,
-   "large": 7.5,
+   "body": 7.3,
+   "large": 7.3,
    "fails": []
   }
  },
@@ -241,11 +241,11 @@
   "desktop": {
    "lines": 18,
    "body": 5.5,
-   "large": 11.7,
+   "large": 11.5,
    "fails": []
   },
   "phone": {
-   "lines": 18,
+   "lines": 19,
    "body": 6.7,
    "large": 12.7,
    "fails": []
@@ -253,15 +253,15 @@
  },
  "019": {
   "desktop": {
-   "lines": 25,
-   "body": 6.9,
-   "large": 6.8,
+   "lines": 24,
+   "body": 5.6,
+   "large": 6.3,
    "fails": []
   },
   "phone": {
    "lines": 28,
    "body": 6.5,
-   "large": 10.3,
+   "large": 10.2,
    "fails": []
   }
  },
@@ -287,23 +287,23 @@
    "fails": []
   },
   "phone": {
-   "lines": 9,
-   "body": 7.3,
-   "large": 8,
+   "lines": 11,
+   "body": 6.9,
+   "large": 7.7,
    "fails": []
   }
  },
  "022": {
   "desktop": {
    "lines": 19,
-   "body": 6.6,
-   "large": 6.6,
+   "body": 5.2,
+   "large": 7,
    "fails": []
   },
   "phone": {
-   "lines": 20,
-   "body": 7.7,
-   "large": 8.6,
+   "lines": 19,
+   "body": 7.6,
+   "large": 8.3,
    "fails": []
   }
  },
@@ -324,22 +324,22 @@
  "024": {
   "desktop": {
    "lines": 21,
-   "body": 12.2,
+   "body": 12,
    "large": 14,
    "fails": []
   },
   "phone": {
    "lines": 20,
    "body": 13.6,
-   "large": 13.9,
+   "large": 13.6,
    "fails": []
   }
  },
  "025": {
   "desktop": {
-   "lines": 16,
+   "lines": 19,
    "body": 6.7,
-   "large": 6.7,
+   "large": 6.6,
    "fails": []
   },
   "phone": {
@@ -351,9 +351,9 @@
  },
  "026": {
   "desktop": {
-   "lines": 17,
-   "body": 8.2,
-   "large": 8.2,
+   "lines": 18,
+   "body": 9.1,
+   "large": 8,
    "fails": []
   },
   "phone": {
@@ -366,14 +366,14 @@
  "027": {
   "desktop": {
    "lines": 29,
-   "body": 5.2,
+   "body": 5.6,
    "large": 7.9,
    "fails": []
   },
   "phone": {
    "lines": 25,
-   "body": 7.6,
-   "large": 8,
+   "body": 7.5,
+   "large": 7.9,
    "fails": []
   }
  },
