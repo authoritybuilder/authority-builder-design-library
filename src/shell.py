@@ -1,0 +1,164 @@
+"""The Authority Builder shell: gallery, entry notes pages and the research canon page.
+Brand tokens follow the Authority Builder identity: Fraunces + Inter, warm paper and cream, deep forest, gold, coral for the one action."""
+from kit import e, h
+
+SKOOL = "https://www.skool.com/authority-builder-9958"
+AB_FONTS = ("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700"
+            "&family=Inter:wght@400;500;600;700&display=swap")
+
+AB_CSS = r"""
+:root{--paper:#FBF8F2;--cream:#F3EEE4;--line:#E3DACA;--forest:#132620;--deep:#0A1612;--sage:#0F5132;--gold:#C5A880;--rose:#D8A39D;--coral:#D97757;--ink:#132620;--ink2:#5C5750;--white:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 1.0625rem/1.6 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:.22em}img{max-width:100%;display:block}ul,ol{list-style:none}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.06;text-wrap:balance}
+h1{font-size:clamp(2.5rem,6vw,4.6rem)}h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}h3{font-size:1.3rem;line-height:1.2}
+h1 em,h2 em{font-style:italic;font-weight:400;color:var(--gold)}.light h2 em{color:var(--sage)}
+p{text-wrap:pretty}
+.wrap{max-width:1180px;margin:auto;padding-inline:clamp(20px,5vw,48px)}.narrow{max-width:860px}
+.sec{padding-block:clamp(56px,8vw,104px)}.cream{background:var(--cream)}
+.kick{font:600 .78rem/1.3 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem}
+.lead{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--ink2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.8em 1.6em;border-radius:999px;background:var(--coral);color:var(--forest);font-weight:700;text-decoration:none;border:2px solid var(--coral);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#132620;padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.banner{position:relative;overflow:hidden;color:#EAE7E1;background:linear-gradient(180deg,#0a1613 0%,#0d1e17 6%,#132620 12%,#132620 60%,#0f2218 72%,#0b1814 88%,#070f0c 100%)}
+.banner::before,.banner::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.banner::before{width:560px;height:560px;right:-160px;top:-220px;background:radial-gradient(circle,rgba(197,168,128,.24),transparent 68%)}
+.banner::after{width:520px;height:520px;left:-200px;bottom:-280px;background:radial-gradient(circle,rgba(15,81,50,.5),transparent 68%)}
+.banner .wrap{position:relative;z-index:1}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.2rem;font-size:.92rem}
+.mark{display:inline-flex;align-items:center;gap:.7rem;font-weight:600;text-decoration:none}
+.mark i{font-style:normal;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--forest);display:grid;place-items:center;font:700 .82rem 'Inter',sans-serif;letter-spacing:.04em}
+.top nav{display:flex;gap:1.4rem;flex-wrap:wrap}.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline}
+.hero{padding-block:clamp(40px,7vw,96px) clamp(56px,8vw,112px)}.banner .kick{color:var(--gold)}.banner .lead{color:rgba(234,231,225,.82);margin-top:1.4rem}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(36px,5vw,64px);padding-top:1.6rem;border-top:1px solid rgba(234,231,225,.18)}
+.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Fraunces',serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:2.4rem;counter-reset:h}
+.how li{counter-increment:h;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem}
+.how li::before{content:counter(h);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--gold);font-weight:700;margin-bottom:1rem}
+.how p{color:var(--ink2);margin-top:.4rem;font-size:.98rem}
+@media(max-width:800px){.how{grid-template-columns:1fr}}
+.filters{position:sticky;top:0;z-index:5;background:rgba(251,248,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-block:.8rem}
+.filters .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;align-items:center}
+.fg{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}.fg span{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-right:.2rem}
+.chip{min-height:38px;padding:.3em .95em;border-radius:999px;border:1px solid var(--line);background:#fff;font:500 .86rem 'Inter',sans-serif;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--forest);color:#EAE7E1;border-color:var(--forest)}
+.group{margin-top:clamp(40px,6vw,72px)}.group>header{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;margin-bottom:1.6rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.group>header p{color:var(--ink2);font-size:.98rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2.4vw,28px)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,38,32,.12);border-color:var(--gold)}
+.card .th{aspect-ratio:16/10;background:var(--cream);border-bottom:1px solid var(--line);overflow:hidden}.card .th img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .bd{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card .no{font:600 .76rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.card h3{font-size:1.4rem}.card p{color:var(--ink2);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.8rem}.tags span{font-size:.74rem;font-weight:600;background:var(--cream);border-radius:999px;padding:.25em .7em}
+.card[hidden],.group[hidden]{display:none}
+.strip{background:var(--forest);color:#EAE7E1}.strip .kick{color:var(--gold)}.strip .lead{color:rgba(234,231,225,.82)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.footer{position:relative;overflow:hidden;color:rgba(234,231,225,.82);background:linear-gradient(180deg,#070f0c 0%,#0b1814 8%,#0f2218 20%,#132620 45%,#132620 80%,#0d1e17 95%,#0a1613 100%);padding:clamp(48px,6vw,80px) 0 2rem;font-size:.92rem}
+.footer .mark{color:#EAE7E1;margin-bottom:.6rem}.footer .tagline{font-style:italic;color:rgba(234,231,225,.6);margin-bottom:1.6rem}
+.legal{border:1px solid rgba(234,231,225,.16);border-radius:12px;padding:1rem 1.3rem;margin-bottom:1.6rem}.legal summary{cursor:pointer;font-weight:600;color:#EAE7E1}
+.legal p{margin-top:.9rem;font-size:.84rem;line-height:1.6}.legal b{color:#EAE7E1}.footer a{color:var(--gold)}
+.copy{font-size:.82rem;line-height:1.7}.copy strong{color:#EAE7E1}
+/* entry notes page */
+.crumbs{font-size:.86rem;color:rgba(234,231,225,.75)}.crumbs a{color:var(--gold)}
+.eh{padding-block:clamp(28px,4vw,56px) clamp(40px,6vw,72px)}.eh h1{font-size:clamp(2.2rem,5vw,3.8rem);margin-top:.8rem}
+.pv{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(19,38,32,.16);background:#fff;margin-top:calc(-1*clamp(28px,4vw,48px));position:relative;z-index:2}
+.cols{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,72px);align-items:start}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.blk{margin-top:clamp(36px,5vw,56px)}.blk h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1rem}
+.blk li{position:relative;padding-left:1.6em;margin-top:.7em}.blk li::before{content:"";position:absolute;left:0;top:.6em;width:.55em;height:.55em;border-radius:50%;background:var(--gold)}
+.ptab{width:100%;border-collapse:collapse}.ptab th,.ptab td{text-align:left;vertical-align:top;padding:.9rem .8rem .9rem 0;border-top:1px solid var(--line);font-size:.97rem}
+.ptab th{font-weight:600;width:34%}.ptab th small{display:block;font-weight:400;color:var(--ink2);margin-top:.15rem}
+@media(max-width:640px){.ptab th,.ptab td{display:block;width:100%;padding:.5rem 0}.ptab td{border-top:0;padding-top:0}}
+.serp{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;font-family:Arial,Helvetica,sans-serif;max-width:640px}
+.serp .s1{display:flex;align-items:center;gap:.7rem}.serp .fav{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .82rem Arial;flex:none}
+.serp .sn{font-size:.9rem;color:#202124;line-height:1.25}.serp .su{font-size:.76rem;color:#4d5156}
+.serp .st{font-size:1.25rem;color:#1a0dab;margin:.55rem 0 .25rem;line-height:1.3}.serp .sd{font-size:.88rem;color:#4d5156;line-height:1.55}
+.serp .sl{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.4rem;margin-top:.9rem;padding-top:.8rem;border-top:1px solid #ebebeb}.serp .sl span{color:#1a0dab;font-size:.95rem}
+.note{font-size:.88rem;color:var(--ink2);margin-top:.7rem}
+.side{position:sticky;top:1.2rem;display:grid;gap:1.2rem}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem}
+.panel h2{font-size:1.2rem;margin-bottom:.7rem}.panel dt{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:.9rem}.panel dd{font-size:.96rem}
+.sw{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}.sw span{width:38px;height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.12)}
+.prompt{position:relative;background:var(--forest);color:#EAE7E1;border-radius:16px;padding:1.4rem;margin-top:1rem}
+.prompt pre{white-space:pre-wrap;font:400 .86rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;max-height:420px;overflow:auto}
+.prompt button{position:absolute;right:1rem;top:1rem;min-height:40px;padding:.4em 1em;border-radius:999px;border:0;background:var(--coral);color:var(--forest);font:700 .84rem 'Inter',sans-serif;cursor:pointer}
+/* canon */
+.ctab{width:100%;border-collapse:collapse;margin-top:1.4rem}.ctab th,.ctab td{text-align:left;vertical-align:top;padding:1rem .9rem 1rem 0;border-top:1px solid var(--line);font-size:.96rem}
+.ctab thead th{font:700 .74rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:0}
+.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Fraunces',serif}.ctab td:first-child small{color:var(--ink2)}
+.ctab .use a{display:inline-block;font:600 .74rem 'Inter',sans-serif;background:var(--cream);border-radius:999px;padding:.2em .6em;margin:.15em .2em 0 0;text-decoration:none}
+@media(max-width:760px){.ctab thead{display:none}.ctab td{display:block;width:100%!important;border-top:0;padding:.25rem 0}.ctab tr{display:block;border-top:1px solid var(--line);padding:1rem 0}}
+.src li{margin-top:.8rem}.src small{color:var(--ink2);display:block}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.filters,.top nav,.prompt button{display:none}.banner,.footer,.strip{background:#fff!important;color:#000!important}.banner::before,.banner::after{display:none}}
+"""
+
+LEGAL = [
+    ("Educational and ideation purposes only.", "The samples, notes and prompts in this library are starting points designed to help you think through your website design. They are not finished pages and do not constitute marketing, legal, financial, business, medical or professional advice of any kind."),
+    ("Your responsibility to review.", "Everything here requires your independent review, editing, fact-checking and professional judgement before use in any public-facing context. You are solely responsible for the accuracy, legality, compliance and suitability of anything you choose to publish, distribute, or represent as your own."),
+    ("No guarantees.", "Results vary based on your market, your offer, your execution and many other factors outside the control of this library. No income, client acquisition, search ranking, authority-building or business outcome is guaranteed, promised or implied."),
+    ("Fictional samples.", "Every brand, person, testimonial, price and result shown in a sample page is invented for teaching. Any resemblance to a real business or person is coincidental. Replace all sample proof with your own real proof. Never publish invented testimonials or numbers."),
+    ("AI-assisted content.", "The samples and notes were produced with generative AI and reviewed against the sources listed on the research page. AI can be inaccurate or out of date. Search rules change often, so check Google's current documentation before relying on any rule. Authority Builder™ and Yasmin Cronin accept no liability for any use or misuse of this library."),
+    ("Intellectual property.", "The Authority Builder™ name, brand, library structure, teaching notes and prompts are proprietary. Members may adapt the sample pages for their own business websites. You may not resell, redistribute or republish the library itself without express written permission from Yasmin Cronin. The gallery format is adapted from robonuggets-design-inspo by RoboNuggets (CC BY 4.0)."),
+    ("Community membership.", "Continued access to Authority Builder™ tools and libraries is conditional on active membership of the AI for Coaches and Creators community."),
+    ("No warranty.", "This library is provided \"as is\" without warranty of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement. By using it you agree these terms govern your use."),
+]
+
+
+def page(title, desc, body, root="", extra_head=""):
+    legal = "".join(f"<p><b>{e(a)}</b> {e(b)}</p>" for a, b in LEGAL)
+    return f"""<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{e(title)}</title>
+<meta name="description" content="{e(desc)}">
+<meta name="theme-color" content="#132620">
+<meta property="og:title" content="{e(title)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Authority Builder Design Library">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23132620'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23C5A880'%3EAB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="{AB_FONTS}" rel="stylesheet">
+{extra_head}<style>{AB_CSS}</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+{body}
+<footer class="footer" role="contentinfo"><div class="wrap">
+<div class="mark"><i aria-hidden="true">AB</i>Authority Builder™ · Yasmin Cronin</div>
+<p class="tagline">Built for business owners ready to own their expertise.</p>
+<details class="legal"><summary>Legal disclaimer and terms of use</summary>{legal}</details>
+<p class="copy">© <strong>Authority Builder™</strong> · All rights reserved. Trade marks and brand assets are the property of their respective owners.<br>
+For more AI tools, join <a href="{SKOOL}" target="_blank" rel="noopener noreferrer">AI for Coaches and Creators</a>. ·
+<a href="{root}canon/index.html">Research and sources</a> · <a href="{root}audit/full-seo-and-ai-search-audit.md">The audit prompt</a></p>
+</div></footer>
+</body>
+</html>
+"""
+
+
+def top(root=""):
+    return (f'<div class="top"><a class="mark" href="{root}index.html"><i aria-hidden="true">AB</i>Design Library</a>'
+            f'<nav aria-label="Library"><a href="{root}index.html#library">All Pages</a><a href="{root}index.html#blocks">Building Blocks</a>'
+            f'<a href="{root}canon/index.html">The Research</a></nav></div>')
+
+
+def serp(P, v):
+    b = P["brand"]
+    path = P.get("path", "")
+    crumb = f'https://{b["domain"]}' + ("".join(f" › {x}" for x in path.strip("/").split("/")) if path else "")
+    sl = ""
+    if P.get("sitelinks"):
+        sl = '<div class="sl">' + "".join(f"<span>{e(x)}</span>" for x in P["sitelinks"]) + "</div>"
+    return (f'<div class="serp" role="img" aria-label="Mock Google result for this sample"><div class="s1">'
+            f'<span class="fav" style="background:{v["accent"]};color:{v["accent-ink"]}">{e(b.get("mono", b["name"][0]))}</span>'
+            f'<div><div class="sn">{e(b["name"])}</div><div class="su">{e(crumb)}</div></div></div>'
+            f'<div class="st">{e(P["title"])}</div><div class="sd">{e(P["desc"])}</div>{sl}</div>')

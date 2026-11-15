@@ -1,0 +1,62 @@
+# Adding A Page To The Library
+
+Every sample is generated from a short page definition. You describe the page as data. The build writes the HTML, the notes page, the notes file and the gallery card.
+
+## The Short Version
+
+1. Open a file in `src/pages` and copy an existing page definition (a Python `dict`).
+2. Give it the next number in `n`, a `slug`, a `name`, a `group` and a `theme`.
+3. Invent a fictional brand. Use a `.example` domain.
+4. List the sections in order. Each section is a pair: the pattern name and its content.
+5. Fill in `why`, `principles`, `borrow` and, if you studied a real site, `study`.
+6. Run the build, the check and the screenshots:
+
+```bash
+python3 src/build.py
+python3 src/check.py
+python3 src/shots.py 029      # only the entry you added
+```
+
+The 3 building-block entries always take the last 3 numbers, so they move down by 1 when you add a page. The build renumbers them for you.
+
+## What Each Field Does
+
+| Field | Purpose |
+|---|---|
+| `n`, `slug`, `name` | Number, folder name and display name. |
+| `group` | 1 of the 4 gallery groups. |
+| `aud` | Who it is for: Coach, Creator, Consultant, Business Owner. Drives the gallery filter. |
+| `theme` | 1 of the 10 style directions in `src/themes.py`. |
+| `brand` | The fictional brand: name, person, role, domain, monogram, footer line. |
+| `title`, `desc` | The title tag and meta description. Write them as carefully as the headline. |
+| `schema` | Which structured data types to generate. Extra facts go in `ld`. |
+| `nav`, `cta` | Menu links and header button. Use `nav=None` for landing pages with no menu. |
+| `sections` | The page, in order. Add `_="…"` to each section to say what it is for. That line becomes a code comment and a step in the build prompt. |
+| `why` | 3 or 4 plain reasons the page works. |
+| `principles` | Pairs of a principle id from `src/canon.py` and where it shows up on this page. |
+| `borrow` | 3 or 4 things a reader can lift straight away. |
+| `seo` | Notes for the search card that are specific to this page type. |
+
+## Section Patterns
+
+Every pattern is shown once on the Section Patterns page (entry 031). The pattern names are the function names in `src/sections.py`: `hero_split`, `hero_center`, `hero_form`, `hero_stage`, `hero_article`, `bento`, `linkbio`, `logos`, `stats`, `quotes`, `metrics`, `doors`, `prose`, `cards`, `steps`, `split`, `compare`, `modules`, `pricing`, `guarantee`, `faq`, `cta`, `feed`, `capture`, `schedule`, `article`, `player`, `products`, `contact`, `quiz`, `thanks` and `bios`.
+
+In any text field, `*word*` gives emphasis, `**word**` gives bold and `|` forces a line break.
+
+## Adding A Style Direction
+
+Add an entry to `THEMES` in `src/themes.py`: a Google Fonts link, the colour tokens and a few signature rules. The build checks every text and button pairing against WCAG AA (4.5 to 1) and prints any failures. Fix them before you ship.
+
+## Adding A Principle
+
+Add an entry to `C` in `src/canon.py` with its group, name, originator, source and a plain-English meaning. Cite the book or the page you actually read. If you cannot name the source, leave it out.
+
+## House Rules
+
+- **Fictional brands only.** Never use a real business, a real person or a real testimonial in a sample.
+- **Borrow the technique, never the copy, the images or the layout.** If a sample still looks or reads like the site that inspired it, keep working.
+- **No fake urgency.** No countdown timers. No invented scarcity. Limits must be the kind that could be real.
+- **Caveat every results claim.** Income and outcome figures carry a results-are-not-typical line.
+- **Everything in the HTML.** No content that needs JavaScript to appear.
+- **Check the rule before you teach it.** Search guidance changes. Read Google's current page before adding a search note.
+- **Australian spelling. No em dashes. Numerals for numbers.**

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>005 About And Founder Story | Authority Builder Design Library</title>
+<meta name="description" content="An About page written as a magazine profile. It tells 1 turning-point story, proves it with numbers and ends by sending the reader somewhere.">
+<meta name="theme-color" content="#132620">
+<meta property="og:title" content="005 About And Founder Story | Authority Builder Design Library">
+<meta property="og:description" content="An About page written as a magazine profile. It tells 1 turning-point story, proves it with numbers and ends by sending the reader somewhere.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Authority Builder Design Library">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23132620'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23C5A880'%3EAB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#FBF8F2;--cream:#F3EEE4;--line:#E3DACA;--forest:#132620;--deep:#0A1612;--sage:#0F5132;--gold:#C5A880;--rose:#D8A39D;--coral:#D97757;--ink:#132620;--ink2:#5C5750;--white:#FFFFFF}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font:400 1.0625rem/1.6 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-underline-offset:.22em}img{max-width:100%;display:block}ul,ol{list-style:none}
+h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.06;text-wrap:balance}
+h1{font-size:clamp(2.5rem,6vw,4.6rem)}h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}h3{font-size:1.3rem;line-height:1.2}
+h1 em,h2 em{font-style:italic;font-weight:400;color:var(--gold)}.light h2 em{color:var(--sage)}
+p{text-wrap:pretty}
+.wrap{max-width:1180px;margin:auto;padding-inline:clamp(20px,5vw,48px)}.narrow{max-width:860px}
+.sec{padding-block:clamp(56px,8vw,104px)}.cream{background:var(--cream)}
+.kick{font:600 .78rem/1.3 'Inter',sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--sage);margin-bottom:1rem}
+.lead{font-size:clamp(1.08rem,1.5vw,1.25rem);color:var(--ink2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:.8em 1.6em;border-radius:999px;background:var(--coral);color:var(--forest);font-weight:700;text-decoration:none;border:2px solid var(--coral);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:#fff;color:#132620;padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.banner{position:relative;overflow:hidden;color:#EAE7E1;background:linear-gradient(180deg,#0a1613 0%,#0d1e17 6%,#132620 12%,#132620 60%,#0f2218 72%,#0b1814 88%,#070f0c 100%)}
+.banner::before,.banner::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.banner::before{width:560px;height:560px;right:-160px;top:-220px;background:radial-gradient(circle,rgba(197,168,128,.24),transparent 68%)}
+.banner::after{width:520px;height:520px;left:-200px;bottom:-280px;background:radial-gradient(circle,rgba(15,81,50,.5),transparent 68%)}
+.banner .wrap{position:relative;z-index:1}
+.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.2rem;font-size:.92rem}
+.mark{display:inline-flex;align-items:center;gap:.7rem;font-weight:600;text-decoration:none}
+.mark i{font-style:normal;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--forest);display:grid;place-items:center;font:700 .82rem 'Inter',sans-serif;letter-spacing:.04em}
+.top nav{display:flex;gap:1.4rem;flex-wrap:wrap}.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline}
+.hero{padding-block:clamp(40px,7vw,96px) clamp(56px,8vw,112px)}.banner .kick{color:var(--gold)}.banner .lead{color:rgba(234,231,225,.82);margin-top:1.4rem}
+.nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(36px,5vw,64px);padding-top:1.6rem;border-top:1px solid rgba(234,231,225,.18)}
+.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Fraunces',serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:2.4rem;counter-reset:h}
+.how li{counter-increment:h;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem}
+.how li::before{content:counter(h);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--gold);font-weight:700;margin-bottom:1rem}
+.how p{color:var(--ink2);margin-top:.4rem;font-size:.98rem}
+@media(max-width:800px){.how{grid-template-columns:1fr}}
+.filters{position:sticky;top:0;z-index:5;background:rgba(251,248,242,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding-block:.8rem}
+.filters .wrap{display:flex;flex-wrap:wrap;gap:.5rem 1.6rem;align-items:center}
+.fg{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center}.fg span{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-right:.2rem}
+.chip{min-height:38px;padding:.3em .95em;border-radius:999px;border:1px solid var(--line);background:#fff;font:500 .86rem 'Inter',sans-serif;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--forest);color:#EAE7E1;border-color:var(--forest)}
+.group{margin-top:clamp(40px,6vw,72px)}.group>header{display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1.4rem;margin-bottom:1.6rem;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+.group>header p{color:var(--ink2);font-size:.98rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2.4vw,28px)}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,38,32,.12);border-color:var(--gold)}
+.card .th{aspect-ratio:16/10;background:var(--cream);border-bottom:1px solid var(--line);overflow:hidden}.card .th img{width:100%;height:100%;object-fit:cover;object-position:top}
+.card .bd{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
+.card .no{font:600 .76rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
+.card h3{font-size:1.4rem}.card p{color:var(--ink2);font-size:.95rem}
+.tags{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:auto;padding-top:.8rem}.tags span{font-size:.74rem;font-weight:600;background:var(--cream);border-radius:999px;padding:.25em .7em}
+.card[hidden],.group[hidden]{display:none}
+.strip{background:var(--forest);color:#EAE7E1}.strip .kick{color:var(--gold)}.strip .lead{color:rgba(234,231,225,.82)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}@media(max-width:800px){.two{grid-template-columns:1fr}}
+.footer{position:relative;overflow:hidden;color:rgba(234,231,225,.82);background:linear-gradient(180deg,#070f0c 0%,#0b1814 8%,#0f2218 20%,#132620 45%,#132620 80%,#0d1e17 95%,#0a1613 100%);padding:clamp(48px,6vw,80px) 0 2rem;font-size:.92rem}
+.footer .mark{color:#EAE7E1;margin-bottom:.6rem}.footer .tagline{font-style:italic;color:rgba(234,231,225,.6);margin-bottom:1.6rem}
+.legal{border:1px solid rgba(234,231,225,.16);border-radius:12px;padding:1rem 1.3rem;margin-bottom:1.6rem}.legal summary{cursor:pointer;font-weight:600;color:#EAE7E1}
+.legal p{margin-top:.9rem;font-size:.84rem;line-height:1.6}.legal b{color:#EAE7E1}.footer a{color:var(--gold)}
+.copy{font-size:.82rem;line-height:1.7}.copy strong{color:#EAE7E1}
+/* entry notes page */
+.crumbs{font-size:.86rem;color:rgba(234,231,225,.75)}.crumbs a{color:var(--gold)}
+.eh{padding-block:clamp(28px,4vw,56px) clamp(40px,6vw,72px)}.eh h1{font-size:clamp(2.2rem,5vw,3.8rem);margin-top:.8rem}
+.pv{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(19,38,32,.16);background:#fff;margin-top:calc(-1*clamp(28px,4vw,48px));position:relative;z-index:2}
+.cols{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,72px);align-items:start}@media(max-width:900px){.cols{grid-template-columns:1fr}}
+.blk{margin-top:clamp(36px,5vw,56px)}.blk h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1rem}
+.blk li{position:relative;padding-left:1.6em;margin-top:.7em}.blk li::before{content:"";position:absolute;left:0;top:.6em;width:.55em;height:.55em;border-radius:50%;background:var(--gold)}
+.ptab{width:100%;border-collapse:collapse}.ptab th,.ptab td{text-align:left;vertical-align:top;padding:.9rem .8rem .9rem 0;border-top:1px solid var(--line);font-size:.97rem}
+.ptab th{font-weight:600;width:34%}.ptab th small{display:block;font-weight:400;color:var(--ink2);margin-top:.15rem}
+@media(max-width:640px){.ptab th,.ptab td{display:block;width:100%;padding:.5rem 0}.ptab td{border-top:0;padding-top:0}}
+.serp{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.3rem 1.4rem;font-family:Arial,Helvetica,sans-serif;max-width:640px}
+.serp .s1{display:flex;align-items:center;gap:.7rem}.serp .fav{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font:700 .82rem Arial;flex:none}
+.serp .sn{font-size:.9rem;color:#202124;line-height:1.25}.serp .su{font-size:.76rem;color:#4d5156}
+.serp .st{font-size:1.25rem;color:#1a0dab;margin:.55rem 0 .25rem;line-height:1.3}.serp .sd{font-size:.88rem;color:#4d5156;line-height:1.55}
+.serp .sl{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.4rem;margin-top:.9rem;padding-top:.8rem;border-top:1px solid #ebebeb}.serp .sl span{color:#1a0dab;font-size:.95rem}
+.note{font-size:.88rem;color:var(--ink2);margin-top:.7rem}
+.side{position:sticky;top:1.2rem;display:grid;gap:1.2rem}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem}
+.panel h2{font-size:1.2rem;margin-bottom:.7rem}.panel dt{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:.9rem}.panel dd{font-size:.96rem}
+.sw{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}.sw span{width:38px;height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.12)}
+.prompt{position:relative;background:var(--forest);color:#EAE7E1;border-radius:16px;padding:1.4rem;margin-top:1rem}
+.prompt pre{white-space:pre-wrap;font:400 .86rem/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;max-height:420px;overflow:auto}
+.prompt button{position:absolute;right:1rem;top:1rem;min-height:40px;padding:.4em 1em;border-radius:999px;border:0;background:var(--coral);color:var(--forest);font:700 .84rem 'Inter',sans-serif;cursor:pointer}
+/* canon */
+.ctab{width:100%;border-collapse:collapse;margin-top:1.4rem}.ctab th,.ctab td{text-align:left;vertical-align:top;padding:1rem .9rem 1rem 0;border-top:1px solid var(--line);font-size:.96rem}
+.ctab thead th{font:700 .74rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:0}
+.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Fraunces',serif}.ctab td:first-child small{color:var(--ink2)}
+.ctab .use a{display:inline-block;font:600 .74rem 'Inter',sans-serif;background:var(--cream);border-radius:999px;padding:.2em .6em;margin:.15em .2em 0 0;text-decoration:none}
+@media(max-width:760px){.ctab thead{display:none}.ctab td{display:block;width:100%!important;border-top:0;padding:.25rem 0}.ctab tr{display:block;border-top:1px solid var(--line);padding:1rem 0}}
+.src li{margin-top:.8rem}.src small{color:var(--ink2);display:block}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+@media print{.filters,.top nav,.prompt button{display:none}.banner,.footer,.strip{background:#fff!important;color:#000!important}.banner::before,.banner::after{display:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="banner"><div class="wrap"><div class="top"><a class="mark" href="../index.html"><i aria-hidden="true">AB</i>Design Library</a><nav aria-label="Library"><a href="../index.html#library">All Pages</a><a href="../index.html#blocks">Building Blocks</a><a href="../canon/index.html">The Research</a></nav></div>
+<div class="eh"><p class="crumbs"><a href="../index.html#library">Design Library</a> › Home Bases</p>
+<h1>005 · About And Founder Story</h1><p class="lead">An About page written as a magazine profile. It tells 1 turning-point story, proves it with numbers and ends by sending the reader somewhere.</p>
+<div class="acts"><a class="btn" href="sample.html">Open The Live Sample</a><a class="btn ghost" href="#prompt">Copy The Build Prompt</a></div></div></div></div>
+<main id="main"><div class="wrap">
+<a class="pv" href="sample.html" style="display:block"><img src="preview.jpg" alt="Preview of the About And Founder Story sample for the fictional brand Dana Whitlock" width="1280" height="800"></a>
+<div class="cols">
+<div>
+<div class="blk"><h2>Why This Page Works</h2><ul><li>It tells 1 story with 1 turning point, instead of a career history. Stories are remembered; CVs are skimmed.</li><li>The numbers come before the story, so the reader already trusts the narrator when the story starts.</li><li>It ends with 3 next steps. An About page is often the second most visited page on a site, so it should never be a dead end.</li><li>It is the 1 indexable page clearly about the person, which is what Google and AI tools need to answer a who-is question.</li></ul></div>
+<div class="blk"><h2>The Psychology At Work</h2><table class="ptab"><tbody><tr><th scope="row">Epiphany Bridge<small>Russell Brunson</small></th><td>The interview scene lets the reader feel the realisation rather than being told the conclusion.</td></tr><tr><th scope="row">StoryBrand<small>Donald Miller</small></th><td>The reader is the hero. Dana is the guide who has walked the path and now has a plan.</td></tr><tr><th scope="row">Liking<small>Robert Cialdini</small></th><td>Shared experience and small human details (the kelpie, the lasagne) build warmth quickly.</td></tr><tr><th scope="row">Authority<small>Robert Cialdini</small></th><td>A dated timeline and specific counts do the work that adjectives cannot.</td></tr><tr><th scope="row">SUCCESs<small>Chip and Dan Heath</small></th><td>The pull quote is simple, concrete and emotional: the line a reader will repeat.</td></tr><tr><th scope="row">Identity And Dissonance<small>Leon Festinger; Cialdini</small></th><td>The beliefs section lets the right reader recognise herself and the wrong one leave.</td></tr><tr><th scope="row">Structured Data<small>Google Search Central; schema.org</small></th><td>ProfilePage and Person markup tell Google this page is the authoritative page about this person.</td></tr></tbody></table>
+<p class="note">Every principle is explained, with its source, on <a href="../canon/index.html">the research page</a>.</p></div>
+<div class="blk"><h2>Page Structure</h2><ol style="list-style:decimal;padding-left:1.3rem"><li>Hero: the story in 1 line, with the reader&#x27;s situation inside it</li><li>Numbers row: the story&#x27;s proof, before the story</li><li>The turning-point story: 1 moment, told plainly, so the reader feels the realisation</li><li>A short timeline: credibility as dated facts, easy to scan and easy to quote</li><li>What I believe: 3 positions that let the right reader self-select</li><li>Press and credentials as text</li><li>The human details: a few specifics that make a real person</li><li>Next steps: an About page should always send the reader somewhere</li></ol></div>
+<div class="blk"><h2>Search Card</h2><p class="lead" style="font-size:1rem;margin-bottom:1rem">How this page is set up to appear in Google, and what is built into its code.</p>
+<div class="serp" role="img" aria-label="Mock Google result for this sample"><div class="s1"><span class="fav" style="background:#C8102E;color:#FFFFFF">D</span><div><div class="sn">Dana Whitlock</div><div class="su">https://danawhitlock.example › about</div></div></div><div class="st">About Dana Whitlock | Career Coach For Women Returning To Work</div><div class="sd">Dana Whitlock took 6 years out of the workforce, then rebuilt her career in 14 months. She has since coached 380 women back into roles they chose. Read her story.</div></div><p class="note">A mock-up drawn from this sample's real title, description and site name.</p>
+<h3 style="margin-top:1.6rem">Structured Data On This Page</h3><ul><li><b>ProfilePage.</b> Marks this as the page that is about a person, which helps Google and AI tools answer &quot;who is&quot; questions.</li><li><b>Person.</b> States who the founder is and links them to the business. Essential for a personal brand.</li><li><b>BreadcrumbList.</b> Shows where this page sits in the site, so the result displays a tidy path.</li><li>Use the same 1-line bio here, on LinkedIn, Instagram and every podcast listing. Conflicting bios make AI tools hedge.</li><li>Dates created and modified are declared, and the breadcrumb shows where the page sits.</li></ul>
+<h3 style="margin-top:1.6rem">Built Into Every Sample</h3><ul><li>A title that carries the brand name and a description that says who the page is for</li><li>1 clear headline (H1) in the HTML itself, with every word of the page readable without JavaScript</li><li>Canonical address, Open Graph tags and a share image slot, all pointing at 1 version of the address</li><li>Structured data (JSON-LD) that matches the visible text</li><li>A trust footer on every page: About, Contact, Privacy, Terms and Refunds</li><li>Proof written as real text, so Google and AI tools can read and quote it</li><li>Mobile-first layout, tap targets of 48px or more, visible focus states and reduced-motion support</li><li>No image weight above the fold, so the main content can load inside Google&#x27;s 2.5 second target</li></ul>
+<h3 style="margin-top:1.6rem">Left Out On Purpose</h3><ul><li>No llms.txt file: Google says its Search and AI features do not use it</li><li>No FAQ markup chasing a results-page bonus: FAQ rich results stopped appearing on 7 May 2026</li><li>No review stars on your own business: Google excludes self-serving reviews</li><li>No hidden text, keyword stuffing or pages rewritten into chunks &quot;for AI&quot;</li></ul></div>
+<div class="blk"><h2>Borrow This</h2><ul><li>Pick 1 turning-point moment and tell it as a scene with a place, a question and a line of dialogue.</li><li>Put 4 numbers above the story.</li><li>Add a 5-line dated timeline.</li><li>End with 3 doors: free, paid and read.</li></ul></div>
+<div class="blk"><h2>Study The Real Thing</h2><ul><li><b>James Clear.</b> An About page that opens with a plain greeting, stacks specific numbers, then routes readers on to articles, books and a free course.</li></ul><p class="note">Read for structure and messaging. Borrow the technique, never the words, images or layout.</p></div>
+<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof. When your page is live, run <a href="../audit/full-seo-and-ai-search-audit.md">the audit prompt</a> on it.</p>
+<div class="prompt"><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('pt').textContent).then(()=>{this.textContent='Copied'})">Copy Prompt</button><pre id="pt">Build me a about and founder story for my business, modelled on sample 005 in the Authority Builder Design Library.
+
+ABOUT MY BUSINESS
+- Business name and my name: [yours]
+- Who I help and the result they get: [1 line]
+- My main offer and its price: [yours]
+- The 1 action I want a visitor to take on this page: [yours]
+- Real proof I can use (names, results, numbers, press): [paste it here]
+
+STRUCTURE, IN THIS ORDER
+1. Hero: the story in 1 line, with the reader&#x27;s situation inside it
+2. Numbers row: the story&#x27;s proof, before the story
+3. The turning-point story: 1 moment, told plainly, so the reader feels the realisation
+4. A short timeline: credibility as dated facts, easy to scan and easy to quote
+5. What I believe: 3 positions that let the right reader self-select
+6. Press and credentials as text
+7. The human details: a few specifics that make a real person
+8. Next steps: an About page should always send the reader somewhere
+
+DESIGN DIRECTION
+Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
+Fonts: Playfair Display + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
+Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
+
+PERSUASION RULES
+- Russell Brunson, Epiphany Bridge: The interview scene lets the reader feel the realisation rather than being told the conclusion.
+- Donald Miller, StoryBrand: The reader is the hero. Dana is the guide who has walked the path and now has a plan.
+- Robert Cialdini, Liking: Shared experience and small human details (the kelpie, the lasagne) build warmth quickly.
+- Robert Cialdini, Authority: A dated timeline and specific counts do the work that adjectives cannot.
+- Chip and Dan Heath, SUCCESs: The pull quote is simple, concrete and emotional: the line a reader will repeat.
+- Leon Festinger; Cialdini, Identity And Dissonance: The beliefs section lets the right reader recognise herself and the wrong one leave.
+- Google Search Central; schema.org, Structured Data: ProfilePage and Person markup tell Google this page is the authoritative page about this person.
+
+SEARCH-READY RULES
+- 1 clear H1. A title that includes my brand name. A description that says who the page is for.
+- Every word in the HTML itself. Nothing that needs JavaScript to appear.
+- JSON-LD structured data (ProfilePage, Person, BreadcrumbList) that matches the visible text.
+- Canonical tag, Open Graph tags and a share image, all on 1 version of my address.
+- A footer linking About, Contact, Privacy, Terms and Refunds.
+- No llms.txt, no FAQ rich-result markup, no review stars on my own business, no hidden text.
+- No images above the fold heavier than they need to be. Aim for the main content to load in under 2.5 seconds.
+
+HONESTY RULES
+- Use only the proof I gave you. Do not invent testimonials, client names, numbers or press.
+- Where I have not given you something, leave a clearly marked placeholder.
+- No fake countdown timers and no invented scarcity. If I make an income or results claim, add a line that results are not typical.
+
+OUTPUT
+1 self-contained HTML file with inline CSS. Australian spelling. No em dashes.</pre></div></div>
+</div>
+<aside class="side blk"><div class="panel"><h2>At A Glance</h2><dl>
+<dt>Best for</dt><dd>Coach, Creator, Consultant</dd><dt>Group</dt><dd>Home Bases</dd>
+<dt>Style direction</dt><dd>Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.</dd><dt>Fonts</dt><dd>Playfair Display + Libre Franklin</dd>
+<dt>Palette</dt><dd><div class="sw"><span style="background:#FFFFFF" title="bg #FFFFFF"></span><span style="background:#F5F2EC" title="bg2 #F5F2EC"></span><span style="background:#FFFFFF" title="card #FFFFFF"></span><span style="background:#111111" title="ink #111111"></span><span style="background:#C8102E" title="accent #C8102E"></span><span style="background:#111111" title="accent2 #111111"></span><span style="background:#111111" title="dark #111111"></span></div></dd><dt>Sample brand</dt><dd>Dana Whitlock (fictional)</dd></dl></div>
+<div class="panel"><h2>Files In This Entry</h2><dl><dt>sample.html</dt><dd>The live page. 1 file, no build step.</dd><dt>notes.md</dt><dd>These notes as plain text, ready to hand to an AI assistant.</dd><dt>preview.jpg</dt><dd>A screenshot of the sample.</dd></dl></div></aside>
+</div></div><div style="height:clamp(56px,8vw,104px)"></div></main>
+<footer class="footer" role="contentinfo"><div class="wrap">
+<div class="mark"><i aria-hidden="true">AB</i>Authority Builder™ · Yasmin Cronin</div>
+<p class="tagline">Built for business owners ready to own their expertise.</p>
+<details class="legal"><summary>Legal disclaimer and terms of use</summary><p><b>Educational and ideation purposes only.</b> The samples, notes and prompts in this library are starting points designed to help you think through your website design. They are not finished pages and do not constitute marketing, legal, financial, business, medical or professional advice of any kind.</p><p><b>Your responsibility to review.</b> Everything here requires your independent review, editing, fact-checking and professional judgement before use in any public-facing context. You are solely responsible for the accuracy, legality, compliance and suitability of anything you choose to publish, distribute, or represent as your own.</p><p><b>No guarantees.</b> Results vary based on your market, your offer, your execution and many other factors outside the control of this library. No income, client acquisition, search ranking, authority-building or business outcome is guaranteed, promised or implied.</p><p><b>Fictional samples.</b> Every brand, person, testimonial, price and result shown in a sample page is invented for teaching. Any resemblance to a real business or person is coincidental. Replace all sample proof with your own real proof. Never publish invented testimonials or numbers.</p><p><b>AI-assisted content.</b> The samples and notes were produced with generative AI and reviewed against the sources listed on the research page. AI can be inaccurate or out of date. Search rules change often, so check Google&#x27;s current documentation before relying on any rule. Authority Builder™ and Yasmin Cronin accept no liability for any use or misuse of this library.</p><p><b>Intellectual property.</b> The Authority Builder™ name, brand, library structure, teaching notes and prompts are proprietary. Members may adapt the sample pages for their own business websites. You may not resell, redistribute or republish the library itself without express written permission from Yasmin Cronin. The gallery format is adapted from robonuggets-design-inspo by RoboNuggets (CC BY 4.0).</p><p><b>Community membership.</b> Continued access to Authority Builder™ tools and libraries is conditional on active membership of the AI for Coaches and Creators community.</p><p><b>No warranty.</b> This library is provided &quot;as is&quot; without warranty of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose, or non-infringement. By using it you agree these terms govern your use.</p></details>
+<p class="copy">© <strong>Authority Builder™</strong> · All rights reserved. Trade marks and brand assets are the property of their respective owners.<br>
+For more AI tools, join <a href="https://www.skool.com/authority-builder-9958" target="_blank" rel="noopener noreferrer">AI for Coaches and Creators</a>. ·
+<a href="../canon/index.html">Research and sources</a> · <a href="../audit/full-seo-and-ai-search-audit.md">The audit prompt</a></p>
+</div></footer>
+</body>
+</html>
