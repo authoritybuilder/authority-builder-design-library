@@ -153,7 +153,8 @@ ART = {
 def art_for(n):
     scene, mirror, tone, alt = ART[n]
     crops = [(f"{100 - cx if mirror else cx}% {cy}%", z) for cx, cy, z in CROPS[scene]]
-    return dict(scene=scene, tone=tone, alt=alt, crops=crops)
+    cropn = [((100 - cx if mirror else cx) / 100, cy / 100, min(z, 1.5)) for cx, cy, z in CROPS[scene]]   # the same spots as numbers, for photo placeholders
+    return dict(scene=scene, tone=tone, alt=alt, crops=crops, cropn=cropn)
 
 
 def S(P, name, nth=0):
@@ -677,6 +678,7 @@ def u27(P):
 def u28(P):
     tel = "tel:+61855500163"
     P["cta"] = ("Call (08) 5550 0163", tel)
+    S(P, "hero_center")["cta"] = ("Send A Message", "#form")   # a contact page's first screen should offer the form, not only describe it
     c = S(P, "contact")
     c["form"]["fields"] = [("Your name", "text", "First and last name"), ("Email or phone", "text", "Whichever you prefer"),
                            ("What is happening?", "area", "A few lines is plenty")]

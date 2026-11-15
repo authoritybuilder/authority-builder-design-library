@@ -56,7 +56,7 @@ def form(f, cls="card formcard"):
             ctl = f'<select id="{fid}" name="{nm}"{req}>' + "".join(f"<option>{e(o)}</option>" for o in hint) + "</select>"
         else:
             auto = AUTO.get(typ) or ("name" if nm == "name" else "on")
-            ctl = f'<input id="{fid}" name="{nm}" type="{typ}" placeholder="{e(hint)}" autocomplete="{auto}"{req}>'
+            ctl = f'<input id="{fid}" name="{nm}" type="{typ}" placeholder="{e(hint)}" autocomplete="{auto}" enterkeyhint="next"{req}>'
         fields += f'<div class="field"><label for="{fid}">{e(label)}</label>{ctl}</div>'
     title = f'<h2 class="ft-t">{h(f["title"])}</h2>' if f.get("title") else ""
     text = f'<p class="fine" style="text-align:left;margin-top:.4rem">{h(f["text"])}</p>' if f.get("text") else ""
@@ -91,11 +91,13 @@ def hero_split(d, P):
     v = d.get("visual") or {}
     flo = f'<div class="card float"><b>{e(fl[0])}</b>{e(fl[1])}</div>' if fl else ""
     flo += f'<div class="card float f2">{art.icon(f2[0])}<div><b>{e(f2[1])}</b><span>{e(f2[2])}</span></div></div>' if f2 else ""
-    card = vis(v) if v.get("kind") in CARDS else ""
-    inner = (f'<div class="hs-g"><div class="hs-c">{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
+    card = vis(v, main=True) if v else ""
+    cls = "" if not card else " has-card" if v.get("kind") in CARDS else " has-pic"
+    person = bool(v) and v.get("kind", "person") == "person"
+    inner = (f'<div class="hs-g"><div class="hs-c">{eyebrow(d.get("eyebrow"), who=not person)}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
              f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{ul(d.get("bullets"))}{acts(d)}{under(d)}</div>'
-             f'<div class="hs-v{" has-card" if card else ""}" data-in style="--i:2">{card}{flo}</div></div>')
-    return sec("hero hsplit " + tone(), d, inner, pre=brief(v) + backdrop(True))
+             f'<div class="hs-v{cls}" data-in style="--i:2">{card}{flo}</div></div>')
+    return sec("hero hsplit " + tone(), d, inner, pre=backdrop(True))
 
 
 @S("hero_center", """
@@ -108,7 +110,7 @@ def hero_split(d, P):
 def hero_center(d, P):
     chips = ('<ul class="chips">' + "".join(f"<li>{e(c)}</li>" for c in d["chips"]) + "</ul>") if d.get("chips") else ""
     below = f'<div class="hc-u" data-in style="--i:4">{vis(d["under"])}</div>' if d.get("under") else ""
-    inner = (f'{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1><p class="lead" data-in style="--i:2">{h(d["sub"])}</p>'
+    inner = (f'{eyebrow(d.get("eyebrow"), who=True)}<h1 data-in style="--i:1">{h(d["h"])}</h1><p class="lead" data-in style="--i:2">{h(d["sub"])}</p>'
              f'{chips}{acts(d)}{under(d)}{below}')
     return sec("hero hcenter " + tone(), d, inner, pre=backdrop(True))
 
@@ -131,11 +133,12 @@ def hero_form(d, P):
     meta = ""
     if d.get("meta"):
         meta = '<dl class="meta">' + "".join(f"<div><dt>{e(a)}</dt><dd>{e(b)}</dd></div>" for a, b in d["meta"]) + "</dl>"
-    inner = (f'<div class="hf-g"><div>{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
+    inner = (f'<div class="hf-g"><div>{eyebrow(d.get("eyebrow"), who=True)}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
              f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{ul(d.get("bullets"))}{meta}{under(d)}</div>'
              f'<div class="hf-v" id="{d.get("fid", "signup")}" data-in style="--i:3">{vis(d.get("visual"))}{form(d["form"]) if d.get("form") else ""}'
              f'{reassure(d.get("after"), "check")}</div></div>')
-    return sec("hero hform " + tone(), d, inner, pre=backdrop(True))
+    long = " long" if len((d.get("form") or {}).get("fields", [])) >= 3 else ""
+    return sec("hero hform" + long + " " + tone(), d, inner, pre=backdrop(True))
 
 
 @S("hero_stage", """
@@ -152,9 +155,12 @@ def hero_stage(d, P):
     stats = ""
     if d.get("stats"):
         stats = '<div class="hstats">' + "".join(f"<div><b>{e(n)}</b><span>{e(l)}</span></div>" for n, l in d["stats"]) + "</div>"
-    inner = (f'<div class="hst-g"><div>{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
-             f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{acts(d)}{under(d)}</div></div>{stats}')
-    return sec("hero hstage " + tone(), d, inner, pre=brief(d.get("visual")) + backdrop(True))
+    v = d.get("visual") or {}
+    person = bool(v) and v.get("kind", "person") == "person"
+    pic = f'<div class="hst-v" data-in style="--i:2">{vis(v, main=True)}</div>' if v else ""
+    inner = (f'<div class="hst-g"><div>{eyebrow(d.get("eyebrow"), who=not person)}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
+             f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{acts(d)}{under(d)}</div>{pic}</div>{stats}')
+    return sec("hero hstage " + tone(), d, inner, pre=backdrop(True))
 
 
 @S("hero_article", """
@@ -170,7 +176,7 @@ def hero_stage(d, P):
 """)
 def hero_article(d, P):
     upd = f'<span>Updated <time datetime="{e(d["updated_iso"])}">{e(d["updated"])}</time></span>' if d.get("updated") else ""
-    by = (f'<div class="byline">{art.avatar(d["author"])}<span>By <a class="link" href="about.html"><b>{e(d["author"])}</b></a>, {e(d["role"])}</span>'
+    by = (f'<div class="byline">{kit.face(d["author"])}<span>By <a class="link" href="about.html"><b>{e(d["author"])}</b></a>, {e(d["role"])}</span>'
           f'<span>Published <time datetime="{e(d["iso"])}">{e(d["date"])}</time></span>{upd}<span>{e(d["read"])}</span></div>')
     short = ""
     if d.get("short"):
@@ -178,7 +184,7 @@ def hero_article(d, P):
     toc = ""
     if d.get("toc"):
         toc = '<nav class="toc" aria-label="On this page"><span>On this page:</span>' + "".join(f'<a class="link" href="#{i}">{e(t)}</a>' for t, i in d["toc"]) + "</nav>"
-    v = brief(d.get("visual")) + detail("16/7", whole=True)
+    v = vis(dict(d.get("visual") or {}, kind="scene", ar="16/7"))
     inner = (f'{eyebrow(d.get("kicker"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
              f'<p class="lead" data-in style="--i:2">{h(d["standfirst"])}</p>{by}{short}{toc}{v}')
     return sec("hart", d, inner)
@@ -221,9 +227,9 @@ def bento(d, P):
                      f'{crowd(t.get("proof"), 3).replace(" data-in", "")}<p class="fine">{h(t.get("note", ""))}</p>')
         elif k == "quote":
             name = t["by"].split(",")[0]
-            body += f'<p class="q">{h(t["q"])}</p><p class="by fine">{art.avatar(name)}<span>{e(t["by"])}</span></p>'
+            body += f'<p class="q">{h(t["q"])}</p><p class="by fine">{kit.face(name)}<span>{e(t["by"])}</span></p>'
         elif k == "ph":
-            body += vis(t["visual"])
+            body += vis(t["visual"], main=True)
         else:
             body += f'<h2 style="font-size:1.5rem">{h(t["h"])}</h2><p>{h(t["text"])}</p>{btn(t.get("cta"), "ghost")}'
         out += f'<div class="{cls}" data-in style="--i:{i}">{body}</div>'
@@ -248,7 +254,7 @@ def linkbio(d, P):
     links = "".join(
         f'<a href="{e(hr)}"><span>{e(a)}<small>{e(b)}</small></span>{("<i>" + e(t) + "</i>") if t else ""}</a>' for a, b, t, hr in d["links"])
     soc = "".join(f'<a href="{kit.connect(s)}">{e(s)}</a>' for s in d["socials"])
-    inner = (f'{vis({"kind": "person", "label": d["photo"], "ar": "1/1"})}<h1>{h(d["h"])}</h1><p class="lead">{h(d["sub"])}</p>{crowd(d.get("proof"), 3)}'
+    inner = (f'{vis({"kind": "person", "label": d["photo"], "ar": "1/1"}, main=True)}<h1>{h(d["h"])}</h1><p class="lead">{h(d["sub"])}</p>{crowd(d.get("proof"), 3)}'
              f'<div class="card lb-f">{eyebrow(f["eyebrow"])}<h2>{h(f["h"])}</h2><p>{h(f["text"])}</p>{btn(f["cta"])}{reassure(f.get("reassure"))}</div>'
              f'<nav class="lb-l" aria-label="Main links">{links}</nav><nav class="lb-s" aria-label="Social profiles">{soc}</nav>')
     return sec("lb", d, inner)
@@ -286,7 +292,7 @@ def stats(d, P):
 def figure(q, cls="card"):
     res = f'<span class="res">{e(q["result"])}</span>' if q.get("result") else ""
     return (f'<figure class="{cls}">{res}<blockquote><p>{h(q["q"])}</p></blockquote>'
-            f'<figcaption>{art.avatar(q["name"])}<span><b>{e(q["name"])}</b>{e(q["role"])}</span></figcaption></figure>')
+            f'<figcaption>{kit.face(q["name"])}<span><b>{e(q["name"])}</b>{e(q["role"])}</span></figcaption></figure>')
 
 
 @S("quotes", """
@@ -408,7 +414,10 @@ def steps(d, P):
 @media(max-width:860px){.sp-g{grid-template-columns:1fr}.sp-v{max-width:420px}.split.flip .sp-v{order:0}}
 """)
 def split(d, P):
-    inner = (f'<div class="sp-g"><div class="sp-v">{vis(d.get("visual"))}</div><div>{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>'
+    v = d.get("visual") or {}
+    b = P["brand"]
+    name = f'<p class="signed"><b>{e(b["person"])}</b>{e(b["role"])}</p>' if v.get("kind", "person") == "person" and b.get("role") and not v.get("who") else ""
+    inner = (f'<div class="sp-g"><div class="sp-v">{vis(d.get("visual"))}{name}</div><div>{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>'
              f'{paras(d.get("paras"))}{ul(d.get("bullets"))}{acts(d).replace(" data-in", "")}{reassure(d.get("reassure"))}</div></div>')
     return sec("split", d, inner, "flip" if d.get("flip") else "")
 
@@ -499,7 +508,7 @@ def pricing(d, P):
     q = d.get("quote")
     qh = ""
     if q:
-        qh = (f'<figure class="card pr-q">{art.avatar(q["name"])}<blockquote><p>{h(q["q"])}</p></blockquote>'
+        qh = (f'<figure class="card pr-q">{kit.face(q["name"])}<blockquote><p>{h(q["q"])}</p></blockquote>'
               f'<figcaption><b>{e(q["name"])}</b> · {e(q["role"])}</figcaption></figure>')
     cols = len(d["tiers"])
     if cols == 1:
@@ -544,7 +553,9 @@ def faq(d, P):
 def cta(d, P):
     d.setdefault("tone", "dark")
     lead = f'<p class="lead">{h(d["text"])}</p>' if d.get("text") else ""
-    inner = f'{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>{lead}{acts(d).replace(" data-in", "")}{reassure(d.get("note"), d.get("icon", "shield"))}'
+    # the last decision on the page is made with a person in view: their face, name and role sit under the button
+    inner = (f'{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>{lead}{acts(d).replace(" data-in", "")}{reassure(d.get("note"), d.get("icon", "shield"))}'
+             f'{kit.host()}')
     if d["tone"] == "dark":
         return sec("cta bleed t-light deep", d, inner, pre=backdrop())
     return sec("cta", d, inner)
@@ -645,7 +656,7 @@ def article(d, P):
                 f'<li><a href="{e(u)}" rel="noopener">{e(t)}</a>. {e(pub)}</li>' for t, u, pub in b[1]) + "</ol></section>")
     a = d.get("author")
     if a:
-        out += (f'<aside class="card auth">{art.avatar(a["name"])}<div><h2>About {e(a["name"])}</h2>'
+        out += (f'<aside class="card auth">{kit.face(a["name"])}<div><h2>About {e(a["name"])}</h2>'
                 f'<p>{h(a["bio"])}</p><p><a class="link" href="about.html">{e(a["link"])}</a></p></div></aside>')
     return sec("art", d, out)
 
@@ -727,7 +738,7 @@ def contact(d, P):
         call = f'<a class="ct-call" href="{e(c[1])}">{art.icon("phone")}{e(c[0])}</a><p class="fine">{h(c[2])}</p>'
     mp = vis({"kind": "sketch", "label": d["map"], "ar": "16/10"}) if d.get("map") else ""
     left = form(d["form"]) if d.get("form") else f'<div>{paras(d.get("paras"))}{ul(d.get("bullets"))}{acts(d).replace(" data-in", "")}</div>'
-    inner = f'<div class="ct-g">{left}<div>{call}<dl class="ct-d">{det}{hrs}</dl>{mp}</div></div>'
+    inner = f'<div class="ct-g">{left}<div>{kit.host()}{call}<dl class="ct-d">{det}{hrs}</dl>{mp}</div></div>'
     return sec("contact", d, sh(d) + inner)
 
 
@@ -798,7 +809,7 @@ def quiz(d, P):
 def thanks(d, P):
     it = "".join(f'<li class="card" style="padding:1.2rem 1.4rem"><div><h2>{h(a)}</h2><p>{h(b)}</p></div></li>' for a, b in d["steps"])
     steps = f"<ol>{it}</ol>" if it else ""
-    return sec("thx", d, f'{eyebrow(d.get("eyebrow"))}<h1>{h(d["h"])}</h1><p class="lead">{h(d["text"])}</p>{steps}{acts(d).replace(" data-in", "")}')
+    return sec("thx", d, f'{eyebrow(d.get("eyebrow"))}<h1>{h(d["h"])}</h1><p class="lead">{h(d["text"])}</p>{kit.host()}{steps}{acts(d).replace(" data-in", "")}')
 
 
 @S("bios", """

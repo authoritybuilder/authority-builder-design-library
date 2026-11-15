@@ -10,16 +10,25 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 - [ ] Replace `wrenandfield.example` with your real address. It appears 97 times across the pages, `sitemap.xml` and `robots.txt`.
 - [ ] Replace the contact details: hello@wrenandfield.example, Melbourne, Victoria and the placeholder ABN 00 000 000 000.
 
-## 2. Pictures
+## 2. Your Photos
 
-- [ ] The painting in `site/images/` can stay. To use your own photo, save it as `hero-1920.webp` (1920px wide) and `hero-960.webp` (960px wide) in the same folder. Nothing in the code needs to change.
+Every picture is a file in `site/images/`. To use your own, save it under the same file name, at about the size shown. Nothing in the code needs to change.
+The files that ship are painted stand-ins, each labelled with its file name. The pre-launch check tells you which are still in place.
+
+| File | Size | Who Or What | On | The Photo To Take |
+|---|---|---|---|---|
+| `hero-1920.webp`, `hero-960.webp` | 1920 × 1200, 960 × 600 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
+| `you-1.jpg` | 900 × 1125 | You | index.html, about.html | Imogen mid-conversation, natural light, looking at the client, not the camera |
+| `face-1.jpg` | 200 × 200 | Priya N. | index.html | A square headshot, used with their permission |
+| `face-2.jpg` | 200 × 200 | Tom A. | index.html | A square headshot, used with their permission |
+| `face-3.jpg` | 200 × 200 | Kirra W. | index.html | A square headshot, used with their permission |
+| `you-2.jpg` | 900 × 1125 | You | index.html | a candid, working shot. Notebook open, coffee, real desk |
+| `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, book.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
+
+- [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
+- [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.
+- [ ] After swapping a photo, read its `alt` text in the HTML and make it describe your picture.
 - [ ] Replace `icon-192.png`, `icon-512.png` and `share.jpg` with your own mark and share image, keeping the file names.
-- [ ] Testimonials show initials. Add client photos only with their permission.
-
-Photo briefs for this page:
-
-- Imogen mid-conversation, natural light, looking at the client, not the camera
-- a candid, working shot. Notebook open, coffee, real desk
 
 ## 3. Connect Your Accounts (4 Links)
 

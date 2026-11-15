@@ -2,7 +2,7 @@
 
 28 complete, production-ready websites for coaches, creators, consultants and business owners.
 
-Each one is a real small site you can deploy today: a painted hero, working forms, a thank-you page, trust and policy pages, a launch checklist and a search audit already applied to the code. Each also comes with notes that show why it works.
+Each one is a real small site you can deploy today: a painted hero, named photo slots for you and your clients, working forms, a thank-you page, trust and policy pages, a launch checklist and a search audit already applied to the code. Each also comes with notes that show why it works.
 
 ![The library gallery](preview.jpg)
 
@@ -30,8 +30,9 @@ Each one is a real small site you can deploy today: a painted hero, working form
 
 1. **Pick the site.** Open the gallery, filter by who you are and by style, and scroll the live sample on your phone.
 2. **Copy its `site` folder** into a new repository or straight into Netlify. That folder is the whole website. It needs nothing else from this library.
-3. **Work through `LAUNCH.md`** in the entry folder. It lists exactly what to replace and connect for that site: the brand and copy, the address, the pictures, the forms, any links that need your own accounts, the policies and the structured data.
-4. **Run the pre-launch check** on your copy. It lists anything from the demo that is still in your files, with the file and line.
+3. **Add your photos.** Every picture is a file in `site/images/`. Save your own under the same file name and it appears everywhere that photo is used. `LAUNCH.md` lists each file, its size and the shot to take.
+4. **Work through the rest of `LAUNCH.md`.** It lists exactly what to replace and connect for that site: the brand and copy, the address, the forms, any links that need your own accounts, the policies and the structured data.
+5. **Run the pre-launch check** on your copy. It lists anything from the demo that is still in your files, including any placeholder photo you have not replaced.
 
 ```bash
 python3 src/prelaunch.py path/to/your/site
@@ -58,7 +59,7 @@ Each entry folder holds:
   - `book.html`, `enrol.html` or `reserve.html`: where the main button leads, on sites that take bookings, enrolments or reservations. It is a short request form that works with no calendar or checkout tool.
   - `thank-you.html`: where every form lands. `404.html`: what a wrong address shows.
   - `privacy.html`, `terms.html`, `refunds.html`: policy pages, marked as template wording to replace.
-  - `images/`: the painting, in a phone size and a desktop size.
+  - `images/`: the painting, and a named photo file for every picture of a person or place: `you-1.jpg`, `you-headshot.jpg`, `face-1.jpg`, `scene-1.jpg` and so on. They ship as painted stand-ins.
   - `icon-192.png`, `icon-512.png`, `share.jpg`: the site icon and the share image.
   - `robots.txt`, `sitemap.xml`, `netlify.toml`: crawler rules, the page list, security headers and caching.
   - `event.ics`: a real calendar file, on sites with a dated event.
@@ -73,7 +74,8 @@ Each entry folder holds:
 - **Forms that send.** Every form is a real HTML form with named fields, required fields marked, a hidden spam trap and a thank-you page. They follow Netlify's pattern for plain HTML forms, so on Netlify they collect entries once form detection is on. On another host, point each form's `action` at your form or email tool.
 - **Links only you can finish are listed, not hidden.** A checkout, a podcast app or a social profile needs your own account. Those links point at `example.com/connect/…` and are counted in `LAUNCH.md`, so none is forgotten.
 - **Ready to be found.** The sites carry no `noindex`. The library keeps its fictional brands out of search with host settings in the root `netlify.toml`, so a site you copy out is ready for Google the moment it has your address on it.
-- **Measured, not assumed.** Every site scores 99 or 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures.
+- **A person on every page.** Your face has a place on the first screen, beside the About story, under the closing button, and on the contact, booking and thank-you pages. Client faces sit beside their words.
+- **Measured, not assumed.** Every site scores 97 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures. The same run checks that a button is on the first screen of a phone and that no form field is small enough to make a phone zoom in.
 - **Readable over the painting.** A contrast checker cannot read text over a picture, so `src/legible.mjs` measures every line of text against the pixels behind it, on a desktop and a phone. Every line clears WCAG AA.
 
 What a site cannot contain is you. The demo brand, the sample proof and the template policies are yours to replace, and each site says so in a visible note in its footer until you do.
@@ -125,7 +127,7 @@ What a site cannot contain is you. The demo brand, the sample proof and the temp
 ## Rules Every Sample Follows
 
 - **Fictional brands only.** Every name, testimonial, price and result is invented for teaching, and each site says so in its footer. Replace all of it with your own real proof. Never publish invented testimonials or numbers.
-- **Original pictures.** Every painting was made for this library by `src/paint.py`. No stock photos and no pictures of real people. Testimonials show initials until you add client photos with permission.
+- **Original pictures.** Every painting was made for this library by `src/paint.py`, and every photo placeholder by `src/people.py`. No stock photos and no pictures of real people. A placeholder is a back-lit figure with no face, labelled with its file name, so it can never be mistaken for a real client.
 - **Honest persuasion.** No fake countdown timers and no invented scarcity. Any limit shown is the kind that could be real: seats, dates, a calendar.
 - **Search-ready code.** 1 H1, a real title and description, canonical and Open Graph tags, JSON-LD that matches the visible text, and every word in the HTML itself.
 - **Real trust pages everywhere.** About, Contact, Privacy, Terms and Refunds exist and are linked from every footer, even on pages with no menu. The policy wording is a starting template: replace it and have a lawyer check it.
@@ -151,6 +153,7 @@ The library is generated from page definitions in `src/pages`. The build itself 
 python3 src/build.py     # writes every site, launch checklist and notes page, the gallery and the research page, and runs the audit
 python3 src/check.py     # checks tags, headings, structured data, links, anchors, labels and dashes on every page
 python3 src/paint.py     # optional: repaints the pictures (needs numpy, scipy and OpenCV)
+python3 src/people.py    # optional: repaints the photo placeholders listed in src/data/photos.json (same needs, plus Pillow)
 python3 src/shots.py     # optional: regenerates previews, site icons and share images (needs Google Chrome and Pillow)
 node src/speed.mjs       # optional: runs Lighthouse on every site (needs Node and the lighthouse package)
 node src/legible.mjs     # optional: measures text contrast over the paintings (same needs as speed.mjs)
@@ -164,7 +167,8 @@ How the source is organised:
 - `src/upgrades.py`: the research applied to each page type, with the source for each change, and which painting each site uses.
 - `src/sections.py`, `src/kit.py`, `src/polish.py`, `src/themes.py`: the section components, shared styles and the 10 style directions.
 - `src/paint.py`: the paintings. Each scene is composed from shapes and noise, then painted with brush strokes.
-- `src/art.py`: the icons, small sketches and initials.
+- `src/people.py`: the photo placeholders, painted over a soft-focus piece of each site's own painting.
+- `src/art.py`: the icons and small sketches.
 - `src/trust.py`: the About, Contact, action, thank-you, not-found and policy pages, and the calendar files.
 - `src/launch.py`: the launch checklist for each site. `src/prelaunch.py`: the check you run on your own copy.
 - `src/audit.py`: the SEO and AI search audit that runs on every sample.

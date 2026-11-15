@@ -85,14 +85,14 @@ A case study told as a story with a table in the middle: the situation, the insi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “How A 3-Person Physio Clinic Filled Its Books In 90 Days”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 771 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 776 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 3 image tags, all with alt text, width and height. They share 1 painting in 2 sizes: 59KB for phones and 204KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen. |
-| Real photographs | **Your turn** | The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md. |
+| Images are sized, described and sent in a phone size | **Good** | 7 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: 59KB for phones and 204KB for desktops. 5 photo files, the largest 129KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 4.9 and the whole page at grade 6.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 4.9 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -100,12 +100,13 @@ A case study told as a story with a table in the middle: the situation, the insi
 |---|---|---|
 | Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.1 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 94ms. |
-| Lighthouse scores | **Good** | Performance 99, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 33ms. |
+| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
+| A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Book A Clinic Review”) is 5531px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
-| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 6 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 7.6 to 1 for body text and 6.4 to 1 for large text. On a phone: 6.8 to 1 for body text and 7.6 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 47KB before compression, plus the web fonts and 1 painting. |
+| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 8 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.8 to 1 for body text and 6.6 to 1 for large text. On a phone: 7.3 to 1 for body text and 8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
+| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data

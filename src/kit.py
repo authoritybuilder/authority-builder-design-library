@@ -30,7 +30,10 @@ def h(s):
     return s.replace("|", "<br>")
 
 
-def eyebrow(t):
+def eyebrow(t, who=False):
+    """The small line above a headline. With who=True it carries the owner's face, so a real person is on the first screen."""
+    if t and who and CTX.get("brand"):
+        return f'<p class="eyebrow who">{face(CTX["brand"]["person"])}<span>{e(t)}</span></p>'
     return f'<p class="eyebrow">{e(t)}</p>' if t else ""
 
 
@@ -90,6 +93,48 @@ def detail(ar="4/5", whole=False):
     return (f'<div class="ph art" style="--ar:{ar};--pos:{pos};--zoom:{zoom}"><img {SRCSET} alt="" loading="lazy" decoding="async"></div>')
 
 
+SIZES = {"you": (900, 1125), "guest": (900, 1125), "me": (240, 240), "face": (200, 200), "scene": (1200, 900), "video": (1280, 720)}
+
+
+def slot(kind, key, brief="", who=""):
+    """Every photograph on a site is a named file in its images folder, so the owner swaps a photo by saving their own under the
+    same name. This hands out the file names and remembers where each is used, for the launch checklist."""
+    book = CTX.setdefault("photos", {})
+    if (kind, key) not in book:
+        n = sum(1 for kk, _ in book if kk == kind) + 1
+        w, h = SIZES[kind]
+        rec = dict(file="you-headshot.jpg" if kind == "me" else f"{kind}-{n}.jpg", kind=kind, w=w, h=h, brief=brief, who=who, where=[])
+        if kind in ("scene", "video"):
+            crops = CTX["art"]["cropn"]
+            rec["crop"] = list(crops[(n - 1) % len(crops)])
+        book[(kind, key)] = rec
+    rec = book[(kind, key)]
+    rec["brief"] = rec["brief"] or brief
+    if CTX.get("file", "index.html") not in rec["where"]:
+        rec["where"].append(CTX.get("file", "index.html"))
+    return rec
+
+
+def photo(kind, key, brief="", ar="4/5", who="", alt="", cls=""):
+    p = slot(kind, key, brief, who)
+    return (f'<div class="{("ph photo " + cls).strip()}" style="--ar:{ar}"><img src="images/{p["file"]}" width="{p["w"]}" height="{p["h"]}" alt="{e(alt)}" '
+            f'loading="lazy" decoding="async"></div>')
+
+
+def face(name):
+    """A small round photo. The owner's own face is 1 file used everywhere; every other person gets a file of their own."""
+    p = slot("me", "me", "Your headshot, cropped square. It appears small wherever your name does") if name == CTX.get("person") else slot("face", name, who=name)
+    return f'<span class="av"><img src="images/{p["file"]}" width="{p["w"]}" height="{p["h"]}" alt="" loading="lazy" decoding="async"></span>'
+
+
+def host(line=""):
+    """The person behind the page, shown where a visitor decides: their face, their name and what they do."""
+    b = CTX.get("brand")
+    if not b:
+        return ""
+    return f'<p class="host">{face(b["person"])}<span><b>{e(b["person"])}</b>{e(line or b["role"])}</span></p>'
+
+
 def connect(what):
     """A link that can only be finished with the owner's own account: a checkout, a profile, a podcast app.
     It points at example.com so it never breaks, and every one is listed in the site's launch checklist."""
@@ -100,7 +145,7 @@ def crowd(text, n=4, i=4):
     """Proof beside the button: a stack of client faces and 1 line of evidence."""
     if not text:
         return ""
-    avs = "".join(art.avatar(x) for x in CTX.get("faces", [])[:n])
+    avs = "".join(face(x) for x in CTX.get("faces", [])[:n])
     stack = f'<span class="avs" aria-hidden="true">{avs}</span>' if avs else ""
     return f'<div class="crowd" data-in style="--i:{i}">{stack}<p>{h(text)}</p></div>'
 
@@ -114,9 +159,9 @@ def _brief(raw):
     return re.sub(r"^(Photo|Image|Video) brief:\s*", "", raw)
 
 
-def vis(v):
-    """Pictures. A person or a place is a crop of the page's painting, with the brief for the real photograph in a comment beside it.
-    Small product and map thumbnails stay as line illustrations."""
+def vis(v, main=False):
+    """Pictures. A person, a place or a video still is a photo file in the images folder, with the brief for the real photograph
+    in a comment beside it. Small product and map thumbnails stay as line illustrations."""
     if not v:
         return ""
     k = v.get("kind", "person")
@@ -127,13 +172,18 @@ def vis(v):
     if raw and k in ("person", "scene", "video", "lesson") and "briefs" in CTX:
         CTX["briefs"].append(_brief(raw))
     who = v.get("who") or CTX.get("person") or "Guest"
-    if k in ("person", "scene"):
-        return note + detail(ar)
+    said = re.split(r"[.:]", _brief(raw))[0].strip()
+    if k == "person":
+        if v.get("who") and v["who"] != CTX.get("person"):
+            return note + photo("guest", v["who"], _brief(raw), ar, who=v["who"], alt=v["who"])
+        return note + photo("you", "main" if main else raw, _brief(raw), ar, alt=CTX.get("person", ""))
+    if k == "scene":
+        return note + photo("scene", raw, _brief(raw), ar, alt=said[:1].upper() + said[1:], cls="wide")
     if k == "sketch":
         return (f'{note}<div class="ph scene" style="--ar:{ar}" role="img" aria-label="Illustration: {e(_brief(raw))}">{art.scene(raw, ar)}</div>')
     if k == "video":
         cap = f'<span class="cap">{e(v["cap"])}</span>' if v.get("cap") else ""
-        return note + detail("16/9").replace("</div>", f'<i class="play" aria-hidden="true"></i>{cap}</div>').replace('class="ph art"', 'class="ph art vid"')
+        return note + photo("video", raw, _brief(raw), "16/9", cls="wide vid").replace("</div>", f'<i class="play" aria-hidden="true"></i>{cap}</div>')
     if k == "book":
         return (f'<div class="bookwrap"><div class="book" role="img" aria-label="Book cover: {e(v["title"])}">'
                 f'<small>{e(v.get("kicker", ""))}</small><strong>{h(v["title"])}</strong><em>{e(v.get("author", ""))}</em></div></div>')
@@ -142,12 +192,12 @@ def vis(v):
                 f'<small>{e(v.get("kicker", "Free guide"))}</small><strong>{h(v["title"])}</strong><em>{e(v.get("author", ""))}</em></div></div>')
     if k == "email":
         lines = "".join(f"<p>{h(x)}</p>" for x in v["lines"])
-        return (f'<div class="card mk mk-email" role="img" aria-label="Preview of a sample email"><div class="mk-top">{art.avatar(who)}'
+        return (f'<div class="card mk mk-email" role="img" aria-label="Preview of a sample email"><div class="mk-top">{face(who)}'
                 f'<div><b>{e(v["sender"])}</b><span>{e(v["when"])}</span></div><i>{e(v.get("tag", "Inbox"))}</i></div>'
                 f'<h3>{h(v["subject"])}</h3>{lines}<div class="mk-fade" aria-hidden="true"></div></div>')
     if k == "lesson":
         items = "".join(f'<li class="{c}"><i aria-hidden="true"></i><span>{e(t)}</span><small>{e(m)}</small></li>' for c, t, m in v["items"])
-        poster = detail("16/9").replace("</div>", f'<i class="play" aria-hidden="true"></i><span class="cap">{e(v["cap"])}</span></div>').replace('class="ph art"', 'class="ph art vid"')
+        poster = photo("video", raw, _brief(raw), "16/9", cls="wide vid").replace("</div>", f'<i class="play" aria-hidden="true"></i><span class="cap">{e(v["cap"])}</span></div>')
         return f'{note}<div class="card mk mk-lesson">{poster}<ul>{items}</ul></div>'
     return ""
 
@@ -187,6 +237,7 @@ ul{list-style:none}
 .proof{margin-top:1.6rem;font-size:.92rem;color:var(--ink2)}.proof b{color:var(--ink)}
 .ph{position:relative;aspect-ratio:var(--ar,4/5);border-radius:var(--phr);background:radial-gradient(90% 70% at 30% 18%,var(--ph1),var(--ph2));overflow:hidden;isolation:isolate}
 .ph>svg{position:absolute;inset:0;width:100%;height:100%}
+.ph.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 16%}.ph.photo.wide img{object-position:50% 50%}
 .ph.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 70%);transform:scale(var(--zoom,1));transform-origin:var(--pos,50% 70%)}
 picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}picture.art img{width:100%;height:100%;object-fit:cover;object-position:var(--apos,50% 100%);display:block}
 .ph.vid{border-radius:var(--r)}

@@ -67,7 +67,13 @@ for (const dir of readdirSync(ROOT).filter(d => /^\d{3}-/.test(d) && existsSync(
     const els = [...document.querySelectorAll('main a.btn, main button, main input:not([type=radio]):not([type=hidden]), main select, main textarea, main summary, .sticky a, .lb-l a')]
       .filter(el => !el.closest('.hp'))   // the spam trap is hidden from people, so it is not a tap target
       .map(el => el.getBoundingClientRect()).filter(r => r.width > 0 && r.height > 0);
-    return { scroll_w: document.documentElement.scrollWidth, min_tap: Math.round(Math.min(...els.map(r => r.height))), taps: els.length };
+    // where the first way to act sits on a phone screen, and whether any form field is small enough to make the phone zoom in
+    const first = document.querySelector('main section .btn, main section button[type=submit], main section form button, .lb-f .btn');
+    const fields = [...document.querySelectorAll('main input:not([type=radio]):not([type=hidden]), main select, main textarea')].filter(el => !el.closest('.hp'));
+    return { scroll_w: document.documentElement.scrollWidth, min_tap: Math.round(Math.min(...els.map(r => r.height))), taps: els.length,
+      pinned: !!document.querySelector('.sticky a') && getComputedStyle(document.querySelector('.sticky')).display !== 'none',
+      cta_y: first ? Math.round(first.getBoundingClientRect().bottom + scrollY) : null, cta: first ? first.textContent.trim().slice(0, 40) : '',
+      field_px: fields.length ? Math.min(...fields.map(el => parseFloat(getComputedStyle(el).fontSize))) : null, fields: fields.length };
   });
   await page.close();
   out[num] = { scores, failed, lcp: Math.round(lhr.audits['largest-contentful-paint'].numericValue), cls: +lhr.audits['cumulative-layout-shift'].numericValue.toFixed(4),

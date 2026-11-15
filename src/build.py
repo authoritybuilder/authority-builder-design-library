@@ -226,7 +226,7 @@ def css_for(P, secs):
 
 
 def render_sections(P, secs):
-    kit.CTX.update(person=P["brand"].get("person", ""), faces=P["faces"], art=P["art"], crops=0)
+    kit.CTX.update(person=P["brand"].get("person", ""), faces=P["faces"], art=P["art"], crops=0, brand=P["brand"] if P["brand"].get("role") else None)
     return "\n".join(REG[name](dict(d), P) for name, d in secs)
 
 
@@ -241,6 +241,7 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
     v = t["v"]
     b = P["brand"]
     main = kind == "main"
+    kit.CTX["file"] = file
     title = title or P["title"]
     desc = desc or P["desc"]
     url = site_url(P) + (P.get("path", "") if main else file)
@@ -759,7 +760,7 @@ def main():
     speed = json.loads(speed_file.read_text()) if speed_file.exists() else {}
     legible_file = SRC / "data" / "legible.json"
     legible = json.loads(legible_file.read_text()) if legible_file.exists() else {}
-    fixes = []
+    fixes, plan = [], {}
     for P in pages:
         d = ROOT / P["dir"]
         site = d / "site"
@@ -769,6 +770,7 @@ def main():
         for k, _ in P["principles"]:
             assert k in canon.C, f"{P['num']}: unknown principle {k}"
         kit.CTX["briefs"] = []
+        kit.CTX["photos"] = {}
         (site / "index.html").write_text(sample_html(P))
         P["briefs"] = list(dict.fromkeys(kit.CTX["briefs"]))
         files = [P.get("path", "")]
@@ -790,6 +792,9 @@ def main():
         files += [f for f, *_ in made]
         if P["n"] in upgrades.EVENTS:
             (site / "event.ics").write_text(trust.ics(upgrades.EVENTS[P["n"]], P), newline="")
+        P["photos"] = list(kit.CTX["photos"].values())
+        plan[P["num"]] = dict(dir=P["dir"], folder=f"{P['dir']}/site/images", hero=f"{P['dir']}/site/images/hero-1920.webp", person=P["brand"]["person"],
+                              accent=THEMES[P["theme"]]["v"]["accent"], photos=P["photos"])
         (site / "netlify.toml").write_text(trust.NETLIFY)
         (site / "robots.txt").write_text(robots_txt(P))
         (site / "sitemap.xml").write_text(sitemap_xml(P, files))
@@ -812,9 +817,17 @@ def main():
             (ROOT / d / f).write_text(fn(num))
             (ROOT / d / "notes.md").write_text(f"# {num} · {t}\n\n{b}\n\nGenerated from `src/themes.py`. Change a token there and rebuild.\n")
         else:
+            kit.CTX["photos"] = {}
             html, md = block_patterns(num, pages)
+            plan[num] = dict(dir=d, folder=f"{d}/images", hero=f"{pages[0]['dir']}/site/images/hero-1920.webp", person=pages[0]["brand"]["person"],
+                             accent=THEMES[pages[0]["theme"]]["v"]["accent"], photos=list(kit.CTX["photos"].values()))
             (ROOT / d / f).write_text(html)
             (ROOT / d / "notes.md").write_text(md)
+    (SRC / "data").mkdir(exist_ok=True)
+    (SRC / "data" / "photos.json").write_text(json.dumps(plan, indent=1) + "\n")   # what src/people.py paints
+    missing = [f"{v['folder']}/{p['file']}" for v in plan.values() for p in v["photos"] if not (ROOT / v["folder"] / p["file"]).exists()]
+    if missing:
+        print(f"PHOTOS: {len(missing)} placeholder files are not painted yet. Run: python3 src/people.py --missing")
     (ROOT / "index.html").write_text(gallery(pages, blocks))
     (ROOT / "canon").mkdir(exist_ok=True)
     (ROOT / "canon" / "index.html").write_text(canon_page(pages))

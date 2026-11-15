@@ -16,6 +16,8 @@ Every sample is generated from a short page definition. You describe the main pa
 ```bash
 python3 src/build.py
 python3 src/paint.py 029      # only the entry you added: its painting in 2 sizes
+python3 src/build.py          # lists the photo files the new site needs
+python3 src/people.py 029     # paints its photo placeholders
 python3 src/check.py
 python3 src/shots.py 029      # preview, icons and share image
 node src/speed.mjs 029        # Lighthouse, for the audit table
@@ -69,7 +71,8 @@ Add an entry to `C` in `src/canon.py` with its group, name, originator, source a
 - **No dead ends.** Every button leads to a real page, a real section or a working form. A destination that needs the owner's own account uses `kit.connect("what it is")`, which the launch checklist then lists.
 - **Every form sends.** Build forms with `form_open` in `src/sections.py` so they get a name, named fields, the spam trap and the thank-you page.
 - **Words over a painting must measure up.** `src/legible.mjs` has to report no line below the bar before you ship.
-- **Every picture is original and has a brief.** Pictures are crops of the site's own painting. Write the `label` as the brief for the real photo. It becomes a code comment, a line in the notes and a line in the launch checklist.
+- **Every picture is a named file with a brief.** A visual with `kind="person"` becomes a photo of the owner, `kind="scene"` a photo of a place, and every testimonial name gets a face file. Write the `label` as the brief for the real photo. It becomes a code comment, a line in the notes and a row in the launch checklist.
+- **A person at every decision.** The owner's face belongs on the first screen, beside the form and under the closing button. The components do this for you; do not remove it.
 - **Proof beside the button.** Each page puts 1 line of reassurance and 1 piece of proof next to its main action.
 - **Check the rule before you teach it.** Search guidance changes. Read Google's current page before adding a search note.
 - **Australian spelling. No em dashes. Numerals for numbers.**

@@ -19,9 +19,10 @@ All typefaces are loaded from Google Fonts under their open licences: Newsreader
 Every picture in the samples is original and was made for this library.
 
 - **Paintings.** Each site's painting is composed and painted by `src/paint.py`, a program in this repository. It builds a scene from shapes, gradients and noise, then lays down brush strokes that follow the shapes, large brushes first and fine brushes last. No stock photos, no photographs of real people and no AI image model are used.
-- **Icons, sketches and initials.** Drawn as inline SVG by `src/art.py` and coloured from each page's own tokens. No icon library is used.
+- **Photo placeholders.** Every picture of a person or place is a named file in a site's `images` folder. The files that ship are painted by `src/people.py`: a back-lit figure with no face over a soft-focus piece of that site's painting, or a crop of the painting for a place. They stand in for the owner's real photographs and depict no real person.
+- **Icons and sketches.** Drawn as inline SVG by `src/art.py` and coloured from each page's own tokens. No icon library is used.
 
-A painting can stay on a site you launch, or you can replace it with your own photograph. The brief for each photograph is in that site's `LAUNCH.md` and in its notes.
+A painting can stay on a site you launch. The photo placeholders are there to be replaced. The brief for each photograph is in that site's `LAUNCH.md` and in its notes.
 
 ## Research
 

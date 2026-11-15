@@ -80,14 +80,14 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Poppy Achebe”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 187 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 184 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 1 image tags, all with alt text, width and height. They share 1 painting in 2 sizes: 59KB for phones and 203KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen. |
-| Real photographs | **Your turn** | The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md. |
+| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: 59KB for phones and 203KB for desktops. 5 photo files, the largest 119KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 5.2 and the whole page at grade 7.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 5.3 and the whole page at grade 7.5 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -95,11 +95,12 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 |---|---|---|
 | Main content loads fast (LCP under 2.5 seconds) | **Good** | 0.9 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 1ms. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 8ms. |
 | Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
+| A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 665px down. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 50px tall. 6 were measured. |
-| Page weight | **Good** | The HTML is 30KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 34KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data

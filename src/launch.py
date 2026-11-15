@@ -48,12 +48,21 @@ def launch_md(P, site):
          f"- [ ] Delete the demo note in the footer of all {s['pages']} pages. Search for `DEMO NOTE`.",
          f"- [ ] Replace `{b['domain']}` with your real address. It appears {s['domain']} times across the pages, `sitemap.xml` and `robots.txt`.",
          f"- [ ] Replace the contact details: {contact}, {b.get('where', 'Australia')} and the placeholder ABN 00 000 000 000.", "",
-         "## 2. Pictures", "",
-         "- [ ] The painting in `site/images/` can stay. To use your own photo, save it as `hero-1920.webp` (1920px wide) and `hero-960.webp` (960px wide) in the same folder. Nothing in the code needs to change.",
-         "- [ ] Replace `icon-192.png`, `icon-512.png` and `share.jpg` with your own mark and share image, keeping the file names.",
-         "- [ ] Testimonials show initials. Add client photos only with their permission."]
-    if P.get("briefs"):
-        L += ["", "Photo briefs for this page:", ""] + [f"- {x}" for x in P["briefs"]]
+         "## 2. Your Photos", "",
+         "Every picture is a file in `site/images/`. To use your own, save it under the same file name, at about the size shown. Nothing in the code needs to change.",
+         "The files that ship are painted stand-ins, each labelled with its file name. The pre-launch check tells you which are still in place.", ""]
+    names = {"you": "You", "me": "You", "guest": "A client", "face": "A client or reader", "scene": "A place or moment", "video": "A video still"}
+    L += ["| File | Size | Who Or What | On | The Photo To Take |", "|---|---|---|---|---|"]
+    L += ["| `hero-1920.webp`, `hero-960.webp` | 1920 × 1200, 960 × 600 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |"]
+    for ph in P.get("photos", []):
+        who = ph["who"] if ph["kind"] in ("guest", "face") and ph["who"] and "reader" not in ph["who"] else names[ph["kind"]]
+        brief = ph["brief"] or ("A square headshot, used with their permission" if ph["kind"] == "face" else "")
+        L.append(f"| `{ph['file']}` | {ph['w']} × {ph['h']} | {who} | {', '.join(ph['where'])} | {brief} |")
+    L += ["",
+         "- [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.",
+         "- [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.",
+         "- [ ] After swapping a photo, read its `alt` text in the HTML and make it describe your picture.",
+         "- [ ] Replace `icon-192.png`, `icon-512.png` and `share.jpg` with your own mark and share image, keeping the file names."]
     L += ["", f"## 3. Connect Your Accounts ({s['links']} Links)", ""]
     if s["conn"]:
         L += ["These can only be finished with your own accounts. Each points at example.com until you give it a real destination, so nothing breaks in the meantime.",

@@ -203,10 +203,17 @@ def run(P, site, speed=None, legible=None):
     sized = all("width=" in i and "height=" in i and "alt=" in i for i in imgs)
     big, small = site / "images" / "hero-1920.webp", site / "images" / "hero-960.webp"
     have = big.exists() and small.exists()
-    add(C, "Images are sized, described and sent in a phone size", GOOD if imgs and sized and have else "Fix",
-        (f"{len(imgs)} image tags, all with alt text, width and height. They share 1 painting in 2 sizes: {small.stat().st_size // 1024}KB for phones and "
-         f"{big.stat().st_size // 1024}KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen.") if have else "images/hero-*.webp missing. Run src/paint.py.")
-    add(C, "Real photographs", YOURS, "The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md.")
+    photos = P.get("photos", [])
+    gone = [p["file"] for p in photos if not (site / "images" / p["file"]).exists()]
+    heavy = max([(site / "images" / p["file"]).stat().st_size // 1024 for p in photos if p["file"] not in gone] or [0])
+    add(C, "Images are sized, described and sent in a phone size", GOOD if imgs and sized and have and not gone else "Fix",
+        (f"{len(imgs)} image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: {small.stat().st_size // 1024}KB for phones and "
+         f"{big.stat().st_size // 1024}KB for desktops. {len(photos)} photo files, the largest {heavy}KB. Only the painting loads early. Everything else waits until it is near the screen.")
+        if have and not gone else ("Missing: " + ", ".join(gone or ["images/hero-*.webp"]) + ". Run src/paint.py and src/people.py."))
+    mine = sum(p["kind"] in ("you", "me") for p in photos)
+    add(C, "A real person is on the page", YOURS,
+        f"{mine} of the {len(photos)} photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. "
+        f"The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take.")
     share = site / "share.jpg"
     ss = jpg_size(share) if share.exists() else None
     og = all(meta(main, k) for k in ("og:title", "og:description", "og:url", "og:image"))
@@ -233,6 +240,15 @@ def run(P, site, speed=None, legible=None):
             "Performance {performance}, Accessibility {accessibility}, Best Practices {best-practices}, SEO {seo}, out of 100.".format(**speed["scores"])
             + (f" Flagged: {'; '.join(speed['failed'])}." if speed.get("failed") else ""))
         add(D, "No sideways scrolling on a phone", GOOD if speed["scroll_w"] <= 390 else "Fix", f"At 390px wide the page content is {speed['scroll_w']}px wide.")
+        if speed.get("cta_y"):
+            near, pinned = speed["cta_y"] <= 844, speed.get("pinned")
+            bar = " A bar pinned to the bottom of the phone screen carries the main button the whole way down the page." if pinned else ""
+            add(D, "A button is on the first screen of a phone", GOOD if near or pinned else "Fix",
+                (f"On a 390 by 844 phone the first button in the page (“{speed['cta']}”) ends {speed['cta_y']}px down." if near else
+                 f"This page opens with reading, so its first button in the page (“{speed['cta']}”) is {speed['cta_y']}px down.") + bar)
+        if speed.get("field_px"):
+            add(D, "Form fields do not make a phone zoom in", GOOD if speed["field_px"] >= 16 else "Fix",
+                f"The smallest text in any of the {speed['fields']} form fields is {speed['field_px']:g}px. Phones zoom the page when a field is under 16px.")
         add(D, "Buttons are easy to tap", GOOD if speed["min_tap"] >= 44 else "Fix",
             f"The smallest button or form field on a phone is {speed['min_tap']}px tall. {speed['taps']} were measured.")
     else:

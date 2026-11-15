@@ -1,0 +1,2525 @@
+{
+ "001": {
+  "dir": "001-coach-homepage",
+  "folder": "001-coach-homepage/site/images",
+  "hero": "001-coach-homepage/site/images/hero-1920.webp",
+  "person": "Imogen Wren",
+  "accent": "#A8431F",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Imogen mid-conversation, natural light, looking at the client, not the camera",
+    "who": "",
+    "where": [
+     "index.html",
+     "about.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Priya N.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tom A.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Kirra W.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a candid, working shot. Notebook open, coffee, real desk",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "book.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "002": {
+  "dir": "002-consultant-authority-site",
+  "folder": "002-consultant-authority-site/site/images",
+  "hero": "002-consultant-authority-site/site/images/hero-1920.webp",
+  "person": "Marcus Halden",
+  "accent": "#0F6E66",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Marcus at a whiteboard with a client team. Working, not posing",
+    "who": "",
+    "where": [
+     "index.html",
+     "about.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Helen Ashby",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "consultant-authority-site reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "consultant-authority-site reader 1",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "consultant-authority-site reader 2",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "guest-1.jpg",
+    "kind": "guest",
+    "w": 900,
+    "h": 1125,
+    "brief": "the client, in their own office",
+    "who": "Helen Ashby",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a plain, well-lit portrait. Jacket, no tie, direct eye contact",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "book.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "003": {
+  "dir": "003-creator-hub",
+  "folder": "003-creator-hub/site/images",
+  "hero": "003-creator-hub/site/images/hero-1920.webp",
+  "person": "Tash Okafor",
+  "accent": "#1F3FFF",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Tash at her desk, colour-blocked wall, real mess included",
+    "who": "",
+    "where": [
+     "index.html",
+     "about.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "creator-hub reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "creator-hub reader 1",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "creator-hub reader 2",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dev P.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "004": {
+  "dir": "004-local-service-business",
+  "folder": "004-local-service-business/site/images",
+  "hero": "004-local-service-business/site/images/hero-1920.webp",
+  "person": "Bec Tran",
+  "accent": "#FF5A4F",
+  "photos": [
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "Bec at the shopfront with the street sign visible. Locals recognise the spot",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.82,
+     0.56,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Mick D.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Daz M.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Lani K.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Steve R.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Bec. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "005": {
+  "dir": "005-about-founder-story",
+  "folder": "005-about-founder-story/site/images",
+  "hero": "005-about-founder-story/site/images/hero-1920.webp",
+  "person": "Dana Whitlock",
+  "accent": "#C8102E",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "an editorial portrait. Seated, relaxed, strong side light, looking just off camera",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "off-duty. Dog, garden or kitchen bench. Warm and unposed",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.28,
+     0.76,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "006": {
+  "dir": "006-speaker-media-kit",
+  "folder": "006-speaker-media-kit/site/images",
+  "hero": "006-speaker-media-kit/site/images/hero-1920.webp",
+  "person": "Jonah Reyes",
+  "accent": "#F2B544",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "on stage, mid-gesture, audience visible in the foreground",
+    "who": "",
+    "where": [
+     "index.html",
+     "about.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "3-minute reel. Host it properly and add a text transcript beneath",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.5,
+     0.66,
+     1.5
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Mei L.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Andre P.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Sophie G.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "007": {
+  "dir": "007-signature-program-sales-page",
+  "folder": "007-signature-program-sales-page/site/images",
+  "hero": "007-signature-program-sales-page/site/images/hero-1920.webp",
+  "person": "Leila Hart",
+  "accent": "#2F5A40",
+  "photos": [
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "a 2-minute welcome from Leila. Add captions and a transcript below the video",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.52,
+     0.82,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "enrol.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Marnie T.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Jo B.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Rav S.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tess W.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Leila outdoors, relaxed, mid-laugh. The life the program promises",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-5.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Imran K.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-6.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Fiona D.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-7.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Carla V.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Leila. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "008": {
+  "dir": "008-online-course-sales-page",
+  "folder": "008-online-course-sales-page/site/images",
+  "hero": "008-online-course-sales-page/site/images/hero-1920.webp",
+  "person": "Sam Okonkwo",
+  "accent": "#FF4A1C",
+  "photos": [
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "lesson 1 as a free preview, with captions",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.5,
+     0.58,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Aiko M.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Luis F.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Hannah O.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Sam at a desk, laptop open, proposal on screen",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Noah B.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Sam. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "009": {
+  "dir": "009-membership-community-join",
+  "folder": "009-membership-community-join/site/images",
+  "hero": "009-membership-community-join/site/images/hero-1920.webp",
+  "person": "Odette Laurent",
+  "accent": "#C23B1E",
+  "photos": [
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "a real members' meet-up or a busy workbench. Hands, clay, mess",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.48,
+     0.62,
+     1.25
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Greta H.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Noor A.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Bill C.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Wen L.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Odette. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "010": {
+  "dir": "010-mastermind-application",
+  "folder": "010-mastermind-application/site/images",
+  "hero": "010-mastermind-application/site/images/hero-1920.webp",
+  "person": "Vivienne Ashcombe",
+  "accent": "#26201B",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "a retreat dinner table, candid, no faces to camera",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.46,
+     0.34,
+     1.5
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Founder, 34-person digital agency",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Founder",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Vivienne. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "011": {
+  "dir": "011-services-and-pricing",
+  "folder": "011-services-and-pricing/site/images",
+  "hero": "011-services-and-pricing/site/images/hero-1920.webp",
+  "person": "Mira Castellanos",
+  "accent": "#A8431F",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "book.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dr Elise Varga",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tomas Reid",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Kat Brennan",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dr Amara Osei",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Mira. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "012": {
+  "dir": "012-digital-product-shop",
+  "folder": "012-digital-product-shop/site/images",
+  "hero": "012-digital-product-shop/site/images/hero-1920.webp",
+  "person": "Ruby Nakamura",
+  "accent": "#FF5A4F",
+  "photos": [
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "3 templates fanned out as a flat lay on a coloured background",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.48,
+     0.62,
+     1.25
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Sian M.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Bianca R.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Deepa S.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Callum W.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Ruby. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "013": {
+  "dir": "013-corporate-training",
+  "folder": "013-corporate-training/site/images",
+  "hero": "013-corporate-training/site/images/hero-1920.webp",
+  "person": "Dr Anika Shah",
+  "accent": "#0F6E66",
+  "photos": [
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "a real session. Pairs practising, facilitator in the background",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.46,
+     0.34,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Renee Calloway",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Team leader",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "corporate-training reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "corporate-training reader 1",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-5.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Learning and development lead",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Anika. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "014": {
+  "dir": "014-lead-magnet-opt-in",
+  "folder": "014-lead-magnet-opt-in/site/images",
+  "hero": "014-lead-magnet-opt-in/site/images/hero-1920.webp",
+  "person": "Nadia Flores",
+  "accent": "#2F5A40",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Jess T.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Marcus L.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "lead-magnet-opt-in reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "friendly, direct, plain background",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Nadia. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "015": {
+  "dir": "015-webinar-registration",
+  "folder": "015-webinar-registration/site/images",
+  "hero": "015-webinar-registration/site/images/hero-1920.webp",
+  "person": "Carmen Ortiz",
+  "accent": "#F2B544",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "presenting on a call, laptop and notes in frame",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Peter H.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Yasmin K.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Olu B.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Carmen. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "016": {
+  "dir": "016-quiz-scorecard-landing",
+  "folder": "016-quiz-scorecard-landing/site/images",
+  "hero": "016-quiz-scorecard-landing/site/images/hero-1920.webp",
+  "person": "Thandi Mokoena",
+  "accent": "#1F3FFF",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ingrid S.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Rahul D.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Bronte A.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Thandi. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "017": {
+  "dir": "017-challenge-page",
+  "folder": "017-challenge-page/site/images",
+  "hero": "017-challenge-page/site/images/hero-1920.webp",
+  "person": "Frankie Doyle",
+  "accent": "#C23B1E",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tilly R.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Sunil P.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Agnes V.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Frankie. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "018": {
+  "dir": "018-waitlist-launching-soon",
+  "folder": "018-waitlist-launching-soon/site/images",
+  "hero": "018-waitlist-launching-soon/site/images/hero-1920.webp",
+  "person": "Celeste Marchetti",
+  "accent": "#26201B",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "waitlist-launching-soon reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "waitlist-launching-soon reader 1",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "waitlist-launching-soon reader 2",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Celeste. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "019": {
+  "dir": "019-book-a-call",
+  "folder": "019-book-a-call/site/images",
+  "hero": "019-book-a-call/site/images/hero-1920.webp",
+  "person": "Ngozi Okoro",
+  "accent": "#FF4A1C",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dr Alan Voss",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Mel Tanaka",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Grace Obi",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Ngozi. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "020": {
+  "dir": "020-link-in-bio",
+  "folder": "020-link-in-bio/site/images",
+  "hero": "020-link-in-bio/site/images/hero-1920.webp",
+  "person": "Poppy Achebe",
+  "accent": "#FF5A4F",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "the same headshot as your social profile, so people know they are in the right place",
+    "who": "",
+    "where": [
+     "index.html",
+     "about.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "link-in-bio reader 0",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "link-in-bio reader 1",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "link-in-bio reader 2",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   }
+  ]
+ },
+ "021": {
+  "dir": "021-case-study",
+  "folder": "021-case-study/site/images",
+  "hero": "021-case-study/site/images/hero-1920.webp",
+  "person": "Estelle Nguyen",
+  "accent": "#C8102E",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "book.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "the real clinic's reception or treatment room, with the owner's permission",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.82,
+     0.56,
+     1.5
+    ]
+   },
+   {
+    "file": "guest-1.jpg",
+    "kind": "guest",
+    "w": 900,
+    "h": 1125,
+    "brief": "Sam in the clinic, natural light",
+    "who": "Sam Whitford",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Sam Whitford",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Estelle. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "022": {
+  "dir": "022-wall-of-proof",
+  "folder": "022-wall-of-proof/site/images",
+  "hero": "022-wall-of-proof/site/images/hero-1920.webp",
+  "person": "Sage Holloway",
+  "accent": "#A8431F",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "book.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Chief executive",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dominic Hale",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Priyanka Rao",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Helena Marsh",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-5.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tom Okafor",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-6.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Lucy Brennan",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-7.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ravi Menon",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "a 12-minute client conversation with captions and a full text transcript",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.5,
+     0.66,
+     1.5
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Sage. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "023": {
+  "dir": "023-blog-article",
+  "folder": "023-blog-article/site/images",
+  "hero": "023-blog-article/site/images/hero-1920.webp",
+  "person": "Hattie Lindqvist",
+  "accent": "#C8102E",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.54,
+     0.34,
+     1.5
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Hattie. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "024": {
+  "dir": "024-podcast-home",
+  "folder": "024-podcast-home/site/images",
+  "hero": "024-podcast-home/site/images/hero-1920.webp",
+  "person": "Lois Adeyemi",
+  "accent": "#F2B544",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Lois at the microphone, headphones on, mid-laugh",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Karen, 49",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Paulo, 44",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Bridget, 51",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Lois. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "025": {
+  "dir": "025-newsletter-sign-up-archive",
+  "folder": "025-newsletter-sign-up-archive/site/images",
+  "hero": "025-newsletter-sign-up-archive/site/images/hero-1920.webp",
+  "person": "Kofi Mensah",
+  "accent": "#1F3FFF",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tara L.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ben R.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Amira H.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Jules P.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Kofi. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "026": {
+  "dir": "026-book-launch",
+  "folder": "026-book-launch/site/images",
+  "hero": "026-book-launch/site/images/hero-1920.webp",
+  "person": "Harriet Vale",
+  "accent": "#26201B",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ian Mbeki",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dr Clare Whitby",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Rosa Delgado",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "the official author photo. Use this same image everywhere the book is listed",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Harriet. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "027": {
+  "dir": "027-event-retreat",
+  "folder": "027-event-retreat/site/images",
+  "hero": "027-event-retreat/site/images/hero-1920.webp",
+  "person": "Maren Solberg",
+  "accent": "#2F5A40",
+  "photos": [
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "the real venue at golden hour. Wide, quiet, no people",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.72,
+     0.7,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "contact.html",
+     "reserve.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "scene-2.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "the verandah or the fire pit. 1 strong image beats a gallery",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.1,
+     0.76,
+     1.5
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Priya K.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Henrik A.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Michaela T.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Deb O.",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Maren. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "028": {
+  "dir": "028-contact-and-thank-you",
+  "folder": "028-contact-and-thank-you/site/images",
+  "hero": "028-contact-and-thank-you/site/images/hero-1920.webp",
+  "person": "Imelda Calloway",
+  "accent": "#0F6E66",
+  "photos": [
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "index.html",
+     "thank-you.html",
+     "404.html"
+    ]
+   },
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a clear, friendly portrait of Imelda. Use the same photo on every profile",
+    "who": "",
+    "where": [
+     "about.html"
+    ]
+   }
+  ]
+ },
+ "031": {
+  "dir": "031-section-patterns",
+  "folder": "031-section-patterns/images",
+  "hero": "001-coach-homepage/site/images/hero-1920.webp",
+  "person": "Imogen Wren",
+  "accent": "#A8431F",
+  "photos": [
+   {
+    "file": "you-1.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "Imogen mid-conversation, natural light, looking at the client, not the camera",
+    "who": "",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-1.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "contact-and-thank-you reader 0",
+    "where": [
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-2.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "contact-and-thank-you reader 1",
+    "where": [
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-3.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "contact-and-thank-you reader 2",
+    "where": [
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-4.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "contact-and-thank-you reader 3",
+    "where": [
+     "404.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "a 2-minute welcome from Leila. Add captions and a transcript below the video",
+    "who": "",
+    "where": [
+     "404.html",
+     "index.html"
+    ],
+    "crop": [
+     0.28,
+     0.7,
+     1.5
+    ]
+   },
+   {
+    "file": "you-headshot.jpg",
+    "kind": "me",
+    "w": 240,
+    "h": 240,
+    "brief": "Your headshot, cropped square. It appears small wherever your name does",
+    "who": "",
+    "where": [
+     "404.html"
+    ]
+   },
+   {
+    "file": "face-5.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Estelle Nguyen",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "scene-1.jpg",
+    "kind": "scene",
+    "w": 1200,
+    "h": 900,
+    "brief": "the real clinic's reception or treatment room, with the owner's permission",
+    "who": "",
+    "where": [
+     "404.html",
+     "index.html"
+    ],
+    "crop": [
+     0.28,
+     0.7,
+     1.5
+    ]
+   },
+   {
+    "file": "face-6.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Priya N.",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-7.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Tom A.",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-8.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Kirra W.",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "you-2.jpg",
+    "kind": "you",
+    "w": 900,
+    "h": 1125,
+    "brief": "a candid, working shot. Notebook open, coffee, real desk",
+    "who": "",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-9.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Mick D.",
+    "where": [
+     "404.html",
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-10.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ada",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-11.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Ben",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-12.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Cy",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-13.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Dee",
+    "where": [
+     "index.html"
+    ]
+   }
+  ]
+ }
+}

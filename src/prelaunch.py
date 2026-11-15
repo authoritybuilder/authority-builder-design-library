@@ -6,6 +6,8 @@
 Run it on your own copy of a sample site before you publish. It prints each leftover with its file and line,
 and exits with an error while anything remains. It changes nothing.
 """
+import hashlib
+import json
 import pathlib
 import re
 import sys
@@ -43,6 +45,14 @@ def main():
                 print(f"  {f}:{n}  {text}")
             if len(hits) > 12:
                 print(f"  and {len(hits) - 12} more")
+    marks_file = pathlib.Path(__file__).parent / "data" / "placeholders.json"
+    marks = set(json.loads(marks_file.read_text()).values()) if marks_file.exists() else set()
+    stand_ins = sorted(p.relative_to(root) for p in root.rglob("*.jpg") if hashlib.sha256(p.read_bytes()).hexdigest() in marks)
+    if stand_ins:
+        found += len(stand_ins)
+        print(f"\nA placeholder photo. Save your own under the same file name ({len(stand_ins)})")
+        for p in stand_ins:
+            print(f"  {p}")
     for name in NEEDED:
         if not (root / name).exists():
             found += 1
