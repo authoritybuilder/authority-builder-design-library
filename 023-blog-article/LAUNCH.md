@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Hattie Lindqvist), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 8 pages. Search for `DEMO NOTE`.
-- [ ] Replace `hattielindqvist.example` with your real address. It appears 85 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@hattielindqvist.example, Hobart, Tasmania and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 85 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Hobart, Tasmania and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 
@@ -20,7 +20,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 | `scene-1.jpg` | 1200 × 900 | A place or moment | index.html |  |
-| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Hattie. Use the same photo on every profile |
+| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

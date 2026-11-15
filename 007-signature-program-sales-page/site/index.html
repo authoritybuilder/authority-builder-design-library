@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en-AU" id="top">
+<html lang="en-AU" id="top" data-m="drift">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>The Steady Founder | 12-Week Coaching Program With Leila Hart</title>
+<title>The Steady Founder | 12-Week Coaching Program With Guy Incognito</title>
 <meta name="description" content="The Steady Founder is a 12-week group coaching program for service-business owners working 55-hour weeks. 6 modules, weekly calls and a 30-day guarantee. Next intake: 2 February.">
-<!-- Swap every leilahart.example address below for your real one. Use 1 version of your address everywhere. -->
-<link rel="canonical" href="https://leilahart.example/">
+<!-- Swap every guyincognito.example address below for your real one. Use 1 version of your address everywhere. -->
+<link rel="canonical" href="https://guyincognito.example/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Leila Hart Coaching">
-<meta property="og:title" content="The Steady Founder | 12-Week Coaching Program With Leila Hart">
+<meta property="og:site_name" content="Guy Incognito Coaching">
+<meta property="og:title" content="The Steady Founder | 12-Week Coaching Program With Guy Incognito">
 <meta property="og:description" content="The Steady Founder is a 12-week group coaching program for service-business owners working 55-hour weeks. 6 modules, weekly calls and a 30-day guarantee. Next intake: 2 February.">
-<meta property="og:url" content="https://leilahart.example/">
-<meta property="og:image" content="https://leilahart.example/share.jpg">
+<meta property="og:url" content="https://guyincognito.example/">
+<meta property="og:image" content="https://guyincognito.example/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Leila Hart Coaching: Signature Program Sales Page">
+<meta property="og:image:alt" content="Guy Incognito Coaching: Signature Program Sales Page">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#FAF6EE">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -30,17 +30,17 @@
  "@graph": [
   {
    "@type": "WebSite",
-   "@id": "https://leilahart.example/#site",
-   "name": "Leila Hart Coaching",
-   "url": "https://leilahart.example/"
+   "@id": "https://guyincognito.example/#site",
+   "name": "Guy Incognito Coaching",
+   "url": "https://guyincognito.example/"
   },
   {
    "@type": "Service",
    "name": "The Steady Founder",
    "provider": {
     "@type": "Organization",
-    "name": "Leila Hart Coaching",
-    "url": "https://leilahart.example/"
+    "name": "Guy Incognito Coaching",
+    "url": "https://guyincognito.example/"
    },
    "areaServed": "Australia"
   }
@@ -124,9 +124,7 @@ picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}p
 /* The headline slides but never starts hidden, so the largest element paints straight away */
 h1[data-in]{animation-name:slide}
 @keyframes slide{from{transform:translateY(16px)}}
-/* Sections lift into place as they scroll in. They never fade, so nothing sits half-visible at the edge of the screen */
-@keyframes lift{from{transform:translateY(28px)}}
-@supports(animation-timeline:view()){.sec>.wrap>*{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+/* Sections below the first screen reveal as they scroll in: see src/motion.py */
 }
 @media print{.libbar{display:none}.sec{padding-block:28px}}
 
@@ -172,6 +170,24 @@ h1[data-in]{animation-name:slide}
 .qt .wall{columns:3 260px;column-gap:clamp(16px,2.4vw,28px)}.qt .wall figure{break-inside:avoid;margin-bottom:clamp(16px,2.4vw,28px)}
 .qt .feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:center}
 @media(max-width:760px){.qt .feature{grid-template-columns:1fr}.qt .feature .ph{max-width:300px}}
+
+.band{position:relative;isolation:isolate;overflow:clip}
+.bd-h{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.5rem*var(--hs)));max-width:19ch}.band .eyebrow{margin-bottom:1.1rem}
+.band.wide{padding-block:clamp(84px,11vw,160px)}.band.wide::before{background:linear-gradient(90deg,rgba(6,10,22,.84),rgba(6,10,22,.62) 52%,rgba(6,10,22,.2))}
+.band.wide picture.art img,.band.frame picture.art img{object-position:50% 46%}
+.band.frame{margin:clamp(12px,2.2vw,30px);border-radius:clamp(22px,3vw,44px);padding-block:clamp(72px,9vw,128px);text-align:center}
+.band.frame::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.band.frame .bd-h{margin-inline:auto}.band.frame .acts{justify-content:center}
+.band.frame .eyebrow::before{display:none}
+.band.mosaic .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
+.mos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:clamp(10px,1.4vw,18px);aspect-ratio:5/4}
+.mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
+.mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
+.band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
+.strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
+@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
+@media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
 
 .pr-a{margin-bottom:2.4rem;font-size:1.05rem;max-width:62ch}
 .tier{display:flex;flex-direction:column;position:relative;transition:translate .25s}.tier .nm{font-size:.82rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
@@ -356,15 +372,78 @@ font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em
 .bleed .card{--ink:#26352B;--ink2:#51625A;--line:#CDD8C5;--accent-t:#2F5A40;color:#26352B;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.eyebrow{font-weight:800;letter-spacing:.14em}.card{border-color:transparent}.ph.scene{border-radius:28px}
 .card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}:root{--atmo:radial-gradient(44% 56% at 96% 4%,#E4EBDD 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3DCCB,transparent 70%)}.sec.alt{border-radius:clamp(28px,5vw,64px);margin-inline:clamp(8px,2vw,28px)}.hero .ph.person,.split .ph.person{border-radius:48% 52% 46% 54% / 56% 50% 50% 44%}
+/* scroll progress: a thin bar in the brand colour, drawn by the browser's own scroll timeline */
+.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
+/* the header steps aside on the way down and comes back on the way up */
+.hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
+/* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
+@media(min-width:761px){
+.js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.js.past:not(.end) .sticky{transform:none;visibility:visible}
+}
+@media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
+@media(prefers-reduced-motion:no-preference){
+/* reveal on scroll. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
+[data-m=rise] [data-rv]{transform:translateY(38px)}
+[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
+@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
+[data-m=zoom] [data-rv]{transform:scale(.9)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
+[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
+[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
+[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
+[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* the painting settles into place as the page opens */
+.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
+/* a light crosses the main button on hover */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
+.btn:not(.ghost):hover::before{translate:130% 0}
+.btn:active{transform:translateY(1px) scale(.98)}
+/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+@supports(animation-timeline:view()){
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+}
+/* answers open smoothly where the browser can animate to an automatic height */
+@supports(interpolate-size:allow-keywords){
+.faq details,.mod details{interpolate-size:allow-keywords}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
+}
+.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
+/* links and list rows answer the pointer */
+.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
+.lb-l a,.door,.tier{will-change:translate}
+.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
+.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
+/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
+.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
+.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
+/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
+[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
+[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
+}
+@media print{.prog,.sticky{display:none}}
+/* this site's own variation: Sage, Cream And Clay */
+.sh{margin-inline:auto;text-align:center}.sh .lead{margin-inline:auto}.sh .eyebrow::before{display:none}.card:not(.float){border-color:transparent;box-shadow:0 2px 4px rgba(0,0,0,.04),0 44px 70px -44px color-mix(in srgb,var(--ink) 55%,transparent);transition:translate .3s,box-shadow .3s}.cards .card:hover,.door:hover,.qt figure.card:hover{box-shadow:0 2px 4px rgba(0,0,0,.05),0 56px 80px -40px color-mix(in srgb,var(--accent) 60%,transparent)}body{background-image:radial-gradient(60vw 520px at 100% 0,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%),radial-gradient(50vw 480px at 0 620px,color-mix(in srgb,var(--accent2) 9%,transparent),transparent 70%),radial-gradient(60vw 560px at 82% 1500px,color-mix(in srgb,var(--ph1) 34%,transparent),transparent 70%);background-size:100% 2100px}.stp{position:relative;padding-left:clamp(30px,4.4vw,54px)}.stp::before{content:"";position:absolute;left:7px;top:2rem;bottom:2rem;width:2px;background:linear-gradient(var(--accent-t),color-mix(in srgb,var(--accent-t) 12%,transparent))}.stp li{position:relative;border-top:0}.stp li::after{content:"";position:absolute;left:calc(clamp(30px,4.4vw,54px)*-1);top:clamp(30px,3.8vw,46px);width:16px;height:16px;border-radius:50%;background:var(--accent-t);box-shadow:0 0 0 5px color-mix(in srgb,var(--accent-t) 22%,transparent)}
 </style>
 </head>
 <body class="over o-dark has-sticky">
 <a class="skip" href="#main">Skip to content</a>
+<div class="prog" aria-hidden="true"></div>
 <p class="ann">February intake · 24 places · Enrolment closes <b>30 January</b></p>
-<div class="hdw"><header class="hd"><a class="logo" href="#top">Leila Hart Coaching</a><a class="btn" href="#join">Join The February Intake</a></header></div>
+<div class="hdw"><header class="hd"><a class="logo" href="#top">Guy Incognito Coaching</a><a class="btn" href="#join">Join The February Intake</a></header></div>
 <main id="main">
 <!-- Hero: the reader&#x27;s situation, the outcome and the timeframe. 1 button. No menu -->
-<section class="sec hero hcenter bleed t-dark  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="Painting of soft green hills on a calm morning, with a path winding toward a far town" fetchpriority="high" decoding="async"></picture><div class="wrap"><p class="eyebrow who"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span>A 12-week program for service-business owners</span></p><h1 data-in style="--i:1">Build the business that <em>does not need you at 9pm.</em></h1><p class="lead" data-in style="--i:2">The Steady Founder takes you from 55-hour weeks to a 4-day week you can sustain, in 12 weeks, with a small group of owners doing the same work beside you.</p><ul class="chips"><li>Starts 2 February</li><li>12 weeks</li><li>24 places</li><li>30-day guarantee</li></ul><div class="acts" data-in style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee: do the first 4 weeks, then decide.</span></p><div class="crowd" data-in style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Owners in the last intake freed a median of <b>9 hours a week</b></p></div><div class="hc-u" data-in style="--i:4"><!-- Video brief: a 2-minute welcome from Leila. Add captions and a transcript below the video --><div class="ph photo wide vid" style="--ar:16/9"><img src="images/video-1.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><i class="play" aria-hidden="true"></i><span class="cap">A 2-minute welcome from Leila</span></div></div></div></section>
+<section class="sec hero hcenter bleed t-dark  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="Painting of soft green hills on a calm morning, with a path winding toward a far town" fetchpriority="high" decoding="async"></picture><div class="wrap"><p class="eyebrow who"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span>A 12-week program for service-business owners</span></p><h1 data-in style="--i:1">Build the business that <em>does not need you at 9pm.</em></h1><p class="lead" data-in style="--i:2">The Steady Founder takes you from 55-hour weeks to a 4-day week you can sustain, in 12 weeks, with a small group of owners doing the same work beside you.</p><ul class="chips"><li>Starts 2 February</li><li>12 weeks</li><li>24 places</li><li>30-day guarantee</li></ul><div class="acts" data-in style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee: do the first 4 weeks, then decide.</span></p><div class="crowd" data-in style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Owners in the last intake freed a median of <b>9 hours a week</b></p></div><div class="hc-u" data-in style="--i:4"><!-- Video brief: a 2-minute welcome from Guy. Add captions and a transcript below the video --><div class="ph photo wide vid" style="--ar:16/9"><img src="images/video-1.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><i class="play" aria-hidden="true"></i><span class="cap">A 2-minute welcome from Guy</span></div></div></div></section>
 <!-- The problem, in the reader&#x27;s own words: name it, show what it costs, then turn -->
 <section class="sec prose alt "><div class="wrap"><header class="sh"><p class="eyebrow">If this sounds familiar</p><h2>You Are Not Bad At Business. <em>You Are Carrying All Of It.</em></h2></header><p>You started this to have more freedom. Instead you answer client messages at dinner, quote jobs on Sunday night and have not taken 2 weeks off since you opened.</p><p>The work is good. The clients are happy. The numbers are fine. And you are tired in a way a long weekend does not fix.</p><ul class="ticks"><li>You are the only one who can quote, sell and fix</li><li>Every new client makes the week heavier, not lighter</li><li>You have tried hiring, and ended up managing instead of resting</li></ul><p class="pull">Another year like this costs more than money. It costs the reason you started.</p><p>It is not a discipline problem. It is a design problem. A business built around 1 person will always need that person. So we redesign it.</p></div></section>
 <!-- The named method: 3 stages that make the promise believable -->
@@ -374,27 +453,59 @@ h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--
 <!-- Who it is for and who it is not for: protects the reader&#x27;s right to say no -->
 <section class="sec compare  "><div class="wrap"><header class="sh"><p class="eyebrow">A fair fit check</p><h2>This Is For You If. <em>And Honestly, If It Is Not.</em></h2></header><div class="cmp"><div class="card no"><h3>It is not a fit if you</h3><ul class="ticks"><li>Are still looking for your first clients</li><li>Want a done-for-you service</li><li>Cannot attend at least 9 of the 12 calls</li><li>Are hoping for a marketing course</li></ul></div><div class="card yes"><h3>It is a fit if you</h3><ul class="ticks"><li>Run a service business with steady clients</li><li>Earn enough, but only by overworking</li><li>Can give 3 hours a week for 12 weeks</li><li>Are ready to change how you work, not just read about it</li></ul></div></div></div></section>
 <!-- The guide: why this coach, with specifics -->
-<section class="sec split alt "><div class="wrap"><div class="sp-g"><div class="sp-v"><!-- Photo brief: Leila outdoors, relaxed, mid-laugh. The life the program promises --><div class="ph photo" style="--ar:4/5"><img src="images/you-1.jpg" width="900" height="1125" alt="Leila Hart" loading="lazy" decoding="async"></div><p class="signed"><b>Leila Hart</b>Business coach for service-business owners</p></div><div><p class="eyebrow">Your coach</p><h2>I Built The Business I Am <em>Telling You To Avoid.</em></h2><p>For 6 years I ran a 9-person design studio and worked every weekend. In 2019 I rebuilt it around a 4-day week. Revenue went up 22% the following year.</p><p>Since then I have coached 310 service-business owners through the same redesign. I run this program twice a year so that I can be on every call myself.</p><ul class="ticks"><li>Founder of a 9-person studio for 11 years</li><li>310 owners coached since 2019</li><li>Every call is led by me, not an associate</li></ul></div></div></div></section>
+<section class="sec split alt "><div class="wrap"><div class="sp-g"><div class="sp-v"><!-- Photo brief: Guy outdoors, relaxed, mid-laugh. The life the program promises --><div class="ph photo" style="--ar:4/5"><img src="images/you-1.jpg" width="900" height="1125" alt="Guy Incognito" loading="lazy" decoding="async"></div><p class="signed"><b>Guy Incognito</b>Business coach for service-business owners</p></div><div><p class="eyebrow">Your coach</p><h2>I Built The Business I Am <em>Telling You To Avoid.</em></h2><p>For 6 years I ran a 9-person design studio and worked every weekend. In 2019 I rebuilt it around a 4-day week. Revenue went up 22% the following year.</p><p>Since then I have coached 310 service-business owners through the same redesign. I run this program twice a year so that I can be on every call myself.</p><ul class="ticks"><li>Founder of a 9-person studio for 11 years</li><li>310 owners coached since 2019</li><li>Every call is led by me, not an associate</li></ul></div></div></div></section>
 <!-- Proof wall: results first, in the client&#x27;s words, with the results-vary note -->
-<section class="sec qt  "><div class="wrap"><header class="sh"><p class="eyebrow">Past members</p><h2>What 12 Weeks <em>Looked Like For Them</em></h2></header><div class="wall"><figure class="card"><span class="res">4-day week by week 10</span><blockquote><p>I took my first Friday off in 7 years and nothing fell over. Nothing.</p></blockquote><figcaption><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Marnie T.</b>Physio clinic owner</span></figcaption></figure><figure class="card"><span class="res">Dropped 3 services</span><blockquote><p>Cutting half my menu was terrifying. Profit went up within a quarter.</p></blockquote><figcaption><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Jo B.</b>Bookkeeping practice</span></figcaption></figure><figure class="card"><span class="res">First real holiday</span><blockquote><p>2 weeks in Vietnam, phone off. My team handled it because the process existed.</p></blockquote><figcaption><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Rav S.</b>Landscape design studio</span></figcaption></figure><figure class="card"><span class="res">Raised prices 18%</span><blockquote><p>Leila made me do the maths. Not 1 client left.</p></blockquote><figcaption><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Tess W.</b>Copywriting studio</span></figcaption></figure><figure class="card"><span class="res">Hired a 2IC</span><blockquote><p>I finally had something to hand over that was not just chaos.</p></blockquote><figcaption><span class="av"><img src="images/face-5.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Imran K.</b>IT support business</span></figcaption></figure><figure class="card"><span class="res">Evenings back</span><blockquote><p>My kids noticed before I did.</p></blockquote><figcaption><span class="av"><img src="images/face-6.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Fiona D.</b>Architecture practice</span></figcaption></figure></div><p class="fine" style="margin-top:1.8rem">Sample testimonials for a fictional brand. On your page, use your clients&#x27; real words with their permission, and keep the results-vary line. Results are individual and never guaranteed.</p></div></section>
+<section class="sec qt  "><div class="wrap"><header class="sh"><p class="eyebrow">Past members</p><h2>What 12 Weeks <em>Looked Like For Them</em></h2></header><div class="wall"><figure class="card"><span class="res">4-day week by week 10</span><blockquote><p>I took my first Friday off in 7 years and nothing fell over. Nothing.</p></blockquote><figcaption><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Marnie T.</b>Physio clinic owner</span></figcaption></figure><figure class="card"><span class="res">Dropped 3 services</span><blockquote><p>Cutting half my menu was terrifying. Profit went up within a quarter.</p></blockquote><figcaption><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Jo B.</b>Bookkeeping practice</span></figcaption></figure><figure class="card"><span class="res">First real holiday</span><blockquote><p>2 weeks in Vietnam, phone off. My team handled it because the process existed.</p></blockquote><figcaption><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Rav S.</b>Landscape design studio</span></figcaption></figure><figure class="card"><span class="res">Raised prices 18%</span><blockquote><p>Guy made me do the maths. Not 1 client left.</p></blockquote><figcaption><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Tess W.</b>Copywriting studio</span></figcaption></figure><figure class="card"><span class="res">Hired a 2IC</span><blockquote><p>I finally had something to hand over that was not just chaos.</p></blockquote><figcaption><span class="av"><img src="images/face-5.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Imran K.</b>IT support business</span></figcaption></figure><figure class="card"><span class="res">Evenings back</span><blockquote><p>My kids noticed before I did.</p></blockquote><figcaption><span class="av"><img src="images/face-6.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Fiona D.</b>Architecture practice</span></figcaption></figure></div><p class="fine" style="margin-top:1.8rem">Sample testimonials for a fictional brand. On your page, use your clients&#x27; real words with their permission, and keep the results-vary line. Results are individual and never guaranteed.</p></div></section>
+<!-- Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof -->
+<section class="sec band frame bleed t-light  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><div class="bd-c"><p class="eyebrow">Guy Incognito Coaching</p><h2 class="bd-h">A steady business <em>is built on purpose.</em></h2><div class="acts" style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div></div></div></section>
 <!-- Price, shown after the value, with 2 ways to pay and the same total stated plainly -->
-<section class="sec pricing alt " id="join"><div class="wrap"><header class="sh"><p class="eyebrow">Join the February intake</p><h2>1 Program. <em>2 Ways To Pay.</em></h2></header><p class="pr-a">Owners in the last intake freed a median of 9 hours a week. At a modest $150 an hour, that is $1,350 of your time every week, for good.</p><div class="grid" style="--cols:2"><div class="card tier hot"><span class="bdg">Saves $300</span><p class="nm">Pay in full</p><p class="pc">$3,600 <small>once</small></p><p class="fine">Best value. Saves $300.</p><ul class="ticks"><li>12 weekly live calls with Leila</li><li>All 6 modules, worksheets and recordings</li><li>Private member group for 12 weeks</li><li>2 private 30-minute sessions</li></ul><a class="btn" href="enrol.html">Join And Pay In Full</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee. A full refund if it is not right for you.</span></p></div><div class="card tier"><p class="nm">Pay monthly</p><p class="pc">$1,300 <small>x 3 months</small></p><p class="fine">$3,900 in total. Same program.</p><ul class="ticks"><li>Everything in the program</li><li>3 monthly payments</li><li>Same 30-day guarantee</li></ul><a class="btn ghost" href="enrol.html">Join On The Payment Plan</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee. A full refund if it is not right for you.</span></p></div></div><figure class="card pr-q"><span class="av"><img src="images/face-7.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><blockquote><p>I nearly did not join because of the price. I made it back in week 6 by letting go of 1 client I should have dropped years ago.</p></blockquote><figcaption><b>Carla V.</b> · Signwriting business</figcaption></figure><p class="fine" style="margin-top:1.6rem">Prices in Australian dollars, including GST. 24 places per intake so that every member gets time on the calls. Enrolment closes 30 January.</p></div></section>
+<section class="sec pricing alt " id="join"><div class="wrap"><header class="sh"><p class="eyebrow">Join the February intake</p><h2>1 Program. <em>2 Ways To Pay.</em></h2></header><p class="pr-a">Owners in the last intake freed a median of 9 hours a week. At a modest $150 an hour, that is $1,350 of your time every week, for good.</p><div class="grid" style="--cols:2"><div class="card tier hot"><span class="bdg">Saves $300</span><p class="nm">Pay in full</p><p class="pc">$3,600 <small>once</small></p><p class="fine">Best value. Saves $300.</p><ul class="ticks"><li>12 weekly live calls with Guy</li><li>All 6 modules, worksheets and recordings</li><li>Private member group for 12 weeks</li><li>2 private 30-minute sessions</li></ul><a class="btn" href="enrol.html">Join And Pay In Full</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee. A full refund if it is not right for you.</span></p></div><div class="card tier"><p class="nm">Pay monthly</p><p class="pc">$1,300 <small>x 3 months</small></p><p class="fine">$3,900 in total. Same program.</p><ul class="ticks"><li>Everything in the program</li><li>3 monthly payments</li><li>Same 30-day guarantee</li></ul><a class="btn ghost" href="enrol.html">Join On The Payment Plan</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee. A full refund if it is not right for you.</span></p></div></div><figure class="card pr-q"><span class="av"><img src="images/face-7.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><blockquote><p>I nearly did not join because of the price. I made it back in week 6 by letting go of 1 client I should have dropped years ago.</p></blockquote><figcaption><b>Carla V.</b> · Signwriting business</figcaption></figure><p class="fine" style="margin-top:1.6rem">Prices in Australian dollars, including GST. 24 places per intake so that every member gets time on the calls. Enrolment closes 30 January.</p></div></section>
 <!-- Risk reversal with its terms stated honestly -->
 <section class="sec gu  "><div class="wrap"><div class="card"><div class="seal" aria-hidden="true"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg>30-day guarantee</div><div><h2>Try The First 4 Weeks. <em>Decide Then.</em></h2><p>Come to the first 4 calls and complete the honest audit. If you do not think the program is right for you, email me by day 30 and I will refund every dollar.</p><p>I only ask that you have done the work to that point, because that is the only way either of us can tell.</p></div></div></div></section>
 <!-- Objections answered in order of how often they are asked -->
 <section class="sec faq alt " id="faq"><div class="wrap"><header class="sh"><h2>Questions People Ask <em>Before They Join</em></h2></header><details><summary>How much time does it take?</summary><div class="a"><p>About 3 hours a week: a 90-minute call and 90 minutes of work in your own business.</p></div></details><details><summary>What if I miss a call?</summary><div class="a"><p>Every call is recorded and posted within 24 hours. Most members miss 1 or 2.</p></div></details><details><summary>Is this group or 1 to 1?</summary><div class="a"><p>Group, capped at 24, with 2 private sessions included.</p></div></details><details><summary>When does the next intake start after February?</summary><div class="a"><p>August. There are 2 intakes a year.</p></div></details><details><summary>What is the refund policy?</summary><div class="a"><p>A full refund within 30 days if you have attended the calls and completed the first module.</p></div></details></div></section>
 <!-- Closing call to action: the promise, the date and the same single button -->
-<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>12 Weeks From Now, <em>Friday Could Be Yours.</em></h2><p class="lead">24 places. Starts 2 February. Enrolment closes 30 January.</p><div class="acts" style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not sure? Email leila@leilahart.example and I will tell you honestly.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Leila Hart</b>Business coach for service-business owners</span></p></div></section>
+<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>12 Weeks From Now, <em>Friday Could Be Yours.</em></h2><p class="lead">24 places. Starts 2 February. Enrolment closes 30 January.</p><div class="acts" style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not sure? Email leila@guyincognito.example and I will tell you honestly.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Guy Incognito</b>Business coach for service-business owners</span></p></div></section>
 </main>
 <footer class="ft"><div class="wrap"><div class="ft-g">
-<div><a class="logo" href="#top">Leila Hart Coaching</a><p>Coaching for service-business owners who want a calmer, more profitable year.</p></div>
+<div><a class="logo" href="#top">Guy Incognito Coaching</a><p>Coaching for service-business owners who want a calmer, more profitable year.</p></div>
 <div><h2>Explore</h2><ul><li><a href="#top">The Program</a></li><li><a href="#inside">What Is Inside</a></li><li><a href="#join">Pricing</a></li><li><a href="#faq">Questions</a></li></ul></div>
 <div><h2>The Fine Print</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li><li><a href="refunds.html">Refund Policy</a></li></ul></div>
-</div><div class="ft-s"><p>hello@leilahart.example &nbsp;·&nbsp; Byron Bay, New South Wales &nbsp;·&nbsp; ABN 00 000 000 000</p><p>Results described are those of individual clients. Your results will depend on your business, your market and the work you put in. No income or outcome is guaranteed.</p>
+</div><div class="ft-s"><p>hello@guyincognito.example &nbsp;·&nbsp; Byron Bay, New South Wales &nbsp;·&nbsp; ABN 00 000 000 000</p><p>Results described are those of individual clients. Your results will depend on your business, your market and the work you put in. No income or outcome is guaranteed.</p>
 <!-- DEMO NOTE: delete the next line when the site is yours -->
-<p class="demo">Demo content. Leila Hart Coaching is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
-<div class="ft-mark" aria-hidden="true" style="--n:19" data-mark="Leila Hart Coaching"></div></div></footer>
-<!-- Mobile action bar: the main action stays in reach of the thumb -->
+<p class="demo">Demo content. Guy Incognito Coaching is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
+<div class="ft-mark" aria-hidden="true" style="--n:22" data-mark="Guy Incognito Coaching"></div></div></footer>
+<!-- Action bar: the main action stays in reach. A bar on a phone, a floating dock on a desktop -->
 <div class="sticky"><span><b>The Steady Founder</b><br>From $1,300 a month. 30-day guarantee.</span><a class="btn" href="#join">Join</a></div>
+<script>
+/* Movement only. Every word on this page is in the HTML above, so nothing here is needed to read it. Delete this block and the page still works. */
+(function(){var d=document,R=d.documentElement,W=window,q=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};R.classList.add('js');
+if(!('IntersectionObserver'in W))return;
+var hero=d.querySelector('main>.sec'),E=q('main>.cta,.ft');
+if(hero)new IntersectionObserver(function(e){R.classList.toggle('past',!e[0].isIntersecting)}).observe(hero);
+var eo=new IntersectionObserver(function(es){es.forEach(function(e){e.target._v=e.isIntersecting});R.classList.toggle('end',E.some(function(x){return x._v}))});
+E.forEach(function(x){eo.observe(x)});
+var ly=W.scrollY;W.addEventListener('scroll',function(){var y=W.scrollY;R.classList.toggle('down',y>ly&&y>600);ly=y},{passive:true});
+if(W.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+/* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
+var vh=W.innerHeight,todo=[],tick=0;
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.95)return 1;t.classList.add('in');
+setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1500)})}
+q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
+el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%6);el.setAttribute('data-rv','');todo.push(el)});
+function ask(){if(!tick&&todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener('scroll',ask,{passive:true});W.addEventListener('resize',ask);
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
+var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,'')),dp=(m[2].split('.')[1]||'').length,cm=m[2].indexOf(',')>-1,t0=0;
+if(!cm&&!dp&&n>1900&&n<2100)return;
+W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+b.textContent=m[1]+s+m[3];if(p<1)W.requestAnimationFrame(f)})})},{threshold:.5});
+q('.st-g b,.tile .big').forEach(function(b){if(!b.children.length&&b.getBoundingClientRect().top>vh*.94)co.observe(b)});
+if(R.hasAttribute('data-mq'))q('.logos ul').forEach(function(u){var w=d.createElement('div');w.className='mq';u.parentNode.insertBefore(w,u);w.appendChild(u);
+q('li',u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute('aria-hidden','true');u.appendChild(c)})});
+if(R.hasAttribute('data-spot')||R.hasAttribute('data-tilt'))d.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card,.tile');if(!c)return;
+var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty('--mx',x+'px');s.setProperty('--my',y+'px');
+s.setProperty('--rx',((y/r.height-.5)*-5).toFixed(2)+'deg');s.setProperty('--ry',((x/r.width-.5)*5).toFixed(2)+'deg')},{passive:true});
+})();
+</script>
 </body>
 </html>

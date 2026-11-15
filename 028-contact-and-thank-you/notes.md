@@ -2,8 +2,8 @@
 
 **Group:** Trust And Content  
 **For:** Business Owner, Consultant, Coach  
-**Style:** Corporate Calm (Source Serif 4 + IBM Plex Sans)  
-**Sample brand:** Calloway Finch (fictional)
+**Style:** Corporate Calm (Lora + Albert Sans)  
+**Sample brand:** Incognito Finch (fictional)
 
 The 2 most neglected pages on any site. A contact page that routes people and sets expectations, and a thank-you page that keeps the conversation going.
 
@@ -45,8 +45,8 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 
 ## Search Card
 
-- **Title:** Contact Calloway Finch | Workplace Mediation, Adelaide
-- **Description:** Contact Imelda Calloway at Calloway Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply within 1 business day.
+- **Title:** Contact Incognito Finch | Workplace Mediation, Adelaide
+- **Description:** Contact Guy Incognito at Incognito Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply within 1 business day.
 - **Structured data:** WebSite, ContactPage, Organization
 - The thank-you page is noindexed deliberately. It should not be in your sitemap, and it is where you fire your analytics conversion event.
 - The contact page is 1 of the pages Google's quality guidelines expect on any site that takes money. Link it from every page.
@@ -57,11 +57,11 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Contact Calloway Finch | Workplace Mediation, Adelaide” (54 characters). |
-| The person's name is in the title or description | **Good** | “Imelda Calloway” appears in the description. |
-| Description says who the page is for | **Good** | “Contact Imelda Calloway at Calloway Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply within 1 business day.” (177 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Calloway Finch”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://callowayfinch.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “Contact Incognito Finch | Workplace Mediation, Adelaide” (55 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the description. |
+| Description says who the page is for | **Good** | “Contact Guy Incognito at Incognito Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply within 1 business day.” (176 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Incognito Finch”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://incognitofinch.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 4 other pages of its own site by plain name: about.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -72,7 +72,7 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 5 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 26 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://callowayfinch.example/. |
+| 1 version of the address everywhere | **Good** | All 26 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://incognitofinch.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 7 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
 | No broken or dead links inside the site | **Good** | 154 internal links, buttons and form targets checked across 7 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
@@ -84,14 +84,14 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 7 pages. This page's reads: “Tell us what is happening. A person will reply.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 337 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 337 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 3 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 57KB for phones to 198KB for a laptop and a 2560px file for large screens, and the browser picks 1. 2 photo files, the largest 67KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 3 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 57KB for phones to 198KB for a laptop and a 2560px file for large screens, and the browser picks 1. 2 photo files, the largest 72KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 2 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.9 and the whole page at grade 9.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.2 and the whole page at grade 9.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -106,7 +106,7 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 3 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 10 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 15 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.7 to 1 for body text and 6 to 1 for large text. On a phone: 6.8 to 1 for body text and 6.8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 43KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 53KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -133,7 +133,7 @@ The 2 most neglected pages on any site. A contact page that routes people and se
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Imelda Calloway, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -177,7 +177,8 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Corporate Calm. White, slate navy and one teal. A serious serif, mono labels, hairline grids. Reassures a board.
-Fonts: Source Serif 4 + IBM Plex Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Stone And Forest. Sections rise into place as they scroll in. It uses centred section headers, cards lifted on soft shadows, arched section breaks, a dotted ground, a hairline frame inside the hero, questions as cards.
+Fonts: Lora + Albert Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

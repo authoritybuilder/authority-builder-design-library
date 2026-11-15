@@ -67,7 +67,8 @@ Add an entry to `C` in `src/canon.py` with its group, name, originator, source a
 - **Borrow the technique, never the copy, the images or the layout.** If a sample still looks or reads like the site that inspired it, keep working.
 - **No fake urgency.** No countdown timers. No invented scarcity. Limits must be the kind that could be real.
 - **Caveat every results claim.** Income and outcome figures carry a results-are-not-typical line.
-- **Everything in the HTML.** No content that needs JavaScript to appear. Only the quiz runs a script, and its questions are in the HTML either way.
+- **Everything in the HTML.** No content that needs JavaScript to appear. The shared movement script hides nothing unless it is running, and the quiz's questions are in the HTML either way.
+- **Its own design.** Give a new site an entry in `src/variants.py`: a palette, a type pairing, a few traits, a reveal style and a line for its picture band. On Windows, run the build with `PYTHONUTF8=1` set.
 - **No dead ends.** Every button leads to a real page, a real section or a working form. A destination that needs the owner's own account uses `kit.connect("what it is")`, which the launch checklist then lists.
 - **Every form sends.** Build forms with `form_open` in `src/sections.py` so they get a name, named fields, the spam trap and the thank-you page.
 - **Words over a painting must measure up.** `src/legible.mjs` has to report no line below the bar before you ship.

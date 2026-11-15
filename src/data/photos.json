@@ -3,7 +3,7 @@
   "dir": "001-coach-homepage",
   "folder": "001-coach-homepage/site/images",
   "hero": "001-coach-homepage/site/images/hero-2560.webp",
-  "person": "Imogen Wren",
+  "person": "Guy Incognito",
   "accent": "#A8431F",
   "photos": [
    {
@@ -11,7 +11,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Imogen mid-conversation, natural light, looking at the client, not the camera",
+    "brief": "Guy mid-conversation, natural light, looking at the client, not the camera",
     "who": "",
     "where": [
      "index.html",
@@ -83,7 +83,7 @@
   "dir": "002-consultant-authority-site",
   "folder": "002-consultant-authority-site/site/images",
   "hero": "002-consultant-authority-site/site/images/hero-2560.webp",
-  "person": "Marcus Halden",
+  "person": "Guy Incognito",
   "accent": "#0F6E66",
   "photos": [
    {
@@ -91,7 +91,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Marcus at a whiteboard with a client team. Working, not posing",
+    "brief": "Guy at a whiteboard with a client team. Working, not posing",
     "who": "",
     "where": [
      "index.html",
@@ -185,7 +185,7 @@
   "dir": "003-creator-hub",
   "folder": "003-creator-hub/site/images",
   "hero": "003-creator-hub/site/images/hero-2560.webp",
-  "person": "Tash Okafor",
+  "person": "Guy Incognito",
   "accent": "#1F3FFF",
   "photos": [
    {
@@ -193,7 +193,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Tash at her desk, colour-blocked wall, real mess included",
+    "brief": "Guy at his desk, colour-blocked wall, real mess included",
     "who": "",
     "where": [
      "index.html",
@@ -264,7 +264,7 @@
   "dir": "004-local-service-business",
   "folder": "004-local-service-business/site/images",
   "hero": "004-local-service-business/site/images/hero-2560.webp",
-  "person": "Bec Tran",
+  "person": "Guy Incognito",
   "accent": "#FF5A4F",
   "photos": [
    {
@@ -272,7 +272,7 @@
     "kind": "scene",
     "w": 1200,
     "h": 900,
-    "brief": "Bec at the shopfront with the street sign visible. Locals recognise the spot",
+    "brief": "Guy at the shopfront with the street sign visible. Locals recognise the spot",
     "who": "",
     "where": [
      "index.html"
@@ -346,7 +346,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Bec. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -358,7 +358,7 @@
   "dir": "005-about-founder-story",
   "folder": "005-about-founder-story/site/images",
   "hero": "005-about-founder-story/site/images/hero-2560.webp",
-  "person": "Dana Whitlock",
+  "person": "Guy Incognito",
   "accent": "#C8102E",
   "photos": [
    {
@@ -408,7 +408,7 @@
   "dir": "006-speaker-media-kit",
   "folder": "006-speaker-media-kit/site/images",
   "hero": "006-speaker-media-kit/site/images/hero-2560.webp",
-  "person": "Jonah Reyes",
+  "person": "Guy Incognito",
   "accent": "#F2B544",
   "photos": [
    {
@@ -492,7 +492,7 @@
   "dir": "007-signature-program-sales-page",
   "folder": "007-signature-program-sales-page/site/images",
   "hero": "007-signature-program-sales-page/site/images/hero-2560.webp",
-  "person": "Leila Hart",
+  "person": "Guy Incognito",
   "accent": "#2F5A40",
   "photos": [
    {
@@ -500,7 +500,7 @@
     "kind": "video",
     "w": 1280,
     "h": 720,
-    "brief": "a 2-minute welcome from Leila. Add captions and a transcript below the video",
+    "brief": "a 2-minute welcome from Guy. Add captions and a transcript below the video",
     "who": "",
     "where": [
      "index.html"
@@ -575,7 +575,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Leila outdoors, relaxed, mid-laugh. The life the program promises",
+    "brief": "Guy outdoors, relaxed, mid-laugh. The life the program promises",
     "who": "",
     "where": [
      "index.html"
@@ -619,7 +619,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Leila. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -631,7 +631,7 @@
   "dir": "008-online-course-sales-page",
   "folder": "008-online-course-sales-page/site/images",
   "hero": "008-online-course-sales-page/site/images/hero-2560.webp",
-  "person": "Sam Okonkwo",
+  "person": "Guy Incognito",
   "accent": "#FF4A1C",
   "photos": [
    {
@@ -702,7 +702,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Sam at a desk, laptop open, proposal on screen",
+    "brief": "Guy at a desk, laptop open, proposal on screen",
     "who": "",
     "where": [
      "index.html"
@@ -724,7 +724,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Sam. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -736,7 +736,7 @@
   "dir": "009-membership-community-join",
   "folder": "009-membership-community-join/site/images",
   "hero": "009-membership-community-join/site/images/hero-2560.webp",
-  "person": "Odette Laurent",
+  "person": "Guy Incognito",
   "accent": "#C23B1E",
   "photos": [
    {
@@ -818,7 +818,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Odette. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -830,7 +830,7 @@
   "dir": "010-mastermind-application",
   "folder": "010-mastermind-application/site/images",
   "hero": "010-mastermind-application/site/images/hero-2560.webp",
-  "person": "Vivienne Ashcombe",
+  "person": "Guy Incognito",
   "accent": "#26201B",
   "photos": [
    {
@@ -890,7 +890,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Vivienne. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -902,8 +902,8 @@
   "dir": "011-services-and-pricing",
   "folder": "011-services-and-pricing/site/images",
   "hero": "011-services-and-pricing/site/images/hero-2560.webp",
-  "person": "Mira Castellanos",
-  "accent": "#A8431F",
+  "person": "Guy Incognito",
+  "accent": "#7A2E4F",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -969,7 +969,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Mira. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -981,8 +981,8 @@
   "dir": "012-digital-product-shop",
   "folder": "012-digital-product-shop/site/images",
   "hero": "012-digital-product-shop/site/images/hero-2560.webp",
-  "person": "Ruby Nakamura",
-  "accent": "#FF5A4F",
+  "person": "Guy Incognito",
+  "accent": "#7B2FF7",
   "photos": [
    {
     "file": "scene-1.jpg",
@@ -1063,7 +1063,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Ruby. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1075,8 +1075,8 @@
   "dir": "013-corporate-training",
   "folder": "013-corporate-training/site/images",
   "hero": "013-corporate-training/site/images/hero-2560.webp",
-  "person": "Dr Anika Shah",
-  "accent": "#0F6E66",
+  "person": "Dr Guy Incognito",
+  "accent": "#2447D6",
   "photos": [
    {
     "file": "scene-1.jpg",
@@ -1168,7 +1168,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Anika. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1180,8 +1180,8 @@
   "dir": "014-lead-magnet-opt-in",
   "folder": "014-lead-magnet-opt-in/site/images",
   "hero": "014-lead-magnet-opt-in/site/images/hero-2560.webp",
-  "person": "Nadia Flores",
-  "accent": "#2F5A40",
+  "person": "Guy Incognito",
+  "accent": "#5B3F8C",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1246,7 +1246,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Nadia. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1258,8 +1258,8 @@
   "dir": "015-webinar-registration",
   "folder": "015-webinar-registration/site/images",
   "hero": "015-webinar-registration/site/images/hero-2560.webp",
-  "person": "Carmen Ortiz",
-  "accent": "#F2B544",
+  "person": "Guy Incognito",
+  "accent": "#B79CFF",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1324,7 +1324,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Carmen. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1336,8 +1336,8 @@
   "dir": "016-quiz-scorecard-landing",
   "folder": "016-quiz-scorecard-landing/site/images",
   "hero": "016-quiz-scorecard-landing/site/images/hero-2560.webp",
-  "person": "Thandi Mokoena",
-  "accent": "#1F3FFF",
+  "person": "Guy Incognito",
+  "accent": "#C73E08",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1391,7 +1391,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Thandi. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1403,8 +1403,8 @@
   "dir": "017-challenge-page",
   "folder": "017-challenge-page/site/images",
   "hero": "017-challenge-page/site/images/hero-2560.webp",
-  "person": "Frankie Doyle",
-  "accent": "#C23B1E",
+  "person": "Guy Incognito",
+  "accent": "#C92A60",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1458,7 +1458,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Frankie. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1470,8 +1470,8 @@
   "dir": "018-waitlist-launching-soon",
   "folder": "018-waitlist-launching-soon/site/images",
   "hero": "018-waitlist-launching-soon/site/images/hero-2560.webp",
-  "person": "Celeste Marchetti",
-  "accent": "#26201B",
+  "person": "Guy Incognito",
+  "accent": "#D9B97C",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1525,7 +1525,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Celeste. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1537,8 +1537,8 @@
   "dir": "019-book-a-call",
   "folder": "019-book-a-call/site/images",
   "hero": "019-book-a-call/site/images/hero-2560.webp",
-  "person": "Ngozi Okoro",
-  "accent": "#FF4A1C",
+  "person": "Guy Incognito",
+  "accent": "#C6F432",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1592,7 +1592,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Ngozi. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1604,8 +1604,8 @@
   "dir": "020-link-in-bio",
   "folder": "020-link-in-bio/site/images",
   "hero": "020-link-in-bio/site/images/hero-2560.webp",
-  "person": "Poppy Achebe",
-  "accent": "#FF5A4F",
+  "person": "Guy Incognito",
+  "accent": "#FF7A1A",
   "photos": [
    {
     "file": "you-1.jpg",
@@ -1671,8 +1671,8 @@
   "dir": "021-case-study",
   "folder": "021-case-study/site/images",
   "hero": "021-case-study/site/images/hero-2560.webp",
-  "person": "Estelle Nguyen",
-  "accent": "#C8102E",
+  "person": "Guy Incognito",
+  "accent": "#0D5C63",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1732,7 +1732,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Estelle. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1744,8 +1744,8 @@
   "dir": "022-wall-of-proof",
   "folder": "022-wall-of-proof/site/images",
   "hero": "022-wall-of-proof/site/images/hero-2560.webp",
-  "person": "Sage Holloway",
-  "accent": "#A8431F",
+  "person": "Guy Incognito",
+  "accent": "#4A5D23",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1860,7 +1860,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Sage. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1872,8 +1872,8 @@
   "dir": "023-blog-article",
   "folder": "023-blog-article/site/images",
   "hero": "023-blog-article/site/images/hero-2560.webp",
-  "person": "Hattie Lindqvist",
-  "accent": "#C8102E",
+  "person": "Guy Incognito",
+  "accent": "#1B4DD8",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1910,7 +1910,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Hattie. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -1922,8 +1922,8 @@
   "dir": "024-podcast-home",
   "folder": "024-podcast-home/site/images",
   "hero": "024-podcast-home/site/images/hero-2560.webp",
-  "person": "Lois Adeyemi",
-  "accent": "#F2B544",
+  "person": "Guy Incognito",
+  "accent": "#4FE0C0",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -1944,7 +1944,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Lois at the microphone, headphones on, mid-laugh",
+    "brief": "Guy at the microphone, headphones on, mid-laugh",
     "who": "",
     "where": [
      "index.html"
@@ -1988,7 +1988,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Lois. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -2000,8 +2000,8 @@
   "dir": "025-newsletter-sign-up-archive",
   "folder": "025-newsletter-sign-up-archive/site/images",
   "hero": "025-newsletter-sign-up-archive/site/images/hero-2560.webp",
-  "person": "Kofi Mensah",
-  "accent": "#1F3FFF",
+  "person": "Guy Incognito",
+  "accent": "#0B6B4F",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -2066,7 +2066,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Kofi. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -2078,8 +2078,8 @@
   "dir": "026-book-launch",
   "folder": "026-book-launch/site/images",
   "hero": "026-book-launch/site/images/hero-2560.webp",
-  "person": "Harriet Vale",
-  "accent": "#26201B",
+  "person": "Guy Incognito",
+  "accent": "#1F2A22",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -2144,7 +2144,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Harriet. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -2156,8 +2156,8 @@
   "dir": "027-event-retreat",
   "folder": "027-event-retreat/site/images",
   "hero": "027-event-retreat/site/images/hero-2560.webp",
-  "person": "Maren Solberg",
-  "accent": "#2F5A40",
+  "person": "Guy Incognito",
+  "accent": "#9A4A2A",
   "photos": [
    {
     "file": "scene-1.jpg",
@@ -2255,7 +2255,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Maren. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -2267,8 +2267,8 @@
   "dir": "028-contact-and-thank-you",
   "folder": "028-contact-and-thank-you/site/images",
   "hero": "028-contact-and-thank-you/site/images/hero-2560.webp",
-  "person": "Imelda Calloway",
-  "accent": "#0F6E66",
+  "person": "Guy Incognito",
+  "accent": "#1F5C45",
   "photos": [
    {
     "file": "you-headshot.jpg",
@@ -2288,7 +2288,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "a clear, friendly portrait of Imelda. Use the same photo on every profile",
+    "brief": "a clear, friendly portrait of Guy. Use the same photo on every profile",
     "who": "",
     "where": [
      "about.html"
@@ -2300,7 +2300,7 @@
   "dir": "031-section-patterns",
   "folder": "031-section-patterns/images",
   "hero": "001-coach-homepage/site/images/hero-2560.webp",
-  "person": "Imogen Wren",
+  "person": "Guy Incognito",
   "accent": "#A8431F",
   "photos": [
    {
@@ -2308,7 +2308,7 @@
     "kind": "you",
     "w": 900,
     "h": 1125,
-    "brief": "Imogen mid-conversation, natural light, looking at the client, not the camera",
+    "brief": "Guy mid-conversation, natural light, looking at the client, not the camera",
     "who": "",
     "where": [
      "404.html",
@@ -2364,7 +2364,7 @@
     "kind": "video",
     "w": 1280,
     "h": 720,
-    "brief": "a 2-minute welcome from Leila. Add captions and a transcript below the video",
+    "brief": "a 2-minute welcome from Guy. Add captions and a transcript below the video",
     "who": "",
     "where": [
      "404.html",
@@ -2388,18 +2388,6 @@
     ]
    },
    {
-    "file": "face-5.jpg",
-    "kind": "face",
-    "w": 200,
-    "h": 200,
-    "brief": "",
-    "who": "Estelle Nguyen",
-    "where": [
-     "404.html",
-     "index.html"
-    ]
-   },
-   {
     "file": "scene-1.jpg",
     "kind": "scene",
     "w": 1200,
@@ -2417,7 +2405,7 @@
     ]
    },
    {
-    "file": "face-6.jpg",
+    "file": "face-5.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2429,7 +2417,7 @@
     ]
    },
    {
-    "file": "face-7.jpg",
+    "file": "face-6.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2441,7 +2429,7 @@
     ]
    },
    {
-    "file": "face-8.jpg",
+    "file": "face-7.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2465,7 +2453,7 @@
     ]
    },
    {
-    "file": "face-9.jpg",
+    "file": "face-8.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2477,7 +2465,7 @@
     ]
    },
    {
-    "file": "face-10.jpg",
+    "file": "face-9.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2488,7 +2476,7 @@
     ]
    },
    {
-    "file": "face-11.jpg",
+    "file": "face-10.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2499,7 +2487,7 @@
     ]
    },
    {
-    "file": "face-12.jpg",
+    "file": "face-11.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
@@ -2510,12 +2498,23 @@
     ]
    },
    {
-    "file": "face-13.jpg",
+    "file": "face-12.jpg",
     "kind": "face",
     "w": 200,
     "h": 200,
     "brief": "",
     "who": "Dee",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "face-13.jpg",
+    "kind": "face",
+    "w": 200,
+    "h": 200,
+    "brief": "",
+    "who": "Guy Incognito",
     "where": [
      "index.html"
     ]

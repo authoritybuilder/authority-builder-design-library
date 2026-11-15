@@ -1,4 +1,4 @@
-# robots.txt for Leila Hart Coaching. It lives at https://leilahart.example/robots.txt
+# robots.txt for Guy Incognito Coaching. It lives at https://guyincognito.example/robots.txt
 
 # Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
 User-agent: Googlebot
@@ -24,4 +24,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://leilahart.example/sitemap.xml
+Sitemap: https://guyincognito.example/sitemap.xml

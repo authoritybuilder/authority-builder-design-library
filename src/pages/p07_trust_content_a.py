@@ -4,7 +4,7 @@ SAMPLE_NOTE = "Sample testimonials for a fictional brand. On your page, use real
 
 P21 = dict(
     n=21, slug="case-study", name="Case Study Page", group="Trust And Content", aud=["Consultant", "Coach"], theme="magazine", path="case-studies/physio-clinic/",
-    brand=dict(name="Lumen Practice Growth", person="Estelle Nguyen", role="Growth consultant for allied health clinics", domain="lumenpractice.example", mono="L",
+    brand=dict(name="Lumen Practice Growth", person="Guy Incognito", role="Growth consultant for allied health clinics", domain="lumenpractice.example", mono="L",
                line="Growth consulting for allied health clinics.", where="Brisbane, Queensland"),
     title="How A 3-Person Physio Clinic Filled Its Books In 90 Days | Lumen Practice Growth",
     desc="Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.",
@@ -18,7 +18,7 @@ P21 = dict(
         ("hero_article", dict(_="Article header: the result as the headline, a 2-line summary, a named author and a date",
             kicker="Case study · Allied health", h="How A 3-Person Physio Clinic Filled Its Books *In 90 Days*",
             standfirst="Coastline Physio was spending $2,800 a month on ads and still running at 61% capacity. The fix was not more new patients. It was keeping the ones they had.",
-            author="Estelle Nguyen", role="Lumen Practice Growth", date="14 September 2026", iso="2026-09-14", read="6 minute read",
+            author="Guy Incognito", role="Lumen Practice Growth", date="14 September 2026", iso="2026-09-14", read="6 minute read",
             visual=dict(kind="scene", label="Photo brief: the real clinic's reception or treatment room, with the owner's permission", ar="16/8"))),
         ("metrics", dict(_="The numbers first: a before and after table a skimmer can take in at once", eyebrow="The result, in numbers", h="90 Days, *4 Measures*",
             before="Day 1", after="Day 90", items=[
@@ -38,9 +38,9 @@ P21 = dict(
             ("p", "Rebooking went from 38% to 81% inside 6 weeks. By day 60 the diary was full enough that we cut the ad budget by two thirds. Sam hired a fourth practitioner in month 4."),
             ("box", "What To Copy From This", ["Count before you spend. Find out where patients or clients actually drop off.", "Give people a written plan at the first session.",
                                               "Make the next booking part of the appointment, not an afterthought.", "Follow up once, personally, within 2 days."])],
-            author=dict(name="Estelle Nguyen", bio="Estelle has worked with 85 allied health clinics since 2018. She was a practice manager for 9 years before that.", link="More about Estelle"))),
+            author=dict(name="Guy Incognito", bio="Guy has worked with 85 allied health clinics since 2018. He was a practice manager for 9 years before that.", link="More about Guy"))),
         ("quotes", dict(_="The client's own words, with name and role", variant="feature", tone="alt", visual=dict(label="Photo brief: Sam in the clinic, natural light", ar="1/1"), items=[
-            dict(q="I was about to double my ad budget. Estelle had me print a card instead. It is the best money I never spent.", name="Sam Whitford", role="Owner, Coastline Physio")])),
+            dict(q="I was about to double my ad budget. Guy had me print a card instead. It is the best money I never spent.", name="Sam Whitford", role="Owner, Coastline Physio")])),
         ("feed", dict(_="Related case studies: keeps the reader moving and links the pages together", id="more", eyebrow="More case studies", h="Different Clinics, *Same Method*", variant="grid", items=[
             dict(kind="Psychology practice", title="From a 9-week waitlist to a second location", meta="8 minute read", text="How a 5-clinician practice grew without burning out its founder.", img="Image brief: the practice exterior"),
             dict(kind="Podiatry clinic", title="Raising fees by 15% and losing 2 patients", meta="5 minute read", text="The letter, the timing and the numbers.", img="Image brief: a treatment room"),
@@ -69,10 +69,10 @@ P21 = dict(
 
 P22 = dict(
     n=22, slug="wall-of-proof", name="Wall Of Proof", group="Trust And Content", aud=["Coach", "Consultant", "Creator"], theme="warm_editorial", path="results/",
-    brand=dict(name="Sage Holloway", person="Sage Holloway", role="Executive coach", domain="sageholloway.example", mono="S",
+    brand=dict(name="Guy Incognito", person="Guy Incognito", role="Executive coach", domain="guyincognito.example", mono="G",
                line="Executive coaching for first-time chief executives.", where="Sydney, New South Wales"),
-    title="Client Results And Reviews | Sage Holloway, Executive Coach",
-    desc="What 9 first-time chief executives say about coaching with Sage Holloway, in their own words, with the result each one came for. Plus how these reviews are collected.",
+    title="Client Results And Reviews | Guy Incognito, Executive Coach",
+    desc="What 9 first-time chief executives say about coaching with Guy Incognito, in their own words, with the result each one came for. Plus how these reviews are collected.",
     schema=["CollectionPage", "BreadcrumbList"], ld=dict(crumbs=[("Home", ""), ("Results", "results/")]),
     nav=[("Coaching", "#talk"), ("Results", "#wall"), ("Articles", "#talk"), ("About", "#talk")], cta=("Book A Conversation", "#talk"),
     disclaimer="Client experiences are individual. No outcome is guaranteed.",
@@ -87,13 +87,13 @@ P22 = dict(
             note="Ratings are collected by an independent survey at 12 months. Sample figures for a fictional coach.")),
         ("quotes", dict(_="The wall: each quote led by its result, grouped so a reader can find someone like them", id="wall", eyebrow="The first year", h="What *Changed*", variant="wall", items=[
             dict(result="Board confidence", q="My chair told me at month 6 that she had stopped worrying. I had not known she was.", name="Chief executive", role="Health not-for-profit, 400 staff"),
-            dict(result="First 90 days", q="Sage stopped me announcing a restructure in week 3. That alone was worth the year.", name="Dominic Hale", role="CEO, logistics company"),
+            dict(result="First 90 days", q="Guy stopped me announcing a restructure in week 3. That alone was worth the year.", name="Dominic Hale", role="CEO, logistics company"),
             dict(result="Hard conversation", q="I had to exit a founder from the business. We rehearsed it 4 times. It took 20 minutes and he thanked me.", name="Priyanka Rao", role="CEO, software company"),
             dict(result="Time", q="I went from 11 direct reports to 6 and got my Fridays back for thinking.", name="Helena Marsh", role="Managing director, architecture firm"),
             dict(result="Still here", q="Every first-time CEO I started with has gone. I am in year 3.", name="Chief executive", role="Listed retailer"),
             dict(result="The team", q="For the first time my executive team argues in the room rather than in the corridor.", name="Tom Okafor", role="CEO, energy company"),
-            dict(result="Promotion", q="Internal candidate to CEO in 14 months. Sage helped me stop acting like the deputy.", name="Lucy Brennan", role="CEO, professional services firm"),
-            dict(result="Perspective", q="She is the only person in my working life with no stake in what I decide.", name="Chief executive", role="University"),
+            dict(result="Promotion", q="Internal candidate to CEO in 14 months. Guy helped me stop acting like the deputy.", name="Lucy Brennan", role="CEO, professional services firm"),
+            dict(result="Perspective", q="He is the only person in my working life with no stake in what I decide.", name="Chief executive", role="University"),
             dict(result="Sleep", q="I stopped waking at 3am. I did not think that was something coaching did.", name="Ravi Menon", role="CEO, manufacturing group")])),
         ("split", dict(_="A longer story on video, with a transcript, for the reader who wants depth", tone="alt", eyebrow="A longer story", h="12 Minutes With *Dominic Hale*",
             paras=["Dominic took over a 900-person logistics company in 2024. In this conversation he talks about the restructure he did not announce, and what he did instead."],
@@ -125,9 +125,9 @@ P22 = dict(
 
 P23 = dict(
     n=23, slug="blog-article", name="Blog Article Template", group="Trust And Content", aud=["Coach", "Creator", "Consultant"], theme="magazine", path="articles/coaching-bio/",
-    brand=dict(name="Hattie Lindqvist", person="Hattie Lindqvist", role="Copywriter for coaches", domain="hattielindqvist.example", mono="H",
+    brand=dict(name="Guy Incognito", person="Guy Incognito", role="Copywriter for coaches", domain="guyincognito.example", mono="G",
                line="Plain-English copywriting for coaches and consultants.", where="Hobart, Tasmania"),
-    title="How To Write A Coaching Bio That Gets You Booked | Hattie Lindqvist",
+    title="How To Write A Coaching Bio That Gets You Booked | Guy Incognito",
     desc="A copywriter who has written 300 coaching bios shares the 4-sentence structure that works, with 3 before and after examples and a fill-in template.",
     schema=["Article", "BreadcrumbList"],
     ld=dict(headline="How To Write A Coaching Bio That Gets You Booked", published="2026-10-06", modified="2026-11-09",
@@ -138,7 +138,7 @@ P23 = dict(
         ("hero_article", dict(_="Article header: the question as the headline, a 2-line answer preview, author, role and date",
             kicker="Writing · For coaches", h="How To Write A Coaching Bio That *Gets You Booked*",
             standfirst="Most coaching bios list qualifications and end with a love of dogs. After writing 300 of them, here is the 4-sentence structure I use, and why it works.",
-            author="Hattie Lindqvist", role="copywriter for coaches", date="6 October 2026", iso="2026-10-06", read="7 minute read · Updated 9 November 2026")),
+            author="Guy Incognito", role="copywriter for coaches", date="6 October 2026", iso="2026-10-06", read="7 minute read · Updated 9 November 2026")),
         ("article", dict(_="The body: the short answer first, then the reasoning, examples from real work, and a template", blocks=[
             ("box", "The Short Answer", ["Sentence 1: who you help and the result they get.", "Sentence 2: why you, in 1 specific fact.", "Sentence 3: how you work.",
                                           "Sentence 4: the next step. Keep the whole bio under 80 words."]),
@@ -153,7 +153,7 @@ P23 = dict(
             ("h2", "Use The Same Bio Everywhere"),
             ("p", "Once you have it, use it word for word on your website, LinkedIn, podcast guest pages and directories. When the versions conflict, people hesitate, and so do the AI tools that now summarise who you are."),
             ("box", "Try It Now", ["Write sentence 1 with a specific person and a specific result.", "Cut every adjective.", "Read it aloud to someone outside your field. If they can repeat it, you are done."])],
-            author=dict(name="Hattie Lindqvist", bio="Hattie is a copywriter who works only with coaches and consultants. She has written 300 bios and 90 websites since 2019.", link="More about Hattie"))),
+            author=dict(name="Guy Incognito", bio="Guy is a copywriter who works only with coaches and consultants. He has written 300 bios and 90 websites since 2019.", link="More about Guy"))),
         ("capture", dict(_="1 next step that follows from the article: a template", id="template", tone="alt", eyebrow="Free template", h="The 4-Sentence Bio, *As A Fill-In Page*",
             text="The structure above as a 1-page worksheet, with 12 real examples by niche.", button="Email Me The Template", note="1 email with the template, then my fortnightly letter.")),
         ("feed", dict(_="Related articles: internal links with descriptive titles", id="more", eyebrow="Keep reading", h="More On *Writing About Yourself*", variant="grid", items=[
@@ -182,12 +182,12 @@ P23 = dict(
 
 P24 = dict(
     n=24, slug="podcast-home", name="Podcast Home And Episode Page", group="Trust And Content", aud=["Creator", "Coach"], theme="dark_stage", path="podcast/",
-    brand=dict(name="The Second Act", person="Lois Adeyemi", role="Career change coach and podcast host", domain="secondactshow.example", mono="2",
+    brand=dict(name="The Second Act", person="Guy Incognito", role="Career change coach and podcast host", domain="secondactshow.example", mono="2",
                line="Conversations with people who changed careers after 40.", where="Melbourne, Victoria"),
-    title="The Second Act Podcast | Career Change After 40 With Lois Adeyemi",
-    desc="The Second Act is a weekly podcast of honest conversations with people who changed careers after 40. 112 episodes, hosted by career change coach Lois Adeyemi.",
+    title="The Second Act Podcast | Career Change After 40 With Guy Incognito",
+    desc="The Second Act is a weekly podcast of honest conversations with people who changed careers after 40. 112 episodes, hosted by career change coach Guy Incognito.",
     schema=["PodcastSeries", "Person", "BreadcrumbList"], ld=dict(show="The Second Act", crumbs=[("Home", ""), ("Podcast", "podcast/")]),
-    nav=[("Episodes", "#episodes"), ("Start Here", "#start"), ("About Lois", "#host"), ("Work With Me", "#host")], cta=("Follow The Show", "#latest"),
+    nav=[("Episodes", "#episodes"), ("Start Here", "#start"), ("About Guy", "#host"), ("Work With Me", "#host")], cta=("Follow The Show", "#latest"),
     blurb="A podcast home that works for listeners and for search: the latest episode playable at the top, a start-here set and full show notes as text.",
     sections=[
         ("hero_stage", dict(_="Hero: the show's premise in 1 line, with the numbers that prove it is worth a listen",
@@ -206,12 +206,12 @@ P24 = dict(
             more="Browse all 112 episodes", items=[
                 dict(kind="Ep 112", title="From barrister to baker at 47, with Margot Lindley", meta="44 min", text="What a second apprenticeship feels like when you used to run a courtroom."),
                 dict(kind="Ep 111", title="The redundancy that became a business, with Darius Kent", meta="39 min", text="18 months from payout to first profit."),
-                dict(kind="Ep 110", title="Listener questions: money, ego and telling your parents", meta="31 min", text="Lois answers 9 questions from the inbox."),
+                dict(kind="Ep 110", title="Listener questions: money, ego and telling your parents", meta="31 min", text="Guy answers 9 questions from the inbox."),
                 dict(kind="Ep 109", title="Teaching after 25 years in banking, with Soo-Jin Park", meta="47 min", text="The pay cut, the classroom and no regrets.")])),
-        ("split", dict(_="The host: who she is and how the show connects to her work", id="host", tone="alt", eyebrow="Your host", h="Lois Adeyemi Changed Careers *At 43*",
-            paras=["Lois spent 18 years in corporate law before retraining as a coach. She started the show in 2024 to find out whether her own leap was unusual. It was not.",
-                   "She now coaches people through career changes of their own. The podcast is free and always will be."],
-            cta=("Work With Lois", "#host"), visual=dict(label="Photo brief: Lois at the microphone, headphones on, mid-laugh"))),
+        ("split", dict(_="The host: who he is and how the show connects to his work", id="host", tone="alt", eyebrow="Your host", h="Guy Incognito Changed Careers *At 43*",
+            paras=["Guy spent 18 years in corporate law before retraining as a coach. He started the show in 2024 to find out whether his own leap was unusual. It was not.",
+                   "He now coaches people through career changes of their own. The podcast is free and always will be."],
+            cta=("Work With Guy", "#host"), visual=dict(label="Photo brief: Guy at the microphone, headphones on, mid-laugh"))),
         ("quotes", dict(_="Listener reviews as text", h="What Listeners *Write In*", note=SAMPLE_NOTE, items=[
             dict(result="Resigned, happily", q="Episode 61 gave me the spreadsheet. Episode 88 gave me the nerve.", name="Karen, 49", role="Listener, now retraining as a counsellor"),
             dict(result="Felt less alone", q="I listen on the drive to a job I am leaving in March.", name="Paulo, 44", role="Listener"),
@@ -222,12 +222,12 @@ P24 = dict(
     why=["The latest episode can be played without leaving the page, and every platform is named in text.",
          "A start-here set stops a new listener facing 112 episodes with no idea where to begin.",
          "Each episode has a real title with the guest's name and a 1-line summary, and links to its own page with full notes and a transcript.",
-         "The show is tied clearly to the host and her work, without turning the page into a sales pitch."],
+         "The show is tied clearly to the host and his work, without turning the page into a sales pitch."],
     principles=[
         ("jakob", "A player at the top and a list of episodes beneath: the layout every listener already knows."),
         ("hick", "3 start-here episodes instead of an archive of 112."),
         ("reciprocity", "The show is free and says it always will be."),
-        ("liking", "The host's own career change at 43 makes her one of the audience."),
+        ("liking", "The host's own career change at 43 makes him one of the audience."),
         ("stepps", "Listeners forward specific episodes. Clear numbers and titles make that easy."),
         ("raw_html", "Titles, summaries, notes and transcripts are text. Audio alone cannot be searched."),
         ("mentions", "Every guest is a reason for another site to mention the show by name."),

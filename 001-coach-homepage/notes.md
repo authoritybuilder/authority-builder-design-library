@@ -3,7 +3,7 @@
 **Group:** Home Bases  
 **For:** Coach  
 **Style:** Warm Editorial (Instrument Serif + Inter)  
-**Sample brand:** Wren & Field (fictional)
+**Sample brand:** Incognito & Field (fictional)
 
 A personal-brand home page that names its audience in the first line, then offers 3 clear ways in: free, private and team.
 
@@ -42,14 +42,15 @@ A personal-brand home page that names its audience in the first line, then offer
 4. About strip: a real story that opens with a failure, then credentials
 5. Named method: 3 stages with a timeframe, so the promise feels believable
 6. Testimonials as text, each led by a specific result
-7. Content list: bylined answers that give Google and AI tools something to cite
-8. Email capture: a small, free, weekly yes
-9. Closing call to action that protects the right to say no
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. Content list: bylined answers that give Google and AI tools something to cite
+9. Email capture: a small, free, weekly yes
+10. Closing call to action that protects the right to say no
 
 ## Search Card
 
-- **Title:** Wren & Field | Leadership Coaching For First-Time Managers
-- **Description:** Imogen Wren coaches new managers through their first 18 months. Private coaching, team cohorts and a free 5-minute manager check. Melbourne and online.
+- **Title:** Incognito & Field | Leadership Coaching For First-Time Managers
+- **Description:** Guy Incognito coaches new managers through their first 18 months. Private coaching, team cohorts and a free 5-minute manager check. Melbourne and online.
 - **Structured data:** WebSite, Organization, Person
 - WebSite, Organization and Person are linked to each other, so Google can connect the brand name to the founder's name.
 
@@ -59,11 +60,11 @@ A personal-brand home page that names its audience in the first line, then offer
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Wren & Field | Leadership Coaching For First-Time Managers” (58 characters). |
-| The person's name is in the title or description | **Good** | “Imogen Wren” appears in the description. |
-| Description says who the page is for | **Good** | “Imogen Wren coaches new managers through their first 18 months. Private coaching, team cohorts and a free 5-minute manager check. Melbourne and online.” (151 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Wren & Field”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://wrenandfield.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “Incognito & Field | Leadership Coaching For First-Time Managers” (63 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the description. |
+| Description says who the page is for | **Good** | “Guy Incognito coaches new managers through their first 18 months. Private coaching, team cohorts and a free 5-minute manager check. Melbourne and online.” (153 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Incognito & Field”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://incognitoandfield.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 6 other pages of its own site by plain name: about.html, book.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -74,10 +75,10 @@ A personal-brand home page that names its audience in the first line, then offer
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 7 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 34 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://wrenandfield.example/. |
+| 1 version of the address everywhere | **Good** | All 34 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://incognitoandfield.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 9 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 217 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 218 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 4 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -87,15 +88,15 @@ A personal-brand home page that names its audience in the first line, then offer
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “You got the promotion. Nobody showed you how to lead.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 807 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 822 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 3 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 446 words of body copy on the main page read at about school grade 4.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 14 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 47KB for phones to 167KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 62KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 15 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 47KB for phones to 167KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 69KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.1 and the whole page at grade 6.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.1 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -110,7 +111,7 @@ A personal-brand home page that names its audience in the first line, then offer
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 7 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 32 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.8 to 1 for body text and 7.4 to 1 for large text. On a phone: 6.2 to 1 for body text and 9.3 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 52KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 65KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -138,7 +139,7 @@ A personal-brand home page that names its audience in the first line, then offer
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 2 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Imogen Wren, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -159,7 +160,7 @@ A personal-brand home page that names its audience in the first line, then offer
 
 Each illustration stands in for a real photo. Shoot these to replace them.
 
-- Imogen mid-conversation, natural light, looking at the client, not the camera
+- Guy mid-conversation, natural light, looking at the client, not the camera
 - a candid, working shot. Notebook open, coffee, real desk
 
 ## Borrow This
@@ -193,12 +194,14 @@ STRUCTURE, IN THIS ORDER
 4. About strip: a real story that opens with a failure, then credentials
 5. Named method: 3 stages with a timeframe, so the promise feels believable
 6. Testimonials as text, each led by a specific result
-7. Content list: bylined answers that give Google and AI tools something to cite
-8. Email capture: a small, free, weekly yes
-9. Closing call to action that protects the right to say no
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. Content list: bylined answers that give Google and AI tools something to cite
+9. Email capture: a small, free, weekly yes
+10. Closing call to action that protects the right to say no
 
 DESIGN DIRECTION
 Warm Editorial. Paper tones, a bookish serif, italic emphasis. Feels like a considered letter.
+This site's own variation: Terracotta Letter. Sections rise into place as they scroll in. It uses numbered section headers, cards lifted on soft shadows, arched section breaks, a paper grain, the method on a timeline, a slow light drifting across the hero, a proof strip that runs as a ticker. The picture band is a full-width painted band.
 Fonts: Instrument Serif + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

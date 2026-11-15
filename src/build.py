@@ -31,6 +31,8 @@ import upgrades  # noqa: E402
 from kit import BASE_CSS, CSS, REG, e, h  # noqa: E402
 from polish import POLISH_CSS, THEME_POLISH  # noqa: E402
 from themes import THEMES  # noqa: E402
+import variants  # noqa: E402
+from motion import MOTION_CSS, MOTION_JS  # noqa: E402
 
 LASTMOD = "2026-11-15"  # the date the samples were last reviewed; used in each sitemap
 
@@ -50,7 +52,7 @@ SECTION_NAMES = {
     "cta": "Closing call to action", "feed": "Content list", "capture": "Email capture band", "schedule": "Agenda or timeline", "article": "Long-form article body",
     "player": "Podcast player", "products": "Product cards", "contact": "Contact form and details", "quiz": "Quiz question and result preview",
     "thanks": "Thank-you confirmation", "bios": "Copy-ready bios", "trust": "Trust strip", "matrix": "Side-by-side comparison table",
-    "shownotes": "Show notes and transcript",
+    "shownotes": "Show notes and transcript", "band": "Picture band with the main button",
 }
 
 SCHEMA_WHY = {
@@ -82,7 +84,7 @@ SEO_BUILT_IN = [
     "A real square PNG icon at a stable address, sized as a multiple of 48px",
     "Proof written as real text, so Google and AI tools can read and quote it",
     "Mobile-first layout, tap targets of 48px or more, visible focus states and reduced-motion support",
-    "No image downloads and no scripts, so the main content loads inside Google's 2.5 second target",
+    "1 small script, for movement only. Every word is in the HTML, and the page reads the same with scripts off",
 ]
 
 SEO_SKIP = [
@@ -212,7 +214,7 @@ def jsonld(P, kind="main", page=None):
 
 
 def css_for(P, secs):
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     vars_ = ":root{" + ";".join(f"--{k}:{v}" for k, v in t["v"].items()) + "}"
     used = []
     for name, _ in secs:
@@ -222,7 +224,7 @@ def css_for(P, secs):
     reset = (f'.bleed .card{{--ink:{v["ink"]};--ink2:{v["ink2"]};--line:{v["line"]};--accent-t:{v["accent-t"]};color:{v["ink"]};text-shadow:none}}'
              f'.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{{text-shadow:none}}')
     return (vars_ + BASE_CSS + "".join(CSS[n] for n in used) + POLISH_CSS + reset + "\n" + t["css"] + "\n" + THEME_POLISH.get(P["theme"], "")
-            + "\n" + P.get("css", ""))
+            + MOTION_CSS + t["vcss"] + "\n" + P.get("css", ""))
 
 
 def render_sections(P, secs):
@@ -237,7 +239,7 @@ QUIET = ("thanks", "404")  # pages that should never be found by search
 def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="main"):
     """1 complete page of a site. kind is main, about, contact, action, a policy name, thanks or 404."""
     secs = secs or P["sections"]
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     v = t["v"]
     b = P["brand"]
     main = kind == "main"
@@ -262,16 +264,19 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
               if kind in QUIET else "")
     ann = f'<p class="ann">{h(P["ann"])}</p>\n' if P.get("ann") and main else ""
     st = P.get("sticky") if main else None
-    sticky = (f'\n<!-- Mobile action bar: the main action stays in reach of the thumb -->\n<div class="sticky"><span>{h(st["text"])}</span>'
+    desk = ""
+    if main and not st and P.get("cta"):   # a site with no phone bar still gets the desktop dock
+        st, desk = dict(text=f'**{b["name"]}**|{b.get("role", "")}', cta=P["cta"]), " desk"
+    sticky = (f'\n<!-- Action bar: the main action stays in reach. A bar on a phone, a floating dock on a desktop -->\n<div class="sticky{desk}"><span>{h(st["text"])}</span>'
               f'<a class="btn" href="{e(st["cta"][1])}">{e(st["cta"][0])}</a></div>') if st else ""
     fine = "".join(f'<li><a href="{e(hr)}">{e(l)}</a></li>' for l, hr in P["trust_links"])
     body = render_sections(P, secs)
     over = secs[0][0] in BLEED
-    classes = " ".join(c for c in ("over o-" + P["art"]["tone"] if over else "", "has-sticky" if st else "") if c)
+    classes = " ".join(c for c in ("over o-" + P["art"]["tone"] if over else "", "has-sticky" if st and not desk else "") if c)
     preload = ('<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">\n'
                if over else "")
     return f"""<!doctype html>
-<html lang="en-AU" id="top">
+<html lang="en-AU" id="top"{variants.html_attrs(P)}>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -302,6 +307,7 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 </head>
 <body{f' class="{classes}"' if classes else ""}>
 <a class="skip" href="#main">Skip to content</a>
+<div class="prog" aria-hidden="true"></div>
 {ann}<div class="hdw"><header class="hd{" has-nav" if nav else ""}"><a class="logo" href="{home}">{e(b["name"])}</a>{navhtml}{hcta}{mnav}</header></div>
 <main id="main">
 {body}
@@ -314,6 +320,7 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 <!-- DEMO NOTE: delete the next line when the site is yours -->
 <p class="demo">Demo content. {e(b["name"])} is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
 <div class="ft-mark" aria-hidden="true" style="--n:{max(8, len(b["name"]))}" data-mark="{e(b["name"])}"></div></div></footer>{sticky}
+{MOTION_JS}
 </body>
 </html>
 """
@@ -364,7 +371,7 @@ def purposes(P):
 
 
 def prompt_for(P):
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     steps = "\n".join(f"{i + 1}. {p}" for i, p in enumerate(purposes(P)))
     rules = "\n".join(f"- {canon.C[k][2]}, {canon.C[k][1]}: {how}" for k, how in P["principles"])
     return f"""Build me a {P["name"].lower()} for my business, modelled on sample {P["num"]} in the Authority Builder Design Library.
@@ -381,6 +388,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 {t["label"]}. {t["mood"]}
+This site's own variation: {variants.describe(P)}
 Fonts: {t["pair"]} from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
@@ -421,7 +429,7 @@ def audit_groups(P):
 
 
 def notes_md(P):
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     L = [f"# {P['num']} · {P['name']}", "", f"**Group:** {P['group']}  ", f"**For:** {', '.join(P['aud'])}  ",
          f"**Style:** {t['label']} ({t['pair']})  ", f"**Sample brand:** {P['brand']['name']} (fictional)", "", P["blurb"], "",
          "## Why This Page Works", ""]
@@ -451,7 +459,7 @@ def notes_md(P):
 
 
 def notes_html(P):
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     v = t["v"]
     why = "".join(f"<li>{e(w)}</li>" for w in P["why"])
     res = "".join(
@@ -527,7 +535,7 @@ def notes_html(P):
 </div>
 <aside class="side blk"><div class="panel"><h2>At A Glance</h2><dl>
 <dt>Best for</dt><dd>{e(", ".join(P["aud"]))}</dd><dt>Group</dt><dd>{e(P["group"])}</dd>
-<dt>Style direction</dt><dd>{e(t["label"])}. {e(t["mood"])}</dd><dt>Fonts</dt><dd>{e(t["pair"])}</dd>
+<dt>Style direction</dt><dd>{e(t["label"])}. {e(t["mood"])}</dd><dt>This site's own variation</dt><dd>{e(variants.describe(P))}</dd><dt>Fonts</dt><dd>{e(t["pair"])}</dd>
 <dt>Palette</dt><dd><div class="sw">{sw}</div></dd><dt>Sample brand</dt><dd>{e(P["brand"]["name"])} (fictional)</dd></dl></div>
 <div class="panel"><h2>Files In This Entry</h2><dl><dt>site/</dt><dd>The complete website. Upload this folder to go live.</dd>
 <dt>site/index.html</dt><dd>The main page.</dd><dt>site/{e(tfiles)}</dt><dd>The trust pages, linked from every footer.</dd>
@@ -624,7 +632,7 @@ def block_patterns(num, pages):
 # ---------- gallery, canon, readme ----------
 
 def card(P):
-    t = THEMES[P["theme"]]
+    t = variants.theme(P)
     tags = "".join(f"<span>{e(a)}</span>" for a in P["aud"]) + f"<span>{e(t['label'])}</span>"
     return (f'<a class="card" href="{P["dir"]}/index.html" data-g="{e(P["group"])}" data-a="{e("|".join(P["aud"]))}" data-s="{e(t["label"])}">'
             f'<div class="th"><img src="{P["dir"]}/preview.jpg" alt="{e(P["name"])} sample preview" loading="lazy" width="640" height="400"></div>'
@@ -742,6 +750,7 @@ def load_pages():
             P["schema"] = ["WebSite"] * ("WebSite" not in P["schema"]) + [t for t in P["schema"] if t != "BreadcrumbList"]
             trust.files(P)
             upgrades.apply(P)
+            variants.enrich(P)
             pages.append(P)
     return sorted(pages, key=lambda P: P["n"])
 
@@ -751,6 +760,11 @@ def main():
     if bad:
         print("CONTRAST FAILURES:\n  " + "\n  ".join(bad))
     pages = load_pages()
+    for P in pages:   # every site's own palette is held to the same contrast rule as the 10 themes
+        tv = variants.theme(P)["v"]
+        low = [f"{P['num']} {a} on {b} = {ratio(tv[a], tv[b]):.2f}" for a, b in PAIRS if ratio(tv[a], tv[b]) < 4.5]
+        if low:
+            print("CONTRAST FAILURES:\n  " + "\n  ".join(low))
     import shutil
     n0 = len(pages)
     keep = {P["dir"] for P in pages} | {f"{n0 + 1:03d}-font-pairings", f"{n0 + 2:03d}-colour-palettes", f"{n0 + 3:03d}-section-patterns"}
@@ -795,7 +809,7 @@ def main():
             (site / "event.ics").write_text(trust.ics(upgrades.EVENTS[P["n"]], P), newline="")
         P["photos"] = list(kit.CTX["photos"].values())
         plan[P["num"]] = dict(dir=P["dir"], folder=f"{P['dir']}/site/images", hero=f"{P['dir']}/site/images/hero-2560.webp", person=P["brand"]["person"],
-                              accent=THEMES[P["theme"]]["v"]["accent"], photos=P["photos"])
+                              accent=variants.theme(P)["v"]["accent"], photos=P["photos"])
         (site / "netlify.toml").write_text(trust.NETLIFY)
         (site / "robots.txt").write_text(robots_txt(P))
         (site / "sitemap.xml").write_text(sitemap_xml(P, files))

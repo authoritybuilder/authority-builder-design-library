@@ -2,7 +2,7 @@
 
 **Group:** Trust And Content  
 **For:** Consultant, Coach  
-**Style:** Magazine (Bodoni Moda + Libre Franklin)  
+**Style:** Magazine (DM Serif Display + DM Sans)  
 **Sample brand:** Lumen Practice Growth (fictional)
 
 A case study told as a story with a table in the middle: the situation, the insight, what was done, the measured result and what a reader can copy.
@@ -41,8 +41,9 @@ A case study told as a story with a table in the middle: the situation, the insi
 2. The numbers first: a before and after table a skimmer can take in at once
 3. The story: situation, insight, the 3 changes, and what to copy, with first-hand detail
 4. The client's own words, with name and role
-5. Related case studies: keeps the reader moving and links the pages together
-6. Closing call to action that follows naturally from the story
+5. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+6. Related case studies: keeps the reader moving and links the pages together
+7. Closing call to action that follows naturally from the story
 
 ## Search Card
 
@@ -75,7 +76,7 @@ A case study told as a story with a table in the middle: the situation, the insi
 | 1 version of the address everywhere | **Good** | All 34 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://lumenpractice.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 9 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 216 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 217 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 3 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -85,15 +86,15 @@ A case study told as a story with a table in the middle: the situation, the insi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “How A 3-Person Physio Clinic Filled Its Books In 90 Days”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 776 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 791 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 393 words of body copy on the main page read at about school grade 4.5 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 7 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 56KB for phones to 198KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 114KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 10 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 56KB for phones to 198KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 114KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 4.9 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 5.0 and the whole page at grade 6.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -107,7 +108,7 @@ A case study told as a story with a table in the middle: the situation, the insi
 | A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Book A Clinic Review”) is 5544px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 8 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.8 to 1 for body text and 6.6 to 1 for large text. On a phone: 7 to 1 for body text and 8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 53KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 67KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -127,7 +128,7 @@ A case study told as a story with a table in the middle: the situation, the insi
 |---|---|---|
 | About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 9 pages. In the first version these 5 footer links went nowhere. |
 | Policy wording | **Your turn** | Privacy, Terms and Refunds are plain-English starting templates, marked as such on the page. Replace them with your own terms and have a lawyer check them. |
-| Author name and date on the content | **Good** | Byline for Estelle Nguyen with a publish date in the page and in the structured data. |
+| Author name and date on the content | **Good** | Byline for Guy Incognito with a publish date in the page and in the structured data. |
 | Proof is written as text | **Good** | 1 testimonials and every number on the page are real text, where Google and AI tools can read and quote them. None are trapped in images. |
 | Results claims carry a plain caveat | **Good** | The page shows results, and says in plain words that they are individual and not guaranteed. |
 
@@ -136,7 +137,7 @@ A case study told as a story with a table in the middle: the situation, the insi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Estelle Nguyen, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -188,12 +189,14 @@ STRUCTURE, IN THIS ORDER
 2. The numbers first: a before and after table a skimmer can take in at once
 3. The story: situation, insight, the 3 changes, and what to copy, with first-hand detail
 4. The client's own words, with name and role
-5. Related case studies: keeps the reader moving and links the pages together
-6. Closing call to action that follows naturally from the story
+5. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+6. Related case studies: keeps the reader moving and links the pages together
+7. Closing call to action that follows naturally from the story
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
-Fonts: Bodoni Moda + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Salmon Paper And Teal. Sections slide in from alternate sides as they scroll in. It uses headers underlined in the accent, column guide lines, the method laid out side by side, numbers as cards. The picture band is 3 crops of the painting beside the line.
+Fonts: DM Serif Display + DM Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

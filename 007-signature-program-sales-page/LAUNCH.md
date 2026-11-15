@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Leila Hart Coaching), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito Coaching), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 9 pages. Search for `DEMO NOTE`.
-- [ ] Replace `leilahart.example` with your real address. It appears 92 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@leilahart.example, Byron Bay, New South Wales and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 92 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Byron Bay, New South Wales and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 
@@ -18,17 +18,17 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
-| `video-1.jpg` | 1280 × 720 | A video still | index.html | a 2-minute welcome from Leila. Add captions and a transcript below the video |
+| `video-1.jpg` | 1280 × 720 | A video still | index.html | a 2-minute welcome from Guy. Add captions and a transcript below the video |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, enrol.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 | `face-1.jpg` | 200 × 200 | Marnie T. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Jo B. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Rav S. | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | Tess W. | index.html | A square headshot, used with their permission |
-| `you-1.jpg` | 900 × 1125 | You | index.html | Leila outdoors, relaxed, mid-laugh. The life the program promises |
+| `you-1.jpg` | 900 × 1125 | You | index.html | Guy outdoors, relaxed, mid-laugh. The life the program promises |
 | `face-5.jpg` | 200 × 200 | Imran K. | index.html | A square headshot, used with their permission |
 | `face-6.jpg` | 200 × 200 | Fiona D. | index.html | A square headshot, used with their permission |
 | `face-7.jpg` | 200 × 200 | Carla V. | index.html | A square headshot, used with their permission |
-| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Leila. Use the same photo on every profile |
+| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

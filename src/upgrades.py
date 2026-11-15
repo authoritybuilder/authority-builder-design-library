@@ -12,14 +12,14 @@ import trust
 # the owner replies with times or an invoice. Swap the buttons for your own booking or payment link whenever you have one.
 ACTIONS = {
     1: dict(file="book.html", kind="call", eyebrow="Free fit call", h="Book Your *Free Fit Call*", button="Request My Call", q="What is happening in your role right now?",
-            sub="25 minutes by video with Imogen. No pitch. A clear no is completely fine."),
+            sub="25 minutes by video with Guy. No pitch. A clear no is completely fine."),
     2: dict(file="book.html", kind="call", eyebrow="A first conversation", h="Request A *Conversation*", button="Request A Conversation", q="Where does your pricing hurt most?",
-            sub="30 minutes with Marcus, partner to partner. No proposal until you ask for one."),
+            sub="30 minutes with Guy, partner to partner. No proposal until you ask for one."),
     7: dict(file="enrol.html", kind="enrol", eyebrow="February intake", h="Reserve Your Place In *The Steady Founder*", button="Reserve My Place",
             select=("How would you like to pay?", ["Pay in full: $3,600", "Pay monthly: $1,300 x 3 months"]),
             sub="Choose how you would like to pay. Your invoice and welcome pack arrive within 1 business day, and the 30-day guarantee starts on the first call."),
     11: dict(file="book.html", kind="call", eyebrow="Intro call", h="Book A Free *Intro Call*", button="Request My Call", q="What are you hoping to fix or launch?",
-             sub="30 minutes with Mira. You will leave knowing which package fits and when you could start."),
+             sub="30 minutes with Guy. You will leave knowing which package fits and when you could start."),
     21: dict(file="book.html", kind="call", eyebrow="Clinic review", h="Book A Free *Clinic Review*", button="Request My Review", q="How many practitioners do you have, and how full is the diary?",
              sub="45 minutes. We count first, then tell you what we would fix. Free for clinics with 2 or more practitioners."),
     22: dict(file="book.html", kind="call", eyebrow="A first conversation", h="Book A First *Conversation*", button="Request A Conversation", q="What decision are you turning over?",
@@ -36,7 +36,7 @@ CHECKOUT = {8, 9, 12}
 # Dated events get a real calendar file and a Google Calendar link. Times are UTC.
 EVENTS = {
     15: dict(title="Fully Booked, Without Posting Daily: free masterclass", start="20270311T010000Z", end="20270311T021500Z", where="Online",
-             details="A free 60-minute masterclass with Carmen Ortiz, plus Q and A. The link is in your confirmation email."),
+             details="A free 60-minute masterclass with Guy Incognito, plus Q and A. The link is in your confirmation email."),
     17: dict(title="The 5-Day Offer Sprint: day 1", start="20270228T190000Z", end="20270228T192000Z", where="Online",
              details="Day 1 of the free 5-day Offer Sprint. 20 minutes. The task arrives by email at 6am AEDT."),
     27: dict(title="The Slow Strategy Retreat", start="20270514T050000Z", end="20270516T040000Z", where="Kin Kin Valley Lodge, Kin Kin QLD",
@@ -136,7 +136,7 @@ ART = {
     15: ("city", True, "light", "Painting of a city at night, gold windows reflected in a dark river"),
     16: ("studio", True, "dark", "Painting of arches, steps and spheres in lime, cobalt and peach"),
     17: ("desert", False, "light", "Painting of a long road through red country toward flat-topped ranges"),
-    18: ("studio", False, "dark", "Painting of arches, steps and spheres in bronze, ivory and espresso"),
+    18: ("studio", False, "light","Painting of arches, steps and spheres in bronze, ivory and espresso"),
     19: ("valley", True, "light", "Painting of bright green country under a blue sky, a path leading toward a far town"),
     20: ("coast", True, "light", "Painting of a sunny tropical bay with flowers in the dunes"),
     21: ("coast", False, "dark", "Painting of a pale dawn over a quiet bay"),
@@ -221,7 +221,7 @@ def u01(P):
 
 def u02(P):
     hero = S(P, "hero_split")
-    hero.update(reassure="A 30-minute conversation with Marcus. No proposal until you ask for one.", float2=("chart", "81% to 94%", "realisation rate, 9 months"))
+    hero.update(reassure="A 30-minute conversation with Guy. No proposal until you ask for one.", float2=("chart", "81% to 94%", "realisation rate, 9 months"))
     m = S(P, "metrics")
     m.update(tone="alt", cta=("Request A Conversation", "#talk"),
              chart=dict(title="Before and 9 months later", rows=[("Realisation rate (%)", 81, 94), ("Partner hours on fee disputes, a month", 31, 7)]))
@@ -284,10 +284,10 @@ def u05(P):
     i = idx(P, "doors")
     P["sections"].insert(i + 1, ("contact", dict(_="Contact details on the About page, so a reassured reader can act straight away", tone="alt", eyebrow="Get in touch",
         h="Ask Me *Anything First*", paras=["Not sure coaching is the right step yet? Send me a note. I read every email myself and I will tell you honestly what I would do in your position."],
-        cta=("Email Dana", f"mailto:dana@{d}"), details=[("Email", f"dana@{d}"), ("Based in", "Adelaide, South Australia. Coaching online, Australia-wide"), ("Reply time", "Within 2 business days")])))
-    P["brand"]["contact"] = f"dana@{d}"
-    P["sticky"] = dict(text="**Career coaching**|For women returning to work", cta=("Work With Dana", "#work"))
-    return [("about", "The page is built to reassure: the story opens with Dana's own 6-year break, the numbers come with their caveat, and the facts match every other page."),
+        cta=("Email Guy", f"mailto:guy@{d}"), details=[("Email", f"guy@{d}"), ("Based in", "Adelaide, South Australia. Coaching online, Australia-wide"), ("Reply time", "Within 2 business days")])))
+    P["brand"]["contact"] = f"guy@{d}"
+    P["sticky"] = dict(text="**Career coaching**|For women returning to work", cta=("Work With Guy", "#work"))
+    return [("about", "The page is built to reassure: the story opens with Guy's own 6-year break, the numbers come with their caveat, and the facts match every other page."),
             ("clarity", "Email, location and reply time are now on the About page itself, so a reader who has just been reassured does not have to go looking."),
             ("mecl", "The 380-women proof number floats beside the portrait, next to the main button.")]
 
@@ -322,7 +322,7 @@ def u07(P):
     P["ann"] = "February intake · 24 places · Enrolment closes **30 January**"
     hero = S(P, "hero_center")
     hero.update(reassure="30-day guarantee: do the first 4 weeks, then decide.", proof="Owners in the last intake freed a median of **9 hours a week**")
-    hero["under"]["cap"] = "A 2-minute welcome from Leila"
+    hero["under"]["cap"] = "A 2-minute welcome from Guy"
     S(P, "modules").update(cta=("Join The February Intake", "#join"))
     pr = S(P, "pricing")
     pr.update(under="30-day guarantee. A full refund if it is not right for you.", quote=first_quote(P))
@@ -373,13 +373,13 @@ def u09(P):
 
 def u10(P):
     hero = S(P, "hero_center")
-    hero["reassure"] = "Applying is not committing. Vivienne reads and answers every application herself, within 5 working days."
+    hero["reassure"] = "Applying is not committing. Guy reads and answers every application himself, within 5 working days."
     pr = S(P, "pricing")
     pr.update(quote=first_quote(P), under="5 places open for 2027. Applications close 28 February 2027.")
     c = S(P, "contact")
     c["form"]["fields"] = [f for f in c["form"]["fields"] if f[0] != "Team size"]
     c["form"]["fields"][1] = ("Agency, website and team size", "text", "For example: Northfold, northfold.example, 34 people")
-    c["details"].append(("Reply time", "Within 5 working days, from Vivienne"))
+    c["details"].append(("Reply time", "Within 5 working days, from Guy"))
     P["sticky"] = dict(text="**The 2027 Table**|5 places open. Closes 28 February.", cta=("Apply", "#apply"))
     return [("mecl", "A member's words now sit beside the investment, where the decision is made."),
             ("cre", "The first button says what applying does and does not commit you to, and when you will hear back."),
@@ -523,7 +523,7 @@ def u18(P):
 def u19(P):
     hero = S(P, "hero_form")
     hero["visual"] = None
-    hero["form"] = dict(name="call", title="Request a time", button="Request My Call", note="Ngozi replies within 1 business day with 3 times to choose from.",
+    hero["form"] = dict(name="call", title="Request a time", button="Request My Call", note="Guy replies within 1 business day with 3 times to choose from.",
                         fields=[("Your name", "text", "First and last name"), ("Email", "email", "you@clinic.com"), ("Best days and times for you", "text", "For example: Tuesday or Thursday mornings")])
     hero["after"] = "No phone number needed. You get a calendar invite with a video link, and a reminder the day before."
     hero["proof"] = "**Alan, Mel and Grace** all started with this call. Their words are below."
@@ -619,7 +619,7 @@ def u24(P):
         id="notes", tone="alt", eyebrow="Episode 112", h="Show Notes And *Transcript*", stamps=[
             ("02:10", "Why Margot left the bar after 22 years"), ("11:45", "The pay cut, in real numbers"), ("18:20", "A second apprenticeship at 47"),
             ("29:30", "What her old colleagues said"), ("38:05", "The advice she would give herself at 40")],
-        transcript=[("Lois", "You went from running a courtroom to being the newest person in a kitchen. What did that feel like on day 1?"),
+        transcript=[("Guy", "You went from running a courtroom to being the newest person in a kitchen. What did that feel like on day 1?"),
                     ("Margot", "Humbling, and oddly restful. For 22 years I was the person with the answer. Now I was the person asking where the flour was kept.")],
         more="Read the full transcript")))
     P.setdefault("ld", {})["episode"] = dict(name="From Barrister To Baker At 47, With Margot Lindley", number=112, date="2026-11-10")
@@ -682,9 +682,9 @@ def u28(P):
     c = S(P, "contact")
     c["form"]["fields"] = [("Your name", "text", "First and last name"), ("Email or phone", "text", "Whichever you prefer"),
                            ("What is happening?", "area", "A few lines is plenty")]
-    c["form"]["note"] = "We reply within 1 business day. Read only by Imelda."
+    c["form"]["note"] = "We reply within 1 business day. Read only by Guy."
     c["call"] = ("(08) 5550 0163", tel, "Monday to Friday, 9am to 5pm ACST.")
-    S(P, "hero_center")["sub"] = "Imelda reads every message herself and replies within 1 business day. What you tell us stays private."
+    S(P, "hero_center")["sub"] = "Guy reads every message himself and replies within 1 business day. What you tell us stays private."
     P["sticky"] = dict(text="**Reply within 1 business day**|Confidential", cta=("Call Now", tel))
     return [("three", "The form went from 4 fields to 3. The role drop-down is gone."),
             ("phone", "1 field takes an email address or a phone number, so nobody is forced to give a number."),

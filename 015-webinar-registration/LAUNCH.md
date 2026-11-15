@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Carmen Ortiz Consulting), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito Consulting), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 8 pages. Search for `DEMO NOTE`.
-- [ ] Replace `carmenortiz.example` with your real address. It appears 82 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@carmenortiz.example, Melbourne, Victoria and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 82 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Melbourne, Victoria and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 
@@ -23,7 +23,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | Peter H. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Yasmin K. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Olu B. | index.html | A square headshot, used with their permission |
-| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Carmen. Use the same photo on every profile |
+| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

@@ -3,7 +3,7 @@
 **Group:** Home Bases  
 **For:** Consultant  
 **Style:** Corporate Calm (Source Serif 4 + IBM Plex Sans)  
-**Sample brand:** Halden Rowe Advisory (fictional)
+**Sample brand:** Incognito Rowe Advisory (fictional)
 
 A B2B consultant site that reads like a board paper: a sharp position, a method, measured results and 1 action, a conversation.
 
@@ -41,17 +41,18 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 3. The problem, stated the way a managing partner would say it
 4. Case study numbers as a table: before and after, with the firm type named
 5. 1 featured testimonial with name, title and firm size
-6. Named method with a fixed timeframe
-7. Insights hub: the content that brings the enquiries
-8. About the adviser: credentials a board would check
-9. Closing call to action: a conversation, not a sales call
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Named method with a fixed timeframe
+8. Insights hub: the content that brings the enquiries
+9. About the adviser: credentials a board would check
+10. Closing call to action: a conversation, not a sales call
 
 ## Search Card
 
-- **Title:** Halden Rowe Advisory | Pricing Strategy For Professional Services Firms
-- **Description:** Marcus Halden and Halden Rowe Advisory help accounting, legal and engineering firms of 20 to 200 people move from hourly billing to value pricing. 61 firms advised since 2016.
+- **Title:** Incognito Rowe Advisory | Pricing Strategy For Professional Services Firms
+- **Description:** Guy Incognito and Incognito Rowe Advisory help accounting, legal and engineering firms of 20 to 200 people move from hourly billing to value pricing. 61 firms advised since 2016.
 - **Structured data:** WebSite, Organization, Person
-- The alternate name (Halden Rowe) is declared, so Google can use the short form people actually search for.
+- The alternate name (Incognito Rowe) is declared, so Google can use the short form people actually search for.
 
 ## SEO And AI Search Audit: What Was Checked
 
@@ -59,11 +60,11 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Halden Rowe Advisory | Pricing Strategy For Professional Services Firms” (71 characters). |
-| The person's name is in the title or description | **Good** | “Marcus Halden” appears in the description. |
-| Description says who the page is for | **Good** | “Marcus Halden and Halden Rowe Advisory help accounting, legal and engineering firms of 20 to 200 people move from hourly billing to value pricing. 61 firms advised since 2016.” (175 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Halden Rowe Advisory”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://haldenrowe.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “Incognito Rowe Advisory | Pricing Strategy For Professional Services Firms” (74 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the description. |
+| Description says who the page is for | **Good** | “Guy Incognito and Incognito Rowe Advisory help accounting, legal and engineering firms of 20 to 200 people move from hourly billing to value pricing. 61 firms advised since 2016.” (178 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Incognito Rowe Advisory”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://incognitorowe.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 6 other pages of its own site by plain name: about.html, book.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -74,10 +75,10 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 7 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 34 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://haldenrowe.example/. |
+| 1 version of the address everywhere | **Good** | All 34 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://incognitorowe.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 9 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 213 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 214 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 4 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -87,15 +88,15 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “Stop selling hours. Start pricing the outcome.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 656 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 668 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 325 words of body copy on the main page read at about school grade 5.2 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 325 words of body copy on the main page read at about school grade 5.3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 11 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 44KB for phones to 142KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 42KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 14 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 44KB for phones to 142KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 46KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 9.0 and the whole page at grade 10.1 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 8.8 and the whole page at grade 10.2 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -109,7 +110,7 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Request A Conversation”) ends 479px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 5 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 31 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 9 to 1 for body text and 11.5 to 1 for large text. On a phone: 9.2 to 1 for body text and 10.4 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 65KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -137,7 +138,7 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Marcus Halden, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -158,7 +159,7 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 
 Each illustration stands in for a real photo. Shoot these to replace them.
 
-- Marcus at a whiteboard with a client team. Working, not posing
+- Guy at a whiteboard with a client team. Working, not posing
 - the client, in their own office
 - a plain, well-lit portrait. Jacket, no tie, direct eye contact
 
@@ -191,13 +192,15 @@ STRUCTURE, IN THIS ORDER
 3. The problem, stated the way a managing partner would say it
 4. Case study numbers as a table: before and after, with the firm type named
 5. 1 featured testimonial with name, title and firm size
-6. Named method with a fixed timeframe
-7. Insights hub: the content that brings the enquiries
-8. About the adviser: credentials a board would check
-9. Closing call to action: a conversation, not a sales call
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Named method with a fixed timeframe
+8. Insights hub: the content that brings the enquiries
+9. About the adviser: credentials a board would check
+10. Closing call to action: a conversation, not a sales call
 
 DESIGN DIRECTION
 Corporate Calm. White, slate navy and one teal. A serious serif, mono labels, hairline grids. Reassures a board.
+This site's own variation: Slate And Teal. Sections slide in from alternate sides as they scroll in. It uses headers underlined in the accent, outlined cards, hairline section breaks, the method laid out side by side, a proof strip that runs as a ticker. The picture band is 3 crops of the painting beside the line.
 Fonts: Source Serif 4 + IBM Plex Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

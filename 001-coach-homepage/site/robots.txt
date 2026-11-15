@@ -1,4 +1,4 @@
-# robots.txt for Wren & Field. It lives at https://wrenandfield.example/robots.txt
+# robots.txt for Incognito & Field. It lives at https://incognitoandfield.example/robots.txt
 
 # Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
 User-agent: Googlebot
@@ -24,4 +24,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://wrenandfield.example/sitemap.xml
+Sitemap: https://incognitoandfield.example/sitemap.xml

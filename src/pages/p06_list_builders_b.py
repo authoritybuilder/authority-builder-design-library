@@ -4,7 +4,7 @@ SAMPLE_NOTE = "Sample testimonials for a fictional brand. On your page, use real
 
 P18 = dict(
     n=18, slug="waitlist-launching-soon", name="Waitlist Or Launching-Soon Page", group="List Builders And Launches", aud=["Coach", "Creator", "Consultant"], theme="quiet_luxury", path="atelier/",
-    brand=dict(name="Atelier Year", person="Celeste Marchetti", role="Mentor to independent designers", domain="atelieryear.example", mono="A",
+    brand=dict(name="Atelier Year", person="Guy Incognito", role="Mentor to independent designers", domain="atelieryear.example", mono="A",
                line="A year-long mentorship for independent designers. Opening April 2027.", where="Melbourne, Victoria"),
     title="Atelier Year | Join The Waitlist | Opening April 2027",
     desc="Atelier Year is a 12-month mentorship for independent interior designers, opening in April 2027 with 30 founding places. Join the waitlist for first access and the founding rate.",
@@ -21,10 +21,10 @@ P18 = dict(
             ("First access", "The waitlist can enrol 72 hours before the doors open to anyone else."),
             ("The founding rate", "Founding members keep their rate for as long as they stay."),
             ("A say in it", "A 5-question survey in February shapes the first quarter's sessions.")])),
-        ("prose", dict(_="A short note from the founder: why this, why now", eyebrow="A note from Celeste", h="Why I Am *Building This*",
+        ("prose", dict(_="A short note from the founder: why this, why now", eyebrow="A note from Guy", h="Why I Am *Building This*",
             paras=["I ran my studio alone for 9 years before I found a mentor. The difference in the 3 years after was not talent. It was having someone to ask.",
                    "Atelier Year is the mentorship I wanted then: 12 months, a small group, real projects on the table. I am building it slowly, and I would like your help getting it right."],
-            sign="Celeste Marchetti")),
+            sign="Guy Incognito")),
         ("faq", dict(_="The few things people need to know before giving an email", tone="alt", h="What We Can *Tell You Now*", items=[
             ("What will it cost?", "The founding rate will be between $4,000 and $5,000 for the year. The exact figure will be in the first email."),
             ("Who is it for?", "Independent interior designers with at least 2 years in practice."),
@@ -51,17 +51,17 @@ P18 = dict(
 
 P19 = dict(
     n=19, slug="book-a-call", name="Book-A-Call Page", group="List Builders And Launches", aud=["Consultant", "Coach"], theme="bold_type", path="call/",
-    brand=dict(name="Okoro Strategy", person="Ngozi Okoro", role="Growth strategist for professional practices", domain="okorostrategy.example", mono="O",
+    brand=dict(name="Incognito Strategy", person="Guy Incognito", role="Growth strategist for professional practices", domain="incognitostrategy.example", mono="I",
                line="Growth strategy for clinics and professional practices.", where="Perth, Western Australia"),
-    title="Book A 30-Minute Strategy Call | Okoro Strategy",
-    desc="Book a free 30-minute strategy call with Ngozi Okoro. For clinic and practice owners with $500k or more in revenue. Leave with 3 priorities, whether or not we work together.",
+    title="Book A 30-Minute Strategy Call | Incognito Strategy",
+    desc="Book a free 30-minute strategy call with Guy Incognito. For clinic and practice owners with $500k or more in revenue. Leave with 3 priorities, whether or not we work together.",
     schema=["WebPage", "Organization"], nav=None, cta=None, foot=[("Book A Call", "#top")],
     blurb="A booking page that answers the 3 fears behind every sales call: will it waste my time, will I be pressured, and am I even the right fit.",
     sections=[
         ("hero_form", dict(_="Hero: what the call is, how long, and what you leave with, beside the calendar",
             eyebrow="Free · 30 minutes · By video", h="30 minutes. *3 priorities.* No pitch.",
             sub="A working call for clinic and practice owners. We look at your numbers together and you leave with the 3 things to fix first, whether or not we ever work together.",
-            bullets=["With Ngozi, not a sales rep", "You talk for 20 of the 30 minutes", "A written summary within 24 hours"],
+            bullets=["With Guy, not a sales rep", "You talk for 20 of the 30 minutes", "A written summary within 24 hours"],
             visual=dict(kind="cal", month="March 2027", day="Thursday 12 March", open=[3, 4, 5, 10, 11, 12, 17, 18, 19, 24, 25], pick=12,
                         slots=["9:00am", "11:30am", "2:00pm"], label="Calendar mock-up. Embed your booking tool here. Times shown in AWST."))),
         ("steps", dict(_="What happens on the call, minute by minute", tone="alt", eyebrow="The 30 minutes", h="Exactly What *Happens*", items=[
@@ -72,8 +72,8 @@ P19 = dict(
             right=("Book a call if you", ["Own a clinic or practice with $500k+ revenue", "Have at least 3 team members", "Feel busy but not more profitable", "Want an outside view within 2 weeks"]),
             left=("Hold off if you", ["Are pre-launch", "Want marketing execution only", "Need an answer today", "Are not the decision-maker"]))),
         ("quotes", dict(_="Proof about the call itself, not the paid work", tone="alt", h="What People Say *About The Call*", note=SAMPLE_NOTE, items=[
-            dict(result="Did not hire her", q="She told me I did not need a strategist yet and gave me 3 things to do instead. I did them. Revenue is up 20%.", name="Dr Alan Voss", role="Dental practice owner"),
-            dict(result="Hired her", q="The summary email was better than a report I once paid $8,000 for.", name="Mel Tanaka", role="Physio group director"),
+            dict(result="Did not hire him", q="He told me I did not need a strategist yet and gave me 3 things to do instead. I did them. Revenue is up 20%.", name="Dr Alan Voss", role="Dental practice owner"),
+            dict(result="Hired him", q="The summary email was better than a report I once paid $8,000 for.", name="Mel Tanaka", role="Physio group director"),
             dict(result="Clarity", q="30 minutes. 1 page. I finally knew what to stop doing.", name="Grace Obi", role="Allied health clinic owner")])),
         ("faq", dict(_="The last objections", h="Fair *Questions*", items=[
             ("Is it really free?", "Yes. About 1 in 4 calls leads to paid work. The rest get the same effort."),
@@ -84,7 +84,7 @@ P19 = dict(
     ],
     why=["The headline promises an outcome from the call itself, so booking is worth it even if you never buy.",
          "A minute-by-minute plan removes the fear of a rambling sales call.",
-         "The first testimonial is from someone who did not hire her. Nothing proves no-pressure like that.",
+         "The first testimonial is from someone who did not hire him. Nothing proves no-pressure like that.",
          "A qualification list protects the consultant's calendar and makes the right reader feel chosen."],
     principles=[
         ("reactance", "No pitch is in the headline, and 1 testimonial is from a person who did not buy."),
@@ -103,20 +103,20 @@ P19 = dict(
 
 P20 = dict(
     n=20, slug="link-in-bio", name="Link-In-Bio Page", group="List Builders And Launches", aud=["Creator", "Coach"], theme="bright_playful", path="links/",
-    brand=dict(name="Poppy Achebe", person="Poppy Achebe", role="Money coach for freelancers", domain="poppyachebe.example", mono="P",
+    brand=dict(name="Guy Incognito", person="Guy Incognito", role="Money coach for freelancers", domain="guyincognito.example", mono="G",
                line="Money coaching for freelancers. Calm, practical, jargon-free.", where="Darwin, Northern Territory"),
-    title="Poppy Achebe | Links | Money Coaching For Freelancers",
-    desc="Everything from Poppy Achebe in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.",
+    title="Guy Incognito | Links | Money Coaching For Freelancers",
+    desc="Everything from Guy Incognito in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.",
     schema=["WebPage", "Person"], nav=None, cta=None, foot=[("Start Here", "#top")],
     css=".hd{justify-content:center}",
     blurb="A link-in-bio page on your own domain. 1 featured action, 5 plain links, each with a line saying what it is.",
     sections=[
         ("linkbio", dict(_="The whole page: a face, a 1-line promise, 1 featured action, then 5 labelled links",
             photo="Photo brief: the same headshot as your social profile, so people know they are in the right place",
-            h="Poppy Achebe", sub="Money coach for freelancers. I help you pay yourself properly and stop fearing tax time.",
+            h="Guy Incognito", sub="Money coach for freelancers. I help you pay yourself properly and stop fearing tax time.",
             feature=dict(eyebrow="Start here · Free", h="The Tax Jar Calculator", text="Type in what you earned this month. See exactly what to set aside. Takes 60 seconds.", cta=("Open The Calculator", "#top")),
             links=[("The Friday Money Minute", "My weekly email. 1 money task, 5 minutes.", "Free"), ("Work with me", "1 to 1 coaching. 4 sessions.", "From $880"),
-                   ("Pay Yourself First, the course", "Self-paced. 3 hours.", "$190"), ("The podcast", "Freelance money stories, fortnightly.", "Listen"), ("About Poppy", "Who I am and why I do this.", "")],
+                   ("Pay Yourself First, the course", "Self-paced. 3 hours.", "$190"), ("The podcast", "Freelance money stories, fortnightly.", "Listen"), ("About Guy", "Who I am and why I do this.", "")],
             socials=["Instagram", "LinkedIn", "YouTube", "Email"])),
     ],
     why=["It lives on the creator's own domain, so the visit, the search value and the email address all stay with them.",

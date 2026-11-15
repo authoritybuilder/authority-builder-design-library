@@ -279,9 +279,7 @@ picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}p
 /* The headline slides but never starts hidden, so the largest element paints straight away */
 h1[data-in]{animation-name:slide}
 @keyframes slide{from{transform:translateY(16px)}}
-/* Sections lift into place as they scroll in. They never fade, so nothing sits half-visible at the edge of the screen */
-@keyframes lift{from{transform:translateY(28px)}}
-@supports(animation-timeline:view()){.sec>.wrap>*{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+/* Sections below the first screen reveal as they scroll in: see src/motion.py */
 }
 @media print{.libbar{display:none}.sec{padding-block:28px}}
 """

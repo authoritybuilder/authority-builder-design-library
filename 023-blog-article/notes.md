@@ -2,8 +2,8 @@
 
 **Group:** Trust And Content  
 **For:** Coach, Creator, Consultant  
-**Style:** Magazine (Bodoni Moda + Libre Franklin)  
-**Sample brand:** Hattie Lindqvist (fictional)
+**Style:** Magazine (Spectral + Inter)  
+**Sample brand:** Guy Incognito (fictional)
 
 An article layout built to be read, cited and acted on: a short answer at the top, first-hand examples, a clear byline and 1 next step.
 
@@ -43,7 +43,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 
 ## Search Card
 
-- **Title:** How To Write A Coaching Bio That Gets You Booked | Hattie Lindqvist
+- **Title:** How To Write A Coaching Bio That Gets You Booked | Guy Incognito
 - **Description:** A copywriter who has written 300 coaching bios shares the 4-sentence structure that works, with 3 before and after examples and a fill-in template.
 - **Structured data:** WebSite, Article
 - Article markup declares the headline, author, published and modified dates. The dates in the code must match the dates on the page.
@@ -55,11 +55,11 @@ An article layout built to be read, cited and acted on: a short answer at the to
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “How To Write A Coaching Bio That Gets You Booked | Hattie Lindqvist” (67 characters). |
-| The person's name is in the title or description | **Good** | “Hattie Lindqvist” appears in the title. |
+| Title carries the brand or the person's name | **Good** | “How To Write A Coaching Bio That Gets You Booked | Guy Incognito” (64 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
 | Description says who the page is for | **Good** | “A copywriter who has written 300 coaching bios shares the 4-sentence structure that works, with 3 before and after examples and a fill-in template.” (147 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Hattie Lindqvist”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://hattielindqvist.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -70,7 +70,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://hattielindqvist.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
 | No broken or dead links inside the site | **Good** | 192 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
@@ -83,15 +83,15 @@ An article layout built to be read, cited and acted on: a short answer at the to
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “How To Write A Coaching Bio That Gets You Booked”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 741 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 741 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 414 words of body copy on the main page read at about school grade 5.3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 414 words of body copy on the main page read at about school grade 5.2 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
 | Images are sized, described and sent in a phone size | **Good** | 3 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 46KB for phones to 154KB for a laptop and a 2560px file for large screens, and the browser picks 1. 3 photo files, the largest 80KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 3 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 8.4 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 8.7 and the whole page at grade 7.1 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -105,7 +105,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 | A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Email Me The Template”) is 4730px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
-| Page weight | **Good** | The HTML is 50KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 59KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -125,7 +125,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 |---|---|---|
 | About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 8 pages. In the first version these 5 footer links went nowhere. |
 | Policy wording | **Your turn** | Privacy, Terms and Refunds are plain-English starting templates, marked as such on the page. Replace them with your own terms and have a lawyer check them. |
-| Author name and date on the content | **Good** | Byline for Hattie Lindqvist with a publish date in the page and in the structured data. |
+| Author name and date on the content | **Good** | Byline for Guy Incognito with a publish date in the page and in the structured data. |
 | Proof is written as text | **Good** | 0 testimonials and every number on the page are real text, where Google and AI tools can read and quote them. None are trapped in images. |
 
 ### AI Answers And The Brand
@@ -133,7 +133,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 3 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Hattie Lindqvist, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -181,7 +181,8 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
-Fonts: Bodoni Moda + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Blueprint Journal. Sections come into focus as they scroll in. It uses headers split into 2 columns, a drafting grid.
+Fonts: Spectral + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

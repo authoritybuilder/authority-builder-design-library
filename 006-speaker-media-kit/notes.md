@@ -3,7 +3,7 @@
 **Group:** Home Bases  
 **For:** Coach, Consultant, Creator  
 **Style:** Dark Stage (Bebas Neue + Manrope)  
-**Sample brand:** Jonah Reyes (fictional)
+**Sample brand:** Guy Incognito (fictional)
 
 A speaker page built for the person who actually books speakers: an event organiser with 10 tabs open and a committee to convince.
 
@@ -41,15 +41,16 @@ A speaker page built for the person who actually books speakers: an event organi
 3. The reel: a video above the fold of the decision, with a transcript for search
 4. Topics: 3 keynotes, each sold by the outcome for the audience
 5. Testimonials from organisers, not attendees: the buyer's peers
-6. Copy-ready bios: the exact words an organiser can paste into a program
-7. Downloads list: everything an event team asks for, in 1 place
-8. Fee guide: printed, because budget fit is the first thing a planner checks
-9. Booking enquiry: the 4 facts an agent needs, nothing more
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Copy-ready bios: the exact words an organiser can paste into a program
+8. Downloads list: everything an event team asks for, in 1 place
+9. Fee guide: printed, because budget fit is the first thing a planner checks
+10. Booking enquiry: the 4 facts an agent needs, nothing more
 
 ## Search Card
 
-- **Title:** Jonah Reyes | Keynote Speaker On Attention At Work
-- **Description:** Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.
+- **Title:** Guy Incognito | Keynote Speaker On Attention At Work
+- **Description:** Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.
 - **Structured data:** WebSite, Person, WebPage
 - A video needs a text transcript on the page. Search engines and most AI crawlers cannot watch it.
 - Keep 1 fee figure and 1 bio everywhere they appear: site, speaker bureau listings and LinkedIn.
@@ -60,11 +61,11 @@ A speaker page built for the person who actually books speakers: an event organi
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Jonah Reyes | Keynote Speaker On Attention At Work” (50 characters). |
-| The person's name is in the title or description | **Good** | “Jonah Reyes” appears in the title. |
-| Description says who the page is for | **Good** | “Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.” (155 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Jonah Reyes”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://jonahreyes.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “Guy Incognito | Keynote Speaker On Attention At Work” (52 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
+| Description says who the page is for | **Good** | “Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.” (157 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -75,10 +76,10 @@ A speaker page built for the person who actually books speakers: an event organi
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://jonahreyes.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 193 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 194 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 5 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -88,15 +89,15 @@ A speaker page built for the person who actually books speakers: an event organi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Your team is not lazy. They are interrupted.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 762 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 775 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 360 words of body copy on the main page read at about school grade 5 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 360 words of body copy on the main page read at about school grade 5.3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 7 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 11KB for phones to 41KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 43KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 11KB for phones to 41KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 43KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.5 and the whole page at grade 8.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.9 and the whole page at grade 9.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -111,7 +112,7 @@ A speaker page built for the person who actually books speakers: an event organi
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 3 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 12 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 23 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 12.6 to 1 for body text and 13.8 to 1 for large text. On a phone: 13.4 to 1 for body text and 13.1 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 54KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 67KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -139,7 +140,7 @@ A speaker page built for the person who actually books speakers: an event organi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 3 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Jonah Reyes, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -192,13 +193,15 @@ STRUCTURE, IN THIS ORDER
 3. The reel: a video above the fold of the decision, with a transcript for search
 4. Topics: 3 keynotes, each sold by the outcome for the audience
 5. Testimonials from organisers, not attendees: the buyer's peers
-6. Copy-ready bios: the exact words an organiser can paste into a program
-7. Downloads list: everything an event team asks for, in 1 place
-8. Fee guide: printed, because budget fit is the first thing a planner checks
-9. Booking enquiry: the 4 facts an agent needs, nothing more
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Copy-ready bios: the exact words an organiser can paste into a program
+8. Downloads list: everything an event team asks for, in 1 place
+9. Fee guide: printed, because budget fit is the first thing a planner checks
+10. Booking enquiry: the 4 facts an agent needs, nothing more
 
 DESIGN DIRECTION
 Dark Stage. Near-black with a spotlight gold and tall condensed capitals. Built for presence.
+This site's own variation: Black And Spotlight Gold. Sections scale up into place as they scroll in. It uses oversized section headers, slanted section breaks, a paper grain, a slow light drifting across the hero, a light that follows the pointer across cards, a proof strip that runs as a ticker. The picture band is a full-width painted band.
 Fonts: Bebas Neue + Manrope from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

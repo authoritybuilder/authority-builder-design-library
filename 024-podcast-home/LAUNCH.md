@@ -19,11 +19,11 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
-| `you-1.jpg` | 900 × 1125 | You | index.html | Lois at the microphone, headphones on, mid-laugh |
+| `you-1.jpg` | 900 × 1125 | You | index.html | Guy at the microphone, headphones on, mid-laugh |
 | `face-1.jpg` | 200 × 200 | Karen, 49 | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Paulo, 44 | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Bridget, 51 | index.html | A square headshot, used with their permission |
-| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Lois. Use the same photo on every profile |
+| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

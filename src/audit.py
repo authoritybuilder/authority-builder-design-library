@@ -198,7 +198,8 @@ def run(P, site, speed=None, legible=None):
     scripts = len(re.findall(r"<script(?! type=\"application/ld\+json\")", main))
     words = len(text.split())
     add(C, "The content is in the HTML, not drawn by JavaScript", GOOD if words > 150 else "Fix",
-        f"{words} words are readable in the raw HTML. The page runs {scripts} scripts" + (": the quiz, whose questions are all in the HTML already." if scripts else ".")
+        f"{words} words are readable in the raw HTML. The page runs {scripts} small script{'s' if scripts != 1 else ''}, for movement only"
+        + (" and the quiz, whose questions are all in the HTML already." if scripts > 1 else ".")
         + " AI crawlers that do not run JavaScript see everything a visitor sees.")
     forms = re.findall(r"<form[^>]*>", "".join(pages.values()))
     okf = all('method="post"' in f and 'action="thank-you.html"' in f and "name=" in f for f in forms) and "thank-you.html" in pages

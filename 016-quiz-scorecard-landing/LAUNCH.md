@@ -22,7 +22,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | Ingrid S. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Rahul D. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Bronte A. | index.html | A square headshot, used with their permission |
-| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Thandi. Use the same photo on every profile |
+| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

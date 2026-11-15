@@ -1,4 +1,4 @@
-# robots.txt for Calloway Finch. It lives at https://callowayfinch.example/robots.txt
+# robots.txt for Incognito Finch. It lives at https://incognitofinch.example/robots.txt
 
 # Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
 User-agent: Googlebot
@@ -24,4 +24,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://callowayfinch.example/sitemap.xml
+Sitemap: https://incognitofinch.example/sitemap.xml

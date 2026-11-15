@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Harriet Vale), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 8 pages. Search for `DEMO NOTE`.
-- [ ] Replace `harrietvale.example` with your real address. It appears 86 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@harrietvale.example, Canberra, Australian Capital Territory and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 86 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Canberra, Australian Capital Territory and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 
@@ -23,7 +23,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | Dr Clare Whitby | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Rosa Delgado | index.html | A square headshot, used with their permission |
 | `you-1.jpg` | 900 × 1125 | You | index.html | the official author photo. Use this same image everywhere the book is listed |
-| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Harriet. Use the same photo on every profile |
+| `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

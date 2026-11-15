@@ -846,3 +846,45 @@ def legal(d, P):
         elif b[0] == "facts":
             out += '<table class="facts"><tbody>' + "".join(f'<tr><th scope="row">{e(a)}</th><td>{h(v)}</td></tr>' for a, v in b[1]) + "</tbody></table>"
     return sec("legal", d, out + acts(d).replace(" data-in", ""))
+
+
+# ---------- PICTURE BAND ----------
+
+SPOTS = [("18% 42%", 2.3), ("50% 30%", 2.7), ("82% 46%", 2.3), ("34% 82%", 2.5), ("68% 78%", 2.5), ("50% 62%", 1.7)]
+
+
+def crop(i, ar):
+    """A piece of the site's painting, by number. Decoration, so it carries no alt text."""
+    pos, zoom = SPOTS[i % len(SPOTS)]
+    return f'<div class="ph art" style="--ar:{ar};--pos:{pos};--zoom:{zoom}"><img {kit.SRCSET} alt="" loading="lazy" decoding="async"></div>'
+
+
+@S("band", """
+.band{position:relative;isolation:isolate;overflow:clip}
+.bd-h{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.5rem*var(--hs)));max-width:19ch}.band .eyebrow{margin-bottom:1.1rem}
+.band.wide{padding-block:clamp(84px,11vw,160px)}.band.wide::before{background:linear-gradient(90deg,rgba(6,10,22,.84),rgba(6,10,22,.62) 52%,rgba(6,10,22,.2))}
+.band.wide picture.art img,.band.frame picture.art img{object-position:50% 46%}
+.band.frame{margin:clamp(12px,2.2vw,30px);border-radius:clamp(22px,3vw,44px);padding-block:clamp(72px,9vw,128px);text-align:center}
+.band.frame::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.band.frame .bd-h{margin-inline:auto}.band.frame .acts{justify-content:center}
+.band.frame .eyebrow::before{display:none}
+.band.mosaic .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
+.mos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:clamp(10px,1.4vw,18px);aspect-ratio:5/4}
+.mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
+.mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
+.band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
+.strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
+@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
+@media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
+""")
+def band(d, P):
+    k = d["kind"]
+    inner = f'<div class="bd-c">{eyebrow(d.get("eyebrow"))}<h2 class="bd-h">{h(d["h"])}</h2>{acts(d).replace(" data-in", "")}</div>'
+    if k in ("wide", "frame"):
+        return sec(f"band {k} bleed t-light", d, inner, pre=backdrop())
+    if k == "mosaic":
+        pics = crop(0, "3/4") + crop(2, "4/3") + crop(4, "4/3")
+        return sec("band mosaic alt", d, f'{inner}<div class="mos" aria-hidden="true">{pics}</div>')
+    row = "".join(crop(i, "4/5" if i % 2 else "1/1") for i in range(6))
+    return f'<section class="sec band strip"><div class="wrap">{inner}</div><div class="strip-w" aria-hidden="true"><div class="strip-t">{row}{row}</div></div></section>'

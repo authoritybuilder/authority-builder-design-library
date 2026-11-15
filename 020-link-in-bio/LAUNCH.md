@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Poppy Achebe), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 8 pages. Search for `DEMO NOTE`.
-- [ ] Replace `poppyachebe.example` with your real address. It appears 85 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@poppyachebe.example, Darwin, Northern Territory and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 85 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Darwin, Northern Territory and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 

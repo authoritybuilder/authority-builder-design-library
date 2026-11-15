@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en-AU" id="top">
+<html lang="en-AU" id="top" data-m="zoom" data-spot data-mq>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Jonah Reyes | Keynote Speaker On Attention At Work</title>
-<meta name="description" content="Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.">
-<!-- Swap every jonahreyes.example address below for your real one. Use 1 version of your address everywhere. -->
-<link rel="canonical" href="https://jonahreyes.example/">
+<title>Guy Incognito | Keynote Speaker On Attention At Work</title>
+<meta name="description" content="Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.">
+<!-- Swap every guyincognito.example address below for your real one. Use 1 version of your address everywhere. -->
+<link rel="canonical" href="https://guyincognito.example/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Jonah Reyes">
-<meta property="og:title" content="Jonah Reyes | Keynote Speaker On Attention At Work">
-<meta property="og:description" content="Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.">
-<meta property="og:url" content="https://jonahreyes.example/">
-<meta property="og:image" content="https://jonahreyes.example/share.jpg">
+<meta property="og:site_name" content="Guy Incognito">
+<meta property="og:title" content="Guy Incognito | Keynote Speaker On Attention At Work">
+<meta property="og:description" content="Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.">
+<meta property="og:url" content="https://guyincognito.example/">
+<meta property="og:image" content="https://guyincognito.example/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Jonah Reyes: Speaker And Media Kit">
+<meta property="og:image:alt" content="Guy Incognito: Speaker And Media Kit">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0F0F11">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -30,25 +30,25 @@
  "@graph": [
   {
    "@type": "WebSite",
-   "@id": "https://jonahreyes.example/#site",
-   "name": "Jonah Reyes",
-   "url": "https://jonahreyes.example/"
+   "@id": "https://guyincognito.example/#site",
+   "name": "Guy Incognito",
+   "url": "https://guyincognito.example/"
   },
   {
    "@type": "Person",
-   "@id": "https://jonahreyes.example/#person",
-   "name": "Jonah Reyes",
+   "@id": "https://guyincognito.example/#person",
+   "name": "Guy Incognito",
    "jobTitle": "Keynote speaker on attention at work",
-   "url": "https://jonahreyes.example/about.html",
+   "url": "https://guyincognito.example/about.html",
    "worksFor": {
-    "@id": "https://jonahreyes.example/#org"
+    "@id": "https://guyincognito.example/#org"
    }
   },
   {
    "@type": "WebPage",
-   "name": "Jonah Reyes | Keynote Speaker On Attention At Work",
-   "url": "https://jonahreyes.example/",
-   "description": "Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details."
+   "name": "Guy Incognito | Keynote Speaker On Attention At Work",
+   "url": "https://guyincognito.example/",
+   "description": "Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details."
   }
  ]
 }
@@ -130,9 +130,7 @@ picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}p
 /* The headline slides but never starts hidden, so the largest element paints straight away */
 h1[data-in]{animation-name:slide}
 @keyframes slide{from{transform:translateY(16px)}}
-/* Sections lift into place as they scroll in. They never fade, so nothing sits half-visible at the edge of the screen */
-@keyframes lift{from{transform:translateY(28px)}}
-@supports(animation-timeline:view()){.sec>.wrap>*{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+/* Sections below the first screen reveal as they scroll in: see src/motion.py */
 }
 @media print{.libbar{display:none}.sec{padding-block:28px}}
 
@@ -173,6 +171,24 @@ h1[data-in]{animation-name:slide}
 .qt .wall{columns:3 260px;column-gap:clamp(16px,2.4vw,28px)}.qt .wall figure{break-inside:avoid;margin-bottom:clamp(16px,2.4vw,28px)}
 .qt .feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:center}
 @media(max-width:760px){.qt .feature{grid-template-columns:1fr}.qt .feature .ph{max-width:300px}}
+
+.band{position:relative;isolation:isolate;overflow:clip}
+.bd-h{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.5rem*var(--hs)));max-width:19ch}.band .eyebrow{margin-bottom:1.1rem}
+.band.wide{padding-block:clamp(84px,11vw,160px)}.band.wide::before{background:linear-gradient(90deg,rgba(6,10,22,.84),rgba(6,10,22,.62) 52%,rgba(6,10,22,.2))}
+.band.wide picture.art img,.band.frame picture.art img{object-position:50% 46%}
+.band.frame{margin:clamp(12px,2.2vw,30px);border-radius:clamp(22px,3vw,44px);padding-block:clamp(72px,9vw,128px);text-align:center}
+.band.frame::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.band.frame .bd-h{margin-inline:auto}.band.frame .acts{justify-content:center}
+.band.frame .eyebrow::before{display:none}
+.band.mosaic .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
+.mos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:clamp(10px,1.4vw,18px);aspect-ratio:5/4}
+.mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
+.mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
+.band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
+.strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
+@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
+@media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
 
 .bio{position:relative}.bio .tag{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-t);display:block;margin-bottom:.7rem}
 .bio p{font-size:1.02rem}
@@ -363,14 +379,77 @@ font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em
 .bleed .card{--ink:#F4F1EA;--ink2:#B8B3A8;--line:#2F2F37;--accent-t:#F2B544;color:#F4F1EA;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 h1 em,h2 em{font-style:normal;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.btn{font-weight:800;text-transform:uppercase;letter-spacing:.08em;font-size:.86rem}.eyebrow{font-weight:800;letter-spacing:.22em}h3{font-size:1.6rem}.ph span{background:#F4F1EA;color:#121214}
 :root{--atmo:radial-gradient(46% 70% at 78% 0,rgba(242,181,68,.22) 0,transparent 70%),radial-gradient(40% 60% at 6% 12%,rgba(229,72,77,.16),transparent 70%)}.cards .n{font-size:3.4rem;color:transparent;-webkit-text-stroke:1.5px var(--accent)}.hero .ph{box-shadow:0 0 0 1px #2F2F37,0 44px 84px -30px rgba(242,181,68,.4)}.ph.scene .i-d{fill:#08080A}.ph.scene .i-c{fill:#F4F1EA}.ph.scene .i-2{fill:#2A2620}
+/* scroll progress: a thin bar in the brand colour, drawn by the browser's own scroll timeline */
+.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
+/* the header steps aside on the way down and comes back on the way up */
+.hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
+/* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
+@media(min-width:761px){
+.js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.js.past:not(.end) .sticky{transform:none;visibility:visible}
+}
+@media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
+@media(prefers-reduced-motion:no-preference){
+/* reveal on scroll. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
+[data-m=rise] [data-rv]{transform:translateY(38px)}
+[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
+@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
+[data-m=zoom] [data-rv]{transform:scale(.9)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
+[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
+[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
+[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
+[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* the painting settles into place as the page opens */
+.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
+/* a light crosses the main button on hover */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
+.btn:not(.ghost):hover::before{translate:130% 0}
+.btn:active{transform:translateY(1px) scale(.98)}
+/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+@supports(animation-timeline:view()){
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+}
+/* answers open smoothly where the browser can animate to an automatic height */
+@supports(interpolate-size:allow-keywords){
+.faq details,.mod details{interpolate-size:allow-keywords}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
+}
+.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
+/* links and list rows answer the pointer */
+.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
+.lb-l a,.door,.tier{will-change:translate}
+.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
+.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
+/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
+.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
+.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
+/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
+[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
+[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
+}
+@media print{.prog,.sticky{display:none}}
+/* this site's own variation: Black And Spotlight Gold */
+.sh{max-width:980px}.sh h2{font-size:clamp(2.05rem,calc(4.5vw*var(--hs)),calc(3.7rem*var(--hs)))}.sec.alt{clip-path:polygon(0 clamp(18px,3.2vw,48px),100% 0,100% calc(100% - clamp(18px,3.2vw,48px)),0 100%);padding-block:clamp(88px,11vw,156px)}@media(min-width:900px){body::after{content:"";position:fixed;inset:0;z-index:45;pointer-events:none;background-image:var(--grain);opacity:.07;mix-blend-mode:overlay}}@media(prefers-reduced-motion:no-preference){.hero.bleed::after{content:"";position:absolute;right:-8%;top:-18%;width:46%;aspect-ratio:1;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 55%,transparent),transparent 68%);mix-blend-mode:soft-light;animation:glow 12s ease-in-out infinite alternate}@keyframes glow{to{transform:translate(-22%,26%) scale(1.25)}}}
 </style>
 </head>
 <body class="over o-light has-sticky">
 <a class="skip" href="#main">Skip to content</a>
-<div class="hdw"><header class="hd has-nav"><a class="logo" href="#top">Jonah Reyes</a><nav aria-label="Main"><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Jonah</a></li></ul></nav><a class="btn" href="#book">Check A Date</a><details class="mnav"><summary aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Jonah</a></li><li><a href="#book">Check A Date</a></li></ul></details></header></div>
+<div class="prog" aria-hidden="true"></div>
+<div class="hdw"><header class="hd has-nav"><a class="logo" href="#top">Guy Incognito</a><nav aria-label="Main"><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Guy</a></li></ul></nav><a class="btn" href="#book">Check A Date</a><details class="mnav"><summary aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Guy</a></li><li><a href="#book">Check A Date</a></li></ul></details></header></div>
 <main id="main">
 <!-- Hero: the speaker&#x27;s 1 idea at full volume, with the numbers an organiser needs -->
-<section class="sec hero hstage bleed t-light  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="Painting of a lone speaker on a dark stage under gold light, the audience in silhouette" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="hst-g"><div><p class="eyebrow">Keynote speaker · Attention at work</p><h1 data-in style="--i:1">Your team is not lazy. <em>They are interrupted.</em></h1><p class="lead" data-in style="--i:2">Jonah Reyes shows leaders how to win back 6 hours of focused work a week, per person, without a new app or a single extra meeting.</p><div class="acts" data-in style="--i:3"><a class="btn" href="#book">Check A Date</a><a class="btn ghost" href="#reel">Watch The Reel</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Keynotes from $12,000 plus travel. A reply within 1 business day.</span></p></div><div class="hst-v" data-in style="--i:2"><!-- Photo brief: on stage, mid-gesture, audience visible in the foreground --><div class="ph photo" style="--ar:3/4"><img src="images/you-1.jpg" width="900" height="1125" alt="Jonah Reyes" loading="lazy" decoding="async"></div></div></div><div class="hstats"><div><b>140</b><span>keynotes delivered</span></div><div><b>5,000</b><span>largest live audience</span></div><div><b>9.4 / 10</b><span>average organiser rating</span></div><div><b>12</b><span>countries</span></div></div></div></section>
+<section class="sec hero hstage bleed t-light  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="Painting of a lone speaker on a dark stage under gold light, the audience in silhouette" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="hst-g"><div><p class="eyebrow">Keynote speaker · Attention at work</p><h1 data-in style="--i:1">Your team is not lazy. <em>They are interrupted.</em></h1><p class="lead" data-in style="--i:2">Guy Incognito shows leaders how to win back 6 hours of focused work a week, per person, without a new app or a single extra meeting.</p><div class="acts" data-in style="--i:3"><a class="btn" href="#book">Check A Date</a><a class="btn ghost" href="#reel">Watch The Reel</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Keynotes from $12,000 plus travel. A reply within 1 business day.</span></p></div><div class="hst-v" data-in style="--i:2"><!-- Photo brief: on stage, mid-gesture, audience visible in the foreground --><div class="ph photo" style="--ar:3/4"><img src="images/you-1.jpg" width="900" height="1125" alt="Guy Incognito" loading="lazy" decoding="async"></div></div></div><div class="hstats"><div><b>140</b><span>keynotes delivered</span></div><div><b>5,000</b><span>largest live audience</span></div><div><b>9.4 / 10</b><span>average organiser rating</span></div><div><b>12</b><span>countries</span></div></div></div></section>
 <!-- Proof strip: stages spoken on, as text -->
 <section class="sec logos  "><div class="wrap"><p>Stages include</p><ul><li>Future of Work Summit</li><li>People &amp; Culture Live</li><li>NorthTech</li><li>Leaders Forum</li><li>The Operations Show</li></ul></div></section>
 <!-- The reel: a video above the fold of the decision, with a transcript for search -->
@@ -379,24 +458,56 @@ h1 em,h2 em{font-style:normal;color:var(--accent-t)}.dark h1 em,.dark h2 em{colo
 <section class="sec cards alt " id="topics"><div class="wrap"><header class="sh"><p class="eyebrow">Keynote topics</p><h2>Three Talks. <em>Each One Changes A Monday.</em></h2></header><div class="grid" style="--cols:3"><div class="card"><span class="n">01</span><h3>The Interrupted Organisation</h3><p>45 or 60 minutes. Why focus collapsed, what it costs, and the 3 team agreements that bring it back.</p></div><div class="card"><span class="n">02</span><h3>Meetings, Minus 40%</h3><p>45 minutes. A practical teardown of meeting culture. Audiences leave with a rule they can apply that afternoon.</p></div><div class="card"><span class="n">03</span><h3>Leading In The Scroll</h3><p>60 minutes with Q and A. For executives: how to model attention when everything is urgent.</p></div></div></div></section>
 <!-- Testimonials from organisers, not attendees: the buyer&#x27;s peers -->
 <section class="sec qt  "><div class="wrap"><header class="sh"><h2>What Organisers <em>Tell Their Committees</em></h2></header><div class="grid" style="--cols:3"><figure class="card"><span class="res">Rated 9.7 / 10</span><blockquote><p>The highest-rated session in the 8-year history of our conference. We rebooked him before he left the building.</p></blockquote><figcaption><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Mei L.</b>Program Director, 1,200-person summit</span></figcaption></figure><figure class="card"><span class="res">Zero prep stress</span><blockquote><p>Slides in early, tech check on time, and he stayed for the whole dinner. The easiest speaker we have worked with.</p></blockquote><figcaption><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Andre P.</b>Events Lead, industry association</span></figcaption></figure><figure class="card"><span class="res">Still quoted</span><blockquote><p>6 months on, our leadership team still says &#x27;is this an interruption or a decision?&#x27; in meetings.</p></blockquote><figcaption><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span><b>Sophie G.</b>Chief People Officer</span></figcaption></figure></div><p class="fine" style="margin-top:1.8rem">Sample testimonials for a fictional brand. On your page, use your clients&#x27; real words with their permission. Results are individual and never guaranteed.</p></div></section>
+<!-- Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof -->
+<section class="sec band wide bleed t-light  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><div class="bd-c"><p class="eyebrow">Guy Incognito</p><h2 class="bd-h">Attention is the scarcest thing <em>in the room.</em></h2><div class="acts" style="--i:3"><a class="btn" href="#book">Check A Date</a></div></div></div></section>
 <!-- Copy-ready bios: the exact words an organiser can paste into a program -->
-<section class="sec bios alt " id="kit"><div class="wrap"><header class="sh"><p class="eyebrow">Media kit</p><h2>Copy-Ready <em>Bios And Intro</em></h2></header><div class="grid" style="--cols:2"><div class="card bio"><span class="tag">Short bio · 40 words</span><p>Jonah Reyes is a keynote speaker and researcher on attention at work. He has delivered 140 keynotes in 12 countries and is the author of The Interrupted Organisation. He helps teams win back 6 focused hours a week.</p></div><div class="card bio"><span class="tag">Stage introduction · 30 seconds</span><p>Our next speaker has spent a decade studying why smart teams cannot think straight. He has advised 80 organisations and spoken to audiences of up to 5,000. Please welcome Jonah Reyes.</p></div></div><div class="acts" style="--i:3"><a class="btn" href="https://example.com/connect/one-sheet-pdf">Download The One Sheet (PDF)</a></div></div></section>
+<section class="sec bios alt " id="kit"><div class="wrap"><header class="sh"><p class="eyebrow">Media kit</p><h2>Copy-Ready <em>Bios And Intro</em></h2></header><div class="grid" style="--cols:2"><div class="card bio"><span class="tag">Short bio · 40 words</span><p>Guy Incognito is a keynote speaker and researcher on attention at work. He has delivered 140 keynotes in 12 countries and is the author of The Interrupted Organisation. He helps teams win back 6 focused hours a week.</p></div><div class="card bio"><span class="tag">Stage introduction · 30 seconds</span><p>Our next speaker has spent a decade studying why smart teams cannot think straight. He has advised 80 organisations and spoken to audiences of up to 5,000. Please welcome Guy Incognito.</p></div></div><div class="acts" style="--i:3"><a class="btn" href="https://example.com/connect/one-sheet-pdf">Download The One Sheet (PDF)</a></div></div></section>
 <!-- Downloads list: everything an event team asks for, in 1 place -->
 <section class="sec feed  "><div class="wrap"><header class="sh"><p class="eyebrow">Downloads</p><h2>Everything Your <em>Event Team Needs</em></h2></header><ul class="fd-l"><li><span class="k">Photos</span><div><h3><a href="https://example.com/connect/article">6 high-resolution headshots and stage photos</a></h3></div><span class="m">ZIP · 48 MB</span></li><li><span class="k">AV rider</span><div><h3><a href="https://example.com/connect/article">Technical requirements, 1 page</a></h3></div><span class="m">PDF</span></li><li><span class="k">Topics</span><div><h3><a href="https://example.com/connect/article">Keynote descriptions and learning outcomes</a></h3></div><span class="m">PDF</span></li><li><span class="k">Logo</span><div><h3><a href="https://example.com/connect/article">Book cover and name lock-up</a></h3></div><span class="m">ZIP</span></li></ul></div></section>
 <!-- Fee guide: printed, because budget fit is the first thing a planner checks -->
 <section class="sec pricing  " id="fees"><div class="wrap"><header class="sh"><p class="eyebrow">Fee guide</p><h2>Fees, <em>Up Front</em></h2></header><div class="grid" style="--cols:3"><div class="card tier"><p class="nm">Virtual keynote</p><p class="pc">$7,500 <small>45 minutes</small></p><p class="fine">Live from a studio, with Q and A.</p><ul class="ticks"><li>Tailoring call with your team</li><li>Studio-quality video and sound</li><li>Recording rights for 30 days</li></ul><a class="btn ghost" href="#book">Check A Date</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not-for-profit rates on request.</span></p></div><div class="card tier hot"><span class="bdg">Most booked</span><p class="nm">Keynote</p><p class="pc">$12,000 <small>plus travel</small></p><p class="fine">On stage, 45 to 60 minutes.</p><ul class="ticks"><li>Tailoring call with your team</li><li>Slides in your event format</li><li>Stays for the Q and A and the break after</li></ul><a class="btn" href="#book">Check A Date</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not-for-profit rates on request.</span></p></div><div class="card tier"><p class="nm">Keynote + workshop</p><p class="pc">$18,000 <small>plus travel</small></p><p class="fine">The keynote, then 90 minutes with your leaders.</p><ul class="ticks"><li>Everything in the keynote</li><li>A working session for up to 40 leaders</li><li>A 1-page team focus plan</li></ul><a class="btn ghost" href="#book">Check A Date</a><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not-for-profit rates on request.</span></p></div></div><p class="fine" style="margin-top:1.6rem">Australian dollars, plus GST. Travel is quoted at cost from Brisbane.</p></div></section>
 <!-- Booking enquiry: the 4 facts an agent needs, nothing more -->
-<section class="sec contact alt " id="book"><div class="wrap"><header class="sh"><p class="eyebrow">Book Jonah</p><h2>Check A Date <em>In 1 Minute</em></h2></header><div class="ct-g"><form class="card formcard" name="enquiry" method="post" action="thank-you.html" data-netlify="true" data-netlify-honeypot="website"><input type="hidden" name="form-name" value="enquiry"><p class="hp"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p><h2 class="ft-t">Event enquiry</h2><div class="field"><label for="f-your-name-0">Your name</label><input id="f-your-name-0" name="name" type="text" placeholder="First and last name" autocomplete="name" enterkeyhint="next" required></div><div class="field"><label for="f-email-1">Email</label><input id="f-email-1" name="email" type="email" placeholder="you@organisation.com" autocomplete="email" enterkeyhint="next" required></div><div class="field"><label for="f-event-date-city-and-audience-size-2">Event date, city and audience size</label><input id="f-event-date-city-and-audience-size-2" name="event-date-city-and-audience-size" type="text" placeholder="For example: 14 May, Brisbane, 400 people" autocomplete="on" enterkeyhint="next" required></div><button class="btn" type="submit">Check Availability</button><p class="fine"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3"/></svg><span>You will hear back within 1 business day.</span></p></form><div><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Jonah Reyes</b>Keynote speaker on attention at work</span></p><dl class="ct-d"><dt>Booking contact</dt><dd>Rosa at bookings@jonahreyes.example</dd><dt>Based in</dt><dd>Brisbane. Travels worldwide</dd><dt>Formats</dt><dd>Keynote, workshop, executive session, virtual</dd><dt>Fee guide</dt><dd>Keynotes from $12,000 plus travel. Not-for-profit rates on request</dd></dl></div></div></div></section>
+<section class="sec contact alt " id="book"><div class="wrap"><header class="sh"><p class="eyebrow">Book Guy</p><h2>Check A Date <em>In 1 Minute</em></h2></header><div class="ct-g"><form class="card formcard" name="enquiry" method="post" action="thank-you.html" data-netlify="true" data-netlify-honeypot="website"><input type="hidden" name="form-name" value="enquiry"><p class="hp"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p><h2 class="ft-t">Event enquiry</h2><div class="field"><label for="f-your-name-0">Your name</label><input id="f-your-name-0" name="name" type="text" placeholder="First and last name" autocomplete="name" enterkeyhint="next" required></div><div class="field"><label for="f-email-1">Email</label><input id="f-email-1" name="email" type="email" placeholder="you@organisation.com" autocomplete="email" enterkeyhint="next" required></div><div class="field"><label for="f-event-date-city-and-audience-size-2">Event date, city and audience size</label><input id="f-event-date-city-and-audience-size-2" name="event-date-city-and-audience-size" type="text" placeholder="For example: 14 May, Brisbane, 400 people" autocomplete="on" enterkeyhint="next" required></div><button class="btn" type="submit">Check Availability</button><p class="fine"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M6 11h12v9H6zM9 11V8a3 3 0 0 1 6 0v3"/></svg><span>You will hear back within 1 business day.</span></p></form><div><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Guy Incognito</b>Keynote speaker on attention at work</span></p><dl class="ct-d"><dt>Booking contact</dt><dd>Rosa at bookings@guyincognito.example</dd><dt>Based in</dt><dd>Brisbane. Travels worldwide</dd><dt>Formats</dt><dd>Keynote, workshop, executive session, virtual</dd><dt>Fee guide</dt><dd>Keynotes from $12,000 plus travel. Not-for-profit rates on request</dd></dl></div></div></div></section>
 </main>
 <footer class="ft"><div class="wrap"><div class="ft-g">
-<div><a class="logo" href="#top">Jonah Reyes</a><p>Keynotes and workshops on attention at work.</p></div>
-<div><h2>Explore</h2><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Jonah</a></li></ul></div>
+<div><a class="logo" href="#top">Guy Incognito</a><p>Keynotes and workshops on attention at work.</p></div>
+<div><h2>Explore</h2><ul><li><a href="#topics">Topics</a></li><li><a href="#reel">Reel</a></li><li><a href="#kit">Media Kit</a></li><li><a href="#book">Book Guy</a></li></ul></div>
 <div><h2>The Fine Print</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li><li><a href="refunds.html">Refund Policy</a></li></ul></div>
-</div><div class="ft-s"><p>hello@jonahreyes.example &nbsp;·&nbsp; Brisbane, Queensland &nbsp;·&nbsp; ABN 00 000 000 000</p>
+</div><div class="ft-s"><p>hello@guyincognito.example &nbsp;·&nbsp; Brisbane, Queensland &nbsp;·&nbsp; ABN 00 000 000 000</p>
 <!-- DEMO NOTE: delete the next line when the site is yours -->
-<p class="demo">Demo content. Jonah Reyes is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
-<div class="ft-mark" aria-hidden="true" style="--n:11" data-mark="Jonah Reyes"></div></div></footer>
-<!-- Mobile action bar: the main action stays in reach of the thumb -->
+<p class="demo">Demo content. Guy Incognito is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
+<div class="ft-mark" aria-hidden="true" style="--n:13" data-mark="Guy Incognito"></div></div></footer>
+<!-- Action bar: the main action stays in reach. A bar on a phone, a floating dock on a desktop -->
 <div class="sticky"><span><b>Keynotes from $12,000</b><br>Reply within 1 business day</span><a class="btn" href="#book">Check A Date</a></div>
+<script>
+/* Movement only. Every word on this page is in the HTML above, so nothing here is needed to read it. Delete this block and the page still works. */
+(function(){var d=document,R=d.documentElement,W=window,q=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};R.classList.add('js');
+if(!('IntersectionObserver'in W))return;
+var hero=d.querySelector('main>.sec'),E=q('main>.cta,.ft');
+if(hero)new IntersectionObserver(function(e){R.classList.toggle('past',!e[0].isIntersecting)}).observe(hero);
+var eo=new IntersectionObserver(function(es){es.forEach(function(e){e.target._v=e.isIntersecting});R.classList.toggle('end',E.some(function(x){return x._v}))});
+E.forEach(function(x){eo.observe(x)});
+var ly=W.scrollY;W.addEventListener('scroll',function(){var y=W.scrollY;R.classList.toggle('down',y>ly&&y>600);ly=y},{passive:true});
+if(W.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+/* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
+var vh=W.innerHeight,todo=[],tick=0;
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.95)return 1;t.classList.add('in');
+setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1500)})}
+q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
+el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%6);el.setAttribute('data-rv','');todo.push(el)});
+function ask(){if(!tick&&todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener('scroll',ask,{passive:true});W.addEventListener('resize',ask);
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
+var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,'')),dp=(m[2].split('.')[1]||'').length,cm=m[2].indexOf(',')>-1,t0=0;
+if(!cm&&!dp&&n>1900&&n<2100)return;
+W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+b.textContent=m[1]+s+m[3];if(p<1)W.requestAnimationFrame(f)})})},{threshold:.5});
+q('.st-g b,.tile .big').forEach(function(b){if(!b.children.length&&b.getBoundingClientRect().top>vh*.94)co.observe(b)});
+if(R.hasAttribute('data-mq'))q('.logos ul').forEach(function(u){var w=d.createElement('div');w.className='mq';u.parentNode.insertBefore(w,u);w.appendChild(u);
+q('li',u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute('aria-hidden','true');u.appendChild(c)})});
+if(R.hasAttribute('data-spot')||R.hasAttribute('data-tilt'))d.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card,.tile');if(!c)return;
+var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty('--mx',x+'px');s.setProperty('--my',y+'px');
+s.setProperty('--rx',((y/r.height-.5)*-5).toFixed(2)+'deg');s.setProperty('--ry',((x/r.width-.5)*5).toFixed(2)+'deg')},{passive:true});
+})();
+</script>
 </body>
 </html>

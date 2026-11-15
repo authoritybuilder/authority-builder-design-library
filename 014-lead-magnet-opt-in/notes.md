@@ -2,8 +2,8 @@
 
 **Group:** List Builders And Launches  
 **For:** Coach, Creator, Consultant  
-**Style:** Soft Organic (Fraunces + Nunito Sans)  
-**Sample brand:** Nadia Flores Coaching (fictional)
+**Style:** Soft Organic (Young Serif + Nunito Sans)  
+**Sample brand:** Guy Incognito Mentoring (fictional)
 
 A 1-screen opt-in page with nothing to click but the form. A specific promise, what is inside, a little proof and 2 fields.
 
@@ -44,7 +44,7 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 
 ## Search Card
 
-- **Title:** The First-Call Script | Free Guide For New Coaches | Nadia Flores
+- **Title:** The First-Call Script | Free Guide For New Coaches | Guy Incognito
 - **Description:** A free 6-page script for your first discovery call as a coach: what to ask, what to say about price and how to end it. Used by 11,000 new coaches.
 - **Structured data:** WebSite, WebPage
 - Opt-in pages are usually best kept in Google if the guide is something people search for. Give it a real title and description.
@@ -56,11 +56,11 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “The First-Call Script | Free Guide For New Coaches | Nadia Flores” (65 characters). |
-| The person's name is in the title or description | **Good** | “Nadia Flores” appears in the title. |
+| Title carries the brand or the person's name | **Good** | “The First-Call Script | Free Guide For New Coaches | Guy Incognito” (66 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
 | Description says who the page is for | **Good** | “A free 6-page script for your first discovery call as a coach: what to ask, what to say about price and how to end it. Used by 11,000 new coaches.” (146 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Nadia Flores Coaching”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://nadiaflores.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito Mentoring”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -71,7 +71,7 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://nadiaflores.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
 | No broken or dead links inside the site | **Good** | 84 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
@@ -83,15 +83,15 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Know exactly what to say on your first discovery call.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 384 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 384 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 173 words of body copy on the main page read at about school grade 3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 173 words of body copy on the main page read at about school grade 3.1 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 104KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 67KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 104KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 71KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.2 and the whole page at grade 7.2 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.3 and the whole page at grade 7.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -106,7 +106,7 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 4 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 12 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 7.6 to 1 for body text and 4.5 to 1 for large text. On a phone: 7.5 to 1 for body text and 5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 41KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -134,7 +134,7 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 2 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Nadia Flores, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -188,7 +188,8 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Soft Organic. Sage, cream and clay with soft blob shapes. Calm, human and unhurried.
-Fonts: Fraunces + Nunito Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Lavender Dusk. Sections come into focus as they scroll in. It uses headers split into 2 columns, frosted glass cards, a dotted ground. The picture band is 3 crops of the painting beside the line.
+Fonts: Young Serif + Nunito Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

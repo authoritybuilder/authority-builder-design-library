@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Jonah Reyes), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Guy Incognito), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 8 pages. Search for `DEMO NOTE`.
-- [ ] Replace `jonahreyes.example` with your real address. It appears 86 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@jonahreyes.example, Brisbane, Queensland and the placeholder ABN 00 000 000 000.
+- [ ] Replace `guyincognito.example` with your real address. It appears 86 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@guyincognito.example, Brisbane, Queensland and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 

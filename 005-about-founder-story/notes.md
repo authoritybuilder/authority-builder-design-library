@@ -3,7 +3,7 @@
 **Group:** Home Bases  
 **For:** Coach, Creator, Consultant  
 **Style:** Magazine (Bodoni Moda + Libre Franklin)  
-**Sample brand:** Dana Whitlock (fictional)
+**Sample brand:** Guy Incognito (fictional)
 
 An About page written as a magazine profile. It tells 1 turning-point story, proves it with numbers and ends by sending the reader somewhere.
 
@@ -18,7 +18,7 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 
 | What the research found | Source | What changed in the code |
 |---|---|---|
-| About 1 in 10 visitors reach the About page, and its job is reassurance. | [Haden Interactive](https://www.hadeninteractive.com/your-website-page-by-page-about-us/) | The page is built to reassure: the story opens with Dana's own 6-year break, the numbers come with their caveat, and the facts match every other page. |
+| About 1 in 10 visitors reach the About page, and its job is reassurance. | [Haden Interactive](https://www.hadeninteractive.com/your-website-page-by-page-about-us/) | The page is built to reassure: the story opens with Guy's own 6-year break, the numbers come with their caveat, and the facts match every other page. |
 | Clarity beats persuasion: say plainly what it is, who it is for and what happens next. | [MarketingExperiments](https://marketingexperiments.com/?p=22070) | Email, location and reply time are now on the About page itself, so a reader who has just been reassured does not have to go looking. |
 | A testimonial and credibility markers placed beside the call to action gave a 12% relative lift. | [MarketingSherpa and MECLABS, research-based swipe file](https://www.marketingsherpa.com/freestuff/Research-based-Ecommerce-Swipe-File) | The 380-women proof number floats beside the portrait, next to the main button. |
 
@@ -27,7 +27,7 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 | Principle | Where you can see it |
 |---|---|
 | **Epiphany Bridge** (Russell Brunson, Expert Secrets (2017)) | The interview scene lets the reader feel the realisation rather than being told the conclusion. |
-| **StoryBrand** (Donald Miller, Building a StoryBrand (2017)) | The reader is the hero. Dana is the guide who has walked the path and now has a plan. |
+| **StoryBrand** (Donald Miller, Building a StoryBrand (2017)) | The reader is the hero. Guy is the guide who has walked the path and now has a plan. |
 | **Liking** (Robert Cialdini, Influence (1984, revised 2021)) | Shared experience and small human details (the kelpie, the lasagne) build warmth quickly. |
 | **Authority** (Robert Cialdini, Influence (1984, revised 2021)) | A dated timeline and specific counts do the work that adjectives cannot. |
 | **SUCCESs** (Chip and Dan Heath, Made to Stick (2007)) | The pull quote is simple, concrete and emotional: the line a reader will repeat. |
@@ -40,16 +40,17 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 2. Numbers row: the story's proof, before the story
 3. The turning-point story: 1 moment, told plainly, so the reader feels the realisation
 4. A short timeline: credibility as dated facts, easy to scan and easy to quote
-5. What I believe: 3 positions that let the right reader self-select
-6. Press and credentials as text
-7. The human details: a few specifics that make a real person
-8. Next steps: an About page should always send the reader somewhere
-9. Contact details on the About page, so a reassured reader can act straight away
+5. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+6. What I believe: 3 positions that let the right reader self-select
+7. Press and credentials as text
+8. The human details: a few specifics that make a real person
+9. Next steps: an About page should always send the reader somewhere
+10. Contact details on the About page, so a reassured reader can act straight away
 
 ## Search Card
 
-- **Title:** About Dana Whitlock | Career Coach For Women Returning To Work
-- **Description:** Dana Whitlock took 6 years out of the workforce, then rebuilt her career in 14 months. She has since coached 380 women back into roles they chose. Read her story.
+- **Title:** About Guy Incognito | Career Coach For Women Returning To Work
+- **Description:** Guy Incognito took 6 years out of the workforce, then rebuilt his career in 14 months. He has since coached 380 women back into roles they chose. Read his story.
 - **Structured data:** WebSite, ProfilePage, Person
 - Use the same 1-line bio here, on LinkedIn, Instagram and every podcast listing. Conflicting bios make AI tools hedge.
 - Dates created and modified are declared, and the breadcrumb shows where the page sits.
@@ -60,11 +61,11 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “About Dana Whitlock | Career Coach For Women Returning To Work” (62 characters). |
-| The person's name is in the title or description | **Good** | “Dana Whitlock” appears in the title. |
-| Description says who the page is for | **Good** | “Dana Whitlock took 6 years out of the workforce, then rebuilt her career in 14 months. She has since coached 380 women back into roles they chose. Read her story.” (162 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Dana Whitlock”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://danawhitlock.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “About Guy Incognito | Career Coach For Women Returning To Work” (62 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
+| Description says who the page is for | **Good** | “Guy Incognito took 6 years out of the workforce, then rebuilt his career in 14 months. He has since coached 380 women back into roles they chose. Read his story.” (161 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 4 other pages of its own site by plain name: contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -75,10 +76,10 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 5 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 26 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://danawhitlock.example/. |
+| 1 version of the address everywhere | **Good** | All 26 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 7 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 167 internal links, buttons and form targets checked across 7 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 168 internal links, buttons and form targets checked across 7 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
 
@@ -87,15 +88,15 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 7 pages. This page's reads: “I took 6 years out. It became the best line on my CV.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 742 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 756 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 418 words of body copy on the main page read at about school grade 4.5 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 47KB for phones to 166KB for a laptop and a 2560px file for large screens, and the browser picks 1. 3 photo files, the largest 118KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 5 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 47KB for phones to 166KB for a laptop and a 2560px file for large screens, and the browser picks 1. 3 photo files, the largest 118KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 3 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 3.7 and the whole page at grade 7.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 3.9 and the whole page at grade 7.3 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -109,7 +110,7 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Work With Me”) ends 471px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 4 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 17 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.9 to 1 for body text and 6.9 to 1 for large text. On a phone: 7.7 to 1 for body text and 9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 48KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 60KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -137,7 +138,7 @@ An About page written as a magazine profile. It tells 1 turning-point story, pro
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 3 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Good** | index.html names Dana Whitlock, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Good** | index.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -189,20 +190,22 @@ STRUCTURE, IN THIS ORDER
 2. Numbers row: the story's proof, before the story
 3. The turning-point story: 1 moment, told plainly, so the reader feels the realisation
 4. A short timeline: credibility as dated facts, easy to scan and easy to quote
-5. What I believe: 3 positions that let the right reader self-select
-6. Press and credentials as text
-7. The human details: a few specifics that make a real person
-8. Next steps: an About page should always send the reader somewhere
-9. Contact details on the About page, so a reassured reader can act straight away
+5. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+6. What I believe: 3 positions that let the right reader self-select
+7. Press and credentials as text
+8. The human details: a few specifics that make a real person
+9. Next steps: an About page should always send the reader somewhere
+10. Contact details on the About page, so a reassured reader can act straight away
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
+This site's own variation: Black, White And Red. Sections wipe open from the top as they scroll in. It uses numbered section headers, outlined cards, hairline section breaks, a hairline frame inside the hero. The picture band is a full-width painted band.
 Fonts: Bodoni Moda + Libre Franklin from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES
 - Russell Brunson, Epiphany Bridge: The interview scene lets the reader feel the realisation rather than being told the conclusion.
-- Donald Miller, StoryBrand: The reader is the hero. Dana is the guide who has walked the path and now has a plan.
+- Donald Miller, StoryBrand: The reader is the hero. Guy is the guide who has walked the path and now has a plan.
 - Robert Cialdini, Liking: Shared experience and small human details (the kelpie, the lasagne) build warmth quickly.
 - Robert Cialdini, Authority: A dated timeline and specific counts do the work that adjectives cannot.
 - Chip and Dan Heath, SUCCESs: The pull quote is simple, concrete and emotional: the line a reader will repeat.

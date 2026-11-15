@@ -22,7 +22,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `scene-1.jpg` | 1200 × 900 | A place or moment | index.html | the real clinic's reception or treatment room, with the owner's permission |
 | `guest-1.jpg` | 900 × 1125 | Sam Whitford | index.html | Sam in the clinic, natural light |
 | `face-1.jpg` | 200 × 200 | Sam Whitford | index.html | A square headshot, used with their permission |
-| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Estelle. Use the same photo on every profile |
+| `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.
 - [ ] Replace client photos only with their permission. If you have none yet, delete that `<img>` tag and the quote stands on the name alone.

@@ -18,19 +18,26 @@ from PIL import Image
 SRC = pathlib.Path(__file__).parent
 ROOT = SRC.parent
 sys.path.insert(0, str(SRC))
-CHROME = "google-chrome"
+CHROME = next((p for p in (r"C:\Program Files\Google\Chrome\Application\chrome.exe", r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+                           "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome") if pathlib.Path(p).exists()), "google-chrome")
 
 import art  # noqa: E402
 import build  # noqa: E402
 from kit import h  # noqa: E402
 from polish import THEME_POLISH  # noqa: E402
-from themes import THEMES  # noqa: E402
+from themes import THEMES  # noqa: E402,F401
+import variants  # noqa: E402
+
+
+# With --web-fonts the captures load the real fonts from Google. Use it on a computer that does not have them installed.
+WEB_FONTS = "--web-fonts" in sys.argv
 
 
 def still(page):
     """A copy with entrance animations and the web-font request removed, so captures are steady and use installed fonts."""
     t = page.read_text()
-    t = re.sub(r'<link href="https://fonts.googleapis.com[^>]+>', "", t)
+    if not WEB_FONTS:
+        t = re.sub(r'<link href="https://fonts.googleapis.com[^>]+>', "", t)
     t = t.replace("</head>", "<style>*:not(.hd){animation:none!important}</style></head>").replace('decoding="async"', 'decoding="sync"').replace('loading="lazy"', 'loading="eager"')
     f = page.parent / "_shot.html"
     f.write_text(t)
@@ -39,13 +46,14 @@ def still(page):
 
 def grab(html, out, w, hgt):
     subprocess.run([CHROME, "--headless=new", "--no-sandbox", "--disable-gpu", "--hide-scrollbars", f"--window-size={w},{hgt}",
-                    "--virtual-time-budget=8000", "--force-device-scale-factor=1", f"--screenshot={out}", f"file://{html}"],
+                    "--virtual-time-budget=8000", "--force-device-scale-factor=1", f"--screenshot={out}", pathlib.Path(html).resolve().as_uri()],
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, timeout=120)
 
 
 def tokens(P):
-    t = THEMES[P["theme"]]
-    return ":root{" + ";".join(f"--{k}:{v}" for k, v in t["v"].items()) + "}" + t["css"] + THEME_POLISH.get(P["theme"], "")
+    t = variants.theme(P)
+    link = f'</style><link href="{t["fonts"]}" rel="stylesheet"><style>' if WEB_FONTS else ""
+    return link + ":root{" + ";".join(f"--{k}:{v}" for k, v in t["v"].items()) + "}" + t["css"] + THEME_POLISH.get(P["theme"], "") + t["vcss"]
 
 
 def brand_assets(P, site, tmp):
@@ -79,7 +87,8 @@ h1 em{{background:none!important;color:{"#FFE6BF" if light else "var(--accent-t)
 
 def main():
     only = [a for a in sys.argv[1:] if not a.startswith("--")]
-    tmp = pathlib.Path("/tmp/ab-shots")
+    import tempfile
+    tmp = pathlib.Path(tempfile.gettempdir()) / "ab-shots"
     tmp.mkdir(exist_ok=True)
     pages = {P["dir"]: P for P in build.load_pages()}
     for d in sorted(p for p in ROOT.iterdir() if p.is_dir() and p.name[:3].isdigit()):

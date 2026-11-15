@@ -4,3 +4,4 @@ _shot.html
 _asset.html
 node_modules/
 .DS_Store
+.claude/

@@ -2,8 +2,8 @@
 
 **Group:** List Builders And Launches  
 **For:** Consultant, Coach  
-**Style:** Dark Stage (Bebas Neue + Manrope)  
-**Sample brand:** Carmen Ortiz Consulting (fictional)
+**Style:** Dark Stage (Oswald + Manrope)  
+**Sample brand:** Guy Incognito Consulting (fictional)
 
 A registration page for a live class. The date, the promise and the form sit together, then 3 beliefs the class will change.
 
@@ -42,12 +42,13 @@ A registration page for a live class. The date, the promise and the form sit tog
 3. Run sheet: shows it is a class, not a 55-minute pitch
 4. The host: experience and a number
 5. Proof from past attendees of the free class
-6. Practical questions: replay, cost, pitch
-7. Closing call to action with the date repeated
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Practical questions: replay, cost, pitch
+8. Closing call to action with the date repeated
 
 ## Search Card
 
-- **Title:** Fully Booked Without Posting Daily | Free Masterclass With Carmen Ortiz
+- **Title:** Fully Booked Without Posting Daily | Free Masterclass With Guy Incognito
 - **Description:** A free 60-minute live masterclass for independent consultants: the 3-part referral system that fills a calendar without daily content. Thursday 11 March, 12pm AEDT.
 - **Structured data:** WebSite, WebPage
 - No Event markup here. Google's event rules centre on events with a real location, so check the current rules before marking up an online-only class.
@@ -59,11 +60,11 @@ A registration page for a live class. The date, the promise and the form sit tog
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Fully Booked Without Posting Daily | Free Masterclass With Carmen Ortiz” (71 characters). |
-| The person's name is in the title or description | **Good** | “Carmen Ortiz” appears in the title. |
+| Title carries the brand or the person's name | **Good** | “Fully Booked Without Posting Daily | Free Masterclass With Guy Incognito” (72 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
 | Description says who the page is for | **Good** | “A free 60-minute live masterclass for independent consultants: the 3-part referral system that fills a calendar without daily content. Thursday 11 March, 12pm AEDT.” (164 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Carmen Ortiz Consulting”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://carmenortiz.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito Consulting”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -74,10 +75,10 @@ A registration page for a live class. The date, the promise and the form sit tog
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://carmenortiz.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 102 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 103 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
 
@@ -86,15 +87,15 @@ A registration page for a live class. The date, the promise and the form sit tog
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Fully booked, without posting daily.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 592 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 605 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 280 words of body copy on the main page read at about school grade 5.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 38KB for phones to 107KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 30KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 9 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 38KB for phones to 107KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 38KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.7 and the whole page at grade 7.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.7 and the whole page at grade 7.5 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -109,7 +110,7 @@ A registration page for a live class. The date, the promise and the form sit tog
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 2 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 9 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 21 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 12.4 to 1 for body text and 13.6 to 1 for large text. On a phone: 14.2 to 1 for body text and 14.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 46KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 59KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -137,7 +138,7 @@ A registration page for a live class. The date, the promise and the form sit tog
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Carmen Ortiz, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -185,12 +186,14 @@ STRUCTURE, IN THIS ORDER
 3. Run sheet: shows it is a class, not a 55-minute pitch
 4. The host: experience and a number
 5. Proof from past attendees of the free class
-6. Practical questions: replay, cost, pitch
-7. Closing call to action with the date repeated
+6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+7. Practical questions: replay, cost, pitch
+8. Closing call to action with the date repeated
 
 DESIGN DIRECTION
 Dark Stage. Near-black with a spotlight gold and tall condensed capitals. Built for presence.
-Fonts: Bebas Neue + Manrope from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Midnight Violet. Sections come into focus as they scroll in. It uses centred section headers, frosted glass cards, soft colour washes, a slow light drifting across the hero, questions as cards. The picture band is a painted band set in a rounded frame.
+Fonts: Oswald + Manrope from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

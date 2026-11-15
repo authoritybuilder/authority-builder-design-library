@@ -20,6 +20,15 @@ Each one is a real small site you can deploy today: a painted hero, named photo 
 </table>
 <!-- GALLERY:END -->
 
+## 28 Sites, 28 Designs
+
+The library has 10 style directions, and every site inside a direction is its own design. Each one has its own palette, type pairing, section headers, card treatment, section breaks, background texture and way of moving. All 28 are set in `src/variants.py`, and every palette is checked against WCAG AA when the build runs. Each notes page describes its site's variation in a sentence.
+
+- **Movement.** Sections below the first screen reveal as you scroll, in 1 of 8 styles: rise, slide, zoom, wipe, focus, tip, spring or drift. Numbers count up. A thin bar shows how far down the page you are. The header steps aside on the way down and returns on the way up. Buttons, cards and pictures answer the pointer. Anyone who asks for reduced motion gets none of it.
+- **Pictures.** Every site has a picture band in the middle of the page: a full-width painting, a framed painting, 3 crops beside a line of copy, or a moving strip of crops. It repeats the main button straight after the proof.
+- **The action stays in reach.** On a phone the main button sits in a bar at the bottom. On a desktop it follows the reader as a floating dock once the hero has scrolled away, and leaves when the closing section arrives.
+- **Guy Incognito.** Every site belongs to the same sample owner, so you always know a demo when you see one. His photo slots show a figure in a hat and round glasses, with no face. Save your own photo over the file and he is gone.
+
 ## Open It
 
 - **On your computer.** Download the repository and open `index.html`. Everything works offline except the web fonts and form sending.
@@ -75,7 +84,7 @@ Each entry folder holds:
 - **Links only you can finish are listed, not hidden.** A checkout, a podcast app or a social profile needs your own account. Those links point at `example.com/connect/…` and are counted in `LAUNCH.md`, so none is forgotten.
 - **Ready to be found.** The sites carry no `noindex`. The library keeps its fictional brands out of search with host settings in the root `netlify.toml`, so a site you copy out is ready for Google the moment it has your address on it.
 - **A person on every page.** Your face has a place on the first screen, beside the About story, under the closing button, and on the contact, booking and thank-you pages. Client faces sit beside their words.
-- **Measured, not assumed.** Every site scores 96 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures. The same run checks that a button is on the first screen of a phone and that no form field is small enough to make a phone zoom in.
+- **Measured, not assumed.** Before the movement and variation pass, every site scored 96 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Those figures, and the ones in each audit table, have not been re-measured since that pass. Run `node src/speed.mjs` and `node src/legible.mjs`, then rebuild, to refresh them. Your host will change the speed figures either way.
 - **Heroes sized to the screen.** On a 1440 by 900 screen the middle hero ends 785px down, so the next section shows beneath it, and every first button is on screen. Headlines sit at about 62px on a desktop and 34px on a phone.
 - **Paintings that hold up close.** Each is painted at 2560px and cut down to 4 sizes, so a phone, a laptop and a large screen each get a crisp file.
 - **Plain words.** Every main page's body copy is measured on the Flesch-Kincaid scale. All of them read at school grade 6.2 or below, the range a large landing-page benchmark links to the highest conversion.
@@ -135,7 +144,7 @@ What a site cannot contain is you. The demo brand, the sample proof and the temp
 - **Search-ready code.** 1 H1, a real title and description, canonical and Open Graph tags, JSON-LD that matches the visible text, and every word in the HTML itself.
 - **Real trust pages everywhere.** About, Contact, Privacy, Terms and Refunds exist and are linked from every footer, even on pages with no menu. The policy wording is a starting template: replace it and have a lawyer check it.
 - **Accessible by default.** Colour pairs are checked at build time against WCAG AA. Tap targets are 48px or more. Focus states are visible. Motion respects the reduced-motion setting.
-- **Almost no JavaScript.** 27 of the 28 sites run no scripts at all. The quiz runs 1 small script, and its questions are in the HTML either way.
+- **1 small script, for movement only.** Each page carries 1 inline script of about 3KB that runs the reveals, the counters and the action dock. Every word is in the HTML, nothing is hidden unless the script is running, and the page reads the same with scripts off. The quiz adds 1 more small script, and its questions are in the HTML either way.
 
 ## The Research
 
@@ -170,6 +179,7 @@ How the source is organised:
 - `src/pages/`: the content of each page, section by section.
 - `src/upgrades.py`: the research applied to each page type, with the source for each change, and which painting each site uses.
 - `src/sections.py`, `src/kit.py`, `src/polish.py`, `src/themes.py`: the section components, shared styles and the 10 style directions.
+- `src/variants.py`: what makes each of the 28 sites its own design. `src/motion.py`: the movement stylesheet and its script.
 - `src/paint.py`: the paintings. Each scene is composed from shapes and noise, then painted with brush strokes.
 - `src/people.py`: the photo placeholders, painted over a soft-focus piece of each site's own painting.
 - `src/art.py`: the icons and small sketches.

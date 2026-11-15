@@ -38,3 +38,4 @@ Every section pattern used across the library, shown once on 1 page.
 | Trust strip | 012, 027 |
 | Side-by-side comparison table | 011 |
 | Show notes and transcript | 024 |
+| Picture band with the main button | 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 015, 016, 017, 019, 021, 022, 024, 025, 026, 027 |

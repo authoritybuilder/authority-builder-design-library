@@ -6,6 +6,7 @@ swaps a photo by saving their own under the same name. This script paints the st
     python3 src/people.py          # paints every placeholder
     python3 src/people.py 007 012  # only these sites
     python3 src/people.py --missing # only files that are not there yet
+    python3 src/people.py --owner   # only the pictures of the site owner
 
 A portrait placeholder is a back-lit figure with no face, painted over a soft-focus piece of that site's own painting, so it
 belongs to the page without pretending to be anyone. A place placeholder is a crop of the site's painting. Each large one carries
@@ -27,7 +28,16 @@ ROOT = SRC.parent
 sys.path.insert(0, str(SRC))
 from paint import brush, rgb  # noqa: E402
 
-FONTS = ["/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", "/usr/share/fonts/opentype/inter/Inter-Medium.otf"]
+FONTS = [["/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", "C:/Windows/Fonts/seguisb.ttf", "C:/Windows/Fonts/arialbd.ttf", "/System/Library/Fonts/Helvetica.ttc"],
+         ["/usr/share/fonts/opentype/inter/Inter-Medium.otf", "C:/Windows/Fonts/segoeui.ttf", "C:/Windows/Fonts/arial.ttf", "/System/Library/Fonts/Helvetica.ttc"]]
+
+
+def font(i, size):
+    """The first label font this computer has."""
+    for p in FONTS[i]:
+        if pathlib.Path(p).exists():
+            return ImageFont.truetype(p, size)
+    return ImageFont.load_default(size)
 STYLES = ["crop", "bob", "long", "bun", "curly", "crop", "long", "bob"]
 
 
@@ -56,7 +66,7 @@ def outline(points, n=400):
     return np.stack([PchipInterpolator(t, pts[:, 0])(tt), PchipInterpolator(t, pts[:, 1])(tt)], 1).astype(np.int32)
 
 
-def figure(w, h, who, pose, close):
+def figure(w, h, who, pose, close, incog=False):
     """Masks for a head-and-shoulders figure seen against the light: the garment, and the head with its hair as 1 shape.
     `who` fixes the person, `pose` varies the shot."""
     rw, rp = np.random.default_rng(who), np.random.default_rng(pose)
@@ -83,7 +93,26 @@ def figure(w, h, who, pose, close):
     cv2.rectangle(head, P(cx - nw, hy), P(cx + nw, sy + ry * 0.2), 1, -1)                      # neck
     cv2.ellipse(head, P(hx, hy), P(rx, ry), 0, 0, 360, 1, -1, cv2.LINE_AA)
     cv2.ellipse(head, P(hx, hy + ry * 0.22), P(rx * 0.86, ry * 0.9), 0, 0, 360, 1, -1, cv2.LINE_AA)  # a narrower jaw
-    if style == "crop":
+    specs = z()
+    if incog:
+        # Guy Incognito, the library's sample owner: a hat with a brim and round glasses, still with no face.
+        # The moment a real photo is saved over the file, he is gone.
+        style = "hat"
+        by = hy - ry * 0.46
+        cv2.ellipse(head, P(hx, by), P(rx * 1.86, ry * 0.17), 0, 0, 360, 1, -1, cv2.LINE_AA)                 # brim
+        crown = np.array([P(hx - rx * 1.02, by), P(hx - rx * 0.9, by - ry * 0.92), P(hx - rx * 0.3, by - ry * 1.08), P(hx, by - ry * 0.96),
+                          P(hx + rx * 0.3, by - ry * 1.08), P(hx + rx * 0.9, by - ry * 0.92), P(hx + rx * 1.02, by)], np.int32)
+        cv2.fillPoly(head, [crown], 1, cv2.LINE_AA)
+        gy, gr, th = hy + ry * 0.1, rx * 0.34, max(2, int(rx * 0.085))
+        for d in (-1, 1):
+            cv2.circle(specs, P(hx + d * rx * 0.44, gy), int(gr), 1, th, cv2.LINE_AA)
+            cv2.line(specs, P(hx + d * (rx * 0.44 + gr), gy - gr * 0.2), P(hx + d * rx * 1.0, gy - gr * 0.5), 1, th, cv2.LINE_AA)
+        cv2.line(specs, P(hx - rx * 0.1, gy - gr * 0.25), P(hx + rx * 0.1, gy - gr * 0.25), 1, th, cv2.LINE_AA)
+        band = np.array([P(hx - rx * 1.0, by - ry * 0.3), P(hx + rx * 1.0, by - ry * 0.3), P(hx + rx * 1.02, by - ry * 0.1), P(hx - rx * 1.02, by - ry * 0.1)], np.int32)
+        cv2.fillPoly(specs, [band], 0.55, cv2.LINE_AA)                                                     # the hat band catches a little light
+    if style == "hat":
+        pass
+    elif style == "crop":
         cv2.ellipse(head, P(hx, hy - ry * 0.12), P(rx * 1.07, ry * 1.0), 0, 180, 360, 1, -1, cv2.LINE_AA)
     elif style == "bob":
         cv2.ellipse(head, P(hx, hy + ry * 0.05), P(rx * 1.3, ry * 1.18), 0, 150, 390, 1, -1, cv2.LINE_AA)
@@ -98,10 +127,10 @@ def figure(w, h, who, pose, close):
             cv2.circle(head, P(hx + np.cos(a) * rx * 1.02, hy - ry * 0.1 + np.sin(a) * ry * 1.0), int(rx * rw.uniform(0.34, 0.46)), 1, -1, cv2.LINE_AA)
     lean = cv2.getRotationMatrix2D((float(cx), float(H2)), float(rp.uniform(-3.5, 3.5)), 1.0)
     soft = lambda m: cv2.resize(cv2.GaussianBlur(cv2.warpAffine(m, lean, (W2, H2)), (0, 0), 1.4 * S), (w, h), interpolation=cv2.INTER_AREA)
-    return soft(body), soft(head)
+    return soft(body), soft(head), np.clip(soft(specs) * 1.25, 0, 1)
 
 
-def portrait(hero, accent, who, pose, w, h, close=False):
+def portrait(hero, accent, who, pose, w, h, close=False, incog=False):
     r = np.random.default_rng(pose)
     back = crop_of(hero, r.uniform(0.25, 0.75), r.uniform(0.2, 0.55), 2.2, w, h)
     back = cv2.GaussianBlur(back, (0, 0), w * 0.07)
@@ -114,7 +143,7 @@ def portrait(hero, accent, who, pose, w, h, close=False):
     halo = np.exp(-(((xx - w * (0.5 + 0.14 * side)) / (w * 0.55)) ** 2 + ((yy - h * 0.32) / (h * 0.46)) ** 2))[..., None]
     back = np.clip(back + (light * 1.04 - back) * halo * 0.55, 0, 1)
     back *= (1 - 0.24 * (((xx - w / 2) / w) ** 2 + ((yy - h / 2) / h) ** 2))[..., None]
-    body, head = figure(w, h, who, pose, close)
+    body, head, specs = figure(w, h, who, pose, close, incog)
     ink = dark * 0.45 + np.array(rgb("#161922")) * 0.55                          # a shadow tone taken from the painting, never a skin colour
     tint = (0.26, 0.36, 0.46)[who % 3]
     garment = ink * (1 - tint) + np.array(rgb(accent)) * tint
@@ -129,7 +158,11 @@ def portrait(hero, accent, who, pose, w, h, close=False):
     rim = cv2.GaussianBlur(np.clip(whole - inner, 0, 1), (0, 0), w / 300)
     lit = np.clip(0.42 + side * (xx - w / 2) / (w * 0.45), 0, 1) * np.clip(1.3 - yy / h, 0.2, 1)
     img = np.clip(img + (light * 1.08 - img) * (rim * lit)[..., None] * 0.85, 0, 1)
-    return brush(img, pose, sizes=(max(12, w // 40), max(6, w // 80), max(4, w // 170), max(2, w // 340)), relief=0.009)
+    img = brush(img, pose, sizes=(max(12, w // 40), max(6, w // 80), max(4, w // 170), max(2, w // 340)), relief=0.009)
+    if incog:   # drawn after the brushwork so the rims stay fine
+        tone = np.clip(light * 0.55 + np.array(rgb(accent)) * 0.45, 0, 1)
+        img = np.clip(img + (tone - img) * specs[..., None] * 0.9, 0, 1)
+    return img
 
 
 def label(img, lines, y=0.66):
@@ -138,7 +171,7 @@ def label(img, lines, y=0.66):
     im = Image.fromarray((np.clip(img, 0, 1) * 255).astype(np.uint8)).convert("RGBA")
     w = im.width
     fs = max(15, w // 40)
-    f1, f2 = ImageFont.truetype(FONTS[0], fs), ImageFont.truetype(FONTS[1], int(fs * 0.9))
+    f1, f2 = font(0, fs), font(1, int(fs * 0.9))
     pad, gap = int(fs * 0.9), int(fs * 0.4)
     w1, w2 = f1.getlength(lines[0]), f2.getlength(lines[1])
     bw, bh = int(max(w1, w2) + pad * 2), int(fs + fs * 0.9 + gap + pad * 1.9)
@@ -170,14 +203,17 @@ def main():
             w, h, kind, name = p["w"], p["h"], p["kind"], p["file"]
             if "--missing" in sys.argv and (folder / name).exists():
                 continue
+            if "--owner" in sys.argv and kind not in ("you", "me"):
+                continue
             if kind in ("you", "me", "guest", "face"):
                 who = seed_of(site["dir"] + (site["person"] if kind in ("you", "me") else p["who"]))
                 small = w <= 320
                 k = 3 if small else 1.5                       # painted larger, then cut down, so the brushwork is fine and the edges clean
-                img = portrait(hero, site["accent"], who, seed_of(site["dir"] + name), int(w * k), int(h * k), close=small or p.get("close", False))
+                img = portrait(hero, site["accent"], who, seed_of(site["dir"] + name), int(w * k), int(h * k), close=small or p.get("close", False),
+                               incog=kind in ("you", "me") and site["person"] == "Guy Incognito")
                 img = cv2.resize(img, (w, h), interpolation=cv2.INTER_AREA)
                 if not small:
-                    img = label(img, ["YOUR PHOTO", f"{name} · {w} × {h}"])
+                    img = label(img, ["YOUR PHOTO" if kind == "guest" or site["person"] != "Guy Incognito" else "GUY INCOGNITO · YOUR PHOTO", f"{name} · {w} × {h}"])
             else:
                 cx, cy, zoom = p["crop"]
                 img = label(crop_of(hero, cx, cy, zoom, w, h), ["YOUR VIDEO STILL" if kind == "video" else "YOUR PHOTO", f"{name} · {w} × {h}"], 0.27 if kind == "video" else 0.36)

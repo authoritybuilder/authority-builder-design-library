@@ -2,8 +2,8 @@
 
 **Group:** List Builders And Launches  
 **For:** Creator, Coach  
-**Style:** Bright Playful (Syne + Plus Jakarta Sans)  
-**Sample brand:** Poppy Achebe (fictional)
+**Style:** Bright Playful (Outfit + Plus Jakarta Sans)  
+**Sample brand:** Guy Incognito (fictional)
 
 A link-in-bio page on your own domain. 1 featured action, 5 plain links, each with a line saying what it is.
 
@@ -40,8 +40,8 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 
 ## Search Card
 
-- **Title:** Poppy Achebe | Links | Money Coaching For Freelancers
-- **Description:** Everything from Poppy Achebe in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.
+- **Title:** Guy Incognito | Links | Money Coaching For Freelancers
+- **Description:** Everything from Guy Incognito in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.
 - **Structured data:** WebSite, WebPage, Person
 - A link page on your own address is a real page Google can index, with your name in the title. A third-party link tool gives that value away.
 - Person markup ties the page to your name. Use exactly the same bio line here as on each social profile.
@@ -52,11 +52,11 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Poppy Achebe | Links | Money Coaching For Freelancers” (53 characters). |
-| The person's name is in the title or description | **Good** | “Poppy Achebe” appears in the title. |
-| Description says who the page is for | **Good** | “Everything from Poppy Achebe in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.” (131 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Poppy Achebe”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://poppyachebe.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Title carries the brand or the person's name | **Good** | “Guy Incognito | Links | Money Coaching For Freelancers” (54 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
+| Description says who the page is for | **Good** | “Everything from Guy Incognito in 1 place: the free Tax Jar Calculator, the Friday Money Minute newsletter, coaching and the podcast.” (132 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -67,7 +67,7 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://poppyachebe.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
 | No broken or dead links inside the site | **Good** | 83 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
@@ -79,15 +79,15 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 
 | Check | Result | What was seen |
 |---|---|---|
-| 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Poppy Achebe”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 184 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Guy Incognito”. It is plain text, not a rotating or animated headline. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 184 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 59KB for phones to 205KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 68KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 59KB for phones to 205KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 73KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 5.3 and the whole page at grade 7.5 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 5.3 and the whole page at grade 7.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -100,7 +100,7 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 663px down. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 50px tall. 6 were measured. |
-| Page weight | **Good** | The HTML is 36KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 46KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -127,7 +127,7 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 1 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Poppy Achebe, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -174,7 +174,8 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Bright Playful. Butter yellow, coral and navy with sticker shadows and chunky outlines. Friendly and fast.
-Fonts: Syne + Plus Jakarta Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Lagoon And Papaya. Sections rise into place as they scroll in. It uses soft colour washes.
+Fonts: Outfit + Plus Jakarta Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

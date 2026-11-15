@@ -4,7 +4,7 @@ SAMPLE_NOTE = "Sample testimonials for a fictional brand. On your page, use your
 
 P4 = dict(
     n=4, slug="local-service-business", name="Local Service Business Homepage", group="Home Bases", aud=["Business Owner"], theme="bright_playful",
-    brand=dict(name="Tideline Bookkeeping", person="Bec Tran", role="Registered BAS agent", domain="tidelinebooks.example", mono="T",
+    brand=dict(name="Tideline Bookkeeping", person="Guy Incognito", role="Registered BAS agent", domain="tidelinebooks.example", mono="T",
                line="Bookkeeping for Sunshine Coast trades and cafes. Registered BAS agent.", where="Mooloolaba, Queensland", contact="hello@tidelinebooks.example · (07) 5550 0142"),
     title="Tideline Bookkeeping | Bookkeeper For Sunshine Coast Trades And Cafes",
     desc="Tideline Bookkeeping keeps the books for 70+ Sunshine Coast trades and cafes. Fixed monthly fees from $290, BAS lodged on time, and a real person on the phone in Mooloolaba.",
@@ -19,7 +19,7 @@ P4 = dict(
             sub="Fixed-fee bookkeeping for Sunshine Coast tradies and cafe owners who would rather be on the tools, or behind the machine, than in a spreadsheet.",
             bullets=["Fixed monthly fee from $290. No hourly surprises", "Registered BAS agent, lodged on time or it is free", "A real person on the phone, 5 days a week"],
             cta=("Get A Fixed Quote", "#contact"), cta2=("See Pricing", "#pricing"),
-            visual=dict(kind="scene", label="Photo brief: Bec at the shopfront with the street sign visible. Locals recognise the spot", ar="4/5"),
+            visual=dict(kind="scene", label="Photo brief: Guy at the shopfront with the street sign visible. Locals recognise the spot", ar="4/5"),
             float=("70+", "local businesses looked after"))),
         ("stats", dict(_="Numbers row: proof a local can sanity-check", tone="alt", items=[
             ("70+", "Sunshine Coast businesses on the books"), ("11 yrs", "in Mooloolaba, same shopfront"), ("100%", "of BAS lodged on time last financial year"), ("1 day", "average reply time")])),
@@ -40,7 +40,7 @@ P4 = dict(
                 dict(name="Venue", price="$890", per="/ month", desc="Cafes and venues up to 25 staff.", feats=["Everything in Crew", "Weekly wage costing", "Stock and tips reporting"], cta=("Get A Quote", "#contact"))],
             note="Prices include GST. Catch-up work is quoted separately as a fixed fee.")),
         ("quotes", dict(_="Reviews as text with suburb and trade, the details locals trust", id="reviews", tone="alt", h="What The Locals *Say*", note=SAMPLE_NOTE, items=[
-            dict(result="3 years of BAS, caught up", q="I walked in with 3 shoeboxes. Bec had me up to date in 5 weeks and never once made me feel stupid.", name="Daz M.", role="Electrician, Buderim"),
+            dict(result="3 years of BAS, caught up", q="I walked in with 3 shoeboxes. Guy had me up to date in 5 weeks and never once made me feel stupid.", name="Daz M.", role="Electrician, Buderim"),
             dict(result="Sundays back", q="I used to do the books on Sunday nights. Now I get a 1-page summary and a full day off.", name="Lani K.", role="Cafe owner, Maroochydore"),
             dict(result="Payroll sorted", q="Super, payroll, the lot. It just happens. Worth every dollar.", name="Steve R.", role="Plumbing business, Kawana")])),
         ("contact", dict(_="Contact block: name, address and phone exactly as they appear on the Google Business Profile, plus hours", id="contact", eyebrow="Contact and hours",
@@ -80,16 +80,16 @@ P4 = dict(
 
 P5 = dict(
     n=5, slug="about-founder-story", name="About And Founder Story", group="Home Bases", aud=["Coach", "Creator", "Consultant"], theme="magazine", path="about/",
-    brand=dict(name="Dana Whitlock", person="Dana Whitlock", role="Career coach for women returning to work", domain="danawhitlock.example", mono="D",
+    brand=dict(name="Guy Incognito", person="Guy Incognito", role="Career coach for women returning to work", domain="guyincognito.example", mono="G",
                line="Career coaching for women returning to work after a break.", where="Adelaide, South Australia"),
-    title="About Dana Whitlock | Career Coach For Women Returning To Work",
-    desc="Dana Whitlock took 6 years out of the workforce, then rebuilt her career in 14 months. She has since coached 380 women back into roles they chose. Read her story.",
+    title="About Guy Incognito | Career Coach For Women Returning To Work",
+    desc="Guy Incognito took 6 years out of the workforce, then rebuilt his career in 14 months. He has since coached 380 women back into roles they chose. Read his story.",
     schema=["ProfilePage", "Person", "BreadcrumbList"], ld=dict(crumbs=[("Home", ""), ("About", "about/")]),
-    nav=[("Coaching", "#work"), ("About", "#story"), ("Articles", "#work"), ("Contact", "#work")], cta=("Work With Dana", "#work"),
+    nav=[("Coaching", "#work"), ("About", "#story"), ("Articles", "#work"), ("Contact", "#work")], cta=("Work With Guy", "#work"),
     blurb="An About page written as a magazine profile. It tells 1 turning-point story, proves it with numbers and ends by sending the reader somewhere.",
     sections=[
         ("hero_split", dict(_="Hero: the story in 1 line, with the reader's situation inside it",
-            eyebrow="About Dana Whitlock", h="I took 6 years out. *It became the best line on my CV.*",
+            eyebrow="About Guy Incognito", h="I took 6 years out. *It became the best line on my CV.*",
             sub="I am a career coach for women returning to work after a break. I have been where you are, and I have helped 380 women come back on their own terms.",
             cta=("Work With Me", "#work"), cta2=("Read The Story", "#story"),
             visual=dict(label="Photo brief: an editorial portrait. Seated, relaxed, strong side light, looking just off camera"))),
@@ -103,7 +103,7 @@ P5 = dict(
             pull="The room changed. They stopped interviewing a gap and started interviewing a person.",
             after=["I got that job. More usefully, I got the idea that has shaped every day since: a career break is not a hole in your story. It is a chapter you have not learned to tell yet.",
                    "Two years later I left to coach full time. The method I teach now, the Chapter Method, is that interview answer turned into a process anyone can follow."],
-            sign="Dana")),
+            sign="Guy")),
         ("schedule", dict(_="A short timeline: credibility as dated facts, easy to scan and easy to quote", tone="alt", eyebrow="The short version", h="15 Years In *5 Lines*", items=[
             ("2008", "Recruiter", "Joined a national recruitment firm. Placed 600+ candidates over 9 years."),
             ("2011", "The break", "Stepped out of paid work for 6 years to raise 2 children."),
@@ -130,7 +130,7 @@ P5 = dict(
          "It is the 1 indexable page clearly about the person, which is what Google and AI tools need to answer a who-is question."],
     principles=[
         ("epiphany", "The interview scene lets the reader feel the realisation rather than being told the conclusion."),
-        ("sb7", "The reader is the hero. Dana is the guide who has walked the path and now has a plan."),
+        ("sb7", "The reader is the hero. Guy is the guide who has walked the path and now has a plan."),
         ("liking", "Shared experience and small human details (the kelpie, the lasagne) build warmth quickly."),
         ("authority", "A dated timeline and specific counts do the work that adjectives cannot."),
         ("success", "The pull quote is simple, concrete and emotional: the line a reader will repeat."),
@@ -147,17 +147,17 @@ P5 = dict(
 
 P6 = dict(
     n=6, slug="speaker-media-kit", name="Speaker And Media Kit", group="Home Bases", aud=["Coach", "Consultant", "Creator"], theme="dark_stage", path="speaking/",
-    brand=dict(name="Jonah Reyes", person="Jonah Reyes", role="Keynote speaker on attention at work", domain="jonahreyes.example", mono="J",
+    brand=dict(name="Guy Incognito", person="Guy Incognito", role="Keynote speaker on attention at work", domain="guyincognito.example", mono="G",
                line="Keynotes and workshops on attention at work.", where="Brisbane, Queensland"),
-    title="Jonah Reyes | Keynote Speaker On Attention At Work",
-    desc="Jonah Reyes has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.",
+    title="Guy Incognito | Keynote Speaker On Attention At Work",
+    desc="Guy Incognito has delivered 140 keynotes on attention, focus and meeting culture to audiences of 50 to 5,000. Topics, speaker reel, bios and booking details.",
     schema=["Person", "WebPage"],
-    nav=[("Topics", "#topics"), ("Reel", "#reel"), ("Media Kit", "#kit"), ("Book Jonah", "#book")], cta=("Check A Date", "#book"),
+    nav=[("Topics", "#topics"), ("Reel", "#reel"), ("Media Kit", "#kit"), ("Book Guy", "#book")], cta=("Check A Date", "#book"),
     blurb="A speaker page built for the person who actually books speakers: an event organiser with 10 tabs open and a committee to convince.",
     sections=[
         ("hero_stage", dict(_="Hero: the speaker's 1 idea at full volume, with the numbers an organiser needs",
             eyebrow="Keynote speaker · Attention at work", h="Your team is not lazy. *They are interrupted.*",
-            sub="Jonah Reyes shows leaders how to win back 6 hours of focused work a week, per person, without a new app or a single extra meeting.",
+            sub="Guy Incognito shows leaders how to win back 6 hours of focused work a week, per person, without a new app or a single extra meeting.",
             cta=("Check A Date", "#book"), cta2=("Watch The Reel", "#reel"),
             visual=dict(label="Photo brief: on stage, mid-gesture, audience visible in the foreground", ar="3/4"),
             stats=[("140", "keynotes delivered"), ("5,000", "largest live audience"), ("9.4 / 10", "average organiser rating"), ("12", "countries")])),
@@ -175,18 +175,18 @@ P6 = dict(
             dict(result="Zero prep stress", q="Slides in early, tech check on time, and he stayed for the whole dinner. The easiest speaker we have worked with.", name="Andre P.", role="Events Lead, industry association"),
             dict(result="Still quoted", q="6 months on, our leadership team still says 'is this an interruption or a decision?' in meetings.", name="Sophie G.", role="Chief People Officer")])),
         ("bios", dict(_="Copy-ready bios: the exact words an organiser can paste into a program", id="kit", tone="alt", eyebrow="Media kit", h="Copy-Ready *Bios And Intro*", items=[
-            ("Short bio · 40 words", "Jonah Reyes is a keynote speaker and researcher on attention at work. He has delivered 140 keynotes in 12 countries and is the author of The Interrupted Organisation. He helps teams win back 6 focused hours a week."),
-            ("Stage introduction · 30 seconds", "Our next speaker has spent a decade studying why smart teams cannot think straight. He has advised 80 organisations and spoken to audiences of up to 5,000. Please welcome Jonah Reyes.")])),
+            ("Short bio · 40 words", "Guy Incognito is a keynote speaker and researcher on attention at work. He has delivered 140 keynotes in 12 countries and is the author of The Interrupted Organisation. He helps teams win back 6 focused hours a week."),
+            ("Stage introduction · 30 seconds", "Our next speaker has spent a decade studying why smart teams cannot think straight. He has advised 80 organisations and spoken to audiences of up to 5,000. Please welcome Guy Incognito.")])),
         ("feed", dict(_="Downloads list: everything an event team asks for, in 1 place", eyebrow="Downloads", h="Everything Your *Event Team Needs*", items=[
             dict(kind="Photos", title="6 high-resolution headshots and stage photos", meta="ZIP · 48 MB"),
             dict(kind="AV rider", title="Technical requirements, 1 page", meta="PDF"),
             dict(kind="Topics", title="Keynote descriptions and learning outcomes", meta="PDF"),
             dict(kind="Logo", title="Book cover and name lock-up", meta="ZIP")])),
-        ("contact", dict(_="Booking enquiry: the 4 facts an agent needs, nothing more", id="book", tone="alt", eyebrow="Book Jonah", h="Check A Date *In 1 Minute*",
+        ("contact", dict(_="Booking enquiry: the 4 facts an agent needs, nothing more", id="book", tone="alt", eyebrow="Book Guy", h="Check A Date *In 1 Minute*",
             form=dict(title="Event enquiry", fields=[("Your name", "text", "First and last"), ("Email", "email", "you@organisation.com"),
                                                      ("Event date and city", "text", "12 March, Melbourne"), ("Audience size and format", "text", "300 people, 45-minute keynote")],
                       button="Check Availability", note="You will hear back within 1 business day."),
-            details=[("Booking contact", "Rosa at bookings@jonahreyes.example"), ("Based in", "Brisbane. Travels worldwide"), ("Formats", "Keynote, workshop, executive session, virtual"),
+            details=[("Booking contact", "Rosa at bookings@guyincognito.example"), ("Based in", "Brisbane. Travels worldwide"), ("Formats", "Keynote, workshop, executive session, virtual"),
                      ("Fee guide", "Keynotes from $12,000 plus travel. Not-for-profit rates on request")])),
     ],
     why=["It is written for the booker, not the fan. Topics, proof, bios, files and a date check are all on 1 page.",

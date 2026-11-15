@@ -2,7 +2,7 @@
 
 **Group:** List Builders And Launches  
 **For:** Coach, Creator, Consultant  
-**Style:** Quiet Luxury (Cormorant Garamond + Jost)  
+**Style:** Quiet Luxury (Prata + Jost)  
 **Sample brand:** Atelier Year (fictional)
 
 A waitlist page with almost nothing on it, on purpose. What is coming, when, why joining early is worth it, and 1 field.
@@ -81,15 +81,15 @@ A waitlist page with almost nothing on it, on purpose. What is coming, when, why
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “A year of mentorship for designers who work alone.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 383 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 383 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 182 words of body copy on the main page read at about school grade 4.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 5 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 20KB for phones to 85KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 62KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 5 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 20KB for phones to 85KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 69KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.0 and the whole page at grade 6.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.0 and the whole page at grade 6.3 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -104,7 +104,7 @@ A waitlist page with almost nothing on it, on purpose. What is coming, when, why
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17.6px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 7 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 17 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.3 to 1 for body text and 11.4 to 1 for large text. On a phone: 6.7 to 1 for body text and 12.8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 41KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -131,7 +131,7 @@ A waitlist page with almost nothing on it, on purpose. What is coming, when, why
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 3 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Celeste Marchetti, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -175,7 +175,8 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Quiet Luxury. Ivory, espresso and bronze. Thin rules, small capitals, lots of air. Says premium without shouting.
-Fonts: Cormorant Garamond + Jost from Google Fonts. Keep 1 accent colour and use it only for the main action.
+This site's own variation: Noir And Champagne. Sections come into focus as they scroll in. It uses numbered section headers, frosted glass cards, a paper grain, a slow light drifting across the hero. The picture band is a painted band set in a rounded frame.
+Fonts: Prata + Jost from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 
 PERSUASION RULES

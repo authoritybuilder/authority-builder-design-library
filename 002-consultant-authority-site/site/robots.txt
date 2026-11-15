@@ -1,4 +1,4 @@
-# robots.txt for Halden Rowe Advisory. It lives at https://haldenrowe.example/robots.txt
+# robots.txt for Incognito Rowe Advisory. It lives at https://incognitorowe.example/robots.txt
 
 # Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
 User-agent: Googlebot
@@ -24,4 +24,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://haldenrowe.example/sitemap.xml
+Sitemap: https://incognitorowe.example/sitemap.xml

@@ -4,7 +4,7 @@ SAMPLE_NOTE = "Sample testimonials for a fictional brand. On your page, use your
 
 P10 = dict(
     n=10, slug="mastermind-application", name="Mastermind Application Page", group="Offer Pages", aud=["Coach", "Consultant"], theme="quiet_luxury", path="the-long-table/",
-    brand=dict(name="The Long Table", person="Vivienne Ashcombe", role="Adviser to agency founders", domain="thelongtable.example", mono="L",
+    brand=dict(name="The Long Table", person="Guy Incognito", role="Adviser to agency founders", domain="thelongtable.example", mono="L",
                line="A 12-month mastermind for agency founders. By application.", where="Sydney, New South Wales"),
     title="The Long Table | A 12-Month Mastermind For Agency Founders",
     desc="The Long Table is a 12-month mastermind for 14 agency founders with revenue of $1.5m to $8m. 3 retreats, monthly sessions and a private adviser. By application.",
@@ -16,15 +16,15 @@ P10 = dict(
             eyebrow="A mastermind for agency founders · By application", h="14 founders. 1 table. *12 months.*",
             sub="For agency founders with revenue between $1.5m and $8m who have outgrown their peers and have nobody left to ask.",
             cta=("Apply For The 2027 Table", "#apply"), chips=["14 places", "3 retreats", "Applications close 28 February"])),
-        ("prose", dict(_="A short letter from the founder: belief first, then method", tone="alt", eyebrow="A note from Vivienne",
+        ("prose", dict(_="A short letter from the founder: belief first, then method", tone="alt", eyebrow="A note from Guy",
             h="At A Certain Size, *The Advice Runs Out.*",
             paras=["The books and podcasts that got you to your first million were written for people starting out. The people around you now either work for you or compete with you.",
                    "I built and sold a 60-person agency, and the most valuable thing I had in those years was a dinner table of 6 founders who told me the truth. The Long Table is that dinner, designed properly."],
-            pull="You do not need more information. You need a room where you are not the most experienced person in it.", sign="Vivienne Ashcombe")),
+            pull="You do not need more information. You need a room where you are not the most experienced person in it.", sign="Guy Incognito")),
         ("cards", dict(_="What the year contains: 4 pillars, described without hype", id="year", eyebrow="The year", h="Four Parts, *Deliberately Few*", cols=4, num=True, items=[
             ("3 retreats", "2 nights each, in February, June and October. Small, quiet venues within 2 hours of Sydney."),
             ("Monthly table", "A 3-hour session on video. 1 member's business is the whole agenda."),
-            ("A private adviser", "6 one-to-one sessions with Vivienne across the year, booked when you need them."),
+            ("A private adviser", "6 one-to-one sessions with Guy across the year, booked when you need them."),
             ("The numbers book", "Quarterly benchmarks shared among the 14, in confidence.")])),
         ("compare", dict(_="Selection criteria: clear on who is in and who is not", tone="alt", eyebrow="Who sits at the table", h="This Is A Fit *For Very Few People*",
             right=("You will fit if you", ["Own an agency with $1.5m to $8m in revenue", "Lead a team of 8 to 60", "Will share real numbers in confidence", "Can attend all 3 retreats"]),
@@ -34,16 +34,16 @@ P10 = dict(
         ("pricing", dict(_="The investment, printed, with what it includes", id="invest", tone="alt", eyebrow="Investment", h="Stated *Plainly*",
             anchor="A single avoided hiring mistake at this size typically costs more than the year.", tiers=[
                 dict(name="The 2027 Table", price="$28,000", per="for 12 months", desc="Or 4 quarterly payments of $7,250.",
-                     feats=["3 retreats, accommodation and meals included", "12 monthly table sessions", "6 private sessions with Vivienne", "The quarterly numbers book"], cta=("Apply", "#apply"))],
+                     feats=["3 retreats, accommodation and meals included", "12 monthly table sessions", "6 private sessions with Guy", "The quarterly numbers book"], cta=("Apply", "#apply"))],
             note="Australian dollars, plus GST. Travel to retreats is not included. 14 places, of which 9 are returning members.")),
         ("steps", dict(_="The application process: 3 steps, with timings", eyebrow="How to apply", h="Three Steps, *About 10 Days*", items=[
             ("Apply", "8 questions, about 15 minutes. We ask for revenue range and team size, not financial statements."),
-            ("A conversation", "A 40-minute call with Vivienne. She will tell you on the call whether she thinks it is a fit."),
+            ("A conversation", "A 40-minute call with Guy. He will tell you on the call whether he thinks it is a fit."),
             ("An invitation", "If we both agree, you receive an invitation and the member agreement within 3 days.")])),
         ("contact", dict(_="The application form itself: short, with the reason for each question clear", id="apply", tone="alt", eyebrow="Apply", h="Begin Your *Application*",
             form=dict(fields=[("Your name", "text", "First and last"), ("Agency and website", "text", "Name and web address"), ("Annual revenue", "select", ["$1.5m to $3m", "$3m to $5m", "$5m to $8m"]),
                               ("Team size", "text", "Full-time equivalents"), ("What is the 1 decision keeping you up at night?", "area", "A few honest sentences")],
-                      button="Submit Application", note="Read only by Vivienne. Never shared."),
+                      button="Submit Application", note="Read only by Guy. Never shared."),
             details=[("Places", "14 in total. 5 open for 2027"), ("Applications close", "28 February 2027"), ("First retreat", "19 to 21 March 2027, Southern Highlands"),
                      ("Questions", "table@thelongtable.example")])),
     ],
@@ -68,7 +68,7 @@ P10 = dict(
 
 P11 = dict(
     n=11, slug="services-and-pricing", name="Services And Pricing Page", group="Offer Pages", aud=["Consultant", "Business Owner"], theme="warm_editorial", path="services/",
-    brand=dict(name="Fieldnote Brand Studio", person="Mira Castellanos", role="Brand strategist", domain="fieldnotestudio.example", mono="F",
+    brand=dict(name="Fieldnote Brand Studio", person="Guy Incognito", role="Brand strategist", domain="fieldnotestudio.example", mono="F",
                line="Brand strategy and identity for independent professionals.", where="Fremantle, Western Australia"),
     title="Services And Pricing | Fieldnote Brand Studio",
     desc="Fieldnote Brand Studio offers 3 fixed-price ways to work together: a 1-day Brand Sprint ($2,400), a 6-week Full Identity ($9,800) and a quarterly retainer. See what is included.",
@@ -131,7 +131,7 @@ P11 = dict(
 
 P12 = dict(
     n=12, slug="digital-product-shop", name="Digital Product Shop", group="Offer Pages", aud=["Creator", "Coach"], theme="bright_playful", path="shop/",
-    brand=dict(name="Paper & Pixel Co.", person="Ruby Nakamura", role="Template designer for coaches", domain="paperandpixel.example", mono="P",
+    brand=dict(name="Paper & Pixel Co.", person="Guy Incognito", role="Template designer for coaches", domain="paperandpixel.example", mono="P",
                line="Templates and toolkits for coaches. Instant download.", where="Gold Coast, Queensland"),
     title="Shop Templates For Coaches | Paper & Pixel Co.",
     desc="Client-ready templates for coaches: welcome packs, session notes, proposals and workbooks. Editable in Canva and Google Docs. Instant download from $19.",
@@ -195,7 +195,7 @@ P12 = dict(
 
 P13 = dict(
     n=13, slug="corporate-training", name="Corporate Training Page", group="Offer Pages", aud=["Consultant", "Coach"], theme="corporate_calm", path="for-teams/",
-    brand=dict(name="Brightline Learning", person="Dr Anika Shah", role="Organisational psychologist and facilitator", domain="brightlinelearning.example", mono="B",
+    brand=dict(name="Brightline Learning", person="Dr Guy Incognito", role="Organisational psychologist and facilitator", domain="brightlinelearning.example", mono="B",
                line="Feedback and conversation skills training for managers.", where="Canberra, Australian Capital Territory"),
     title="Feedback That Lands | Manager Training For Teams | Brightline Learning",
     desc="Feedback That Lands is a half-day workshop for managers, delivered on site or online for groups of 8 to 24. 4,200 managers trained in 90 workplaces. From $6,500.",
@@ -241,7 +241,7 @@ P13 = dict(
             form=dict(fields=[("Your name", "text", "First and last"), ("Work email", "email", "you@organisation.com.au"), ("Organisation", "text", "Name"),
                               ("Group size and preferred month", "text", "20 managers, March"), ("What prompted this?", "area", "A sentence or 2 is plenty")],
                       button="Request A Proposal", note="No sales call unless you ask for one."),
-            details=[("Facilitator", "Dr Anika Shah, organisational psychologist"), ("Delivery", "On site Australia-wide, or online"), ("Supplier details", "ABN, insurance certificates and referees on request"),
+            details=[("Facilitator", "Dr Guy Incognito, organisational psychologist"), ("Delivery", "On site Australia-wide, or online"), ("Supplier details", "ABN, insurance certificates and referees on request"),
                      ("Direct line", "(02) 5550 0178")])),
     ],
     why=["It is written for a buyer who must justify the spend to someone else: outcomes, agenda, data and a price range are all forwardable.",

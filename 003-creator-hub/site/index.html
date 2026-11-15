@@ -1,21 +1,21 @@
 <!doctype html>
-<html lang="en-AU" id="top">
+<html lang="en-AU" id="top" data-m="pop" data-tilt>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tash Okafor | The Sunday System: Calm Systems For Freelancers</title>
-<meta name="description" content="Tash Okafor writes The Sunday System, a weekly newsletter on calm work systems read by 42,000 freelancers. Start with the newsletter, the podcast or the starter kit.">
-<!-- Swap every tashokafor.example address below for your real one. Use 1 version of your address everywhere. -->
-<link rel="canonical" href="https://tashokafor.example/">
+<title>Guy Incognito | The Sunday System: Calm Systems For Freelancers</title>
+<meta name="description" content="Guy Incognito writes The Sunday System, a weekly newsletter on calm work systems read by 42,000 freelancers. Start with the newsletter, the podcast or the starter kit.">
+<!-- Swap every guyincognito.example address below for your real one. Use 1 version of your address everywhere. -->
+<link rel="canonical" href="https://guyincognito.example/">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Tash Okafor">
-<meta property="og:title" content="Tash Okafor | The Sunday System: Calm Systems For Freelancers">
-<meta property="og:description" content="Tash Okafor writes The Sunday System, a weekly newsletter on calm work systems read by 42,000 freelancers. Start with the newsletter, the podcast or the starter kit.">
-<meta property="og:url" content="https://tashokafor.example/">
-<meta property="og:image" content="https://tashokafor.example/share.jpg">
+<meta property="og:site_name" content="Guy Incognito">
+<meta property="og:title" content="Guy Incognito | The Sunday System: Calm Systems For Freelancers">
+<meta property="og:description" content="Guy Incognito writes The Sunday System, a weekly newsletter on calm work systems read by 42,000 freelancers. Start with the newsletter, the podcast or the starter kit.">
+<meta property="og:url" content="https://guyincognito.example/">
+<meta property="og:image" content="https://guyincognito.example/share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Tash Okafor: Creator Hub">
+<meta property="og:image:alt" content="Guy Incognito: Creator Hub">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#ECEEF0">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
@@ -29,28 +29,28 @@
  "@graph": [
   {
    "@type": "WebSite",
-   "@id": "https://tashokafor.example/#site",
-   "name": "Tash Okafor",
-   "url": "https://tashokafor.example/"
+   "@id": "https://guyincognito.example/#site",
+   "name": "Guy Incognito",
+   "url": "https://guyincognito.example/"
   },
   {
    "@type": "Person",
-   "@id": "https://tashokafor.example/#person",
-   "name": "Tash Okafor",
+   "@id": "https://guyincognito.example/#person",
+   "name": "Guy Incognito",
    "jobTitle": "Writer and creator of The Sunday System",
-   "url": "https://tashokafor.example/about.html",
+   "url": "https://guyincognito.example/about.html",
    "worksFor": {
-    "@id": "https://tashokafor.example/#org"
+    "@id": "https://guyincognito.example/#org"
    }
   },
   {
    "@type": "Organization",
-   "@id": "https://tashokafor.example/#org",
-   "name": "Tash Okafor",
-   "url": "https://tashokafor.example/",
-   "logo": "https://tashokafor.example/icon-512.png",
+   "@id": "https://guyincognito.example/#org",
+   "name": "Guy Incognito",
+   "url": "https://guyincognito.example/",
+   "logo": "https://guyincognito.example/icon-512.png",
    "founder": {
-    "@id": "https://tashokafor.example/#person"
+    "@id": "https://guyincognito.example/#person"
    }
   }
  ]
@@ -133,9 +133,7 @@ picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}p
 /* The headline slides but never starts hidden, so the largest element paints straight away */
 h1[data-in]{animation-name:slide}
 @keyframes slide{from{transform:translateY(16px)}}
-/* Sections lift into place as they scroll in. They never fade, so nothing sits half-visible at the edge of the screen */
-@keyframes lift{from{transform:translateY(28px)}}
-@supports(animation-timeline:view()){.sec>.wrap>*{animation:lift linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+/* Sections below the first screen reveal as they scroll in: see src/motion.py */
 }
 @media print{.libbar{display:none}.sec{padding-block:28px}}
 
@@ -164,6 +162,24 @@ h1[data-in]{animation-name:slide}
 .fd-g h3{margin:.4rem 0 .5rem;font-size:1.35rem}.fd-g h3 a{text-decoration:none}.fd-g p{color:var(--ink2);font-size:.96rem}.fd-g .m{margin-top:.7rem;font-size:.84rem}
 .fd-more{margin-top:2rem}
 @media(max-width:700px){.fd-l li{grid-template-columns:1fr}}
+
+.band{position:relative;isolation:isolate;overflow:clip}
+.bd-h{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.5rem*var(--hs)));max-width:19ch}.band .eyebrow{margin-bottom:1.1rem}
+.band.wide{padding-block:clamp(84px,11vw,160px)}.band.wide::before{background:linear-gradient(90deg,rgba(6,10,22,.84),rgba(6,10,22,.62) 52%,rgba(6,10,22,.2))}
+.band.wide picture.art img,.band.frame picture.art img{object-position:50% 46%}
+.band.frame{margin:clamp(12px,2.2vw,30px);border-radius:clamp(22px,3vw,44px);padding-block:clamp(72px,9vw,128px);text-align:center}
+.band.frame::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.band.frame .bd-h{margin-inline:auto}.band.frame .acts{justify-content:center}
+.band.frame .eyebrow::before{display:none}
+.band.mosaic .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
+.mos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:clamp(10px,1.4vw,18px);aspect-ratio:5/4}
+.mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
+.mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
+.band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
+.strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
+@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
+@media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
 
 .prd{display:flex;flex-direction:column;gap:.5rem;transition:translate .25s}.prd:hover{translate:0 -5px}
 .prd .pv{position:relative;margin-bottom:.8rem}.prd .ph{--ar:4/3;box-shadow:none}
@@ -336,34 +352,128 @@ font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em
 .bleed .card{--ink:#14161A;--ink2:#525863;--line:#D3D7DD;--accent-t:#1A36DB;color:#14161A;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 :root{--t1:#C8F169;--t2:#D9CCFF;--t3:#FFD7BF}h1 em,h2 em{font-style:normal;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.alt{background:var(--bg)}.eyebrow{font-weight:600;letter-spacing:.06em;text-transform:none;font-size:.9rem}
 :root{--atmo:radial-gradient(38% 46% at 10% 0,#D9CCFF 0,transparent 70%),radial-gradient(34% 40% at 94% 14%,#C8F169 0,transparent 70%),radial-gradient(40% 40% at 60% 100%,#FFD7BF,transparent 70%)}main>.bento:first-child{position:relative;isolation:isolate}main>.bento:first-child::before{content:"";position:absolute;inset:-90px 0 0;z-index:-1;background:var(--atmo);opacity:.8}.tile{transition:translate .25s,box-shadow .25s}.tile:hover{translate:0 -5px;box-shadow:0 24px 44px -24px rgba(20,22,26,.4)}.card{box-shadow:0 1px 2px rgba(20,22,26,.05),0 20px 40px -28px rgba(20,22,26,.32)}.tile .ph{box-shadow:none}
+/* scroll progress: a thin bar in the brand colour, drawn by the browser's own scroll timeline */
+.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
+/* the header steps aside on the way down and comes back on the way up */
+.hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
+/* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
+@media(min-width:761px){
+.js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.js.past:not(.end) .sticky{transform:none;visibility:visible}
+}
+@media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
+@media(prefers-reduced-motion:no-preference){
+/* reveal on scroll. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
+[data-m=rise] [data-rv]{transform:translateY(38px)}
+[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
+@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
+[data-m=zoom] [data-rv]{transform:scale(.9)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
+[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
+[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
+[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
+[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* the painting settles into place as the page opens */
+.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
+/* a light crosses the main button on hover */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
+.btn:not(.ghost):hover::before{translate:130% 0}
+.btn:active{transform:translateY(1px) scale(.98)}
+/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+@supports(animation-timeline:view()){
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+}
+/* answers open smoothly where the browser can animate to an automatic height */
+@supports(interpolate-size:allow-keywords){
+.faq details,.mod details{interpolate-size:allow-keywords}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
+}
+.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
+/* links and list rows answer the pointer */
+.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
+.lb-l a,.door,.tier{will-change:translate}
+.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
+.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
+/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
+.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
+.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
+/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
+[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
+[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
+}
+@media print{.prog,.sticky{display:none}}
+/* this site's own variation: Cobalt, Lime And Lilac */
+.sh{max-width:980px}.sh h2{font-size:clamp(2.05rem,calc(4.5vw*var(--hs)),calc(3.7rem*var(--hs)))}.sec.alt{border-radius:clamp(24px,4vw,56px);margin-inline:clamp(8px,2vw,28px)}
 </style>
 </head>
 <body class="has-sticky">
 <a class="skip" href="#main">Skip to content</a>
-<div class="hdw"><header class="hd has-nav"><a class="logo" href="#top">Tash Okafor</a><nav aria-label="Main"><ul><li><a href="#newsletter">Newsletter</a></li><li><a href="#listen">Podcast</a></li><li><a href="#start">Start Here</a></li><li><a href="#shop">Shop</a></li></ul></nav><a class="btn" href="#newsletter">Subscribe</a><details class="mnav"><summary aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><ul><li><a href="#newsletter">Newsletter</a></li><li><a href="#listen">Podcast</a></li><li><a href="#start">Start Here</a></li><li><a href="#shop">Shop</a></li><li><a href="#newsletter">Subscribe</a></li></ul></details></header></div>
+<div class="prog" aria-hidden="true"></div>
+<div class="hdw"><header class="hd has-nav"><a class="logo" href="#top">Guy Incognito</a><nav aria-label="Main"><ul><li><a href="#newsletter">Newsletter</a></li><li><a href="#listen">Podcast</a></li><li><a href="#start">Start Here</a></li><li><a href="#shop">Shop</a></li></ul></nav><a class="btn" href="#newsletter">Subscribe</a><details class="mnav"><summary aria-label="Menu"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary><ul><li><a href="#newsletter">Newsletter</a></li><li><a href="#listen">Podcast</a></li><li><a href="#start">Start Here</a></li><li><a href="#shop">Shop</a></li><li><a href="#newsletter">Subscribe</a></li></ul></details></header></div>
 <main id="main">
 <!-- Bento hero: the promise, the sign-up and the proof visible together without scrolling -->
-<section class="sec bento  "><div class="wrap"><div class="bn"><div class="tile w4 " data-in style="--i:0"><p class="eyebrow">The Sunday System</p><h1>Run your freelance week <em>like a calm studio.</em></h1><p class="lead">1 email every Sunday with 1 system you can set up in under 20 minutes. Read by 42,000 freelancers.</p><a class="btn" href="#newsletter">Read The Latest Issue</a></div><div class="tile w2 " data-in style="--i:1"><!-- Photo brief: Tash at her desk, colour-blocked wall, real mess included --><div class="ph photo" style="--ar:1/1"><img src="images/you-1.jpg" width="900" height="1125" alt="Tash Okafor" loading="lazy" decoding="async"></div></div><div class="tile w3 t1" data-in style="--i:2"><p class="eyebrow">Free · every Sunday</p><h2 style="font-size:1.7rem">Get Sunday&#x27;s System</h2><p>Join 42,000 readers. 4 minutes to read, 20 to set up.</p><form class="inl" name="newsletter" method="post" action="thank-you.html" data-netlify="true" data-netlify-honeypot="website"><input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p><label class="skip" for="bn2">Email</label><input id="bn2" name="email" type="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">Subscribe</button></form><div class="crowd" style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Join <b>42,000 freelancers</b> who read it every Sunday</p></div><p class="fine">No spam. Unsubscribe in 1 click.</p></div><div class="tile w3 dk" data-in style="--i:3"><p class="eyebrow">Readers</p><p class="big">42,000</p><p>freelancers, studio owners and solo consultants across 60 countries.</p></div></div></div></section>
+<section class="sec bento  "><div class="wrap"><div class="bn"><div class="tile w4 " data-in style="--i:0"><p class="eyebrow">The Sunday System</p><h1>Run your freelance week <em>like a calm studio.</em></h1><p class="lead">1 email every Sunday with 1 system you can set up in under 20 minutes. Read by 42,000 freelancers.</p><a class="btn" href="#newsletter">Read The Latest Issue</a></div><div class="tile w2 " data-in style="--i:1"><!-- Photo brief: Guy at his desk, colour-blocked wall, real mess included --><div class="ph photo" style="--ar:1/1"><img src="images/you-1.jpg" width="900" height="1125" alt="Guy Incognito" loading="lazy" decoding="async"></div></div><div class="tile w3 t1" data-in style="--i:2"><p class="eyebrow">Free · every Sunday</p><h2 style="font-size:1.7rem">Get Sunday&#x27;s System</h2><p>Join 42,000 readers. 4 minutes to read, 20 to set up.</p><form class="inl" name="newsletter" method="post" action="thank-you.html" data-netlify="true" data-netlify-honeypot="website"><input type="hidden" name="form-name" value="newsletter"><p class="hp"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p><label class="skip" for="bn2">Email</label><input id="bn2" name="email" type="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">Subscribe</button></form><div class="crowd" style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Join <b>42,000 freelancers</b> who read it every Sunday</p></div><p class="fine">No spam. Unsubscribe in 1 click.</p></div><div class="tile w3 dk" data-in style="--i:3"><p class="eyebrow">Readers</p><p class="big">42,000</p><p>freelancers, studio owners and solo consultants across 60 countries.</p></div></div></div></section>
 <!-- Start here: the 3 best pieces, a podcast and a quote, so a new visitor is never lost -->
-<section class="sec bento  " id="start"><div class="wrap"><div class="bn"><div class="tile w4 " data-in style="--i:0"><p class="eyebrow">Start here</p><h2 style="font-size:1.5rem">The 3 issues readers forward most</h2><ul><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">The 4-line client brief that ends scope creep</a><span>Issue 88</span></li><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">A Friday shutdown that actually sticks</a><span>Issue 61</span></li><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">Pricing a retainer without a spreadsheet</a><span>Issue 104</span></li></ul></div><div class="tile w2 t2" data-in style="--i:1"><p class="q">The only newsletter I open before coffee.</p><p class="by fine"><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span>Dev P., brand designer</span></p></div><div class="tile w2 t3" data-in style="--i:2"><p class="eyebrow">Podcast</p><h2 style="font-size:1.5rem">Small Hours</h2><p>Fortnightly conversations with people who run tiny, profitable studios. 74 episodes.</p><a class="btn ghost" href="#listen">Listen</a></div><div class="tile w2 " data-in style="--i:3"><p class="eyebrow">About</p><h2 style="font-size:1.5rem">Who is Tash?</h2><p>A former agency producer who went solo in 2018 and has documented every system since.</p><a class="btn ghost" href="about.html">Read the story</a></div><div class="tile w2 dk" data-in style="--i:4"><p class="eyebrow">Speaking</p><h2 style="font-size:1.5rem">Book a talk</h2><p>Workshops on calm operations for creative teams.</p><a class="btn ghost" href="contact.html">Enquire</a></div></div></div></section>
+<section class="sec bento  " id="start"><div class="wrap"><div class="bn"><div class="tile w4 " data-in style="--i:0"><p class="eyebrow">Start here</p><h2 style="font-size:1.5rem">The 3 issues readers forward most</h2><ul><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">The 4-line client brief that ends scope creep</a><span>Issue 88</span></li><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">A Friday shutdown that actually sticks</a><span>Issue 61</span></li><li><a href="https://example.com/connect/article" class="link" style="text-decoration:none">Pricing a retainer without a spreadsheet</a><span>Issue 104</span></li></ul></div><div class="tile w2 t2" data-in style="--i:1"><p class="q">The only newsletter I open before coffee.</p><p class="by fine"><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span>Dev P., brand designer</span></p></div><div class="tile w2 t3" data-in style="--i:2"><p class="eyebrow">Podcast</p><h2 style="font-size:1.5rem">Small Hours</h2><p>Fortnightly conversations with people who run tiny, profitable studios. 74 episodes.</p><a class="btn ghost" href="#listen">Listen</a></div><div class="tile w2 " data-in style="--i:3"><p class="eyebrow">About</p><h2 style="font-size:1.5rem">Who is Guy?</h2><p>A former agency producer who went solo in 2018 and has documented every system since.</p><a class="btn ghost" href="about.html">Read the story</a></div><div class="tile w2 dk" data-in style="--i:4"><p class="eyebrow">Speaking</p><h2 style="font-size:1.5rem">Book a talk</h2><p>Workshops on calm operations for creative teams.</p><a class="btn ghost" href="contact.html">Enquire</a></div></div></div></section>
 <!-- Latest issues as a plain list with dates: fresh, bylined content -->
 <section class="sec feed  " id="newsletter"><div class="wrap"><header class="sh"><p class="eyebrow">Latest issues</p><h2>Fresh From <em>The Sunday System</em></h2></header><ul class="fd-l"><li><span class="k">Issue 147</span><div><h3><a href="https://example.com/connect/article">The 2-inbox rule for client email</a></h3><p>How to answer everything in 2 sittings a day.</p></div><span class="m">9 Nov 2026</span></li><li><span class="k">Issue 146</span><div><h3><a href="https://example.com/connect/article">A proposal template clients read to the end</a></h3><p>5 sections, 1 page, 1 price.</p></div><span class="m">2 Nov 2026</span></li><li><span class="k">Issue 145</span><div><h3><a href="https://example.com/connect/article">What I stopped tracking this year</a></h3><p>4 numbers I dropped and the 1 I kept.</p></div><span class="m">26 Oct 2026</span></li></ul><p class="fd-more"><a class="link" href="https://example.com/connect/article-index">Browse the full archive (147 issues)</a></p></div></section>
+<section class="sec band strip"><div class="wrap"><div class="bd-c"><p class="eyebrow">Guy Incognito</p><h2 class="bd-h">One calm system. <em>Every Sunday.</em></h2><div class="acts" style="--i:3"><a class="btn" href="#newsletter">Subscribe</a></div></div></div><div class="strip-w" aria-hidden="true"><div class="strip-t"><div class="ph art" style="--ar:1/1;--pos:18% 42%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:50% 30%;--zoom:2.7"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:1/1;--pos:82% 46%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:34% 82%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:1/1;--pos:68% 78%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:50% 62%;--zoom:1.7"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:1/1;--pos:18% 42%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:50% 30%;--zoom:2.7"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:1/1;--pos:82% 46%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:34% 82%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:1/1;--pos:68% 78%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/5;--pos:50% 62%;--zoom:1.7"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div></div></div></section>
 <!-- A small shop: 3 products that follow from the free content -->
 <section class="sec products alt " id="shop"><div class="wrap"><header class="sh"><p class="eyebrow">The shop</p><h2>Systems You Can <em>Install Today</em></h2></header><div class="grid" style="--cols:3"><article class="card prd"><div class="pv"><!-- Image brief: the kit open on a laptop --><div class="ph scene" style="--ar:4/3" role="img" aria-label="Illustration: the kit open on a laptop"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect class="i-1" width="400" height="300"/><g transform="rotate(-11 127.0 162.0)"><rect class="i-c" x="52" y="62" width="150" height="200" rx="9"/><rect class="i-a" x="68" y="80" width="75" height="16" rx="8"/><g class="i-l"><rect x="68" y="114" width="118" height="6" rx="3"/><rect x="68" y="129" width="94" height="6" rx="3"/><rect x="68" y="144" width="109" height="6" rx="3"/><rect x="68" y="159" width="71" height="6" rx="3"/><rect x="68" y="174" width="118" height="6" rx="3"/><rect x="68" y="189" width="87" height="6" rx="3"/><rect x="68" y="204" width="104" height="6" rx="3"/></g><rect class="i-a" x="68" y="226" width="51" height="18" rx="9" opacity=".85"/></g><g transform="rotate(9 271.0 146.0)"><rect class="i-c" x="196" y="46" width="150" height="200" rx="9"/><rect class="i-b" x="212" y="64" width="75" height="16" rx="8"/><g class="i-l"><rect x="212" y="98" width="118" height="6" rx="3"/><rect x="212" y="113" width="94" height="6" rx="3"/><rect x="212" y="128" width="109" height="6" rx="3"/><rect x="212" y="143" width="71" height="6" rx="3"/><rect x="212" y="158" width="118" height="6" rx="3"/><rect x="212" y="173" width="87" height="6" rx="3"/><rect x="212" y="188" width="104" height="6" rx="3"/></g><rect class="i-b" x="212" y="210" width="51" height="18" rx="9" opacity=".85"/></g><g transform="rotate(-1 199.0 152.0)"><rect class="i-c" x="124" y="52" width="150" height="200" rx="9"/><rect class="i-d" x="140" y="70" width="75" height="16" rx="8"/><g class="i-l"><rect x="140" y="104" width="118" height="6" rx="3"/><rect x="140" y="119" width="94" height="6" rx="3"/><rect x="140" y="134" width="109" height="6" rx="3"/><rect x="140" y="149" width="71" height="6" rx="3"/><rect x="140" y="164" width="118" height="6" rx="3"/><rect x="140" y="179" width="87" height="6" rx="3"/><rect x="140" y="194" width="104" height="6" rx="3"/></g><rect class="i-d" x="140" y="216" width="51" height="18" rx="9" opacity=".85"/></g></svg></div><span class=tagi>6 Notion templates</span></div><span class="k">Notion kit</span><h3>The Starter System</h3><p>The 6 templates behind the first 20 issues, ready to duplicate.</p><div class="row"><span class="pc">$49</span><a class="btn" href="https://example.com/connect/checkout-the-starter-system">Get it<span class="skip"> The Starter System</span></a></div><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Instant access. 14-day refund.</span></p></article><article class="card prd"><div class="pv"><!-- Image brief: a course lesson thumbnail --><div class="ph scene" style="--ar:4/3" role="img" aria-label="Illustration: a course lesson thumbnail"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect class="i-1" width="400" height="300"/><g transform="rotate(-11 127.0 162.0)"><rect class="i-c" x="52" y="62" width="150" height="200" rx="9"/><rect class="i-a" x="68" y="80" width="75" height="16" rx="8"/><g class="i-l"><rect x="68" y="114" width="118" height="6" rx="3"/><rect x="68" y="129" width="94" height="6" rx="3"/><rect x="68" y="144" width="109" height="6" rx="3"/><rect x="68" y="159" width="71" height="6" rx="3"/><rect x="68" y="174" width="118" height="6" rx="3"/><rect x="68" y="189" width="87" height="6" rx="3"/><rect x="68" y="204" width="104" height="6" rx="3"/></g><rect class="i-a" x="68" y="226" width="51" height="18" rx="9" opacity=".85"/></g><g transform="rotate(9 271.0 146.0)"><rect class="i-c" x="196" y="46" width="150" height="200" rx="9"/><rect class="i-b" x="212" y="64" width="75" height="16" rx="8"/><g class="i-l"><rect x="212" y="98" width="118" height="6" rx="3"/><rect x="212" y="113" width="94" height="6" rx="3"/><rect x="212" y="128" width="109" height="6" rx="3"/><rect x="212" y="143" width="71" height="6" rx="3"/><rect x="212" y="158" width="118" height="6" rx="3"/><rect x="212" y="173" width="87" height="6" rx="3"/><rect x="212" y="188" width="104" height="6" rx="3"/></g><rect class="i-b" x="212" y="210" width="51" height="18" rx="9" opacity=".85"/></g><g transform="rotate(-1 199.0 152.0)"><rect class="i-c" x="124" y="52" width="150" height="200" rx="9"/><rect class="i-d" x="140" y="70" width="75" height="16" rx="8"/><g class="i-l"><rect x="140" y="104" width="118" height="6" rx="3"/><rect x="140" y="119" width="94" height="6" rx="3"/><rect x="140" y="134" width="109" height="6" rx="3"/><rect x="140" y="149" width="71" height="6" rx="3"/><rect x="140" y="164" width="118" height="6" rx="3"/><rect x="140" y="179" width="87" height="6" rx="3"/><rect x="140" y="194" width="104" height="6" rx="3"/></g><rect class="i-d" x="140" y="216" width="51" height="18" rx="9" opacity=".85"/></g></svg></div><span class=tagi>90 min video + calculator</span></div><span class="k">Mini course</span><h3>Retainers Without Regret</h3><p>90 minutes of video and the pricing calculator.</p><div class="row"><span class="pc">$129</span><a class="btn" href="https://example.com/connect/checkout-retainers-without-regret">Get it<span class="skip"> Retainers Without Regret</span></a></div><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Instant access. 14-day refund.</span></p></article><article class="card prd"><div class="pv"><!-- Image brief: a workshop slide --><div class="ph scene" style="--ar:4/3" role="img" aria-label="Illustration: a workshop slide"><svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false"><rect class="i-d" width="400" height="300"/><path class="i-a" opacity=".26" d="M118 0 L50 236 H214Z"/><path class="i-c" opacity=".16" d="M292 0 L196 236 H366Z"/><rect class="i-c" opacity=".12" x="246" y="56" width="124" height="80" rx="7"/><rect class="i-a" opacity=".7" x="262" y="76" width="60" height="9" rx="4.5"/><rect class="i-c" opacity=".3" x="262" y="94" width="88" height="6" rx="3"/><rect class="i-c" opacity=".3" x="262" y="108" width="70" height="6" rx="3"/><rect class="i-2" opacity=".55" y="232" width="400" height="68"/><circle class="i-c" cx="170" cy="150" r="15"/><path class="i-c" d="M148 232c0-40 9-58 22-58s22 18 22 58z"/><g class="i-2"><circle cx="30" cy="278" r="24"/><circle cx="96" cy="286" r="26"/><circle cx="166" cy="280" r="24"/><circle cx="238" cy="288" r="27"/><circle cx="310" cy="280" r="24"/><circle cx="376" cy="288" r="26"/></g></svg></div><span class=tagi>Replay + slides</span></div><span class="k">Workshop replay</span><h3>The Calm Client Onboarding</h3><p>The live session 1,900 freelancers attended.</p><div class="row"><span class="pc">$39</span><a class="btn" href="https://example.com/connect/checkout-the-calm-client-onboarding">Get it<span class="skip"> The Calm Client Onboarding</span></a></div><p class="und"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Instant access. 14-day refund.</span></p></article></div></div></section>
 <!-- Podcast teaser with a real episode and every platform named -->
 <section class="sec player  " id="listen"><div class="wrap"><div class="card pl"><div class="art-c" aria-hidden="true">Small<br>Hours</div><div><p class="eyebrow">Small Hours · Episode 74</p><h2>Charging More By Doing Less, With A 2-Person Studio</h2><p class="fine">38 minutes · Published 5 Nov 2026</p><div class="bar" role="img" aria-label="Audio player mock-up"><span class="pb"></span><span class="tr"></span><span class="fine">13:42 / 38:10</span></div><div class="pl-n"><a href="https://example.com/connect/apple-podcasts">Apple Podcasts</a><a href="https://example.com/connect/spotify">Spotify</a><a href="https://example.com/connect/youtube">YouTube</a><a href="https://example.com/connect/read-the-transcript">Read the transcript</a></div></div></div></div></section>
 <!-- Closing call to action: the same single ask as the top -->
-<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>Your Calmest Week <em>Starts Sunday</em></h2><p class="lead">Join 42,000 freelancers getting 1 small system each week.</p><div class="acts" style="--i:3"><a class="btn" href="#newsletter">Subscribe Free</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>4 minutes to read. 20 to set up.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Tash Okafor</b>Writer and creator of The Sunday System</span></p></div></section>
+<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>Your Calmest Week <em>Starts Sunday</em></h2><p class="lead">Join 42,000 freelancers getting 1 small system each week.</p><div class="acts" style="--i:3"><a class="btn" href="#newsletter">Subscribe Free</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>4 minutes to read. 20 to set up.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Guy Incognito</b>Writer and creator of The Sunday System</span></p></div></section>
 </main>
 <footer class="ft"><div class="wrap"><div class="ft-g">
-<div><a class="logo" href="#top">Tash Okafor</a><p>Calm systems for freelancers. A newsletter, a podcast and a small shop.</p></div>
+<div><a class="logo" href="#top">Guy Incognito</a><p>Calm systems for freelancers. A newsletter, a podcast and a small shop.</p></div>
 <div><h2>Explore</h2><ul><li><a href="#newsletter">Newsletter</a></li><li><a href="#listen">Podcast</a></li><li><a href="#start">Start Here</a></li><li><a href="#shop">Shop</a></li></ul></div>
 <div><h2>The Fine Print</h2><ul><li><a href="about.html">About</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms</a></li><li><a href="refunds.html">Refund Policy</a></li></ul></div>
-</div><div class="ft-s"><p>hello@tashokafor.example &nbsp;·&nbsp; Perth, Western Australia &nbsp;·&nbsp; ABN 00 000 000 000</p>
+</div><div class="ft-s"><p>hello@guyincognito.example &nbsp;·&nbsp; Perth, Western Australia &nbsp;·&nbsp; ABN 00 000 000 000</p>
 <!-- DEMO NOTE: delete the next line when the site is yours -->
-<p class="demo">Demo content. Tash Okafor is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
-<div class="ft-mark" aria-hidden="true" style="--n:11" data-mark="Tash Okafor"></div></div></footer>
-<!-- Mobile action bar: the main action stays in reach of the thumb -->
+<p class="demo">Demo content. Guy Incognito is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div>
+<div class="ft-mark" aria-hidden="true" style="--n:13" data-mark="Guy Incognito"></div></div></footer>
+<!-- Action bar: the main action stays in reach. A bar on a phone, a floating dock on a desktop -->
 <div class="sticky"><span><b>The Sunday System</b><br>Free. 4 minutes to read.</span><a class="btn" href="#newsletter">Subscribe</a></div>
+<script>
+/* Movement only. Every word on this page is in the HTML above, so nothing here is needed to read it. Delete this block and the page still works. */
+(function(){var d=document,R=d.documentElement,W=window,q=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};R.classList.add('js');
+if(!('IntersectionObserver'in W))return;
+var hero=d.querySelector('main>.sec'),E=q('main>.cta,.ft');
+if(hero)new IntersectionObserver(function(e){R.classList.toggle('past',!e[0].isIntersecting)}).observe(hero);
+var eo=new IntersectionObserver(function(es){es.forEach(function(e){e.target._v=e.isIntersecting});R.classList.toggle('end',E.some(function(x){return x._v}))});
+E.forEach(function(x){eo.observe(x)});
+var ly=W.scrollY;W.addEventListener('scroll',function(){var y=W.scrollY;R.classList.toggle('down',y>ly&&y>600);ly=y},{passive:true});
+if(W.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+/* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
+var vh=W.innerHeight,todo=[],tick=0;
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.95)return 1;t.classList.add('in');
+setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1500)})}
+q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
+el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%6);el.setAttribute('data-rv','');todo.push(el)});
+function ask(){if(!tick&&todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener('scroll',ask,{passive:true});W.addEventListener('resize',ask);
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
+var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,'')),dp=(m[2].split('.')[1]||'').length,cm=m[2].indexOf(',')>-1,t0=0;
+if(!cm&&!dp&&n>1900&&n<2100)return;
+W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,',');
+b.textContent=m[1]+s+m[3];if(p<1)W.requestAnimationFrame(f)})})},{threshold:.5});
+q('.st-g b,.tile .big').forEach(function(b){if(!b.children.length&&b.getBoundingClientRect().top>vh*.94)co.observe(b)});
+if(R.hasAttribute('data-mq'))q('.logos ul').forEach(function(u){var w=d.createElement('div');w.className='mq';u.parentNode.insertBefore(w,u);w.appendChild(u);
+q('li',u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute('aria-hidden','true');u.appendChild(c)})});
+if(R.hasAttribute('data-spot')||R.hasAttribute('data-tilt'))d.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card,.tile');if(!c)return;
+var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty('--mx',x+'px');s.setProperty('--my',y+'px');
+s.setProperty('--rx',((y/r.height-.5)*-5).toFixed(2)+'deg');s.setProperty('--ry',((x/r.width-.5)*5).toFixed(2)+'deg')},{passive:true});
+})();
+</script>
 </body>
 </html>

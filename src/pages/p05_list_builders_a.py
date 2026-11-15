@@ -4,9 +4,9 @@ SAMPLE_NOTE = "Sample testimonials for a fictional brand. On your page, use real
 
 P14 = dict(
     n=14, slug="lead-magnet-opt-in", name="Lead Magnet Opt-In Page", group="List Builders And Launches", aud=["Coach", "Creator", "Consultant"], theme="soft_organic", path="first-call-script/",
-    brand=dict(name="Nadia Flores Coaching", person="Nadia Flores", role="Mentor to new coaches", domain="nadiaflores.example", mono="N",
+    brand=dict(name="Guy Incognito Mentoring", person="Guy Incognito", role="Mentor to new coaches", domain="guyincognito.example", mono="G",
                line="Practical help for coaches in their first 2 years.", where="Wollongong, New South Wales"),
-    title="The First-Call Script | Free Guide For New Coaches | Nadia Flores",
+    title="The First-Call Script | Free Guide For New Coaches | Guy Incognito",
     desc="A free 6-page script for your first discovery call as a coach: what to ask, what to say about price and how to end it. Used by 11,000 new coaches.",
     schema=["WebPage"], nav=None, cta=None, foot=[("Get The Script", "#top")],
     blurb="A 1-screen opt-in page with nothing to click but the form. A specific promise, what is inside, a little proof and 2 fields.",
@@ -15,7 +15,7 @@ P14 = dict(
             eyebrow="Free 6-page guide for new coaches", h="Know exactly what to say on *your first discovery call.*",
             sub="The word-for-word script 11,000 new coaches have used to run a calm, confident first call, including the part where you say your price.",
             bullets=["The 5 questions that do the selling for you", "The exact sentence for saying your price", "How to end the call without chasing"],
-            visual=dict(kind="cover", title="The First-Call *Script*", kicker="Free guide · 6 pages", author="Nadia Flores"),
+            visual=dict(kind="cover", title="The First-Call *Script*", kicker="Free guide · 6 pages", author="Guy Incognito"),
             form=dict(title="Send me the script", fields=[("First name", "text", "Your first name"), ("Email", "email", "you@email.com")],
                       button="Email Me The Script", note="It arrives in 2 minutes. You will also get my Tuesday note. Unsubscribe any time."))),
         ("cards", dict(_="What is inside: 3 concrete pieces, so the guide feels finished and useful", tone="alt", eyebrow="Inside the 6 pages", h="Short Enough To Read *Before Your Next Call*", num=True, items=[
@@ -26,7 +26,7 @@ P14 = dict(
             dict(result="First paying client", q="I read it in the car park, went in and signed my first client 40 minutes later.", name="Jess T.", role="Wellbeing coach, month 2"),
             dict(result="Stopped discounting", q="The price sentence alone was worth it. I said the number and did not flinch.", name="Marcus L.", role="Career coach, month 5")])),
         ("split", dict(_="Who it is from: 1 short paragraph of credibility", tone="alt", eyebrow="Who wrote it", h="From Someone Who Has *Listened To 900 First Calls*",
-            paras=["I am Nadia. I have mentored new coaches since 2018 and reviewed more than 900 recorded discovery calls. This script is the pattern in the ones that went well."],
+            paras=["I am Guy. I have mentored new coaches since 2018 and reviewed more than 900 recorded discovery calls. This script is the pattern in the ones that went well."],
             cta=("Get The Script", "#top"), visual=dict(label="Photo brief: friendly, direct, plain background", ar="1/1"))),
     ],
     why=["There is 1 thing to do on this page. No menu, no other offers, 2 form fields.",
@@ -51,9 +51,9 @@ P14 = dict(
 
 P15 = dict(
     n=15, slug="webinar-registration", name="Webinar Or Masterclass Registration", group="List Builders And Launches", aud=["Consultant", "Coach"], theme="dark_stage", path="masterclass/",
-    brand=dict(name="Carmen Ortiz Consulting", person="Carmen Ortiz", role="Client acquisition adviser to consultants", domain="carmenortiz.example", mono="C",
+    brand=dict(name="Guy Incognito Consulting", person="Guy Incognito", role="Client acquisition adviser to consultants", domain="guyincognito.example", mono="G",
                line="Client acquisition for independent consultants.", where="Melbourne, Victoria"),
-    title="Fully Booked Without Posting Daily | Free Masterclass With Carmen Ortiz",
+    title="Fully Booked Without Posting Daily | Free Masterclass With Guy Incognito",
     desc="A free 60-minute live masterclass for independent consultants: the 3-part referral system that fills a calendar without daily content. Thursday 12 March, 12pm AEDT.",
     schema=["WebPage"], nav=None, cta=("Save My Seat", "#top"), foot=[("Register", "#top"), ("What You Will Learn", "#learn")],
     disclaimer="This is education, not a promise of income. Results depend on your skills, market and effort.",
@@ -74,8 +74,8 @@ P15 = dict(
             ("10 to 40", "The 3-part system", "Map, message, rhythm. Taught live with real examples."),
             ("40 to 50", "Build yours", "You draft your own list and first message while I answer questions."),
             ("50 to 60", "Q and A, and an invitation", "I will spend 5 minutes on my program for those who want help implementing. You can leave before that with everything you need.")])),
-        ("split", dict(_="The host: experience and a number", tone="alt", eyebrow="Your host", h="Carmen Ortiz Has Not Posted Daily *Since 2020*",
-            paras=["Carmen spent 14 years in management consulting before going independent. She has helped 430 solo consultants build referral-led practices and writes a fortnightly letter read by 9,000."],
+        ("split", dict(_="The host: experience and a number", tone="alt", eyebrow="Your host", h="Guy Incognito Has Not Posted Daily *Since 2020*",
+            paras=["Guy spent 14 years in management consulting before going independent. He has helped 430 solo consultants build referral-led practices and writes a fortnightly letter read by 9,000."],
             bullets=["14 years in consulting", "430 consultants advised", "Independent since 2019"], visual=dict(label="Photo brief: presenting on a call, laptop and notes in frame"))),
         ("quotes", dict(_="Proof from past attendees of the free class", h="From People Who *Came Last Time*", note=SAMPLE_NOTE, items=[
             dict(result="2 referrals in a week", q="I sent the 2-line message to 6 old clients that afternoon. 2 replied with introductions.", name="Peter H.", role="Supply chain consultant"),
@@ -109,7 +109,7 @@ P15 = dict(
 
 P16 = dict(
     n=16, slug="quiz-scorecard-landing", name="Quiz Or Scorecard Landing Page", group="List Builders And Launches", aud=["Coach", "Consultant"], theme="bento", path="visibility-quiz/",
-    brand=dict(name="Bright Signal", person="Thandi Mokoena", role="Visibility coach for experts", domain="brightsignal.example", mono="B",
+    brand=dict(name="Bright Signal", person="Guy Incognito", role="Visibility coach for experts", domain="brightsignal.example", mono="B",
                line="Visibility coaching for experts who would rather not shout.", where="Brisbane, Queensland"),
     title="What Is Your Visibility Style? | Free 3-Minute Quiz | Bright Signal",
     desc="A free 8-question quiz for coaches and consultants. Find out which of 4 visibility styles fits you and get a 1-page plan for being seen without posting every day.",
@@ -161,7 +161,7 @@ P16 = dict(
 
 P17 = dict(
     n=17, slug="challenge-page", name="Challenge Page", group="List Builders And Launches", aud=["Coach", "Creator"], theme="retro_scrapbook", path="offer-sprint/",
-    brand=dict(name="Good Offer Club", person="Frankie Doyle", role="Offer coach", domain="goodofferclub.example", mono="G",
+    brand=dict(name="Good Offer Club", person="Guy Incognito", role="Offer coach", domain="goodofferclub.example", mono="G",
                line="Helping coaches and creators make offers people say yes to.", where="Newcastle, New South Wales"),
     title="The 5-Day Offer Sprint | Free Challenge | Good Offer Club",
     desc="A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 2 March. 5 short emails, 1 live session, a finished offer by Friday.",

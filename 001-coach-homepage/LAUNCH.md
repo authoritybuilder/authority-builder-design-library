@@ -5,10 +5,10 @@ What it cannot contain is you. Work through this list, then run the pre-launch c
 
 ## 1. Make It Yours
 
-- [ ] Replace the demo brand (Wren & Field), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
+- [ ] Replace the demo brand (Incognito & Field), the copy, the prices and the proof with your own. The comments in the HTML say what each section is for.
 - [ ] Delete the demo note in the footer of all 9 pages. Search for `DEMO NOTE`.
-- [ ] Replace `wrenandfield.example` with your real address. It appears 97 times across the pages, `sitemap.xml` and `robots.txt`.
-- [ ] Replace the contact details: hello@wrenandfield.example, Melbourne, Victoria and the placeholder ABN 00 000 000 000.
+- [ ] Replace `incognitoandfield.example` with your real address. It appears 97 times across the pages, `sitemap.xml` and `robots.txt`.
+- [ ] Replace the contact details: hello@incognitoandfield.example, Melbourne, Victoria and the placeholder ABN 00 000 000 000.
 
 ## 2. Your Photos
 
@@ -18,7 +18,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
-| `you-1.jpg` | 900 × 1125 | You | index.html, about.html | Imogen mid-conversation, natural light, looking at the client, not the camera |
+| `you-1.jpg` | 900 × 1125 | You | index.html, about.html | Guy mid-conversation, natural light, looking at the client, not the camera |
 | `face-1.jpg` | 200 × 200 | Priya N. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Tom A. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Kirra W. | index.html | A square headshot, used with their permission |

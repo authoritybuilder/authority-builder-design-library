@@ -3,7 +3,7 @@
 **Group:** Offer Pages  
 **For:** Creator, Coach  
 **Style:** Bold Type-Led (Archivo + Inter)  
-**Sample brand:** Sam Okonkwo Studio (fictional)
+**Sample brand:** Guy Incognito Studio (fictional)
 
 A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm detail below, and a 3-tier price table with an obvious best choice.
 
@@ -44,14 +44,15 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 4. Curriculum: every module and what you make in it
 5. The teacher: first-hand experience, with numbers
 6. Student proof with the result as a label
-7. 3 tiers with a clear recommended option and a visible price comparison
-8. Guarantee with plain terms
-9. Objections, answered briefly
-10. Closing call to action
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. 3 tiers with a clear recommended option and a visible price comparison
+9. Guarantee with plain terms
+10. Objections, answered briefly
+11. Closing call to action
 
 ## Search Card
 
-- **Title:** Proposals That Close | Course For Freelance Designers | Sam Okonkwo
+- **Title:** Proposals That Close | Course For Freelance Designers | Guy Incognito
 - **Description:** Proposals That Close is a self-paced course for freelance designers. 5 modules, 22 lessons and a proposal template that 2,300 students have used. From $290.
 - **Structured data:** WebSite, Course
 - Course markup names the course and its provider. Google retired course info rich results in June 2025, so expect clarity, not a visual extra.
@@ -63,11 +64,11 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 
 | Check | Result | What was seen |
 |---|---|---|
-| Title carries the brand or the person's name | **Good** | “Proposals That Close | Course For Freelance Designers | Sam Okonkwo” (67 characters). |
-| The person's name is in the title or description | **Good** | “Sam Okonkwo” appears in the title. |
+| Title carries the brand or the person's name | **Good** | “Proposals That Close | Course For Freelance Designers | Guy Incognito” (69 characters). |
+| The person's name is in the title or description | **Good** | “Guy Incognito” appears in the title. |
 | Description says who the page is for | **Good** | “Proposals That Close is a self-paced course for freelance designers. 5 modules, 22 lessons and a proposal template that 2,300 students have used. From $290.” (156 characters). |
-| Site name is declared | **Good** | WebSite markup on the home page names the site “Sam Okonkwo Studio”. |
-| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://samokonkwo.example/. The first version claimed a sub-folder address that the folder did not contain. |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Guy Incognito Studio”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://guyincognito.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -78,10 +79,10 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
 | Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
-| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://samokonkwo.example/. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://guyincognito.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 109 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 110 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 3 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -91,15 +92,15 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Send the proposal. Win the project.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 917 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 930 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 429 words of body copy on the main page read at about school grade 4.5 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 429 words of body copy on the main page read at about school grade 4.6 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 13 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 102KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 76KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 25 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 102KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 76KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.3 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.3 and the whole page at grade 7.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -113,7 +114,7 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Enrol From $290”) ends 660px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 16 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 22 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.8 to 1 for body text and 5.8 to 1 for large text. On a phone: 5.8 to 1 for body text and 5.8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 54KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 70KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -141,7 +142,7 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 | Check | Result | What was seen |
 |---|---|---|
 | 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
-| 1 page that is clearly about the person | **Fixed** | about.html names Sam Okonkwo, states their role and carries ProfilePage and Person markup tied to the business. |
+| 1 page that is clearly about the person | **Fixed** | about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
 
@@ -163,7 +164,7 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 Each illustration stands in for a real photo. Shoot these to replace them.
 
 - lesson 1 as a free preview, with captions
-- Sam at a desk, laptop open, proposal on screen
+- Guy at a desk, laptop open, proposal on screen
 
 ## Borrow This
 
@@ -195,13 +196,15 @@ STRUCTURE, IN THIS ORDER
 4. Curriculum: every module and what you make in it
 5. The teacher: first-hand experience, with numbers
 6. Student proof with the result as a label
-7. 3 tiers with a clear recommended option and a visible price comparison
-8. Guarantee with plain terms
-9. Objections, answered briefly
-10. Closing call to action
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. 3 tiers with a clear recommended option and a visible price comparison
+9. Guarantee with plain terms
+10. Objections, answered briefly
+11. Closing call to action
 
 DESIGN DIRECTION
 Bold Type-Led. Huge condensed capitals, hard edges, one loud accent. The headline is the design.
+This site's own variation: Paper, Black And Orange. Sections slide in from alternate sides as they scroll in. It uses oversized section headers, cards with a folded accent corner, hairline section breaks, a proof strip that runs as a ticker. The picture band is a moving strip of crops from the painting.
 Fonts: Archivo + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

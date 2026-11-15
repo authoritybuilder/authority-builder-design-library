@@ -1,4 +1,4 @@
-# robots.txt for Sage Holloway. It lives at https://sageholloway.example/robots.txt
+# robots.txt for Guy Incognito. It lives at https://guyincognito.example/robots.txt
 
 # Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
 User-agent: Googlebot
@@ -24,4 +24,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://sageholloway.example/sitemap.xml
+Sitemap: https://guyincognito.example/sitemap.xml
