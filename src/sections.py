@@ -19,7 +19,7 @@ def form(f, cls="card formcard"):
     title = f'<h3>{h(f["title"])}</h3>' if f.get("title") else ""
     text = f'<p class="fine" style="text-align:left;margin-top:.4rem">{h(f["text"])}</p>' if f.get("text") else ""
     note = f'<p class="fine">{h(f["note"])}</p>' if f.get("note") else ""
-    return (f'<form class="{cls}" action="#" method="get"><!-- Visual only: connect to your own tool -->{title}{text}{fields}'
+    return (f'<form class="{cls}" action="#" method="get" onsubmit="return false"><!-- Visual only: connect to your own tool -->{title}{text}{fields}'
             f'<button class="btn" type="submit">{e(f.get("button", "Send"))}</button>{note}</form>')
 
 
@@ -150,7 +150,7 @@ def bento(d, P):
                 f'<li><a href="#" class="link" style="text-decoration:none">{e(a)}</a><span>{e(b)}</span></li>' for a, b in t["items"]) + "</ul>"
         elif k == "form":
             body += (f'<h2 style="font-size:1.7rem">{h(t["h"])}</h2><p>{h(t["text"])}</p>'
-                     f'<form class="inl" action="#" method="get"><label class="skip" for="bn{i}">Email</label>'
+                     f'<form class="inl" action="#" method="get" onsubmit="return false"><label class="skip" for="bn{i}">Email</label>'
                      f'<input id="bn{i}" type="email" placeholder="you@email.com"><button class="btn" type="submit">{e(t["button"])}</button></form>'
                      f'<p class="fine">{h(t.get("note", ""))}</p>')
         elif k == "quote":
@@ -431,7 +431,7 @@ def feed(d, P):
 """)
 def capture(d, P):
     inner = (f'<div>{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2><p>{h(d["text"])}</p></div>'
-             f'<form action="#" method="get"><label class="skip" for="cap-e">Email address</label>'
+             f'<form action="#" method="get" onsubmit="return false"><label class="skip" for="cap-e">Email address</label>'
              f'<input id="cap-e" type="email" placeholder="you@email.com"><button class="btn" type="submit">{e(d["button"])}</button>'
              f'<p class="fine">{h(d.get("note", ""))}</p></form>')
     return sec("cap", d, inner)
@@ -548,7 +548,7 @@ def quiz(d, P):
         f'<label><input type="radio" name="q"{" checked" if i == 1 else ""}> {e(o)}</label>' for i, o in enumerate(d["options"]))
     r = d["result"]
     bars = "".join(f'<div class="b"><span>{e(a)}<b>{p}%</b></span><i style="--p:{p}%"></i></div>' for a, p in r["bars"])
-    inner = (f'<div class="qz-g"><form class="card qz" action="#" method="get"><p class="fine">{e(d["progress"])}</p><div class="pg" aria-hidden="true"></div>'
+    inner = (f'<div class="qz-g"><form class="card qz" action="#" method="get" onsubmit="return false"><p class="fine">{e(d["progress"])}</p><div class="pg" aria-hidden="true"></div>'
              f'<fieldset><legend>{h(d["q"])}</legend>{opts}</fieldset><button class="btn" type="submit">{e(d["button"])}</button></form>'
              f'<div class="card rs">{eyebrow(r["eyebrow"])}<h3>{h(r["h"])}</h3><p>{h(r["text"])}</p>{bars}</div></div>')
     return sec("quiz", d, sh(d) + inner)

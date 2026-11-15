@@ -362,8 +362,8 @@ def notes_html(P):
 <h3 style="margin-top:1.6rem">Left Out On Purpose</h3><ul>{skip}</ul></div>
 <div class="blk"><h2>Borrow This</h2><ul>{borrow}</ul></div>
 {study}
-<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof. When your page is live, run <a href="../audit/full-seo-and-ai-search-audit.md">the audit prompt</a> on it.</p>
-<div class="prompt"><button type="button" onclick="navigator.clipboard.writeText(document.getElementById('pt').textContent).then(()=>{{this.textContent='Copied'}})">Copy Prompt</button><pre id="pt">{e(prompt_for(P))}</pre></div></div>
+<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof. When your page is live, run <a href="../audit/index.html">the audit prompt</a> on it.</p>
+<div class="prompt"><button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('pt').textContent).then(function(){{b.textContent='Copied'}}).catch(function(){{b.textContent='Select the text to copy'}})">Copy Prompt</button><pre id="pt">{e(prompt_for(P))}</pre></div></div>
 </div>
 <aside class="side blk"><div class="panel"><h2>At A Glance</h2><dl>
 <dt>Best for</dt><dd>{e(", ".join(P["aud"]))}</dd><dt>Group</dt><dd>{e(P["group"])}</dd>
@@ -492,7 +492,7 @@ def gallery(pages, blocks):
 <p class="lead" style="margin-top:1rem">Kahneman, Cialdini, Fogg, Schwartz, Ogilvy, Dunford and more, each mapped to the exact pages that use them. Search rules are checked against Google's current guidance, including the May 2026 changes.</p>
 <div class="acts"><a class="btn" href="canon/index.html">Open The Research Page</a></div></div>
 <div><p class="kick">After You Build</p><h2>Then Run The <em>Audit</em></h2><p class="lead" style="margin-top:1rem">The Full SEO and AI Search Audit checks how your finished site shows up in Google and in AI answers, then hands you a ranked fix list.</p>
-<div class="acts"><a class="btn ghost" href="audit/full-seo-and-ai-search-audit.md">Get The Audit Prompt</a></div></div></div></section>
+<div class="acts"><a class="btn ghost" href="audit/index.html">Get The Audit Prompt</a></div></div></div></section>
 </main>
 <script>
 (function(){{var on={{a:null,s:null}},chips=document.querySelectorAll('.chip[data-k]'),cards=document.querySelectorAll('.card[data-g]');
@@ -543,6 +543,17 @@ def canon_page(pages):
     return shell.page("The Research | Authority Builder Design Library", "The psychology, copywriting and search principles behind every sample in the Authority Builder Design Library.", body, "../")
 
 
+def audit_page(md):
+    body = f"""<div class="banner"><div class="wrap">{shell.top("../")}<div class="eh"><p class="crumbs"><a href="../index.html">Design Library</a> › After You Build</p>
+<h1>The Full SEO And <em>AI Search Audit</em></h1><p class="lead">Built your page? This prompt checks how your whole site shows up in Google and in AI answers, then gives you a ranked, plain-English fix list you approve by number.</p></div></div></div>
+<main id="main"><div class="wrap narrow sec"><div class="blk" style="margin-top:0"><h2>How To Use It</h2><ol style="list-style:decimal;padding-left:1.3rem">
+<li>Open a new chat in Claude and turn on web search.</li><li>Copy the whole prompt below and send it.</li>
+<li>Answer the questions about your business. Skip any you like.</li><li>Read the report, then reply with the numbers of the fixes you want.</li></ol>
+<p class="note">Nothing on your site changes until you say which fixes to make. The same prompt is in this folder as a plain file: full-seo-and-ai-search-audit.md.</p></div>
+<div class="prompt"><button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('pt').textContent).then(function(){{b.textContent='Copied'}}).catch(function(){{b.textContent='Select the text to copy'}})">Copy Prompt</button><pre id="pt" style="max-height:none">{e(md)}</pre></div></div></main>"""
+    return shell.page("The Full SEO And AI Search Audit | Authority Builder Design Library", "A prompt that audits how your site shows up in Google and in AI answers, then gives you a ranked fix list.", body, "../")
+
+
 def load_pages():
     pages = []
     for f in sorted((SRC / "pages").glob("p*.py")):
@@ -591,6 +602,9 @@ def main():
             (ROOT / d / f).write_text(html)
             (ROOT / d / "notes.md").write_text(md)
     (ROOT / "index.html").write_text(gallery(pages, blocks))
+    audit_md = ROOT / "audit" / "full-seo-and-ai-search-audit.md"
+    if audit_md.exists():
+        (ROOT / "audit" / "index.html").write_text(audit_page(audit_md.read_text()))
     (ROOT / "canon").mkdir(exist_ok=True)
     (ROOT / "canon" / "index.html").write_text(canon_page(pages))
     rows = "\n".join(f"| {P['num']} | [{P['name']}]({P['dir']}/index.html) | {P['group']} | {', '.join(P['aud'])} | {THEMES[P['theme']]['label']} |" for P in pages)

@@ -53,7 +53,7 @@ class P(HTMLParser):
 
 def main():
     bad = 0
-    files = [ROOT / "index.html", ROOT / "canon" / "index.html"] + sorted(ROOT.glob("[0-9][0-9][0-9]-*/*.html"))
+    files = [ROOT / "index.html", ROOT / "canon" / "index.html", ROOT / "audit" / "index.html"] + sorted(ROOT.glob("[0-9][0-9][0-9]-*/*.html"))
     for f in files:
         t = f.read_text()
         p = P()

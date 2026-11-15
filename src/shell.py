@@ -138,7 +138,7 @@ def page(title, desc, body, root="", extra_head=""):
 <details class="legal"><summary>Legal disclaimer and terms of use</summary>{legal}</details>
 <p class="copy">© <strong>Authority Builder™</strong> · All rights reserved. Trade marks and brand assets are the property of their respective owners.<br>
 For more AI tools, join <a href="{SKOOL}" target="_blank" rel="noopener noreferrer">AI for Coaches and Creators</a>. ·
-<a href="{root}canon/index.html">Research and sources</a> · <a href="{root}audit/full-seo-and-ai-search-audit.md">The audit prompt</a></p>
+<a href="{root}canon/index.html">Research and sources</a> · <a href="{root}audit/index.html">The audit prompt</a></p>
 </div></footer>
 </body>
 </html>
