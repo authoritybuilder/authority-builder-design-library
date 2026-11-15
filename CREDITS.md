@@ -14,9 +14,19 @@ The gallery format is adapted from **robonuggets-design-inspo** by RoboNuggets.
 
 All typefaces are loaded from Google Fonts under their open licences: Newsreader, DM Sans, Cormorant Garamond, Jost, Archivo, Inter, Bricolage Grotesque, Instrument Sans, DM Serif Display, Nunito Sans, Syne, Plus Jakarta Sans, Bebas Neue, Manrope, Source Serif 4, IBM Plex Sans, IBM Plex Mono, Playfair Display, Libre Franklin, Caprasimo, Space Grotesk, Caveat and Fraunces.
 
+## Illustrations And Icons
+
+Every portrait, scene, chart and icon in the samples is original. They are drawn as inline SVG by `src/art.py` and coloured from each page's own tokens. No stock photos, no icon library and no AI-generated images are used. Each illustration stands in for a real photograph, and the brief for that photograph is in the code beside it and in the notes.
+
 ## Research
 
 Books are cited beside each principle on the research page (`canon/index.html`). Web sources read in November 2026 are listed at the foot of that page.
+
+The research applied to each page type is listed, with links, on that page's notes and collected on the research page. These are benchmarks published by testing firms and software vendors, and several are reported second-hand. They are credited as findings, not reproduced.
+
+## Audit And Measurement
+
+The SEO and AI search checks in `src/audit.py` follow the Full SEO and AI Search Audit by Yasmin Cronin. Speed and accessibility scores come from Lighthouse (Google, Apache 2.0), run locally by `src/speed.mjs`. Lighthouse is not included in this repository.
 
 ## Real Sites Studied
 

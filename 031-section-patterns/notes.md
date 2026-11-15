@@ -19,10 +19,10 @@ Every section pattern used across the library, shown once on 1 page.
 | Story or letter block | 005, 007, 010, 018, 026 |
 | Card grid | 002, 004, 005, 006, 008, 009, 010, 011, 013, 014, 015, 016, 018, 022, 024, 025, 026, 027 |
 | Numbered method | 001, 002, 004, 007, 010, 011, 012, 016, 019 |
-| Image beside text | 001, 002, 005, 006, 007, 008, 014, 015, 022, 024, 026, 027 |
+| Image beside text | 001, 002, 005, 006, 007, 008, 014, 015, 022, 024, 025, 026, 027 |
 | Two-column comparison | 007, 010, 017, 019 |
 | Curriculum accordion | 007, 008 |
-| Pricing | 004, 007, 008, 009, 010, 011, 012, 013, 027 |
+| Pricing | 004, 006, 007, 008, 009, 010, 011, 012, 013, 027 |
 | Guarantee | 007, 008 |
 | Questions and answers | 004, 007, 008, 009, 011, 012, 015, 017, 018, 019, 027, 028 |
 | Closing call to action | 001, 002, 003, 004, 007, 008, 009, 011, 015, 016, 017, 019, 021, 022, 025, 027 |
@@ -32,6 +32,9 @@ Every section pattern used across the library, shown once on 1 page.
 | Long-form article body | 021, 023 |
 | Podcast player | 003, 024 |
 | Product cards | 003, 012 |
-| Contact form and details | 004, 006, 010, 013, 028 |
+| Contact form and details | 004, 005, 006, 010, 013, 028 |
 | Quiz question and result preview | 016 |
 | Copy-ready bios | 006 |
+| Trust strip | 012, 027 |
+| Side-by-side comparison table | 011 |
+| Show notes and transcript | 024 |

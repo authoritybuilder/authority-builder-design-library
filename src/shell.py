@@ -70,7 +70,7 @@ p{text-wrap:pretty}
 .pv{border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 60px rgba(19,38,32,.16);background:#fff;margin-top:calc(-1*clamp(28px,4vw,48px));position:relative;z-index:2}
 .cols{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(28px,5vw,72px);align-items:start}@media(max-width:900px){.cols{grid-template-columns:1fr}}
 .blk{margin-top:clamp(36px,5vw,56px)}.blk h2{font-size:clamp(1.5rem,2.8vw,2rem);margin-bottom:1rem}
-.blk li{position:relative;padding-left:1.6em;margin-top:.7em}.blk li::before{content:"";position:absolute;left:0;top:.6em;width:.55em;height:.55em;border-radius:50%;background:var(--gold)}
+.blk li{position:relative;padding-left:1.6em;margin-top:.7em}.blk li::before{content:"";position:absolute;left:0;top:.6em;width:.55em;height:.55em;border-radius:50%;background:var(--gold)}.blk ol li{padding-left:.3em}.blk ol li::before{display:none}
 .ptab{width:100%;border-collapse:collapse}.ptab th,.ptab td{text-align:left;vertical-align:top;padding:.9rem .8rem .9rem 0;border-top:1px solid var(--line);font-size:.97rem}
 .ptab th{font-weight:600;width:34%}.ptab th small{display:block;font-weight:400;color:var(--ink2);margin-top:.15rem}
 @media(max-width:640px){.ptab th,.ptab td{display:block;width:100%;padding:.5rem 0}.ptab td{border-top:0;padding-top:0}}
@@ -80,6 +80,12 @@ p{text-wrap:pretty}
 .serp .st{font-size:1.25rem;color:#1a0dab;margin:.55rem 0 .25rem;line-height:1.3}.serp .sd{font-size:.88rem;color:#4d5156;line-height:1.55}
 .serp .sl{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.4rem;margin-top:.9rem;padding-top:.8rem;border-top:1px solid #ebebeb}.serp .sl span{color:#1a0dab;font-size:.95rem}
 .note{font-size:.88rem;color:var(--ink2);margin-top:.7rem}
+.rtab thead th,.atab thead th{font:700 .74rem/1.3 'Inter',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);padding-bottom:.6rem}
+.rtab td{width:50%}.rtab td small{display:block;margin-top:.4rem;color:var(--ink2);font-size:.82rem}
+.atab{width:100%;border-collapse:collapse;margin-bottom:1.6rem}.atab th,.atab td{text-align:left;vertical-align:top;padding:.8rem .8rem .8rem 0;border-top:1px solid var(--line);font-size:.93rem}
+.atab tbody th{font-weight:600;width:30%}.atab td:nth-child(2){width:8.2rem;white-space:nowrap}.blk h3{margin:1.6rem 0 .5rem;font-size:1.05rem}
+.tally{margin:1rem 0 .4rem;font-size:.95rem}.ok{color:#0F5132}.fx{color:#0B5C8A}.yt{color:#8A5A00}.cc{color:#5B6360}.bad{color:#B3261E}
+@media(max-width:640px){.atab thead{display:none}.atab th,.atab td{display:block;width:100%!important;padding:.3rem 0;border-top:0}.atab tr{display:block;padding:.7rem 0;border-top:1px solid var(--line)}}
 .side{position:sticky;top:1.2rem;display:grid;gap:1.2rem}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem}
 .panel h2{font-size:1.2rem;margin-bottom:.7rem}.panel dt{font-size:.74rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-top:.9rem}.panel dd{font-size:.96rem}
 .sw{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.5rem}.sw span{width:38px;height:38px;border-radius:8px;border:1px solid rgba(0,0,0,.12)}
@@ -138,7 +144,7 @@ def page(title, desc, body, root="", extra_head=""):
 <details class="legal"><summary>Legal disclaimer and terms of use</summary>{legal}</details>
 <p class="copy">© <strong>Authority Builder™</strong> · All rights reserved. Trade marks and brand assets are the property of their respective owners.<br>
 For more AI tools, join <a href="{SKOOL}" target="_blank" rel="noopener noreferrer">AI for Coaches and Creators</a>. ·
-<a href="{root}canon/index.html">Research and sources</a> · <a href="{root}audit/index.html">The audit prompt</a></p>
+<a href="{root}canon/index.html">Research and sources</a></p>
 </div></footer>
 </body>
 </html>

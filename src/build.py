@@ -3,8 +3,9 @@
 
     python3 src/build.py
 
-Reads every page definition in src/pages, then writes one self-contained sample.html per entry,
-a notes page, a notes.md, the gallery index, the research canon page and the README index.
+Reads every page definition in src/pages and applies the research in src/upgrades.py. For each entry it writes a small
+complete site (the page, its trust pages, robots.txt and sitemap.xml), runs the SEO and AI search audit on those files,
+then writes the notes page, notes.md, the gallery, the research page and the README index.
 No dependencies beyond Python 3. The files it writes need no build step: open index.html.
 """
 import importlib.util
@@ -18,11 +19,19 @@ SRC = pathlib.Path(__file__).parent
 ROOT = SRC.parent
 sys.path.insert(0, str(SRC))
 
+import art  # noqa: E402
+import audit  # noqa: E402
 import canon  # noqa: E402
+import kit  # noqa: E402
 import sections  # noqa: E402,F401  (registers the section renderers)
 import shell  # noqa: E402
+import trust  # noqa: E402
+import upgrades  # noqa: E402
 from kit import BASE_CSS, CSS, REG, e, h  # noqa: E402
+from polish import POLISH_CSS, THEME_POLISH  # noqa: E402
 from themes import THEMES  # noqa: E402
+
+LASTMOD = "2026-11-15"  # the date the samples were last reviewed; used in each sitemap
 
 GROUPS = [
     ("Home Bases", "The pages that say who you are and send each visitor the right way."),
@@ -39,7 +48,8 @@ SECTION_NAMES = {
     "compare": "Two-column comparison", "modules": "Curriculum accordion", "pricing": "Pricing", "guarantee": "Guarantee", "faq": "Questions and answers",
     "cta": "Closing call to action", "feed": "Content list", "capture": "Email capture band", "schedule": "Agenda or timeline", "article": "Long-form article body",
     "player": "Podcast player", "products": "Product cards", "contact": "Contact form and details", "quiz": "Quiz question and result preview",
-    "thanks": "Thank-you confirmation", "bios": "Copy-ready bios",
+    "thanks": "Thank-you confirmation", "bios": "Copy-ready bios", "trust": "Trust strip", "matrix": "Side-by-side comparison table",
+    "shownotes": "Show notes and transcript",
 }
 
 SCHEMA_WHY = {
@@ -64,12 +74,14 @@ SCHEMA_WHY = {
 SEO_BUILT_IN = [
     "A title that carries the brand name and a description that says who the page is for",
     "1 clear headline (H1) in the HTML itself, with every word of the page readable without JavaScript",
-    "Canonical address, Open Graph tags and a share image slot, all pointing at 1 version of the address",
-    "Structured data (JSON-LD) that matches the visible text",
-    "A trust footer on every page: About, Contact, Privacy, Terms and Refunds",
+    "Canonical address, Open Graph tags and a real share image, all on 1 version of the address",
+    "Structured data (JSON-LD) that matches the visible text and names only files that exist",
+    "Real About, Contact, Privacy, Terms and Refund pages, linked from the footer of every page",
+    "A robots.txt that lets search and AI-answer crawlers in, and a sitemap.xml that lists every real page",
+    "A real square PNG icon at a stable address, sized as a multiple of 48px",
     "Proof written as real text, so Google and AI tools can read and quote it",
     "Mobile-first layout, tap targets of 48px or more, visible focus states and reduced-motion support",
-    "No image weight above the fold, so the main content can load inside Google's 2.5 second target",
+    "No image downloads and no scripts, so the main content loads inside Google's 2.5 second target",
 ]
 
 SEO_SKIP = [
@@ -78,6 +90,8 @@ SEO_SKIP = [
     "No review stars on your own business: Google excludes self-serving reviews",
     "No hidden text, keyword stuffing or pages rewritten into chunks \"for AI\"",
 ]
+
+STATUS_CLS = {"Good": "ok", "Fixed": "fx", "Your turn": "yt", "Couldn't check": "cc", "Fix": "bad"}
 
 
 # ---------- helpers ----------
@@ -107,52 +121,70 @@ def check_contrast():
     return bad
 
 
-def favicon(mono, bg, fg):
-    svg = (f"<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><rect width='48' height='48' rx='10' fill='{bg}'/>"
-           f"<text x='24' y='33' text-anchor='middle' font-family='Georgia,serif' font-size='26' font-weight='700' fill='{fg}'>{mono}</text></svg>")
-    return "data:image/svg+xml," + quote(svg, safe="/:=' ")
+SAME = ["https://www.linkedin.com/in/YOUR-HANDLE", "https://www.instagram.com/YOUR-HANDLE", "https://www.youtube.com/@YOUR-HANDLE"]
 
 
-def jsonld(P):
+def site_url(P):
+    return f'https://{P["brand"]["domain"]}/'
+
+
+def org(P):
+    b, url = P["brand"], site_url(P)
+    o = {"@type": "Organization", "@id": url + "#org", "name": b["name"], "url": url, "logo": url + "icon-512.png", "sameAs": SAME}
+    if b.get("person"):
+        o["founder"] = {"@id": url + "#person"}
+    return o
+
+
+def person(P):
+    b, url = P["brand"], site_url(P)
+    return {"@type": "Person", "@id": url + "#person", "name": b["person"], "jobTitle": b["role"], "url": url + P["about_file"],
+            "worksFor": {"@id": url + "#org"}, "sameAs": SAME}
+
+
+def jsonld(P, kind="main", page=None):
+    """Structured data for 1 page. Every file it names exists in the sample's site folder, and every fact matches the visible text."""
     b = P["brand"]
     x = P.get("ld", {})
-    url = f'https://{b["domain"]}/'
-    page = url + P.get("path", "")
-    same = [f"https://www.linkedin.com/in/YOUR-HANDLE", "https://www.instagram.com/YOUR-HANDLE", "https://www.youtube.com/@YOUR-HANDLE"]
+    url = site_url(P)
+    page = page or url + P.get("path", "")
     g = []
-    for t in P["schema"]:
+    if kind == "about":
+        g = [{"@type": "ProfilePage", "url": page, "dateCreated": "2024-03-04", "dateModified": LASTMOD, "mainEntity": {"@id": url + "#person"}}, person(P), org(P)]
+    elif kind == "contact":
+        g = [{"@type": "ContactPage", "name": f'Contact {b["name"]}', "url": page}, org(P)]
+    elif kind != "main":
+        g = [{"@type": "WebPage", "name": kind, "url": page, "isPartOf": {"@id": url + "#site"}}]
+    for t in (P["schema"] if kind == "main" else []):
         if t == "WebSite":
             o = {"@type": "WebSite", "@id": url + "#site", "name": b["name"], "url": url}
             if b.get("alt"):
                 o["alternateName"] = b["alt"]
         elif t == "Organization":
-            o = {"@type": "Organization", "@id": url + "#org", "name": b["name"], "url": url, "logo": url + "icon-512.png", "sameAs": same}
-            if b.get("person"):
-                o["founder"] = {"@id": url + "#person"}
+            o = org(P)
         elif t == "Person":
-            o = {"@type": "Person", "@id": url + "#person", "name": b["person"], "jobTitle": b["role"], "url": url + "about/",
-                 "image": url + "images/portrait.jpg", "worksFor": {"@id": url + "#org"}, "sameAs": same}
+            o = person(P)
         elif t == "ProfilePage":
-            o = {"@type": "ProfilePage", "url": page, "dateCreated": "2024-03-04", "dateModified": "2026-11-02", "mainEntity": {"@id": url + "#person"}}
+            o = {"@type": "ProfilePage", "url": page, "dateCreated": "2024-03-04", "dateModified": LASTMOD, "mainEntity": {"@id": url + "#person"}}
         elif t == "Course":
             o = {"@type": "Course", "name": x["course"], "description": P["desc"], "provider": {"@type": "Organization", "name": b["name"], "sameAs": url}}
         elif t == "LocalBusiness":
             o = {"@type": x.get("subtype", "LocalBusiness"), "@id": url + "#business", "name": b["name"], "url": url, "telephone": x["phone"],
-                 "priceRange": x.get("price", "$$"), "image": url + "images/shopfront.jpg",
+                 "priceRange": x.get("price", "$$"), "image": url + "share.jpg",
                  "address": {"@type": "PostalAddress", "streetAddress": x["street"], "addressLocality": x["suburb"], "addressRegion": x["state"],
                              "postalCode": x["postcode"], "addressCountry": "AU"},
                  "areaServed": x["area"],
                  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": d, "opens": o1, "closes": c1} for d, o1, c1 in x["hours"]]}
         elif t == "Article":
             o = {"@type": "BlogPosting", "headline": x["headline"], "description": P["desc"], "datePublished": x["published"], "dateModified": x["modified"],
-                 "author": {"@type": "Person", "name": b["person"], "url": url + "about/"}, "publisher": {"@type": "Organization", "name": b["name"], "url": url},
-                 "image": url + "images/" + P["slug"] + ".jpg", "mainEntityOfPage": page}
+                 "author": {"@type": "Person", "name": b["person"], "url": url + P["about_file"]}, "publisher": {"@type": "Organization", "name": b["name"], "url": url},
+                 "image": url + "share.jpg", "mainEntityOfPage": page}
         elif t == "BreadcrumbList":
             o = {"@type": "BreadcrumbList", "itemListElement": [
                 {"@type": "ListItem", "position": i + 1, "name": n, "item": url + p} for i, (n, p) in enumerate(x["crumbs"])]}
         elif t == "Event":
             o = {"@type": "Event", "name": x["event"], "startDate": x["start"], "endDate": x["end"], "eventStatus": "https://schema.org/EventScheduled",
-                 "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "description": P["desc"],
+                 "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode", "description": P["desc"], "image": url + "share.jpg",
                  "location": {"@type": "Place", "name": x["venue"], "address": {"@type": "PostalAddress", "addressLocality": x["suburb"],
                                                                                "addressRegion": x["state"], "addressCountry": "AU"}},
                  "organizer": {"@type": "Organization", "name": b["name"], "url": url},
@@ -163,9 +195,15 @@ def jsonld(P):
                           "offers": {"@type": "Offer", "price": pr, "priceCurrency": "AUD", "availability": "https://schema.org/InStock", "url": page}})
             continue
         elif t == "PodcastSeries":
-            o = {"@type": "PodcastSeries", "name": x["show"], "description": P["desc"], "url": page, "author": {"@type": "Person", "name": b["person"]}}
+            o = {"@type": "PodcastSeries", "@id": page + "#show", "name": x["show"], "description": P["desc"], "url": page, "author": {"@type": "Person", "name": b["person"]}}
+            g.append(o)
+            if x.get("episode"):
+                ep = x["episode"]
+                g.append({"@type": "PodcastEpisode", "name": ep["name"], "episodeNumber": ep["number"], "datePublished": ep["date"], "url": page + "#latest",
+                          "partOfSeries": {"@id": page + "#show"}})
+            continue
         elif t == "Book":
-            o = {"@type": "Book", "name": x["book"], "author": {"@type": "Person", "name": b["person"], "url": url + "about/"},
+            o = {"@type": "Book", "name": x["book"], "author": {"@type": "Person", "name": b["person"], "url": url + P["about_file"]},
                  "bookFormat": "https://schema.org/Paperback", "datePublished": x["published"], "url": page}
         elif t == "Service":
             o = {"@type": "Service", "name": x["service"], "provider": {"@type": "Organization", "name": b["name"], "url": url}, "areaServed": x.get("area", "Australia")}
@@ -182,32 +220,48 @@ def css_for(P, secs):
     for name, _ in secs:
         if name not in used:
             used.append(name)
-    return vars_ + BASE_CSS + "".join(CSS[n] for n in used) + "\n" + t["css"] + "\n" + P.get("css", "")
+    return (vars_ + BASE_CSS + "".join(CSS[n] for n in used) + POLISH_CSS + "\n" + t["css"] + "\n" + THEME_POLISH.get(P["theme"], "")
+            + "\n" + P.get("css", ""))
 
 
 def render_sections(P, secs):
+    kit.CTX.update(person=P["brand"].get("person", ""), faces=P["faces"], drawn={})
     return "\n".join(REG[name](dict(d), P) for name, d in secs)
 
 
-def sample_html(P, secs=None, title=None, desc=None, path=None, noindex_note=None, back="index.html"):
+def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="main", lib="../../index.html", back="../index.html"):
+    """1 complete page of a sample site. kind is main, about, contact, a policy name, or thanks."""
     secs = secs or P["sections"]
     t = THEMES[P["theme"]]
     v = t["v"]
     b = P["brand"]
+    main = kind == "main"
     title = title or P["title"]
     desc = desc or P["desc"]
-    path = P.get("path", "") if path is None else path
-    url = f'https://{b["domain"]}/{path}'
+    url = site_url(P) + (P.get("path", "") if main else file)
+    home = "#top" if main else "index.html"
+    pre = "" if main else "index.html"
+    link = lambda hr: e(pre + hr if hr.startswith("#") else hr)  # noqa: E731
     nav = P.get("nav")
-    navhtml = ""
+    navhtml = mnav = ""
     if nav:
-        navhtml = '<nav aria-label="Main"><ul>' + "".join(f'<li><a href="{e(hr)}">{e(l)}</a></li>' for l, hr in nav) + "</ul></nav>"
-    hcta = f'<a class="btn" href="{e(P["cta"][1])}">{e(P["cta"][0])}</a>' if P.get("cta") else ""
+        items = "".join(f'<li><a href="{link(hr)}">{e(l)}</a></li>' for l, hr in nav)
+        navhtml = f'<nav aria-label="Main"><ul>{items}</ul></nav>'
+        last = f'<li><a href="{link(P["cta"][1])}">{e(P["cta"][0])}</a></li>' if P.get("cta") else ""
+        mnav = (f'<details class="mnav"><summary aria-label="Menu">{art.icon("menu")}</summary><ul>{items}{last}</ul></details>')
+    hcta = f'<a class="btn" href="{link(P["cta"][1])}">{e(P["cta"][0])}</a>' if P.get("cta") else ""
     flinks = nav or P.get("foot", [("Home", "#top")])
     disc = f'<p>{h(P["disclaimer"])}</p>' if P.get("disclaimer") else ""
-    robots = ('<!-- This page is a confirmation step, so it stays out of Google on purpose. Keep this line. -->\n<meta name="robots" content="noindex">'
-              if noindex_note else
-              '<!-- LIBRARY ONLY: this line keeps the fictional sample out of Google. Delete it when the page is yours. -->\n<meta name="robots" content="noindex">')
+    if kind == "thanks":
+        robots = '<!-- This page is a confirmation step, so it stays out of Google on purpose. Keep this line. -->\n<meta name="robots" content="noindex">'
+    else:
+        robots = '<!-- LIBRARY ONLY: this line keeps the fictional sample out of Google. Delete it when the page is yours. -->\n<meta name="robots" content="noindex">'
+    ann = f'<p class="ann">{h(P["ann"])}</p>\n' if P.get("ann") and main else ""
+    st = P.get("sticky") if main else None
+    sticky = (f'\n<!-- Mobile action bar: the main action stays in reach of the thumb -->\n<div class="sticky"><span>{h(st["text"])}</span>'
+              f'<a class="btn" href="{e(st["cta"][1])}">{e(st["cta"][0])}</a></div>') if st else ""
+    fine = "".join(f'<li><a href="{e(hr)}">{e(l)}</a></li>' for l, hr in P["trust_links"])
+    body = render_sections(P, secs)
     return f"""<!doctype html>
 <html lang="en-AU" id="top">
 <head>
@@ -218,41 +272,83 @@ def sample_html(P, secs=None, title=None, desc=None, path=None, noindex_note=Non
 <meta name="description" content="{e(desc)}">
 <!-- Swap every {b["domain"]} address below for your real one. Use 1 version of your address everywhere. -->
 <link rel="canonical" href="{url}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{"article" if "Article" in P["schema"] and main else "website"}">
 <meta property="og:site_name" content="{e(b["name"])}">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:url" content="{url}">
-<meta property="og:image" content="https://{b["domain"]}/share/{P["slug"]}.jpg">
+<meta property="og:image" content="{site_url(P)}share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{e(b["name"])}: {e(P["name"])}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="{v["bg"]}">
-<!-- On your site, link a real square PNG icon that is a multiple of 48px, at an address that never changes. -->
-<link rel="icon" href="{favicon(b.get("mono", b["name"][0]), v["accent"], v["accent-ink"])}">
+<!-- A real square PNG icon, 192px (a multiple of 48px), at an address that never changes -->
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{t["fonts"]}" rel="stylesheet">
+<!-- Structured data. Replace the YOUR-HANDLE profile links with your real ones, or delete those lines. -->
 <script type="application/ld+json">
-{jsonld(P)}
+{jsonld(P, kind, url)}
 </script>
 <style>{css_for(P, secs)}</style>
 </head>
-<body>
+<body{' class="has-sticky"' if st else ""}>
 <a class="skip" href="#main">Skip to content</a>
 <!-- LIBRARY BAR: delete this block when you make the page yours -->
-<div class="libbar"><span><a href="../index.html">&larr; Design Library</a> &nbsp;·&nbsp; Sample {P["num"]}: {e(P["name"])}</span><span>Fictional brand, sample copy &nbsp;·&nbsp; <a href="{back}">Why this page works</a></span></div>
-<header class="hd"><a class="logo" href="#top">{e(b["name"])}</a>{navhtml}{hcta}</header>
+<div class="libbar"><span><a href="{lib}">&larr; Design Library</a> &nbsp;·&nbsp; Sample {P["num"]}: {e(P["name"])}</span><span>Fictional brand, sample copy &nbsp;·&nbsp; <a href="{back}">Why this page works</a></span></div>
+{ann}<div class="hdw"><header class="hd{" has-nav" if nav else ""}"><a class="logo" href="{home}">{e(b["name"])}</a>{navhtml}{hcta}{mnav}</header></div>
 <main id="main">
-{render_sections(P, secs)}
+{body}
 </main>
 <footer class="ft"><div class="wrap"><div class="ft-g">
-<div><a class="logo" href="#top">{e(b["name"])}</a><p>{h(b.get("line", ""))}</p></div>
-<div><h3>Explore</h3><ul>{"".join(f'<li><a href="{e(hr)}">{e(l)}</a></li>' for l, hr in flinks)}</ul></div>
-<div><h3>The Fine Print</h3><ul><li><a href="#">About</a></li><li><a href="#">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms</a></li><li><a href="#">Refund Policy</a></li></ul></div>
+<div><a class="logo" href="{home}">{e(b["name"])}</a><p>{h(b.get("line", ""))}</p></div>
+<div><h2>Explore</h2><ul>{"".join(f'<li><a href="{link(hr)}">{e(l)}</a></li>' for l, hr in flinks)}</ul></div>
+<div><h2>The Fine Print</h2><ul>{fine}</ul></div>
 </div><div class="ft-s"><p>{e(b.get("contact", "hello@" + b["domain"]))} &nbsp;·&nbsp; {e(b.get("where", "Australia"))} &nbsp;·&nbsp; ABN 00 000 000 000</p>{disc}
-<p>Sample page from the Authority Builder Design Library. {e(b["name"])} is a fictional brand. Every name, price and result here is invented for teaching.</p></div></div></footer>
+<p>Sample page from the Authority Builder Design Library. {e(b["name"])} is a fictional brand. Every name, price and result here is invented for teaching.</p></div></div></footer>{sticky}
 </body>
 </html>
 """
+
+
+def robots_txt(P):
+    b = P["brand"]
+    return f"""# robots.txt for {b["name"]}. It lives at {site_url(P)}robots.txt
+
+# Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# AI training crawlers. This one is your call. Allowed here.
+# To opt out of training, change "Allow: /" to "Disallow: /" in this group only.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
+
+Sitemap: {site_url(P)}sitemap.xml
+"""
+
+
+def sitemap_xml(P, files):
+    urls = "".join(f"  <url><loc>{site_url(P)}{f}</loc><lastmod>{LASTMOD}</lastmod></url>\n" for f in files)
+    return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 
 def purposes(P):
@@ -291,9 +387,17 @@ SEARCH-READY RULES
 - Every word in the HTML itself. Nothing that needs JavaScript to appear.
 - JSON-LD structured data ({", ".join(P["schema"])}) that matches the visible text.
 - Canonical tag, Open Graph tags and a share image, all on 1 version of my address.
-- A footer linking About, Contact, Privacy, Terms and Refunds.
+- Real About, Contact, Privacy, Terms and Refund pages, linked from the footer of every page.
+- A robots.txt that allows search and AI-answer crawlers and lists the sitemap, and a sitemap.xml of every real page.
+- A square PNG icon (192px) at a stable address.
 - No llms.txt, no FAQ rich-result markup, no review stars on my own business, no hidden text.
 - No images above the fold heavier than they need to be. Aim for the main content to load in under 2.5 seconds.
+
+CONVERSION RULES
+- The main button, 1 line of reassurance and 1 piece of proof sit together in the first screen.
+- Ask for as little as possible in every form. State the reply time at the button.
+- Print the price. Put the guarantee or refund terms beside every buy button.
+- On phones, keep the main action in a bar at the bottom of the screen.
 
 HONESTY RULES
 - Use only the proof I gave you. Do not invent testimonials, client names, numbers or press.
@@ -304,12 +408,21 @@ OUTPUT
 1 self-contained HTML file with inline CSS. Australian spelling. No em dashes."""
 
 
+def audit_groups(P):
+    groups = {}
+    for r in P["audit"]:
+        groups.setdefault(r["area"], []).append(r)
+    return groups
+
+
 def notes_md(P):
     t = THEMES[P["theme"]]
     L = [f"# {P['num']} · {P['name']}", "", f"**Group:** {P['group']}  ", f"**For:** {', '.join(P['aud'])}  ",
          f"**Style:** {t['label']} ({t['pair']})  ", f"**Sample brand:** {P['brand']['name']} (fictional)", "", P["blurb"], "",
          "## Why This Page Works", ""]
     L += [f"- {w}" for w in P["why"]]
+    L += ["", "## Research Applied To This Page", "", "| What the research found | Source | What changed in the code |", "|---|---|---|"]
+    L += [f"| {f} | {('[' + who + '](' + url + ')') if url else who} | {change} |" for who, url, f, change in P["research"]]
     L += ["", "## The Psychology At Work", "", "| Principle | Where you can see it |", "|---|---|"]
     L += [f"| **{canon.C[k][1]}** ({canon.C[k][2]}, {canon.C[k][3]}) | {how} |" for k, how in P["principles"]]
     L += ["", "## Page Structure", ""]
@@ -317,7 +430,15 @@ def notes_md(P):
     L += ["", "## Search Card", "", f"- **Title:** {P['title']}", f"- **Description:** {P['desc']}",
           f"- **Structured data:** {', '.join(P['schema'])}"]
     L += [f"- {s}" for s in P.get("seo", [])]
-    L += ["", "## Borrow This", ""] + [f"- {x}" for x in P["borrow"]]
+    L += ["", "## SEO And AI Search Audit: What Was Checked", ""]
+    for area, rows in audit_groups(P).items():
+        L += [f"### {area}", "", "| Check | Result | What was seen |", "|---|---|---|"]
+        L += [f"| {r['check']} | **{r['status']}** | {r['seen']} |" for r in rows]
+        L += [""]
+    if P.get("briefs"):
+        L += ["## Photo Briefs", "", "Each illustration stands in for a real photo. Shoot these to replace them.", ""] + [f"- {x}" for x in P["briefs"]]
+        L += [""]
+    L += ["## Borrow This", ""] + [f"- {x}" for x in P["borrow"]]
     if P.get("study"):
         L += ["", "## Study The Real Thing", ""] + [f"- **{n}**: {w}" for n, w in P["study"]]
     L += ["", "## Build Your Own", "", "```text", prompt_for(P), "```", ""]
@@ -328,6 +449,9 @@ def notes_html(P):
     t = THEMES[P["theme"]]
     v = t["v"]
     why = "".join(f"<li>{e(w)}</li>" for w in P["why"])
+    res = "".join(
+        f'<tr><td>{e(f)}<small>{("<a href=" + chr(34) + e(url) + chr(34) + " rel=" + chr(34) + "noopener" + chr(34) + ">" + e(who) + "</a>") if url else e(who)}</small></td><td>{e(change)}</td></tr>'
+        for who, url, f, change in P["research"])
     psy = "".join(
         f'<tr><th scope="row">{e(canon.C[k][1])}<small>{e(canon.C[k][2])}</small></th><td>{e(how)}</td></tr>' for k, how in P["principles"])
     struct = "".join(f"<li>{e(p)}</li>" for p in purposes(P))
@@ -336,22 +460,36 @@ def notes_html(P):
     built = "".join(f"<li>{e(s)}</li>" for s in SEO_BUILT_IN)
     skip = "".join(f"<li>{e(s)}</li>" for s in SEO_SKIP)
     borrow = "".join(f"<li>{e(x)}</li>" for x in P["borrow"])
+    c = audit.counts(P["audit"])
+    tally = " · ".join(f'<b class="{STATUS_CLS[k]}">{c[k]} {k}</b>' for k in ("Good", "Fixed", "Your turn", "Couldn't check", "Fix") if c.get(k))
+    checks = ""
+    for area, rows in audit_groups(P).items():
+        body = "".join(f'<tr><th scope="row">{e(r["check"])}</th><td><b class="{STATUS_CLS[r["status"]]}">{e(r["status"])}</b></td><td>{e(r["seen"])}</td></tr>' for r in rows)
+        checks += f'<h3>{e(area)}</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody>{body}</tbody></table>'
+    briefs = ""
+    if P.get("briefs"):
+        briefs = ('<div class="blk"><h2>Photo Briefs</h2><p>Each illustration stands in for a real photograph. These are the shots to take when you make the page yours.</p><ul>'
+                  + "".join(f"<li>{e(x)}</li>" for x in P["briefs"]) + "</ul></div>")
     study = ""
     if P.get("study"):
         study = '<div class="blk"><h2>Study The Real Thing</h2><ul>' + "".join(f"<li><b>{e(n)}.</b> {e(w)}</li>" for n, w in P["study"]) + \
                 '</ul><p class="note">Read for structure and messaging. Borrow the technique, never the words, images or layout.</p></div>'
     sw = "".join(f'<span style="background:{v[k]}" title="{k} {v[k]}"></span>' for k in ("bg", "bg2", "card", "ink", "accent", "accent2", "dark"))
-    extra_files = "".join(f' <a class="btn ghost" href="{x["file"]}">{e(x["label"])}</a>' for x in P.get("extra", []))
+    extra_files = "".join(f' <a class="btn ghost" href="site/{x["file"]}">{e(x["label"])}</a>' for x in P.get("extra", []))
     sl_note = ' The extra links under the listing are sitelinks. They are Google\'s call, so treat them as likely, never guaranteed.' if P.get("sitelinks") else ""
+    tfiles = ", ".join(dict.fromkeys(f for _, f in P["trust_links"] if f != "index.html"))
     body = f"""<div class="banner"><div class="wrap">{shell.top("../")}
 <div class="eh"><p class="crumbs"><a href="../index.html#library">Design Library</a> › {e(P["group"])}</p>
 <h1>{P["num"]} · {e(P["name"])}</h1><p class="lead">{e(P["blurb"])}</p>
-<div class="acts"><a class="btn" href="sample.html">Open The Live Sample</a>{extra_files}<a class="btn ghost" href="#prompt">Copy The Build Prompt</a></div></div></div></div>
+<div class="acts"><a class="btn" href="site/index.html">Open The Live Sample</a>{extra_files}<a class="btn ghost" href="#research">See The Research</a></div></div></div></div>
 <main id="main"><div class="wrap">
-<a class="pv" href="sample.html" style="display:block"><img src="preview.jpg" alt="Preview of the {e(P["name"])} sample for the fictional brand {e(P["brand"]["name"])}" width="1280" height="800"></a>
+<a class="pv" href="site/index.html" style="display:block"><img src="preview.jpg" alt="Preview of the {e(P["name"])} sample for the fictional brand {e(P["brand"]["name"])}" width="1280" height="800"></a>
 <div class="cols">
 <div>
 <div class="blk"><h2>Why This Page Works</h2><ul>{why}</ul></div>
+<div class="blk" id="research"><h2>Research Applied To This Page</h2><p>This page type was researched on its own, then each finding was turned into a change in the sample's code.</p>
+<table class="ptab rtab"><thead><tr><th scope="col">What the research found</th><th scope="col">What changed in the code</th></tr></thead><tbody>{res}</tbody></table>
+<p class="note">Benchmarks from testing firms and software vendors, read in November 2026. Treat them as direction, not a guarantee. Test on your own page.</p></div>
 <div class="blk"><h2>The Psychology At Work</h2><table class="ptab"><tbody>{psy}</tbody></table>
 <p class="note">Every principle is explained, with its source, on <a href="../canon/index.html">the research page</a>.</p></div>
 <div class="blk"><h2>Page Structure</h2><ol style="list-style:decimal;padding-left:1.3rem">{struct}</ol></div>
@@ -360,16 +498,23 @@ def notes_html(P):
 <h3 style="margin-top:1.6rem">Structured Data On This Page</h3><ul>{sch}{extra}</ul>
 <h3 style="margin-top:1.6rem">Built Into Every Sample</h3><ul>{built}</ul>
 <h3 style="margin-top:1.6rem">Left Out On Purpose</h3><ul>{skip}</ul></div>
+<div class="blk" id="audit"><h2>SEO And AI Search Audit</h2><p>The Full SEO and AI Search Audit was run against this sample's files, and anything that failed was fixed in the code. This is what was checked and what was actually seen.</p>
+<p class="tally">{tally}</p>{checks}
+<p class="note"><b>Good</b> passed. <b>Fixed</b> failed in the first version and was repaired in the code. <b>Your turn</b> can only be finished with your real business details. <b>Couldn't check</b> needs a live website, so it was not guessed.</p></div>
+{briefs}
 <div class="blk"><h2>Borrow This</h2><ul>{borrow}</ul></div>
 {study}
-<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof. When your page is live, run <a href="../audit/index.html">the audit prompt</a> on it.</p>
+<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof.</p>
 <div class="prompt"><button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('pt').textContent).then(function(){{b.textContent='Copied'}}).catch(function(){{b.textContent='Select the text to copy'}})">Copy Prompt</button><pre id="pt">{e(prompt_for(P))}</pre></div></div>
 </div>
 <aside class="side blk"><div class="panel"><h2>At A Glance</h2><dl>
 <dt>Best for</dt><dd>{e(", ".join(P["aud"]))}</dd><dt>Group</dt><dd>{e(P["group"])}</dd>
 <dt>Style direction</dt><dd>{e(t["label"])}. {e(t["mood"])}</dd><dt>Fonts</dt><dd>{e(t["pair"])}</dd>
 <dt>Palette</dt><dd><div class="sw">{sw}</div></dd><dt>Sample brand</dt><dd>{e(P["brand"]["name"])} (fictional)</dd></dl></div>
-<div class="panel"><h2>Files In This Entry</h2><dl><dt>sample.html</dt><dd>The live page. 1 file, no build step.</dd><dt>notes.md</dt><dd>These notes as plain text, ready to hand to an AI assistant.</dd><dt>preview.jpg</dt><dd>A screenshot of the sample.</dd></dl></div></aside>
+<div class="panel"><h2>Files In This Entry</h2><dl><dt>site/index.html</dt><dd>The live page. 1 file, no build step.</dd>
+<dt>site/{e(tfiles)}</dt><dd>The trust pages, linked from every footer.</dd>
+<dt>site/robots.txt, sitemap.xml</dt><dd>Crawler rules and the page list.</dd><dt>site/icon-192.png, icon-512.png, share.jpg</dt><dd>The site icon, the logo file and the share image.</dd>
+<dt>notes.md</dt><dd>These notes as plain text, ready to hand to an AI assistant.</dd></dl></div></aside>
 </div></div><div style="height:clamp(56px,8vw,104px)"></div></main>"""
     return shell.page(f'{P["num"]} {P["name"]} | Authority Builder Design Library', P["blurb"], body, root="../")
 
@@ -433,7 +578,8 @@ def block_patterns(num, pages):
     secs, labels = [], ""
     order = [n for n in SECTION_NAMES if n in first]
     host = dict(pages[0])
-    host.update(num=num, name="Section Patterns", slug="section-patterns", theme="corporate_calm", nav=None, cta=None, schema=["CollectionPage"],
+    host.update(num=num, name="Section Patterns", slug="section-patterns", theme="corporate_calm", nav=None, cta=None, schema=["CollectionPage"], sticky=None, ann=None,
+                trust_links=[(n, "#top") for n in ("About", "Contact", "Privacy Policy", "Terms", "Refund Policy")], path="", faces=["Ada", "Ben", "Cy", "Dee"],
                 title="Section Patterns | Authority Builder Design Library", desc="Every section pattern used across the library, on 1 page.",
                 brand=dict(name="Pattern Shelf", domain="patternshelf.example", mono="P", line="Every section pattern in the library, shown once."),
                 css=".pat{background:#132620;color:#EAE7E1;font:600 .8rem/1.4 system-ui,sans-serif;padding:.7rem clamp(20px,5vw,48px);letter-spacing:.04em}.pat b{color:#C5A880}")
@@ -443,8 +589,9 @@ def block_patterns(num, pages):
         us = ", ".join(sorted(set(used[n])))
         html += f'<div class="pat"><b>Pattern {i + 1:02d} · {e(SECTION_NAMES[n])}</b> &nbsp;·&nbsp; used in {us}</div>\n' + REG[n](dict(d), host) + "\n"
         secs.append((n, d))
-    full = sample_html(host, secs=secs, back="../index.html#blocks")
+    full = sample_html(host, secs=secs, lib="../index.html", back="../index.html#blocks")
     full = re.sub(r"<main id=\"main\">.*?</main>", lambda m: f'<main id="main">\n{html}</main>', full, flags=re.S)
+    full = full.replace('href="icon-192.png"', 'href="../001-coach-homepage/site/icon-192.png"').replace('href="about.html"', 'href="#top"')
     md = "# " + num + " · Section Patterns\n\nEvery section pattern used across the library, shown once on 1 page.\n\n| Pattern | Used in |\n|---|---|\n" + \
          "\n".join(f"| {SECTION_NAMES[n]} | {', '.join(sorted(set(used[n])))} |" for n in order) + "\n"
     return full, md
@@ -471,18 +618,20 @@ def gallery(pages, blocks):
     bl = "".join(f'<a class="card" href="{d}/{f}"><div class="bd"><span class="no">{n} · Building Blocks</span><h3>{e(t)}</h3><p>{e(b)}</p></div></a>'
                  for n, d, f, t, b in blocks)
     nprin = len(canon.C)
+    nres = sum(len(P["research"]) for P in pages)
+    nchk = sum(len(P["audit"]) for P in pages)
     body = f"""<div class="banner"><div class="wrap">{shell.top()}
 <div class="hero"><p class="kick">Authority Builder™ · Design Library</p>
 <h1>Steal The Structure. <em>Keep Your Own Voice.</em></h1>
-<p class="lead">{len(pages)} website pages a coach, creator, consultant or business owner actually needs. Each one is a live sample built on proven psychology, search-ready code and a look worth borrowing. Open a page, read why it works, copy the prompt and make it yours.</p>
+<p class="lead">{len(pages)} website pages a coach, creator, consultant or business owner actually needs. Each is a live sample with page-specific conversion research built into its code, a full search audit already run on it, and a look worth borrowing. Open a page, read why it works and make it yours.</p>
 <div class="acts"><a class="btn" href="#library">Browse The Library</a><a class="btn ghost" href="canon/index.html">Read The Research</a></div>
-<div class="nums"><div><b>{len(pages)}</b><span>page samples, each a single file</span></div><div><b>{len(THEMES)}</b><span>style directions, not 1 template</span></div>
-<div><b>{nprin}</b><span>principles in the research, each with its source</span></div><div><b>0</b><span>stock photos, fake timers or invented scarcity</span></div></div></div></div></div>
+<div class="nums"><div><b>{len(pages)}</b><span>page samples, each a complete small site</span></div><div><b>{len(THEMES)}</b><span>style directions, not 1 template</span></div>
+<div><b>{nres}</b><span>research findings turned into code changes</span></div><div><b>{nchk:,}</b><span>audit checks run, with the evidence shown</span></div></div></div></div></div>
 <main id="main">
 <section class="sec cream light"><div class="wrap"><p class="kick">How To Use It</p><h2>Three Steps From Blank Page To <em>Live Page</em></h2>
 <ol class="how"><li><h3>Pick The Page You Need</h3><p>Filter by who you are and the job the page has to do. Open the live sample and scroll it on your phone.</p></li>
-<li><h3>Read Why It Works</h3><p>Every sample comes with notes: the psychology behind each section, the search card and what to borrow.</p></li>
-<li><h3>Copy The Prompt, Then Audit</h3><p>Paste the build prompt into Claude with your real proof. Once it is live, run the audit prompt over it.</p></li></ol></div></section>
+<li><h3>Read Why It Works</h3><p>Every sample comes with notes: the research applied to it, the psychology behind each section and the audit results.</p></li>
+<li><h3>Make It Yours</h3><p>Copy the site folder or the build prompt, then swap in your words, your proof and your photos. The notes list what is yours to finish.</p></li></ol></div></section>
 <div class="filters" id="library"><div class="wrap">
 <div class="fg"><span>I am a</span>{chips("a", auds)}</div><div class="fg"><span>Style</span>{chips("s", styles)}</div>
 <button class="chip" type="button" id="clear" style="border-style:dashed">Show all</button></div></div>
@@ -491,8 +640,8 @@ def gallery(pages, blocks):
 <section class="sec strip"><div class="wrap two"><div><p class="kick">The Research</p><h2>Built On The <em>Legends</em>, Checked Against This Month's Rules</h2>
 <p class="lead" style="margin-top:1rem">Kahneman, Cialdini, Fogg, Schwartz, Ogilvy, Dunford and more, each mapped to the exact pages that use them. Search rules are checked against Google's current guidance, including the May 2026 changes.</p>
 <div class="acts"><a class="btn" href="canon/index.html">Open The Research Page</a></div></div>
-<div><p class="kick">After You Build</p><h2>Then Run The <em>Audit</em></h2><p class="lead" style="margin-top:1rem">The Full SEO and AI Search Audit checks how your finished site shows up in Google and in AI answers, then hands you a ranked fix list.</p>
-<div class="acts"><a class="btn ghost" href="audit/index.html">Get The Audit Prompt</a></div></div></div></section>
+<div><p class="kick">Already Audited</p><h2>The Search Audit Is <em>Built In</em></h2><p class="lead" style="margin-top:1rem">Every sample has had the Full SEO and AI Search Audit run against its files. What failed was fixed in the code: real trust pages, a real icon and share image, crawler rules and a sitemap. Each notes page shows what was checked and what was seen.</p>
+<div class="acts"><a class="btn ghost" href="001-coach-homepage/index.html#audit">See An Audit Table</a></div></div></div></section>
 </main>
 <script>
 (function(){{var on={{a:null,s:null}},chips=document.querySelectorAll('.chip[data-k]'),cards=document.querySelectorAll('.card[data-g]');
@@ -529,6 +678,13 @@ def canon_page(pages):
     shelf = "".join(f'<li><b><a href="{u}" rel="noopener">{e(n)}</a></b> {e(w)}</li>' for n, u, w in canon.SHELF)
     srcs = "".join(f'<li><a href="{u}" rel="noopener">{e(t)}</a><small>{e(p)}</small></li>' for p, t, u in canon.SOURCES)
     docs = "".join(f'<li><a href="{u}" rel="noopener">{e(t)}</a></li>' for t, u in canon.GOOGLE_DOCS)
+    used = {}
+    for P in pages:
+        for who, url, finding, _ in P["research"]:
+            used.setdefault((who, url, finding), []).append(P)
+    pres = "".join(
+        f'<li>{("<a href=" + chr(34) + e(url) + chr(34) + " rel=" + chr(34) + "noopener" + chr(34) + ">" + e(who) + "</a>") if url else "<b>" + e(who) + "</b>"}'
+        f'<small>Applied in {", ".join(P["num"] for P in ps)}</small>{e(finding)}</li>' for (who, url, finding), ps in used.items())
     body = f"""<div class="banner"><div class="wrap">{shell.top("../")}<div class="eh"><p class="crumbs"><a href="../index.html">Design Library</a> › The Research</p>
 <h1>The Canon Behind <em>Every Page</em></h1><p class="lead">{len(canon.C)} principles from behavioural science, interface research, the copywriting legends and current search guidance. Each links to the samples that use it, so you can see the idea working on a real page. A few apply to every sample and are marked that way.</p></div></div></div>
 <main id="main"><div class="wrap" style="padding-bottom:clamp(56px,8vw,104px)">
@@ -537,21 +693,12 @@ def canon_page(pages):
 <section class="blk"><p class="kick">Sites Studied</p><h2>Successful Sites In The Niche, Read For Structure</h2>
 <p class="lead">Read from each site's live page text in November 2026. These notes cover structure and messaging only. Borrow the technique, never the words, images or layout.</p><ul class="src">{sites}</ul>
 <h3 style="margin-top:2rem">Also On The Authority Builder Reference Shelf</h3><ul class="src">{shelf}</ul></section>
+<section class="blk"><p class="kick">Page-Type Research</p><h2>What Was Found For Each Kind Of Page</h2>
+<p class="lead">Each page type was researched on its own in November 2026, and each finding was turned into a change in that sample's code. These are benchmarks from testing firms and software vendors, several reported second-hand. Treat them as direction, and test on your own page.</p><ul class="src">{pres}</ul></section>
 <section class="blk"><p class="kick">Sources</p><h2>What Was Read, And When</h2><p class="lead">Web sources were read in November 2026. Books are cited beside each principle above.</p><ul class="src">{srcs}</ul>
 <h3 style="margin-top:2rem">Google's Own Documentation</h3><p class="note">Search rules change often. These are the primary pages to re-check before you rely on any rule. If anything in this library disagrees with them, Google's page wins.</p><ul class="src">{docs}</ul></section>
 </div></main>"""
     return shell.page("The Research | Authority Builder Design Library", "The psychology, copywriting and search principles behind every sample in the Authority Builder Design Library.", body, "../")
-
-
-def audit_page(md):
-    body = f"""<div class="banner"><div class="wrap">{shell.top("../")}<div class="eh"><p class="crumbs"><a href="../index.html">Design Library</a> › After You Build</p>
-<h1>The Full SEO And <em>AI Search Audit</em></h1><p class="lead">Built your page? This prompt checks how your whole site shows up in Google and in AI answers, then gives you a ranked, plain-English fix list you approve by number.</p></div></div></div>
-<main id="main"><div class="wrap narrow sec"><div class="blk" style="margin-top:0"><h2>How To Use It</h2><ol style="list-style:decimal;padding-left:1.3rem">
-<li>Open a new chat in Claude and turn on web search.</li><li>Copy the whole prompt below and send it.</li>
-<li>Answer the questions about your business. Skip any you like.</li><li>Read the report, then reply with the numbers of the fixes you want.</li></ol>
-<p class="note">Nothing on your site changes until you say which fixes to make. The same prompt is in this folder as a plain file: full-seo-and-ai-search-audit.md.</p></div>
-<div class="prompt"><button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('pt').textContent).then(function(){{b.textContent='Copied'}}).catch(function(){{b.textContent='Select the text to copy'}})">Copy Prompt</button><pre id="pt" style="max-height:none">{e(md)}</pre></div></div></main>"""
-    return shell.page("The Full SEO And AI Search Audit | Authority Builder Design Library", "A prompt that audits how your site shows up in Google and in AI answers, then gives you a ranked fix list.", body, "../")
 
 
 def load_pages():
@@ -563,6 +710,8 @@ def load_pages():
         for P in getattr(m, "PAGES", None) or [m.P]:
             P["num"] = f"{P['n']:03d}"
             P["dir"] = f"{P['num']}-{P['slug']}"
+            trust.files(P)
+            upgrades.apply(P)
             pages.append(P)
     return sorted(pages, key=lambda P: P["n"])
 
@@ -578,16 +727,40 @@ def main():
     for old in ROOT.iterdir():  # remove entry folders left over from an earlier numbering
         if old.is_dir() and re.match(r"\d{3}-", old.name) and old.name not in keep:
             shutil.rmtree(old)
+    speed_file = SRC / "data" / "speed.json"
+    speed = json.loads(speed_file.read_text()) if speed_file.exists() else {}
+    fixes = []
     for P in pages:
         d = ROOT / P["dir"]
-        d.mkdir(exist_ok=True)
+        site = d / "site"
+        site.mkdir(parents=True, exist_ok=True)
+        for stale in ("sample.html", "thank-you.html"):  # the first version kept the sample beside the notes
+            (d / stale).unlink(missing_ok=True)
         for k, _ in P["principles"]:
             assert k in canon.C, f"{P['num']}: unknown principle {k}"
-        (d / "sample.html").write_text(sample_html(P))
+        kit.CTX["briefs"] = []
+        (site / "index.html").write_text(sample_html(P))
+        P["briefs"] = list(dict.fromkeys(kit.CTX["briefs"]))
+        files = [P.get("path", "")]
         for x in P.get("extra", []):
-            (d / x["file"]).write_text(sample_html(P, secs=x["sections"], title=x["title"], desc=x["desc"], path=x["path"], noindex_note=True))
+            (site / x["file"]).write_text(sample_html(P, secs=x["sections"], title=x["title"], desc=x["desc"], file=x["file"], kind="thanks"))
+        made = []
+        if P["about_file"] != "index.html":
+            made.append(("about.html", "about") + trust.about(P))
+        if P["contact_file"] != "index.html":
+            made.append(("contact.html", "contact") + trust.contact(P))
+        made += [(f"{k}.html", k) + trust.policy(P, k) for k in ("privacy", "terms", "refunds")]
+        for file, kind, secs, title, desc in made:
+            (site / file).write_text(sample_html(P, secs=secs, title=title, desc=desc, file=file, kind=kind))
+            files.append(file)
+        (site / "robots.txt").write_text(robots_txt(P))
+        (site / "sitemap.xml").write_text(sitemap_xml(P, files))
+        P["audit"] = audit.run(P, site, speed.get(P["num"]))
+        fixes += [f"{P['num']} {r['check']}: {r['seen']}" for r in P["audit"] if r["status"] == "Fix"]
         (d / "index.html").write_text(notes_html(P))
         (d / "notes.md").write_text(notes_md(P))
+    if fixes:
+        print(f"AUDIT: {len(fixes)} checks still failing:\n  " + "\n  ".join(fixes))
     n = len(pages)
     blocks = [(f"{n + 1:03d}", f"{n + 1:03d}-font-pairings", "index.html", "Font Pairings For Personal Brands", "10 pairings, all free on Google Fonts, each shown working on real samples."),
               (f"{n + 2:03d}", f"{n + 2:03d}-colour-palettes", "index.html", "Colour Palettes, Contrast-Checked", "10 palettes with every text and button pairing measured against WCAG AA."),
@@ -602,9 +775,6 @@ def main():
             (ROOT / d / f).write_text(html)
             (ROOT / d / "notes.md").write_text(md)
     (ROOT / "index.html").write_text(gallery(pages, blocks))
-    audit_md = ROOT / "audit" / "full-seo-and-ai-search-audit.md"
-    if audit_md.exists():
-        (ROOT / "audit" / "index.html").write_text(audit_page(audit_md.read_text()))
     (ROOT / "canon").mkdir(exist_ok=True)
     (ROOT / "canon" / "index.html").write_text(canon_page(pages))
     rows = "\n".join(f"| {P['num']} | [{P['name']}]({P['dir']}/index.html) | {P['group']} | {', '.join(P['aud'])} | {THEMES[P['theme']]['label']} |" for P in pages)

@@ -1,0 +1,450 @@
+{
+ "001": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1060,
+  "cls": 0,
+  "tbt": 67,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 7,
+  "lighthouse": "12.8.2"
+ },
+ "002": {
+  "scores": {
+   "performance": 99,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1072,
+  "cls": 0,
+  "tbt": 96,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 5,
+  "lighthouse": "12.8.2"
+ },
+ "003": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1060,
+  "cls": 0,
+  "tbt": 51,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 11,
+  "lighthouse": "12.8.2"
+ },
+ "004": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1117,
+  "cls": 0,
+  "tbt": 31,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 15,
+  "lighthouse": "12.8.2"
+ },
+ "005": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 906,
+  "cls": 0,
+  "tbt": 50,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 4,
+  "lighthouse": "12.8.2"
+ },
+ "006": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1078,
+  "cls": 0,
+  "tbt": 55,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 12,
+  "lighthouse": "12.8.2"
+ },
+ "007": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1077,
+  "cls": 0,
+  "tbt": 68,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 17,
+  "lighthouse": "12.8.2"
+ },
+ "008": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1055,
+  "cls": 0,
+  "tbt": 33,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 16,
+  "lighthouse": "12.8.2"
+ },
+ "009": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1052,
+  "cls": 0,
+  "tbt": 35,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 10,
+  "lighthouse": "12.8.2"
+ },
+ "010": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 919,
+  "cls": 0,
+  "tbt": 52,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 8,
+  "lighthouse": "12.8.2"
+ },
+ "011": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1078,
+  "cls": 0,
+  "tbt": 45,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 11,
+  "lighthouse": "12.8.2"
+ },
+ "012": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1059,
+  "cls": 0,
+  "tbt": 36,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 16,
+  "lighthouse": "12.8.2"
+ },
+ "013": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1078,
+  "cls": 0,
+  "tbt": 57,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 10,
+  "lighthouse": "12.8.2"
+ },
+ "014": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 902,
+  "cls": 0,
+  "tbt": 24,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 4,
+  "lighthouse": "12.8.2"
+ },
+ "015": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 900,
+  "cls": 0,
+  "tbt": 3,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 9,
+  "lighthouse": "12.8.2"
+ },
+ "016": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 901,
+  "cls": 0,
+  "tbt": 35,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 6,
+  "lighthouse": "12.8.2"
+ },
+ "017": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 905,
+  "cls": 0,
+  "tbt": 28,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 8,
+  "lighthouse": "12.8.2"
+ },
+ "018": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 902,
+  "cls": 0,
+  "tbt": 47,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 7,
+  "lighthouse": "12.8.2"
+ },
+ "019": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 904,
+  "cls": 0,
+  "tbt": 38,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 6,
+  "lighthouse": "12.8.2"
+ },
+ "020": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 901,
+  "cls": 0,
+  "tbt": 0,
+  "scroll_w": 390,
+  "min_tap": 50,
+  "taps": 6,
+  "lighthouse": "12.8.2"
+ },
+ "021": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1051,
+  "cls": 0,
+  "tbt": 18,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 3,
+  "lighthouse": "12.8.2"
+ },
+ "022": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 902,
+  "cls": 0,
+  "tbt": 40,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 5,
+  "lighthouse": "12.8.2"
+ },
+ "023": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 903,
+  "cls": 0,
+  "tbt": 4,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 3,
+  "lighthouse": "12.8.2"
+ },
+ "024": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 901,
+  "cls": 0,
+  "tbt": 3,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 6,
+  "lighthouse": "12.8.2"
+ },
+ "025": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 902,
+  "cls": 0,
+  "tbt": 41,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 5,
+  "lighthouse": "12.8.2"
+ },
+ "026": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1063,
+  "cls": 0,
+  "tbt": 40,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 5,
+  "lighthouse": "12.8.2"
+ },
+ "027": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 1053,
+  "cls": 0,
+  "tbt": 40,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 12,
+  "lighthouse": "12.8.2"
+ },
+ "028": {
+  "scores": {
+   "performance": 100,
+   "accessibility": 100,
+   "best-practices": 100,
+   "seo": 100
+  },
+  "failed": [],
+  "lcp": 903,
+  "cls": 0,
+  "tbt": 0,
+  "scroll_w": 390,
+  "min_tap": 48,
+  "taps": 9,
+  "lighthouse": "12.8.2"
+ }
+}

@@ -53,7 +53,7 @@ class P(HTMLParser):
 
 def main():
     bad = 0
-    files = [ROOT / "index.html", ROOT / "canon" / "index.html", ROOT / "audit" / "index.html"] + sorted(ROOT.glob("[0-9][0-9][0-9]-*/*.html"))
+    files = [ROOT / "index.html", ROOT / "canon" / "index.html"] + sorted(ROOT.glob("[0-9][0-9][0-9]-*/*.html")) + sorted(ROOT.glob("[0-9][0-9][0-9]-*/site/*.html"))
     for f in files:
         t = f.read_text()
         p = P()
@@ -65,7 +65,7 @@ def main():
             errs.append(f"{p.h1} H1 elements")
         if "<title>" not in t or 'name="description"' not in t:
             errs.append("missing title or description")
-        if f.name in ("sample.html", "thank-you.html") and 'rel="canonical"' not in t:
+        if f.parent.name == "site" and 'rel="canonical"' not in t:
             errs.append("missing canonical")
         for m in re.findall(r'<script type="application/ld\+json">(.*?)</script>', t, re.S):
             try:
@@ -73,11 +73,16 @@ def main():
             except ValueError as ex:
                 errs.append(f"JSON-LD: {ex}")
         for l in p.links:
-            if not l or l.startswith(("http", "#", "data:", "mailto:")):
+            if not l or l.startswith(("http", "#", "data:", "mailto:", "tel:")):
                 continue
             target = (f.parent / l.split("#")[0]).resolve()
             if not target.exists():
                 errs.append(f"broken link: {l}")
+        if f.parent.name == "site":
+            ids = set(re.findall(r'\bid="([^"]+)"', t))
+            for l in p.links:
+                if l.startswith("#") and len(l) > 1 and l[1:] not in ids:
+                    errs.append(f"anchor with no target: {l}")
         if p.noalt:
             errs.append(f"{p.noalt} images without alt")
         for i in p.inputs:

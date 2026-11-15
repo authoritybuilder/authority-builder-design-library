@@ -163,7 +163,7 @@ P17 = dict(
     n=17, slug="challenge-page", name="Challenge Page", group="List Builders And Launches", aud=["Coach", "Creator"], theme="retro_scrapbook", path="offer-sprint/",
     brand=dict(name="Good Offer Club", person="Frankie Doyle", role="Offer coach", domain="goodofferclub.example", mono="G",
                line="Helping coaches and creators make offers people say yes to.", where="Newcastle, New South Wales"),
-    title="The 5-Day Offer Sprint | Free Challenge For Coaches And Creators",
+    title="The 5-Day Offer Sprint | Free Challenge | Good Offer Club",
     desc="A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 2 March. 5 short emails, 1 live session, a finished offer by Friday.",
     schema=["WebPage"], nav=None, cta=("Join Free", "#top"), foot=[("Join The Sprint", "#top"), ("The 5 Days", "#days")],
     blurb="A challenge page that sells the finish line. 5 days, 20 minutes each, 1 named outcome and a start date that falls on a Monday.",

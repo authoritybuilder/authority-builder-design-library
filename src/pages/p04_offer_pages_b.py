@@ -8,7 +8,7 @@ P10 = dict(
                line="A 12-month mastermind for agency founders. By application.", where="Sydney, New South Wales"),
     title="The Long Table | A 12-Month Mastermind For Agency Founders",
     desc="The Long Table is a 12-month mastermind for 14 agency founders with revenue of $1.5m to $8m. 3 retreats, monthly sessions and a private adviser. By application.",
-    schema=["Service", "Organization"], ld=dict(service="The Long Table mastermind"),
+    schema=["Service", "Organization"], ld=dict(service="The Long Table"),
     nav=None, cta=("Apply", "#apply"), foot=[("The Year", "#year"), ("Investment", "#invest"), ("Apply", "#apply")],
     blurb="A high-ticket page that sells by restraint. Few words, real selectivity, the price printed and an application instead of a buy button.",
     sections=[
@@ -72,7 +72,7 @@ P11 = dict(
                line="Brand strategy and identity for independent professionals.", where="Fremantle, Western Australia"),
     title="Services And Pricing | Fieldnote Brand Studio",
     desc="Fieldnote Brand Studio offers 3 fixed-price ways to work together: a 1-day Brand Sprint ($2,400), a 6-week Full Identity ($9,800) and a quarterly retainer. See what is included.",
-    schema=["Service", "Organization", "BreadcrumbList"], ld=dict(service="Brand strategy and identity design", area="Australia", crumbs=[("Home", ""), ("Services", "services/")]),
+    schema=["Service", "Organization", "BreadcrumbList"], ld=dict(service="Brand strategy and identity", area="Australia", crumbs=[("Home", ""), ("Services", "services/")]),
     nav=[("Services", "#packages"), ("Process", "#process"), ("Work", "#proof"), ("About", "#proof")], cta=("Book An Intro Call", "#book"),
     blurb="A services page that ends the awkward how-much email. 3 fixed-price packages, what is and is not included, and a process with dates.",
     sections=[
@@ -136,7 +136,7 @@ P12 = dict(
     title="Shop Templates For Coaches | Paper & Pixel Co.",
     desc="Client-ready templates for coaches: welcome packs, session notes, proposals and workbooks. Editable in Canva and Google Docs. Instant download from $19.",
     schema=["Product", "BreadcrumbList"],
-    ld=dict(products=[("Client Welcome Pack", "39"), ("Session Notes System", "29"), ("Coaching Proposal Kit", "49"), ("The Whole Shelf Bundle", "129")], crumbs=[("Home", ""), ("Shop", "shop/")]),
+    ld=dict(products=[("Client Welcome Pack", "39"), ("Session Notes System", "29"), ("Coaching Proposal Kit", "49"), ("The Whole Shelf", "129")], crumbs=[("Home", ""), ("Shop", "shop/")]),
     nav=[("Shop", "#shop"), ("Bundle", "#bundle"), ("Free Sample", "#sample"), ("Help", "#help")], cta=("Shop Templates", "#shop"),
     blurb="A small digital shop that is quick to scan and quick to buy from. Clear product cards, a bundle that makes the maths easy and a free sample.",
     sections=[
@@ -198,8 +198,8 @@ P13 = dict(
     brand=dict(name="Brightline Learning", person="Dr Anika Shah", role="Organisational psychologist and facilitator", domain="brightlinelearning.example", mono="B",
                line="Feedback and conversation skills training for managers.", where="Canberra, Australian Capital Territory"),
     title="Feedback That Lands | Manager Training For Teams | Brightline Learning",
-    desc="Feedback That Lands is a half-day workshop for managers, delivered on site or online for groups of 8 to 24. 4,200 managers trained across 90 organisations. From $6,500.",
-    schema=["Service", "Organization", "BreadcrumbList"], ld=dict(service="Feedback That Lands manager workshop", crumbs=[("Home", ""), ("For Teams", "for-teams/")]),
+    desc="Feedback That Lands is a half-day workshop for managers, delivered on site or online for groups of 8 to 24. 4,200 managers trained in 90 workplaces. From $6,500.",
+    schema=["Service", "Organization", "BreadcrumbList"], ld=dict(service="Feedback That Lands", crumbs=[("Home", ""), ("For Teams", "for-teams/")]),
     nav=[("The Workshop", "#workshop"), ("Agenda", "#agenda"), ("Results", "#results"), ("Formats", "#formats")], cta=("Request A Proposal", "#enquire"),
     blurb="A B2B training page written for the person who has to justify the spend: outcomes, an agenda, evaluation data, formats with prices and an easy enquiry.",
     sections=[

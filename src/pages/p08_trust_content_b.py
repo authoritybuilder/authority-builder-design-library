@@ -193,7 +193,7 @@ P28 = dict(
     brand=dict(name="Calloway Finch", person="Imelda Calloway", role="Workplace mediator", domain="callowayfinch.example", mono="C",
                line="Workplace mediation and conflict coaching.", where="Adelaide, South Australia", contact="hello@callowayfinch.example · (08) 5550 0163"),
     title="Contact Calloway Finch | Workplace Mediation, Adelaide",
-    desc="Contact Calloway Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply from a person within 1 business day.",
+    desc="Contact Imelda Calloway at Calloway Finch for workplace mediation or conflict coaching. Call (08) 5550 0163, email or send a confidential enquiry. A reply within 1 business day.",
     schema=["ContactPage", "Organization", "BreadcrumbList"], ld=dict(crumbs=[("Home", ""), ("Contact", "contact/")]),
     nav=[("Services", "#routes"), ("About", "#routes"), ("Articles", "#routes"), ("Contact", "#form")], cta=("Call (08) 5550 0163", "#form"),
     extra=[dict(file="thank-you.html", label="Open The Thank-You Page", title="Thank You | Calloway Finch", desc="Your enquiry has been received.", path="contact/thank-you/", sections=THANKS)],

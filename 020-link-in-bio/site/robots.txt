@@ -1,0 +1,27 @@
+# robots.txt for Poppy Achebe. It lives at https://poppyachebe.example/robots.txt
+
+# Search and AI-answer crawlers. Allowed, so the site can be found, quoted and linked.
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+Allow: /
+
+# AI training crawlers. This one is your call. Allowed here.
+# To opt out of training, change "Allow: /" to "Disallow: /" in this group only.
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+# Everyone else
+User-agent: *
+Allow: /
+
+Sitemap: https://poppyachebe.example/sitemap.xml

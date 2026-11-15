@@ -1,6 +1,6 @@
 # Adding A Page To The Library
 
-Every sample is generated from a short page definition. You describe the page as data. The build writes the HTML, the notes page, the notes file and the gallery card.
+Every sample is generated from a short page definition. You describe the page as data. The build writes the page, its trust pages, robots.txt and sitemap.xml, runs the audit on them, then writes the notes page, the notes file and the gallery card.
 
 ## The Short Version
 
@@ -9,13 +9,18 @@ Every sample is generated from a short page definition. You describe the page as
 3. Invent a fictional brand. Use a `.example` domain.
 4. List the sections in order. Each section is a pair: the pattern name and its content.
 5. Fill in `why`, `principles`, `borrow` and, if you studied a real site, `study`.
-6. Run the build, the check and the screenshots:
+6. Research that page type. Add a function for it in `src/upgrades.py` that makes each change and returns the finding it came from. Add each new source to `R` with a link you have actually read.
+7. Run the build, the check, the screenshots and the speed test, then the build once more:
 
 ```bash
 python3 src/build.py
 python3 src/check.py
-python3 src/shots.py 029      # only the entry you added
+python3 src/shots.py 029      # only the entry you added: preview, icons and share image
+node src/speed.mjs 029        # Lighthouse, for the audit table
+python3 src/build.py          # picks up the new files and measurements
 ```
+
+The build prints any audit check that still fails. Fix the page until it prints none.
 
 The 3 building-block entries always take the last 3 numbers, so they move down by 1 when you add a page. The build renumbers them for you.
 
@@ -39,7 +44,7 @@ The 3 building-block entries always take the last 3 numbers, so they move down b
 
 ## Section Patterns
 
-Every pattern is shown once on the Section Patterns page (entry 031). The pattern names are the function names in `src/sections.py`: `hero_split`, `hero_center`, `hero_form`, `hero_stage`, `hero_article`, `bento`, `linkbio`, `logos`, `stats`, `quotes`, `metrics`, `doors`, `prose`, `cards`, `steps`, `split`, `compare`, `modules`, `pricing`, `guarantee`, `faq`, `cta`, `feed`, `capture`, `schedule`, `article`, `player`, `products`, `contact`, `quiz`, `thanks` and `bios`.
+Every pattern is shown once on the Section Patterns page (entry 031). The pattern names are the function names in `src/sections.py`: `hero_split`, `hero_center`, `hero_form`, `hero_stage`, `hero_article`, `bento`, `linkbio`, `logos`, `stats`, `quotes`, `metrics`, `doors`, `prose`, `cards`, `steps`, `split`, `compare`, `modules`, `pricing`, `guarantee`, `faq`, `cta`, `feed`, `capture`, `schedule`, `article`, `player`, `products`, `contact`, `quiz`, `thanks`, `bios`, `trust`, `matrix`, `shownotes` and `legal`.
 
 In any text field, `*word*` gives emphasis, `**word**` gives bold and `|` forces a line break.
 
@@ -57,6 +62,8 @@ Add an entry to `C` in `src/canon.py` with its group, name, originator, source a
 - **Borrow the technique, never the copy, the images or the layout.** If a sample still looks or reads like the site that inspired it, keep working.
 - **No fake urgency.** No countdown timers. No invented scarcity. Limits must be the kind that could be real.
 - **Caveat every results claim.** Income and outcome figures carry a results-are-not-typical line.
-- **Everything in the HTML.** No content that needs JavaScript to appear.
+- **Everything in the HTML.** No content that needs JavaScript to appear. The samples run no scripts at all.
+- **Every picture is an illustration with a brief.** Write the `label` as the brief for the real photo. It becomes a code comment and a line in the notes.
+- **Proof beside the button.** Each page puts 1 line of reassurance and 1 piece of proof next to its main action.
 - **Check the rule before you teach it.** Search guidance changes. Read Google's current page before adding a search note.
 - **Australian spelling. No em dashes. Numerals for numbers.**
