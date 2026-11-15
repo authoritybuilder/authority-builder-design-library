@@ -2,7 +2,7 @@
  "001": {
   "dir": "001-coach-homepage",
   "folder": "001-coach-homepage/site/images",
-  "hero": "001-coach-homepage/site/images/hero-1920.webp",
+  "hero": "001-coach-homepage/site/images/hero-2560.webp",
   "person": "Imogen Wren",
   "accent": "#A8431F",
   "photos": [
@@ -82,7 +82,7 @@
  "002": {
   "dir": "002-consultant-authority-site",
   "folder": "002-consultant-authority-site/site/images",
-  "hero": "002-consultant-authority-site/site/images/hero-1920.webp",
+  "hero": "002-consultant-authority-site/site/images/hero-2560.webp",
   "person": "Marcus Halden",
   "accent": "#0F6E66",
   "photos": [
@@ -184,7 +184,7 @@
  "003": {
   "dir": "003-creator-hub",
   "folder": "003-creator-hub/site/images",
-  "hero": "003-creator-hub/site/images/hero-1920.webp",
+  "hero": "003-creator-hub/site/images/hero-2560.webp",
   "person": "Tash Okafor",
   "accent": "#1F3FFF",
   "photos": [
@@ -263,7 +263,7 @@
  "004": {
   "dir": "004-local-service-business",
   "folder": "004-local-service-business/site/images",
-  "hero": "004-local-service-business/site/images/hero-1920.webp",
+  "hero": "004-local-service-business/site/images/hero-2560.webp",
   "person": "Bec Tran",
   "accent": "#FF5A4F",
   "photos": [
@@ -357,7 +357,7 @@
  "005": {
   "dir": "005-about-founder-story",
   "folder": "005-about-founder-story/site/images",
-  "hero": "005-about-founder-story/site/images/hero-1920.webp",
+  "hero": "005-about-founder-story/site/images/hero-2560.webp",
   "person": "Dana Whitlock",
   "accent": "#C8102E",
   "photos": [
@@ -407,7 +407,7 @@
  "006": {
   "dir": "006-speaker-media-kit",
   "folder": "006-speaker-media-kit/site/images",
-  "hero": "006-speaker-media-kit/site/images/hero-1920.webp",
+  "hero": "006-speaker-media-kit/site/images/hero-2560.webp",
   "person": "Jonah Reyes",
   "accent": "#F2B544",
   "photos": [
@@ -491,7 +491,7 @@
  "007": {
   "dir": "007-signature-program-sales-page",
   "folder": "007-signature-program-sales-page/site/images",
-  "hero": "007-signature-program-sales-page/site/images/hero-1920.webp",
+  "hero": "007-signature-program-sales-page/site/images/hero-2560.webp",
   "person": "Leila Hart",
   "accent": "#2F5A40",
   "photos": [
@@ -630,7 +630,7 @@
  "008": {
   "dir": "008-online-course-sales-page",
   "folder": "008-online-course-sales-page/site/images",
-  "hero": "008-online-course-sales-page/site/images/hero-1920.webp",
+  "hero": "008-online-course-sales-page/site/images/hero-2560.webp",
   "person": "Sam Okonkwo",
   "accent": "#FF4A1C",
   "photos": [
@@ -735,7 +735,7 @@
  "009": {
   "dir": "009-membership-community-join",
   "folder": "009-membership-community-join/site/images",
-  "hero": "009-membership-community-join/site/images/hero-1920.webp",
+  "hero": "009-membership-community-join/site/images/hero-2560.webp",
   "person": "Odette Laurent",
   "accent": "#C23B1E",
   "photos": [
@@ -829,7 +829,7 @@
  "010": {
   "dir": "010-mastermind-application",
   "folder": "010-mastermind-application/site/images",
-  "hero": "010-mastermind-application/site/images/hero-1920.webp",
+  "hero": "010-mastermind-application/site/images/hero-2560.webp",
   "person": "Vivienne Ashcombe",
   "accent": "#26201B",
   "photos": [
@@ -901,7 +901,7 @@
  "011": {
   "dir": "011-services-and-pricing",
   "folder": "011-services-and-pricing/site/images",
-  "hero": "011-services-and-pricing/site/images/hero-1920.webp",
+  "hero": "011-services-and-pricing/site/images/hero-2560.webp",
   "person": "Mira Castellanos",
   "accent": "#A8431F",
   "photos": [
@@ -980,7 +980,7 @@
  "012": {
   "dir": "012-digital-product-shop",
   "folder": "012-digital-product-shop/site/images",
-  "hero": "012-digital-product-shop/site/images/hero-1920.webp",
+  "hero": "012-digital-product-shop/site/images/hero-2560.webp",
   "person": "Ruby Nakamura",
   "accent": "#FF5A4F",
   "photos": [
@@ -1074,7 +1074,7 @@
  "013": {
   "dir": "013-corporate-training",
   "folder": "013-corporate-training/site/images",
-  "hero": "013-corporate-training/site/images/hero-1920.webp",
+  "hero": "013-corporate-training/site/images/hero-2560.webp",
   "person": "Dr Anika Shah",
   "accent": "#0F6E66",
   "photos": [
@@ -1179,7 +1179,7 @@
  "014": {
   "dir": "014-lead-magnet-opt-in",
   "folder": "014-lead-magnet-opt-in/site/images",
-  "hero": "014-lead-magnet-opt-in/site/images/hero-1920.webp",
+  "hero": "014-lead-magnet-opt-in/site/images/hero-2560.webp",
   "person": "Nadia Flores",
   "accent": "#2F5A40",
   "photos": [
@@ -1257,7 +1257,7 @@
  "015": {
   "dir": "015-webinar-registration",
   "folder": "015-webinar-registration/site/images",
-  "hero": "015-webinar-registration/site/images/hero-1920.webp",
+  "hero": "015-webinar-registration/site/images/hero-2560.webp",
   "person": "Carmen Ortiz",
   "accent": "#F2B544",
   "photos": [
@@ -1335,7 +1335,7 @@
  "016": {
   "dir": "016-quiz-scorecard-landing",
   "folder": "016-quiz-scorecard-landing/site/images",
-  "hero": "016-quiz-scorecard-landing/site/images/hero-1920.webp",
+  "hero": "016-quiz-scorecard-landing/site/images/hero-2560.webp",
   "person": "Thandi Mokoena",
   "accent": "#1F3FFF",
   "photos": [
@@ -1402,7 +1402,7 @@
  "017": {
   "dir": "017-challenge-page",
   "folder": "017-challenge-page/site/images",
-  "hero": "017-challenge-page/site/images/hero-1920.webp",
+  "hero": "017-challenge-page/site/images/hero-2560.webp",
   "person": "Frankie Doyle",
   "accent": "#C23B1E",
   "photos": [
@@ -1469,7 +1469,7 @@
  "018": {
   "dir": "018-waitlist-launching-soon",
   "folder": "018-waitlist-launching-soon/site/images",
-  "hero": "018-waitlist-launching-soon/site/images/hero-1920.webp",
+  "hero": "018-waitlist-launching-soon/site/images/hero-2560.webp",
   "person": "Celeste Marchetti",
   "accent": "#26201B",
   "photos": [
@@ -1536,7 +1536,7 @@
  "019": {
   "dir": "019-book-a-call",
   "folder": "019-book-a-call/site/images",
-  "hero": "019-book-a-call/site/images/hero-1920.webp",
+  "hero": "019-book-a-call/site/images/hero-2560.webp",
   "person": "Ngozi Okoro",
   "accent": "#FF4A1C",
   "photos": [
@@ -1603,7 +1603,7 @@
  "020": {
   "dir": "020-link-in-bio",
   "folder": "020-link-in-bio/site/images",
-  "hero": "020-link-in-bio/site/images/hero-1920.webp",
+  "hero": "020-link-in-bio/site/images/hero-2560.webp",
   "person": "Poppy Achebe",
   "accent": "#FF5A4F",
   "photos": [
@@ -1670,7 +1670,7 @@
  "021": {
   "dir": "021-case-study",
   "folder": "021-case-study/site/images",
-  "hero": "021-case-study/site/images/hero-1920.webp",
+  "hero": "021-case-study/site/images/hero-2560.webp",
   "person": "Estelle Nguyen",
   "accent": "#C8102E",
   "photos": [
@@ -1743,7 +1743,7 @@
  "022": {
   "dir": "022-wall-of-proof",
   "folder": "022-wall-of-proof/site/images",
-  "hero": "022-wall-of-proof/site/images/hero-1920.webp",
+  "hero": "022-wall-of-proof/site/images/hero-2560.webp",
   "person": "Sage Holloway",
   "accent": "#A8431F",
   "photos": [
@@ -1871,7 +1871,7 @@
  "023": {
   "dir": "023-blog-article",
   "folder": "023-blog-article/site/images",
-  "hero": "023-blog-article/site/images/hero-1920.webp",
+  "hero": "023-blog-article/site/images/hero-2560.webp",
   "person": "Hattie Lindqvist",
   "accent": "#C8102E",
   "photos": [
@@ -1921,7 +1921,7 @@
  "024": {
   "dir": "024-podcast-home",
   "folder": "024-podcast-home/site/images",
-  "hero": "024-podcast-home/site/images/hero-1920.webp",
+  "hero": "024-podcast-home/site/images/hero-2560.webp",
   "person": "Lois Adeyemi",
   "accent": "#F2B544",
   "photos": [
@@ -1999,7 +1999,7 @@
  "025": {
   "dir": "025-newsletter-sign-up-archive",
   "folder": "025-newsletter-sign-up-archive/site/images",
-  "hero": "025-newsletter-sign-up-archive/site/images/hero-1920.webp",
+  "hero": "025-newsletter-sign-up-archive/site/images/hero-2560.webp",
   "person": "Kofi Mensah",
   "accent": "#1F3FFF",
   "photos": [
@@ -2077,7 +2077,7 @@
  "026": {
   "dir": "026-book-launch",
   "folder": "026-book-launch/site/images",
-  "hero": "026-book-launch/site/images/hero-1920.webp",
+  "hero": "026-book-launch/site/images/hero-2560.webp",
   "person": "Harriet Vale",
   "accent": "#26201B",
   "photos": [
@@ -2155,7 +2155,7 @@
  "027": {
   "dir": "027-event-retreat",
   "folder": "027-event-retreat/site/images",
-  "hero": "027-event-retreat/site/images/hero-1920.webp",
+  "hero": "027-event-retreat/site/images/hero-2560.webp",
   "person": "Maren Solberg",
   "accent": "#2F5A40",
   "photos": [
@@ -2266,7 +2266,7 @@
  "028": {
   "dir": "028-contact-and-thank-you",
   "folder": "028-contact-and-thank-you/site/images",
-  "hero": "028-contact-and-thank-you/site/images/hero-1920.webp",
+  "hero": "028-contact-and-thank-you/site/images/hero-2560.webp",
   "person": "Imelda Calloway",
   "accent": "#0F6E66",
   "photos": [
@@ -2299,7 +2299,7 @@
  "031": {
   "dir": "031-section-patterns",
   "folder": "031-section-patterns/images",
-  "hero": "001-coach-homepage/site/images/hero-1920.webp",
+  "hero": "001-coach-homepage/site/images/hero-2560.webp",
   "person": "Imogen Wren",
   "accent": "#A8431F",
   "photos": [

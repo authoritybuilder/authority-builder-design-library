@@ -53,7 +53,7 @@ def launch_md(P, site):
          "The files that ship are painted stand-ins, each labelled with its file name. The pre-launch check tells you which are still in place.", ""]
     names = {"you": "You", "me": "You", "guest": "A client", "face": "A client or reader", "scene": "A place or moment", "video": "A video still"}
     L += ["| File | Size | Who Or What | On | The Photo To Take |", "|---|---|---|---|---|"]
-    L += ["| `hero-1920.webp`, `hero-960.webp` | 1920 × 1200, 960 × 600 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |"]
+    L += ["| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |"]
     for ph in P.get("photos", []):
         who = ph["who"] if ph["kind"] in ("guest", "face") and ph["who"] and "reader" not in ph["who"] else names[ph["kind"]]
         brief = ph["brief"] or ("A square headshot, used with their permission" if ph["kind"] == "face" else "")

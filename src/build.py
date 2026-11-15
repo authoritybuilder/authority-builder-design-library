@@ -268,7 +268,7 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
     body = render_sections(P, secs)
     over = secs[0][0] in BLEED
     classes = " ".join(c for c in ("over o-" + P["art"]["tone"] if over else "", "has-sticky" if st else "") if c)
-    preload = ('<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">\n'
+    preload = ('<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">\n'
                if over else "")
     return f"""<!doctype html>
 <html lang="en-AU" id="top">
@@ -646,7 +646,7 @@ def gallery(pages, blocks):
     nchk = sum(len(P["audit"]) for P in pages)
     npages = sum(P["launch"]["pages"] for P in pages)
     nforms = sum(len(P["launch"]["forms"]) for P in pages)
-    body = f"""<div class="banner home"><picture class="bart"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" fetchpriority="high"></picture><div class="wrap">{shell.top()}
+    body = f"""<div class="banner home"><picture class="bart"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" fetchpriority="high"></picture><div class="wrap">{shell.top()}
 <div class="hero"><p class="kick">Authority Builder™ · Design Library</p>
 <h1>Steal The Structure. <em>Keep Your Own Voice.</em></h1>
 <p class="lead">{len(pages)} complete websites a coach, creator, consultant or business owner actually needs. Every one is ready to deploy: working forms, trust pages, a launch checklist and an original painting. The conversion research and the search audit are built into the code, not attached to it.</p>
@@ -794,7 +794,7 @@ def main():
         if P["n"] in upgrades.EVENTS:
             (site / "event.ics").write_text(trust.ics(upgrades.EVENTS[P["n"]], P), newline="")
         P["photos"] = list(kit.CTX["photos"].values())
-        plan[P["num"]] = dict(dir=P["dir"], folder=f"{P['dir']}/site/images", hero=f"{P['dir']}/site/images/hero-1920.webp", person=P["brand"]["person"],
+        plan[P["num"]] = dict(dir=P["dir"], folder=f"{P['dir']}/site/images", hero=f"{P['dir']}/site/images/hero-2560.webp", person=P["brand"]["person"],
                               accent=THEMES[P["theme"]]["v"]["accent"], photos=P["photos"])
         (site / "netlify.toml").write_text(trust.NETLIFY)
         (site / "robots.txt").write_text(robots_txt(P))
@@ -820,7 +820,7 @@ def main():
         else:
             kit.CTX["photos"] = {}
             html, md = block_patterns(num, pages)
-            plan[num] = dict(dir=d, folder=f"{d}/images", hero=f"{pages[0]['dir']}/site/images/hero-1920.webp", person=pages[0]["brand"]["person"],
+            plan[num] = dict(dir=d, folder=f"{d}/images", hero=f"{pages[0]['dir']}/site/images/hero-2560.webp", person=pages[0]["brand"]["person"],
                              accent=THEMES[pages[0]["theme"]]["v"]["accent"], photos=list(kit.CTX["photos"].values()))
             (ROOT / d / f).write_text(html)
             (ROOT / d / "notes.md").write_text(md)

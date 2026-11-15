@@ -6,7 +6,7 @@ import art
 
 REG, CSS = {}, {}
 CTX = {"person": "", "faces": [], "art": None}  # set per page by the build: the page's painting and whose initials to stack
-SRCSET = 'src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200"'
+SRCSET = 'src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200"'
 
 
 def S(name, css=""):
@@ -209,13 +209,13 @@ body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-web
 p,li{text-wrap:pretty}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--hw);letter-spacing:var(--hls);line-height:var(--hlh);text-transform:var(--htt);text-wrap:balance}
-h1{font-size:clamp(2.55rem,calc(6.7vw*var(--hs)),calc(5.5rem*var(--hs)))}
-h2{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.4rem*var(--hs)))}
+h1{font-size:clamp(2.15rem,calc(4.5vw*var(--hs)),calc(3.9rem*var(--hs)))}
+h2{font-size:clamp(1.75rem,calc(3.3vw*var(--hs)),calc(2.8rem*var(--hs)))}
 h3{font-size:1.28rem;line-height:1.2}
 p{text-wrap:pretty}
 p+p{margin-top:1em}
 .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
-.sec{padding-block:clamp(68px,10vw,144px)}
+.sec{padding-block:clamp(60px,8vw,112px)}
 .alt{background:var(--bg2)}
 .dark{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark));--card:color-mix(in srgb,var(--dark-ink) 7%,var(--dark));--accent-t:var(--dark-accent)}
 .center{text-align:center}.center .lead,.center p{margin-inline:auto}
@@ -226,7 +226,7 @@ p+p{margin-top:1em}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:.82em 1.6em;border-radius:var(--rb);background:var(--accent);color:var(--accent-ink);border:var(--bw) solid var(--accent);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;transition:transform .15s ease}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--ink);border:max(1px,var(--bw)) solid currentColor;box-shadow:none}
-.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}.center .acts{justify-content:center}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.center .acts{justify-content:center}
 .link{font-weight:600;text-underline-offset:.25em}
 .card{background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
 .grid{display:grid;gap:clamp(16px,2.4vw,28px);grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}

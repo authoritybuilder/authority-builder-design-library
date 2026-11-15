@@ -91,7 +91,7 @@ A B2B training page written for the person who has to justify the spend: outcome
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 296 words of body copy on the main page read at about school grade 6.2 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 11 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: 51KB for phones and 172KB for desktops. 8 photo files, the largest 115KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 11 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 47KB for phones to 157KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 82KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
@@ -101,15 +101,15 @@ A B2B training page written for the person who has to justify the spend: outcome
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.5 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 2.1 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 95ms. |
-| Lighthouse scores | **Good** | Performance 99, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 114ms. |
+| Lighthouse scores | **Good** | Performance 98, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
-| A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Request A Proposal”) ends 636px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
+| A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Request A Proposal”) ends 592px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 3 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 10 were measured. |
-| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 21 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.5 to 1 for body text and 5.8 to 1 for large text. On a phone: 6.4 to 1 for body text and 6.5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
+| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 21 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.5 to 1 for body text and 5.6 to 1 for large text. On a phone: 6.4 to 1 for body text and 6.5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
 | Page weight | **Good** | The HTML is 55KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 

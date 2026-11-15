@@ -20,7 +20,7 @@
 <meta name="theme-color" content="#FAF6EE">
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -54,13 +54,13 @@ body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-web
 p,li{text-wrap:pretty}
 a{color:inherit}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--hw);letter-spacing:var(--hls);line-height:var(--hlh);text-transform:var(--htt);text-wrap:balance}
-h1{font-size:clamp(2.55rem,calc(6.7vw*var(--hs)),calc(5.5rem*var(--hs)))}
-h2{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.4rem*var(--hs)))}
+h1{font-size:clamp(2.15rem,calc(4.5vw*var(--hs)),calc(3.9rem*var(--hs)))}
+h2{font-size:clamp(1.75rem,calc(3.3vw*var(--hs)),calc(2.8rem*var(--hs)))}
 h3{font-size:1.28rem;line-height:1.2}
 p{text-wrap:pretty}
 p+p{margin-top:1em}
 .wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
-.sec{padding-block:clamp(68px,10vw,144px)}
+.sec{padding-block:clamp(60px,8vw,112px)}
 .alt{background:var(--bg2)}
 .dark{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark));--card:color-mix(in srgb,var(--dark-ink) 7%,var(--dark));--accent-t:var(--dark-accent)}
 .center{text-align:center}.center .lead,.center p{margin-inline:auto}
@@ -71,7 +71,7 @@ p+p{margin-top:1em}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:.82em 1.6em;border-radius:var(--rb);background:var(--accent);color:var(--accent-ink);border:var(--bw) solid var(--accent);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;transition:transform .15s ease}
 .btn:hover{transform:translateY(-2px)}
 .btn.ghost{background:transparent;color:var(--ink);border:max(1px,var(--bw)) solid currentColor;box-shadow:none}
-.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}.center .acts{justify-content:center}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.center .acts{justify-content:center}
 .link{font-weight:600;text-underline-offset:.25em}
 .card{background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
 .grid{display:grid;gap:clamp(16px,2.4vw,28px);grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
@@ -132,7 +132,7 @@ h1[data-in]{animation-name:slide}
 
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
 .hcenter .wrap{text-align:center}.hcenter h1{max-width:17ch;margin-inline:auto}.hcenter .lead{margin:1.4rem auto 0}
-.hcenter .acts{justify-content:center}.hc-u{margin-top:clamp(36px,5vw,64px);max-width:920px;margin-inline:auto}
+.hcenter .acts{justify-content:center}.hc-u{margin-top:clamp(26px,3.4vw,44px);max-width:680px;margin-inline:auto}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.6rem}
 .chips li{border:max(1px,var(--bw)) solid var(--line);border-radius:999px;padding:.4em 1em;font-size:.86rem;font-weight:500;background:var(--card)}
 
@@ -268,8 +268,10 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .cta.bleed::before{background:linear-gradient(180deg,rgba(6,10,22,.74),rgba(6,10,22,.62))}
 @media(max-width:860px){.hero.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.hero.t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.82))}}
 .t-dark{--ink2:var(--ink)}.t-dark .reassure,.t-dark .crowd,.t-dark .lead{color:var(--ink)}
-.hero.bleed{min-height:min(94svh,880px);display:grid;align-content:center}
-.over .hero.bleed{margin-top:calc(var(--hh)*-1);padding-top:calc(var(--hh) + clamp(36px,5vw,72px))}
+/* a hero is 1 screen at most: on a laptop the next section shows beneath it */
+.hero.bleed{min-height:min(82svh,680px);display:grid;align-content:center}
+.over .hero.bleed{margin-top:calc(var(--hh)*-1);padding-top:calc(var(--hh) + clamp(22px,3vw,44px));padding-bottom:clamp(40px,5vw,68px)}
+.hero .crowd{margin-top:1.2rem}.hero .chips{margin-top:1.2rem}.hero .reassure{margin-top:.9rem}
 .bleed h1 em,.bleed h2 em{background:none!important}.bleed.t-light h1 em,.bleed.t-light h2 em{color:#FFE6BF}
 .t-light h1,.t-light h2,.t-light .lead{text-shadow:0 2px 26px rgba(0,0,0,.3)}
 .t-light .btn.ghost{color:#fff;border-color:rgba(255,255,255,.78);background:rgba(8,12,24,.36);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
@@ -283,21 +285,21 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .t-dark .hstats{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:1.3rem 1.6rem}
 .bleed .crowd .av{border-color:rgba(255,255,255,.85)}
 /* the proof cards sit on the painting as glass, stacked in the lower corner where the picture is quietest */
-.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:grid;align-content:end;justify-items:end;gap:14px;min-height:clamp(220px,30vw,400px)}
+.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:grid;align-content:end;justify-items:end;gap:14px;min-height:clamp(170px,22vw,300px)}
 .hsplit.bleed .float,.hsplit.bleed .float.f2{position:static;max-width:290px;width:100%;border:1px solid rgba(255,255,255,.34);border-radius:18px;box-shadow:0 24px 50px -24px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2)}
 .hsplit.t-light .float{background:rgba(10,14,28,.62);color:#fff}.hsplit.t-light .float b,.hsplit.t-light .float.f2 b{color:#fff}.hsplit.t-light .float.f2 span{color:rgba(255,255,255,.86)}
 .hsplit.t-light .float.f2>.ic{background:rgba(255,255,255,.18);color:#fff}
 .hsplit.t-dark .float{background:rgba(255,255,255,.82);color:var(--ink)}
 /* a portrait in the hero: the photo is framed, an offset line sits behind it, and the proof cards overlap its edges */
-.hsplit.bleed .hs-v.has-pic{display:block;position:relative;min-height:0;width:min(100%,430px);margin-left:auto}
+.hsplit.bleed .hs-v.has-pic{display:block;position:relative;min-height:0;width:min(100%,348px);margin-left:auto}
 .hs-v.has-pic .ph,.hst-v .ph{outline:1px solid rgba(255,255,255,.4);outline-offset:-1px;box-shadow:0 44px 90px -40px rgba(0,0,0,.7)}
 .hs-v.has-pic::before,.hst-v::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:1px solid rgba(255,255,255,.5);border-radius:var(--phr);z-index:-1}
 .t-dark .hs-v.has-pic::before,.t-dark .hst-v::before{border-color:color-mix(in srgb,var(--ink) 34%,transparent)}
 .hsplit.bleed .hs-v.has-pic .float{position:absolute;left:-16%;bottom:8%;width:auto;max-width:236px}
 .hsplit.bleed .hs-v.has-pic .float.f2{left:auto;right:-13%;top:10%;bottom:auto;max-width:214px}
-.hst-v{position:relative;width:min(100%,400px);margin-left:auto}
-@media(max-width:860px){.hsplit.bleed .hs-v.has-pic{width:min(100%,340px);margin:1.6rem 0 0}.hs-v.has-pic .ph{--ar:1/1!important}
-.hsplit.bleed .hs-v.has-pic .float,.hsplit.bleed .hs-v.has-pic .float.f2{position:static;max-width:none;margin-top:.8rem}.hst-v{margin:1.6rem 0 0;width:min(100%,340px)}.hst-v .ph{--ar:1/1!important}}
+.hst-v{position:relative;width:min(100%,318px);margin-left:auto}
+@media(max-width:860px){.hero.bleed{min-height:min(74svh,600px)}.hsplit.bleed .hs-v.has-pic{width:100%;margin:1.3rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.hs-v.has-pic::before{display:none}.hs-v.has-pic .ph{--ar:1/1!important;grid-column:1/-1;width:min(100%,264px)}
+.hsplit.bleed .hs-v.has-pic .float,.hsplit.bleed .hs-v.has-pic .float.f2{position:static;max-width:none;margin-top:0;padding:.8rem .9rem}.hst-v{margin:1.3rem 0 0;width:min(100%,264px)}.hst-v::before{display:none}.hst-v .ph{--ar:1/1!important}}
 @media(max-width:860px){.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:flex;min-height:0;margin-top:.4rem}.hsplit.bleed .float,.hsplit.bleed .float.f2{max-width:none;flex:1 1 150px}}
 .cta.deep picture.art img{object-position:50% 84%}
 .cta.deep{padding-block:clamp(88px,12vw,168px)}
@@ -320,7 +322,7 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 /* buttons and forms */
 .btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
 :where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
-.cta.bleed h2{font-size:clamp(2.2rem,calc(5.2vw*var(--hs)),calc(4.2rem*var(--hs)))}
+.cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
 .stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
 /* the brand name, very large and very quiet, closes every page */
 .ft{overflow:hidden}.ft-mark{font-family:var(--fd);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);line-height:.82;white-space:nowrap;text-align:center;
@@ -362,7 +364,7 @@ h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--
 <div class="hdw"><header class="hd"><a class="logo" href="#top">Leila Hart Coaching</a><a class="btn" href="#join">Join The February Intake</a></header></div>
 <main id="main">
 <!-- Hero: the reader&#x27;s situation, the outcome and the timeframe. 1 button. No menu -->
-<section class="sec hero hcenter bleed t-dark  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200" alt="Painting of soft green hills on a calm morning, with a path winding toward a far town" fetchpriority="high" decoding="async"></picture><div class="wrap"><p class="eyebrow who"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span>A 12-week program for service-business owners</span></p><h1 data-in style="--i:1">Build the business that <em>does not need you at 9pm.</em></h1><p class="lead" data-in style="--i:2">The Steady Founder takes you from 55-hour weeks to a 4-day week you can sustain, in 12 weeks, with a small group of owners doing the same work beside you.</p><ul class="chips"><li>Starts 2 February</li><li>12 weeks</li><li>24 places</li><li>30-day guarantee</li></ul><div class="acts" data-in style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee: do the first 4 weeks, then decide.</span></p><div class="crowd" data-in style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Owners in the last intake freed a median of <b>9 hours a week</b></p></div><div class="hc-u" data-in style="--i:4"><!-- Video brief: a 2-minute welcome from Leila. Add captions and a transcript below the video --><div class="ph photo wide vid" style="--ar:16/9"><img src="images/video-1.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><i class="play" aria-hidden="true"></i><span class="cap">A 2-minute welcome from Leila</span></div></div></div></section>
+<section class="sec hero hcenter bleed t-dark  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="Painting of soft green hills on a calm morning, with a path winding toward a far town" fetchpriority="high" decoding="async"></picture><div class="wrap"><p class="eyebrow who"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span>A 12-week program for service-business owners</span></p><h1 data-in style="--i:1">Build the business that <em>does not need you at 9pm.</em></h1><p class="lead" data-in style="--i:2">The Steady Founder takes you from 55-hour weeks to a 4-day week you can sustain, in 12 weeks, with a small group of owners doing the same work beside you.</p><ul class="chips"><li>Starts 2 February</li><li>12 weeks</li><li>24 places</li><li>30-day guarantee</li></ul><div class="acts" data-in style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>30-day guarantee: do the first 4 weeks, then decide.</span></p><div class="crowd" data-in style="--i:4"><span class="avs" aria-hidden="true"><span class="av"><img src="images/face-1.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-2.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-3.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span><span class="av"><img src="images/face-4.jpg" width="200" height="200" alt="" loading="lazy" decoding="async"></span></span><p>Owners in the last intake freed a median of <b>9 hours a week</b></p></div><div class="hc-u" data-in style="--i:4"><!-- Video brief: a 2-minute welcome from Leila. Add captions and a transcript below the video --><div class="ph photo wide vid" style="--ar:16/9"><img src="images/video-1.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><i class="play" aria-hidden="true"></i><span class="cap">A 2-minute welcome from Leila</span></div></div></div></section>
 <!-- The problem, in the reader&#x27;s own words: name it, show what it costs, then turn -->
 <section class="sec prose alt "><div class="wrap"><header class="sh"><p class="eyebrow">If this sounds familiar</p><h2>You Are Not Bad At Business. <em>You Are Carrying All Of It.</em></h2></header><p>You started this to have more freedom. Instead you answer client messages at dinner, quote jobs on Sunday night and have not taken 2 weeks off since you opened.</p><p>The work is good. The clients are happy. The numbers are fine. And you are tired in a way a long weekend does not fix.</p><ul class="ticks"><li>You are the only one who can quote, sell and fix</li><li>Every new client makes the week heavier, not lighter</li><li>You have tried hiring, and ended up managing instead of resting</li></ul><p class="pull">Another year like this costs more than money. It costs the reason you started.</p><p>It is not a discipline problem. It is a design problem. A business built around 1 person will always need that person. So we redesign it.</p></div></section>
 <!-- The named method: 3 stages that make the promise believable -->
@@ -382,7 +384,7 @@ h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--
 <!-- Objections answered in order of how often they are asked -->
 <section class="sec faq alt " id="faq"><div class="wrap"><header class="sh"><h2>Questions People Ask <em>Before They Join</em></h2></header><details><summary>How much time does it take?</summary><div class="a"><p>About 3 hours a week: a 90-minute call and 90 minutes of work in your own business.</p></div></details><details><summary>What if I miss a call?</summary><div class="a"><p>Every call is recorded and posted within 24 hours. Most members miss 1 or 2.</p></div></details><details><summary>Is this group or 1 to 1?</summary><div class="a"><p>Group, capped at 24, with 2 private sessions included.</p></div></details><details><summary>When does the next intake start after February?</summary><div class="a"><p>August. There are 2 intakes a year.</p></div></details><details><summary>What is the refund policy?</summary><div class="a"><p>A full refund within 30 days if you have attended the calls and completed the first module.</p></div></details></div></section>
 <!-- Closing call to action: the promise, the date and the same single button -->
-<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>12 Weeks From Now, <em>Friday Could Be Yours.</em></h2><p class="lead">24 places. Starts 2 February. Enrolment closes 30 January.</p><div class="acts" style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not sure? Email leila@leilahart.example and I will tell you honestly.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Leila Hart</b>Business coach for service-business owners</span></p></div></section>
+<section class="sec cta bleed t-light deep dark "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></picture><div class="wrap"><h2>12 Weeks From Now, <em>Friday Could Be Yours.</em></h2><p class="lead">24 places. Starts 2 February. Enrolment closes 30 January.</p><div class="acts" style="--i:3"><a class="btn" href="#join">Join The February Intake</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Not sure? Email leila@leilahart.example and I will tell you honestly.</span></p><p class="host"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><span><b>Leila Hart</b>Business coach for service-business owners</span></p></div></section>
 </main>
 <footer class="ft"><div class="wrap"><div class="ft-g">
 <div><a class="logo" href="#top">Leila Hart Coaching</a><p>Coaching for service-business owners who want a calmer, more profitable year.</p></div>

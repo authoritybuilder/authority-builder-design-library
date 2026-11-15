@@ -17,7 +17,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
-| `hero-1920.webp`, `hero-960.webp` | 1920 × 1200, 960 × 600 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
+| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
 | `you-1.jpg` | 900 × 1125 | You | index.html, about.html | on stage, mid-gesture, audience visible in the foreground |
 | `video-1.jpg` | 1280 × 720 | A video still | index.html | 3-minute reel. Host it properly and add a text transcript beneath |
 | `face-1.jpg` | 200 × 200 | Mei L. | index.html | A square headshot, used with their permission |

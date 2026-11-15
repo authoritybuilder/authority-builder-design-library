@@ -68,8 +68,10 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .cta.bleed::before{background:linear-gradient(180deg,rgba(6,10,22,.74),rgba(6,10,22,.62))}
 @media(max-width:860px){.hero.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.hero.t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.82))}}
 .t-dark{--ink2:var(--ink)}.t-dark .reassure,.t-dark .crowd,.t-dark .lead{color:var(--ink)}
-.hero.bleed{min-height:min(94svh,880px);display:grid;align-content:center}
-.over .hero.bleed{margin-top:calc(var(--hh)*-1);padding-top:calc(var(--hh) + clamp(36px,5vw,72px))}
+/* a hero is 1 screen at most: on a laptop the next section shows beneath it */
+.hero.bleed{min-height:min(82svh,680px);display:grid;align-content:center}
+.over .hero.bleed{margin-top:calc(var(--hh)*-1);padding-top:calc(var(--hh) + clamp(22px,3vw,44px));padding-bottom:clamp(40px,5vw,68px)}
+.hero .crowd{margin-top:1.2rem}.hero .chips{margin-top:1.2rem}.hero .reassure{margin-top:.9rem}
 .bleed h1 em,.bleed h2 em{background:none!important}.bleed.t-light h1 em,.bleed.t-light h2 em{color:#FFE6BF}
 .t-light h1,.t-light h2,.t-light .lead{text-shadow:0 2px 26px rgba(0,0,0,.3)}
 .t-light .btn.ghost{color:#fff;border-color:rgba(255,255,255,.78);background:rgba(8,12,24,.36);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
@@ -83,21 +85,21 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .t-dark .hstats{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:1.3rem 1.6rem}
 .bleed .crowd .av{border-color:rgba(255,255,255,.85)}
 /* the proof cards sit on the painting as glass, stacked in the lower corner where the picture is quietest */
-.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:grid;align-content:end;justify-items:end;gap:14px;min-height:clamp(220px,30vw,400px)}
+.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:grid;align-content:end;justify-items:end;gap:14px;min-height:clamp(170px,22vw,300px)}
 .hsplit.bleed .float,.hsplit.bleed .float.f2{position:static;max-width:290px;width:100%;border:1px solid rgba(255,255,255,.34);border-radius:18px;box-shadow:0 24px 50px -24px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2)}
 .hsplit.t-light .float{background:rgba(10,14,28,.62);color:#fff}.hsplit.t-light .float b,.hsplit.t-light .float.f2 b{color:#fff}.hsplit.t-light .float.f2 span{color:rgba(255,255,255,.86)}
 .hsplit.t-light .float.f2>.ic{background:rgba(255,255,255,.18);color:#fff}
 .hsplit.t-dark .float{background:rgba(255,255,255,.82);color:var(--ink)}
 /* a portrait in the hero: the photo is framed, an offset line sits behind it, and the proof cards overlap its edges */
-.hsplit.bleed .hs-v.has-pic{display:block;position:relative;min-height:0;width:min(100%,430px);margin-left:auto}
+.hsplit.bleed .hs-v.has-pic{display:block;position:relative;min-height:0;width:min(100%,348px);margin-left:auto}
 .hs-v.has-pic .ph,.hst-v .ph{outline:1px solid rgba(255,255,255,.4);outline-offset:-1px;box-shadow:0 44px 90px -40px rgba(0,0,0,.7)}
 .hs-v.has-pic::before,.hst-v::before{content:"";position:absolute;inset:20px -20px -20px 20px;border:1px solid rgba(255,255,255,.5);border-radius:var(--phr);z-index:-1}
 .t-dark .hs-v.has-pic::before,.t-dark .hst-v::before{border-color:color-mix(in srgb,var(--ink) 34%,transparent)}
 .hsplit.bleed .hs-v.has-pic .float{position:absolute;left:-16%;bottom:8%;width:auto;max-width:236px}
 .hsplit.bleed .hs-v.has-pic .float.f2{left:auto;right:-13%;top:10%;bottom:auto;max-width:214px}
-.hst-v{position:relative;width:min(100%,400px);margin-left:auto}
-@media(max-width:860px){.hsplit.bleed .hs-v.has-pic{width:min(100%,340px);margin:1.6rem 0 0}.hs-v.has-pic .ph{--ar:1/1!important}
-.hsplit.bleed .hs-v.has-pic .float,.hsplit.bleed .hs-v.has-pic .float.f2{position:static;max-width:none;margin-top:.8rem}.hst-v{margin:1.6rem 0 0;width:min(100%,340px)}.hst-v .ph{--ar:1/1!important}}
+.hst-v{position:relative;width:min(100%,318px);margin-left:auto}
+@media(max-width:860px){.hero.bleed{min-height:min(74svh,600px)}.hsplit.bleed .hs-v.has-pic{width:100%;margin:1.3rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.hs-v.has-pic::before{display:none}.hs-v.has-pic .ph{--ar:1/1!important;grid-column:1/-1;width:min(100%,264px)}
+.hsplit.bleed .hs-v.has-pic .float,.hsplit.bleed .hs-v.has-pic .float.f2{position:static;max-width:none;margin-top:0;padding:.8rem .9rem}.hst-v{margin:1.3rem 0 0;width:min(100%,264px)}.hst-v::before{display:none}.hst-v .ph{--ar:1/1!important}}
 @media(max-width:860px){.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:flex;min-height:0;margin-top:.4rem}.hsplit.bleed .float,.hsplit.bleed .float.f2{max-width:none;flex:1 1 150px}}
 .cta.deep picture.art img{object-position:50% 84%}
 .cta.deep{padding-block:clamp(88px,12vw,168px)}
@@ -120,7 +122,7 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 /* buttons and forms */
 .btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
 :where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
-.cta.bleed h2{font-size:clamp(2.2rem,calc(5.2vw*var(--hs)),calc(4.2rem*var(--hs)))}
+.cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
 .stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
 /* the brand name, very large and very quiet, closes every page */
 .ft{overflow:hidden}.ft-mark{font-family:var(--fd);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);line-height:.82;white-space:nowrap;text-align:center;

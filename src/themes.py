@@ -45,7 +45,7 @@ THEMES = {
            "accent": "#FF4A1C", "accent-ink": "#0D0D0D", "accent-t": "#B92F0A", "accent2": "#0D0D0D",
            "dark": "#0D0D0D", "dark-ink": "#F2EFE8", "dark-accent": "#FF6A3D", "ph1": "#D8D2C4", "ph2": "#A9A292",
            "fd": "'Archivo','Arial Narrow',sans-serif", "fb": "'Inter',system-ui,sans-serif", "fa": "'Inter',system-ui,sans-serif",
-           "r": "0px", "rb": "0px", "hw": "800", "hls": "-0.03em", "hlh": ".92", "htt": "uppercase", "hs": "1.14", "bw": "2px",
+           "r": "0px", "rb": "0px", "hw": "800", "hls": "-0.03em", "hlh": ".94", "htt": "uppercase", "hs": "1", "bw": "2px",
            "shadow": "6px 6px 0 var(--ink)", "phr": "0px"},
         css="h1,h2,h3,.logo{font-stretch:80%}h1 em,h2 em{font-style:normal;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}"
             ".btn{box-shadow:4px 4px 0 var(--ink);text-transform:uppercase;font-weight:700;letter-spacing:.04em}.dark .btn{box-shadow:4px 4px 0 var(--dark-ink)}"

@@ -276,48 +276,76 @@ def beams(img, xs, colour, strength=0.5, top=-0.05, y1=0.86, spread=0.11):
 
 # ---------- the painting pass ----------
 
-def paint(src, seed=0, sizes=(44, 22, 10, 5), relief=0.028):
-    """Paint the composed scene with brush strokes, big to small. Fine brushes only go where the picture still differs from the scene."""
+MW, MH = 2560, 1600   # the master. Every size that ships is cut down from it, which keeps the brushwork crisp
+
+
+def brush(src, seed=0, sizes=(56, 28, 13, 6, 3), relief=0.011, keep=0.42):
+    """Paint a picture of any size. Big brushes block in the colour, then smaller ones return only where the picture still
+    differs from the scene, each stroke following the edge beneath it. A last step brings back the true outlines, so figures
+    and trees stay clean instead of ragged, and a light ridge is left where the strokes overlap."""
     r = np.random.default_rng(seed)
     src = np.ascontiguousarray(np.clip(src, 0, 1), np.float32)
-    canvas = cv2.GaussianBlur(src, (0, 0), sizes[0] * 0.9)
-    height = np.zeros((H, W), np.float32)
+    h, w = src.shape[:2]
+    canvas = cv2.GaussianBlur(src, (0, 0), sizes[0] * 0.8)
+    height = np.zeros((h, w), np.float32)
     gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
-    flow = noise((H, W), 300, 3, seed + 11) * 6.28
+    flow = noise((h, w), max(60, w // 6), 3, seed + 11) * 6.28
     for i, rad in enumerate(sizes):
-        ref = cv2.GaussianBlur(src, (0, 0), max(1.0, rad * 0.55))
-        g = cv2.GaussianBlur(gray, (0, 0), max(1.0, rad * 0.8))
+        ref = cv2.GaussianBlur(src, (0, 0), max(0.6, rad * 0.45))
+        g = cv2.GaussianBlur(gray, (0, 0), max(1.0, rad * 0.7))
         gx, gy = cv2.Sobel(g, cv2.CV_32F, 1, 0, ksize=3), cv2.Sobel(g, cv2.CV_32F, 0, 1, ksize=3)
-        mag = np.sqrt(gx * gx + gy * gy)
         err = np.abs(canvas - ref).sum(2)
-        step = rad * (0.95 if i < 2 else 0.8)
-        ys = np.arange(step / 2, H, step)
-        xs = np.arange(step / 2, W, step)
-        pts = [(x + r.uniform(-step, step) * .5, y + r.uniform(-step, step) * .5) for y in ys for x in xs]
-        r.shuffle(pts)
-        limit = 0.0 if i == 0 else 0.035 + 0.018 * i
-        for x, y in pts:
-            xi, yi = int(min(max(x, 0), W - 1)), int(min(max(y, 0), H - 1))
-            if err[yi, xi] < limit:
-                continue
-            ang = (np.arctan2(gy[yi, xi], gx[yi, xi]) + 1.5708) if mag[yi, xi] > 0.004 else (flow[yi, xi] * (0.25 if yi < H * 0.5 else 1))
-            ang += r.normal(0, 0.22)
-            ln = rad * r.uniform(1.6, 3.6)
-            dx, dy = np.cos(ang) * ln / 2, np.sin(ang) * ln / 2
-            col = np.clip(ref[yi, xi] * (1 + r.normal(0, 0.035, 3)), 0, 1)
-            p0, p1 = (int(x - dx), int(y - dy)), (int(x + dx), int(y + dy))
-            thick = max(2, int(rad * r.uniform(0.8, 1.25)))
-            cv2.line(canvas, p0, p1, col.tolist(), thick, cv2.LINE_AA)
-            cv2.line(height, p0, p1, float(r.uniform(0, 1)), thick, cv2.LINE_AA)
-    # brush relief: light catching the ridges of the paint
+        step = rad * (0.9 if i == 0 else 0.75)
+        ys, xs = np.mgrid[step / 2:h:step, step / 2:w:step]
+        xs = (xs + r.uniform(-0.5, 0.5, xs.shape) * step).ravel()
+        ys = (ys + r.uniform(-0.5, 0.5, ys.shape) * step).ravel()
+        xi, yi = np.clip(xs, 0, w - 1).astype(int), np.clip(ys, 0, h - 1).astype(int)
+        pick = np.nonzero(err[yi, xi] >= (0.0 if i == 0 else 0.026 + 0.013 * i))[0]
+        r.shuffle(pick)
+        n = len(xs)
+        edge = np.hypot(gx[yi, xi], gy[yi, xi]) > 0.004
+        ang = np.where(edge, np.arctan2(gy[yi, xi], gx[yi, xi]) + 1.5708, flow[yi, xi]) + r.normal(0, 0.2, n)
+        half = rad * r.uniform(1.6, 3.2, n) / 2
+        dx, dy = np.cos(ang) * half, np.sin(ang) * half
+        x0, y0, x1, y1 = (xs - dx).astype(int), (ys - dy).astype(int), (xs + dx).astype(int), (ys + dy).astype(int)
+        thick = np.maximum(2, rad * r.uniform(0.8, 1.2, n)).astype(int)
+        cols = np.clip(ref[yi, xi] * (1 + r.normal(0, 0.022, (n, 3))), 0, 1)
+        lift = r.uniform(0, 1, n)
+        for j in pick:
+            a, b = (int(x0[j]), int(y0[j])), (int(x1[j]), int(y1[j]))
+            cv2.line(canvas, a, b, cols[j].tolist(), int(thick[j]), cv2.LINE_AA)
+            cv2.line(height, a, b, float(lift[j]), int(thick[j]), cv2.LINE_AA)
+    fine = cv2.GaussianBlur(gray, (0, 0), 1.0)
+    mag = np.hypot(cv2.Sobel(fine, cv2.CV_32F, 1, 0, ksize=3), cv2.Sobel(fine, cv2.CV_32F, 0, 1, ksize=3))
+    m = np.clip((cv2.GaussianBlur(mag, (0, 0), 1.4) - 0.03) / 0.14, 0, 1)[..., None] * keep
+    canvas = canvas * (1 - m) + cv2.GaussianBlur(src, (0, 0), 0.8) * m
     hb = cv2.GaussianBlur(height, (0, 0), 1.2)
-    emboss = (hb - np.roll(np.roll(hb, 2, 0), 2, 1))[..., None]
-    canvas = np.clip(canvas * (1 + emboss * relief * 6), 0, 1)
-    grain = (noise((H, W), 3, 2, seed + 5)[..., None] - 0.5) * 0.035
-    return np.clip(canvas + grain, 0, 1)
+    canvas = np.clip(canvas * (1 + (hb - np.roll(np.roll(hb, 2, 0), 2, 1))[..., None] * relief * 6), 0, 1)
+    return canvas
 
 
-# ---------- scenes ----------
+def grade(img, seed=0):
+    """The finish a print would get: light blooms out of the brightest parts, the mid-tones gain a little contrast and colour,
+    shadows lean cool and highlights warm, the corners fall away slightly, and a fine grain sits over everything."""
+    img = np.clip(img, 0, 1).astype(np.float32)
+    h, w = img.shape[:2]
+    lum = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+    glow = cv2.GaussianBlur(np.clip((lum - 0.7) / 0.3, 0, 1)[..., None] * img, (0, 0), w / 44)
+    img = 1 - (1 - img) * (1 - glow * 0.3)
+    img = img - 0.16 * np.sin(img * 6.2832) / 6.2832
+    lum = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)[..., None]
+    img = lum + (img - lum) * 1.1
+    img = img + (lum - 0.5) * np.array([0.014, 0.004, -0.016], np.float32)
+    yy, xx = np.mgrid[0:h, 0:w].astype(np.float32)
+    img = img * (1 - 0.11 * (((xx - w / 2) / w) ** 2 + ((yy - h / 2) / h) ** 2) * 2)[..., None]
+    return np.clip(img + (noise((h, w), 2, 1, seed + 5)[..., None] - 0.5) * 0.02, 0, 1)
+
+
+def paint(src, seed=0, sizes=None, relief=None):
+    """A scene, composed at 1920 by 1200, is enlarged to the master size and painted there."""
+    up = cv2.resize(np.clip(src, 0, 1).astype(np.float32), (MW, MH), interpolation=cv2.INTER_CUBIC)
+    return grade(brush(up, seed), seed)
+
 
 XS = np.arange(W, dtype=np.float32)
 YY = np.mgrid[0:H, 0:W][0].astype(np.float32)
@@ -761,11 +789,12 @@ ART = {
 
 
 def save(img, folder, name="hero"):
+    """Four sizes, each cut down from the master and lightly sharpened, so a phone, a laptop and a large screen each get a crisp file."""
     folder.mkdir(parents=True, exist_ok=True)
-    bgr = cv2.cvtColor((np.clip(img, 0, 1) * 255).astype(np.uint8), cv2.COLOR_RGB2BGR)
-    for w, q in ((1920, 80), (960, 78)):
-        out = bgr if w == W else cv2.resize(bgr, (w, int(H * w / W)), interpolation=cv2.INTER_AREA)
-        cv2.imwrite(str(folder / f"{name}-{w}.webp"), out, [cv2.IMWRITE_WEBP_QUALITY, q])
+    for w, q in ((2560, 80), (1920, 84), (1280, 82), (960, 80)):
+        out = img if w == img.shape[1] else cv2.resize(img, (w, int(img.shape[0] * w / img.shape[1])), interpolation=cv2.INTER_AREA)
+        out = np.clip(out + (out - cv2.GaussianBlur(out, (0, 0), 0.9)) * 0.35, 0, 1)
+        cv2.imwrite(str(folder / f"{name}-{w}.webp"), cv2.cvtColor((out * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_WEBP_QUALITY, q])
 
 
 def main():

@@ -25,7 +25,7 @@ from PIL import Image, ImageDraw, ImageFont
 SRC = pathlib.Path(__file__).parent
 ROOT = SRC.parent
 sys.path.insert(0, str(SRC))
-from paint import noise, rgb  # noqa: E402
+from paint import brush, rgb  # noqa: E402
 
 FONTS = ["/usr/share/fonts/opentype/inter/Inter-SemiBold.otf", "/usr/share/fonts/opentype/inter/Inter-Medium.otf"]
 STYLES = ["crop", "bob", "long", "bun", "curly", "crop", "long", "bob"]
@@ -33,44 +33,6 @@ STYLES = ["crop", "bob", "long", "bun", "curly", "crop", "long", "bob"]
 
 def seed_of(text):
     return int(hashlib.sha256(text.encode()).hexdigest()[:8], 16)
-
-
-def strokes(src, seed=0, sizes=(22, 11, 5), relief=0.03):
-    """The same brushwork as the hero paintings, for a picture of any size: big strokes first, fine strokes only where they are needed."""
-    r = np.random.default_rng(seed)
-    src = np.ascontiguousarray(np.clip(src, 0, 1), np.float32)
-    H, W = src.shape[:2]
-    canvas = cv2.GaussianBlur(src, (0, 0), sizes[0] * 0.9)
-    height = np.zeros((H, W), np.float32)
-    gray = cv2.cvtColor(src, cv2.COLOR_RGB2GRAY)
-    flow = noise((H, W), max(40, W // 6), 3, seed + 11) * 6.28
-    for i, rad in enumerate(sizes):
-        ref = cv2.GaussianBlur(src, (0, 0), max(0.8, rad * 0.5))
-        g = cv2.GaussianBlur(gray, (0, 0), max(1.0, rad * 0.8))
-        gx, gy = cv2.Sobel(g, cv2.CV_32F, 1, 0, ksize=3), cv2.Sobel(g, cv2.CV_32F, 0, 1, ksize=3)
-        mag = np.sqrt(gx * gx + gy * gy)
-        err = np.abs(canvas - ref).sum(2)
-        step = rad * (0.95 if i < 1 else 0.8)
-        pts = [(x + r.uniform(-step, step) * .5, y + r.uniform(-step, step) * .5) for y in np.arange(step / 2, H, step) for x in np.arange(step / 2, W, step)]
-        r.shuffle(pts)
-        limit = 0.0 if i == 0 else 0.03 + 0.016 * i
-        for x, y in pts:
-            xi, yi = int(min(max(x, 0), W - 1)), int(min(max(y, 0), H - 1))
-            if err[yi, xi] < limit:
-                continue
-            ang = (np.arctan2(gy[yi, xi], gx[yi, xi]) + 1.5708) if mag[yi, xi] > 0.004 else flow[yi, xi]
-            ang += r.normal(0, 0.22)
-            ln = rad * r.uniform(1.6, 3.4)
-            dx, dy = np.cos(ang) * ln / 2, np.sin(ang) * ln / 2
-            col = np.clip(ref[yi, xi] * (1 + r.normal(0, 0.03, 3)), 0, 1)
-            p0, p1 = (int(x - dx), int(y - dy)), (int(x + dx), int(y + dy))
-            thick = max(2, int(rad * r.uniform(0.8, 1.2)))
-            cv2.line(canvas, p0, p1, col.tolist(), thick, cv2.LINE_AA)
-            cv2.line(height, p0, p1, float(r.uniform(0, 1)), thick, cv2.LINE_AA)
-    hb = cv2.GaussianBlur(height, (0, 0), 1.0)
-    emboss = (hb - np.roll(np.roll(hb, 2, 0), 2, 1))[..., None]
-    canvas = np.clip(canvas * (1 + emboss * relief * 6), 0, 1)
-    return np.clip(canvas + (noise((H, W), 3, 2, seed + 5)[..., None] - 0.5) * 0.03, 0, 1)
 
 
 def crop_of(hero, cx, cy, zoom, w, h):
@@ -167,7 +129,7 @@ def portrait(hero, accent, who, pose, w, h, close=False):
     rim = cv2.GaussianBlur(np.clip(whole - inner, 0, 1), (0, 0), w / 300)
     lit = np.clip(0.42 + side * (xx - w / 2) / (w * 0.45), 0, 1) * np.clip(1.3 - yy / h, 0.2, 1)
     img = np.clip(img + (light * 1.08 - img) * (rim * lit)[..., None] * 0.85, 0, 1)
-    return strokes(img, pose, sizes=(max(10, w // 44), max(5, w // 90), max(3, w // 190)))
+    return brush(img, pose, sizes=(max(12, w // 40), max(6, w // 80), max(4, w // 170), max(2, w // 340)), relief=0.009)
 
 
 def label(img, lines, y=0.66):
@@ -211,10 +173,10 @@ def main():
             if kind in ("you", "me", "guest", "face"):
                 who = seed_of(site["dir"] + (site["person"] if kind in ("you", "me") else p["who"]))
                 small = w <= 320
-                img = portrait(hero, site["accent"], who, seed_of(site["dir"] + name), w * 2 if small else w, h * 2 if small else h, close=small or p.get("close", False))
-                if small:
-                    img = cv2.resize(img, (w, h), interpolation=cv2.INTER_AREA)
-                else:
+                k = 3 if small else 1.5                       # painted larger, then cut down, so the brushwork is fine and the edges clean
+                img = portrait(hero, site["accent"], who, seed_of(site["dir"] + name), int(w * k), int(h * k), close=small or p.get("close", False))
+                img = cv2.resize(img, (w, h), interpolation=cv2.INTER_AREA)
+                if not small:
                     img = label(img, ["YOUR PHOTO", f"{name} · {w} × {h}"])
             else:
                 cx, cy, zoom = p["crop"]

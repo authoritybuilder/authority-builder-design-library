@@ -83,7 +83,7 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 | The content is in the HTML, not drawn by JavaScript | **Good** | 184 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: 59KB for phones and 203KB for desktops. 5 photo files, the largest 119KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 4 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 59KB for phones to 205KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 68KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
@@ -93,10 +93,10 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 2.0 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 0.9 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 0ms. |
-| Lighthouse scores | **Good** | Performance 99, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 82ms. |
+| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 663px down. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 50px tall. 6 were measured. |

@@ -79,7 +79,7 @@ def under(d):
 @S("hero_split", """
 .hs-g{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,76px);align-items:center}
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
-.hero .lead{margin-top:1.4rem}.hero .ticks{margin-top:1.2rem}
+.hero .lead{margin-top:1.1rem}.hero .ticks{margin-top:1.2rem}
 .hs-v{position:relative;min-height:clamp(240px,34vw,440px)}.hs-v.has-card{min-height:0}
 .float{position:absolute;left:6%;bottom:12%;max-width:230px;padding:16px 18px;font-size:.9rem;line-height:1.4;z-index:3}.has-card .float{left:-8%;bottom:-6%}
 .float b{display:block;font-family:var(--fd);font-weight:var(--hw);font-size:1.9rem;line-height:1;letter-spacing:var(--hls);color:var(--accent-t)}
@@ -103,7 +103,7 @@ def hero_split(d, P):
 @S("hero_center", """
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
 .hcenter .wrap{text-align:center}.hcenter h1{max-width:17ch;margin-inline:auto}.hcenter .lead{margin:1.4rem auto 0}
-.hcenter .acts{justify-content:center}.hc-u{margin-top:clamp(36px,5vw,64px);max-width:920px;margin-inline:auto}
+.hcenter .acts{justify-content:center}.hc-u{margin-top:clamp(26px,3.4vw,44px);max-width:680px;margin-inline:auto}
 .chips{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;margin-top:1.6rem}
 .chips li{border:max(1px,var(--bw)) solid var(--line);border-radius:999px;padding:.4em 1em;font-size:.86rem;font-weight:500;background:var(--card)}
 """)
@@ -118,7 +118,7 @@ def hero_center(d, P):
 @S("hero_form", """
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
 .hf-g{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,72px);align-items:center}
-.hero .lead{margin-top:1.4rem}.hero .ticks{margin-top:1.4rem}
+.hero .lead{margin-top:1.1rem}.hero .ticks{margin-top:1.4rem}
 .meta{display:flex;flex-wrap:wrap;gap:.6rem 2rem;margin-top:1.6rem;padding-top:1.2rem;border-top:max(1px,var(--bw)) solid var(--line)}
 .meta dt{font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}.meta dd{font-weight:700}
 .hf-v{display:grid;gap:1.4rem}.hf-v .bookwrap{padding:clamp(12px,2vw,24px)}.hf-v .book{width:min(210px,56%)}
@@ -143,10 +143,10 @@ def hero_form(d, P):
 
 @S("hero_stage", """
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
-.hstage h1{font-size:clamp(3rem,calc(8.6vw*var(--hs)),calc(6.6rem*var(--hs)));max-width:13ch}
+.hstage h1{font-size:clamp(2.4rem,calc(5vw*var(--hs)),calc(4rem*var(--hs)));max-width:16ch}
 .hstage .lead{margin-top:1.6rem}
 .hst-g{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(28px,5vw,64px);align-items:end}
-.hstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(40px,6vw,72px);padding-top:1.6rem;border-top:max(1px,var(--bw)) solid var(--line)}
+.hstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(26px,3.6vw,44px);padding-top:1.3rem;border-top:max(1px,var(--bw)) solid var(--line)}
 .hstats b{display:block;font-family:var(--fd);font-weight:var(--hw);font-size:clamp(2rem,4vw,3.1rem);line-height:1;color:var(--accent-t);letter-spacing:var(--hls)}
 .hstats span{font-size:.9rem;color:var(--ink2)}
 @media(max-width:860px){.hst-g{grid-template-columns:1fr}.hst-g>div:last-child{max-width:420px}}
@@ -165,7 +165,7 @@ def hero_stage(d, P):
 
 @S("hero_article", """
 .hart{padding-block:clamp(36px,5vw,72px) 0}
-.hart .wrap{max-width:900px}.hart h1{font-size:clamp(2.2rem,calc(5vw*var(--hs)),calc(3.9rem*var(--hs)))}
+.hart .wrap{max-width:900px}.hart h1{font-size:clamp(2rem,calc(4vw*var(--hs)),calc(3.2rem*var(--hs)))}
 .hart .lead{margin-top:1.3rem;max-width:none}
 .byline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.2rem;margin-top:1.8rem;padding-block:1rem;border-block:max(1px,var(--bw)) solid var(--line);font-size:.9rem}
 .byline b{font-weight:700}
@@ -197,7 +197,7 @@ def hero_article(d, P):
 .tile.w6{grid-column:span 6}.tile.w4{grid-column:span 4}.tile.w3{grid-column:span 3}.tile.w2{grid-column:span 2}
 .tile.t1{background:var(--t1,var(--bg2))}.tile.t2{background:var(--t2,var(--bg2))}.tile.t3{background:var(--t3,var(--bg2))}
 .tile.dk{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--accent-t:var(--dark-accent);--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark))}
-.tile h1{font-size:clamp(2.2rem,5.2vw,4.2rem)}.tile .big{font-family:var(--fd);font-weight:var(--hw);font-size:clamp(2.6rem,5vw,4rem);line-height:.95;letter-spacing:var(--hls)}
+.tile h1{font-size:clamp(2rem,4.2vw,3.3rem)}.tile .big{font-family:var(--fd);font-weight:var(--hw);font-size:clamp(2.6rem,5vw,4rem);line-height:.95;letter-spacing:var(--hls)}
 .tile .eyebrow{margin-bottom:0}.tile .btn{align-self:flex-start;margin-top:auto}.tile .ph{flex:1;min-height:220px;aspect-ratio:auto;margin:calc(clamp(20px,2.6vw,32px)*-1);border-radius:0}
 .tile:has(>.ph){overflow:hidden}
 .tile li{display:flex;justify-content:space-between;gap:1rem;padding:.65rem 0;border-top:1px solid var(--line);font-size:.96rem}.tile li span{color:var(--ink2);white-space:nowrap;font-size:.85rem}

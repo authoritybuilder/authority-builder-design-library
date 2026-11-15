@@ -17,7 +17,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
-| `hero-1920.webp`, `hero-960.webp` | 1920 × 1200, 960 × 600 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
+| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 | `face-1.jpg` | 200 × 200 | Tara L. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Ben R. | index.html | A square headshot, used with their permission |

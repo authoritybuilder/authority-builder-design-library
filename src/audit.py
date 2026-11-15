@@ -228,8 +228,8 @@ def run(P, site, speed=None, legible=None):
     gone = [p["file"] for p in photos if not (site / "images" / p["file"]).exists()]
     heavy = max([(site / "images" / p["file"]).stat().st_size // 1024 for p in photos if p["file"] not in gone] or [0])
     add(C, "Images are sized, described and sent in a phone size", GOOD if imgs and sized and have and not gone else "Fix",
-        (f"{len(imgs)} image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 2 sizes: {small.stat().st_size // 1024}KB for phones and "
-         f"{big.stat().st_size // 1024}KB for desktops. {len(photos)} photo files, the largest {heavy}KB. Only the painting loads early. Everything else waits until it is near the screen.")
+        (f"{len(imgs)} image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from {small.stat().st_size // 1024}KB for phones to "
+         f"{big.stat().st_size // 1024}KB for a laptop and a 2560px file for large screens, and the browser picks 1. {len(photos)} photo files, the largest {heavy}KB. Only the painting loads early. Everything else waits until it is near the screen.")
         if have and not gone else ("Missing: " + ", ".join(gone or ["images/hero-*.webp"]) + ". Run src/paint.py and src/people.py."))
     mine = sum(p["kind"] in ("you", "me") for p in photos)
     add(C, "A real person is on the page", YOURS,
