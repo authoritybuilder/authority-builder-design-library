@@ -23,6 +23,7 @@ import art  # noqa: E402
 import audit  # noqa: E402
 import canon  # noqa: E402
 import kit  # noqa: E402
+import launch  # noqa: E402
 import sections  # noqa: E402,F401  (registers the section renderers)
 import shell  # noqa: E402
 import trust  # noqa: E402
@@ -121,16 +122,13 @@ def check_contrast():
     return bad
 
 
-SAME = ["https://www.linkedin.com/in/YOUR-HANDLE", "https://www.instagram.com/YOUR-HANDLE", "https://www.youtube.com/@YOUR-HANDLE"]
-
-
 def site_url(P):
     return f'https://{P["brand"]["domain"]}/'
 
 
 def org(P):
     b, url = P["brand"], site_url(P)
-    o = {"@type": "Organization", "@id": url + "#org", "name": b["name"], "url": url, "logo": url + "icon-512.png", "sameAs": SAME}
+    o = {"@type": "Organization", "@id": url + "#org", "name": b["name"], "url": url, "logo": url + "icon-512.png"}
     if b.get("person"):
         o["founder"] = {"@id": url + "#person"}
     return o
@@ -139,7 +137,7 @@ def org(P):
 def person(P):
     b, url = P["brand"], site_url(P)
     return {"@type": "Person", "@id": url + "#person", "name": b["person"], "jobTitle": b["role"], "url": url + P["about_file"],
-            "worksFor": {"@id": url + "#org"}, "sameAs": SAME}
+            "worksFor": {"@id": url + "#org"}}
 
 
 def jsonld(P, kind="main", page=None):
@@ -154,7 +152,7 @@ def jsonld(P, kind="main", page=None):
     elif kind == "contact":
         g = [{"@type": "ContactPage", "name": f'Contact {b["name"]}', "url": page}, org(P)]
     elif kind != "main":
-        g = [{"@type": "WebPage", "name": kind, "url": page, "isPartOf": {"@id": url + "#site"}}]
+        g = [{"@type": "WebPage", "url": page, "isPartOf": {"@id": url + "#site"}}]
     for t in (P["schema"] if kind == "main" else []):
         if t == "WebSite":
             o = {"@type": "WebSite", "@id": url + "#site", "name": b["name"], "url": url}
@@ -220,17 +218,24 @@ def css_for(P, secs):
     for name, _ in secs:
         if name not in used:
             used.append(name)
-    return (vars_ + BASE_CSS + "".join(CSS[n] for n in used) + POLISH_CSS + "\n" + t["css"] + "\n" + THEME_POLISH.get(P["theme"], "")
+    v = t["v"]
+    reset = (f'.bleed .card{{--ink:{v["ink"]};--ink2:{v["ink2"]};--line:{v["line"]};--accent-t:{v["accent-t"]};color:{v["ink"]};text-shadow:none}}'
+             f'.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{{text-shadow:none}}')
+    return (vars_ + BASE_CSS + "".join(CSS[n] for n in used) + POLISH_CSS + reset + "\n" + t["css"] + "\n" + THEME_POLISH.get(P["theme"], "")
             + "\n" + P.get("css", ""))
 
 
 def render_sections(P, secs):
-    kit.CTX.update(person=P["brand"].get("person", ""), faces=P["faces"], drawn={})
+    kit.CTX.update(person=P["brand"].get("person", ""), faces=P["faces"], art=P["art"], crops=0)
     return "\n".join(REG[name](dict(d), P) for name, d in secs)
 
 
-def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="main", lib="../../index.html", back="../index.html"):
-    """1 complete page of a sample site. kind is main, about, contact, a policy name, or thanks."""
+BLEED = ("hero_split", "hero_center", "hero_form", "hero_stage")
+QUIET = ("thanks", "404")  # pages that should never be found by search
+
+
+def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="main"):
+    """1 complete page of a site. kind is main, about, contact, action, a policy name, thanks or 404."""
     secs = secs or P["sections"]
     t = THEMES[P["theme"]]
     v = t["v"]
@@ -252,23 +257,24 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
     hcta = f'<a class="btn" href="{link(P["cta"][1])}">{e(P["cta"][0])}</a>' if P.get("cta") else ""
     flinks = nav or P.get("foot", [("Home", "#top")])
     disc = f'<p>{h(P["disclaimer"])}</p>' if P.get("disclaimer") else ""
-    if kind == "thanks":
-        robots = '<!-- This page is a confirmation step, so it stays out of Google on purpose. Keep this line. -->\n<meta name="robots" content="noindex">'
-    else:
-        robots = '<!-- LIBRARY ONLY: this line keeps the fictional sample out of Google. Delete it when the page is yours. -->\n<meta name="robots" content="noindex">'
+    robots = ('<!-- A confirmation or error page should never be found by search. Keep this line. -->\n<meta name="robots" content="noindex">\n'
+              if kind in QUIET else "")
     ann = f'<p class="ann">{h(P["ann"])}</p>\n' if P.get("ann") and main else ""
     st = P.get("sticky") if main else None
     sticky = (f'\n<!-- Mobile action bar: the main action stays in reach of the thumb -->\n<div class="sticky"><span>{h(st["text"])}</span>'
               f'<a class="btn" href="{e(st["cta"][1])}">{e(st["cta"][0])}</a></div>') if st else ""
     fine = "".join(f'<li><a href="{e(hr)}">{e(l)}</a></li>' for l, hr in P["trust_links"])
     body = render_sections(P, secs)
+    over = secs[0][0] in BLEED
+    classes = " ".join(c for c in ("over o-" + P["art"]["tone"] if over else "", "has-sticky" if st else "") if c)
+    preload = ('<link rel="preload" as="image" href="images/hero-960.webp" imagesrcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">\n'
+               if over else "")
     return f"""<!doctype html>
 <html lang="en-AU" id="top">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-{robots}
-<title>{e(title)}</title>
+{robots}<title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
 <!-- Swap every {b["domain"]} address below for your real one. Use 1 version of your address everywhere. -->
 <link rel="canonical" href="{url}">
@@ -283,22 +289,18 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 <meta property="og:image:alt" content="{e(b["name"])}: {e(P["name"])}">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="{v["bg"]}">
-<!-- A real square PNG icon, 192px (a multiple of 48px), at an address that never changes -->
 <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+{preload}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{t["fonts"]}" rel="stylesheet">
-<!-- Structured data. Replace the YOUR-HANDLE profile links with your real ones, or delete those lines. -->
 <script type="application/ld+json">
-{jsonld(P, kind, url)}
+{jsonld(P, kind if kind not in QUIET + ("action",) else "page", url)}
 </script>
 <style>{css_for(P, secs)}</style>
 </head>
-<body{' class="has-sticky"' if st else ""}>
+<body{f' class="{classes}"' if classes else ""}>
 <a class="skip" href="#main">Skip to content</a>
-<!-- LIBRARY BAR: delete this block when you make the page yours -->
-<div class="libbar"><span><a href="{lib}">&larr; Design Library</a> &nbsp;·&nbsp; Sample {P["num"]}: {e(P["name"])}</span><span>Fictional brand, sample copy &nbsp;·&nbsp; <a href="{back}">Why this page works</a></span></div>
 {ann}<div class="hdw"><header class="hd{" has-nav" if nav else ""}"><a class="logo" href="{home}">{e(b["name"])}</a>{navhtml}{hcta}{mnav}</header></div>
 <main id="main">
 {body}
@@ -308,7 +310,8 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 <div><h2>Explore</h2><ul>{"".join(f'<li><a href="{link(hr)}">{e(l)}</a></li>' for l, hr in flinks)}</ul></div>
 <div><h2>The Fine Print</h2><ul>{fine}</ul></div>
 </div><div class="ft-s"><p>{e(b.get("contact", "hello@" + b["domain"]))} &nbsp;·&nbsp; {e(b.get("where", "Australia"))} &nbsp;·&nbsp; ABN 00 000 000 000</p>{disc}
-<p>Sample page from the Authority Builder Design Library. {e(b["name"])} is a fictional brand. Every name, price and result here is invented for teaching.</p></div></div></footer>{sticky}
+<!-- DEMO NOTE: delete the next line when the site is yours -->
+<p class="demo">Demo content. {e(b["name"])} is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.</p></div></div></footer>{sticky}
 </body>
 </html>
 """
@@ -478,6 +481,18 @@ def notes_html(P):
     extra_files = "".join(f' <a class="btn ghost" href="site/{x["file"]}">{e(x["label"])}</a>' for x in P.get("extra", []))
     sl_note = ' The extra links under the listing are sitelinks. They are Google\'s call, so treat them as likely, never guaranteed.' if P.get("sitelinks") else ""
     tfiles = ", ".join(dict.fromkeys(f for _, f in P["trust_links"] if f != "index.html"))
+    ln = P.get("launch")
+    launch_blk = ""
+    if ln:
+        conn = "".join(f"<li><code>{e(k)}</code> {e(v[2])} <small>({v[1]} on {e(', '.join(sorted(v[0])))})</small></li>" for k, v in sorted(ln["conn"].items()))
+        launch_blk = (f'<div class="blk" id="launch"><h2>Launch Checklist</h2><p>The <code>site</code> folder is a complete website: {ln["pages"]} pages, {len(ln["forms"])} working forms, '
+                      f'a thank-you page, a not-found page, crawler rules, a sitemap and host settings. Upload it and it runs. These are the things only you can finish.</p><ul>'
+                      f'<li>Swap the demo brand, copy and proof for your own, and delete the demo note in each footer.</li>'
+                      f'<li>Replace <code>{e(P["brand"]["domain"])}</code> with your address ({ln["domain"]} places).</li>'
+                      f'<li>Turn on form handling at your host, or point each form at your email tool.</li>'
+                      f'<li>Connect {ln["links"]} links to your own accounts:</li></ul>'
+                      + (f'<ul class="conn">{conn}</ul>' if conn else "")
+                      + '<p class="note">The full list is in <a href="LAUNCH.md">LAUNCH.md</a>. Before you publish, run <code>python3 src/prelaunch.py</code> on your copy: it lists anything from the demo that is still in the files.</p></div>')
     body = f"""<div class="banner"><div class="wrap">{shell.top("../")}
 <div class="eh"><p class="crumbs"><a href="../index.html#library">Design Library</a> › {e(P["group"])}</p>
 <h1>{P["num"]} · {e(P["name"])}</h1><p class="lead">{e(P["blurb"])}</p>
@@ -501,6 +516,7 @@ def notes_html(P):
 <div class="blk" id="audit"><h2>SEO And AI Search Audit</h2><p>The Full SEO and AI Search Audit was run against this sample's files, and anything that failed was fixed in the code. This is what was checked and what was actually seen.</p>
 <p class="tally">{tally}</p>{checks}
 <p class="note"><b>Good</b> passed. <b>Fixed</b> failed in the first version and was repaired in the code. <b>Your turn</b> can only be finished with your real business details. <b>Couldn't check</b> needs a live website, so it was not guessed.</p></div>
+{launch_blk}
 {briefs}
 <div class="blk"><h2>Borrow This</h2><ul>{borrow}</ul></div>
 {study}
@@ -511,9 +527,12 @@ def notes_html(P):
 <dt>Best for</dt><dd>{e(", ".join(P["aud"]))}</dd><dt>Group</dt><dd>{e(P["group"])}</dd>
 <dt>Style direction</dt><dd>{e(t["label"])}. {e(t["mood"])}</dd><dt>Fonts</dt><dd>{e(t["pair"])}</dd>
 <dt>Palette</dt><dd><div class="sw">{sw}</div></dd><dt>Sample brand</dt><dd>{e(P["brand"]["name"])} (fictional)</dd></dl></div>
-<div class="panel"><h2>Files In This Entry</h2><dl><dt>site/index.html</dt><dd>The live page. 1 file, no build step.</dd>
-<dt>site/{e(tfiles)}</dt><dd>The trust pages, linked from every footer.</dd>
-<dt>site/robots.txt, sitemap.xml</dt><dd>Crawler rules and the page list.</dd><dt>site/icon-192.png, icon-512.png, share.jpg</dt><dd>The site icon, the logo file and the share image.</dd>
+<div class="panel"><h2>Files In This Entry</h2><dl><dt>site/</dt><dd>The complete website. Upload this folder to go live.</dd>
+<dt>site/index.html</dt><dd>The main page.</dd><dt>site/{e(tfiles)}</dt><dd>The trust pages, linked from every footer.</dd>
+<dt>site/thank-you.html, 404.html</dt><dd>Where forms land, and what a wrong address shows.</dd>
+<dt>site/images/</dt><dd>The painting, in a phone size and a desktop size.</dd>
+<dt>site/robots.txt, sitemap.xml, netlify.toml</dt><dd>Crawler rules, the page list and host settings.</dd>
+<dt>LAUNCH.md</dt><dd>Everything to replace or connect before you publish.</dd>
 <dt>notes.md</dt><dd>These notes as plain text, ready to hand to an AI assistant.</dd></dl></div></aside>
 </div></div><div style="height:clamp(56px,8vw,104px)"></div></main>"""
     return shell.page(f'{P["num"]} {P["name"]} | Authority Builder Design Library', P["blurb"], body, root="../")
@@ -580,6 +599,7 @@ def block_patterns(num, pages):
     host = dict(pages[0])
     host.update(num=num, name="Section Patterns", slug="section-patterns", theme="corporate_calm", nav=None, cta=None, schema=["CollectionPage"], sticky=None, ann=None,
                 trust_links=[(n, "#top") for n in ("About", "Contact", "Privacy Policy", "Terms", "Refund Policy")], path="", faces=["Ada", "Ben", "Cy", "Dee"],
+                action_file="#top", contact_file="#top", about_file="#top",
                 title="Section Patterns | Authority Builder Design Library", desc="Every section pattern used across the library, on 1 page.",
                 brand=dict(name="Pattern Shelf", domain="patternshelf.example", mono="P", line="Every section pattern in the library, shown once."),
                 css=".pat{background:#132620;color:#EAE7E1;font:600 .8rem/1.4 system-ui,sans-serif;padding:.7rem clamp(20px,5vw,48px);letter-spacing:.04em}.pat b{color:#C5A880}")
@@ -589,9 +609,11 @@ def block_patterns(num, pages):
         us = ", ".join(sorted(set(used[n])))
         html += f'<div class="pat"><b>Pattern {i + 1:02d} · {e(SECTION_NAMES[n])}</b> &nbsp;·&nbsp; used in {us}</div>\n' + REG[n](dict(d), host) + "\n"
         secs.append((n, d))
-    full = sample_html(host, secs=secs, lib="../index.html", back="../index.html#blocks")
+    full = sample_html(host, secs=secs)
     full = re.sub(r"<main id=\"main\">.*?</main>", lambda m: f'<main id="main">\n{html}</main>', full, flags=re.S)
-    full = full.replace('href="icon-192.png"', 'href="../001-coach-homepage/site/icon-192.png"').replace('href="about.html"', 'href="#top"')
+    full = full.replace("icon-192.png", "../001-coach-homepage/site/icon-192.png").replace("images/hero-", "../001-coach-homepage/site/images/hero-")
+    full = re.sub(r'(href|action)="(?!https?:|#|\.\./)[^"]*"', r'\1="#top"', full)  # a catalogue page: its sample links stay on the page
+    full = full.replace('<main id="main">', '<main id="main">\n<div class="pat"><a href="../index.html" style="color:#C5A880">&larr; Design Library</a> &nbsp;·&nbsp; Every section pattern, shown once</div>', 1)
     md = "# " + num + " · Section Patterns\n\nEvery section pattern used across the library, shown once on 1 page.\n\n| Pattern | Used in |\n|---|---|\n" + \
          "\n".join(f"| {SECTION_NAMES[n]} | {', '.join(sorted(set(used[n])))} |" for n in order) + "\n"
     return full, md
@@ -620,18 +642,20 @@ def gallery(pages, blocks):
     nprin = len(canon.C)
     nres = sum(len(P["research"]) for P in pages)
     nchk = sum(len(P["audit"]) for P in pages)
-    body = f"""<div class="banner"><div class="wrap">{shell.top()}
+    npages = sum(P["launch"]["pages"] for P in pages)
+    nforms = sum(len(P["launch"]["forms"]) for P in pages)
+    body = f"""<div class="banner home"><picture class="bart"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" fetchpriority="high"></picture><div class="wrap">{shell.top()}
 <div class="hero"><p class="kick">Authority Builder™ · Design Library</p>
 <h1>Steal The Structure. <em>Keep Your Own Voice.</em></h1>
-<p class="lead">{len(pages)} website pages a coach, creator, consultant or business owner actually needs. Each is a live sample with page-specific conversion research built into its code, a full search audit already run on it, and a look worth borrowing. Open a page, read why it works and make it yours.</p>
+<p class="lead">{len(pages)} complete websites a coach, creator, consultant or business owner actually needs. Every one is ready to deploy: working forms, trust pages, a launch checklist and an original painting. The conversion research and the search audit are built into the code, not attached to it.</p>
 <div class="acts"><a class="btn" href="#library">Browse The Library</a><a class="btn ghost" href="canon/index.html">Read The Research</a></div>
-<div class="nums"><div><b>{len(pages)}</b><span>page samples, each a complete small site</span></div><div><b>{len(THEMES)}</b><span>style directions, not 1 template</span></div>
+<div class="nums"><div><b>{len(pages)}</b><span>complete sites, ready to deploy</span></div><div><b>{npages}</b><span>pages and {nforms} working forms across them</span></div>
 <div><b>{nres}</b><span>research findings turned into code changes</span></div><div><b>{nchk:,}</b><span>audit checks run, with the evidence shown</span></div></div></div></div></div>
 <main id="main">
-<section class="sec cream light"><div class="wrap"><p class="kick">How To Use It</p><h2>Three Steps From Blank Page To <em>Live Page</em></h2>
-<ol class="how"><li><h3>Pick The Page You Need</h3><p>Filter by who you are and the job the page has to do. Open the live sample and scroll it on your phone.</p></li>
+<section class="sec cream light"><div class="wrap"><p class="kick">How To Use It</p><h2>Three Steps From Blank Page To <em>Live Site</em></h2>
+<ol class="how"><li><h3>Pick The Site You Need</h3><p>Filter by who you are and the job the page has to do. Open the live sample and scroll it on your phone.</p></li>
 <li><h3>Read Why It Works</h3><p>Every sample comes with notes: the research applied to it, the psychology behind each section and the audit results.</p></li>
-<li><h3>Make It Yours</h3><p>Copy the site folder or the build prompt, then swap in your words, your proof and your photos. The notes list what is yours to finish.</p></li></ol></div></section>
+<li><h3>Launch It As Yours</h3><p>Copy the site folder and work through its launch checklist: your words, your proof, your links. A pre-launch check lists anything from the demo still in your files.</p></li></ol></div></section>
 <div class="filters" id="library"><div class="wrap">
 <div class="fg"><span>I am a</span>{chips("a", auds)}</div><div class="fg"><span>Style</span>{chips("s", styles)}</div>
 <button class="chip" type="button" id="clear" style="border-style:dashed">Show all</button></div></div>
@@ -710,6 +734,10 @@ def load_pages():
         for P in getattr(m, "PAGES", None) or [m.P]:
             P["num"] = f"{P['n']:03d}"
             P["dir"] = f"{P['num']}-{P['slug']}"
+            # Each sample is a whole site, so its main page is the home page at the top of the domain. The address, the sitemap and the
+            # structured data all say so. The page's old place in a larger site ("masterclass/") is kept only to tell what kind of page it is.
+            P["role"], P["path"] = P.get("path", ""), ""
+            P["schema"] = ["WebSite"] * ("WebSite" not in P["schema"]) + [t for t in P["schema"] if t != "BreadcrumbList"]
             trust.files(P)
             upgrades.apply(P)
             pages.append(P)
@@ -729,6 +757,8 @@ def main():
             shutil.rmtree(old)
     speed_file = SRC / "data" / "speed.json"
     speed = json.loads(speed_file.read_text()) if speed_file.exists() else {}
+    legible_file = SRC / "data" / "legible.json"
+    legible = json.loads(legible_file.read_text()) if legible_file.exists() else {}
     fixes = []
     for P in pages:
         d = ROOT / P["dir"]
@@ -742,23 +772,34 @@ def main():
         (site / "index.html").write_text(sample_html(P))
         P["briefs"] = list(dict.fromkeys(kit.CTX["briefs"]))
         files = [P.get("path", "")]
-        for x in P.get("extra", []):
-            (site / x["file"]).write_text(sample_html(P, secs=x["sections"], title=x["title"], desc=x["desc"], file=x["file"], kind="thanks"))
-        made = []
+        made, quiet = [], []
         if P["about_file"] != "index.html":
             made.append(("about.html", "about") + trust.about(P))
         if P["contact_file"] != "index.html":
             made.append(("contact.html", "contact") + trust.contact(P))
+        if P.get("action"):
+            made.append((P["action"]["file"], "action") + trust.action(P))
         made += [(f"{k}.html", k) + trust.policy(P, k) for k in ("privacy", "terms", "refunds")]
-        for file, kind, secs, title, desc in made:
+        if P.get("extra"):
+            quiet += [(x["file"], "thanks", x["sections"], x["title"], x["desc"]) for x in P["extra"]]
+        else:
+            quiet.append(("thank-you.html", "thanks") + trust.thanks(P))
+        quiet.append(("404.html", "404") + trust.notfound(P))
+        for file, kind, secs, title, desc in made + quiet:
             (site / file).write_text(sample_html(P, secs=secs, title=title, desc=desc, file=file, kind=kind))
-            files.append(file)
+        files += [f for f, *_ in made]
+        if P["n"] in upgrades.EVENTS:
+            (site / "event.ics").write_text(trust.ics(upgrades.EVENTS[P["n"]], P), newline="")
+        (site / "netlify.toml").write_text(trust.NETLIFY)
         (site / "robots.txt").write_text(robots_txt(P))
         (site / "sitemap.xml").write_text(sitemap_xml(P, files))
-        P["audit"] = audit.run(P, site, speed.get(P["num"]))
+        P["audit"] = audit.run(P, site, speed.get(P["num"]), legible.get(P["num"]))
         fixes += [f"{P['num']} {r['check']}: {r['seen']}" for r in P["audit"] if r["status"] == "Fix"]
         (d / "index.html").write_text(notes_html(P))
         (d / "notes.md").write_text(notes_md(P))
+        (d / "LAUNCH.md").write_text(launch.launch_md(P, site))
+        (d / "index.html").write_text(notes_html(P))
+    launch.library_host(ROOT, pages)
     if fixes:
         print(f"AUDIT: {len(fixes)} checks still failing:\n  " + "\n  ".join(fixes))
     n = len(pages)
@@ -781,10 +822,12 @@ def main():
     rows += "\n" + "\n".join(f"| {num} | [{t}]({d}/{f}) | Building Blocks | Everyone | All 10 |" for num, d, f, t, b in blocks)
     table = "| # | Page | Group | For | Style |\n|---|---|---|---|---|\n" + rows + "\n"
     (ROOT / "INDEX.md").write_text("# Library Index\n\n" + table)
+    cells = [f'<td width="25%" valign="top"><a href="{P["dir"]}/site/index.html"><img src="{P["dir"]}/preview.jpg" alt="{e(P["name"])}"></a><br><sub>{P["num"]} · {e(P["name"])}</sub></td>' for P in pages]
+    grid = "<table>\n" + "\n".join("<tr>" + "".join(cells[i:i + 4]) + "</tr>" for i in range(0, len(cells), 4)) + "\n</table>\n"
     readme = ROOT / "README.md"
-    if readme.exists():  # keep the index in the README in step with the build
-        readme.write_text(re.sub(r"<!-- INDEX:START -->.*?<!-- INDEX:END -->", lambda m: "<!-- INDEX:START -->\n" + table + "<!-- INDEX:END -->",
-                                 readme.read_text(), flags=re.S))
+    if readme.exists():  # keep the index and the picture grid in the README in step with the build
+        text = re.sub(r"<!-- INDEX:START -->.*?<!-- INDEX:END -->", lambda m: "<!-- INDEX:START -->\n" + table + "<!-- INDEX:END -->", readme.read_text(), flags=re.S)
+        readme.write_text(re.sub(r"<!-- GALLERY:START -->.*?<!-- GALLERY:END -->", lambda m: "<!-- GALLERY:START -->\n" + grid + "<!-- GALLERY:END -->", text, flags=re.S))
     print(f"Built {n} samples, {len(blocks)} building blocks, gallery and canon.")
 
 

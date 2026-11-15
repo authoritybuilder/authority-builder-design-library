@@ -74,7 +74,7 @@ def ld(doc):
     return out
 
 
-def run(P, site, speed=None):
+def run(P, site, speed=None, legible=None):
     b = P["brand"]
     base = f'https://{b["domain"]}/'
     pages = {f.name: f.read_text() for f in sorted(site.glob("*.html"))}
@@ -83,7 +83,7 @@ def run(P, site, speed=None):
     person = b.get("person", "")
     personal = any(w in b["name"] for w in person.split() if len(w) > 3)  # the business is named after the person
     body = main.split("</head>", 1)[1]
-    home = P.get("path", "") == ""
+    site_root = f"https://{b['domain']}/"
     out = []
 
     def add(area, check, status, seen):
@@ -102,12 +102,12 @@ def run(P, site, speed=None):
     add(A, "Description says who the page is for", GOOD if len(desc) > 60 else "Fix", f"“{desc}” ({len(desc)} characters).")
     graph = ld(main)
     types = [g["@type"] for g in graph]
-    if home:
-        ws = next((g for g in graph if g["@type"] == "WebSite"), None)
-        add(A, "Site name is declared", GOOD if ws and ws["name"] == b["name"] else "Fix",
-            f"WebSite markup on the home page names the site “{ws['name']}”." if ws else "No WebSite markup on the home page.")
-    else:
-        add(A, "Site name is declared", YOURS, "Site-name markup belongs on a home page, and this sample is an inner page. Add it to your home page the way sample 001 does.")
+    ws = next((g for g in graph if g["@type"] == "WebSite"), None)
+    add(A, "Site name is declared", GOOD if ws and ws["name"] == b["name"] else "Fix",
+        f"WebSite markup on the home page names the site “{ws['name']}”." if ws else "No WebSite markup on the home page.")
+    canon_ok = f'<link rel="canonical" href="{site_root}"' in main
+    add(A, "The address the page claims is where it lives", GOOD if canon_ok else "Fix",
+        f"The main page is index.html at the top of the site folder, and its canonical link says {site_root}. The first version claimed a sub-folder address that the folder did not contain.")
     icon = site / "icon-192.png"
     size = png_size(icon) if icon.exists() else None
     linked = 'rel="icon" type="image/png" sizes="192x192" href="icon-192.png"' in main
@@ -131,11 +131,11 @@ def run(P, site, speed=None):
     sm = (site / "sitemap.xml").read_text() if (site / "sitemap.xml").exists() else ""
     locs = re.findall(r"<loc>(.*?)</loc>", sm)
     canon = {n: (re.search(r'<link rel="canonical" href="([^"]+)"', d) or [None, None])[1] for n, d in pages.items()}
-    confirm = [n for n, d in pages.items() if "confirmation step" in d]
+    confirm = [n for n, d in pages.items() if '<meta name="robots" content="noindex">' in d]
     want = [canon[n] for n in pages if n not in confirm]
     bad = [u for u in want if u not in locs] + [canon[n] for n in confirm if canon[n] in locs]
     add(B, "Sitemap lists every real page and nothing else", FIXED if sm and not bad and len(locs) == len(want) else "Fix",
-        f"sitemap.xml lists {len(locs)} pages. Each matches that page's canonical address." + (f" {confirm[0]} is left out on purpose." if confirm else "")
+        f"sitemap.xml lists {len(locs)} pages. Each matches that page's canonical address. {' and '.join(confirm)} are left out on purpose."
         if not bad else f"Mismatch: {bad}")
     addrs = re.findall(r'(?:href|content)="(https?://[^"]+)"', "".join(pages.values())) + locs
     mine = [a for a in addrs if b["domain"] in a]
@@ -144,28 +144,32 @@ def run(P, site, speed=None):
         f"All {len(mine)} of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with {base}." if not stray else f"Stray: {stray[:3]}")
     selfs = all(canon[n] and (canon[n].endswith(n) or n == "index.html") for n in pages)
     add(B, "Every page has a canonical tag pointing at itself", GOOD if selfs else "Fix", f"{len(pages)} pages checked.")
-    lib = sum("LIBRARY ONLY" in d for d in pages.values())
-    add(B, "Nothing important is hidden from Google", YOURS,
-        f"{lib} pages carry a line marked LIBRARY ONLY that keeps this fictional sample out of Google. Delete that 1 line on each page when the site is yours."
-        + (f" {confirm[0]} keeps its noindex for good, because a confirmation page should never be found by search." if confirm else ""))
-    links = broken = holders = 0
+    hidden = [n for n in pages if n not in confirm and "noindex" in pages[n].split("</head>")[0]]
+    add(B, "Nothing important is hidden from Google", GOOD if not hidden else "Fix",
+        f"No page carries a noindex except {' and '.join(confirm)}, which should never be found by search. The first version put a noindex on every page, "
+        "which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead.")
+    links = broken = 0
     for n, d in pages.items():
         ids = set(re.findall(r'\bid="([^"]+)"', d))
-        for h in re.findall(r'<a [^>]*href="([^"]*)"', d):
-            if h == "#":
-                holders += 1
-            elif h.startswith(("http", "mailto:", "tel:", "../")):
+        for h in re.findall(r'<(?:a|form) [^>]*(?:href|action)="([^"]*)"', d):
+            if h.startswith(("http", "mailto:", "tel:")):
                 continue
-            else:
-                links += 1
-                f, _, frag = h.partition("#")
-                tgt = pages.get(f) if f else d
-                if tgt is None or (frag and frag not in (ids if not f else set(re.findall(r'\bid="([^"]+)"', tgt)))):
-                    broken += 1
-    add(B, "No broken links inside the site", GOOD if not broken else "Fix", f"{links} internal links checked across {len(pages)} pages, {broken} broken.")
-    if holders:
-        add(B, "Links that still need a destination", YOURS,
-            f"{holders} links (article titles, social profiles, buy buttons) point at “#” because the fictional brand has nowhere to send them. Point each at a real page.")
+            links += 1
+            f, _, frag = h.partition("#")
+            if f and not f.endswith(".html"):
+                broken += not (site / f).exists()
+                continue
+            tgt = pages.get(f) if f else d
+            if tgt is None or (frag and frag not in (ids if not f else set(re.findall(r'\bid="([^"]+)"', tgt)))) or h == "#":
+                broken += 1
+    add(B, "No broken or dead links inside the site", GOOD if not broken else "Fix",
+        f"{links} internal links, buttons and form targets checked across {len(pages)} pages, {broken} broken. Every button leads to a real page or section. "
+        "The first version had buttons that pointed at their own section and links that went nowhere.")
+    conn = len(re.findall(r'href="https://example\.com/connect/', "".join(pages.values())))
+    if conn:
+        add(B, "Links that need your own accounts", YOURS,
+            f"{conn} links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md.")
+    add(B, "A page for wrong addresses", GOOD if "404.html" in pages else "Fix", "404.html exists, says the page is missing and links back to the main page and to Contact.")
     add(B, "Redirects, status codes and old sites", CANT, "These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop.")
 
     # ---- C. The page itself
@@ -177,13 +181,32 @@ def run(P, site, speed=None):
         if one else f"H1 counts: { {n: len(v) for n, v in h1s.items()} }")
     scripts = len(re.findall(r"<script(?! type=\"application/ld\+json\")", main))
     words = len(text.split())
-    add(C, "The content is in the HTML, not drawn by JavaScript", GOOD if scripts == 0 else "Fix",
-        f"{words} words are readable in the raw HTML and the page runs {scripts} scripts. AI crawlers that do not run JavaScript see everything a visitor sees.")
-    imgs = len(re.findall(r"<img\b", main))
-    labelled = len(re.findall(r'role="img" aria-label="[^"]+', main))
-    add(C, "Images have text alternatives and do not slow the page", GOOD if imgs == 0 or labelled else "Fix",
-        f"{labelled} illustrations, each drawn in the page's own code with a text label, and {imgs} image files to download.")
-    add(C, "Real photographs", YOURS, "Every illustration stands in for a photo. The brief for each real shot is in the notes and in a comment beside it. Give each photo alt text and a phone-sized version.")
+    add(C, "The content is in the HTML, not drawn by JavaScript", GOOD if words > 150 else "Fix",
+        f"{words} words are readable in the raw HTML. The page runs {scripts} scripts" + (": the quiz, whose questions are all in the HTML already." if scripts else ".")
+        + " AI crawlers that do not run JavaScript see everything a visitor sees.")
+    forms = re.findall(r"<form[^>]*>", "".join(pages.values()))
+    okf = all('method="post"' in f and 'action="thank-you.html"' in f and "name=" in f for f in forms) and "thank-you.html" in pages
+    add(C, "Forms work", GOOD if forms and okf else "Fix",
+        f"{len(forms)} forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. "
+        "They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing.")
+    wrong = []
+    import datetime
+    months = "January February March April May June July August September October November December".split()
+    for wd, day, mon in set(re.findall(r"\b(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday) (\d{1,2}) (" + "|".join(months) + r")\b", text)):
+        m = months.index(mon) + 1
+        year = 2027 if m < 11 else 2026
+        if datetime.date(year, m, int(day)).strftime("%A") != wd:
+            wrong.append(f"{wd} {day} {mon} {year}")
+    add(C, "Dates and weekdays agree", GOOD if not wrong else "Fix",
+        "Every weekday named beside a date is the right one for the coming year." if not wrong else "Wrong weekday: " + ", ".join(wrong))
+    imgs = re.findall(r"<img\b[^>]*>", main)
+    sized = all("width=" in i and "height=" in i and "alt=" in i for i in imgs)
+    big, small = site / "images" / "hero-1920.webp", site / "images" / "hero-960.webp"
+    have = big.exists() and small.exists()
+    add(C, "Images are sized, described and sent in a phone size", GOOD if imgs and sized and have else "Fix",
+        (f"{len(imgs)} image tags, all with alt text, width and height. They share 1 painting in 2 sizes: {small.stat().st_size // 1024}KB for phones and "
+         f"{big.stat().st_size // 1024}KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen.") if have else "images/hero-*.webp missing. Run src/paint.py.")
+    add(C, "Real photographs", YOURS, "The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md.")
     share = site / "share.jpg"
     ss = jpg_size(share) if share.exists() else None
     og = all(meta(main, k) for k in ("og:title", "og:description", "og:url", "og:image"))
@@ -191,7 +214,7 @@ def run(P, site, speed=None):
         f"Open Graph tags are set and share.jpg is a real {ss[0]} by {ss[1]} image in the site folder. The first version pointed at an image that did not exist."
         if ss else "share.jpg is missing. Run src/shots.py.")
     orphans = [n for n in pages if n != "index.html" and n not in confirm and f'href="{n}"' not in main]
-    add(C, "No orphan pages", GOOD if not orphans else "Fix", f"Every page is linked from the footer of every other page." if not orphans else f"Not linked: {orphans}")
+    add(C, "No orphan pages", GOOD if not orphans else "Fix", "Every page is linked from the main page." if not orphans else f"Not linked: {orphans}")
     m = re.search(r'<section class="sec (?:hero|hart|lb|bento)[^"]*".*?</section>', main, flags=re.S)
     g1, g2 = grade(visible(m.group(0))) if m else 0, grade(text)
     add(C, "Reading level", GOOD if g1 <= 9 else YOURS,
@@ -201,22 +224,33 @@ def run(P, site, speed=None):
     D = "Speed And Mobile"
     if speed:
         lcp, cls, tbt = speed["lcp"] / 1000, speed["cls"], speed["tbt"]
-        how = "Lighthouse lab test of this file on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed."
+        how = "Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed."
         add(D, "Main content loads fast (LCP under 2.5 seconds)", GOOD if lcp < 2.5 else "Fix", f"{lcp:.1f} seconds. {how} Your host and font loading will add to this.")
         add(D, "Nothing jumps around while loading (CLS under 0.1)", GOOD if cls < 0.1 else "Fix", f"{cls:.3f} in the same lab test.")
         add(D, "The page responds quickly to taps (INP under 200ms)", CANT,
             f"INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was {tbt:.0f}ms.")
         add(D, "Lighthouse scores", GOOD if min(speed["scores"].values()) >= 90 else YOURS,
-            "Performance {performance}, Accessibility {accessibility}, Best Practices {best-practices}, SEO {seo}, out of 100, tested without the LIBRARY ONLY line.".format(**speed["scores"])
+            "Performance {performance}, Accessibility {accessibility}, Best Practices {best-practices}, SEO {seo}, out of 100.".format(**speed["scores"])
             + (f" Flagged: {'; '.join(speed['failed'])}." if speed.get("failed") else ""))
         add(D, "No sideways scrolling on a phone", GOOD if speed["scroll_w"] <= 390 else "Fix", f"At 390px wide the page content is {speed['scroll_w']}px wide.")
         add(D, "Buttons are easy to tap", GOOD if speed["min_tap"] >= 44 else "Fix",
             f"The smallest button or form field on a phone is {speed['min_tap']}px tall. {speed['taps']} were measured.")
     else:
         add(D, "Speed, layout shift and tap targets", CANT, "Run src/speed.mjs to measure this sample.")
+    if legible and legible["desktop"]["lines"]:
+        dk, ph = legible["desktop"], legible["phone"]
+        fails = dk["fails"] + ph["fails"]
+        low = lambda v: " and ".join(f"{x} to 1 for {k} text" for k, x in (("body", v["body"]), ("large", v["large"])) if x)
+        add(D, "Words on the painting stay readable", GOOD if not fails else "Fix",
+            (f"A contrast checker cannot read text over a picture, so each of the {dk['lines']} lines of text on a painted section was measured against the pixels directly behind it, "
+             f"at the hardest-to-read part of the line. Lowest result on a desktop: {low(dk)}. On a phone: {low(ph)}. The bar is 4.5 to 1 for body text and 3 to 1 for large text.")
+            if not fails else "Below the bar: " + "; ".join(fails[:6]))
+    elif legible is None and (site / "images" / "hero-1920.webp").exists():
+        add(D, "Words on the painting stay readable", CANT, "Run src/legible.mjs to measure this sample.")
     kb = len(main.encode()) / 1024
-    add(D, "Page weight", GOOD if kb < 150 else YOURS, f"The whole page is 1 HTML file of {kb:.0f}KB before compression, plus the web fonts. No image downloads, no scripts.")
-    add(D, "HTTPS and security headers", CANT, "These are set by your host. After launch, check that every address is https and that HSTS is on.")
+    add(D, "Page weight", GOOD if kb < 160 else YOURS, f"The HTML is {kb:.0f}KB before compression, plus the web fonts and 1 painting.")
+    add(D, "HTTPS and security headers", YOURS if (site / "netlify.toml").exists() else CANT,
+        "netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https.")
 
     # ---- E. Structured data
     E = "Structured Data"
@@ -250,8 +284,7 @@ def run(P, site, speed=None):
     add(E, "Every image the structured data names exists", FIXED if not gone else "Fix",
         f"{len(refs)} image addresses named, all present in the site folder. The first version named portrait and shopfront files that did not exist."
         if refs and not gone else ("No image files are named." if not refs else f"Missing: {gone}"))
-    if "YOUR-HANDLE" in main:
-        add(E, "Profile links (sameAs)", YOURS, "3 placeholder profile links marked YOUR-HANDLE. Replace them with your real LinkedIn, Instagram and YouTube addresses, or delete the lines.")
+    add(E, "Profile links (sameAs)", YOURS, "The structured data carries no profile links, because a fictional brand has none and a placeholder would be published as fact. Add a sameAs list with your real profiles.")
     add(E, "Google's Rich Results Test", CANT, "The test needs a live address. Run it on your page after launch.")
 
     # ---- F. Trust signals

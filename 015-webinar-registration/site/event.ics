@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Carmen Ortiz Consulting//EN
+BEGIN:VEVENT
+UID:webinar-registration@carmenortiz.example
+DTSTAMP:20270311T010000Z
+DTSTART:20270311T010000Z
+DTEND:20270311T021500Z
+SUMMARY:Fully Booked, Without Posting Daily: free masterclass
+DESCRIPTION:A free 60-minute masterclass with Carmen Ortiz, plus Q and A. The link is in your confirmation email.
+LOCATION:Online
+END:VEVENT
+END:VCALENDAR

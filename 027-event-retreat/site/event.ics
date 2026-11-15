@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Slow Strategy//EN
+BEGIN:VEVENT
+UID:event-retreat@slowstrategy.example
+DTSTAMP:20270514T050000Z
+DTSTART:20270514T050000Z
+DTEND:20270516T040000Z
+SUMMARY:The Slow Strategy Retreat
+DESCRIPTION:3 days in the Noosa hinterland. Arrive from 3pm Friday. Depart 2pm Sunday.
+LOCATION:Kin Kin Valley Lodge, Kin Kin QLD
+END:VEVENT
+END:VCALENDAR

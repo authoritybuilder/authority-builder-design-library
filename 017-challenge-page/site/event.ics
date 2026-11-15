@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Good Offer Club//EN
+BEGIN:VEVENT
+UID:challenge-page@goodofferclub.example
+DTSTAMP:20270228T190000Z
+DTSTART:20270228T190000Z
+DTEND:20270228T192000Z
+SUMMARY:The 5-Day Offer Sprint: day 1
+DESCRIPTION:Day 1 of the free 5-day Offer Sprint. 20 minutes. The task arrives by email at 6am AEDT.
+LOCATION:Online
+END:VEVENT
+END:VCALENDAR

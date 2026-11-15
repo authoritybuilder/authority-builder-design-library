@@ -86,7 +86,10 @@ def portrait(name, wide=False, pose=0):
 
 
 def avatar(name):
-    return f'<svg class="av" viewBox="96 118 208 208" aria-hidden="true" focusable="false"><rect class="i-1" x="96" y="118" width="208" height="208"/>{figure(name)}</svg>'
+    """Initials in a coloured disc. A real site swaps these for client photos, used with permission."""
+    words = [w for w in name.replace(",", " ").split() if w.lower() not in ("dr", "the") and w[:1].isalpha()]
+    ini = "".join(w[0] for w in words[:2]).upper() or "?"
+    return f'<span class="av av{_h(name, 4)}" aria-hidden="true">{ini}</span>'
 
 
 LINES = '<rect x="0" y="0" width="{w}" height="6" rx="3"/><rect x="0" y="14" width="{v}" height="6" rx="3"/><rect x="0" y="28" width="{w}" height="6" rx="3"/>'

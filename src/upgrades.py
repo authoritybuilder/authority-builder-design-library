@@ -5,6 +5,44 @@ page's code, and records the finding, its source and the change so the notes pag
 The figures are benchmarks from testing firms and software vendors. Treat them as direction, not guarantees.
 """
 
+import kit
+import trust
+
+# The page each booking, enrolment or reservation button leads to. It works with no calendar or checkout tool:
+# the owner replies with times or an invoice. Swap the buttons for your own booking or payment link whenever you have one.
+ACTIONS = {
+    1: dict(file="book.html", kind="call", eyebrow="Free fit call", h="Book Your *Free Fit Call*", button="Request My Call", q="What is happening in your role right now?",
+            sub="25 minutes by video with Imogen. No pitch. A clear no is completely fine."),
+    2: dict(file="book.html", kind="call", eyebrow="A first conversation", h="Request A *Conversation*", button="Request A Conversation", q="Where does your pricing hurt most?",
+            sub="30 minutes with Marcus, partner to partner. No proposal until you ask for one."),
+    7: dict(file="enrol.html", kind="enrol", eyebrow="February intake", h="Reserve Your Place In *The Steady Founder*", button="Reserve My Place",
+            select=("How would you like to pay?", ["Pay in full: $3,600", "Pay monthly: $1,300 x 3 months"]),
+            sub="Choose how you would like to pay. Your invoice and welcome pack arrive within 1 business day, and the 30-day guarantee starts on the first call."),
+    11: dict(file="book.html", kind="call", eyebrow="Intro call", h="Book A Free *Intro Call*", button="Request My Call", q="What are you hoping to fix or launch?",
+             sub="30 minutes with Mira. You will leave knowing which package fits and when you could start."),
+    21: dict(file="book.html", kind="call", eyebrow="Clinic review", h="Book A Free *Clinic Review*", button="Request My Review", q="How many practitioners do you have, and how full is the diary?",
+             sub="45 minutes. We count first, then tell you what we would fix. Free for clinics with 2 or more practitioners."),
+    22: dict(file="book.html", kind="call", eyebrow="A first conversation", h="Book A First *Conversation*", button="Request A Conversation", q="What decision are you turning over?",
+             sub="45 minutes, confidential. Most people come with 1 decision they are turning over."),
+    27: dict(file="reserve.html", kind="reserve", eyebrow="14 to 16 May 2027", h="Reserve Your *Place*", button="Reserve My Place",
+             select=("Which room would you like?", ["Lodge room: $2,950", "Cabin: $3,650"]),
+             sub="A $500 deposit holds your place. Your deposit invoice arrives within 1 business day, with a full refund until 14 March 2027."),
+}
+# What the thank-you page should promise, for pages whose main form is something other than a general enquiry
+KINDS = {3: "signup", 10: "application", 12: "signup", 14: "signup", 15: "signup", 16: "signup", 17: "signup", 18: "signup", 19: "call", 23: "signup", 24: "signup",
+         25: "signup", 26: "signup"}
+# Pages whose buy buttons can only be finished with the owner's own checkout
+CHECKOUT = {8, 9, 12}
+# Dated events get a real calendar file and a Google Calendar link. Times are UTC.
+EVENTS = {
+    15: dict(title="Fully Booked, Without Posting Daily: free masterclass", start="20270311T010000Z", end="20270311T021500Z", where="Online",
+             details="A free 60-minute masterclass with Carmen Ortiz, plus Q and A. The link is in your confirmation email."),
+    17: dict(title="The 5-Day Offer Sprint: day 1", start="20270228T190000Z", end="20270228T192000Z", where="Online",
+             details="Day 1 of the free 5-day Offer Sprint. 20 minutes. The task arrives by email at 6am AEDT."),
+    27: dict(title="The Slow Strategy Retreat", start="20270514T050000Z", end="20270516T040000Z", where="Kin Kin Valley Lodge, Kin Kin QLD",
+             details="3 days in the Noosa hinterland. Arrive from 3pm Friday. Depart 2pm Sunday."),
+}
+
 # id: (who found it, link or None, the finding in plain words)
 R = {
     "cre": ("Conversion Rate Experts, button microcopy win report", "https://conversion-rate-experts.com/button-microcopy-win-report/",
@@ -67,6 +105,55 @@ R = {
     "annual": ("Circle, subscription business models", "https://circle.so/fr/blog/subscription-business-model-creators",
                "Annual subscribers are 36% less likely to leave."),
 }
+
+
+# Where to crop each kind of painting when a page needs a second or third picture: (focal point, zoom)
+CROPS = {
+    "summit": [(72, 76, 2.4), (24, 60, 1.9), (50, 90, 2.0)], "city": [(50, 66, 2.2), (16, 86, 2.0), (82, 62, 2.4)],
+    "studio": [(52, 62, 1.25), (76, 78, 1.9), (20, 72, 1.8)], "coast": [(82, 56, 2.6), (36, 70, 2.4), (60, 92, 2.0)],
+    "stage": [(50, 66, 2.6), (30, 30, 1.8), (70, 90, 2.2)], "valley": [(52, 82, 2.4), (10, 78, 1.9), (50, 58, 2.6)],
+    "desk": [(50, 58, 2.0), (84, 62, 2.4), (20, 50, 2.2)], "alpine": [(46, 34, 2.2), (12, 84, 2.0), (60, 72, 2.2)],
+    "desert": [(50, 70, 2.0), (84, 56, 2.2), (16, 78, 2.2)], "night": [(50, 82, 2.6), (74, 22, 2.4), (12, 80, 1.9)],
+    "fields": [(30, 56, 2.6), (56, 80, 2.0), (82, 56, 2.4)], "lodge": [(72, 70, 2.6), (10, 76, 1.8), (40, 60, 2.2)],
+}
+
+# page: (scene, mirrored, colour of the words that sit on it, what the picture shows). The pictures are made by src/paint.py.
+ART = {
+    1: ("summit", False, "light", "Painting of a woman standing on a hilltop at first light, with misty ranges below"),
+    2: ("city", False, "light", "Painting of a river city at blue hour, its windows lit and reflected in the water"),
+    3: ("studio", False, "dark", "Painting of arches, steps and spheres in lilac, cobalt and lime"),
+    4: ("coast", False, "light", "Painting of a sunny bay with a lighthouse on the headland and flowers in the dunes"),
+    5: ("summit", True, "light", "Painting of a woman in a red coat on a hilltop, looking out over ranges at dawn"),
+    6: ("stage", False, "light", "Painting of a lone speaker on a dark stage under gold light, the audience in silhouette"),
+    7: ("valley", False, "dark", "Painting of soft green hills on a calm morning, with a path winding toward a far town"),
+    8: ("desk", False, "dark", "Painting of a desk under a window with an open laptop, a lamp and a stack of books"),
+    9: ("studio", True, "dark", "Painting of arches, steps and spheres in tomato, mustard and teal"),
+    10: ("alpine", False, "light", "Painting of a still mountain lake at dusk, framed by dark pines"),
+    11: ("studio", False, "dark", "Painting of arches, steps and spheres in peach, rust and sage"),
+    12: ("studio", True, "dark", "Painting of arches, steps and spheres in coral, yellow and blue"),
+    13: ("alpine", False, "dark", "Painting of snow peaks above a still lake, with pines on both sides"),
+    14: ("desk", True, "dark", "Painting of a calm desk by a window, with a laptop, a lamp and a plant"),
+    15: ("city", True, "light", "Painting of a city at night, gold windows reflected in a dark river"),
+    16: ("studio", True, "dark", "Painting of arches, steps and spheres in lime, cobalt and peach"),
+    17: ("desert", False, "light", "Painting of a long road through red country toward flat-topped ranges"),
+    18: ("studio", False, "dark", "Painting of arches, steps and spheres in bronze, ivory and espresso"),
+    19: ("valley", True, "light", "Painting of bright green country under a blue sky, a path leading toward a far town"),
+    20: ("coast", True, "light", "Painting of a sunny tropical bay with flowers in the dunes"),
+    21: ("coast", False, "dark", "Painting of a pale dawn over a quiet bay"),
+    22: ("city", False, "light", "Painting of a city skyline at sunrise, reflected in the river"),
+    23: ("alpine", True, "dark", "Painting of mountains and a still lake in soft morning light"),
+    24: ("night", False, "light", "Painting of a starry night with a low moon, and a single lit cabin among the pines"),
+    25: ("desk", False, "dark", "Painting of a tidy desk by a window, with a laptop showing a page being edited"),
+    26: ("fields", False, "light", "Painting of golden rows running to the horizon, with a farmhouse and cypress trees"),
+    27: ("lodge", False, "light", "Painting of a lit lodge on a hillside at golden hour, with mist in the valleys"),
+    28: ("lodge", True, "dark", "Painting of calm green hills in morning mist, with a house on the near rise"),
+}
+
+
+def art_for(n):
+    scene, mirror, tone, alt = ART[n]
+    crops = [(f"{100 - cx if mirror else cx}% {cy}%", z) for cx, cy, z in CROPS[scene]]
+    return dict(scene=scene, tone=tone, alt=alt, crops=crops)
 
 
 def S(P, name, nth=0):
@@ -155,6 +242,12 @@ def u03(P):
     for x, t in zip(pr["items"], tags):
         x["tag"] = t
     pr["under"] = "Instant access. 14-day refund."
+    for tiles in (S(P, "bento", 0)["tiles"], S(P, "bento", 1)["tiles"]):
+        for t in tiles:
+            if t.get("cta") and t["cta"][0] == "Read the story":
+                t["cta"] = ("Read the story", "about.html")
+            if t.get("cta") and t["cta"][0] == "Enquire":
+                t["cta"] = ("Enquire", "contact.html")
     P["refund"] = "Digital products come with a 14-day refund. Email within 14 days of buying and you get your money back."
     P["sticky"] = dict(text="**The Sunday System**|Free. 4 minutes to read.", cta=("Subscribe", "#newsletter"))
     return [("fields", "The sign-up tile asks for an email address and nothing else. It now shows the reader count and faces right under the button."),
@@ -217,7 +310,7 @@ def u06(P):
             dict(name="Keynote + workshop", price="$18,000", per="plus travel", desc="The keynote, then 90 minutes with your leaders.",
                  feats=["Everything in the keynote", "A working session for up to 40 leaders", "A 1-page team focus plan"], cta=("Check A Date", "#book"))],
         under="Not-for-profit rates on request.", note="Australian dollars, plus GST. Travel is quoted at cost from Brisbane.")))
-    S(P, "bios").update(cta=("Download The One Sheet (PDF)", "#kit"))
+    S(P, "bios").update(cta=("Download The One Sheet (PDF)", kit.connect("one sheet pdf")))
     P["sticky"] = dict(text="**Keynotes from $12,000**|Reply within 1 business day", cta=("Check A Date", "#book"))
     return [("planners", "A printed fee guide with 3 formats now sits above the enquiry form, and the starting fee is stated under the hero button."),
             ("reel", "The speaker reel moved from the middle of the page to straight under the client strip. The media kit gained a one-sheet download."),
@@ -365,12 +458,13 @@ def u14(P):
 
 
 def u15(P):
-    P["ann"] = "Free live masterclass · **Thursday 12 March, 12:00pm AEDT** · 48-hour replay"
+    P.update(swap({k: P[k] for k in ("sections", "title", "desc", "why", "principles", "borrow", "blurb", "seo") if k in P}, [("Thursday 12 March", "Thursday 11 March")]))
+    P["ann"] = "Free live masterclass · **Thursday 11 March, 12:00pm AEDT** · 48-hour replay"
     hero = S(P, "hero_form")
-    hero["form"]["cals"] = ["Google", "Apple", "Outlook"]
+    hero["form"].update(name="masterclass", cals=trust.cals(EVENTS[15]))
     P["cta"] = ("Save My Seat", "#signup")
     S(P, "cta")["cta"] = ("Save My Seat", "#signup")
-    P["sticky"] = dict(text="**Thursday 12 March, 12pm AEDT**|Free. 60 minutes.", cta=("Save My Seat", "#signup"))
+    P["sticky"] = dict(text="**Thursday 11 March, 12pm AEDT**|Free. 60 minutes.", cta=("Save My Seat", "#signup"))
     return [("webform", "The form stays at 2 fields: first name and email."),
             ("webfold", "Headline, subheadline and form sit together in the first screen, with date, time, length and replay as 4 plain labels."),
             ("time", "Add-to-calendar links sit under the button and the form says a reminder is coming, because about half of sign-ups do not turn up without one."),
@@ -381,6 +475,20 @@ def u16(P):
     q = S(P, "quiz")
     q["result"]["gate"] = dict(label="Want the 1-page plan for your style? (optional)", button="Email My Plan",
                                skip="No email needed. Your result stays on screen either way.")
+    q["styles"] = {"w": ("Writing", "The Quiet Authority", "You build trust through depth, not volume. 1 strong article a month will do more for you than 20 posts."),
+                   "s": ("Speaking", "The Room Reader", "You are at your best live. 1 talk, workshop or podcast interview a month will do more for you than a content calendar."),
+                   "r": ("Referral", "The Connector", "People find you through other people. A simple habit of 2 introductions a week will outperform any campaign."),
+                   "m": ("Showing work", "The Maker", "Your work does the talking. Show 1 finished piece a week, with the thinking behind it, and let it sell for you.")}
+    q["questions"] = [
+        ("A stranger asks what you do. You would rather:", [("s", "Explain it in a 2-minute chat"), ("w", "Send them something you wrote"), ("r", "Introduce them to a happy client"), ("m", "Show them a piece of your work")]),
+        ("You have a free afternoon for marketing. You:", [("w", "Write 1 long, useful article"), ("s", "Record a conversation or go live"), ("r", "Call 3 past clients to catch up"), ("m", "Finish a project and share it")]),
+        ("The compliment you hear most:", [("m", "Your work is beautiful"), ("s", "You explain things so clearly"), ("w", "I saved what you wrote"), ("r", "Everyone says I should talk to you")]),
+        ("At an industry event you are usually:", [("r", "Introducing 2 people who should meet"), ("s", "In the middle of a lively conversation"), ("w", "Taking notes for something to write later"), ("m", "Showing someone a recent project")]),
+        ("Your best client found you through:", [("w", "Something you wrote"), ("s", "Hearing you speak"), ("r", "A recommendation"), ("m", "Seeing your work")]),
+        ("When you have an idea to share, you first:", [("w", "Draft it in a document"), ("s", "Talk it through out loud"), ("r", "Tell the person who most needs it"), ("m", "Make an example of it")]),
+        ("You feel most like yourself when you are:", [("m", "Making something"), ("w", "Thinking on the page"), ("s", "In front of a room"), ("r", "Bringing people together")]),
+        ("If you could keep only 1 channel, it would be:", [("s", "A stage or a podcast"), ("w", "A newsletter"), ("r", "Your contact list"), ("m", "Your portfolio")]),
+    ]
     S(P, "hero_center")["reassure"] = "Your result shows on screen. No email needed."
     P["sticky"] = dict(text="**8 questions. 3 minutes.**|No email needed", cta=("Start The Quiz", "#quiz"))
     return [("quiz", "Length is stated before the start (8 questions, 3 minutes) and a progress bar shows on every question, because 2 in 3 people who start will finish if they can see the end."),
@@ -389,13 +497,14 @@ def u16(P):
 
 
 def u17(P):
-    P["ann"] = "Free 5-day challenge · Starts **Monday 2 March** · 20 minutes a day"
+    P.update(swap({k: P[k] for k in ("sections", "title", "desc", "why", "principles", "borrow", "blurb", "seo") if k in P}, [("Monday 2 March", "Monday 1 March")]))
+    P["ann"] = "Free 5-day challenge · Starts **Monday 1 March** · 20 minutes a day"
     hero = S(P, "hero_form")
     hero["form"]["fields"] = [("Email", "email", "you@email.com")]
-    hero["form"]["cals"] = ["Google", "Apple", "Outlook"]
+    hero["form"].update(name="challenge", cals=trust.cals(EVENTS[17]))
     P["cta"] = ("Join Free", "#signup")
     S(P, "cta")["cta"] = ("Join The Sprint", "#signup")
-    P["sticky"] = dict(text="**Starts Monday 2 March**|Free. 20 minutes a day.", cta=("Join Free", "#signup"))
+    P["sticky"] = dict(text="**Starts Monday 1 March**|Free. 20 minutes a day.", cta=("Join Free", "#signup"))
     return [("fields", "The form went from 2 fields to 1."),
             ("time", "The daily time (20 minutes) is in the headline area, the bar above the header and the phone action bar, and add-to-calendar links sit under the button."),
             ("read", "The copy was checked for reading level. The measured grade is in the audit table below.")]
@@ -412,17 +521,23 @@ def u18(P):
 
 def u19(P):
     hero = S(P, "hero_form")
+    hero["visual"] = None
+    hero["form"] = dict(name="call", title="Request a time", button="Request My Call", note="Ngozi replies within 1 business day with 3 times to choose from.",
+                        fields=[("Your name", "text", "First and last name"), ("Email", "email", "you@clinic.com"), ("Best days and times for you", "text", "For example: Tuesday or Thursday mornings")])
     hero["after"] = "No phone number needed. You get a calendar invite with a video link, and a reminder the day before."
     hero["proof"] = "**Alan, Mel and Grace** all started with this call. Their words are below."
     S(P, "cta")["cta"] = ("Choose A Time", "#signup")
     P["sticky"] = dict(text="**Free 30-minute call**|Written summary within 24 hours", cta=("Choose A Time", "#signup"))
-    return [("three", "Booking takes 2 taps, a day and a time. Nothing else is asked for before the calendar."),
+    return [("three", "The request form has 3 fields: name, email and the times that suit. No calendar tool is needed to use the page, and 1 can be dropped in later."),
             ("phone", "The page says in plain words that no phone number is needed and that the invite arrives by email."),
             ("cre", "What happens after you book is stated directly under the calendar."), ("mecl", "3 named clients sit beside the promise, with their full quotes further down.")]
 
 
 def u20(P):
     lb = S(P, "linkbio")
+    dest = [kit.connect("newsletter signup"), "contact.html", kit.connect("course"), kit.connect("podcast"), "about.html"]
+    lb["links"] = [tuple(l) + (hr,) for l, hr in zip(lb["links"], dest)]
+    lb["feature"]["cta"] = (lb["feature"]["cta"][0], kit.connect("calculator"))
     lb["proof"] = "**The Friday Money Minute** is read by 9,200 freelancers"
     lb["feature"]["reassure"] = "Free. No sign-up. Takes 60 seconds."
     return [("links", "The page holds 1 featured action and 5 links, 6 in all, under the 7 that performs best."),
@@ -491,6 +606,7 @@ def u23(P):
         ("Scrolling and Attention", "https://www.nngroup.com/articles/scrolling-and-attention/", "Nielsen Norman Group"),
         ("An Analysis of AI Overview Brand Visibility Factors (75K Brands Studied)", "https://ahrefs.com/blog/ai-overview-brand-correlation/", "Ahrefs")]))
     a["blocks"] = blocks
+    S(P, "capture")["name"] = "template"
     P["sticky"] = dict(text="**The 4-sentence bio**|Free 1-page template", cta=("Get The Template", "#template"))
     return [("first30", "The answer comes first: the 4 sentences are in a box above the opening paragraph, inside the first third of the page."),
             ("first30", "A side-by-side comparison table was added, and the article now cites and links its 2 outside sources."),
@@ -499,7 +615,7 @@ def u23(P):
 
 def u24(P):
     after(P, "player", ("shownotes", dict(_="Show notes and transcript as text, because the words about an episode are what search engines and AI tools read",
-        tone="alt", eyebrow="Episode 112", h="Show Notes And *Transcript*", stamps=[
+        id="notes", tone="alt", eyebrow="Episode 112", h="Show Notes And *Transcript*", stamps=[
             ("02:10", "Why Margot left the bar after 22 years"), ("11:45", "The pay cut, in real numbers"), ("18:20", "A second apprenticeship at 47"),
             ("29:30", "What her old colleagues said"), ("38:05", "The advice she would give herself at 40")],
         transcript=[("Lois", "You went from running a courtroom to being the newest person in a kitchen. What did that feel like on day 1?"),
@@ -550,7 +666,7 @@ def u27(P):
     after(P, "pricing", ("trust", dict(_="Trust strip: refund, transfer, what is included and who to ask", tone="alt", items=[
         ("shield", "Full refund until 14 March"), ("users", "Transferable after that"), ("check", "2 nights and all meals included"),
         ("mail", f"Questions: hello@{P['brand']['domain']}")])))
-    S(P, "faq").update(ask="Add the dates to your calendar:", cals=["Google", "Apple", "Outlook"])
+    S(P, "faq").update(ask="Add the dates to your calendar:", cals=trust.cals(EVENTS[27]))
     P["sticky"] = dict(text="**14 to 16 May 2027**|9 places left. From $2,950.", cta=("Reserve", "#rooms"))
     P["refund"] = "A $500 deposit holds your place. You can have a full refund until 14 March 2027. After that your place can be transferred to another person."
     return [("event", "Refund and transfer terms, what the price includes and a contact for questions now sit in a strip directly under the prices."),
@@ -579,9 +695,54 @@ UP = {1: u01, 2: u02, 3: u03, 4: u04, 5: u05, 6: u06, 7: u07, 8: u08, 9: u09, 10
       15: u15, 16: u16, 17: u17, 18: u18, 19: u19, 20: u20, 21: u21, 22: u22, 23: u23, 24: u24, 25: u25, 26: u26, 27: u27, 28: u28}
 
 
+def finish_links(P):
+    """No button may lead nowhere. A button that pointed at its own section, at the closing section or at the top of the page
+    now goes to the page where the action actually happens."""
+    n = P["n"]
+    if n in ACTIONS:
+        P["action"] = ACTIONS[n]
+        P["action_file"] = ACTIONS[n]["file"]
+    P["thanks_kind"] = ACTIONS[n]["kind"] if n in ACTIONS else KINDS.get(n, "enquiry")
+    names = [s for s, _ in P["sections"]]
+    form_top = "hero_form" in names
+    closing = {"#" + d["id"] for s, d in P["sections"] if s == "cta" and d.get("id")}
+    target = kit.connect("checkout") if n in CHECKOUT else P["action_file"]
+
+    def fix(c, own):
+        if not c:
+            return c
+        label, href = c[0], c[1]
+        if href == "#top":
+            href = "#signup" if form_top else target
+        elif href == own or href in closing:
+            href = target
+        return (label, href)
+
+    for s, d in P["sections"]:
+        own = "#" + d.get("id", "\0")
+        for key in ("cta", "cta2"):
+            if d.get(key):
+                d[key] = fix(d[key], own)
+        for t in d.get("tiers", []):
+            t["cta"] = fix(t["cta"], own)
+        if s == "feed":
+            d.setdefault("link", {24: "episode", 21: "case study", 26: "retailer"}.get(n, "article"))
+    if P.get("cta"):
+        P["cta"] = fix(P["cta"], "\0")
+    if P.get("sticky"):
+        P["sticky"]["cta"] = fix(P["sticky"]["cta"], "\0")
+    for ex in P.get("extra", []):
+        for s, d in ex["sections"]:
+            for key in ("cta", "cta2"):
+                if d.get(key) and d[key][1].startswith("#"):
+                    d[key] = (d[key][0], "index.html")
+
+
 def apply(P):
     """Apply the research to 1 page, then record what was found and what changed."""
+    P["art"] = art_for(P["n"])
     P["research"] = [(R[k][0], R[k][1], R[k][2], change) for k, change in UP[P["n"]](P)]
+    finish_links(P)
     names = []
     for n, d in P["sections"]:
         if n == "quotes":

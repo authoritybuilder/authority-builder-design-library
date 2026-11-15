@@ -29,6 +29,11 @@ p{text-wrap:pretty}
 .banner::before{width:560px;height:560px;right:-160px;top:-220px;background:radial-gradient(circle,rgba(197,168,128,.24),transparent 68%)}
 .banner::after{width:520px;height:520px;left:-200px;bottom:-280px;background:radial-gradient(circle,rgba(15,81,50,.5),transparent 68%)}
 .banner .wrap{position:relative;z-index:1}
+/* the gallery opens on the library's own painting, veiled so the words measure well above 4.5 to 1 */
+.banner.home{background:#0a1613}.bart{position:absolute;inset:0}.bart img{width:100%;height:100%;object-fit:cover;object-position:50% 80%;display:block}
+.banner.home::before{inset:0;width:auto;height:auto;border-radius:0;background:linear-gradient(90deg,rgba(7,15,12,.88),rgba(7,15,12,.66) 46%,rgba(7,15,12,.1) 80%),linear-gradient(180deg,rgba(7,15,12,.66),rgba(7,15,12,0) 26%,rgba(7,15,12,.2) 58%,rgba(7,15,12,.8))}
+@media(max-width:800px){.banner.home::before{background:linear-gradient(180deg,rgba(7,15,12,.82),rgba(7,15,12,.7) 50%,rgba(7,15,12,.84))}}
+.banner.home::after{display:none}.banner.home .hero{min-height:min(76svh,660px);display:grid;align-content:center}.banner.home .hero>*{max-width:760px}.banner.home .nums{max-width:none}
 .top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.2rem;font-size:.92rem}
 .mark{display:inline-flex;align-items:center;gap:.7rem;font-weight:600;text-decoration:none}
 .mark i{font-style:normal;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--forest);display:grid;place-items:center;font:700 .82rem 'Inter',sans-serif;letter-spacing:.04em}
@@ -84,6 +89,7 @@ p{text-wrap:pretty}
 .rtab td{width:50%}.rtab td small{display:block;margin-top:.4rem;color:var(--ink2);font-size:.82rem}
 .atab{width:100%;border-collapse:collapse;margin-bottom:1.6rem}.atab th,.atab td{text-align:left;vertical-align:top;padding:.8rem .8rem .8rem 0;border-top:1px solid var(--line);font-size:.93rem}
 .atab tbody th{font-weight:600;width:30%}.atab td:nth-child(2){width:8.2rem;white-space:nowrap}.blk h3{margin:1.6rem 0 .5rem;font-size:1.05rem}
+.conn{margin:.2rem 0 0 1.6rem}.conn li{font-size:.92rem}code{font:500 .86em ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(19,38,32,.07);padding:.1em .35em;border-radius:5px}
 .tally{margin:1rem 0 .4rem;font-size:.95rem}.ok{color:#0F5132}.fx{color:#0B5C8A}.yt{color:#8A5A00}.cc{color:#5B6360}.bad{color:#B3261E}
 @media(max-width:640px){.atab thead{display:none}.atab th,.atab td{display:block;width:100%!important;padding:.3rem 0;border-top:0}.atab tr{display:block;padding:.7rem 0;border-top:1px solid var(--line)}}
 .side{position:sticky;top:1.2rem;display:grid;gap:1.2rem}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem}

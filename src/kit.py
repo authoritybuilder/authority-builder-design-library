@@ -5,7 +5,8 @@ from html import escape
 import art
 
 REG, CSS = {}, {}
-CTX = {"person": "", "faces": []}  # set per page by the build: whose portrait to draw, whose faces to stack
+CTX = {"person": "", "faces": [], "art": None}  # set per page by the build: the page's painting and whose initials to stack
+SRCSET = 'src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200"'
 
 
 def S(name, css=""):
@@ -63,11 +64,36 @@ def paras(ps):
     return "".join(f"<p>{h(p)}</p>" for p in (ps or []))
 
 
-def sec(name, d, inner, cls=""):
+def sec(name, d, inner, cls="", pre=""):
     tone = d.get("tone", "")
     idattr = f' id="{d["id"]}"' if d.get("id") else ""
     note = f"<!-- {e(d['_'])} -->\n" if d.get("_") else ""
-    return f'{note}<section class="sec {name} {tone} {cls}"{idattr}><div class="wrap">{inner}</div></section>'
+    return f'{note}<section class="sec {name} {tone} {cls}"{idattr}>{pre}<div class="wrap">{inner}</div></section>'
+
+
+def backdrop(eager=False):
+    """The page's painting as a full-bleed background. The first one on a page loads first; the rest wait until they are near the screen."""
+    a = CTX["art"]
+    load = 'fetchpriority="high"' if eager else 'loading="lazy"'
+    alt = e(a["alt"]) if eager else ""
+    return f'<picture class="art"><img {SRCSET} alt="{alt}" {load} decoding="async"></picture>'
+
+
+def detail(ar="4/5", whole=False):
+    """A close crop of the page's painting, used wherever a second picture is needed. Each call moves to a different part of the picture."""
+    a = CTX["art"]
+    if whole:
+        pos, zoom = "50% 72%", 1
+    else:
+        i = CTX["crops"] = CTX.get("crops", 0) + 1
+        pos, zoom = a["crops"][(i - 1) % len(a["crops"])]
+    return (f'<div class="ph art" style="--ar:{ar};--pos:{pos};--zoom:{zoom}"><img {SRCSET} alt="" loading="lazy" decoding="async"></div>')
+
+
+def connect(what):
+    """A link that can only be finished with the owner's own account: a checkout, a profile, a podcast app.
+    It points at example.com so it never breaks, and every one is listed in the site's launch checklist."""
+    return "https://example.com/connect/" + re.sub(r"[^a-z0-9]+", "-", what.lower()).strip("-")
 
 
 def crowd(text, n=4, i=4):
@@ -89,7 +115,8 @@ def _brief(raw):
 
 
 def vis(v):
-    """Visuals. Samples ship no stock photos: each frame is an illustration, and the brief for the real shot sits in an HTML comment beside it."""
+    """Pictures. A person or a place is a crop of the page's painting, with the brief for the real photograph in a comment beside it.
+    Small product and map thumbnails stay as line illustrations."""
     if not v:
         return ""
     k = v.get("kind", "person")
@@ -100,35 +127,19 @@ def vis(v):
     if raw and k in ("person", "scene", "video", "lesson") and "briefs" in CTX:
         CTX["briefs"].append(_brief(raw))
     who = v.get("who") or CTX.get("person") or "Guest"
-    if k == "person":
-        seen = CTX.setdefault("drawn", {})
-        seen[who] = seen.get(who, 0) + 1
-        pose = 0 if v.get("ar") == "1/1" else (seen[who] - 1) % 2
-        return (f'{note}<div class="ph person" style="--ar:{ar}" role="img" aria-label="Illustrated portrait standing in for a photo of {e(who)}">'
-                f'{art.portrait(who, pose=pose)}</div>')
-    if k == "scene":
-        ar = v.get("ar", "1/1")
-        return (f'{note}<div class="ph scene" style="--ar:{ar}" role="img" aria-label="Illustration standing in for a photo: {e(_brief(raw))}">'
-                f'{art.scene(raw, ar)}</div>')
+    if k in ("person", "scene"):
+        return note + detail(ar)
+    if k == "sketch":
+        return (f'{note}<div class="ph scene" style="--ar:{ar}" role="img" aria-label="Illustration: {e(_brief(raw))}">{art.scene(raw, ar)}</div>')
     if k == "video":
-        pic = art.scene(raw) if art.kind_of(raw) in ("stage", "mic") or "lesson" in raw else art.portrait(who, wide=True)
         cap = f'<span class="cap">{e(v["cap"])}</span>' if v.get("cap") else ""
-        return (f'{note}<div class="ph scene vid" style="--ar:16/9" role="img" aria-label="Video frame: {e(_brief(raw))}">'
-                f'{pic}<i class="play" aria-hidden="true"></i>{cap}</div>')
+        return note + detail("16/9").replace("</div>", f'<i class="play" aria-hidden="true"></i>{cap}</div>').replace('class="ph art"', 'class="ph art vid"')
     if k == "book":
         return (f'<div class="bookwrap"><div class="book" role="img" aria-label="Book cover: {e(v["title"])}">'
                 f'<small>{e(v.get("kicker", ""))}</small><strong>{h(v["title"])}</strong><em>{e(v.get("author", ""))}</em></div></div>')
     if k == "cover":
         return (f'<div class="bookwrap"><div class="book guide" role="img" aria-label="Guide cover: {e(v["title"])}">'
                 f'<small>{e(v.get("kicker", "Free guide"))}</small><strong>{h(v["title"])}</strong><em>{e(v.get("author", ""))}</em></div></div>')
-    if k == "cal":
-        days = "".join(
-            f'<span class="{"on" if n in v.get("open", []) else ""}{" pick" if n == v.get("pick") else ""}">{n}</span>'
-            for n in range(1, 29))
-        slots = "".join(f'<span class="slot{" pick" if i == 1 else ""}">{e(s)}</span>' for i, s in enumerate(v.get("slots", [])))
-        return (f'<div class="card cal formcard" role="img" aria-label="Booking calendar mock-up"><p class="cal-m">{e(v.get("month", "March"))}</p>'
-                f'<div class="cal-g">{days}</div><p class="cal-m">{e(v.get("day", "Thursday 12"))}</p><div class="cal-s">{slots}</div>'
-                f'<p class="fine">{lab}</p></div>')
     if k == "email":
         lines = "".join(f"<p>{h(x)}</p>" for x in v["lines"])
         return (f'<div class="card mk mk-email" role="img" aria-label="Preview of a sample email"><div class="mk-top">{art.avatar(who)}'
@@ -136,9 +147,8 @@ def vis(v):
                 f'<h3>{h(v["subject"])}</h3>{lines}<div class="mk-fade" aria-hidden="true"></div></div>')
     if k == "lesson":
         items = "".join(f'<li class="{c}"><i aria-hidden="true"></i><span>{e(t)}</span><small>{e(m)}</small></li>' for c, t, m in v["items"])
-        return (f'{note}<div class="card mk mk-lesson" role="img" aria-label="Preview of the course player">'
-                f'<div class="ph scene vid" style="--ar:16/9">{art.scene("laptop lesson")}<i class="play" aria-hidden="true"></i>'
-                f'<span class="cap">{e(v["cap"])}</span></div><ul>{items}</ul></div>')
+        poster = detail("16/9").replace("</div>", f'<i class="play" aria-hidden="true"></i><span class="cap">{e(v["cap"])}</span></div>').replace('class="ph art"', 'class="ph art vid"')
+        return f'{note}<div class="card mk mk-lesson">{poster}<ul>{items}</ul></div>'
     return ""
 
 
@@ -177,6 +187,8 @@ ul{list-style:none}
 .proof{margin-top:1.6rem;font-size:.92rem;color:var(--ink2)}.proof b{color:var(--ink)}
 .ph{position:relative;aspect-ratio:var(--ar,4/5);border-radius:var(--phr);background:radial-gradient(90% 70% at 30% 18%,var(--ph1),var(--ph2));overflow:hidden;isolation:isolate}
 .ph>svg{position:absolute;inset:0;width:100%;height:100%}
+.ph.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 70%);transform:scale(var(--zoom,1));transform-origin:var(--pos,50% 70%)}
+picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}picture.art img{width:100%;height:100%;object-fit:cover;object-position:var(--apos,50% 100%);display:block}
 .ph.vid{border-radius:var(--r)}
 .ph.vid .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:74px;height:74px;border-radius:50%;background:var(--card);z-index:2}
 .ph.vid .play::after{content:"";position:absolute;left:54%;top:50%;translate:-50% -50%;border-left:20px solid var(--ink);border-block:13px solid transparent}
@@ -191,6 +203,7 @@ ul{list-style:none}
 .field input,.field select,.field textarea{width:100%;min-height:50px;padding:.72rem .95rem;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),12px);background:var(--bg);color:var(--ink);font:inherit}
 .field textarea{min-height:120px;resize:vertical}
 .formcard .btn{width:100%;margin-top:1.2rem}.formcard .fine{margin-top:.8rem;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--card);color:var(--ink);padding:.6rem 1rem;border-radius:6px}
 :focus-visible{outline:3px solid var(--accent-t);outline-offset:3px}
 .libbar{background:#132620;color:#EAE7E1;font:500 .78rem/1.35 system-ui,-apple-system,'Segoe UI',sans-serif;padding:.6rem clamp(20px,5vw,48px);display:flex;gap:.4rem 1.2rem;justify-content:space-between;flex-wrap:wrap}

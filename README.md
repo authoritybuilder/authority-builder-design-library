@@ -1,43 +1,88 @@
 # Authority Builder™ Design Library
 
-Website design inspiration for coaches, creators, consultants and business owners.
+28 complete, production-ready websites for coaches, creators, consultants and business owners.
 
-28 live page samples you can open, read and adapt. Each one has had page-specific conversion research built into its code and a full SEO and AI search audit run against it, and each comes with notes that show the working.
+Each one is a real small site you can deploy today: a painted hero, working forms, a thank-you page, trust and policy pages, a launch checklist and a search audit already applied to the code. Each also comes with notes that show why it works.
 
-**Open `index.html` in a browser to browse the library.**
+![The library gallery](preview.jpg)
+
+## See It
+
+<!-- GALLERY:START -->
+<table>
+<tr><td width="25%" valign="top"><a href="001-coach-homepage/site/index.html"><img src="001-coach-homepage/preview.jpg" alt="Coach Homepage"></a><br><sub>001 · Coach Homepage</sub></td><td width="25%" valign="top"><a href="002-consultant-authority-site/site/index.html"><img src="002-consultant-authority-site/preview.jpg" alt="Consultant Authority Site"></a><br><sub>002 · Consultant Authority Site</sub></td><td width="25%" valign="top"><a href="003-creator-hub/site/index.html"><img src="003-creator-hub/preview.jpg" alt="Creator Hub"></a><br><sub>003 · Creator Hub</sub></td><td width="25%" valign="top"><a href="004-local-service-business/site/index.html"><img src="004-local-service-business/preview.jpg" alt="Local Service Business Homepage"></a><br><sub>004 · Local Service Business Homepage</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="005-about-founder-story/site/index.html"><img src="005-about-founder-story/preview.jpg" alt="About And Founder Story"></a><br><sub>005 · About And Founder Story</sub></td><td width="25%" valign="top"><a href="006-speaker-media-kit/site/index.html"><img src="006-speaker-media-kit/preview.jpg" alt="Speaker And Media Kit"></a><br><sub>006 · Speaker And Media Kit</sub></td><td width="25%" valign="top"><a href="007-signature-program-sales-page/site/index.html"><img src="007-signature-program-sales-page/preview.jpg" alt="Signature Program Sales Page"></a><br><sub>007 · Signature Program Sales Page</sub></td><td width="25%" valign="top"><a href="008-online-course-sales-page/site/index.html"><img src="008-online-course-sales-page/preview.jpg" alt="Online Course Sales Page"></a><br><sub>008 · Online Course Sales Page</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="009-membership-community-join/site/index.html"><img src="009-membership-community-join/preview.jpg" alt="Membership Or Community Join Page"></a><br><sub>009 · Membership Or Community Join Page</sub></td><td width="25%" valign="top"><a href="010-mastermind-application/site/index.html"><img src="010-mastermind-application/preview.jpg" alt="Mastermind Application Page"></a><br><sub>010 · Mastermind Application Page</sub></td><td width="25%" valign="top"><a href="011-services-and-pricing/site/index.html"><img src="011-services-and-pricing/preview.jpg" alt="Services And Pricing Page"></a><br><sub>011 · Services And Pricing Page</sub></td><td width="25%" valign="top"><a href="012-digital-product-shop/site/index.html"><img src="012-digital-product-shop/preview.jpg" alt="Digital Product Shop"></a><br><sub>012 · Digital Product Shop</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="013-corporate-training/site/index.html"><img src="013-corporate-training/preview.jpg" alt="Corporate Training Page"></a><br><sub>013 · Corporate Training Page</sub></td><td width="25%" valign="top"><a href="014-lead-magnet-opt-in/site/index.html"><img src="014-lead-magnet-opt-in/preview.jpg" alt="Lead Magnet Opt-In Page"></a><br><sub>014 · Lead Magnet Opt-In Page</sub></td><td width="25%" valign="top"><a href="015-webinar-registration/site/index.html"><img src="015-webinar-registration/preview.jpg" alt="Webinar Or Masterclass Registration"></a><br><sub>015 · Webinar Or Masterclass Registration</sub></td><td width="25%" valign="top"><a href="016-quiz-scorecard-landing/site/index.html"><img src="016-quiz-scorecard-landing/preview.jpg" alt="Quiz Or Scorecard Landing Page"></a><br><sub>016 · Quiz Or Scorecard Landing Page</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="017-challenge-page/site/index.html"><img src="017-challenge-page/preview.jpg" alt="Challenge Page"></a><br><sub>017 · Challenge Page</sub></td><td width="25%" valign="top"><a href="018-waitlist-launching-soon/site/index.html"><img src="018-waitlist-launching-soon/preview.jpg" alt="Waitlist Or Launching-Soon Page"></a><br><sub>018 · Waitlist Or Launching-Soon Page</sub></td><td width="25%" valign="top"><a href="019-book-a-call/site/index.html"><img src="019-book-a-call/preview.jpg" alt="Book-A-Call Page"></a><br><sub>019 · Book-A-Call Page</sub></td><td width="25%" valign="top"><a href="020-link-in-bio/site/index.html"><img src="020-link-in-bio/preview.jpg" alt="Link-In-Bio Page"></a><br><sub>020 · Link-In-Bio Page</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="021-case-study/site/index.html"><img src="021-case-study/preview.jpg" alt="Case Study Page"></a><br><sub>021 · Case Study Page</sub></td><td width="25%" valign="top"><a href="022-wall-of-proof/site/index.html"><img src="022-wall-of-proof/preview.jpg" alt="Wall Of Proof"></a><br><sub>022 · Wall Of Proof</sub></td><td width="25%" valign="top"><a href="023-blog-article/site/index.html"><img src="023-blog-article/preview.jpg" alt="Blog Article Template"></a><br><sub>023 · Blog Article Template</sub></td><td width="25%" valign="top"><a href="024-podcast-home/site/index.html"><img src="024-podcast-home/preview.jpg" alt="Podcast Home And Episode Page"></a><br><sub>024 · Podcast Home And Episode Page</sub></td></tr>
+<tr><td width="25%" valign="top"><a href="025-newsletter-sign-up-archive/site/index.html"><img src="025-newsletter-sign-up-archive/preview.jpg" alt="Newsletter Sign-Up And Archive"></a><br><sub>025 · Newsletter Sign-Up And Archive</sub></td><td width="25%" valign="top"><a href="026-book-launch/site/index.html"><img src="026-book-launch/preview.jpg" alt="Book Launch Page"></a><br><sub>026 · Book Launch Page</sub></td><td width="25%" valign="top"><a href="027-event-retreat/site/index.html"><img src="027-event-retreat/preview.jpg" alt="Event, Workshop Or Retreat Page"></a><br><sub>027 · Event, Workshop Or Retreat Page</sub></td><td width="25%" valign="top"><a href="028-contact-and-thank-you/site/index.html"><img src="028-contact-and-thank-you/preview.jpg" alt="Contact Page And Thank-You Page"></a><br><sub>028 · Contact Page And Thank-You Page</sub></td></tr>
+</table>
+<!-- GALLERY:END -->
+
+## Open It
+
+- **On your computer.** Download the repository and open `index.html`. Everything works offline except the web fonts and form sending.
+- **On Netlify (recommended).** Create a Netlify site from this repository. Leave the build command empty: `netlify.toml` already publishes the root. Then open Forms, select Enable form detection and deploy again so the sample forms can take entries.
+- **On GitHub Pages.** In the repository settings, open Pages and publish the `main` branch from the root. Every page is served. GitHub Pages has no form handling, so a sample form shows an error when it is sent, and it cannot send the header that keeps the fictional sample sites out of search.
+
+## Launch One As Your Own Site
+
+1. **Pick the site.** Open the gallery, filter by who you are and by style, and scroll the live sample on your phone.
+2. **Copy its `site` folder** into a new repository or straight into Netlify. That folder is the whole website. It needs nothing else from this library.
+3. **Work through `LAUNCH.md`** in the entry folder. It lists exactly what to replace and connect for that site: the brand and copy, the address, the pictures, the forms, any links that need your own accounts, the policies and the structured data.
+4. **Run the pre-launch check** on your copy. It lists anything from the demo that is still in your files, with the file and line.
+
+```bash
+python3 src/prelaunch.py path/to/your/site
+```
+
+Prefer to rebuild in your own voice instead? Each notes page ends with a build prompt you can paste into Claude with your real proof.
 
 ## What Is In Here
 
 | Path | What it is |
 |---|---|
 | `index.html` | The gallery. Filter by who you are and by style. |
-| `001-…` to `028-…` | 1 folder per page type. |
+| `001-…` to `028-…` | 1 folder per website. |
 | `029-…` to `031-…` | Building blocks: font pairings, colour palettes and section patterns. |
 | `canon/index.html` | The research page: 74 principles with their sources, linked to the samples that use them. |
-| `src/` | The small Python build that generates everything. You do not need it to use the library. |
+| `netlify.toml`, `robots.txt` | Settings for hosting the library itself. They keep the fictional sample sites out of search. |
+| `src/` | The Python build that generates everything. You do not need it to use the library. |
 
 Each entry folder holds:
 
-- `site/`: the sample as a complete small website.
-  - `index.html`: the live page. Self-contained, fonts from Google Fonts, no scripts, no build step.
-  - `about.html`, `contact.html`, `privacy.html`, `terms.html`, `refunds.html`: the trust pages, linked from every footer.
-  - `robots.txt` and `sitemap.xml`: crawler rules and the page list.
-  - `icon-192.png`, `icon-512.png`, `share.jpg`: the site icon, the logo file and the share image.
+- `site/`: the complete website. Upload this folder to go live.
+  - `index.html`: the main page.
+  - `about.html`, `contact.html`: the trust pages, with a working contact form.
+  - `book.html`, `enrol.html` or `reserve.html`: where the main button leads, on sites that take bookings, enrolments or reservations. It is a short request form that works with no calendar or checkout tool.
+  - `thank-you.html`: where every form lands. `404.html`: what a wrong address shows.
+  - `privacy.html`, `terms.html`, `refunds.html`: policy pages, marked as template wording to replace.
+  - `images/`: the painting, in a phone size and a desktop size.
+  - `icon-192.png`, `icon-512.png`, `share.jpg`: the site icon and the share image.
+  - `robots.txt`, `sitemap.xml`, `netlify.toml`: crawler rules, the page list, security headers and caching.
+  - `event.ics`: a real calendar file, on sites with a dated event.
+- `LAUNCH.md`: the launch checklist for that site.
 - `index.html`: the notes page. Why it works, the research applied, the psychology, the search card, the audit table, the photo briefs and a build prompt.
 - `notes.md`: the same notes as plain text, ready to hand to an AI assistant.
-- `preview.jpg`: a screenshot of the sample.
+- `preview.jpg`: a screenshot of the site.
 
-## How To Use It
+## What "Production Ready" Means Here
 
-1. **Pick the page you need.** Open the gallery, filter, and scroll the live sample on your phone.
-2. **Read why it works.** The notes page shows the research applied to that page type, the principle behind each section and what the audit checked.
-3. **Make it yours.** Copy the `site` folder, or paste the build prompt into Claude with your real proof. The audit table lists what is yours to finish.
+- **No dead ends.** Every button and link leads to a real page or section. The audit and the page checker flag any that do not.
+- **Forms that send.** Every form is a real HTML form with named fields, required fields marked, a hidden spam trap and a thank-you page. They follow Netlify's pattern for plain HTML forms, so on Netlify they collect entries once form detection is on. On another host, point each form's `action` at your form or email tool.
+- **Links only you can finish are listed, not hidden.** A checkout, a podcast app or a social profile needs your own account. Those links point at `example.com/connect/…` and are counted in `LAUNCH.md`, so none is forgotten.
+- **Ready to be found.** The sites carry no `noindex`. The library keeps its fictional brands out of search with host settings in the root `netlify.toml`, so a site you copy out is ready for Google the moment it has your address on it.
+- **Measured, not assumed.** Every site scores 99 or 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Your host will change the speed figures.
+- **Readable over the painting.** A contrast checker cannot read text over a picture, so `src/legible.mjs` measures every line of text against the pixels behind it, on a desktop and a phone. Every line clears WCAG AA.
+
+What a site cannot contain is you. The demo brand, the sample proof and the template policies are yours to replace, and each site says so in a visible note in its footer until you do.
 
 ## What "Researched" And "Audited" Mean Here
 
 - **Researched.** Each page type was researched on its own: sales pages, opt-in pages, pricing, webinars, local business sites, quizzes, forms, case studies, product pages, About pages, articles, link pages, podcasts, speaker pages, events and memberships. Each finding became a change in that sample's code. The notes page lists the finding, its source and the change. The figures are benchmarks from testing firms and software vendors, so treat them as direction and test on your own page.
 - **Audited.** The Full SEO and AI Search Audit was run against every sample's files, and what failed was fixed in the code. Each notes page has the table: what was checked, the result, and what was actually seen. Checks that need a live website are marked "Couldn't check" and were not guessed.
-- **Measured.** `src/speed.mjs` runs Lighthouse on every sample and the results appear in the audit table. They are lab results on a local copy, so your host will change them.
+- **Measured.** `src/speed.mjs` runs Lighthouse on every sample and `src/legible.mjs` measures text contrast over the paintings. The results appear in each audit table.
 
 ## The Index
 
@@ -79,13 +124,13 @@ Each entry folder holds:
 
 ## Rules Every Sample Follows
 
-- **Fictional brands only.** Every name, testimonial, price and result is invented for teaching. Replace all of it with your own real proof. Never publish invented testimonials or numbers.
-- **No stock photos.** Every picture is an original illustration drawn in the page's own code. The brief for the real photo sits in a comment beside it and in the notes.
+- **Fictional brands only.** Every name, testimonial, price and result is invented for teaching, and each site says so in its footer. Replace all of it with your own real proof. Never publish invented testimonials or numbers.
+- **Original pictures.** Every painting was made for this library by `src/paint.py`. No stock photos and no pictures of real people. Testimonials show initials until you add client photos with permission.
 - **Honest persuasion.** No fake countdown timers and no invented scarcity. Any limit shown is the kind that could be real: seats, dates, a calendar.
 - **Search-ready code.** 1 H1, a real title and description, canonical and Open Graph tags, JSON-LD that matches the visible text, and every word in the HTML itself.
 - **Real trust pages everywhere.** About, Contact, Privacy, Terms and Refunds exist and are linked from every footer, even on pages with no menu. The policy wording is a starting template: replace it and have a lawyer check it.
-- **Accessible by default.** Contrast is checked at build time against WCAG AA. Tap targets are 48px or more. Focus states are visible. Motion respects the reduced-motion setting.
-- **Kept out of Google on purpose.** Each sample carries a clearly commented `noindex` line because the brands are fictional. Delete that line when the page is yours.
+- **Accessible by default.** Colour pairs are checked at build time against WCAG AA. Tap targets are 48px or more. Focus states are visible. Motion respects the reduced-motion setting.
+- **Almost no JavaScript.** 27 of the 28 sites run no scripts at all. The quiz runs 1 small script, and its questions are in the HTML either way.
 
 ## The Research
 
@@ -100,34 +145,38 @@ Search rules change often. Before you rely on any rule here, check Google's curr
 
 ## Rebuilding
 
-The library is generated from page definitions in `src/pages`. You only need Python 3 for the build itself.
+The library is generated from page definitions in `src/pages`. The build itself needs only Python 3. Everything the optional tools make is committed, so you can skip them.
 
 ```bash
-python3 src/build.py     # writes every site, notes page, the gallery and the research page, and runs the audit on each sample
-python3 src/check.py     # checks tags, headings, structured data, links, anchors, labels and dashes
+python3 src/build.py     # writes every site, launch checklist and notes page, the gallery and the research page, and runs the audit
+python3 src/check.py     # checks tags, headings, structured data, links, anchors, labels and dashes on every page
+python3 src/paint.py     # optional: repaints the pictures (needs numpy, scipy and OpenCV)
 python3 src/shots.py     # optional: regenerates previews, site icons and share images (needs Google Chrome and Pillow)
-node src/speed.mjs       # optional: runs Lighthouse on every sample and saves the results (needs Node and the lighthouse package)
+node src/speed.mjs       # optional: runs Lighthouse on every site (needs Node and the lighthouse package)
+node src/legible.mjs     # optional: measures text contrast over the paintings (same needs as speed.mjs)
 ```
 
-After `shots.py` or `speed.mjs`, run `build.py` once more so the audit tables pick up the new files and measurements.
+After any optional tool, run `build.py` once more so the audit tables pick up the new files and measurements.
 
 How the source is organised:
 
 - `src/pages/`: the content of each page, section by section.
-- `src/upgrades.py`: the research applied to each page type, with the source for each change.
+- `src/upgrades.py`: the research applied to each page type, with the source for each change, and which painting each site uses.
 - `src/sections.py`, `src/kit.py`, `src/polish.py`, `src/themes.py`: the section components, shared styles and the 10 style directions.
-- `src/art.py`: the illustrations, drawn as inline SVG.
-- `src/trust.py`: the About, Contact, Privacy, Terms and Refund pages.
+- `src/paint.py`: the paintings. Each scene is composed from shapes and noise, then painted with brush strokes.
+- `src/art.py`: the icons, small sketches and initials.
+- `src/trust.py`: the About, Contact, action, thank-you, not-found and policy pages, and the calendar files.
+- `src/launch.py`: the launch checklist for each site. `src/prelaunch.py`: the check you run on your own copy.
 - `src/audit.py`: the SEO and AI search audit that runs on every sample.
 
-To add a page type, see [CONTRIBUTING.md](CONTRIBUTING.md).
+To add a site, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Credits And Licence
 
 © Authority Builder™ · Yasmin Cronin. All rights reserved.
 
-Members of the Authority Builder communities may adapt the sample pages for their own business websites. The library itself, including its notes and prompts, may not be resold, redistributed or republished without written permission.
+Members of the Authority Builder communities may adapt the sample sites for their own business websites. The library itself, including its notes and prompts, may not be resold, redistributed or republished without written permission.
 
-The gallery format (numbered folders, each with a reference and a live self-contained sample) is adapted from [robonuggets-design-inspo](https://github.com/robonuggets/robonuggets-design-inspo) by RoboNuggets, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The format was adapted. Every sample, the code, the notes and the research in this repository are new. See [CREDITS.md](CREDITS.md).
+The gallery format (numbered folders, each with a reference and a live self-contained sample) is adapted from [robonuggets-design-inspo](https://github.com/robonuggets/robonuggets-design-inspo) by RoboNuggets, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The format was adapted. Every sample, the code, the paintings, the notes and the research in this repository are new. See [CREDITS.md](CREDITS.md).
 
 Nothing in this library is legal, financial or professional advice. See the disclaimer in the footer of the gallery.

@@ -37,6 +37,11 @@ p{text-wrap:pretty}
 .banner::before{width:560px;height:560px;right:-160px;top:-220px;background:radial-gradient(circle,rgba(197,168,128,.24),transparent 68%)}
 .banner::after{width:520px;height:520px;left:-200px;bottom:-280px;background:radial-gradient(circle,rgba(15,81,50,.5),transparent 68%)}
 .banner .wrap{position:relative;z-index:1}
+/* the gallery opens on the library's own painting, veiled so the words measure well above 4.5 to 1 */
+.banner.home{background:#0a1613}.bart{position:absolute;inset:0}.bart img{width:100%;height:100%;object-fit:cover;object-position:50% 80%;display:block}
+.banner.home::before{inset:0;width:auto;height:auto;border-radius:0;background:linear-gradient(90deg,rgba(7,15,12,.88),rgba(7,15,12,.66) 46%,rgba(7,15,12,.1) 80%),linear-gradient(180deg,rgba(7,15,12,.66),rgba(7,15,12,0) 26%,rgba(7,15,12,.2) 58%,rgba(7,15,12,.8))}
+@media(max-width:800px){.banner.home::before{background:linear-gradient(180deg,rgba(7,15,12,.82),rgba(7,15,12,.7) 50%,rgba(7,15,12,.84))}}
+.banner.home::after{display:none}.banner.home .hero{min-height:min(76svh,660px);display:grid;align-content:center}.banner.home .hero>*{max-width:760px}.banner.home .nums{max-width:none}
 .top{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:1.2rem;font-size:.92rem}
 .mark{display:inline-flex;align-items:center;gap:.7rem;font-weight:600;text-decoration:none}
 .mark i{font-style:normal;width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--forest);display:grid;place-items:center;font:700 .82rem 'Inter',sans-serif;letter-spacing:.04em}
@@ -92,6 +97,7 @@ p{text-wrap:pretty}
 .rtab td{width:50%}.rtab td small{display:block;margin-top:.4rem;color:var(--ink2);font-size:.82rem}
 .atab{width:100%;border-collapse:collapse;margin-bottom:1.6rem}.atab th,.atab td{text-align:left;vertical-align:top;padding:.8rem .8rem .8rem 0;border-top:1px solid var(--line);font-size:.93rem}
 .atab tbody th{font-weight:600;width:30%}.atab td:nth-child(2){width:8.2rem;white-space:nowrap}.blk h3{margin:1.6rem 0 .5rem;font-size:1.05rem}
+.conn{margin:.2rem 0 0 1.6rem}.conn li{font-size:.92rem}code{font:500 .86em ui-monospace,SFMono-Regular,Menlo,monospace;background:rgba(19,38,32,.07);padding:.1em .35em;border-radius:5px}
 .tally{margin:1rem 0 .4rem;font-size:.95rem}.ok{color:#0F5132}.fx{color:#0B5C8A}.yt{color:#8A5A00}.cc{color:#5B6360}.bad{color:#B3261E}
 @media(max-width:640px){.atab thead{display:none}.atab th,.atab td{display:block;width:100%!important;padding:.3rem 0;border-top:0}.atab tr{display:block;padding:.7rem 0;border-top:1px solid var(--line)}}
 .side{position:sticky;top:1.2rem;display:grid;gap:1.2rem}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.3rem 1.4rem}
@@ -113,18 +119,18 @@ p{text-wrap:pretty}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="banner"><div class="wrap"><div class="top"><a class="mark" href="index.html"><i aria-hidden="true">AB</i>Design Library</a><nav aria-label="Library"><a href="index.html#library">All Pages</a><a href="index.html#blocks">Building Blocks</a><a href="canon/index.html">The Research</a></nav></div>
+<div class="banner home"><picture class="bart"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1920.webp 1920w" sizes="100vw" width="1920" height="1200" alt="" fetchpriority="high"></picture><div class="wrap"><div class="top"><a class="mark" href="index.html"><i aria-hidden="true">AB</i>Design Library</a><nav aria-label="Library"><a href="index.html#library">All Pages</a><a href="index.html#blocks">Building Blocks</a><a href="canon/index.html">The Research</a></nav></div>
 <div class="hero"><p class="kick">Authority Builder™ · Design Library</p>
 <h1>Steal The Structure. <em>Keep Your Own Voice.</em></h1>
-<p class="lead">28 website pages a coach, creator, consultant or business owner actually needs. Each is a live sample with page-specific conversion research built into its code, a full search audit already run on it, and a look worth borrowing. Open a page, read why it works and make it yours.</p>
+<p class="lead">28 complete websites a coach, creator, consultant or business owner actually needs. Every one is ready to deploy: working forms, trust pages, a launch checklist and an original painting. The conversion research and the search audit are built into the code, not attached to it.</p>
 <div class="acts"><a class="btn" href="#library">Browse The Library</a><a class="btn ghost" href="canon/index.html">Read The Research</a></div>
-<div class="nums"><div><b>28</b><span>page samples, each a complete small site</span></div><div><b>10</b><span>style directions, not 1 template</span></div>
-<div><b>101</b><span>research findings turned into code changes</span></div><div><b>1,286</b><span>audit checks run, with the evidence shown</span></div></div></div></div></div>
+<div class="nums"><div><b>28</b><span>complete sites, ready to deploy</span></div><div><b>229</b><span>pages and 52 working forms across them</span></div>
+<div><b>101</b><span>research findings turned into code changes</span></div><div><b>1,422</b><span>audit checks run, with the evidence shown</span></div></div></div></div></div>
 <main id="main">
-<section class="sec cream light"><div class="wrap"><p class="kick">How To Use It</p><h2>Three Steps From Blank Page To <em>Live Page</em></h2>
-<ol class="how"><li><h3>Pick The Page You Need</h3><p>Filter by who you are and the job the page has to do. Open the live sample and scroll it on your phone.</p></li>
+<section class="sec cream light"><div class="wrap"><p class="kick">How To Use It</p><h2>Three Steps From Blank Page To <em>Live Site</em></h2>
+<ol class="how"><li><h3>Pick The Site You Need</h3><p>Filter by who you are and the job the page has to do. Open the live sample and scroll it on your phone.</p></li>
 <li><h3>Read Why It Works</h3><p>Every sample comes with notes: the research applied to it, the psychology behind each section and the audit results.</p></li>
-<li><h3>Make It Yours</h3><p>Copy the site folder or the build prompt, then swap in your words, your proof and your photos. The notes list what is yours to finish.</p></li></ol></div></section>
+<li><h3>Launch It As Yours</h3><p>Copy the site folder and work through its launch checklist: your words, your proof, your links. A pre-launch check lists anything from the demo still in your files.</p></li></ol></div></section>
 <div class="filters" id="library"><div class="wrap">
 <div class="fg"><span>I am a</span><button class="chip" type="button" data-k="a" data-v="Coach" aria-pressed="false">Coach</button><button class="chip" type="button" data-k="a" data-v="Creator" aria-pressed="false">Creator</button><button class="chip" type="button" data-k="a" data-v="Consultant" aria-pressed="false">Consultant</button><button class="chip" type="button" data-k="a" data-v="Business Owner" aria-pressed="false">Business Owner</button></div><div class="fg"><span>Style</span><button class="chip" type="button" data-k="s" data-v="Warm Editorial" aria-pressed="false">Warm Editorial</button><button class="chip" type="button" data-k="s" data-v="Quiet Luxury" aria-pressed="false">Quiet Luxury</button><button class="chip" type="button" data-k="s" data-v="Bold Type-Led" aria-pressed="false">Bold Type-Led</button><button class="chip" type="button" data-k="s" data-v="Bento Grid" aria-pressed="false">Bento Grid</button><button class="chip" type="button" data-k="s" data-v="Soft Organic" aria-pressed="false">Soft Organic</button><button class="chip" type="button" data-k="s" data-v="Bright Playful" aria-pressed="false">Bright Playful</button><button class="chip" type="button" data-k="s" data-v="Dark Stage" aria-pressed="false">Dark Stage</button><button class="chip" type="button" data-k="s" data-v="Corporate Calm" aria-pressed="false">Corporate Calm</button><button class="chip" type="button" data-k="s" data-v="Magazine" aria-pressed="false">Magazine</button><button class="chip" type="button" data-k="s" data-v="Retro Scrapbook" aria-pressed="false">Retro Scrapbook</button></div>
 <button class="chip" type="button" id="clear" style="border-style:dashed">Show all</button></div></div>

@@ -49,7 +49,7 @@ A podcast home that works for listeners and for search: the latest episode playa
 
 - **Title:** The Second Act Podcast | Career Change After 40 With Lois Adeyemi
 - **Description:** The Second Act is a weekly podcast of honest conversations with people who changed careers after 40. 112 episodes, hosted by career change coach Lois Adeyemi.
-- **Structured data:** PodcastSeries, Person, BreadcrumbList
+- **Structured data:** WebSite, PodcastSeries, Person
 - PodcastSeries markup names the show and its host. Use the same show name and description here and in every podcast directory.
 - Give every episode its own page with notes and a transcript. That is where the search value of a podcast lives.
 
@@ -61,7 +61,8 @@ A podcast home that works for listeners and for search: the latest episode playa
 |---|---|---|
 | Title carries the brand or the person's name | **Good** | “The Second Act Podcast | Career Change After 40 With Lois Adeyemi” (65 characters). |
 | Description says who the page is for | **Good** | “The Second Act is a weekly podcast of honest conversations with people who changed careers after 40. 112 episodes, hosted by career change coach Lois Adeyemi.” (158 characters). |
-| Site name is declared | **Your turn** | Site-name markup belongs on a home page, and this sample is an inner page. Add it to your home page the way sample 001 does. |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “The Second Act”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://secondactshow.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -71,55 +72,59 @@ A podcast home that works for listeners and for search: the latest episode playa
 | Check | Result | What was seen |
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
-| Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. |
-| 1 version of the address everywhere | **Good** | All 24 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://secondactshow.example/. |
-| Every page has a canonical tag pointing at itself | **Good** | 6 pages checked. |
-| Nothing important is hidden from Google | **Your turn** | 6 pages carry a line marked LIBRARY ONLY that keeps this fictional sample out of Google. Delete that 1 line on each page when the site is yours. |
-| No broken links inside the site | **Good** | 141 internal links checked across 6 pages, 0 broken. |
-| Links that still need a destination | **Your turn** | 11 links (article titles, social profiles, buy buttons) point at “#” because the fictional brand has nowhere to send them. Point each at a real page. |
+| Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://secondactshow.example/. |
+| Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
+| Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
+| No broken or dead links inside the site | **Good** | 192 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| Links that need your own accounts | **Your turn** | 9 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
+| A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
 
 ### The Page Itself
 
 | Check | Result | What was seen |
 |---|---|---|
-| 1 clear headline Google can read | **Good** | 1 H1 on each of the 6 pages. This page's reads: “It is not too late. It is the second act.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 657 words are readable in the raw HTML and the page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
-| Images have text alternatives and do not slow the page | **Good** | 2 illustrations, each drawn in the page's own code with a text label, and 0 image files to download. |
-| Real photographs | **Your turn** | Every illustration stands in for a photo. The brief for each real shot is in the notes and in a comment beside it. Give each photo alt text and a phone-sized version. |
+| 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “It is not too late. It is the second act.”. It is plain text, not a rotating or animated headline. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 666 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
+| Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
+| Images are sized, described and sent in a phone size | **Good** | 2 image tags, all with alt text, width and height. They share 1 painting in 2 sizes: 16KB for phones and 58KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen. |
+| Real photographs | **Your turn** | The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
-| No orphan pages | **Good** | Every page is linked from the footer of every other page. |
+| No orphan pages | **Good** | Every page is linked from the main page. |
 | Reading level | **Good** | The first screen reads at grade 7.6 and the whole page at grade 7.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 0.9 seconds. Lighthouse lab test of this file on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.2 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 3ms. |
-| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100, tested without the LIBRARY ONLY line. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 44ms. |
+| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 6 were measured. |
-| Page weight | **Good** | The whole page is 1 HTML file of 42KB before compression, plus the web fonts. No image downloads, no scripts. |
-| HTTPS and security headers | **Couldn't check** | These are set by your host. After launch, check that every address is https and that HSTS is on. |
+| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 21 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 12.7 to 1 for body text and 14.2 to 1 for large text. On a phone: 13.6 to 1 for body text and 13.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
+| Page weight | **Good** | The HTML is 43KB before compression, plus the web fonts and 1 painting. |
+| HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
 
 | Check | Result | What was seen |
 |---|---|---|
-| Structured data is present and valid JSON | **Good** | 1 JSON-LD block per page parses cleanly. This page declares: PodcastSeries, PodcastEpisode, Person, BreadcrumbList. |
+| Structured data is present and valid JSON | **Good** | 1 JSON-LD block per page parses cleanly. This page declares: WebSite, PodcastSeries, PodcastEpisode, Person. |
 | Structured data matches what the page shows | **Good** | Every name, headline, price, phone number and address in the structured data also appears in the visible text. |
 | No markup Google ignores or disallows | **Good** | No FAQ or HowTo markup (FAQ rich results stopped appearing on 7 May 2026) and no review stars on the business's own site. |
 | Every image the structured data names exists | **Fixed** | No image files are named. |
-| Profile links (sameAs) | **Your turn** | 3 placeholder profile links marked YOUR-HANDLE. Replace them with your real LinkedIn, Instagram and YouTube addresses, or delete the lines. |
+| Profile links (sameAs) | **Your turn** | The structured data carries no profile links, because a fictional brand has none and a placeholder would be published as fact. Add a sameAs list with your real profiles. |
 | Google's Rich Results Test | **Couldn't check** | The test needs a live address. Run it on your page after launch. |
 
 ### Trust Signals
 
 | Check | Result | What was seen |
 |---|---|---|
-| About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 6 pages. In the first version these 5 footer links went nowhere. |
+| About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 8 pages. In the first version these 5 footer links went nowhere. |
 | Policy wording | **Your turn** | Privacy, Terms and Refunds are plain-English starting templates, marked as such on the page. Replace them with your own terms and have a lawyer check them. |
 | Proof is written as text | **Good** | 3 testimonials and every number on the page are real text, where Google and AI tools can read and quote them. None are trapped in images. |
 | Results claims carry a plain caveat | **Good** | The page shows results, and says in plain words that they are individual and not guaranteed. |
@@ -202,7 +207,7 @@ PERSUASION RULES
 SEARCH-READY RULES
 - 1 clear H1. A title that includes my brand name. A description that says who the page is for.
 - Every word in the HTML itself. Nothing that needs JavaScript to appear.
-- JSON-LD structured data (PodcastSeries, Person, BreadcrumbList) that matches the visible text.
+- JSON-LD structured data (WebSite, PodcastSeries, Person) that matches the visible text.
 - Canonical tag, Open Graph tags and a share image, all on 1 version of my address.
 - Real About, Contact, Privacy, Terms and Refund pages, linked from the footer of every page.
 - A robots.txt that allows search and AI-answer crawlers and lists the sitemap, and a sitemap.xml of every real page.

@@ -24,11 +24,17 @@ def email(P):
     return P["brand"].get("contact", "hello@" + P["brand"]["domain"]).split(" · ")[0]
 
 
+def first_name(P):
+    p = P["brand"]["person"].split()
+    return p[1] if p[0] == "Dr" else p[0]
+
+
 def files(P):
     """Which trust pages this sample needs, and where the footer should point. A sample that is itself the About or Contact page links to itself."""
-    path = P.get("path", "")
+    path = P.get("role", P.get("path", ""))
     P["about_file"] = "index.html" if path.startswith("about") else "about.html"
     P["contact_file"] = "index.html" if path.startswith("contact") else "contact.html"
+    P.setdefault("action_file", "index.html#form" if path.startswith("contact") else "contact.html")
     P["trust_links"] = [("About", P["about_file"]), ("Contact", P["contact_file"]), ("Privacy Policy", "privacy.html"), ("Terms", "terms.html"),
                         ("Refund Policy", "refunds.html")]
 
@@ -61,7 +67,7 @@ def contact(P):
     secs = [("hero_center", dict(_="Contact page: 1 headline, then the form", eyebrow="Contact", h=f"Get In Touch With *{b['name']}*",
                                  sub="Send a note and a real person will reply. 3 fields, and no phone number required.")),
             ("contact", dict(_="A short form, real details and a stated reply time", tone="alt", details=details,
-                             form=dict(title="Send a message", button="Send Message", note="We reply within 1 business day.",
+                             form=dict(name="contact", title="Send a message", button="Send Message", note="We reply within 1 business day.",
                                        fields=[("Your name", "text", "First and last name"), ("Email", "email", "you@email.com"), ("How can we help?", "area", "A few lines is plenty")])))]
     return secs, f"Contact | {b['name']}", f"Contact {b['name']}. Email, location and a reply within 1 business day."
 
@@ -101,3 +107,81 @@ def policy(P, kind):
         desc = f"The refund policy for {n}: what is covered, how to ask and how long it takes."
     secs = [("legal", dict(_=f"{kind.title()} page, linked from the footer of every page", eyebrow=n, h=h, lead=lead, tpl=TPL, blocks=blocks, cta=("Back To The Main Page", "index.html")))]
     return secs, f"{h.replace('*', '')} | {n}", desc
+
+
+NEXT = {
+    "call": ("Within 1 business day", "{first} will reply with 3 times to choose from."),
+    "enquiry": ("Within 1 business day", "You will get a reply from a person, not an automated one."),
+    "signup": ("Your first email", "It arrives within a few minutes. Move it to your main inbox so the next one finds you."),
+    "enrol": ("Within 1 business day", "Your invoice and welcome pack arrive by email. Your place is held for 3 days."),
+    "reserve": ("Within 1 business day", "Your deposit invoice arrives by email. Your place is held for 3 days."),
+    "application": ("Within 5 working days", "{first} reads every application and replies personally."),
+}
+
+
+def thanks(P):
+    """The page every form lands on: say it worked, say what happens next, offer a way back."""
+    b = P["brand"]
+    a, t = NEXT[P.get("thanks_kind", "enquiry")]
+    secs = [("thanks", dict(_="Confirmation page: it worked, what happens next, and a way back", eyebrow="Received", h="Thank you. *That worked.*",
+                            text=f"Your details have reached {b['name']}. Here is what happens now.",
+                            steps=[("Check your inbox", "A confirmation email is on its way. If you asked for a download, it is in that email. Look in spam or promotions if you cannot see it."),
+                                   (a, t.format(first=first_name(P))),
+                                   ("Changed your mind?", f"Reply to that email or write to {email(P)} and we will remove your details.")],
+                            cta=("Back To The Main Page", "index.html")))]
+    return secs, f"Thank You | {b['name']}", "Your details were received. Here is what happens next."
+
+
+def action(P):
+    """The page a booking, enrolment or reservation button leads to: a short form that works with no checkout or calendar tool."""
+    a = P["action"]
+    fields = [("Your name", "text", "First and last name"), ("Email", "email", "you@email.com")]
+    if a.get("select"):
+        fields.append((a["select"][0], "select", a["select"][1]))
+    else:
+        fields.append((a["q"], "area", "A few lines is plenty"))
+    details = [("Reply time", "Within 1 business day"), ("Email", email(P)), ("Based in", P["brand"].get("where", "Australia"))]
+    secs = [("hero_center", dict(_="1 headline that repeats the promise of the button that led here", eyebrow=a["eyebrow"], h=a["h"], sub=a["sub"])),
+            ("contact", dict(_="A 3-field form and the details that make it safe to send", tone="alt", details=details,
+                             form=dict(name=a["kind"], title=a.get("title", "Your details"), button=a["button"], note=a.get("note", "We reply within 1 business day."), fields=fields)))]
+    return secs, f"{a['h'].replace('*', '')} | {P['brand']['name']}", a["sub"]
+
+
+def notfound(P):
+    secs = [("thanks", dict(_="Not-found page: admit it, then offer the 2 most useful ways on", eyebrow="Page not found", h="That page is *not here.*",
+                            text="It may have moved, or the link may be wrong. Nothing is broken at your end.", steps=[],
+                            cta=("Go To The Main Page", "index.html"), cta2=("Contact Us", P["contact_file"])))]
+    return secs, f"Page Not Found | {P['brand']['name']}", "That page could not be found."
+
+
+def ics(ev, P):
+    """A calendar file that Apple Calendar and Outlook open directly."""
+    rows = ["BEGIN:VCALENDAR", "VERSION:2.0", f"PRODID:-//{P['brand']['name']}//EN", "BEGIN:VEVENT", f"UID:{P['slug']}@{P['brand']['domain']}", f"DTSTAMP:{ev['start']}",
+            f"DTSTART:{ev['start']}", f"DTEND:{ev['end']}", f"SUMMARY:{ev['title']}", f"DESCRIPTION:{ev['details']}", f"LOCATION:{ev['where']}", "END:VEVENT", "END:VCALENDAR"]
+    return "\r\n".join(rows) + "\r\n"
+
+
+def google(ev):
+    from urllib.parse import quote
+    return (f"https://calendar.google.com/calendar/render?action=TEMPLATE&text={quote(ev['title'])}&dates={ev['start']}/{ev['end']}"
+            f"&details={quote(ev['details'])}&location={quote(ev['where'])}")
+
+
+def cals(ev):
+    return [("Google", google(ev), ' target="_blank" rel="noopener"'), ("Apple", "event.ics", " download"), ("Outlook", "event.ics", " download")]
+
+
+NETLIFY = """# Host settings for Netlify. They apply as soon as this folder is deployed.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+"""

@@ -2,23 +2,61 @@
 import re
 
 import art
-from kit import S, e, h, eyebrow, btn, acts, sh, ul, paras, sec, vis, crowd, reassure
+import kit
+from kit import S, e, h, eyebrow, btn, acts, sh, ul, paras, sec, vis, crowd, reassure, backdrop, detail
+
+CARDS = ("book", "cover", "lesson", "email")
+
+
+def tone():
+    return "bleed t-" + kit.CTX["art"]["tone"]
+
+
+def brief(v):
+    """The hero is a painting. The brief for the photograph that could replace it is kept as a comment and listed in the notes."""
+    if not v or not v.get("label") or v.get("kind", "person") in CARDS:
+        return ""
+    if "briefs" in kit.CTX:
+        kit.CTX["briefs"].append(kit._brief(v["label"]))
+    return f'<!-- {e(v["label"])} -->'
 
 AUTO = {"email": "email", "tel": "tel"}
 
 
+def field_name(label, typ):
+    low = label.lower()
+    if typ == "email":
+        return "email"
+    if typ == "tel":
+        return "phone"
+    if typ == "area":
+        return "message"
+    if "name" in low and "business" not in low and "agency" not in low:
+        return "name"
+    return re.sub(r"[^a-z0-9]+", "-", low).strip("-")[:40]
+
+
+def form_open(name, cls=""):
+    """Every form posts for real. On Netlify it is collected with no extra code once form detection is on; on any other host,
+    point the action at your email or form tool. The hidden field is a spam trap that people never see."""
+    klass = f' class="{cls}"' if cls else ""
+    return (f'<form{klass} name="{name}" method="post" action="thank-you.html" data-netlify="true" data-netlify-honeypot="website">'
+            f'<input type="hidden" name="form-name" value="{name}"><p class="hp"><label>Leave this empty <input name="website" tabindex="-1" autocomplete="off"></label></p>')
+
+
 def form(f, cls="card formcard"):
-    """A visual-only form. Connect it to your email or booking tool when you make the page yours."""
     fields = ""
     for i, (label, typ, hint) in enumerate(f.get("fields", [])):
         fid = "f-" + re.sub(r"[^a-z0-9]+", "-", label.lower()).strip("-") + f"-{i}"
+        nm = field_name(label, typ)
+        req = "" if "optional" in label.lower() else " required"
         if typ == "area":
-            ctl = f'<textarea id="{fid}" name="{fid}" placeholder="{e(hint)}"></textarea>'
+            ctl = f'<textarea id="{fid}" name="{nm}" placeholder="{e(hint)}"{req}></textarea>'
         elif typ == "select":
-            ctl = f'<select id="{fid}" name="{fid}">' + "".join(f"<option>{e(o)}</option>" for o in hint) + "</select>"
+            ctl = f'<select id="{fid}" name="{nm}"{req}>' + "".join(f"<option>{e(o)}</option>" for o in hint) + "</select>"
         else:
-            auto = AUTO.get(typ) or ("name" if "name" in label.lower() else "on")
-            ctl = f'<input id="{fid}" name="{fid}" type="{typ}" placeholder="{e(hint)}" autocomplete="{auto}">'
+            auto = AUTO.get(typ) or ("name" if nm == "name" else "on")
+            ctl = f'<input id="{fid}" name="{nm}" type="{typ}" placeholder="{e(hint)}" autocomplete="{auto}"{req}>'
         fields += f'<div class="field"><label for="{fid}">{e(label)}</label>{ctl}</div>'
     title = f'<h2 class="ft-t">{h(f["title"])}</h2>' if f.get("title") else ""
     text = f'<p class="fine" style="text-align:left;margin-top:.4rem">{h(f["text"])}</p>' if f.get("text") else ""
@@ -26,8 +64,8 @@ def form(f, cls="card formcard"):
     proof = crowd(f["proof"], 3).replace(" data-in", "") if f.get("proof") else ""
     cals = ""
     if f.get("cals"):
-        cals = '<p class="cals"><span>Add to calendar:</span>' + "".join(f'<a href="#">{e(c)}</a>' for c in f["cals"]) + "</p>"
-    return (f'<form class="{cls}" action="#" method="get" onsubmit="return false"><!-- Visual only: connect to your own tool -->{title}{text}{fields}'
+        cals = '<p class="cals"><span>Add to calendar:</span>' + "".join(f'<a href="{e(hr)}"{dl}>{e(c)}</a>' for c, hr, dl in f["cals"]) + "</p>"
+    return (f'{form_open(f.get("name", "enquiry"), cls)}{title}{text}{fields}'
             f'<button class="btn" type="submit">{e(f.get("button", "Send"))}</button>{note}{proof}{cals}</form>')
 
 
@@ -42,19 +80,22 @@ def under(d):
 .hs-g{display:grid;grid-template-columns:1.08fr .92fr;gap:clamp(28px,5vw,76px);align-items:center}
 .hero{padding-block:clamp(36px,5vw,72px) clamp(56px,8vw,104px)}
 .hero .lead{margin-top:1.4rem}.hero .ticks{margin-top:1.2rem}
-.hs-v{position:relative}.float{position:absolute;left:-9%;bottom:14%;max-width:230px;padding:16px 18px;font-size:.9rem;line-height:1.4;z-index:3}
+.hs-v{position:relative;min-height:clamp(240px,34vw,440px)}.hs-v.has-card{min-height:0}
+.float{position:absolute;left:6%;bottom:12%;max-width:230px;padding:16px 18px;font-size:.9rem;line-height:1.4;z-index:3}.has-card .float{left:-8%;bottom:-6%}
 .float b{display:block;font-family:var(--fd);font-weight:var(--hw);font-size:1.9rem;line-height:1;letter-spacing:var(--hls);color:var(--accent-t)}
-@media(max-width:860px){.hs-g{grid-template-columns:1fr}.hs-v{max-width:430px;margin-inline:auto;width:100%}.float{left:-4px}}
+@media(max-width:860px){.hs-g{grid-template-columns:1fr}.hs-v{min-height:0;display:flex;flex-wrap:wrap;gap:.8rem;align-items:flex-start}
+.hs-v .float,.hs-v .float.f2{position:static;max-width:none;flex:1 1 150px;animation:none}.hs-v.has-card{display:block;max-width:430px}.has-card .float{display:none}}
 """)
 def hero_split(d, P):
     fl, f2 = d.get("float"), d.get("float2")
+    v = d.get("visual") or {}
     flo = f'<div class="card float"><b>{e(fl[0])}</b>{e(fl[1])}</div>' if fl else ""
     flo += f'<div class="card float f2">{art.icon(f2[0])}<div><b>{e(f2[1])}</b><span>{e(f2[2])}</span></div></div>' if f2 else ""
-    flip = ' style="order:-1"' if d.get("flip") else ""
+    card = vis(v) if v.get("kind") in CARDS else ""
     inner = (f'<div class="hs-g"><div class="hs-c">{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
              f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{ul(d.get("bullets"))}{acts(d)}{under(d)}</div>'
-             f'<div class="hs-v" data-in style="--i:2"{flip}>{vis(d.get("visual"))}{flo}</div></div>')
-    return sec("hero hsplit", d, inner)
+             f'<div class="hs-v{" has-card" if card else ""}" data-in style="--i:2">{card}{flo}</div></div>')
+    return sec("hero hsplit " + tone(), d, inner, pre=brief(v) + backdrop(True))
 
 
 @S("hero_center", """
@@ -69,7 +110,7 @@ def hero_center(d, P):
     below = f'<div class="hc-u" data-in style="--i:4">{vis(d["under"])}</div>' if d.get("under") else ""
     inner = (f'{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1><p class="lead" data-in style="--i:2">{h(d["sub"])}</p>'
              f'{chips}{acts(d)}{under(d)}{below}')
-    return sec("hero hcenter", d, inner)
+    return sec("hero hcenter " + tone(), d, inner, pre=backdrop(True))
 
 
 @S("hero_form", """
@@ -94,7 +135,7 @@ def hero_form(d, P):
              f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{ul(d.get("bullets"))}{meta}{under(d)}</div>'
              f'<div class="hf-v" id="{d.get("fid", "signup")}" data-in style="--i:3">{vis(d.get("visual"))}{form(d["form"]) if d.get("form") else ""}'
              f'{reassure(d.get("after"), "check")}</div></div>')
-    return sec("hero hform", d, inner)
+    return sec("hero hform " + tone(), d, inner, pre=backdrop(True))
 
 
 @S("hero_stage", """
@@ -111,10 +152,9 @@ def hero_stage(d, P):
     stats = ""
     if d.get("stats"):
         stats = '<div class="hstats">' + "".join(f"<div><b>{e(n)}</b><span>{e(l)}</span></div>" for n, l in d["stats"]) + "</div>"
-    v = f'<div data-in style="--i:3">{vis(d["visual"])}</div>' if d.get("visual") else "<div></div>"
     inner = (f'<div class="hst-g"><div>{eyebrow(d.get("eyebrow"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
-             f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{acts(d)}{under(d)}</div>{v}</div>{stats}')
-    return sec("hero hstage", d, inner)
+             f'<p class="lead" data-in style="--i:2">{h(d["sub"])}</p>{acts(d)}{under(d)}</div></div>{stats}')
+    return sec("hero hstage " + tone(), d, inner, pre=brief(d.get("visual")) + backdrop(True))
 
 
 @S("hero_article", """
@@ -138,7 +178,7 @@ def hero_article(d, P):
     toc = ""
     if d.get("toc"):
         toc = '<nav class="toc" aria-label="On this page"><span>On this page:</span>' + "".join(f'<a class="link" href="#{i}">{e(t)}</a>' for t, i in d["toc"]) + "</nav>"
-    v = vis(d["visual"]) if d.get("visual") else ""
+    v = brief(d.get("visual")) + detail("16/7", whole=True)
     inner = (f'{eyebrow(d.get("kicker"))}<h1 data-in style="--i:1">{h(d["h"])}</h1>'
              f'<p class="lead" data-in style="--i:2">{h(d["standfirst"])}</p>{by}{short}{toc}{v}')
     return sec("hart", d, inner)
@@ -173,11 +213,11 @@ def bento(d, P):
             body += f'<p class="big">{e(t["num"])}</p><p>{h(t["text"])}</p>'
         elif k == "list":
             body += f'<h2 style="font-size:1.5rem">{h(t["h"])}</h2><ul>' + "".join(
-                f'<li><a href="#" class="link" style="text-decoration:none">{e(a)}</a><span>{e(b)}</span></li>' for a, b in t["items"]) + "</ul>"
+                f'<li><a href="{kit.connect("article")}" class="link" style="text-decoration:none">{e(a)}</a><span>{e(b)}</span></li>' for a, b in t["items"]) + "</ul>"
         elif k == "form":
             body += (f'<h2 style="font-size:1.7rem">{h(t["h"])}</h2><p>{h(t["text"])}</p>'
-                     f'<form class="inl" action="#" method="get" onsubmit="return false"><label class="skip" for="bn{i}">Email</label>'
-                     f'<input id="bn{i}" type="email" placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">{e(t["button"])}</button></form>'
+                     f'{form_open("newsletter", "inl")}<label class="skip" for="bn{i}">Email</label>'
+                     f'<input id="bn{i}" name="email" type="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">{e(t["button"])}</button></form>'
                      f'{crowd(t.get("proof"), 3).replace(" data-in", "")}<p class="fine">{h(t.get("note", ""))}</p>')
         elif k == "quote":
             name = t["by"].split(",")[0]
@@ -206,8 +246,8 @@ def bento(d, P):
 def linkbio(d, P):
     f = d["feature"]
     links = "".join(
-        f'<a href="#"><span>{e(a)}<small>{e(b)}</small></span>{("<i>" + e(t) + "</i>") if t else ""}</a>' for a, b, t in d["links"])
-    soc = "".join(f'<a href="#">{e(s)}</a>' for s in d["socials"])
+        f'<a href="{e(hr)}"><span>{e(a)}<small>{e(b)}</small></span>{("<i>" + e(t) + "</i>") if t else ""}</a>' for a, b, t, hr in d["links"])
+    soc = "".join(f'<a href="{kit.connect(s)}">{e(s)}</a>' for s in d["socials"])
     inner = (f'{vis({"kind": "person", "label": d["photo"], "ar": "1/1"})}<h1>{h(d["h"])}</h1><p class="lead">{h(d["sub"])}</p>{crowd(d.get("proof"), 3)}'
              f'<div class="card lb-f">{eyebrow(f["eyebrow"])}<h2>{h(f["h"])}</h2><p>{h(f["text"])}</p>{btn(f["cta"])}{reassure(f.get("reassure"))}</div>'
              f'<nav class="lb-l" aria-label="Main links">{links}</nav><nav class="lb-s" aria-label="Social profiles">{soc}</nav>')
@@ -316,7 +356,7 @@ def trust(d, P):
 """)
 def doors(d, P):
     it = "".join(
-        f'<a class="card door" href="{e(x.get("href", "#"))}"><span class="tag">{e(x["tag"])}</span><h3>{h(x["h"])}</h3>'
+        f'<a class="card door" href="{e(x.get("href") or P["action_file"])}"><span class="tag">{e(x["tag"])}</span><h3>{h(x["h"])}</h3>'
         f'<p>{h(x["text"])}</p><span class="go">{e(x["go"])}{art.icon("arrow")}</span></a>' for x in d["items"])
     return sec("doors", d, sh(d) + f'<div class="grid" style="--cols:{len(d["items"])}">{it}</div>')
 
@@ -492,7 +532,7 @@ def faq(d, P):
     it = "".join(f'<details><summary>{h(q)}</summary><div class="a"><p>{h(a)}</p></div></details>' for q, a in d["items"])
     ask = ""
     if d.get("ask"):
-        links = "".join(f' <a class="link" href="#">{e(c)}</a>' for c in d.get("cals", []))
+        links = "".join(f' <a class="link" href="{e(hr)}"{dl}>{e(c)}</a>' for c, hr, dl in d.get("cals", []))
         ask = f'<p class="ask">{h(d["ask"])}{links}</p>'
     return sec("faq", d, sh(d) + it + ask)
 
@@ -504,7 +544,10 @@ def faq(d, P):
 def cta(d, P):
     d.setdefault("tone", "dark")
     lead = f'<p class="lead">{h(d["text"])}</p>' if d.get("text") else ""
-    return sec("cta", d, f'{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>{lead}{acts(d).replace(" data-in", "")}{reassure(d.get("note"), d.get("icon", "shield"))}')
+    inner = f'{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2>{lead}{acts(d).replace(" data-in", "")}{reassure(d.get("note"), d.get("icon", "shield"))}'
+    if d["tone"] == "dark":
+        return sec("cta bleed t-light deep", d, inner, pre=backdrop())
+    return sec("cta", d, inner)
 
 
 @S("feed", """
@@ -521,16 +564,16 @@ def cta(d, P):
 def feed(d, P):
     if d.get("variant") == "grid":
         it = "".join(
-            f'<article>{vis({"kind": "scene", "label": x.get("img", "Article image"), "ar": "16/10"})}<span class="k">{e(x["kind"])}</span>'
-            f'<h3><a href="#">{h(x["title"])}</a></h3><p>{h(x.get("text", ""))}</p><p class="m fine">{e(x["meta"])}</p></article>'
+            f'<article>{vis({"kind": "sketch", "label": x.get("img", "Article image"), "ar": "16/10"})}<span class="k">{e(x["kind"])}</span>'
+            f'<h3><a href="{e(x.get("href") or kit.connect(d.get("link", "article")))}">{h(x["title"])}</a></h3><p>{h(x.get("text", ""))}</p><p class="m fine">{e(x["meta"])}</p></article>'
             for x in d["items"])
         body = f'<div class="grid fd-g" style="--cols:{d.get("cols", 3)}">{it}</div>'
     else:
         it = "".join(
-            f'<li><span class="k">{e(x["kind"])}</span><div><h3><a href="#">{h(x["title"])}</a></h3>'
+            f'<li><span class="k">{e(x["kind"])}</span><div><h3><a href="{e(x.get("href") or kit.connect(d.get("link", "article")))}">{h(x["title"])}</a></h3>'
             f'{("<p>" + h(x["text"]) + "</p>") if x.get("text") else ""}</div><span class="m">{e(x["meta"])}</span></li>' for x in d["items"])
         body = f'<ul class="fd-l">{it}</ul>'
-    more = f'<p class="fd-more"><a class="link" href="#">{e(d["more"])}</a></p>' if d.get("more") else ""
+    more = f'<p class="fd-more"><a class="link" href="{kit.connect(d.get("link", "article") + " index")}">{e(d["more"])}</a></p>' if d.get("more") else ""
     return sec("feed", d, sh(d) + body + more)
 
 
@@ -543,8 +586,8 @@ def feed(d, P):
 """)
 def capture(d, P):
     inner = (f'<div>{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2><p>{h(d["text"])}</p></div>'
-             f'<form action="#" method="get" onsubmit="return false"><label class="skip" for="cap-e">Email address</label>'
-             f'<input id="cap-e" type="email" placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">{e(d["button"])}</button>'
+             f'{form_open(d.get("name", "newsletter"))}<label class="skip" for="cap-e">Email address</label>'
+             f'<input id="cap-e" name="email" type="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">{e(d["button"])}</button>'
              f'<p class="fine">{h(d.get("note", ""))}</p>{crowd(d.get("proof"), 3).replace(" data-in", "")}</form>')
     return sec("cap", d, inner)
 
@@ -571,7 +614,7 @@ def schedule(d, P):
 .art .chartc{margin:2rem 0}
 .srcs{margin-top:2.6rem;padding-top:1.4rem;border-top:max(1px,var(--bw)) solid var(--line)}.srcs h2{margin:0 0 .8rem;font-size:1.2rem}
 .srcs ol{list-style:decimal;padding-left:1.3rem;font-size:.96rem;color:var(--ink2)}.srcs li{margin-top:.5rem}.srcs a{color:var(--ink)}
-.auth{display:grid;grid-template-columns:96px 1fr;gap:1.4rem;align-items:center;margin-top:3rem}.auth .ph{--ar:1/1;border-radius:50%;box-shadow:none}
+.auth{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center;margin-top:3rem}.auth .av{width:84px;height:84px;font-size:1.5rem}
 .auth h2{margin:0 0 .3rem;font-size:1.3rem}.auth p{font-size:1rem;line-height:1.55}
 .mxw{overflow-x:auto}.mx{width:100%;border-collapse:collapse}.mx th,.mx td{padding:.9rem .8rem;border-bottom:max(1px,var(--bw)) solid var(--line);text-align:left;vertical-align:top}
 .mx thead th{font-family:var(--fb);font-weight:700;letter-spacing:.04em}.mx .hot{background:color-mix(in srgb,var(--accent) 9%,transparent)}
@@ -602,7 +645,7 @@ def article(d, P):
                 f'<li><a href="{e(u)}" rel="noopener">{e(t)}</a>. {e(pub)}</li>' for t, u, pub in b[1]) + "</ol></section>")
     a = d.get("author")
     if a:
-        out += (f'<aside class="card auth">{vis({"kind": "person", "label": "Author photo", "ar": "1/1"})}<div><h2>About {e(a["name"])}</h2>'
+        out += (f'<aside class="card auth">{art.avatar(a["name"])}<div><h2>About {e(a["name"])}</h2>'
                 f'<p>{h(a["bio"])}</p><p><a class="link" href="about.html">{e(a["link"])}</a></p></div></aside>')
     return sec("art", d, out)
 
@@ -618,7 +661,7 @@ def article(d, P):
 @media(max-width:600px){.pl{grid-template-columns:1fr}}
 """)
 def player(d, P):
-    apps = "".join(f'<a href="#">{e(a)}</a>' for a in d["apps"])
+    apps = "".join(f'<a href="{"#notes" if a in ("Full transcript", "Show notes") else kit.connect(a)}">{e(a)}</a>' for a in d["apps"])
     inner = (f'<div class="card pl"><div class="art-c" aria-hidden="true">{h(d["art"])}</div><div>{eyebrow(d["eyebrow"])}'
              f'<h2>{h(d["h"])}</h2><p class="fine">{e(d["meta"])}</p>'
              f'<div class="bar" role="img" aria-label="Audio player mock-up"><span class="pb"></span><span class="tr"></span><span class="fine">{e(d["time"])}</span></div>'
@@ -638,7 +681,7 @@ def shownotes(d, P):
     stamps = "".join(f"<li><b>{e(t)}</b><span>{h(x)}</span></li>" for t, x in d["stamps"])
     lines = "".join(f"<p><b>{e(who)}</b>{h(x)}</p>" for who, x in d["transcript"])
     inner = (f'<div class="sn-g"><div><h3>In This Episode</h3><ul class="sn-t">{stamps}</ul></div>'
-             f'<div class="sn-x"><h3>From The Transcript</h3>{lines}<a class="link" href="#">{e(d["more"])}</a></div></div>')
+             f'<div class="sn-x"><h3>From The Transcript</h3>{lines}<a class="link" href="{kit.connect("full transcript")}">{e(d["more"])}</a></div></div>')
     return sec("shownotes", d, sh(d) + inner)
 
 
@@ -655,10 +698,10 @@ def shownotes(d, P):
 def products(d, P):
     und = f'<p class="und">{art.icon("shield")}<span>{h(d["under"])}</span></p>' if d.get("under") else ""
     it = "".join(
-        f'<article class="card prd"><div class="pv">{vis({"kind": "scene", "label": x["img"], "ar": "4/3"})}'
+        f'<article class="card prd"><div class="pv">{vis({"kind": "sketch", "label": x["img"], "ar": "4/3"})}'
         f'{("<span class=tagi>" + e(x["tag"]) + "</span>") if x.get("tag") else ""}</div><span class="k">{e(x["kind"])}</span>'
         f'<h3>{h(x["name"])}</h3><p>{h(x["text"])}</p><div class="row"><span class="pc">{e(x["price"])}</span>'
-        f'<a class="btn" href="#">{e(x.get("go", "Get it"))}</a></div>{und}</article>' for x in d["items"])
+        f'<a class="btn" href="{e(x.get("href") or kit.connect("checkout " + x["name"]))}">{e(x.get("go", "Get it"))}<span class="skip"> {e(x["name"])}</span></a></div>{und}</article>' for x in d["items"])
     return sec("products", d, sh(d) + f'<div class="grid" style="--cols:{d.get("cols", 3)}">{it}</div>')
 
 
@@ -682,16 +725,35 @@ def contact(d, P):
     if d.get("call"):
         c = d["call"]
         call = f'<a class="ct-call" href="{e(c[1])}">{art.icon("phone")}{e(c[0])}</a><p class="fine">{h(c[2])}</p>'
-    mp = vis({"kind": "scene", "label": d["map"], "ar": "16/10"}) if d.get("map") else ""
+    mp = vis({"kind": "sketch", "label": d["map"], "ar": "16/10"}) if d.get("map") else ""
     left = form(d["form"]) if d.get("form") else f'<div>{paras(d.get("paras"))}{ul(d.get("bullets"))}{acts(d).replace(" data-in", "")}</div>'
     inner = f'<div class="ct-g">{left}<div>{call}<dl class="ct-d">{det}{hrs}</dl>{mp}</div></div>'
     return sec("contact", d, sh(d) + inner)
 
 
+QUIZ_JS = """<script>
+/* The quiz. Every question is already in the HTML, so it reads without this script. The script shows 1 question at a time and adds up the result. */
+(function(){var f=document.querySelector('[data-quiz]');if(!f)return;var qs=[].slice.call(f.querySelectorAll('[data-q]')),i=0,
+prog=f.querySelector('[data-progress]'),bar=f.querySelector('[data-bar]'),btn=f.querySelector('[data-next]'),warn=f.querySelector('[data-warn]'),
+res=document.querySelector('[data-result]'),R=JSON.parse(f.getAttribute('data-styles'));f.classList.add('live');
+function show(){qs.forEach(function(q,n){q.hidden=n!==i});prog.textContent='Question '+(i+1)+' of '+qs.length;bar.style.width=(i/qs.length*100)+'%';
+btn.textContent=i===qs.length-1?'See My Result':'Next Question'}
+btn.addEventListener('click',function(){if(i>=qs.length){qs.forEach(function(q){q.querySelectorAll('input').forEach(function(x){x.checked=false})});i=0;show();return}
+var c=qs[i].querySelector('input:checked');if(!c){warn.hidden=false;qs[i].querySelector('input').focus();return}warn.hidden=true;
+if(i<qs.length-1){i++;show();qs[i].querySelector('input').focus();return}
+var t={};Object.keys(R).forEach(function(k){t[k]=0});qs.forEach(function(q){t[q.querySelector('input:checked').value]++});
+var top=Object.keys(t).sort(function(a,b){return t[b]-t[a]})[0];
+res.querySelector('[data-eyebrow]').textContent='Your result';res.querySelector('[data-title]').textContent=R[top][1];res.querySelector('[data-text]').textContent=R[top][2];
+Object.keys(t).forEach(function(k){var p=Math.round(t[k]/qs.length*100),row=res.querySelector('[data-k="'+k+'"]');row.querySelector('b').textContent=p+'%';row.querySelector('i').style.setProperty('--p',p+'%')});
+var s=res.querySelector('[data-style]');if(s)s.value=R[top][1];qs.forEach(function(q){q.hidden=true});i=qs.length;bar.style.width='100%';
+prog.textContent='Done. Your result is ready.';btn.textContent='Start Again';res.setAttribute('tabindex','-1');res.focus()});show()})();
+</script>"""
+
+
 @S("quiz", """
 .qz-g{display:grid;grid-template-columns:1fr 1fr;gap:clamp(20px,4vw,48px);align-items:start}
-.qz .pg{height:8px;border-radius:9px;background:var(--line);margin:.6rem 0 1.4rem;position:relative}.qz .pg::after{content:"";position:absolute;inset:0 62% 0 0;border-radius:9px;background:var(--accent)}
-.qz fieldset{border:0}.qz legend{font-family:var(--fd);font-weight:var(--hw);font-size:1.5rem;line-height:1.15;letter-spacing:var(--hls);text-transform:var(--htt);margin-bottom:1rem}
+.qz .pg{height:8px;border-radius:9px;background:var(--line);margin:.6rem 0 1.4rem;overflow:hidden}.qz .pg i{display:block;height:100%;width:0;border-radius:9px;background:var(--accent);transition:width .3s}
+.qz fieldset{border:0;margin-bottom:1.6rem}.qz.live fieldset{margin-bottom:0}.qz:not(.live) [data-next]{display:none}.qz legend{font-family:var(--fd);font-weight:var(--hw);font-size:1.5rem;line-height:1.15;letter-spacing:var(--hls);text-transform:var(--htt);margin-bottom:1rem}
 .qz label{display:flex;gap:.8rem;align-items:center;min-height:54px;padding:.7rem 1rem;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),14px);margin-top:.6rem;cursor:pointer;background:var(--bg)}
 .qz input{width:20px;height:20px;accent-color:var(--accent)}.qz label:has(input:checked){border-color:var(--accent-t);outline:2px solid var(--accent-t)}
 .qz .btn{margin-top:1.2rem}
@@ -703,20 +765,27 @@ def contact(d, P):
 @media(max-width:800px){.qz-g{grid-template-columns:1fr}}
 """)
 def quiz(d, P):
-    opts = "".join(
-        f'<label><input type="radio" name="q"{" checked" if i == 1 else ""}> {e(o)}</label>' for i, o in enumerate(d["options"]))
     r = d["result"]
-    bars = "".join(f'<div class="b"><span>{e(a)}<b>{p}%</b></span><i style="--p:{p}%"></i></div>' for a, p in r["bars"])
+    styles = d["styles"]
+    qs = ""
+    for n, (text, opts) in enumerate(d["questions"]):
+        o = "".join(f'<label><input type="radio" name="q{n + 1}" value="{k}"> {e(t)}</label>' for k, t in opts)
+        qs += f'<fieldset data-q><legend>{h(text)}</legend>{o}</fieldset>'
+    top = max(r["bars"], key=lambda x: x[1])[0]
+    bars = "".join(f'<div class="b" data-k="{k}"><span>{e(lab)}<b>{dict(r["bars"])[lab]}%</b></span><i style="--p:{dict(r["bars"])[lab]}%"></i></div>' for k, (lab, _, _) in styles.items())
     gate = ""
     if r.get("gate"):
         g = r["gate"]
-        gate = (f'<form class="gate" action="#" method="get" onsubmit="return false"><label for="qz-e">{e(g["label"])}</label>'
-                f'<div><input id="qz-e" type="email" placeholder="you@email.com" autocomplete="email"><button class="btn" type="submit">{e(g["button"])}</button></div>'
+        gate = (f'{form_open("quiz-plan", "gate")}<input type="hidden" name="style" value="{e(r["h"])}" data-style><label for="qz-e">{e(g["label"])}</label>'
+                f'<div><input id="qz-e" name="email" type="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">{e(g["button"])}</button></div>'
                 f'<p class="fine">{h(g["skip"])}</p></form>')
-    inner = (f'<div class="qz-g"><form class="card qz formcard" action="#" method="get" onsubmit="return false"><p class="fine">{e(d["progress"])}</p><div class="pg" aria-hidden="true"></div>'
-             f'<fieldset><legend>{h(d["q"])}</legend>{opts}</fieldset><button class="btn" type="submit">{e(d["button"])}</button></form>'
-             f'<div class="card rs">{eyebrow(r["eyebrow"])}<h3>{h(r["h"])}</h3><p>{h(r["text"])}</p>{bars}{gate}</div></div>')
-    return sec("quiz", d, sh(d) + inner)
+    import json
+    data = e(json.dumps(styles))
+    inner = (f'<div class="qz-g"><div class="card qz formcard" data-quiz data-styles="{data}"><p class="fine" data-progress>{len(d["questions"])} questions. Answer them in order.</p>'
+             f'<div class="pg" aria-hidden="true"><i data-bar></i></div>{qs}<p class="fine" data-warn hidden>Pick 1 answer to continue.</p>'
+             f'<button class="btn" type="button" data-next>See The 4 Styles Below</button></div>'
+             f'<div class="card rs" data-result>{eyebrow(r["eyebrow"]).replace("<p ", "<p data-eyebrow ")}<h3 data-title>{h(r["h"])}</h3><p data-text>{h(r["text"])}</p>{bars}{gate}</div></div>')
+    return sec("quiz", d, sh(d) + inner + QUIZ_JS)
 
 
 @S("thanks", """
@@ -728,7 +797,8 @@ def quiz(d, P):
 """)
 def thanks(d, P):
     it = "".join(f'<li class="card" style="padding:1.2rem 1.4rem"><div><h2>{h(a)}</h2><p>{h(b)}</p></div></li>' for a, b in d["steps"])
-    return sec("thx", d, f'{eyebrow(d.get("eyebrow"))}<h1>{h(d["h"])}</h1><p class="lead">{h(d["text"])}</p><ol>{it}</ol>{acts(d).replace(" data-in", "")}')
+    steps = f"<ol>{it}</ol>" if it else ""
+    return sec("thx", d, f'{eyebrow(d.get("eyebrow"))}<h1>{h(d["h"])}</h1><p class="lead">{h(d["text"])}</p>{steps}{acts(d).replace(" data-in", "")}')
 
 
 @S("bios", """

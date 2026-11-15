@@ -1,6 +1,6 @@
-# Adding A Page To The Library
+# Adding A Site To The Library
 
-Every sample is generated from a short page definition. You describe the page as data. The build writes the page, its trust pages, robots.txt and sitemap.xml, runs the audit on them, then writes the notes page, the notes file and the gallery card.
+Every sample is generated from a short page definition. You describe the main page as data. The build writes the whole site around it (trust pages, the action page, thank-you and not-found pages, policies, crawler files and host settings), runs the audit on it, then writes the launch checklist, the notes page, the notes file and the gallery card.
 
 ## The Short Version
 
@@ -10,13 +10,16 @@ Every sample is generated from a short page definition. You describe the page as
 4. List the sections in order. Each section is a pair: the pattern name and its content.
 5. Fill in `why`, `principles`, `borrow` and, if you studied a real site, `study`.
 6. Research that page type. Add a function for it in `src/upgrades.py` that makes each change and returns the finding it came from. Add each new source to `R` with a link you have actually read.
-7. Run the build, the check, the screenshots and the speed test, then the build once more:
+7. Give it a painting. Add the page to `ART` in `src/paint.py` (scene, seed, palette) and to `ART` in `src/upgrades.py` (scene, whether the words on it are light or dark, and the alt text).
+8. Run the build, the painting, the check, the screenshots and the measurements, then the build once more:
 
 ```bash
 python3 src/build.py
+python3 src/paint.py 029      # only the entry you added: its painting in 2 sizes
 python3 src/check.py
-python3 src/shots.py 029      # only the entry you added: preview, icons and share image
+python3 src/shots.py 029      # preview, icons and share image
 node src/speed.mjs 029        # Lighthouse, for the audit table
+node src/legible.mjs 029      # text contrast over the painting, for the audit table
 python3 src/build.py          # picks up the new files and measurements
 ```
 
@@ -62,8 +65,11 @@ Add an entry to `C` in `src/canon.py` with its group, name, originator, source a
 - **Borrow the technique, never the copy, the images or the layout.** If a sample still looks or reads like the site that inspired it, keep working.
 - **No fake urgency.** No countdown timers. No invented scarcity. Limits must be the kind that could be real.
 - **Caveat every results claim.** Income and outcome figures carry a results-are-not-typical line.
-- **Everything in the HTML.** No content that needs JavaScript to appear. The samples run no scripts at all.
-- **Every picture is an illustration with a brief.** Write the `label` as the brief for the real photo. It becomes a code comment and a line in the notes.
+- **Everything in the HTML.** No content that needs JavaScript to appear. Only the quiz runs a script, and its questions are in the HTML either way.
+- **No dead ends.** Every button leads to a real page, a real section or a working form. A destination that needs the owner's own account uses `kit.connect("what it is")`, which the launch checklist then lists.
+- **Every form sends.** Build forms with `form_open` in `src/sections.py` so they get a name, named fields, the spam trap and the thank-you page.
+- **Words over a painting must measure up.** `src/legible.mjs` has to report no line below the bar before you ship.
+- **Every picture is original and has a brief.** Pictures are crops of the site's own painting. Write the `label` as the brief for the real photo. It becomes a code comment, a line in the notes and a line in the launch checklist.
 - **Proof beside the button.** Each page puts 1 line of reassurance and 1 piece of proof next to its main action.
 - **Check the rule before you teach it.** Search guidance changes. Read Google's current page before adding a search note.
 - **Australian spelling. No em dashes. Numerals for numbers.**

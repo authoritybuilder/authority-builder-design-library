@@ -34,7 +34,8 @@ class P(HTMLParser):
                 self.noalt += 1
         if tag == "label" and a.get("for"):
             self.labels.add(a["for"])
-        if tag in ("input", "select", "textarea") and a.get("type") != "radio":
+        # a field is labelled by a label that points at it, or by sitting inside one. Hidden fields need none.
+        if tag in ("input", "select", "textarea") and a.get("type") not in ("radio", "hidden") and "label" not in self.stack:
             self.inputs.append(a.get("id"))
         if tag not in VOID:
             self.stack.append(tag)

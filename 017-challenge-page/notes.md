@@ -46,8 +46,8 @@ A challenge page that sells the finish line. 5 days, 20 minutes each, 1 named ou
 ## Search Card
 
 - **Title:** The 5-Day Offer Sprint | Free Challenge | Good Offer Club
-- **Description:** A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 2 March. 5 short emails, 1 live session, a finished offer by Friday.
-- **Structured data:** WebPage
+- **Description:** A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 1 March. 5 short emails, 1 live session, a finished offer by Friday.
+- **Structured data:** WebSite, WebPage
 - When a round ends, keep the address and switch the form to a waitlist for the next round. Stable addresses keep their value.
 - Dates in the title and description should be updated for every round.
 
@@ -58,8 +58,9 @@ A challenge page that sells the finish line. 5 days, 20 minutes each, 1 named ou
 | Check | Result | What was seen |
 |---|---|---|
 | Title carries the brand or the person's name | **Good** | “The 5-Day Offer Sprint | Free Challenge | Good Offer Club” (57 characters). |
-| Description says who the page is for | **Good** | “A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 2 March. 5 short emails, 1 live session, a finished offer by Friday.” (161 characters). |
-| Site name is declared | **Your turn** | Site-name markup belongs on a home page, and this sample is an inner page. Add it to your home page the way sample 001 does. |
+| Description says who the page is for | **Good** | “A free 5-day challenge: write, price and test 1 new offer in 20 minutes a day. Starts Monday 1 March. 5 short emails, 1 live session, a finished offer by Friday.” (161 characters). |
+| Site name is declared | **Good** | WebSite markup on the home page names the site “Good Offer Club”. |
+| The address the page claims is where it lives | **Good** | The main page is index.html at the top of the site folder, and its canonical link says https://goodofferclub.example/. The first version claimed a sub-folder address that the folder did not contain. |
 | Favicon is a real square image Google can use | **Fixed** | icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address. |
 | Sitelinks readiness | **Good** | The page links to 5 other pages of its own site by plain name: about.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google's call. Give each offer its own page as well. |
 | Other businesses with the same name | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. |
@@ -69,55 +70,58 @@ A challenge page that sells the finish line. 5 days, 20 minutes each, 1 named ou
 | Check | Result | What was seen |
 |---|---|---|
 | robots.txt allows search and AI crawlers | **Fixed** | 13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers. |
-| Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. |
-| 1 version of the address everywhere | **Good** | All 24 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://goodofferclub.example/. |
-| Every page has a canonical tag pointing at itself | **Good** | 6 pages checked. |
-| Nothing important is hidden from Google | **Your turn** | 6 pages carry a line marked LIBRARY ONLY that keeps this fictional sample out of Google. Delete that 1 line on each page when the site is yours. |
-| No broken links inside the site | **Good** | 73 internal links checked across 6 pages, 0 broken. |
-| Links that still need a destination | **Your turn** | 3 links (article titles, social profiles, buy buttons) point at “#” because the fictional brand has nowhere to send them. Point each at a real page. |
+| Sitemap lists every real page and nothing else | **Fixed** | sitemap.xml lists 6 pages. Each matches that page's canonical address. 404.html and thank-you.html are left out on purpose. |
+| 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://goodofferclub.example/. |
+| Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
+| Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
+| No broken or dead links inside the site | **Good** | 102 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
 
 ### The Page Itself
 
 | Check | Result | What was seen |
 |---|---|---|
-| 1 clear headline Google can read | **Good** | 1 H1 on each of the 6 pages. This page's reads: “1 new offer, written and tested, by Friday.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 506 words are readable in the raw HTML and the page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
-| Images have text alternatives and do not slow the page | **Good** | 0 illustrations, each drawn in the page's own code with a text label, and 0 image files to download. |
-| Real photographs | **Your turn** | Every illustration stands in for a photo. The brief for each real shot is in the notes and in a comment beside it. Give each photo alt text and a phone-sized version. |
+| 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “1 new offer, written and tested, by Friday.”. It is plain text, not a rotating or animated headline. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 512 words are readable in the raw HTML. The page runs 0 scripts. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
+| Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
+| Images are sized, described and sent in a phone size | **Good** | 2 image tags, all with alt text, width and height. They share 1 painting in 2 sizes: 42KB for phones and 143KB for desktops, in WebP. The first is loaded early and the rest wait until they are near the screen. |
+| Real photographs | **Your turn** | The painting is original and can stay. If you would rather show yourself, save your photo under the same 2 file names. The brief for each shot is in LAUNCH.md. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
-| No orphan pages | **Good** | Every page is linked from the footer of every other page. |
-| Reading level | **Good** | The first screen reads at grade 4.5 and the whole page at grade 4.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| No orphan pages | **Good** | Every page is linked from the main page. |
+| Reading level | **Good** | The first screen reads at grade 4.6 and the whole page at grade 4.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
 | Check | Result | What was seen |
 |---|---|---|
-| Main content loads fast (LCP under 2.5 seconds) | **Good** | 0.9 seconds. Lighthouse lab test of this file on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
+| Main content loads fast (LCP under 2.5 seconds) | **Good** | 1.2 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this. |
 | Nothing jumps around while loading (CLS under 0.1) | **Good** | 0.000 in the same lab test. |
-| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 28ms. |
-| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100, tested without the LIBRARY ONLY line. |
+| The page responds quickly to taps (INP under 200ms) | **Couldn't check** | INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 42ms. |
+| Lighthouse scores | **Good** | Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100. |
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 8 were measured. |
-| Page weight | **Good** | The whole page is 1 HTML file of 33KB before compression, plus the web fonts. No image downloads, no scripts. |
-| HTTPS and security headers | **Couldn't check** | These are set by your host. After launch, check that every address is https and that HSTS is on. |
+| Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 14 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 11.2 to 1 for body text and 7.2 to 1 for large text. On a phone: 7.3 to 1 for body text and 7.4 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
+| Page weight | **Good** | The HTML is 38KB before compression, plus the web fonts and 1 painting. |
+| HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
 
 | Check | Result | What was seen |
 |---|---|---|
-| Structured data is present and valid JSON | **Good** | 1 JSON-LD block per page parses cleanly. This page declares: WebPage. |
+| Structured data is present and valid JSON | **Good** | 1 JSON-LD block per page parses cleanly. This page declares: WebSite, WebPage. |
 | Structured data matches what the page shows | **Good** | Every name, headline, price, phone number and address in the structured data also appears in the visible text. |
 | No markup Google ignores or disallows | **Good** | No FAQ or HowTo markup (FAQ rich results stopped appearing on 7 May 2026) and no review stars on the business's own site. |
 | Every image the structured data names exists | **Fixed** | No image files are named. |
-| Profile links (sameAs) | **Your turn** | 3 placeholder profile links marked YOUR-HANDLE. Replace them with your real LinkedIn, Instagram and YouTube addresses, or delete the lines. |
+| Profile links (sameAs) | **Your turn** | The structured data carries no profile links, because a fictional brand has none and a placeholder would be published as fact. Add a sameAs list with your real profiles. |
 | Google's Rich Results Test | **Couldn't check** | The test needs a live address. Run it on your page after launch. |
 
 ### Trust Signals
 
 | Check | Result | What was seen |
 |---|---|---|
-| About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 6 pages. In the first version these 5 footer links went nowhere. |
+| About, Contact, Privacy, Terms and Refunds exist and are linked from every page | **Fixed** | 5 real pages, linked in the footer of all 8 pages. In the first version these 5 footer links went nowhere. |
 | Policy wording | **Your turn** | Privacy, Terms and Refunds are plain-English starting templates, marked as such on the page. Replace them with your own terms and have a lawyer check them. |
 | Proof is written as text | **Good** | 3 testimonials and every number on the page are real text, where Google and AI tools can read and quote them. None are trapped in images. |
 | Results claims carry a plain caveat | **Good** | The page shows results, and says in plain words that they are individual and not guaranteed. |
@@ -126,7 +130,7 @@ A challenge page that sells the finish line. 5 days, 20 minutes each, 1 named ou
 
 | Check | Result | What was seen |
 |---|---|---|
-| 1 set of facts | **Good** | All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
+| 1 set of facts | **Good** | All 3 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page. |
 | 1 page that is clearly about the person | **Fixed** | about.html names Frankie Doyle, states their role and carries ProfilePage and Person markup tied to the business. |
 | What Google and AI tools say about the brand today | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say. |
 | Mentions on other sites, old profiles and copies of your work | **Couldn't check** | This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers. |
@@ -188,7 +192,7 @@ PERSUASION RULES
 SEARCH-READY RULES
 - 1 clear H1. A title that includes my brand name. A description that says who the page is for.
 - Every word in the HTML itself. Nothing that needs JavaScript to appear.
-- JSON-LD structured data (WebPage) that matches the visible text.
+- JSON-LD structured data (WebSite, WebPage) that matches the visible text.
 - Canonical tag, Open Graph tags and a share image, all on 1 version of my address.
 - Real About, Contact, Privacy, Terms and Refund pages, linked from the footer of every page.
 - A robots.txt that allows search and AI-answer crawlers and lists the sitemap, and a sitemap.xml of every real page.

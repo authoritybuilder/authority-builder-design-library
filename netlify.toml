@@ -1,0 +1,16 @@
+# Hosting the library on Netlify: publish the repository root. No build command is needed.
+[build]
+  publish = "."
+
+# The sample sites are fictional brands, so the library asks search engines not to index them.
+# This lives here, not in the pages, so a site you copy out of the library is ready to be found.
+[[headers]]
+  for = "/*/site/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
