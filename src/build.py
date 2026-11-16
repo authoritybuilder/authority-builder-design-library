@@ -32,6 +32,7 @@ from kit import BASE_CSS, CSS, REG, e, h  # noqa: E402
 from polish import POLISH_CSS, THEME_POLISH  # noqa: E402
 from themes import THEMES  # noqa: E402
 import variants  # noqa: E402
+import simple  # noqa: E402
 from motion import MOTION_CSS, MOTION_JS  # noqa: E402
 
 LASTMOD = "2026-11-15"  # the date the samples were last reviewed; used in each sitemap
@@ -815,10 +816,10 @@ def main():
         (site / "sitemap.xml").write_text(sitemap_xml(P, files))
         P["audit"] = audit.run(P, site, speed.get(P["num"]), legible.get(P["num"]))
         fixes += [f"{P['num']} {r['check']}: {r['seen']}" for r in P["audit"] if r["status"] == "Fix"]
-        (d / "index.html").write_text(notes_html(P))
+        (d / "index.html").write_text(simple.entry(P, (site / "index.html").read_text(), prompt_for(P)))
         (d / "notes.md").write_text(notes_md(P))
         (d / "LAUNCH.md").write_text(launch.launch_md(P, site))
-        (d / "index.html").write_text(notes_html(P))
+        (d / "index.html").write_text(simple.entry(P, (site / "index.html").read_text(), prompt_for(P)))
     launch.library_host(ROOT, pages)
     if fixes:
         print(f"AUDIT: {len(fixes)} checks still failing:\n  " + "\n  ".join(fixes))
@@ -843,7 +844,7 @@ def main():
     missing = [f"{v['folder']}/{p['file']}" for v in plan.values() for p in v["photos"] if not (ROOT / v["folder"] / p["file"]).exists()]
     if missing:
         print(f"PHOTOS: {len(missing)} placeholder files are not painted yet. Run: python3 src/people.py --missing")
-    (ROOT / "index.html").write_text(gallery(pages, blocks))
+    (ROOT / "index.html").write_text(simple.gallery(pages))
     (ROOT / "canon").mkdir(exist_ok=True)
     (ROOT / "canon" / "index.html").write_text(canon_page(pages))
     rows = "\n".join(f"| {P['num']} | [{P['name']}]({P['dir']}/index.html) | {P['group']} | {', '.join(P['aud'])} | {THEMES[P['theme']]['label']} |" for P in pages)

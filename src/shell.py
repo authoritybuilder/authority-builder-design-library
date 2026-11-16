@@ -1,19 +1,20 @@
 """The Authority Builder shell: gallery, entry notes pages and the research canon page.
-Brand tokens follow the Authority Builder identity: Fraunces + Inter, warm paper and cream, deep forest, gold, coral for the one action."""
+Brand tokens follow the Authority Builder identity at yasmincronin.com: Plus Jakarta Sans + Inter, cream and white, deep forest, and lime for the one action.
+The token names are older than the colours: --gold and --coral both hold the brand lime."""
 from kit import e, h
 
 SKOOL = "https://www.skool.com/authority-builder-9958"
-AB_FONTS = ("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700"
+AB_FONTS = ("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700"
             "&family=Inter:wght@400;500;600;700&display=swap")
 
 AB_CSS = r"""
-:root{--paper:#FBF8F2;--cream:#F3EEE4;--line:#E3DACA;--forest:#132620;--deep:#0A1612;--sage:#0F5132;--gold:#C5A880;--rose:#D8A39D;--coral:#D97757;--ink:#132620;--ink2:#5C5750;--white:#FFFFFF}
+:root{--paper:#F6F5F0;--cream:#EEEDE6;--line:#DDDBD2;--forest:#0B2A22;--deep:#031816;--sage:#245010;--gold:#8FD14F;--rose:#CFEBB4;--coral:#8FD14F;--ink:#121B15;--ink2:#45564B;--white:#FFFFFF}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font:400 1.0625rem/1.6 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-underline-offset:.22em}img{max-width:100%;display:block}ul,ol{list-style:none}
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.06;text-wrap:balance}
+h1,h2,h3{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
 h1{font-size:clamp(2.5rem,6vw,4.6rem)}h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}h3{font-size:1.3rem;line-height:1.2}
-h1 em,h2 em{font-style:italic;font-weight:400;color:var(--gold)}.light h2 em{color:var(--sage)}
+h1 em,h2 em{font-style:normal;color:var(--gold)}.light h2 em{color:var(--sage)}
 p{text-wrap:pretty}
 .wrap{max-width:1180px;margin:auto;padding-inline:clamp(20px,5vw,48px)}.narrow{max-width:860px}
 .sec{padding-block:clamp(56px,8vw,104px)}.cream{background:var(--cream)}
@@ -40,7 +41,7 @@ p{text-wrap:pretty}
 .top nav{display:flex;gap:1.4rem;flex-wrap:wrap}.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline}
 .hero{padding-block:clamp(40px,7vw,96px) clamp(56px,8vw,112px)}.banner .kick{color:var(--gold)}.banner .lead{color:rgba(234,231,225,.82);margin-top:1.4rem}
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(36px,5vw,64px);padding-top:1.6rem;border-top:1px solid rgba(234,231,225,.18)}
-.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Fraunces',serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
+.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Plus Jakarta Sans',sans-serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:2.4rem;counter-reset:h}
 .how li{counter-increment:h;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem}
 .how li::before{content:counter(h);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--gold);font-weight:700;margin-bottom:1rem}
@@ -55,7 +56,7 @@ p{text-wrap:pretty}
 .group>header p{color:var(--ink2);font-size:.98rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2.4vw,28px)}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,38,32,.12);border-color:var(--gold)}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,34,.14);border-color:var(--gold)}
 .card .th{aspect-ratio:16/10;background:var(--cream);border-bottom:1px solid var(--line);overflow:hidden}.card .th img{width:100%;height:100%;object-fit:cover;object-position:top}
 .card .bd{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
 .card .no{font:600 .76rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
@@ -101,7 +102,7 @@ p{text-wrap:pretty}
 /* canon */
 .ctab{width:100%;border-collapse:collapse;margin-top:1.4rem}.ctab th,.ctab td{text-align:left;vertical-align:top;padding:1rem .9rem 1rem 0;border-top:1px solid var(--line);font-size:.96rem}
 .ctab thead th{font:700 .74rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:0}
-.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Fraunces',serif}.ctab td:first-child small{color:var(--ink2)}
+.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Plus Jakarta Sans',sans-serif}.ctab td:first-child small{color:var(--ink2)}
 .ctab .use a{display:inline-block;font:600 .74rem 'Inter',sans-serif;background:var(--cream);border-radius:999px;padding:.2em .6em;margin:.15em .2em 0 0;text-decoration:none}
 @media(max-width:760px){.ctab thead{display:none}.ctab td{display:block;width:100%!important;border-top:0;padding:.25rem 0}.ctab tr{display:block;border-top:1px solid var(--line);padding:1rem 0}}
 .src li{margin-top:.8rem}.src small{color:var(--ink2);display:block}
@@ -130,12 +131,12 @@ def page(title, desc, body, root="", extra_head=""):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(desc)}">
-<meta name="theme-color" content="#132620">
+<meta name="theme-color" content="#0B2A22">
 <meta property="og:title" content="{e(title)}">
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Authority Builder Design Library">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23132620'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23C5A880'%3EAB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%230B2A22'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Arial,sans-serif' font-size='19' font-weight='700' fill='%238FD14F'%3EAB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{AB_FONTS}" rel="stylesheet">
@@ -159,8 +160,7 @@ For more AI tools, join <a href="{SKOOL}" target="_blank" rel="noopener noreferr
 
 def top(root=""):
     return (f'<div class="top"><a class="mark" href="{root}index.html"><i aria-hidden="true">AB</i>Design Library</a>'
-            f'<nav aria-label="Library"><a href="{root}index.html#library">All Pages</a><a href="{root}index.html#blocks">Building Blocks</a>'
-            f'<a href="{root}canon/index.html">The Research</a></nav></div>')
+            f'<nav aria-label="Library"><a href="{root}index.html">All Websites</a></nav></div>')
 
 
 def serp(P, v):

@@ -3,25 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>021 Case Study Page | Authority Builder Design Library</title>
-<meta name="description" content="A case study told as a story with a table in the middle: the situation, the insight, what was done, the measured result and what a reader can copy.">
-<meta name="theme-color" content="#132620">
-<meta property="og:title" content="021 Case Study Page | Authority Builder Design Library">
-<meta property="og:description" content="A case study told as a story with a table in the middle: the situation, the insight, what was done, the measured result and what a reader can copy.">
+<title>021 · Case Study Page | Authority Builder Design Library</title>
+<meta name="description" content="Case Study Page: see it live and copy its code.">
+<meta name="theme-color" content="#0B2A22">
+<meta property="og:title" content="021 · Case Study Page | Authority Builder Design Library">
+<meta property="og:description" content="Case Study Page: see it live and copy its code.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Authority Builder Design Library">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%23132620'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Georgia,serif' font-size='20' font-weight='700' fill='%23C5A880'%3EAB%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%230B2A22'/%3E%3Ctext x='24' y='31' text-anchor='middle' font-family='Arial,sans-serif' font-size='19' font-weight='700' fill='%238FD14F'%3EAB%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..700;1,9..144,400..700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,500;0,600;0,700;0,800;1,600;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#FBF8F2;--cream:#F3EEE4;--line:#E3DACA;--forest:#132620;--deep:#0A1612;--sage:#0F5132;--gold:#C5A880;--rose:#D8A39D;--coral:#D97757;--ink:#132620;--ink2:#5C5750;--white:#FFFFFF}
+:root{--paper:#F6F5F0;--cream:#EEEDE6;--line:#DDDBD2;--forest:#0B2A22;--deep:#031816;--sage:#245010;--gold:#8FD14F;--rose:#CFEBB4;--coral:#8FD14F;--ink:#121B15;--ink2:#45564B;--white:#FFFFFF}
 *{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{font:400 1.0625rem/1.6 'Inter',system-ui,sans-serif;color:var(--ink);background:var(--paper);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 a{color:inherit;text-underline-offset:.22em}img{max-width:100%;display:block}ul,ol{list-style:none}
-h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:500;letter-spacing:-.02em;line-height:1.06;text-wrap:balance}
+h1,h2,h3{font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:700;letter-spacing:-.025em;line-height:1.08;text-wrap:balance}
 h1{font-size:clamp(2.5rem,6vw,4.6rem)}h2{font-size:clamp(1.8rem,3.6vw,2.7rem)}h3{font-size:1.3rem;line-height:1.2}
-h1 em,h2 em{font-style:italic;font-weight:400;color:var(--gold)}.light h2 em{color:var(--sage)}
+h1 em,h2 em{font-style:normal;color:var(--gold)}.light h2 em{color:var(--sage)}
 p{text-wrap:pretty}
 .wrap{max-width:1180px;margin:auto;padding-inline:clamp(20px,5vw,48px)}.narrow{max-width:860px}
 .sec{padding-block:clamp(56px,8vw,104px)}.cream{background:var(--cream)}
@@ -48,7 +48,7 @@ p{text-wrap:pretty}
 .top nav{display:flex;gap:1.4rem;flex-wrap:wrap}.top nav a{text-decoration:none}.top nav a:hover{text-decoration:underline}
 .hero{padding-block:clamp(40px,7vw,96px) clamp(56px,8vw,112px)}.banner .kick{color:var(--gold)}.banner .lead{color:rgba(234,231,225,.82);margin-top:1.4rem}
 .nums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1.4rem 2.4rem;margin-top:clamp(36px,5vw,64px);padding-top:1.6rem;border-top:1px solid rgba(234,231,225,.18)}
-.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Fraunces',serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
+.nums b{display:block;font:500 clamp(2rem,4vw,3rem)/1 'Plus Jakarta Sans',sans-serif;color:var(--gold)}.nums span{font-size:.9rem;color:rgba(234,231,225,.75)}
 .how{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px);margin-top:2.4rem;counter-reset:h}
 .how li{counter-increment:h;background:#fff;border:1px solid var(--line);border-radius:16px;padding:1.6rem}
 .how li::before{content:counter(h);display:grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--forest);color:var(--gold);font-weight:700;margin-bottom:1rem}
@@ -63,7 +63,7 @@ p{text-wrap:pretty}
 .group>header p{color:var(--ink2);font-size:.98rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:clamp(18px,2.4vw,28px)}
 .card{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;text-decoration:none;transition:transform .18s,box-shadow .18s,border-color .18s}
-.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(19,38,32,.12);border-color:var(--gold)}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(11,42,34,.14);border-color:var(--gold)}
 .card .th{aspect-ratio:16/10;background:var(--cream);border-bottom:1px solid var(--line);overflow:hidden}.card .th img{width:100%;height:100%;object-fit:cover;object-position:top}
 .card .bd{padding:1.2rem 1.3rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1}
 .card .no{font:600 .76rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage)}
@@ -109,7 +109,7 @@ p{text-wrap:pretty}
 /* canon */
 .ctab{width:100%;border-collapse:collapse;margin-top:1.4rem}.ctab th,.ctab td{text-align:left;vertical-align:top;padding:1rem .9rem 1rem 0;border-top:1px solid var(--line);font-size:.96rem}
 .ctab thead th{font:700 .74rem 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);border-top:0}
-.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Fraunces',serif}.ctab td:first-child small{color:var(--ink2)}
+.ctab td:first-child{width:24%}.ctab td:first-child b{display:block;font:500 1.15rem/1.2 'Plus Jakarta Sans',sans-serif}.ctab td:first-child small{color:var(--ink2)}
 .ctab .use a{display:inline-block;font:600 .74rem 'Inter',sans-serif;background:var(--cream);border-radius:999px;padding:.2em .6em;margin:.15em .2em 0 0;text-decoration:none}
 @media(max-width:760px){.ctab thead{display:none}.ctab td{display:block;width:100%!important;border-top:0;padding:.25rem 0}.ctab tr{display:block;border-top:1px solid var(--line);padding:1rem 0}}
 .src li{margin-top:.8rem}.src small{color:var(--ink2);display:block}
@@ -119,35 +119,538 @@ p{text-wrap:pretty}
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="banner"><div class="wrap"><div class="top"><a class="mark" href="../index.html"><i aria-hidden="true">AB</i>Design Library</a><nav aria-label="Library"><a href="../index.html#library">All Pages</a><a href="../index.html#blocks">Building Blocks</a><a href="../canon/index.html">The Research</a></nav></div>
-<div class="eh"><p class="crumbs"><a href="../index.html#library">Design Library</a> › Trust And Content</p>
-<h1>021 · Case Study Page</h1><p class="lead">A case study told as a story with a table in the middle: the situation, the insight, what was done, the measured result and what a reader can copy.</p>
-<div class="acts"><a class="btn" href="site/index.html">Open The Live Sample</a><a class="btn ghost" href="#research">See The Research</a></div></div></div></div>
-<main id="main"><div class="wrap">
-<a class="pv" href="site/index.html" style="display:block"><img src="preview.jpg" alt="Preview of the Case Study Page sample for the fictional brand Lumen Practice Growth" width="1280" height="800"></a>
-<div class="cols">
-<div>
-<div class="blk"><h2>Why This Page Works</h2><ul><li>The headline is the result. A reader who goes no further still gets the point.</li><li>The numbers come before the story, in a table of 4 measures, so the proof is seen even by people who only skim.</li><li>The story has a turn: the problem was not what the client thought. That insight is what readers remember and repeat.</li><li>It ends with what to copy. Giving away the lesson builds more trust than hiding it.</li></ul></div>
-<div class="blk" id="research"><h2>Research Applied To This Page</h2><p>This page type was researched on its own, then each finding was turned into a change in the sample's code.</p>
-<table class="ptab rtab"><thead><tr><th scope="col">What the research found</th><th scope="col">What changed in the code</th></tr></thead><tbody><tr><td>44.2% of AI citations come from the first 30% of a page&#x27;s text. Comparison tables and cited sources raise the odds.<small>Superlines study, reported on dev.to</small></td><td>A 4-line summary of client, problem, change and result now opens the page, so the whole story sits in the first third of the text.</td></tr><tr><td>44.2% of AI citations come from the first 30% of a page&#x27;s text. Comparison tables and cited sources raise the odds.<small>Superlines study, reported on dev.to</small></td><td>The 3 changes are set out in a table as well as in the story.</td></tr><tr><td>71% of business buyers rate customer and peer case studies as highly valuable.<small><a href="https://www.digitalcommerce360.com/?p=767377" rel="noopener">Forrester, reported by Digital Commerce 360</a></small></td><td>The headline numbers gained a chart beside the table.</td></tr><tr><td>AI Overviews appear on nearly 65% of question-style searches, and an author bio alone does not predict being cited.<small><a href="https://www.seerinteractive.com/insights/what-it-takes-to-rank-in-googles-ai-overviews-in-2026-is-not-what-you-think" rel="noopener">Seer Interactive, May 2026</a></small></td><td>The byline links to a page about the author, and the page shows its publish date. The author box stays, but the page does not rely on it.</td></tr></tbody></table>
-<p class="note">Benchmarks from testing firms and software vendors, read in November 2026. Treat them as direction, not a guarantee. Test on your own page.</p></div>
-<div class="blk"><h2>The Psychology At Work</h2><table class="ptab"><tbody><tr><th scope="row">SUCCESs<small>Chip and Dan Heath</small></th><td>A simple, unexpected story: he thought it was marketing, it was rebooking.</td></tr><tr><th scope="row">Social Proof<small>Robert Cialdini</small></th><td>A named client in the same industry as the reader, with real figures.</td></tr><tr><th scope="row">Reason-Why And Specifics<small>John E. Kennedy; Claude Hopkins</small></th><td>4 measures with before and after values. Nothing is described as amazing.</td></tr><tr><th scope="row">Epiphany Bridge<small>Russell Brunson</small></th><td>The reader meets the insight the same way the client did, by counting first.</td></tr><tr><th scope="row">Reciprocity<small>Robert Cialdini</small></th><td>The what-to-copy box gives the method away.</td></tr><tr><th scope="row">First-Hand Expertise<small>Google Search Central</small></th><td>First-hand, bylined and dated, with a named author who did the work.</td></tr><tr><th scope="row">Serial Position Effect<small>Hermann Ebbinghaus</small></th><td>The result opens the page and the client&#x27;s quote closes it.</td></tr></tbody></table>
-<p class="note">Every principle is explained, with its source, on <a href="../canon/index.html">the research page</a>.</p></div>
-<div class="blk"><h2>Page Structure</h2><ol style="list-style:decimal;padding-left:1.3rem"><li>Article header: the result as the headline, a 2-line summary, a named author and a date</li><li>The numbers first: a before and after table a skimmer can take in at once</li><li>The story: situation, insight, the 3 changes, and what to copy, with first-hand detail</li><li>The client&#x27;s own words, with name and role</li><li>Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof</li><li>Related case studies: keeps the reader moving and links the pages together</li><li>Closing call to action that follows naturally from the story</li></ol></div>
-<div class="blk"><h2>Search Card</h2><p class="lead" style="font-size:1rem;margin-bottom:1rem">How this page is set up to appear in Google, and what is built into its code.</p>
-<div class="serp" role="img" aria-label="Mock Google result for this sample"><div class="s1"><span class="fav" style="background:#0D5C63;color:#FFFFFF">L</span><div><div class="sn">Lumen Practice Growth</div><div class="su">https://lumenpractice.example</div></div></div><div class="st">How A 3-Person Physio Clinic Filled Its Books In 90 Days | Lumen Practice Growth</div><div class="sd">Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.</div></div><p class="note">A mock-up drawn from this sample's real title, description and site name.</p>
-<h3 style="margin-top:1.6rem">Structured Data On This Page</h3><ul><li><b>WebSite.</b> Names the site, so Google can show your brand name above the result instead of a bare web address.</li><li><b>Article.</b> Headline, author and dates. First-hand, bylined content is what gets cited.</li><li>Article markup carries the headline, the author and both dates. Update the modified date when you revise the figures.</li><li>Case studies are the pages other sites and AI answers quote. Specific numbers written as text are what make them quotable.</li></ul>
-<h3 style="margin-top:1.6rem">Built Into Every Sample</h3><ul><li>A title that carries the brand name and a description that says who the page is for</li><li>1 clear headline (H1) in the HTML itself, with every word of the page readable without JavaScript</li><li>Canonical address, Open Graph tags and a real share image, all on 1 version of the address</li><li>Structured data (JSON-LD) that matches the visible text and names only files that exist</li><li>Real About, Contact, Privacy, Terms and Refund pages, linked from the footer of every page</li><li>A robots.txt that lets search and AI-answer crawlers in, and a sitemap.xml that lists every real page</li><li>A real square PNG icon at a stable address, sized as a multiple of 48px</li><li>Proof written as real text, so Google and AI tools can read and quote it</li><li>Mobile-first layout, tap targets of 48px or more, visible focus states and reduced-motion support</li><li>1 small script, for movement only. Every word is in the HTML, and the page reads the same with scripts off</li></ul>
-<h3 style="margin-top:1.6rem">Left Out On Purpose</h3><ul><li>No llms.txt file: Google says its Search and AI features do not use it</li><li>No FAQ markup chasing a results-page bonus: FAQ rich results stopped appearing on 7 May 2026</li><li>No review stars on your own business: Google excludes self-serving reviews</li><li>No hidden text, keyword stuffing or pages rewritten into chunks &quot;for AI&quot;</li></ul></div>
-<div class="blk" id="audit"><h2>SEO And AI Search Audit</h2><p>The Full SEO and AI Search Audit was run against this sample's files, and anything that failed was fixed in the code. This is what was checked and what was actually seen.</p>
-<p class="tally"><b class="ok">34 Good</b> · <b class="fx">7 Fixed</b> · <b class="yt">6 Your turn</b> · <b class="cc">7 Couldn't check</b></p><h3>The Google Listing</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">Title carries the brand or the person&#x27;s name</th><td><b class="ok">Good</b></td><td>“How A 3-Person Physio Clinic Filled Its Books In 90 Days | Lumen Practice Growth” (80 characters).</td></tr><tr><th scope="row">Description says who the page is for</th><td><b class="ok">Good</b></td><td>“Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.” (181 characters).</td></tr><tr><th scope="row">Site name is declared</th><td><b class="ok">Good</b></td><td>WebSite markup on the home page names the site “Lumen Practice Growth”.</td></tr><tr><th scope="row">The address the page claims is where it lives</th><td><b class="ok">Good</b></td><td>The main page is index.html at the top of the site folder, and its canonical link says https://lumenpractice.example/. The first version claimed a sub-folder address that the folder did not contain.</td></tr><tr><th scope="row">Favicon is a real square image Google can use</th><td><b class="fx">Fixed</b></td><td>icon-192.png is a 192 by 192 PNG (192 is a multiple of 48), linked in the head of every page. The first version used an inline SVG, which has no stable address.</td></tr><tr><th scope="row">Sitelinks readiness</th><td><b class="ok">Good</b></td><td>The page links to 6 other pages of its own site by plain name: about.html, book.html, contact.html, privacy.html, refunds.html, terms.html. Sitelinks are Google&#x27;s call. Give each offer its own page as well.</td></tr><tr><th scope="row">Other businesses with the same name</th><td><b class="cc">Couldn&#x27;t check</b></td><td>This is a fictional brand, so there is nothing live to look at. Check it for your own business.</td></tr></tbody></table><h3>Crawling And Indexing</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">robots.txt allows search and AI crawlers</th><td><b class="fx">Fixed</b></td><td>13 of 13 crawlers are named and allowed, nothing is blocked and the sitemap is listed. Search crawlers and training crawlers sit in separate groups, so you can opt out of training without disappearing from AI answers.</td></tr><tr><th scope="row">Sitemap lists every real page and nothing else</th><td><b class="fx">Fixed</b></td><td>sitemap.xml lists 7 pages. Each matches that page&#x27;s canonical address. 404.html and thank-you.html are left out on purpose.</td></tr><tr><th scope="row">1 version of the address everywhere</th><td><b class="ok">Good</b></td><td>All 34 of the site&#x27;s own addresses in the canonical tags, share tags, structured data and sitemap start with https://lumenpractice.example/.</td></tr><tr><th scope="row">Every page has a canonical tag pointing at itself</th><td><b class="ok">Good</b></td><td>9 pages checked.</td></tr><tr><th scope="row">Nothing important is hidden from Google</th><td><b class="ok">Good</b></td><td>No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead.</td></tr><tr><th scope="row">No broken or dead links inside the site</th><td><b class="ok">Good</b></td><td>217 internal links, buttons and form targets checked across 9 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere.</td></tr><tr><th scope="row">Links that need your own accounts</th><td><b class="yt">Your turn</b></td><td>3 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md.</td></tr><tr><th scope="row">A page for wrong addresses</th><td><b class="ok">Good</b></td><td>404.html exists, says the page is missing and links back to the main page and to Contact.</td></tr><tr><th scope="row">Redirects, status codes and old sites</th><td><b class="cc">Couldn&#x27;t check</b></td><td>These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop.</td></tr></tbody></table><h3>The Page Itself</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">1 clear headline Google can read</th><td><b class="ok">Good</b></td><td>1 H1 on each of the 9 pages. This page&#x27;s reads: “How A 3-Person Physio Clinic Filled Its Books In 90 Days”. It is plain text, not a rotating or animated headline.</td></tr><tr><th scope="row">The content is in the HTML, not drawn by JavaScript</th><td><b class="ok">Good</b></td><td>791 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees.</td></tr><tr><th scope="row">Forms work</th><td><b class="ok">Good</b></td><td>2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version&#x27;s forms did nothing.</td></tr><tr><th scope="row">Plain words</th><td><b class="ok">Good</b></td><td>The 393 words of body copy on the main page read at about school grade 4.5 on the Flesch-Kincaid scale. Unbounce&#x27;s study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy.</td></tr><tr><th scope="row">Dates and weekdays agree</th><td><b class="ok">Good</b></td><td>Every weekday named beside a date is the right one for the coming year.</td></tr><tr><th scope="row">Images are sized, described and sent in a phone size</th><td><b class="ok">Good</b></td><td>10 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 56KB for phones to 198KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 114KB. Only the painting loads early. Everything else waits until it is near the screen.</td></tr><tr><th scope="row">A real person is on the page</th><td><b class="yt">Your turn</b></td><td>2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take.</td></tr><tr><th scope="row">Share tags and a share image</th><td><b class="fx">Fixed</b></td><td>Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist.</td></tr><tr><th scope="row">No orphan pages</th><td><b class="ok">Good</b></td><td>Every page is linked from the main page.</td></tr><tr><th scope="row">Reading level</th><td><b class="ok">Good</b></td><td>The first screen reads at grade 5.0 and the whole page at grade 6.8 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce&#x27;s data.</td></tr></tbody></table><h3>Speed And Mobile</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">Main content loads fast (LCP under 2.5 seconds)</th><td><b class="ok">Good</b></td><td>1.1 seconds. Lighthouse lab test of this page on a simulated mid-range phone and slow 4G, run on a local server with the web fonts already installed. Your host and font loading will add to this.</td></tr><tr><th scope="row">Nothing jumps around while loading (CLS under 0.1)</th><td><b class="ok">Good</b></td><td>0.000 in the same lab test.</td></tr><tr><th scope="row">The page responds quickly to taps (INP under 200ms)</th><td><b class="cc">Couldn&#x27;t check</b></td><td>INP is measured from real visitors, so it cannot be tested before launch. The lab stand-in, Total Blocking Time, was 37ms.</td></tr><tr><th scope="row">Lighthouse scores</th><td><b class="ok">Good</b></td><td>Performance 100, Accessibility 100, Best Practices 100, SEO 100, out of 100.</td></tr><tr><th scope="row">No sideways scrolling on a phone</th><td><b class="ok">Good</b></td><td>At 390px wide the page content is 390px wide.</td></tr><tr><th scope="row">A button is on the first screen of a phone</th><td><b class="ok">Good</b></td><td>This page opens with reading, so its first button in the page (“Book A Clinic Review”) is 5544px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page.</td></tr><tr><th scope="row">Buttons are easy to tap</th><td><b class="ok">Good</b></td><td>The smallest button or form field on a phone is 48px tall. 3 were measured.</td></tr><tr><th scope="row">Words on the painting stay readable</th><td><b class="ok">Good</b></td><td>A contrast checker cannot read text over a picture, so each of the 8 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.8 to 1 for body text and 6.6 to 1 for large text. On a phone: 7 to 1 for body text and 8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text.</td></tr><tr><th scope="row">Page weight</th><td><b class="ok">Good</b></td><td>The HTML is 67KB before compression, plus the web fonts and 1 painting.</td></tr><tr><th scope="row">HTTPS and security headers</th><td><b class="yt">Your turn</b></td><td>netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https.</td></tr></tbody></table><h3>Structured Data</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">Structured data is present and valid JSON</th><td><b class="ok">Good</b></td><td>1 JSON-LD block per page parses cleanly. This page declares: WebSite, BlogPosting.</td></tr><tr><th scope="row">Structured data matches what the page shows</th><td><b class="ok">Good</b></td><td>Every name, headline, price, phone number and address in the structured data also appears in the visible text.</td></tr><tr><th scope="row">No markup Google ignores or disallows</th><td><b class="ok">Good</b></td><td>No FAQ or HowTo markup (FAQ rich results stopped appearing on 7 May 2026) and no review stars on the business&#x27;s own site.</td></tr><tr><th scope="row">Every image the structured data names exists</th><td><b class="fx">Fixed</b></td><td>1 image addresses named, all present in the site folder. The first version named portrait and shopfront files that did not exist.</td></tr><tr><th scope="row">Profile links (sameAs)</th><td><b class="yt">Your turn</b></td><td>The structured data carries no profile links, because a fictional brand has none and a placeholder would be published as fact. Add a sameAs list with your real profiles.</td></tr><tr><th scope="row">Google&#x27;s Rich Results Test</th><td><b class="cc">Couldn&#x27;t check</b></td><td>The test needs a live address. Run it on your page after launch.</td></tr></tbody></table><h3>Trust Signals</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">About, Contact, Privacy, Terms and Refunds exist and are linked from every page</th><td><b class="fx">Fixed</b></td><td>5 real pages, linked in the footer of all 9 pages. In the first version these 5 footer links went nowhere.</td></tr><tr><th scope="row">Policy wording</th><td><b class="yt">Your turn</b></td><td>Privacy, Terms and Refunds are plain-English starting templates, marked as such on the page. Replace them with your own terms and have a lawyer check them.</td></tr><tr><th scope="row">Author name and date on the content</th><td><b class="ok">Good</b></td><td>Byline for Guy Incognito with a publish date in the page and in the structured data.</td></tr><tr><th scope="row">Proof is written as text</th><td><b class="ok">Good</b></td><td>1 testimonials and every number on the page are real text, where Google and AI tools can read and quote them. None are trapped in images.</td></tr><tr><th scope="row">Results claims carry a plain caveat</th><td><b class="ok">Good</b></td><td>The page shows results, and says in plain words that they are individual and not guaranteed.</td></tr></tbody></table><h3>AI Answers And The Brand</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">1 set of facts</th><td><b class="ok">Good</b></td><td>All 4 figures in the search description match the page, and every price on the About, Contact and policy pages matches the main page.</td></tr><tr><th scope="row">1 page that is clearly about the person</th><td><b class="fx">Fixed</b></td><td>about.html names Guy Incognito, states their role and carries ProfilePage and Person markup tied to the business.</td></tr><tr><th scope="row">What Google and AI tools say about the brand today</th><td><b class="cc">Couldn&#x27;t check</b></td><td>This is a fictional brand, so there is nothing live to look at. Check it for your own business. Search your name, your brand and “[brand] review”, and read what ChatGPT, Perplexity and AI Overviews say.</td></tr><tr><th scope="row">Mentions on other sites, old profiles and copies of your work</th><td><b class="cc">Couldn&#x27;t check</b></td><td>This is a fictional brand, so there is nothing live to look at. Check it for your own business. Mentions on other sites are among the strongest signals for appearing in AI answers.</td></tr></tbody></table><h3>Competitors And Measurement</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">Who ranks for your terms, and content gaps</th><td><b class="cc">Couldn&#x27;t check</b></td><td>This is a fictional brand, so there is nothing live to look at. Check it for your own business.</td></tr><tr><th scope="row">Search Console and Bing Webmaster Tools</th><td><b class="yt">Your turn</b></td><td>After launch: verify the site in both, submit sitemap.xml and ask Google to index the changed pages.</td></tr></tbody></table><h3>Things That Do Not Work</h3><table class="atab"><thead><tr><th scope="col">Check</th><th scope="col">Result</th><th scope="col">What was seen</th></tr></thead><tbody><tr><th scope="row">None of the popular shortcuts are used</th><td><b class="ok">Good</b></td><td>No llms.txt, no FAQ markup chasing a results bonus, no self-awarded review stars, no hidden text and no page rewritten into chunks for AI.</td></tr></tbody></table>
-<p class="note"><b>Good</b> passed. <b>Fixed</b> failed in the first version and was repaired in the code. <b>Your turn</b> can only be finished with your real business details. <b>Couldn't check</b> needs a live website, so it was not guessed.</p></div>
-<div class="blk" id="launch"><h2>Launch Checklist</h2><p>The <code>site</code> folder is a complete website: 9 pages, 2 working forms, a thank-you page, a not-found page, crawler rules, a sitemap and host settings. Upload it and it runs. These are the things only you can finish.</p><ul><li>Swap the demo brand, copy and proof for your own, and delete the demo note in each footer.</li><li>Replace <code>lumenpractice.example</code> with your address (94 places).</li><li>Turn on form handling at your host, or point each form at your email tool.</li><li>Connect 3 links to your own accounts:</li></ul><ul class="conn"><li><code>case-study</code> From a 9-week waitlist to a second location <small>(3 on index.html)</small></li></ul><p class="note">The full list is in <a href="LAUNCH.md">LAUNCH.md</a>. Before you publish, run <code>python3 src/prelaunch.py</code> on your copy: it lists anything from the demo that is still in the files.</p></div>
-<div class="blk"><h2>Photo Briefs</h2><p>Each illustration stands in for a real photograph. These are the shots to take when you make the page yours.</p><ul><li>the real clinic&#x27;s reception or treatment room, with the owner&#x27;s permission</li><li>Sam in the clinic, natural light</li></ul></div>
-<div class="blk"><h2>Borrow This</h2><ul><li>Make the result your headline.</li><li>Put a 4-row before and after table above the story.</li><li>Find the turn: what the client believed versus what was true.</li><li>End with a what-to-copy box.</li></ul></div>
-<div class="blk"><h2>Study The Real Thing</h2><ul><li><b>April Dunford.</b> Proof presented as named people with job titles, not anonymous praise.</li></ul><p class="note">Read for structure and messaging. Borrow the technique, never the words, images or layout.</p></div>
-<div class="blk" id="prompt"><h2>Build Your Own</h2><p>Paste this into Claude, fill in the brackets and attach your real proof.</p>
-<div class="prompt"><button type="button" onclick="var b=this;navigator.clipboard.writeText(document.getElementById('pt').textContent).then(function(){b.textContent='Copied'}).catch(function(){b.textContent='Select the text to copy'})">Copy Prompt</button><pre id="pt">Build me a case study page for my business, modelled on sample 021 in the Authority Builder Design Library.
+<style>
+.bar{background:var(--deep);color:#F6F5F0}.bar .top{padding-block:1rem}
+.intro{background:linear-gradient(180deg,var(--deep),var(--forest));color:#F6F5F0;padding-block:clamp(40px,6vw,84px) clamp(44px,6vw,88px)}
+.intro h1{font-size:clamp(2.1rem,5vw,3.6rem);max-width:17ch}.intro h1 em{font-style:normal;color:var(--gold)}
+.intro p{margin-top:1.1rem;font-size:clamp(1.02rem,1.5vw,1.2rem);color:rgba(246,245,240,.82);max-width:54ch}
+.pick{position:sticky;top:0;z-index:5;background:rgba(246,245,240,.95);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding-block:.75rem}
+.pick .wrap{display:flex;flex-wrap:wrap;gap:.45rem;align-items:center}.pick span{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin-right:.3rem}
+.chip[aria-pressed=true]{background:var(--forest);color:#F6F5F0;border-color:var(--forest)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:clamp(18px,2.4vw,30px);padding-block:clamp(32px,5vw,64px) clamp(56px,8vw,104px)}
+.tile{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s,border-color .2s}
+.tile:hover{transform:translateY(-4px);box-shadow:0 26px 50px -28px rgba(11,42,34,.45);border-color:var(--gold)}
+.tile[hidden]{display:none}
+.tile .th{display:block;aspect-ratio:16/10;background:var(--cream);overflow:hidden}.tile .th img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
+.tile:hover .th img{transform:scale(1.04)}
+.tile .bd{padding:1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.85rem;flex:1}
+.tile h2{font-size:1.12rem;line-height:1.25;letter-spacing:-.01em}.tile h2 small{display:block;font:600 .72rem/1.3 'Inter',sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);margin-bottom:.3rem}
+.tile .go{display:flex;gap:.5rem;margin-top:auto}
+.b{flex:1;display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:.5em 1em;border-radius:999px;font:700 .9rem 'Inter',sans-serif;text-decoration:none;border:2px solid var(--forest);color:var(--forest);background:transparent;cursor:pointer;transition:transform .15s,background .15s}
+.b.main{background:var(--gold);border-color:var(--gold);color:var(--deep)}.b:hover{transform:translateY(-2px)}
+/* a site's page */
+.one{padding-block:clamp(28px,4vw,52px) clamp(56px,8vw,96px)}.one .back{font-size:.9rem;color:var(--sage);font-weight:600}
+.one h1{font-size:clamp(1.9rem,4.4vw,3rem);margin:.9rem 0 1.4rem}.one h1 small{display:block;font:600 .78rem/1.3 'Inter',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.5rem}
+.one .shot{display:block;border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 34px 70px -40px rgba(11,42,34,.5);background:#fff}.one .shot img{width:100%;height:auto}
+.one .go{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 0}.one .go .b{flex:0 1 auto;padding-inline:1.5rem}
+.code{margin-top:clamp(28px,4vw,44px);background:var(--deep);border-radius:20px;overflow:hidden;color:#EAF3E2}
+.code header{display:flex;flex-wrap:wrap;gap:.6rem 1rem;align-items:center;justify-content:space-between;padding:.9rem 1rem .9rem 1.3rem;border-bottom:1px solid rgba(246,245,240,.14)}
+.code header b{font:700 .95rem 'Plus Jakarta Sans',sans-serif}.code header span{display:block;font-size:.8rem;color:rgba(234,243,226,.7);font-weight:400}
+.code .b{flex:none;min-height:42px;border-color:var(--gold);background:var(--gold);color:var(--deep)}
+.code pre{margin:0;padding:1.2rem 1.3rem;max-height:520px;overflow:auto;font:400 .8rem/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word;tab-size:2}
+.code.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}.code.alt header{border-color:var(--line)}.code.alt header span{color:var(--ink2)}.code.alt pre{max-height:300px}
+.code.alt .b{background:transparent;border-color:var(--forest);color:var(--forest)}
+</style><div class="bar"><div class="wrap"><div class="top"><a class="mark" href="../index.html"><i aria-hidden="true">AB</i>Design Library</a><nav aria-label="Library"><a href="../index.html">All Websites</a></nav></div></div></div>
+<main id="main"><div class="wrap narrow one">
+<a class="back" href="../index.html">← All websites</a>
+<h1><small>021 · Trust And Content</small>Case Study Page</h1>
+<a class="shot" href="site/index.html"><img src="preview.jpg" alt="Preview of the Case Study Page site" width="960" height="600"></a>
+<div class="go"><a class="b main" href="site/index.html">View Live</a></div>
+<section class="code" aria-label="The page's code"><header><div><b>The Code</b><span>The whole page in 1 file. Paste it into a new .html file and open it.</span></div>
+<button class="b" type="button" data-copy="src">Copy Code</button></header><pre id="src" tabindex="0">&lt;!doctype html&gt;
+&lt;html lang=&quot;en-AU&quot; id=&quot;top&quot; data-m=&quot;slide&quot;&gt;
+&lt;head&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
+&lt;title&gt;How A 3-Person Physio Clinic Filled Its Books In 90 Days | Lumen Practice Growth&lt;/title&gt;
+&lt;meta name=&quot;description&quot; content=&quot;Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.&quot;&gt;
+&lt;!-- Swap every lumenpractice.example address below for your real one. Use 1 version of your address everywhere. --&gt;
+&lt;link rel=&quot;canonical&quot; href=&quot;https://lumenpractice.example/&quot;&gt;
+&lt;meta property=&quot;og:type&quot; content=&quot;article&quot;&gt;
+&lt;meta property=&quot;og:site_name&quot; content=&quot;Lumen Practice Growth&quot;&gt;
+&lt;meta property=&quot;og:title&quot; content=&quot;How A 3-Person Physio Clinic Filled Its Books In 90 Days | Lumen Practice Growth&quot;&gt;
+&lt;meta property=&quot;og:description&quot; content=&quot;Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.&quot;&gt;
+&lt;meta property=&quot;og:url&quot; content=&quot;https://lumenpractice.example/&quot;&gt;
+&lt;meta property=&quot;og:image&quot; content=&quot;https://lumenpractice.example/share.jpg&quot;&gt;
+&lt;meta property=&quot;og:image:width&quot; content=&quot;1200&quot;&gt;
+&lt;meta property=&quot;og:image:height&quot; content=&quot;630&quot;&gt;
+&lt;meta property=&quot;og:image:alt&quot; content=&quot;Lumen Practice Growth: Case Study Page&quot;&gt;
+&lt;meta name=&quot;twitter:card&quot; content=&quot;summary_large_image&quot;&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#FFF4EA&quot;&gt;
+&lt;link rel=&quot;icon&quot; type=&quot;image/png&quot; sizes=&quot;192x192&quot; href=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/icon-192.png&quot;&gt;
+&lt;link rel=&quot;apple-touch-icon&quot; href=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/icon-192.png&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot;&gt;
+&lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin&gt;
+&lt;link href=&quot;https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:wght@400;500;600;700&amp;display=swap&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;script type=&quot;application/ld+json&quot;&gt;
+{
+ &quot;@context&quot;: &quot;https://schema.org&quot;,
+ &quot;@graph&quot;: [
+  {
+   &quot;@type&quot;: &quot;WebSite&quot;,
+   &quot;@id&quot;: &quot;https://lumenpractice.example/#site&quot;,
+   &quot;name&quot;: &quot;Lumen Practice Growth&quot;,
+   &quot;url&quot;: &quot;https://lumenpractice.example/&quot;
+  },
+  {
+   &quot;@type&quot;: &quot;BlogPosting&quot;,
+   &quot;headline&quot;: &quot;How A 3-Person Physio Clinic Filled Its Books In 90 Days&quot;,
+   &quot;description&quot;: &quot;Case study: a 3-practitioner physiotherapy clinic went from 61% to 93% of appointments filled in 90 days by fixing rebooking, not marketing. The numbers, the steps and what to copy.&quot;,
+   &quot;datePublished&quot;: &quot;2026-09-14&quot;,
+   &quot;dateModified&quot;: &quot;2026-11-03&quot;,
+   &quot;author&quot;: {
+    &quot;@type&quot;: &quot;Person&quot;,
+    &quot;name&quot;: &quot;Guy Incognito&quot;,
+    &quot;url&quot;: &quot;https://lumenpractice.example/about.html&quot;
+   },
+   &quot;publisher&quot;: {
+    &quot;@type&quot;: &quot;Organization&quot;,
+    &quot;name&quot;: &quot;Lumen Practice Growth&quot;,
+    &quot;url&quot;: &quot;https://lumenpractice.example/&quot;
+   },
+   &quot;image&quot;: &quot;https://lumenpractice.example/share.jpg&quot;,
+   &quot;mainEntityOfPage&quot;: &quot;https://lumenpractice.example/&quot;
+  }
+ ]
+}
+&lt;/script&gt;
+&lt;style&gt;:root{--bg:#FFF4EA;--bg2:#F7E4D2;--ink:#1A1410;--ink2:#54483F;--line:#1A1410;--card:#FFFAF4;--accent:#0D5C63;--accent-ink:#FFFFFF;--accent-t:#0D5C63;--accent2:#1A1410;--dark:#14201F;--dark-ink:#F7EBDD;--dark-accent:#8ED6D0;--ph1:#F0D3B8;--ph2:#C9A486;--fd:&#x27;DM Serif Display&#x27;,Georgia,serif;--fb:&#x27;DM Sans&#x27;,system-ui,sans-serif;--fa:&#x27;DM Sans&#x27;,system-ui,sans-serif;--r:0px;--rb:0px;--hw:400;--hls:-0.015em;--hlh:1;--htt:none;--hs:1;--bw:1px;--shadow:none;--phr:0px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;scroll-padding-top:84px}
+body{font:400 1.0625rem/1.6 var(--fb);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-optical-sizing:auto;font-kerning:normal;overflow-x:clip}
+p,li{text-wrap:pretty}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:var(--hw);letter-spacing:var(--hls);line-height:var(--hlh);text-transform:var(--htt);text-wrap:balance}
+h1{font-size:clamp(2.15rem,calc(4.5vw*var(--hs)),calc(3.9rem*var(--hs)))}
+h2{font-size:clamp(1.75rem,calc(3.3vw*var(--hs)),calc(2.8rem*var(--hs)))}
+h3{font-size:1.28rem;line-height:1.2}
+p{text-wrap:pretty}
+p+p{margin-top:1em}
+.wrap{max-width:1160px;margin-inline:auto;padding-inline:clamp(20px,5vw,48px)}
+.sec{padding-block:clamp(60px,8vw,112px)}
+.alt{background:var(--bg2)}
+.dark{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 76%,var(--dark));--line:color-mix(in srgb,var(--dark-ink) 22%,var(--dark));--card:color-mix(in srgb,var(--dark-ink) 7%,var(--dark));--accent-t:var(--dark-accent)}
+.center{text-align:center}.center .lead,.center p{margin-inline:auto}
+.lead{font-size:clamp(1.12rem,1.6vw,1.32rem);color:var(--ink2);max-width:56ch;line-height:1.52;text-wrap:pretty}
+.eyebrow{font-family:var(--fa);font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-t);margin-bottom:1rem}
+.sh{margin-bottom:clamp(32px,4.5vw,56px);max-width:780px}.sh.center{margin-inline:auto}.sh .lead{margin-top:1.1rem}
+.fine{font-size:.84rem;color:var(--ink2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5em;min-height:50px;padding:.82em 1.6em;border-radius:var(--rb);background:var(--accent);color:var(--accent-ink);border:var(--bw) solid var(--accent);font-weight:600;font-size:1rem;line-height:1.2;text-decoration:none;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn.ghost{background:transparent;color:var(--ink);border:max(1px,var(--bw)) solid currentColor;box-shadow:none}
+.acts{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}.center .acts{justify-content:center}
+.link{font-weight:600;text-underline-offset:.25em}
+.card{background:var(--card);border:var(--bw) solid var(--line);border-radius:var(--r);padding:clamp(22px,3vw,34px);box-shadow:var(--shadow)}
+.grid{display:grid;gap:clamp(16px,2.4vw,28px);grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
+@media(max-width:900px){.grid{grid-template-columns:repeat(min(var(--cols,3),2),minmax(0,1fr))}}
+@media(max-width:600px){.grid{grid-template-columns:1fr}}
+ul{list-style:none}
+.ticks li{position:relative;padding-left:1.7em;margin-top:.6em}
+.ticks li::before{content:&quot;&quot;;position:absolute;left:0;top:.42em;width:.95em;height:.5em;border-left:2.5px solid var(--accent-t);border-bottom:2.5px solid var(--accent-t);rotate:-45deg}
+.proof{margin-top:1.6rem;font-size:.92rem;color:var(--ink2)}.proof b{color:var(--ink)}
+.ph{position:relative;aspect-ratio:var(--ar,4/5);border-radius:var(--phr);background:radial-gradient(90% 70% at 30% 18%,var(--ph1),var(--ph2));overflow:hidden;isolation:isolate}
+.ph&gt;svg{position:absolute;inset:0;width:100%;height:100%}
+.ph.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 16%}.ph.photo.wide img{object-position:50% 50%}
+.ph.art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--pos,50% 70%);transform:scale(var(--zoom,1));transform-origin:var(--pos,50% 70%)}
+picture.art{position:absolute;inset:0;z-index:-3;display:block;overflow:hidden}picture.art img{width:100%;height:100%;object-fit:cover;object-position:var(--apos,50% 100%);display:block}
+.ph.vid{border-radius:var(--r)}
+.ph.vid .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:74px;height:74px;border-radius:50%;background:var(--card);z-index:2}
+.ph.vid .play::after{content:&quot;&quot;;position:absolute;left:54%;top:50%;translate:-50% -50%;border-left:20px solid var(--ink);border-block:13px solid transparent}
+.bookwrap{display:grid;place-items:center;padding:clamp(16px,4vw,48px);background:var(--bg2);border-radius:var(--r)}
+.dark .bookwrap{background:color-mix(in srgb,var(--dark-ink) 8%,var(--dark))}
+.book{width:min(300px,78%);aspect-ratio:2/3;background:var(--accent);color:var(--accent-ink);padding:10% 9%;display:flex;flex-direction:column;justify-content:space-between;border-radius:3px 8px 8px 3px;box-shadow:inset 9px 0 0 rgba(0,0,0,.16),18px 22px 40px rgba(0,0,0,.28);rotate:-3deg}
+.book small{font:600 .68rem/1.3 var(--fb);letter-spacing:.16em;text-transform:uppercase}
+.book strong{font-family:var(--fd);font-weight:var(--hw);font-size:clamp(1.5rem,3.2vw,2.3rem);line-height:1.02;letter-spacing:var(--hls);text-transform:var(--htt)}
+.book strong em{font-style:italic;color:inherit;background:none}.book&gt;em{font:500 .82rem/1.3 var(--fb);font-style:normal}
+.book.guide{aspect-ratio:3/4;background:var(--card);color:var(--ink);border:var(--bw) solid var(--line);box-shadow:10px 10px 0 var(--accent),22px 26px 40px rgba(0,0,0,.14)}
+.field{margin-top:1rem}.field label{display:block;font-size:.86rem;font-weight:600;margin-bottom:.35rem}
+.field input,.field select,.field textarea{width:100%;min-height:50px;padding:.72rem .95rem;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),12px);background:var(--bg);color:var(--ink);font:inherit}
+.field textarea{min-height:120px;resize:vertical}
+.formcard .btn{width:100%;margin-top:1.2rem}.formcard .fine{margin-top:.8rem;text-align:center}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:99;background:var(--card);color:var(--ink);padding:.6rem 1rem;border-radius:6px}
+:focus-visible{outline:3px solid var(--accent-t);outline-offset:3px}
+.libbar{background:#132620;color:#EAE7E1;font:500 .78rem/1.35 system-ui,-apple-system,&#x27;Segoe UI&#x27;,sans-serif;padding:.6rem clamp(20px,5vw,48px);display:flex;gap:.4rem 1.2rem;justify-content:space-between;flex-wrap:wrap}
+.libbar a{color:#C5A880;text-underline-offset:.2em}
+.hd{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;max-width:1160px;margin:auto;padding:1.15rem clamp(20px,5vw,48px)}
+.logo{font-family:var(--fd);font-weight:var(--hw);font-size:1.4rem;letter-spacing:var(--hls);text-transform:var(--htt);text-decoration:none;line-height:1.1}
+.hd nav ul{display:flex;gap:1.7rem;font-size:.95rem}.hd nav a{text-decoration:none}.hd nav a:hover{text-decoration:underline;text-underline-offset:.3em}
+.hd .btn{min-height:44px;padding:.55em 1.15em;font-size:.92rem;box-shadow:none}
+@media(max-width:860px){.hd nav{display:none}}
+@media(max-width:520px){.logo{font-size:1.15rem}.hd .btn{font-size:.82rem;padding:.5em .95em;white-space:nowrap}}
+.ft{background:var(--dark);color:var(--dark-ink);--ink:var(--dark-ink);--ink2:color-mix(in srgb,var(--dark-ink) 74%,var(--dark));padding:clamp(48px,6vw,80px) 0 28px;font-size:.95rem}
+.ft-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:2.4rem}
+@media(max-width:760px){.ft-g{grid-template-columns:1fr}}
+.ft .logo{display:inline-block;margin-bottom:.8rem}.ft h2{font:600 .78rem/1.3 var(--fb);letter-spacing:.14em;text-transform:uppercase;color:var(--ink2);margin-bottom:.9rem}
+.ft li{margin-top:.5rem}.ft a{text-underline-offset:.25em}.ft p{color:var(--ink2);max-width:42ch}
+.ft-s{margin-top:2.6rem;padding-top:1.3rem;border-top:1px solid color-mix(in srgb,var(--dark-ink) 22%,var(--dark));font-size:.8rem;color:var(--ink2)}
+.ft-s p{max-width:none}.ft-s p+p{margin-top:.5em}
+@media(prefers-reduced-motion:no-preference){
+[data-in]{animation:rise .7s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0)*90ms)}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+/* The headline slides but never starts hidden, so the largest element paints straight away */
+h1[data-in]{animation-name:slide}
+@keyframes slide{from{transform:translateY(16px)}}
+/* Sections below the first screen reveal as they scroll in: see src/motion.py */
+}
+@media print{.libbar{display:none}.sec{padding-block:28px}}
+
+.hart{padding-block:clamp(36px,5vw,72px) 0}
+.hart .wrap{max-width:900px}.hart h1{font-size:clamp(2rem,calc(4vw*var(--hs)),calc(3.2rem*var(--hs)))}
+.hart .lead{margin-top:1.3rem;max-width:none}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.2rem;margin-top:1.8rem;padding-block:1rem;border-block:max(1px,var(--bw)) solid var(--line);font-size:.9rem}
+.byline b{font-weight:700}
+.short{margin-top:1.8rem;background:var(--bg2);box-shadow:none}.short h2{font:700 .8rem/1.3 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-t);margin-bottom:.4rem}
+.short .ticks{font-size:1.05rem}
+.toc{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1.2rem;font-size:.92rem}.toc span{color:var(--ink2)}
+.hart .ph{margin-top:clamp(28px,4vw,48px)}
+
+.mt{width:100%;border-collapse:collapse;font-size:1rem}
+.mt th,.mt td{text-align:left;padding:1rem .8rem;border-bottom:max(1px,var(--bw)) solid var(--line)}
+.mt thead th{font:600 .76rem/1.3 var(--fb);letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.mt td:last-child{font-family:var(--fd);font-weight:var(--hw);font-size:1.5rem;color:var(--accent-t);letter-spacing:var(--hls)}
+.mt-g{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(20px,4vw,56px);align-items:center}
+.chartc{padding:22px 24px}.chartc h3{font:700 .78rem/1.3 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:1rem}
+.chartc svg{width:100%;height:auto;display:block}.chartc .ct{font:600 12px var(--fb);fill:var(--ink2)}.chartc .cv{font:700 12px var(--fb);fill:var(--ink2)}.chartc .cb{fill:var(--accent-t)}
+.chartc .key{display:flex;gap:1.2rem;margin-top:.8rem;font-size:.8rem;color:var(--ink2)}.chartc .key i{display:inline-block;width:12px;height:12px;border-radius:3px;background:var(--line);margin-right:.4em;vertical-align:-1px}.chartc .key i.a{background:var(--accent)}
+@media(max-width:860px){.mt-g{grid-template-columns:1fr}}
+@media(max-width:600px){.mt thead{display:none}.mt tr{display:block;padding:.8rem 0;border-bottom:max(1px,var(--bw)) solid var(--line)}.mt th,.mt td{display:block;border:0;padding:.15rem 0}.mt td::before{content:attr(data-l) &quot;: &quot;;font-size:.78rem;color:var(--ink2);font-family:var(--fb)}}
+
+.art .wrap{max-width:760px}.art{padding-block:clamp(36px,5vw,64px)}
+.art p{font-size:1.16rem;line-height:1.75}.art h2{font-size:clamp(1.6rem,3vw,2.1rem);margin:2.6rem 0 1rem;scroll-margin-top:90px}
+.art .ticks{margin:1.2rem 0;font-size:1.1rem}.art&gt;.wrap&gt;p:first-of-type::first-letter{font-family:var(--fd);font-weight:var(--hw);float:left;font-size:4.4em;line-height:.82;padding:.06em .1em 0 0;color:var(--accent-t)}
+.pull{margin-block:2.2rem;padding-left:1.4rem;border-left:4px solid var(--accent-t);font-family:var(--fd);font-weight:var(--hw);font-size:clamp(1.4rem,2.6vw,1.9rem);line-height:1.22;letter-spacing:var(--hls);text-transform:var(--htt)}
+.box{margin:2.4rem 0;background:var(--bg2);box-shadow:none}.box h2{margin:0 0 .6rem;font-size:1.3rem}
+.art .mxw{margin:1.8rem 0}.art .mx{min-width:520px;font-size:1rem}.art .mx thead th{font-size:1rem}.art figcaption{font-size:.86rem;color:var(--ink2);margin-top:.6rem}
+.art .chartc{margin:2rem 0}
+.srcs{margin-top:2.6rem;padding-top:1.4rem;border-top:max(1px,var(--bw)) solid var(--line)}.srcs h2{margin:0 0 .8rem;font-size:1.2rem}
+.srcs ol{list-style:decimal;padding-left:1.3rem;font-size:.96rem;color:var(--ink2)}.srcs li{margin-top:.5rem}.srcs a{color:var(--ink)}
+.auth{display:grid;grid-template-columns:auto 1fr;gap:1.4rem;align-items:center;margin-top:3rem}.auth .av{width:84px;height:84px;font-size:1.5rem}
+.auth h2{margin:0 0 .3rem;font-size:1.3rem}.auth p{font-size:1rem;line-height:1.55}
+.mxw{overflow-x:auto}.mx{width:100%;border-collapse:collapse}.mx th,.mx td{padding:.9rem .8rem;border-bottom:max(1px,var(--bw)) solid var(--line);text-align:left;vertical-align:top}
+.mx thead th{font-family:var(--fb);font-weight:700;letter-spacing:.04em}.mx .hot{background:color-mix(in srgb,var(--accent) 9%,transparent)}
+.chartc{padding:22px 24px}.chartc h3{font:700 .78rem/1.3 var(--fb);letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);margin-bottom:1rem}
+.chartc svg{width:100%;height:auto;display:block;max-width:520px}.chartc .ct{font:600 12px var(--fb);fill:var(--ink2)}.chartc .cv{font:700 12px var(--fb);fill:var(--ink2)}.chartc .cb{fill:var(--accent-t)}
+
+.qt blockquote{font-size:1.06rem;line-height:1.55}.qt .feature blockquote{font-family:var(--fd);font-weight:var(--hw);font-size:clamp(1.5rem,3vw,2.3rem);line-height:1.18;letter-spacing:var(--hls);text-transform:var(--htt);max-width:26ch}
+.qt figure.card{display:flex;flex-direction:column;transition:translate .25s}.qt figure.card:hover{translate:0 -4px}
+.qt figure.card&gt;blockquote::before{content:&quot;\201C&quot;;display:block;font-family:Georgia,serif;font-size:3.4rem;line-height:.7;height:1.4rem;color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.qt figcaption{display:flex;align-items:center;gap:.8rem;margin-top:auto;padding-top:1.2rem;font-size:.9rem;color:var(--ink2)}.qt figcaption b{color:var(--ink);display:block}
+.res{display:inline-block;align-self:flex-start;margin-bottom:1rem;font-size:.76rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-t);background:color-mix(in srgb,var(--accent) 12%,transparent);border-radius:999px;padding:.4em .9em}
+.qt .wall{columns:3 260px;column-gap:clamp(16px,2.4vw,28px)}.qt .wall figure{break-inside:avoid;margin-bottom:clamp(16px,2.4vw,28px)}
+.qt .feature{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(28px,5vw,64px);align-items:center}
+@media(max-width:760px){.qt .feature{grid-template-columns:1fr}.qt .feature .ph{max-width:300px}}
+
+.band{position:relative;isolation:isolate;overflow:clip}
+.bd-h{font-size:clamp(1.9rem,calc(4.2vw*var(--hs)),calc(3.5rem*var(--hs)));max-width:19ch}.band .eyebrow{margin-bottom:1.1rem}
+.band.wide{padding-block:clamp(84px,11vw,160px)}.band.wide::before{background:linear-gradient(90deg,rgba(6,10,22,.84),rgba(6,10,22,.62) 52%,rgba(6,10,22,.2))}
+.band.wide picture.art img,.band.frame picture.art img{object-position:50% 46%}
+.band.frame{margin:clamp(12px,2.2vw,30px);border-radius:clamp(22px,3vw,44px);padding-block:clamp(72px,9vw,128px);text-align:center}
+.band.frame::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.band.frame .bd-h{margin-inline:auto}.band.frame .acts{justify-content:center}
+.band.frame .eyebrow::before{display:none}
+.band.mosaic .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
+.mos{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:1fr 1fr;gap:clamp(10px,1.4vw,18px);aspect-ratio:5/4}
+.mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
+.mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
+.band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
+.strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
+@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
+@media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
+
+.fd-l li{display:grid;grid-template-columns:minmax(90px,130px) 1fr auto;gap:.6rem 2rem;align-items:baseline;padding:1.25rem 0;border-top:max(1px,var(--bw)) solid var(--line)}
+.fd-l li:last-child{border-bottom:max(1px,var(--bw)) solid var(--line)}
+.fd-l .k{font-size:.76rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-t)}
+.fd-l h3{font-size:clamp(1.15rem,2.2vw,1.5rem)}.fd-l h3 a{text-decoration:none}.fd-l h3 a:hover{text-decoration:underline;text-underline-offset:.2em}
+.fd-l p{color:var(--ink2);font-size:.96rem;margin-top:.3rem;max-width:64ch}.fd-l .m{font-size:.85rem;color:var(--ink2);white-space:nowrap}
+.fd-g .ph{margin-bottom:1rem;--ar:16/10;box-shadow:none}.fd-g .k{font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-t)}
+.fd-g h3{margin:.4rem 0 .5rem;font-size:1.35rem}.fd-g h3 a{text-decoration:none}.fd-g p{color:var(--ink2);font-size:.96rem}.fd-g .m{margin-top:.7rem;font-size:.84rem}
+.fd-more{margin-top:2rem}
+@media(max-width:700px){.fd-l li{grid-template-columns:1fr}}
+
+.cta .wrap{text-align:center;max-width:880px}.cta h2{font-size:clamp(2.1rem,calc(5vw*var(--hs)),calc(3.8rem*var(--hs)))}
+.cta .lead{margin:1.2rem auto 0}.cta .acts{justify-content:center}.cta .reassure{justify-content:center}
+
+/* illustration colours follow the page&#x27;s own tokens */
+.i-1{fill:var(--ph1)}.i-2{fill:var(--ph2)}.i-a{fill:var(--accent)}.i-b{fill:var(--accent2)}.i-d{fill:var(--dark)}.i-c{fill:var(--card)}.i-g{fill:var(--bg2)}.i-l{fill:var(--line)}
+.ph{box-shadow:0 34px 64px -30px color-mix(in srgb,var(--ink) 50%,transparent)}
+.ph.person{background:radial-gradient(circle at 74% 22%,color-mix(in srgb,var(--card) 62%,transparent) 0 23%,transparent 23.5%),radial-gradient(90% 70% at 30% 18%,var(--ph1),var(--ph2))}
+.ph.vid .play{box-shadow:0 12px 30px rgba(0,0,0,.3)}
+.ph .cap{position:absolute;left:14px;bottom:14px;z-index:2;font:600 .76rem/1.2 var(--fb);background:rgba(0,0,0,.74);color:#fff;padding:.5em .8em;border-radius:6px;max-width:calc(100% - 28px)}
+.av{display:block;width:44px;height:44px;border-radius:50%;flex:none;overflow:hidden;background:var(--bg2)}.av img{width:100%;height:100%;object-fit:cover;display:block}
+/* photographs: framed, lifted off the page, and cropped from the top so a face is never cut */
+.ph.photo{background:var(--bg2);box-shadow:0 38px 72px -36px color-mix(in srgb,var(--ink) 62%,transparent)}
+.eyebrow.who{display:flex;align-items:center;gap:.75rem}.hcenter .eyebrow.who,.center .eyebrow.who{justify-content:center}
+.eyebrow.who .av{width:38px;height:38px;box-shadow:0 0 0 2px rgba(255,255,255,.85),0 6px 16px -6px rgba(0,0,0,.5)}.eyebrow.who::before{display:none}
+.host{display:flex;align-items:center;gap:.85rem;margin:1.4rem 0;text-align:left}.host .av{width:56px;height:56px;box-shadow:0 0 0 3px var(--card),0 0 0 4px var(--line)}
+.host span{font-size:.9rem;color:var(--ink2);line-height:1.35}.host b{display:block;font-size:1.02rem;color:var(--ink)}.thx .host{justify-content:center}
+.cta .host{justify-content:center;margin:2rem 0 0}.cta.bleed .host .av{box-shadow:0 0 0 2px rgba(255,255,255,.85)}.cta.bleed .host span{color:rgba(255,255,255,.9)}.cta.bleed .host b{color:#fff}
+/* the name under a portrait: who this is, said once more where the eye already is */
+.signed{margin-top:1.1rem;font-size:.9rem;color:var(--ink2);line-height:1.35}.signed b{display:block;font-family:var(--fd);font-weight:var(--hw);font-size:1.15rem;letter-spacing:var(--hls);color:var(--ink)}
+.sp-v{position:relative}.sp-v .ph.photo{outline:1px solid color-mix(in srgb,var(--ink) 10%,transparent);outline-offset:-1px}
+/* testimonials read as people: a larger face, the name in ink, and a quiet accent edge on the card */
+.qt figcaption .av{width:52px;height:52px;box-shadow:0 0 0 3px var(--card),0 0 0 4px color-mix(in srgb,var(--accent) 40%,transparent)}
+.qt figure.card{border-top:3px solid color-mix(in srgb,var(--accent) 55%,transparent)}.qt figcaption b{font-size:1rem}
+input,select,textarea{font-size:max(16px,1rem)}
+/* on a phone a form hero shows its form before its bullet points, so the first button is on the first screen */
+@media(max-width:860px){.hf-g{gap:1.1rem}.hf-g&gt;div:first-child{display:contents}.hf-g&gt;div:first-child&gt;*{margin-top:0}.hf-v{order:2}.hf-g .ticks,.hf-g .meta,.hf-g .crowd,.hf-g&gt;div:first-child&gt;.reassure,.hform.long .hf-g .lead{order:3}.hform .formcard{padding:1.2rem 1.2rem 1.3rem}}
+.ic{width:22px;height:22px;flex:none}
+/* header */
+:root{--hh:76px}
+.hdw{position:sticky;top:0;z-index:20;min-height:var(--hh);display:grid;align-items:center;color:var(--ink);background:color-mix(in srgb,var(--bg) 84%,transparent);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid color-mix(in srgb,var(--line) 60%,transparent)}
+.hd{padding-block:.7rem;width:100%}
+/* over a painted hero the menu floats as a bar of glass, shaped like the theme&#x27;s buttons, and turns to frosted paper as the page scrolls.
+   Browsers without scroll timelines get the frosted bar from the start */
+.over{--hh:90px}
+.over .hdw{background:transparent;border-color:transparent;-webkit-backdrop-filter:none;backdrop-filter:none;pointer-events:none;padding:12px clamp(10px,2vw,22px) 0}
+.over .hd{pointer-events:auto;max-width:1180px;padding:.5rem .6rem .5rem clamp(1rem,2vw,1.5rem);border-radius:var(--rb);border:1px solid color-mix(in srgb,var(--line) 70%,transparent);
+background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit-backdrop-filter:blur(18px) saturate(1.4);backdrop-filter:blur(18px) saturate(1.4);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}
+@supports(animation-timeline:scroll()){
+.over .hd{background:var(--g0);border-color:rgba(255,255,255,.28);color:var(--h0);box-shadow:none;animation:hdw linear both;animation-timeline:scroll();animation-range:0 180px}
+@keyframes hdw{to{background:color-mix(in srgb,var(--bg) 88%,transparent);border-color:color-mix(in srgb,var(--line) 70%,transparent);color:var(--ink);box-shadow:0 14px 34px -22px rgba(0,0,0,.5)}}
+/* the painting drifts closer as the hero scrolls away */
+@media(prefers-reduced-motion:no-preference){.hero.bleed picture.art img{transform-origin:50% 100%;animation:drift linear both;animation-timeline:scroll();animation-range:0 900px}@keyframes drift{to{transform:scale(1.1)}}}
+}
+.o-light{--g0:rgba(10,14,26,.3)}.o-dark{--g0:rgba(255,255,255,.6)}
+.o-light{--h0:#fff}.o-dark{--h0:var(--ink)}
+.mnav{display:none;position:relative}.mnav summary{list-style:none;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),12px)}
+.mnav summary::-webkit-details-marker{display:none}.mnav ul{position:absolute;right:0;top:56px;min-width:230px;background:var(--card);color:var(--ink);border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),14px);padding:.5rem;box-shadow:0 24px 48px -20px rgba(0,0,0,.4)}
+.mnav a{display:block;padding:.85rem .9rem;text-decoration:none;border-radius:8px;font-weight:600}.mnav a:hover{background:var(--bg2)}
+@media(max-width:860px){.mnav{display:block}.hd.has-nav&gt;.btn{display:none}}
+.ann{background:var(--dark);color:var(--dark-ink);text-align:center;font-size:.88rem;font-weight:500;padding:.6rem 1rem}.ann b{color:var(--dark-accent)}.ann a{color:inherit;text-underline-offset:.2em;font-weight:700}
+/* atmosphere */
+:root{--grain:url(&quot;data:image/svg+xml,%3Csvg xmlns=&#x27;http://www.w3.org/2000/svg&#x27; width=&#x27;180&#x27; height=&#x27;180&#x27;%3E%3Cfilter id=&#x27;n&#x27;%3E%3CfeTurbulence type=&#x27;fractalNoise&#x27; baseFrequency=&#x27;.9&#x27; numOctaves=&#x27;2&#x27; stitchTiles=&#x27;stitch&#x27;/%3E%3CfeColorMatrix values=&#x27;0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .5 0&#x27;/%3E%3C/filter%3E%3Crect width=&#x27;100%25&#x27; height=&#x27;100%25&#x27; filter=&#x27;url(%23n)&#x27;/%3E%3C/svg%3E&quot;)}
+.hero,.cta,.hart,.lb{position:relative;isolation:isolate;overflow:clip}
+.lb::before{content:&quot;&quot;;position:absolute;inset:0;z-index:-2;background:var(--atmo,none);pointer-events:none}
+/* painted sections: the picture, a veil that keeps the words readable, then the words */
+.bleed::before{content:&quot;&quot;;position:absolute;inset:0;z-index:-2;pointer-events:none;-webkit-mask-image:none!important;mask-image:none!important}
+.t-light{--ink:#fff;--ink2:rgba(255,255,255,.92);--line:rgba(255,255,255,.38);--accent-t:#fff;color:#fff}
+/* each veil is tuned so every line of text measures at least 4.5 to 1 against the picture behind it (3 to 1 for large type). src/legible.mjs checks it */
+.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.66) 0,rgba(6,10,22,.64) 62%,rgba(6,10,22,.4) 84%,rgba(6,10,22,.1))}
+.hsplit.t-light::before,.hform.t-light::before,.hstage.t-light::before{background:linear-gradient(90deg,rgba(6,10,22,.78) 0,rgba(6,10,22,.7) 42%,rgba(6,10,22,.22) 70%,rgba(6,10,22,0) 90%),linear-gradient(180deg,rgba(6,10,22,.6) 0,rgba(6,10,22,.44) 11%,rgba(6,10,22,0) 30%)}
+.t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.86) 0,rgba(255,255,255,.82) 58%,rgba(255,255,255,.42) 80%,rgba(255,255,255,0) 97%)}
+.hsplit.t-dark::before,.hform.t-dark::before,.hstage.t-dark::before{background:linear-gradient(90deg,rgba(255,255,255,.9) 0,rgba(255,255,255,.84) 42%,rgba(255,255,255,.26) 68%,rgba(255,255,255,0) 86%),linear-gradient(180deg,rgba(255,255,255,.7) 0,rgba(255,255,255,.5) 11%,rgba(255,255,255,0) 30%)}
+.cta.bleed::before{background:linear-gradient(180deg,rgba(6,10,22,.74),rgba(6,10,22,.62))}
+@media(max-width:860px){.hero.t-light::before{background:linear-gradient(180deg,rgba(6,10,22,.7),rgba(6,10,22,.62))}.hero.t-dark::before{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.82))}}
+.t-dark{--ink2:var(--ink)}.t-dark .reassure,.t-dark .crowd,.t-dark .lead{color:var(--ink)}
+/* a hero is 1 screen at most: on a laptop the next section shows beneath it */
+.hero.bleed{min-height:min(82svh,680px);display:grid;align-content:center}
+.over .hero.bleed{margin-top:calc(var(--hh)*-1);padding-top:calc(var(--hh) + clamp(22px,3vw,44px));padding-bottom:clamp(40px,5vw,68px)}
+.hero .crowd{margin-top:1.2rem}.hero .chips{margin-top:1.2rem}.hero .reassure{margin-top:.9rem}
+.bleed h1 em,.bleed h2 em{background:none!important}.bleed.t-light h1 em,.bleed.t-light h2 em{color:#FFE6BF}
+.t-light h1,.t-light h2,.t-light .lead{text-shadow:0 2px 26px rgba(0,0,0,.3)}
+.t-light .btn.ghost{color:#fff;border-color:rgba(255,255,255,.78);background:rgba(8,12,24,.36);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.t-dark .btn.ghost{background:rgba(255,255,255,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.bleed .chips li{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.44);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:inherit}
+.t-light .chips li{background:rgba(8,12,24,.36)}.t-dark .chips li{background:rgba(255,255,255,.78)}
+.bleed .bookwrap{background:transparent;padding:0}
+.hform.bleed .hf-v&gt;.reassure{margin-top:0;padding:.75rem 1rem;border-radius:14px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.hform.t-light .hf-v&gt;.reassure{background:rgba(8,12,24,.58)}.hform.t-dark .hf-v&gt;.reassure{background:rgba(255,255,255,.84)}
+.t-light .hstats{background:rgba(6,10,22,.56);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:1.3rem 1.6rem}
+.t-dark .hstats{background:rgba(255,255,255,.8);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.7);border-radius:18px;padding:1.3rem 1.6rem}
+.bleed .crowd .av{border-color:rgba(255,255,255,.85)}
+/* the proof cards sit on the painting as glass, stacked in the lower corner where the picture is quietest */
+.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:grid;align-content:end;justify-items:end;gap:14px;min-height:clamp(170px,22vw,300px)}
+.hsplit.bleed .float,.hsplit.bleed .float.f2{position:static;max-width:290px;width:100%;border:1px solid rgba(255,255,255,.34);border-radius:18px;box-shadow:0 24px 50px -24px rgba(0,0,0,.5);-webkit-backdrop-filter:blur(16px) saturate(1.2);backdrop-filter:blur(16px) saturate(1.2)}
+.hsplit.t-light .float{background:rgba(10,14,28,.62);color:#fff}.hsplit.t-light .float b,.hsplit.t-light .float.f2 b{color:#fff}.hsplit.t-light .float.f2 span{color:rgba(255,255,255,.86)}
+.hsplit.t-light .float.f2&gt;.ic{background:rgba(255,255,255,.18);color:#fff}
+.hsplit.t-dark .float{background:rgba(255,255,255,.82);color:var(--ink)}
+/* a portrait in the hero: the photo is framed, an offset line sits behind it, and the proof cards overlap its edges */
+.hsplit.bleed .hs-v.has-pic{display:block;position:relative;min-height:0;width:min(100%,348px);margin-left:auto}
+.hs-v.has-pic .ph,.hst-v .ph{outline:1px solid rgba(255,255,255,.4);outline-offset:-1px;box-shadow:0 44px 90px -40px rgba(0,0,0,.7)}
+.hs-v.has-pic::before,.hst-v::before{content:&quot;&quot;;position:absolute;inset:20px -20px -20px 20px;border:1px solid rgba(255,255,255,.5);border-radius:var(--phr);z-index:-1}
+.t-dark .hs-v.has-pic::before,.t-dark .hst-v::before{border-color:color-mix(in srgb,var(--ink) 34%,transparent)}
+.hsplit.bleed .hs-v.has-pic .float{position:absolute;left:-16%;bottom:8%;width:auto;max-width:236px}
+.hsplit.bleed .hs-v.has-pic .float.f2{left:auto;right:-13%;top:10%;bottom:auto;max-width:214px}
+.hst-v{position:relative;width:min(100%,318px);margin-left:auto}
+@media(max-width:860px){.hero.bleed{min-height:min(74svh,600px)}.hsplit.bleed .hs-v.has-pic{width:100%;margin:1.3rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}.hs-v.has-pic::before{display:none}.hs-v.has-pic .ph{--ar:1/1!important;grid-column:1/-1;width:min(100%,264px)}
+.hsplit.bleed .hs-v.has-pic .float,.hsplit.bleed .hs-v.has-pic .float.f2{position:static;max-width:none;margin-top:0;padding:.8rem .9rem}.hst-v{margin:1.3rem 0 0;width:min(100%,264px)}.hst-v::before{display:none}.hst-v .ph{--ar:1/1!important}}
+@media(max-width:860px){.hsplit.bleed .hs-v:not(.has-card):not(.has-pic){display:flex;min-height:0;margin-top:.4rem}.hsplit.bleed .float,.hsplit.bleed .float.f2{max-width:none;flex:1 1 150px}}
+.cta.deep picture.art img{object-position:50% 84%}
+.cta.deep{padding-block:clamp(88px,12vw,168px)}
+.ph.art{box-shadow:0 34px 64px -30px color-mix(in srgb,var(--ink) 55%,transparent)}
+.ph.vid .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:74px;height:74px;border-radius:50%;background:#fff;z-index:2}
+.ph.vid .play::after{content:&quot;&quot;;position:absolute;left:54%;top:50%;translate:-50% -50%;border-left:20px solid #111;border-block:13px solid transparent}
+.cta:not(.bleed)::after{content:&quot;&quot;;position:absolute;inset:0;z-index:-1;background-image:var(--grain);opacity:.07;pointer-events:none}
+.cta:not(.bleed)::before{content:&quot;&quot;;position:absolute;z-index:-1;width:min(92vw,840px);aspect-ratio:1;left:50%;top:50%;translate:-50% -50%;border-radius:50%;border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);box-shadow:0 0 0 72px color-mix(in srgb,var(--ink) 4%,transparent),0 0 0 156px color-mix(in srgb,var(--ink) 3%,transparent);pointer-events:none}
+/* proof beside the button, reassurance under it */
+.crowd{display:flex;align-items:center;gap:.9rem;margin-top:1.7rem;font-size:.93rem;color:var(--ink2);line-height:1.4;text-align:left}.crowd b{color:var(--ink)}.crowd p{margin:0}
+.crowd .avs{display:flex;flex:none}.crowd .av{width:40px;height:40px;border:2.5px solid var(--bg);margin-left:-12px}.crowd .av:first-child{margin-left:0}
+.hcenter .crowd,.center .crowd{justify-content:center}
+.reassure{display:flex;align-items:flex-start;gap:.5rem;margin-top:1rem;font-size:.9rem;color:var(--ink2);text-align:left}.reassure .ic{width:18px;height:18px;color:var(--accent-t);margin-top:.14em}
+.hcenter .reassure,.cta .reassure{justify-content:center}
+.float{border:0;border-radius:16px;box-shadow:0 26px 50px -20px rgba(0,0,0,.42)}
+.float.f2{left:auto;right:-7%;top:9%;bottom:auto;display:flex;gap:.75rem;align-items:center;max-width:250px;padding:12px 16px}
+.float.f2&gt;.ic{width:40px;height:40px;padding:9px;border-radius:50%;background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent-t)}
+.float.f2 b{font:700 .95rem/1.25 var(--fb);letter-spacing:0;text-transform:none;color:var(--ink)}.float.f2 span{font-size:.8rem;color:var(--ink2)}
+@media(max-width:860px){.float.f2{right:-4px;top:5%}}
+/* buttons and forms */
+.btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
+:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
+.stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
+/* the brand name, very large and very quiet, closes every page */
+.ft{overflow:hidden}.ft-mark{font-family:var(--fd);font-weight:var(--hw);text-transform:var(--htt);letter-spacing:var(--hls);line-height:.82;white-space:nowrap;text-align:center;
+font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em;user-select:none}.ft-mark::before{content:attr(data-mark)}.ft .ft-mark{color:color-mix(in srgb,var(--dark-ink) 11%,transparent)}   /* decoration, drawn by the stylesheet so it is not read out or indexed twice */
+.btn:not(.ghost)::after{content:&quot;&quot;;width:.44em;height:.44em;border-top:2px solid;border-right:2px solid;rotate:45deg;margin-left:.1em;transition:translate .2s}
+.btn:not(.ghost):hover::after{translate:3px -3px}
+.formcard{position:relative;border-top:4px solid var(--accent);box-shadow:0 34px 64px -34px rgba(0,0,0,.42)}
+.field input:focus,.field select:focus,.field textarea:focus{outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent);outline-offset:1px;border-color:var(--accent-t)}
+.formcard .fine{display:flex;gap:.45rem;justify-content:center;align-items:flex-start;text-align:left}.formcard .fine .ic{width:16px;height:16px;margin-top:.15em}
+.formcard .crowd{margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--line);font-size:.86rem}.formcard .crowd .av{border-color:var(--card);width:34px;height:34px}
+.cals{display:flex;flex-wrap:wrap;gap:.4rem 1rem;margin-top:.9rem;font-size:.86rem;justify-content:center}.cals span{color:var(--ink2)}.cals a{font-weight:600;text-underline-offset:.2em}
+/* mock-ups */
+.mk{padding:0;overflow:hidden;box-shadow:0 34px 64px -30px rgba(0,0,0,.4)}
+.mk-email{padding:22px 24px 0;position:relative}.mk-top{display:flex;align-items:center;gap:.8rem;padding-bottom:.9rem;border-bottom:1px solid var(--line);margin-bottom:1rem}
+.mk-top b{display:block;font-size:.95rem}.mk-top div span{font-size:.8rem;color:var(--ink2)}.mk-top i{margin-left:auto;font-style:normal;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--bg2);border-radius:999px;padding:.35em .8em}
+.mk-email h3{font-size:1.3rem;margin-bottom:.7rem}.mk-email p{font-size:.95rem;color:var(--ink2);line-height:1.55}.mk-email p+p{margin-top:.7em}
+.mk-fade{height:70px;margin-top:-34px;position:relative;background:linear-gradient(transparent,var(--card))}
+.mk-lesson .ph{border-radius:0;box-shadow:none}.mk-lesson ul{padding:.5rem 1.2rem 1rem}
+.mk-lesson li{display:grid;grid-template-columns:auto 1fr auto;gap:.8rem;align-items:center;padding:.7rem 0;border-top:1px solid var(--line);font-size:.93rem}.mk-lesson li:first-child{border-top:0}
+.mk-lesson li i{width:20px;height:20px;border-radius:50%;border:2px solid var(--line)}.mk-lesson li.done i{background:var(--accent-t);border-color:var(--accent-t)}.mk-lesson li.on{font-weight:700}.mk-lesson li.on i{border-color:var(--accent-t)}
+.mk-lesson small{color:var(--ink2);font-size:.8rem}
+/* mobile action bar */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:30;display:none;align-items:center;justify-content:space-between;gap:.8rem;padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));background:var(--card);color:var(--ink);border-top:max(1px,var(--bw)) solid var(--line);box-shadow:0 -10px 30px rgba(0,0,0,.14);font-size:.84rem;line-height:1.3}
+.sticky b{display:block}.sticky .btn{min-height:48px;padding:.6em 1.1em;font-size:.92rem;white-space:nowrap;box-shadow:none}
+@media(max-width:760px){.sticky{display:flex}body.has-sticky{padding-bottom:76px}}
+.ft{position:relative}
+@media(prefers-reduced-motion:no-preference){
+.float{animation:bob 7s ease-in-out infinite}.float.f2{animation-delay:-3s}@keyframes bob{50%{translate:0 -8px}}
+}
+@media print{.sticky,.ann{display:none}}
+.bleed .card{--ink:#1A1410;--ink2:#54483F;--line:#1A1410;--accent-t:#0D5C63;color:#1A1410;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
+h1 em,h2 em{font-style:italic;font-weight:500;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.eyebrow{font-weight:700;letter-spacing:.16em}.sh{border-top:3px solid var(--ink);padding-top:1rem}.dark .sh{border-color:var(--dark-ink)}.btn{text-transform:uppercase;letter-spacing:.1em;font-size:.82rem;font-weight:700}
+.hdw{border-bottom:3px double var(--ink)}.prose .wrap&gt;p:first-of-type::first-letter{font-family:var(--fd);font-weight:800;float:left;font-size:4.2em;line-height:.8;padding:.06em .1em 0 0;color:var(--accent-t)}.hero .ph,.split .ph{box-shadow:14px 14px 0 var(--bg2)}.float{border:1px solid var(--ink);border-radius:0;box-shadow:none}.formcard{border:1px solid var(--ink);box-shadow:10px 10px 0 var(--bg2)}
+/* scroll progress: a thin bar in the brand colour, drawn by the browser&#x27;s own scroll timeline */
+.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
+@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
+/* the header steps aside on the way down and comes back on the way up */
+.hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
+/* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
+@media(min-width:761px){
+.js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+.js.past:not(.end) .sticky{transform:none;visibility:visible}
+}
+@media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
+@media(prefers-reduced-motion:no-preference){
+/* reveal on scroll. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
+[data-m=rise] [data-rv]{transform:translateY(38px)}
+[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
+@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
+[data-m=zoom] [data-rv]{transform:scale(.9)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
+[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
+[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
+[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
+[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* the painting settles into place as the page opens */
+.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
+/* a light crosses the main button on hover */
+.btn:not(.ghost){position:relative;overflow:hidden}
+.btn:not(.ghost)::before{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
+.btn:not(.ghost):hover::before{translate:130% 0}
+.btn:active{transform:translateY(1px) scale(.98)}
+/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+@supports(animation-timeline:view()){
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+}
+/* answers open smoothly where the browser can animate to an automatic height */
+@supports(interpolate-size:allow-keywords){
+.faq details,.mod details{interpolate-size:allow-keywords}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
+}
+.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
+/* links and list rows answer the pointer */
+.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
+.lb-l a,.door,.tier{will-change:translate}
+.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
+.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
+/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
+.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
+.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
+/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
+[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
+[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
+}
+@media print{.prog,.sticky{display:none}}
+/* this site&#x27;s own variation: Salmon Paper And Teal */
+.sh h2{padding-bottom:.55em;background:linear-gradient(var(--accent),var(--accent)) 0 100%/76px 4px no-repeat}.sh.center h2{background-position:50% 100%}body{background-image:repeating-linear-gradient(90deg,transparent 0 calc(25% - 1px),color-mix(in srgb,var(--ink) 8%,transparent) calc(25% - 1px) 25%)}@media(min-width:900px){.stp{grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:clamp(18px,2.6vw,36px)}.stp li{grid-template-columns:1fr;gap:1rem;border-top:3px solid var(--accent-t);padding-top:1.4rem}.stp li:hover{padding-left:0}}.st-g&gt;div{border-left:0;padding:1.5rem;background:var(--card);border-radius:var(--r);border:max(1px,var(--bw)) solid var(--line);box-shadow:var(--shadow)}h1 em,h2 em{font-weight:400}.hero .ph,.split .ph{box-shadow:14px 14px 0 var(--accent)}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body class=&quot;has-sticky&quot;&gt;
+&lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;
+&lt;div class=&quot;prog&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;hdw&quot;&gt;&lt;header class=&quot;hd has-nav&quot;&gt;&lt;a class=&quot;logo&quot; href=&quot;#top&quot;&gt;Lumen Practice Growth&lt;/a&gt;&lt;nav aria-label=&quot;Main&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Case Studies&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Articles&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/nav&gt;&lt;a class=&quot;btn&quot; href=&quot;book.html&quot;&gt;Book A Clinic Review&lt;/a&gt;&lt;details class=&quot;mnav&quot;&gt;&lt;summary aria-label=&quot;Menu&quot;&gt;&lt;svg class=&quot;ic&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M4 7h16M4 12h16M4 17h16&quot;/&gt;&lt;/svg&gt;&lt;/summary&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Case Studies&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Articles&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;book.html&quot;&gt;Book A Clinic Review&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/details&gt;&lt;/header&gt;&lt;/div&gt;
+&lt;main id=&quot;main&quot;&gt;
+&lt;!-- Article header: the result as the headline, a 2-line summary, a named author and a date --&gt;
+&lt;section class=&quot;sec hart  &quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;Case study · Allied health&lt;/p&gt;&lt;h1 data-in style=&quot;--i:1&quot;&gt;How A 3-Person Physio Clinic Filled Its Books &lt;em&gt;In 90 Days&lt;/em&gt;&lt;/h1&gt;&lt;p class=&quot;lead&quot; data-in style=&quot;--i:2&quot;&gt;Coastline Physio was spending $2,800 a month on ads and still running at 61% capacity. The fix was not more new patients. It was keeping the ones they had.&lt;/p&gt;&lt;div class=&quot;byline&quot;&gt;&lt;span class=&quot;av&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/you-headshot.jpg&quot; width=&quot;240&quot; height=&quot;240&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/span&gt;&lt;span&gt;By &lt;a class=&quot;link&quot; href=&quot;about.html&quot;&gt;&lt;b&gt;Guy Incognito&lt;/b&gt;&lt;/a&gt;, Lumen Practice Growth&lt;/span&gt;&lt;span&gt;Published &lt;time datetime=&quot;2026-09-14&quot;&gt;14 September 2026&lt;/time&gt;&lt;/span&gt;&lt;span&gt;6 minute read&lt;/span&gt;&lt;/div&gt;&lt;aside class=&quot;card short&quot;&gt;&lt;h2&gt;The Short Version&lt;/h2&gt;&lt;ul class=&quot;ticks&quot;&gt;&lt;li&gt;&lt;b&gt;Client:&lt;/b&gt; Coastline Physio, a 3-practitioner clinic.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Problem:&lt;/b&gt; $2,800 a month on ads and a diary only 61% full.&lt;/li&gt;&lt;li&gt;&lt;b&gt;What we changed:&lt;/b&gt; a written treatment plan, rebooking at the table and a day-2 message.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Result in 90 days:&lt;/b&gt; 93% of slots filled, ad spend down to $900, monthly revenue up from $41,000 to $63,500.&lt;/li&gt;&lt;/ul&gt;&lt;/aside&gt;&lt;nav class=&quot;toc&quot; aria-label=&quot;On this page&quot;&gt;&lt;span&gt;On this page:&lt;/span&gt;&lt;a class=&quot;link&quot; href=&quot;#problem&quot;&gt;The problem&lt;/a&gt;&lt;a class=&quot;link&quot; href=&quot;#changed&quot;&gt;What we changed&lt;/a&gt;&lt;a class=&quot;link&quot; href=&quot;#happened&quot;&gt;What happened&lt;/a&gt;&lt;/nav&gt;&lt;!-- Photo brief: the real clinic&amp;#x27;s reception or treatment room, with the owner&amp;#x27;s permission --&gt;&lt;div class=&quot;ph photo wide&quot; style=&quot;--ar:16/7&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/scene-1.jpg&quot; width=&quot;1200&quot; height=&quot;900&quot; alt=&quot;The real clinic&amp;#x27;s reception or treatment room, with the owner&amp;#x27;s permission&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- The numbers first: a before and after table a skimmer can take in at once --&gt;
+&lt;section class=&quot;sec metrics  &quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;header class=&quot;sh&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;The result, in numbers&lt;/p&gt;&lt;h2&gt;90 Days, &lt;em&gt;4 Measures&lt;/em&gt;&lt;/h2&gt;&lt;/header&gt;&lt;div class=&quot;mt-g&quot;&gt;&lt;table class=&quot;mt&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Measure&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Day 1&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Day 90&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Appointment slots filled&lt;/th&gt;&lt;td data-l=&quot;Day 1&quot;&gt;61%&lt;/td&gt;&lt;td data-l=&quot;Day 90&quot;&gt;93%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Patients rebooking before they leave&lt;/th&gt;&lt;td data-l=&quot;Day 1&quot;&gt;38%&lt;/td&gt;&lt;td data-l=&quot;Day 90&quot;&gt;81%&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Monthly ad spend&lt;/th&gt;&lt;td data-l=&quot;Day 1&quot;&gt;$2,800&lt;/td&gt;&lt;td data-l=&quot;Day 90&quot;&gt;$900&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Monthly revenue&lt;/th&gt;&lt;td data-l=&quot;Day 1&quot;&gt;$41,000&lt;/td&gt;&lt;td data-l=&quot;Day 90&quot;&gt;$63,500&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;figure class=&quot;card chartc&quot;&gt;&lt;h3&gt;Day 1 and day 90&lt;/h3&gt;&lt;svg viewBox=&quot;0 0 320 144&quot; role=&quot;img&quot; aria-label=&quot;Before and after chart&quot;&gt;&lt;text x=&quot;0&quot; y=&quot;17&quot; class=&quot;ct&quot;&gt;Appointment slots filled (%)&lt;/text&gt;&lt;rect class=&quot;i-l&quot; x=&quot;0&quot; y=&quot;24&quot; width=&quot;164&quot; height=&quot;12&quot; rx=&quot;6&quot;/&gt;&lt;text x=&quot;172&quot; y=&quot;35&quot; class=&quot;cv&quot;&gt;61&lt;/text&gt;&lt;rect class=&quot;i-a&quot; x=&quot;0&quot; y=&quot;42&quot; width=&quot;250&quot; height=&quot;12&quot; rx=&quot;6&quot;/&gt;&lt;text x=&quot;258&quot; y=&quot;53&quot; class=&quot;cv cb&quot;&gt;93&lt;/text&gt;&lt;text x=&quot;0&quot; y=&quot;85&quot; class=&quot;ct&quot;&gt;Patients rebooking before they leave (%)&lt;/text&gt;&lt;rect class=&quot;i-l&quot; x=&quot;0&quot; y=&quot;92&quot; width=&quot;102&quot; height=&quot;12&quot; rx=&quot;6&quot;/&gt;&lt;text x=&quot;110&quot; y=&quot;103&quot; class=&quot;cv&quot;&gt;38&lt;/text&gt;&lt;rect class=&quot;i-a&quot; x=&quot;0&quot; y=&quot;110&quot; width=&quot;218&quot; height=&quot;12&quot; rx=&quot;6&quot;/&gt;&lt;text x=&quot;226&quot; y=&quot;121&quot; class=&quot;cv cb&quot;&gt;81&lt;/text&gt;&lt;/svg&gt;&lt;p class=&quot;key&quot;&gt;&lt;span&gt;&lt;i&gt;&lt;/i&gt;Day 1&lt;/span&gt;&lt;span&gt;&lt;i class=&quot;a&quot;&gt;&lt;/i&gt;Day 90&lt;/span&gt;&lt;/p&gt;&lt;/figure&gt;&lt;/div&gt;&lt;p class=&quot;fine&quot; style=&quot;margin-top:1.4rem&quot;&gt;Figures supplied by the clinic and shared with permission. Sample data for a fictional client.&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- The story: situation, insight, the 3 changes, and what to copy, with first-hand detail --&gt;
+&lt;section class=&quot;sec art  &quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;p&gt;When Sam, the clinic&amp;#x27;s owner, first called, he wanted help with his ads. He was paying for 40 new patient enquiries a month and could not understand why the diary still had holes.&lt;/p&gt;&lt;h2 id=&quot;problem&quot;&gt;The Problem Was Not The Front Door&lt;/h2&gt;&lt;p&gt;We spent the first week doing something unglamorous: counting. Of every 10 new patients, only 4 came back for a second appointment. The clinic was filling a bucket with a hole in it.&lt;/p&gt;&lt;p class=&quot;pull&quot;&gt;He did not have a marketing problem. He had a rebooking problem dressed up as a marketing problem.&lt;/p&gt;&lt;h2 id=&quot;changed&quot;&gt;What We Changed&lt;/h2&gt;&lt;ul class=&quot;ticks&quot;&gt;&lt;li&gt;&lt;b&gt;Week 1: the treatment plan card.&lt;/b&gt; Every new patient left session 1 with a written plan: how many sessions, how far apart, and what better would look like.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Week 3: rebook at the table.&lt;/b&gt; Practitioners booked the next session before the patient stood up, not at the front desk.&lt;/li&gt;&lt;li&gt;&lt;b&gt;Week 5: the day-2 message.&lt;/b&gt; A 2-line text from the practitioner, asking how the exercises were going.&lt;/li&gt;&lt;/ul&gt;&lt;figure&gt;&lt;div class=&quot;mxw&quot;&gt;&lt;table class=&quot;mx&quot;&gt;&lt;thead&gt;&lt;tr&gt;&lt;th scope=&quot;col&quot;&gt;Week&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Change&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Who does it&lt;/th&gt;&lt;th scope=&quot;col&quot;&gt;Time it takes&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;&lt;tbody&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Week 1&lt;/th&gt;&lt;td&gt;A written treatment plan card&lt;/td&gt;&lt;td&gt;The practitioner&lt;/td&gt;&lt;td&gt;2 minutes a patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Week 3&lt;/th&gt;&lt;td&gt;Rebook before the patient stands up&lt;/td&gt;&lt;td&gt;The practitioner&lt;/td&gt;&lt;td&gt;1 minute a patient&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;th scope=&quot;row&quot;&gt;Week 5&lt;/th&gt;&lt;td&gt;A 2-line message on day 2&lt;/td&gt;&lt;td&gt;The practitioner&lt;/td&gt;&lt;td&gt;5 minutes a day&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/div&gt;&lt;figcaption&gt;The 3 changes, in the order they were made.&lt;/figcaption&gt;&lt;/figure&gt;&lt;h2 id=&quot;happened&quot;&gt;What Happened&lt;/h2&gt;&lt;p&gt;Rebooking went from 38% to 81% inside 6 weeks. By day 60 the diary was full enough that we cut the ad budget by two thirds. Sam hired a fourth practitioner in month 4.&lt;/p&gt;&lt;aside class=&quot;card box&quot;&gt;&lt;h2&gt;What To Copy From This&lt;/h2&gt;&lt;ul class=&quot;ticks&quot;&gt;&lt;li&gt;Count before you spend. Find out where patients or clients actually drop off.&lt;/li&gt;&lt;li&gt;Give people a written plan at the first session.&lt;/li&gt;&lt;li&gt;Make the next booking part of the appointment, not an afterthought.&lt;/li&gt;&lt;li&gt;Follow up once, personally, within 2 days.&lt;/li&gt;&lt;/ul&gt;&lt;/aside&gt;&lt;aside class=&quot;card auth&quot;&gt;&lt;span class=&quot;av&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/you-headshot.jpg&quot; width=&quot;240&quot; height=&quot;240&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/span&gt;&lt;div&gt;&lt;h2&gt;About Guy Incognito&lt;/h2&gt;&lt;p&gt;Guy has worked with 85 allied health clinics since 2018. He was a practice manager for 9 years before that.&lt;/p&gt;&lt;p&gt;&lt;a class=&quot;link&quot; href=&quot;about.html&quot;&gt;More about Guy&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;/aside&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- The client&amp;#x27;s own words, with name and role --&gt;
+&lt;section class=&quot;sec qt alt &quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;div class=&quot;feature&quot;&gt;&lt;!-- Photo brief: Sam in the clinic, natural light --&gt;&lt;div class=&quot;ph photo&quot; style=&quot;--ar:1/1&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/guest-1.jpg&quot; width=&quot;900&quot; height=&quot;1125&quot; alt=&quot;Sam Whitford&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/div&gt;&lt;figure class=&quot;&quot;&gt;&lt;blockquote&gt;&lt;p&gt;I was about to double my ad budget. Guy had me print a card instead. It is the best money I never spent.&lt;/p&gt;&lt;/blockquote&gt;&lt;figcaption&gt;&lt;span class=&quot;av&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/face-1.jpg&quot; width=&quot;200&quot; height=&quot;200&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;b&gt;Sam Whitford&lt;/b&gt;Owner, Coastline Physio&lt;/span&gt;&lt;/figcaption&gt;&lt;/figure&gt;&lt;/div&gt;&lt;div class=&quot;acts&quot; style=&quot;--i:3&quot;&gt;&lt;a class=&quot;btn&quot; href=&quot;book.html&quot;&gt;Book A Clinic Review&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof --&gt;
+&lt;section class=&quot;sec band mosaic alt  &quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;div class=&quot;bd-c&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;Lumen Practice Growth&lt;/p&gt;&lt;h2 class=&quot;bd-h&quot;&gt;Count first. &lt;em&gt;Then fix what the numbers show.&lt;/em&gt;&lt;/h2&gt;&lt;div class=&quot;acts&quot; style=&quot;--i:3&quot;&gt;&lt;a class=&quot;btn&quot; href=&quot;book.html&quot;&gt;Book A Clinic Review&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;mos&quot; aria-hidden=&quot;true&quot;&gt;&lt;div class=&quot;ph art&quot; style=&quot;--ar:3/4;--pos:18% 42%;--zoom:2.3&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp&quot; srcset=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp 960w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1280.webp 1280w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1920.webp 1920w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-2560.webp 2560w&quot; sizes=&quot;100vw&quot; width=&quot;1920&quot; height=&quot;1200&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ph art&quot; style=&quot;--ar:4/3;--pos:82% 46%;--zoom:2.3&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp&quot; srcset=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp 960w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1280.webp 1280w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1920.webp 1920w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-2560.webp 2560w&quot; sizes=&quot;100vw&quot; width=&quot;1920&quot; height=&quot;1200&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/div&gt;&lt;div class=&quot;ph art&quot; style=&quot;--ar:4/3;--pos:68% 78%;--zoom:2.5&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp&quot; srcset=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp 960w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1280.webp 1280w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1920.webp 1920w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-2560.webp 2560w&quot; sizes=&quot;100vw&quot; width=&quot;1920&quot; height=&quot;1200&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- Related case studies: keeps the reader moving and links the pages together --&gt;
+&lt;section class=&quot;sec feed  &quot; id=&quot;more&quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;header class=&quot;sh&quot;&gt;&lt;p class=&quot;eyebrow&quot;&gt;More case studies&lt;/p&gt;&lt;h2&gt;Different Clinics, &lt;em&gt;Same Method&lt;/em&gt;&lt;/h2&gt;&lt;/header&gt;&lt;div class=&quot;grid fd-g&quot; style=&quot;--cols:3&quot;&gt;&lt;article&gt;&lt;!-- Image brief: the practice exterior --&gt;&lt;div class=&quot;ph scene&quot; style=&quot;--ar:16/10&quot; role=&quot;img&quot; aria-label=&quot;Illustration: the practice exterior&quot;&gt;&lt;svg viewBox=&quot;-40 0 480 300&quot; preserveAspectRatio=&quot;xMidYMid slice&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect class=&quot;i-1&quot; x=&quot;-300&quot; width=&quot;1000&quot; height=&quot;300&quot;/&gt;&lt;rect class=&quot;i-2&quot; x=&quot;-300&quot; y=&quot;262&quot; width=&quot;1000&quot; height=&quot;38&quot;/&gt;&lt;rect class=&quot;i-c&quot; x=&quot;66&quot; y=&quot;64&quot; width=&quot;268&quot; height=&quot;198&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;116&quot; y=&quot;36&quot; width=&quot;168&quot; height=&quot;38&quot; rx=&quot;7&quot;/&gt;&lt;rect class=&quot;i-c&quot; opacity=&quot;.85&quot; x=&quot;140&quot; y=&quot;50&quot; width=&quot;120&quot; height=&quot;10&quot; rx=&quot;5&quot;/&gt;&lt;path class=&quot;i-a&quot; d=&quot;M54 96h292l-16 38H70z&quot;/&gt;&lt;g class=&quot;i-c&quot; opacity=&quot;.45&quot;&gt;&lt;path d=&quot;M96 96h36l-6 38H88z&quot;/&gt;&lt;path d=&quot;M170 96h36l-2 38h-36z&quot;/&gt;&lt;path d=&quot;M244 96h36l6 38h-36z&quot;/&gt;&lt;/g&gt;&lt;rect class=&quot;i-b&quot; x=&quot;178&quot; y=&quot;162&quot; width=&quot;48&quot; height=&quot;100&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-c&quot; cx=&quot;216&quot; cy=&quot;214&quot; r=&quot;4&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;88&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;244&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;52&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;40&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;350&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;338&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class=&quot;k&quot;&gt;Psychology practice&lt;/span&gt;&lt;h3&gt;&lt;a href=&quot;https://example.com/connect/case-study&quot;&gt;From a 9-week waitlist to a second location&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;How a 5-clinician practice grew without burning out its founder.&lt;/p&gt;&lt;p class=&quot;m fine&quot;&gt;8 minute read&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;!-- Image brief: a treatment room --&gt;&lt;div class=&quot;ph scene&quot; style=&quot;--ar:16/10&quot; role=&quot;img&quot; aria-label=&quot;Illustration: a treatment room&quot;&gt;&lt;svg viewBox=&quot;-40 0 480 300&quot; preserveAspectRatio=&quot;xMidYMid slice&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect class=&quot;i-1&quot; x=&quot;-300&quot; width=&quot;1000&quot; height=&quot;300&quot;/&gt;&lt;rect class=&quot;i-2&quot; x=&quot;-300&quot; y=&quot;262&quot; width=&quot;1000&quot; height=&quot;38&quot;/&gt;&lt;rect class=&quot;i-c&quot; x=&quot;66&quot; y=&quot;64&quot; width=&quot;268&quot; height=&quot;198&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;116&quot; y=&quot;36&quot; width=&quot;168&quot; height=&quot;38&quot; rx=&quot;7&quot;/&gt;&lt;rect class=&quot;i-c&quot; opacity=&quot;.85&quot; x=&quot;140&quot; y=&quot;50&quot; width=&quot;120&quot; height=&quot;10&quot; rx=&quot;5&quot;/&gt;&lt;path class=&quot;i-a&quot; d=&quot;M54 96h292l-16 38H70z&quot;/&gt;&lt;g class=&quot;i-c&quot; opacity=&quot;.45&quot;&gt;&lt;path d=&quot;M96 96h36l-6 38H88z&quot;/&gt;&lt;path d=&quot;M170 96h36l-2 38h-36z&quot;/&gt;&lt;path d=&quot;M244 96h36l6 38h-36z&quot;/&gt;&lt;/g&gt;&lt;rect class=&quot;i-b&quot; x=&quot;178&quot; y=&quot;162&quot; width=&quot;48&quot; height=&quot;100&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-c&quot; cx=&quot;216&quot; cy=&quot;214&quot; r=&quot;4&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;88&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;244&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;52&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;40&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;350&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;338&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class=&quot;k&quot;&gt;Podiatry clinic&lt;/span&gt;&lt;h3&gt;&lt;a href=&quot;https://example.com/connect/case-study&quot;&gt;Raising fees by 15% and losing 2 patients&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The letter, the timing and the numbers.&lt;/p&gt;&lt;p class=&quot;m fine&quot;&gt;5 minute read&lt;/p&gt;&lt;/article&gt;&lt;article&gt;&lt;!-- Image brief: a front desk --&gt;&lt;div class=&quot;ph scene&quot; style=&quot;--ar:16/10&quot; role=&quot;img&quot; aria-label=&quot;Illustration: a front desk&quot;&gt;&lt;svg viewBox=&quot;-40 0 480 300&quot; preserveAspectRatio=&quot;xMidYMid slice&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;rect class=&quot;i-1&quot; x=&quot;-300&quot; width=&quot;1000&quot; height=&quot;300&quot;/&gt;&lt;rect class=&quot;i-2&quot; x=&quot;-300&quot; y=&quot;262&quot; width=&quot;1000&quot; height=&quot;38&quot;/&gt;&lt;rect class=&quot;i-c&quot; x=&quot;66&quot; y=&quot;64&quot; width=&quot;268&quot; height=&quot;198&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;116&quot; y=&quot;36&quot; width=&quot;168&quot; height=&quot;38&quot; rx=&quot;7&quot;/&gt;&lt;rect class=&quot;i-c&quot; opacity=&quot;.85&quot; x=&quot;140&quot; y=&quot;50&quot; width=&quot;120&quot; height=&quot;10&quot; rx=&quot;5&quot;/&gt;&lt;path class=&quot;i-a&quot; d=&quot;M54 96h292l-16 38H70z&quot;/&gt;&lt;g class=&quot;i-c&quot; opacity=&quot;.45&quot;&gt;&lt;path d=&quot;M96 96h36l-6 38H88z&quot;/&gt;&lt;path d=&quot;M170 96h36l-2 38h-36z&quot;/&gt;&lt;path d=&quot;M244 96h36l6 38h-36z&quot;/&gt;&lt;/g&gt;&lt;rect class=&quot;i-b&quot; x=&quot;178&quot; y=&quot;162&quot; width=&quot;48&quot; height=&quot;100&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-c&quot; cx=&quot;216&quot; cy=&quot;214&quot; r=&quot;4&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;88&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;rect class=&quot;i-2&quot; opacity=&quot;.55&quot; x=&quot;244&quot; y=&quot;152&quot; width=&quot;72&quot; height=&quot;72&quot; rx=&quot;5&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;52&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;40&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;circle class=&quot;i-b&quot; cx=&quot;350&quot; cy=&quot;242&quot; r=&quot;20&quot;/&gt;&lt;rect class=&quot;i-d&quot; x=&quot;338&quot; y=&quot;250&quot; width=&quot;24&quot; height=&quot;18&quot; rx=&quot;4&quot;/&gt;&lt;/svg&gt;&lt;/div&gt;&lt;span class=&quot;k&quot;&gt;Speech pathology&lt;/span&gt;&lt;h3&gt;&lt;a href=&quot;https://example.com/connect/case-study&quot;&gt;Hiring the first admin, and what changed&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;The role description and the first 30 days.&lt;/p&gt;&lt;p class=&quot;m fine&quot;&gt;7 minute read&lt;/p&gt;&lt;/article&gt;&lt;/div&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;!-- Closing call to action that follows naturally from the story --&gt;
+&lt;section class=&quot;sec cta bleed t-light deep dark &quot; id=&quot;next&quot;&gt;&lt;picture class=&quot;art&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp&quot; srcset=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-960.webp 960w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1280.webp 1280w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-1920.webp 1920w, https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/hero-2560.webp 2560w&quot; sizes=&quot;100vw&quot; width=&quot;1920&quot; height=&quot;1200&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/picture&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;h2&gt;Wondering Where &lt;em&gt;Your Hole In The Bucket&lt;/em&gt; Is?&lt;/h2&gt;&lt;p class=&quot;lead&quot;&gt;A clinic review takes 45 minutes. We count first, then tell you what we would fix.&lt;/p&gt;&lt;div class=&quot;acts&quot; style=&quot;--i:3&quot;&gt;&lt;a class=&quot;btn&quot; href=&quot;book.html&quot;&gt;Book A Clinic Review&lt;/a&gt;&lt;/div&gt;&lt;p class=&quot;reassure&quot;&gt;&lt;svg class=&quot;ic&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot; aria-hidden=&quot;true&quot; focusable=&quot;false&quot;&gt;&lt;path d=&quot;M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4&quot;/&gt;&lt;/svg&gt;&lt;span&gt;Free for clinics with 2 or more practitioners.&lt;/span&gt;&lt;/p&gt;&lt;p class=&quot;host&quot;&gt;&lt;span class=&quot;av&quot;&gt;&lt;img src=&quot;https://raw.githubusercontent.com/authoritybuilder/authority-builder-design-library/main/021-case-study/site/images/you-headshot.jpg&quot; width=&quot;240&quot; height=&quot;240&quot; alt=&quot;&quot; loading=&quot;lazy&quot; decoding=&quot;async&quot;&gt;&lt;/span&gt;&lt;span&gt;&lt;b&gt;Guy Incognito&lt;/b&gt;Growth consultant for allied health clinics&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;/section&gt;
+&lt;/main&gt;
+&lt;footer class=&quot;ft&quot;&gt;&lt;div class=&quot;wrap&quot;&gt;&lt;div class=&quot;ft-g&quot;&gt;
+&lt;div&gt;&lt;a class=&quot;logo&quot; href=&quot;#top&quot;&gt;Lumen Practice Growth&lt;/a&gt;&lt;p&gt;Growth consulting for allied health clinics.&lt;/p&gt;&lt;/div&gt;
+&lt;div&gt;&lt;h2&gt;Explore&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;Services&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Case Studies&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#more&quot;&gt;Articles&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;#next&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;div&gt;&lt;h2&gt;The Fine Print&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;about.html&quot;&gt;About&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;contact.html&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;privacy.html&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;terms.html&quot;&gt;Terms&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;refunds.html&quot;&gt;Refund Policy&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;
+&lt;/div&gt;&lt;div class=&quot;ft-s&quot;&gt;&lt;p&gt;hello@lumenpractice.example &amp;nbsp;·&amp;nbsp; Brisbane, Queensland &amp;nbsp;·&amp;nbsp; ABN 00 000 000 000&lt;/p&gt;&lt;p&gt;This case study describes 1 clinic. Results vary and are not guaranteed.&lt;/p&gt;
+&lt;!-- DEMO NOTE: delete the next line when the site is yours --&gt;
+&lt;p class=&quot;demo&quot;&gt;Demo content. Lumen Practice Growth is a fictional brand from the Authority Builder Design Library. Every name, price and result on this page is invented.&lt;/p&gt;&lt;/div&gt;
+&lt;div class=&quot;ft-mark&quot; aria-hidden=&quot;true&quot; style=&quot;--n:21&quot; data-mark=&quot;Lumen Practice Growth&quot;&gt;&lt;/div&gt;&lt;/div&gt;&lt;/footer&gt;
+&lt;!-- Action bar: the main action stays in reach. A bar on a phone, a floating dock on a desktop --&gt;
+&lt;div class=&quot;sticky&quot;&gt;&lt;span&gt;&lt;b&gt;Free clinic review&lt;/b&gt;&lt;br&gt;45 minutes. We count first.&lt;/span&gt;&lt;a class=&quot;btn&quot; href=&quot;book.html&quot;&gt;Book A Review&lt;/a&gt;&lt;/div&gt;
+&lt;script&gt;
+/* Movement only. Every word on this page is in the HTML above, so nothing here is needed to read it. Delete this block and the page still works. */
+(function(){var d=document,R=d.documentElement,W=window,q=function(s,c){return [].slice.call((c||d).querySelectorAll(s))};R.classList.add(&#x27;js&#x27;);
+if(!(&#x27;IntersectionObserver&#x27;in W))return;
+var hero=d.querySelector(&#x27;main&gt;.sec&#x27;),E=q(&#x27;main&gt;.cta,.ft&#x27;);
+if(hero)new IntersectionObserver(function(e){R.classList.toggle(&#x27;past&#x27;,!e[0].isIntersecting)}).observe(hero);
+var eo=new IntersectionObserver(function(es){es.forEach(function(e){e.target._v=e.isIntersecting});R.classList.toggle(&#x27;end&#x27;,E.some(function(x){return x._v}))});
+E.forEach(function(x){eo.observe(x)});
+var ly=W.scrollY;W.addEventListener(&#x27;scroll&#x27;,function(){var y=W.scrollY;R.classList.toggle(&#x27;down&#x27;,y&gt;ly&amp;&amp;y&gt;600);ly=y},{passive:true});
+if(W.matchMedia(&#x27;(prefers-reduced-motion:reduce)&#x27;).matches)return;
+/* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
+var vh=W.innerHeight,todo=[],tick=0;
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top&gt;vh*.95)return 1;t.classList.add(&#x27;in&#x27;);
+setTimeout(function(){t.removeAttribute(&#x27;data-rv&#x27;);t.classList.remove(&#x27;in&#x27;);t.style.removeProperty(&#x27;--d&#x27;)},1500)})}
+q(&#x27;.sh,.grid&gt;*,.stp&gt;li,.fd-l&gt;li,.sch&gt;li,.sp-g&gt;*,.cmp&gt;*,.st-g&gt;*,.mod details,.faq details,.wall&gt;figure,.feature&gt;*,.pr-1&gt;*,.pr-q,.pr-a,.mt-g&gt;*,.mxw,.gu .card,.cap .wrap&gt;*,.cta .wrap&gt;*,.trust li,.bn&gt;.tile,.band .bd-c&gt;*,.mos&gt;*,.lb-l a,.prose .wrap&gt;*,.art .wrap&gt;*&#x27;).forEach(function(el){if(el.closest(&#x27;.hero,.hdw,.sticky,[data-rv]&#x27;)||el.getBoundingClientRect().top&lt;vh*.94)return;
+el.style.setProperty(&#x27;--d&#x27;,[].indexOf.call(el.parentNode.children,el)%6);q(&#x27;img[loading=lazy]&#x27;,el).forEach(function(i){i.loading=&#x27;eager&#x27;});el.setAttribute(&#x27;data-rv&#x27;,&#x27;&#x27;);todo.push(el)});
+function ask(){if(!tick&amp;&amp;todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener(&#x27;scroll&#x27;,ask,{passive:true});W.addEventListener(&#x27;resize&#x27;,ask);
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
+var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,&#x27;&#x27;)),dp=(m[2].split(&#x27;.&#x27;)[1]||&#x27;&#x27;).length,cm=m[2].indexOf(&#x27;,&#x27;)&gt;-1,t0=0;
+if(!cm&amp;&amp;!dp&amp;&amp;n&gt;1900&amp;&amp;n&lt;2100)return;
+W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,&#x27;,&#x27;);
+b.textContent=m[1]+s+m[3];if(p&lt;1)W.requestAnimationFrame(f)})})},{threshold:.5});
+q(&#x27;.st-g b,.tile .big&#x27;).forEach(function(b){if(!b.children.length&amp;&amp;b.getBoundingClientRect().top&gt;vh*.94)co.observe(b)});
+if(R.hasAttribute(&#x27;data-mq&#x27;))q(&#x27;.logos ul&#x27;).forEach(function(u){var w=d.createElement(&#x27;div&#x27;);w.className=&#x27;mq&#x27;;u.parentNode.insertBefore(w,u);w.appendChild(u);
+q(&#x27;li&#x27;,u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute(&#x27;aria-hidden&#x27;,&#x27;true&#x27;);u.appendChild(c)})});
+if(R.hasAttribute(&#x27;data-spot&#x27;)||R.hasAttribute(&#x27;data-tilt&#x27;))d.addEventListener(&#x27;pointermove&#x27;,function(e){var c=e.target.closest&amp;&amp;e.target.closest(&#x27;.card,.tile&#x27;);if(!c)return;
+var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty(&#x27;--mx&#x27;,x+&#x27;px&#x27;);s.setProperty(&#x27;--my&#x27;,y+&#x27;px&#x27;);
+s.setProperty(&#x27;--rx&#x27;,((y/r.height-.5)*-5).toFixed(2)+&#x27;deg&#x27;);s.setProperty(&#x27;--ry&#x27;,((x/r.width-.5)*5).toFixed(2)+&#x27;deg&#x27;)},{passive:true});
+})();
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></section>
+<section class="code alt" aria-label="Build prompt"><header><div><b>Or Build It With AI</b><span>Paste this prompt into Claude with your own details.</span></div>
+<button class="b" type="button" data-copy="ask">Copy Prompt</button></header><pre id="ask" tabindex="0">Build me a case study page for my business, modelled on sample 021 in the Authority Builder Design Library.
 
 ABOUT MY BUSINESS
 - Business name and my name: [yours]
@@ -203,20 +706,13 @@ HONESTY RULES
 - No fake countdown timers and no invented scarcity. If I make an income or results claim, add a line that results are not typical.
 
 OUTPUT
-1 self-contained HTML file with inline CSS. Australian spelling. No em dashes.</pre></div></div>
-</div>
-<aside class="side blk"><div class="panel"><h2>At A Glance</h2><dl>
-<dt>Best for</dt><dd>Consultant, Coach</dd><dt>Group</dt><dd>Trust And Content</dd>
-<dt>Style direction</dt><dd>Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.</dd><dt>This site's own variation</dt><dd>Salmon Paper And Teal. Sections slide in from alternate sides as they scroll in. It uses headers underlined in the accent, column guide lines, the method laid out side by side, numbers as cards. The picture band is 3 crops of the painting beside the line.</dd><dt>Fonts</dt><dd>DM Serif Display + DM Sans</dd>
-<dt>Palette</dt><dd><div class="sw"><span style="background:#FFF4EA" title="bg #FFF4EA"></span><span style="background:#F7E4D2" title="bg2 #F7E4D2"></span><span style="background:#FFFAF4" title="card #FFFAF4"></span><span style="background:#1A1410" title="ink #1A1410"></span><span style="background:#0D5C63" title="accent #0D5C63"></span><span style="background:#1A1410" title="accent2 #1A1410"></span><span style="background:#14201F" title="dark #14201F"></span></div></dd><dt>Sample brand</dt><dd>Lumen Practice Growth (fictional)</dd></dl></div>
-<div class="panel"><h2>Files In This Entry</h2><dl><dt>site/</dt><dd>The complete website. Upload this folder to go live.</dd>
-<dt>site/index.html</dt><dd>The main page.</dd><dt>site/about.html, contact.html, privacy.html, terms.html, refunds.html</dt><dd>The trust pages, linked from every footer.</dd>
-<dt>site/thank-you.html, 404.html</dt><dd>Where forms land, and what a wrong address shows.</dd>
-<dt>site/images/</dt><dd>The painting, in a phone size and a desktop size.</dd>
-<dt>site/robots.txt, sitemap.xml, netlify.toml</dt><dd>Crawler rules, the page list and host settings.</dd>
-<dt>LAUNCH.md</dt><dd>Everything to replace or connect before you publish.</dd>
-<dt>notes.md</dt><dd>These notes as plain text, ready to hand to an AI assistant.</dd></dl></div></aside>
-</div></div><div style="height:clamp(56px,8vw,104px)"></div></main>
+1 self-contained HTML file with inline CSS. Australian spelling. No em dashes.</pre></section>
+</div></main>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){b.addEventListener('click',function(){var t=document.getElementById(b.dataset.copy).textContent,was=b.textContent;
+function ok(){b.textContent='Copied';setTimeout(function(){b.textContent=was},1600)}
+if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(t).then(ok)}else{var a=document.createElement('textarea');a.value=t;document.body.appendChild(a);a.select();document.execCommand('copy');a.remove();ok()}})});
+</script>
 <footer class="footer" role="contentinfo"><div class="wrap">
 <div class="mark"><i aria-hidden="true">AB</i>Authority Builder™ · Yasmin Cronin</div>
 <p class="tagline">Built for business owners ready to own their expertise.</p>

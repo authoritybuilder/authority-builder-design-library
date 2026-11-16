@@ -22,7 +22,7 @@ Each one is a real small site you can deploy today: a painted hero, named photo 
 
 ## 28 Sites, 28 Designs
 
-The library has 10 style directions, and every site inside a direction is its own design. Each one has its own palette, type pairing, section headers, card treatment, section breaks, background texture and way of moving. All 28 are set in `src/variants.py`, and every palette is checked against WCAG AA when the build runs. Each notes page describes its site's variation in a sentence.
+The library has 10 style directions, and every site inside a direction is its own design. Each one has its own palette, type pairing, section headers, card treatment, section breaks, background texture and way of moving. All 28 are set in `src/variants.py`, and every palette is checked against WCAG AA when the build runs. Each site's `notes.md` describes its variation in a sentence.
 
 - **Movement.** Sections below the first screen reveal as you scroll, in 1 of 8 styles: rise, slide, zoom, wipe, focus, tip, spring or drift. Numbers count up. A thin bar shows how far down the page you are. The header steps aside on the way down and returns on the way up. Buttons, cards and pictures answer the pointer. Anyone who asks for reduced motion gets none of it.
 - **Pictures.** Every site has a picture band in the middle of the page: a full-width painting, a framed painting, 3 crops beside a line of copy, or a moving strip of crops. It repeats the main button straight after the proof.
@@ -37,7 +37,7 @@ The library has 10 style directions, and every site inside a direction is its ow
 
 ## Launch One As Your Own Site
 
-1. **Pick the site.** Open the gallery, filter by who you are and by style, and scroll the live sample on your phone.
+1. **Pick the site.** Open `index.html`, filter by who you are, and select View Live to scroll the sample on your phone.
 2. **Copy its `site` folder** into a new repository or straight into Netlify. That folder is the whole website. It needs nothing else from this library.
 3. **Add your photos.** Every picture is a file in `site/images/`. Save your own under the same file name and it appears everywhere that photo is used. `LAUNCH.md` lists each file, its size and the shot to take.
 4. **Work through the rest of `LAUNCH.md`.** It lists exactly what to replace and connect for that site: the brand and copy, the address, the forms, any links that need your own accounts, the policies and the structured data.
@@ -47,13 +47,13 @@ The library has 10 style directions, and every site inside a direction is its ow
 python3 src/prelaunch.py path/to/your/site
 ```
 
-Prefer to rebuild in your own voice instead? Each notes page ends with a build prompt you can paste into Claude with your real proof.
+In a hurry? Select Get The Code on any site. Its page has the whole main page as 1 block of code to copy, with every picture loading from this repository, so it works wherever you paste it. Under it is a build prompt you can paste into Claude with your real proof instead.
 
 ## What Is In Here
 
 | Path | What it is |
 |---|---|
-| `index.html` | The gallery. Filter by who you are and by style. |
+| `index.html` | The index: all 28 sites, each with View Live and Get The Code. In the Authority Builder brand colours. |
 | `001-…` to `028-…` | 1 folder per website. |
 | `029-…` to `031-…` | Building blocks: font pairings, colour palettes and section patterns. |
 | `canon/index.html` | The research page: 74 principles with their sources, linked to the samples that use them. |
@@ -73,8 +73,8 @@ Each entry folder holds:
   - `robots.txt`, `sitemap.xml`, `netlify.toml`: crawler rules, the page list, security headers and caching.
   - `event.ics`: a real calendar file, on sites with a dated event.
 - `LAUNCH.md`: the launch checklist for that site.
-- `index.html`: the notes page. Why it works, the research applied, the psychology, the search card, the audit table, the photo briefs and a build prompt.
-- `notes.md`: the same notes as plain text, ready to hand to an AI assistant.
+- `index.html`: the site's short page. A preview, a View Live button, the page's code to copy and a build prompt. Nothing else.
+- `notes.md`: the teaching notes as plain text: why the page works, the research applied and the psychology. Ready to hand to an AI assistant.
 - `preview.jpg`: a screenshot of the site.
 
 ## What "Production Ready" Means Here
@@ -94,8 +94,8 @@ What a site cannot contain is you. The demo brand, the sample proof and the temp
 
 ## What "Researched" And "Audited" Mean Here
 
-- **Researched.** Each page type was researched on its own: sales pages, opt-in pages, pricing, webinars, local business sites, quizzes, forms, case studies, product pages, About pages, articles, link pages, podcasts, speaker pages, events and memberships. Each finding became a change in that sample's code. The notes page lists the finding, its source and the change. The figures are benchmarks from testing firms and software vendors, so treat them as direction and test on your own page.
-- **Audited.** The Full SEO and AI Search Audit was run against every sample's files, and what failed was fixed in the code. Each notes page has the table: what was checked, the result, and what was actually seen. Checks that need a live website are marked "Couldn't check" and were not guessed.
+- **Researched.** Each page type was researched on its own: sales pages, opt-in pages, pricing, webinars, local business sites, quizzes, forms, case studies, product pages, About pages, articles, link pages, podcasts, speaker pages, events and memberships. Each finding became a change in that sample's code. `src/upgrades.py` records each finding, its source and the change. The figures are benchmarks from testing firms and software vendors, so treat them as direction and test on your own page.
+- **Audited.** The Full SEO and AI Search Audit was run against every sample's files, and what failed was fixed in the code. The build prints any check that fails. Checks that need a live website are marked "Couldn't check" and were not guessed.
 - **Measured.** `src/speed.mjs` runs Lighthouse on every sample and `src/legible.mjs` measures text contrast over the paintings. The results appear in each audit table.
 
 ## The Index
@@ -163,7 +163,7 @@ Search rules change often. Before you rely on any rule here, check Google's curr
 The library is generated from page definitions in `src/pages`. The build itself needs only Python 3. Everything the optional tools make is committed, so you can skip them.
 
 ```bash
-python3 src/build.py     # writes every site, launch checklist and notes page, the gallery and the research page, and runs the audit
+python3 src/build.py     # writes every site, its launch checklist, its code page and notes, the index and the research page, and runs the audit
 python3 src/check.py     # checks tags, headings, structured data, links, anchors, labels and dashes on every page
 python3 src/paint.py     # optional: repaints the pictures (needs numpy, scipy and OpenCV)
 python3 src/people.py    # optional: repaints the photo placeholders listed in src/data/photos.json (same needs, plus Pillow)
@@ -197,4 +197,4 @@ Members of the Authority Builder communities may adapt the sample sites for thei
 
 The gallery format (numbered folders, each with a reference and a live self-contained sample) is adapted from [robonuggets-design-inspo](https://github.com/robonuggets/robonuggets-design-inspo) by RoboNuggets, licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). The format was adapted. Every sample, the code, the paintings, the notes and the research in this repository are new. See [CREDITS.md](CREDITS.md).
 
-Nothing in this library is legal, financial or professional advice. See the disclaimer in the footer of the gallery.
+Nothing in this library is legal, financial or professional advice. See the disclaimer in the footer of the index page.
