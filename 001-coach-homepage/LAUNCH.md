@@ -17,7 +17,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
-| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
+| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `you-1.jpg` | 900 × 1125 | You | index.html, about.html | Guy mid-conversation, natural light, looking at the client, not the camera |
 | `face-1.jpg` | 200 × 200 | Priya N. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Tom A. | index.html | A square headshot, used with their permission |

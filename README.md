@@ -2,7 +2,7 @@
 
 28 complete, production-ready websites for coaches, creators, consultants and business owners.
 
-Each one is a real small site you can deploy today: a painted hero, named photo slots for you and your clients, working forms, a thank-you page, trust and policy pages, a launch checklist and a search audit already applied to the code. Each also comes with notes that show why it works.
+Each one is a real small site you can deploy today: a photographic hero, named photo slots for you and your clients, working forms, a thank-you page, trust and policy pages, a launch checklist and a search audit already applied to the code. Each also comes with notes that show why it works.
 
 ![The library gallery](preview.jpg)
 
@@ -87,7 +87,7 @@ Each entry folder holds:
 - **A person on every page.** Your face has a place on the first screen, beside the About story, under the closing button, and on the contact, booking and thank-you pages. Client faces sit beside their words.
 - **Measured, not assumed.** Before the movement and variation pass, every site scored 96 to 100 for performance and 100 for accessibility, best practices and SEO in Lighthouse's phone test, run on a local copy. Those figures, and the ones in each audit table, have not been re-measured since that pass. Run `node src/speed.mjs` and `node src/legible.mjs`, then rebuild, to refresh them. Your host will change the speed figures either way.
 - **Heroes sized to the screen.** On a 1440 by 900 screen the middle hero ends 785px down, so the next section shows beneath it, and every first button is on screen. Headlines sit at about 62px on a desktop and 34px on a phone.
-- **Paintings that hold up close.** Each is painted at 2560px and cut down to 4 sizes, so a phone, a laptop and a large screen each get a crisp file.
+- **Photographs that hold up close.** Each hero is a 2560px photograph cut down to 4 sizes, so a phone, a laptop and a large screen each get a crisp file.
 - **Plain words.** Every main page's body copy is measured on the Flesch-Kincaid scale. All of them read at school grade 6.2 or below, the range a large landing-page benchmark links to the highest conversion.
 - **Readable over the painting.** A contrast checker cannot read text over a picture, so `src/legible.mjs` measures every line of text against the pixels behind it, on a desktop and a phone. Every line clears WCAG AA.
 
@@ -140,7 +140,7 @@ What a site cannot contain is you. The demo brand, the sample proof and the temp
 ## Rules Every Sample Follows
 
 - **Fictional brands only.** Every name, testimonial, price and result is invented for teaching, and each site says so in its footer. Replace all of it with your own real proof. Never publish invented testimonials or numbers.
-- **Original pictures.** Every painting was made for this library by `src/paint.py`, and every photo placeholder by `src/people.py`. No stock photos and no pictures of real people. A placeholder is a back-lit figure with no face, labelled with its file name, so it can never be mistaken for a real client.
+- **Real photographs of places, no real faces.** Each site's hero, and the pictures of places cut from it, is a photograph from Pexels, listed in `src/data/heroes.json` and credited in [CREDITS.md](CREDITS.md). Pexels photographs are free to use, but may not be sold or passed on as stand-alone files. No photograph shows a person's face. Every picture of a person is a placeholder painted by `src/people.py`: a back-lit figure with no face, so it can never be mistaken for a real client. The earlier paintings can still be made with `src/paint.py`.
 - **Honest persuasion.** No fake countdown timers and no invented scarcity. Any limit shown is the kind that could be real: seats, dates, a calendar.
 - **Search-ready code.** 1 H1, a real title and description, canonical and Open Graph tags, JSON-LD that matches the visible text, and every word in the HTML itself.
 - **Real trust pages everywhere.** About, Contact, Privacy, Terms and Refunds exist and are linked from every footer, even on pages with no menu. The policy wording is a starting template: replace it and have a lawyer check it.
@@ -166,7 +166,8 @@ The library is generated from page definitions in `src/pages`. The build itself 
 ```bash
 python3 src/build.py     # writes every site, its launch checklist, its code page and notes, the index and the research page, and runs the audit
 python3 src/check.py     # checks tags, headings, structured data, links, anchors, labels and dashes on every page
-python3 src/paint.py     # optional: repaints the pictures (needs numpy, scipy and OpenCV)
+python3 src/photos.py    # optional: fetches each site's hero photograph from Pexels and cuts its 4 sizes (needs Pillow)
+python3 src/paint.py     # optional: the earlier painted heroes, in place of photographs (needs numpy, scipy and OpenCV)
 python3 src/people.py    # optional: repaints the photo placeholders listed in src/data/photos.json (same needs, plus Pillow)
 python3 src/shots.py     # optional: regenerates previews, site icons and share images (needs Google Chrome and Pillow)
 node src/speed.mjs       # optional: runs Lighthouse on every site (needs Node and the lighthouse package)

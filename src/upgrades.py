@@ -5,6 +5,9 @@ page's code, and records the finding, its source and the change so the notes pag
 The figures are benchmarks from testing firms and software vendors. Treat them as direction, not guarantees.
 """
 
+import json
+import pathlib
+
 import kit
 import trust
 
@@ -152,6 +155,9 @@ ART = {
 
 def art_for(n):
     scene, mirror, tone, alt = ART[n]
+    heroes = pathlib.Path(__file__).parent / "data" / "heroes.json"   # a site whose picture is a photograph takes its description from there
+    if heroes.exists():
+        alt = json.loads(heroes.read_text(encoding="utf-8")).get(f"{n:03d}", {}).get("alt", alt)
     crops = [(f"{100 - cx if mirror else cx}% {cy}%", z) for cx, cy, z in CROPS[scene]]
     cropn = [((100 - cx if mirror else cx) / 100, cy / 100, min(z, 1.5)) for cx, cy, z in CROPS[scene]]   # the same spots as numbers, for photo placeholders
     return dict(scene=scene, tone=tone, alt=alt, crops=crops, cropn=cropn)

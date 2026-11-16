@@ -17,7 +17,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 
 | File | Size | Who Or What | On | The Photo To Take |
 |---|---|---|---|---|
-| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background painting | every painted section | It can stay. A wide photo with a quiet area for the words also works |
+| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `scene-1.jpg` | 1200 × 900 | A place or moment | index.html | the real venue at golden hour. Wide, quiet, no people |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, reserve.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 | `scene-2.jpg` | 1200 × 900 | A place or moment | index.html | the verandah or the fire pit. 1 strong image beats a gallery |

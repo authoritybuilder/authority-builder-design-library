@@ -5,3 +5,4 @@ _asset.html
 node_modules/
 .DS_Store
 .claude/
+src/.photo-cache/

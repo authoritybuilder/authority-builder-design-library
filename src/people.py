@@ -7,6 +7,7 @@ swaps a photo by saving their own under the same name. This script paints the st
     python3 src/people.py 007 012  # only these sites
     python3 src/people.py --missing # only files that are not there yet
     python3 src/people.py --owner   # only the pictures of the site owner
+    python3 src/people.py --scenes  # only the pictures of places and the video stills
 
 A portrait placeholder is a back-lit figure with no face, painted over a soft-focus piece of that site's own painting, so it
 belongs to the page without pretending to be anyone. A place placeholder is a crop of the site's painting. Each large one carries
@@ -205,6 +206,8 @@ def main():
                 continue
             if "--owner" in sys.argv and kind not in ("you", "me"):
                 continue
+            if "--scenes" in sys.argv and kind not in ("scene", "video"):
+                continue
             if kind in ("you", "me", "guest", "face"):
                 who = seed_of(site["dir"] + (site["person"] if kind in ("you", "me") else p["who"]))
                 small = w <= 320
@@ -216,7 +219,7 @@ def main():
                     img = label(img, ["YOUR PHOTO" if kind == "guest" or site["person"] != "Guy Incognito" else "GUY INCOGNITO · YOUR PHOTO", f"{name} · {w} × {h}"])
             else:
                 cx, cy, zoom = p["crop"]
-                img = label(crop_of(hero, cx, cy, zoom, w, h), ["YOUR VIDEO STILL" if kind == "video" else "YOUR PHOTO", f"{name} · {w} × {h}"], 0.27 if kind == "video" else 0.36)
+                img = crop_of(hero, cx, cy, zoom, w, h)   # a piece of the site's own photograph, with no label, so the page reads as a real site
             write(img, folder / name, 80)
             marks[f"{site['folder']}/{name}"] = hashlib.sha256((folder / name).read_bytes()).hexdigest()
         print("photos", num, len(site["photos"]), flush=True)
