@@ -100,7 +100,7 @@ A link-in-bio page on your own domain. 1 featured action, 5 plain links, each wi
 | No sideways scrolling on a phone | **Good** | At 390px wide the page content is 390px wide. |
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Open The Calculator”) ends 663px down. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 50px tall. 6 were measured. |
-| Page weight | **Good** | The HTML is 46KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 42KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -174,7 +174,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Bright Playful. Butter yellow, coral and navy with sticker shadows and chunky outlines. Friendly and fast.
-This site's own variation: Lagoon And Papaya. Sections rise into place as they scroll in. It uses soft colour washes.
+This site's own variation: Lagoon And Papaya. Sections rise a short way into place as they scroll in. It uses .
 Fonts: Outfit + Plus Jakarta Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

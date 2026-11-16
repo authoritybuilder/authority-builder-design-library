@@ -872,10 +872,9 @@ def crop(i, ar):
 .mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
 .mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
 .band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
-.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;display:flex;justify-content:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
 .strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
-@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
 @media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
 """)
 def band(d, P):
@@ -887,4 +886,4 @@ def band(d, P):
         pics = crop(0, "3/4") + crop(2, "4/3") + crop(4, "4/3")
         return sec("band mosaic alt", d, f'{inner}<div class="mos" aria-hidden="true">{pics}</div>')
     row = "".join(crop(i, "4/5" if i % 2 else "1/1") for i in range(6))
-    return f'<section class="sec band strip"><div class="wrap">{inner}</div><div class="strip-w" aria-hidden="true"><div class="strip-t">{row}{row}</div></div></section>'
+    return f'<section class="sec band strip"><div class="wrap">{inner}</div><div class="strip-w" aria-hidden="true"><div class="strip-t">{row}</div></div></section>'

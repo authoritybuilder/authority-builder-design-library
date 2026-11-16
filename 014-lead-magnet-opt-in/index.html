@@ -158,7 +158,7 @@ p{text-wrap:pretty}
 <div class="go"><a class="b main" href="site/index.html">View Live</a></div>
 <section class="code" aria-label="The page's code"><header><div><b>The Code</b><span>The whole page in 1 file. Paste it into a new .html file and open it.</span></div>
 <button class="b" type="button" data-copy="src">Copy Code</button></header><pre id="src" tabindex="0">&lt;!doctype html&gt;
-&lt;html lang=&quot;en-AU&quot; id=&quot;top&quot; data-m=&quot;blur&quot;&gt;
+&lt;html lang=&quot;en-AU&quot; id=&quot;top&quot; data-m=&quot;fade&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;
@@ -429,8 +429,7 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .float.f2 b{font:700 .95rem/1.25 var(--fb);letter-spacing:0;text-transform:none;color:var(--ink)}.float.f2 span{font-size:.8rem;color:var(--ink2)}
 @media(max-width:860px){.float.f2{right:-4px;top:5%}}
 /* buttons and forms */
-.btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
-:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.btn{box-shadow:none}
 .cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
 .stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
 /* the brand name, very large and very quiet, closes every page */
@@ -465,73 +464,48 @@ font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em
 .bleed .card{--ink:#2C2440;--ink2:#5B5270;--line:#D5CBE0;--accent-t:#5B3F8C;color:#2C2440;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 h1 em,h2 em{font-style:italic;color:#A8552F}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.eyebrow{font-weight:800;letter-spacing:.14em}.card{border-color:transparent}.ph.scene{border-radius:28px}
 .card{box-shadow:0 1px 0 rgba(255,255,255,.7) inset,0 1px 2px rgba(20,16,10,.05),0 22px 44px -30px rgba(20,16,10,.3)}:root{--atmo:radial-gradient(44% 56% at 96% 4%,#E4EBDD 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3DCCB,transparent 70%)}.sec.alt{border-radius:clamp(28px,5vw,64px);margin-inline:clamp(8px,2vw,28px)}.hero .ph.person,.split .ph.person{border-radius:48% 52% 46% 54% / 56% 50% 50% 44%}
-/* scroll progress: a thin bar in the brand colour, drawn by the browser&#x27;s own scroll timeline */
-.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
-@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
 /* the header steps aside on the way down and comes back on the way up */
 .hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
 /* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
 @media(min-width:761px){
 .js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
-border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 20px 44px -24px rgba(0,0,0,.45);transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.8,.2,1);visibility:hidden}
 .js.past:not(.end) .sticky{transform:none;visibility:visible}
 }
 @media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
 @media(prefers-reduced-motion:no-preference){
-/* reveal on scroll. The script marks only what starts below the first screen */
-[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
-[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
-[data-m=rise] [data-rv]{transform:translateY(38px)}
-[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
-@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
-[data-m=zoom] [data-rv]{transform:scale(.9)}
-[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
-[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
-[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
-[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
-[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* reveal on scroll: short, quiet, once. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .5s ease-out,transform .6s cubic-bezier(.2,.7,.2,1),clip-path .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*50ms)}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important}
+[data-m=rise] [data-rv]{transform:translateY(20px)}
+[data-m=slide] [data-rv]{transform:translateX(-20px)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(12px)}
+@media(max-width:760px){[data-m=slide] [data-rv]{transform:translateY(20px)}}
 /* the painting settles into place as the page opens */
-.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
-/* a light crosses the main button on hover */
-.btn:not(.ghost){position:relative;overflow:hidden}
-.btn:not(.ghost)::before{content:&quot;&quot;;position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
-.btn:not(.ghost):hover::before{translate:130% 0}
-.btn:active{transform:translateY(1px) scale(.98)}
-/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
-.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+.hero picture.art{animation:settle 2.2s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.05)}}
+.btn:active{transform:translateY(1px)}
+/* pictures: a slow zoom under the pointer and a slight drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.04}
 @supports(animation-timeline:view()){
-.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
-.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
-.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3%}to{translate:0 3%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.08}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.14) translateY(-4%)}to{transform:scale(1.14) translateY(4%)}}
 }
 /* answers open smoothly where the browser can animate to an automatic height */
 @supports(interpolate-size:allow-keywords){
 .faq details,.mod details{interpolate-size:allow-keywords}
-.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .4s cubic-bezier(.2,.7,.2,1),content-visibility .4s allow-discrete}
 .faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
 }
-.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
-/* links and list rows answer the pointer */
-.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
-.lb-l a,.door,.tier{will-change:translate}
-.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
-.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
-/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
-.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
-.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
-/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
-[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
-[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
 }
-@media print{.prog,.sticky{display:none}}
+@media print{.sticky{display:none}}
+.sh h2 em,.sp-g h2 em,.gu h2 em{color:inherit}.chip-ic{display:block;width:auto;height:auto;background:none;border-radius:0;margin-bottom:1.2rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}.chip-ic .ic{width:28px;height:28px;stroke-width:1.5}.float,.float.f2{animation:none}.tier.hot{box-shadow:0 30px 60px -38px color-mix(in srgb,var(--ink) 55%,transparent)}::selection{background:var(--accent);color:var(--accent-ink)}body{font-feature-settings:&#x27;kern&#x27;,&#x27;liga&#x27;,&#x27;calt&#x27;;hanging-punctuation:first}.stats b,.st-g b,.hstats b,.tier .pc,.mt td{font-variant-numeric:lining-nums tabular-nums}.sh{margin-bottom:clamp(36px,5vw,64px)}.sh .eyebrow{margin-bottom:1.15rem}.card p,.stp p,.fd-l p{max-width:62ch}a:not(.btn):not(.logo):not(.door):not(.card){text-decoration-thickness:1px;text-underline-offset:.22em}
 /* this site&#x27;s own variation: Lavender Dusk */
-@media(min-width:900px){.sh:not(.center):has(.lead){max-width:none;display:grid;grid-template-columns:1.15fr .85fr;column-gap:clamp(28px,5vw,80px);align-items:end}.sh:not(.center):has(.lead) .eyebrow{grid-column:1/-1}.sh:not(.center):has(.lead) .lead{margin:0 0 .35em}}.card{background:color-mix(in srgb,var(--card) 58%,transparent);-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3);border:1px solid color-mix(in srgb,var(--ink) 14%,transparent);box-shadow:0 30px 60px -38px color-mix(in srgb,var(--ink) 60%,transparent)}.formcard,.bleed .card{background:var(--card)}body{background-image:radial-gradient(color-mix(in srgb,var(--ink) 15%,transparent) 1px,transparent 1.6px);background-size:22px 22px}h1 em,h2 em,.bd-h em{font-style:normal}h1 em,h2 em{color:#9A3F6B}:root{--atmo:radial-gradient(44% 56% at 96% 4%,#E9E2F0 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3D9E4,transparent 70%)}
+@media(min-width:900px){.sh:not(.center):has(.lead){max-width:none;display:grid;grid-template-columns:1.15fr .85fr;column-gap:clamp(28px,5vw,80px);align-items:end}.sh:not(.center):has(.lead) .eyebrow{grid-column:1/-1}.sh:not(.center):has(.lead) .lead{margin:0 0 .35em}}.card:not(.float){border-color:transparent;box-shadow:0 2px 4px rgba(0,0,0,.04),0 44px 70px -44px color-mix(in srgb,var(--ink) 55%,transparent);transition:translate .3s,box-shadow .3s}.cards .card:hover,.door:hover,.qt figure.card:hover{box-shadow:0 2px 4px rgba(0,0,0,.05),0 56px 80px -40px color-mix(in srgb,var(--accent) 60%,transparent)}body{background-image:radial-gradient(color-mix(in srgb,var(--ink) 15%,transparent) 1px,transparent 1.6px);background-size:22px 22px}h1 em,h2 em,.bd-h em{font-style:normal}h1 em,h2 em{color:#9A3F6B}:root{--atmo:radial-gradient(44% 56% at 96% 4%,#E9E2F0 0,transparent 70%),radial-gradient(36% 44% at 0 94%,#F3D9E4,transparent 70%)}
 &lt;/style&gt;
 &lt;/head&gt;
 &lt;body class=&quot;over o-dark has-sticky&quot;&gt;
 &lt;a class=&quot;skip&quot; href=&quot;#main&quot;&gt;Skip to content&lt;/a&gt;
-&lt;div class=&quot;prog&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
 &lt;div class=&quot;hdw&quot;&gt;&lt;header class=&quot;hd&quot;&gt;&lt;a class=&quot;logo&quot; href=&quot;#top&quot;&gt;Guy Incognito Mentoring&lt;/a&gt;&lt;/header&gt;&lt;/div&gt;
 &lt;main id=&quot;main&quot;&gt;
 &lt;!-- Hero: the free thing, who it is for, what is inside and the form. Everything needed to say yes, in 1 screen --&gt;
@@ -565,22 +539,11 @@ var ly=W.scrollY;W.addEventListener(&#x27;scroll&#x27;,function(){var y=W.scroll
 if(W.matchMedia(&#x27;(prefers-reduced-motion:reduce)&#x27;).matches)return;
 /* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
 var vh=W.innerHeight,todo=[],tick=0;
-function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top&gt;vh*.95)return 1;t.classList.add(&#x27;in&#x27;);
-setTimeout(function(){t.removeAttribute(&#x27;data-rv&#x27;);t.classList.remove(&#x27;in&#x27;);t.style.removeProperty(&#x27;--d&#x27;)},1500)})}
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top&gt;vh*.96)return 1;t.classList.add(&#x27;in&#x27;);
+setTimeout(function(){t.removeAttribute(&#x27;data-rv&#x27;);t.classList.remove(&#x27;in&#x27;);t.style.removeProperty(&#x27;--d&#x27;)},1200)})}
 q(&#x27;.sh,.grid&gt;*,.stp&gt;li,.fd-l&gt;li,.sch&gt;li,.sp-g&gt;*,.cmp&gt;*,.st-g&gt;*,.mod details,.faq details,.wall&gt;figure,.feature&gt;*,.pr-1&gt;*,.pr-q,.pr-a,.mt-g&gt;*,.mxw,.gu .card,.cap .wrap&gt;*,.cta .wrap&gt;*,.trust li,.bn&gt;.tile,.band .bd-c&gt;*,.mos&gt;*,.lb-l a,.prose .wrap&gt;*,.art .wrap&gt;*&#x27;).forEach(function(el){if(el.closest(&#x27;.hero,.hdw,.sticky,[data-rv]&#x27;)||el.getBoundingClientRect().top&lt;vh*.94)return;
-el.style.setProperty(&#x27;--d&#x27;,[].indexOf.call(el.parentNode.children,el)%6);q(&#x27;img[loading=lazy]&#x27;,el).forEach(function(i){i.loading=&#x27;eager&#x27;});el.setAttribute(&#x27;data-rv&#x27;,&#x27;&#x27;);todo.push(el)});
+el.style.setProperty(&#x27;--d&#x27;,[].indexOf.call(el.parentNode.children,el)%4);q(&#x27;img[loading=lazy]&#x27;,el).forEach(function(i){i.loading=&#x27;eager&#x27;});el.setAttribute(&#x27;data-rv&#x27;,&#x27;&#x27;);todo.push(el)});
 function ask(){if(!tick&amp;&amp;todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener(&#x27;scroll&#x27;,ask,{passive:true});W.addEventListener(&#x27;resize&#x27;,ask);
-var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
-var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,&#x27;&#x27;)),dp=(m[2].split(&#x27;.&#x27;)[1]||&#x27;&#x27;).length,cm=m[2].indexOf(&#x27;,&#x27;)&gt;-1,t0=0;
-if(!cm&amp;&amp;!dp&amp;&amp;n&gt;1900&amp;&amp;n&lt;2100)return;
-W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,&#x27;,&#x27;);
-b.textContent=m[1]+s+m[3];if(p&lt;1)W.requestAnimationFrame(f)})})},{threshold:.5});
-q(&#x27;.st-g b,.tile .big&#x27;).forEach(function(b){if(!b.children.length&amp;&amp;b.getBoundingClientRect().top&gt;vh*.94)co.observe(b)});
-if(R.hasAttribute(&#x27;data-mq&#x27;))q(&#x27;.logos ul&#x27;).forEach(function(u){var w=d.createElement(&#x27;div&#x27;);w.className=&#x27;mq&#x27;;u.parentNode.insertBefore(w,u);w.appendChild(u);
-q(&#x27;li&#x27;,u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute(&#x27;aria-hidden&#x27;,&#x27;true&#x27;);u.appendChild(c)})});
-if(R.hasAttribute(&#x27;data-spot&#x27;)||R.hasAttribute(&#x27;data-tilt&#x27;))d.addEventListener(&#x27;pointermove&#x27;,function(e){var c=e.target.closest&amp;&amp;e.target.closest(&#x27;.card,.tile&#x27;);if(!c)return;
-var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty(&#x27;--mx&#x27;,x+&#x27;px&#x27;);s.setProperty(&#x27;--my&#x27;,y+&#x27;px&#x27;);
-s.setProperty(&#x27;--rx&#x27;,((y/r.height-.5)*-5).toFixed(2)+&#x27;deg&#x27;);s.setProperty(&#x27;--ry&#x27;,((x/r.width-.5)*5).toFixed(2)+&#x27;deg&#x27;)},{passive:true});
 })();
 &lt;/script&gt;
 &lt;/body&gt;
@@ -604,7 +567,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Soft Organic. Sage, cream and clay with soft blob shapes. Calm, human and unhurried.
-This site&#x27;s own variation: Lavender Dusk. Sections come into focus as they scroll in. It uses headers split into 2 columns, frosted glass cards, a dotted ground. The picture band is 3 crops of the painting beside the line.
+This site&#x27;s own variation: Lavender Dusk. Sections fade in as they scroll in. It uses headers split into 2 columns, cards lifted on soft shadows, a dotted ground. The picture band is 3 crops of the painting beside the line.
 Fonts: Young Serif + Nunito Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

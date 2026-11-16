@@ -96,7 +96,7 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 429 words of body copy on the main page read at about school grade 4.6 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 25 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 102KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 76KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| Images are sized, described and sent in a phone size | **Good** | 19 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 27KB for phones to 102KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 76KB. Only the painting loads early. Everything else waits until it is near the screen. |
 | A real person is on the page | **Your turn** | 3 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
@@ -114,7 +114,7 @@ A course sales page that sells 1 skill and 1 outcome. Loud type up top, calm det
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Enrol From $290”) ends 660px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 16 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 22 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.8 to 1 for body text and 5.8 to 1 for large text. On a phone: 5.8 to 1 for body text and 5.8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 70KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 64KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -204,7 +204,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Bold Type-Led. Huge condensed capitals, hard edges, one loud accent. The headline is the design.
-This site's own variation: Paper, Black And Orange. Sections slide in from alternate sides as they scroll in. It uses oversized section headers, cards with a folded accent corner, hairline section breaks, a proof strip that runs as a ticker. The picture band is a moving strip of crops from the painting.
+This site's own variation: Paper, Black And Orange. Sections slide in a short way from the side as they scroll in. It uses oversized section headers, cards with a folded accent corner, hairline section breaks. The picture band is a row of crops from the painting.
 Fonts: Archivo + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

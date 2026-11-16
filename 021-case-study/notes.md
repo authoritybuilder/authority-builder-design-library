@@ -108,7 +108,7 @@ A case study told as a story with a table in the middle: the situation, the insi
 | A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Book A Clinic Review”) is 5544px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 8 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.8 to 1 for body text and 6.6 to 1 for large text. On a phone: 7 to 1 for body text and 8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 67KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 63KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -195,7 +195,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
-This site's own variation: Salmon Paper And Teal. Sections slide in from alternate sides as they scroll in. It uses headers underlined in the accent, column guide lines, the method laid out side by side, numbers as cards. The picture band is 3 crops of the painting beside the line.
+This site's own variation: Salmon Paper And Teal. Sections slide in a short way from the side as they scroll in. It uses headers underlined in the accent, column guide lines, the method laid out side by side, numbers as cards. The picture band is 3 crops of the painting beside the line.
 Fonts: DM Serif Display + DM Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

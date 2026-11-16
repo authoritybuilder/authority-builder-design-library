@@ -86,7 +86,7 @@ A newsletter page with 1 promise and an open archive. Readers can sample real is
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “1 landing page, taken apart, every Tuesday.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 545 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 544 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 259 words of body copy on the main page read at about school grade 2.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
@@ -109,7 +109,7 @@ A newsletter page with 1 promise and an open archive. Readers can sample real is
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 5 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 16 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.7 to 1 for body text and 6.6 to 1 for large text. On a phone: 6.7 to 1 for body text and 7.6 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 60KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 56KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -190,7 +190,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Bento Grid. Rounded tiles on soft grey, one cobalt accent, lime and lilac for colour. Scans in a glance.
-This site's own variation: Mint Ledger. Sections slide in from alternate sides as they scroll in. It uses headers split into 2 columns, cards with an accent top edge, hairline section breaks, a drafting grid. The picture band is 3 crops of the painting beside the line.
+This site's own variation: Mint Ledger. Sections slide in a short way from the side as they scroll in. It uses headers split into 2 columns, cards with an accent top edge, hairline section breaks, a drafting grid. The picture band is 3 crops of the painting beside the line.
 Fonts: Familjen Grotesk + Instrument Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

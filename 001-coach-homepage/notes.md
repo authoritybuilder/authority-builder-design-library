@@ -88,7 +88,7 @@ A personal-brand home page that names its audience in the first line, then offer
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “You got the promotion. Nobody showed you how to lead.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 822 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 823 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 3 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
 | Plain words | **Good** | The 446 words of body copy on the main page read at about school grade 4.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
@@ -96,7 +96,7 @@ A personal-brand home page that names its audience in the first line, then offer
 | A real person is on the page | **Your turn** | 3 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.1 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.1 and the whole page at grade 7.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -111,7 +111,7 @@ A personal-brand home page that names its audience in the first line, then offer
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 7 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 32 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.8 to 1 for body text and 7.4 to 1 for large text. On a phone: 6.2 to 1 for body text and 9.3 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 65KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 61KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -201,7 +201,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Warm Editorial. Paper tones, a bookish serif, italic emphasis. Feels like a considered letter.
-This site's own variation: Terracotta Letter. Sections rise into place as they scroll in. It uses numbered section headers, cards lifted on soft shadows, arched section breaks, a paper grain, the method on a timeline, a slow light drifting across the hero, a proof strip that runs as a ticker. The picture band is a full-width painted band.
+This site's own variation: Terracotta Letter. Sections rise a short way into place as they scroll in. It uses numbered section headers, cards lifted on soft shadows, arched section breaks, a paper grain, the method on a timeline. The picture band is a full-width painted band.
 Fonts: Instrument Serif + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

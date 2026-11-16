@@ -67,7 +67,7 @@ def gallery(pages):
         for P in pages)
     body = f"""{CSS}{bar()}
 <header class="intro"><div class="wrap"><p class="kick" style="color:var(--gold)">Authority Builder™ · Design Library</p>
-<h1>{len(pages)} Websites. <em>Pick One. Make It Yours.</em></h1>
+<h1>{len(pages)} websites, <em>ready to make yours.</em></h1>
 <p>Open any site to see it live, then copy its code.</p></div></header>
 <main id="main">
 <div class="pick"><div class="wrap"><span>I am a</span>{chips}<button class="chip" type="button" id="all" style="border-style:dashed">Show all</button></div></div>

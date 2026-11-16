@@ -107,7 +107,7 @@ A quiz landing page that shows the first question and a sample result up front, 
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 6 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 18 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.6 to 1 for body text and 6.8 to 1 for large text. On a phone: 6.6 to 1 for body text and 6.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 64KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 60KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -182,7 +182,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Bento Grid. Rounded tiles on soft grey, one cobalt accent, lime and lilac for colour. Scans in a glance.
-This site's own variation: Tangerine Tiles. Sections tip forward into place as they scroll in. It uses centred section headers, arched section breaks, a dotted ground, a hero set in as a rounded panel, questions as cards, a light that follows the pointer across cards. The picture band is a painted band set in a rounded frame.
+This site's own variation: Tangerine Tiles. Sections rise a short way into place as they scroll in. It uses centred section headers, arched section breaks, a dotted ground, a hero set in as a rounded panel, questions as cards. The picture band is a painted band set in a rounded frame.
 Fonts: Sora + Instrument Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

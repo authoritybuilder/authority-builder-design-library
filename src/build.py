@@ -308,7 +308,6 @@ def sample_html(P, secs=None, title=None, desc=None, file="index.html", kind="ma
 </head>
 <body{f' class="{classes}"' if classes else ""}>
 <a class="skip" href="#main">Skip to content</a>
-<div class="prog" aria-hidden="true"></div>
 {ann}<div class="hdw"><header class="hd{" has-nav" if nav else ""}"><a class="logo" href="{home}">{e(b["name"])}</a>{navhtml}{hcta}{mnav}</header></div>
 <main id="main">
 {body}

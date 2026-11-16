@@ -106,7 +106,7 @@ A 1-screen opt-in page with nothing to click but the form. A specific promise, w
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 4 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 12 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 7.6 to 1 for body text and 4.5 to 1 for large text. On a phone: 7.5 to 1 for body text and 5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 47KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -188,7 +188,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Soft Organic. Sage, cream and clay with soft blob shapes. Calm, human and unhurried.
-This site's own variation: Lavender Dusk. Sections come into focus as they scroll in. It uses headers split into 2 columns, frosted glass cards, a dotted ground. The picture band is 3 crops of the painting beside the line.
+This site's own variation: Lavender Dusk. Sections fade in as they scroll in. It uses headers split into 2 columns, cards lifted on soft shadows, a dotted ground. The picture band is 3 crops of the painting beside the line.
 Fonts: Young Serif + Nunito Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

@@ -169,10 +169,9 @@ h1[data-in]{animation-name:slide}
 .mos .ph{aspect-ratio:auto;height:100%;box-shadow:0 30px 56px -34px color-mix(in srgb,var(--ink) 60%,transparent)}.mos .ph:first-child{grid-row:span 2}
 .mos .ph:nth-child(2){translate:0 clamp(-26px,-2vw,-10px)}.mos .ph:nth-child(3){translate:clamp(10px,2vw,26px) 0}
 .band.strip{padding-bottom:0}.band.strip .bd-c{text-align:center;display:grid;justify-items:center}.band.strip .eyebrow::before{display:none}
-.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.strip-w{margin-top:clamp(36px,5vw,64px);overflow:hidden;display:flex;justify-content:center;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .strip-t{display:flex;gap:clamp(10px,1.4vw,18px);width:max-content;padding-bottom:clamp(40px,5vw,72px)}
 .strip-t .ph{width:clamp(180px,22vw,300px);flex:none}.strip-t .ph:nth-child(even){margin-top:clamp(16px,2.4vw,36px)}
-@media(prefers-reduced-motion:no-preference){.strip-t{animation:strip 46s linear infinite}.strip-w:hover .strip-t{animation-play-state:paused}@keyframes strip{to{transform:translateX(calc(-50% - clamp(5px,.7vw,9px)))}}}
 @media(max-width:860px){.band.mosaic .wrap{grid-template-columns:1fr}.mos{aspect-ratio:4/3}.mos .ph:nth-child(n){translate:none}}
 
 .fd-l li{display:grid;grid-template-columns:minmax(90px,130px) 1fr auto;gap:.6rem 2rem;align-items:baseline;padding:1.25rem 0;border-top:max(1px,var(--bw)) solid var(--line)}
@@ -316,8 +315,7 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .float.f2 b{font:700 .95rem/1.25 var(--fb);letter-spacing:0;text-transform:none;color:var(--ink)}.float.f2 span{font-size:.8rem;color:var(--ink2)}
 @media(max-width:860px){.float.f2{right:-4px;top:5%}}
 /* buttons and forms */
-.btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
-:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.btn{box-shadow:none}
 .cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
 .stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
 /* the brand name, very large and very quiet, closes every page */
@@ -352,73 +350,48 @@ font-size:min(15rem,calc(168vw / var(--n)));margin:clamp(28px,5vw,60px) 0 -.14em
 .bleed .card{--ink:#10201A;--ink2:#4C5C55;--line:#CFD9D3;--accent-t:#0A6349;color:#10201A;text-shadow:none}.bleed .card h1,.bleed .card h2,.bleed .card h3,.bleed .card p{text-shadow:none}
 :root{--t1:#C8F169;--t2:#D9CCFF;--t3:#FFD7BF}h1 em,h2 em{font-style:normal;color:var(--accent-t)}.dark h1 em,.dark h2 em{color:var(--dark-accent)}.alt{background:var(--bg)}.eyebrow{font-weight:600;letter-spacing:.06em;text-transform:none;font-size:.9rem}
 :root{--atmo:radial-gradient(38% 46% at 10% 0,#D9CCFF 0,transparent 70%),radial-gradient(34% 40% at 94% 14%,#C8F169 0,transparent 70%),radial-gradient(40% 40% at 60% 100%,#FFD7BF,transparent 70%)}main>.bento:first-child{position:relative;isolation:isolate}main>.bento:first-child::before{content:"";position:absolute;inset:-90px 0 0;z-index:-1;background:var(--atmo);opacity:.8}.tile{transition:translate .25s,box-shadow .25s}.tile:hover{translate:0 -5px;box-shadow:0 24px 44px -24px rgba(20,22,26,.4)}.card{box-shadow:0 1px 2px rgba(20,22,26,.05),0 20px 40px -28px rgba(20,22,26,.32)}.tile .ph{box-shadow:none}
-/* scroll progress: a thin bar in the brand colour, drawn by the browser's own scroll timeline */
-.prog{position:fixed;inset:0 0 auto 0;height:3px;z-index:40;background:var(--accent);transform-origin:0 50%;transform:scaleX(0);pointer-events:none}
-@supports(animation-timeline:scroll()){.prog{animation:prog linear both;animation-timeline:scroll(root)}@keyframes prog{to{transform:scaleX(1)}}}
 /* the header steps aside on the way down and comes back on the way up */
 .hdw{transition:transform .4s cubic-bezier(.2,.7,.2,1)}.down .hdw{transform:translateY(-120%)}
 /* the action dock: on a desktop the main button follows the reader once the hero has gone, and leaves when the closing section arrives */
 @media(min-width:761px){
 .js .sticky{display:flex;left:auto;right:clamp(14px,2vw,26px);bottom:clamp(14px,2vw,26px);max-width:430px;gap:1.1rem;padding:.6rem .6rem .6rem 1.25rem;border:max(1px,var(--bw)) solid var(--line);
-border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(0,0,0,.5);transform:translateY(160%);transition:transform .55s cubic-bezier(.2,.8,.2,1);visibility:hidden}
+border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 20px 44px -24px rgba(0,0,0,.45);transform:translateY(160%);transition:transform .5s cubic-bezier(.2,.8,.2,1);visibility:hidden}
 .js.past:not(.end) .sticky{transform:none;visibility:visible}
 }
 @media(max-width:760px){.sticky.desk{display:none}.sticky{transition:transform .4s}.js.end .sticky{transform:translateY(120%)}}
 @media(prefers-reduced-motion:no-preference){
-/* reveal on scroll. The script marks only what starts below the first screen */
-[data-rv]{opacity:0;transition:opacity .55s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1),clip-path .8s cubic-bezier(.2,.7,.2,1),filter .6s;transition-delay:calc(var(--d,0)*60ms);will-change:transform,opacity}
-[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important;filter:none!important}
-[data-m=rise] [data-rv]{transform:translateY(38px)}
-[data-m=slide] [data-rv]{transform:translateX(-46px)}[data-m=slide] [data-rv]:nth-child(even){transform:translateX(46px)}
-@media(max-width:760px){[data-m=slide] [data-rv],[data-m=slide] [data-rv]:nth-child(even){transform:translateY(30px)}}
-[data-m=zoom] [data-rv]{transform:scale(.9)}
-[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(22px)}
-[data-m=blur] [data-rv]{filter:blur(16px);transform:translateY(18px)}
-[data-m=flip] [data-rv]{transform:perspective(1000px) rotateX(22deg) translateY(34px);transform-origin:50% 0}
-[data-m=pop] [data-rv]{transform:scale(.78) rotate(-2.5deg);transition-timing-function:cubic-bezier(.2,.7,.2,1),cubic-bezier(.34,1.56,.64,1),ease,ease}
-[data-m=drift] [data-rv]{transform:translateY(64px) rotate(1.6deg)}
+/* reveal on scroll: short, quiet, once. The script marks only what starts below the first screen */
+[data-rv]{opacity:0;transition:opacity .5s ease-out,transform .6s cubic-bezier(.2,.7,.2,1),clip-path .7s cubic-bezier(.2,.7,.2,1);transition-delay:calc(var(--d,0)*50ms)}
+[data-rv].in{opacity:1!important;transform:none!important;clip-path:inset(-40px)!important}
+[data-m=rise] [data-rv]{transform:translateY(20px)}
+[data-m=slide] [data-rv]{transform:translateX(-20px)}
+[data-m=clip] [data-rv]{clip-path:inset(0 0 100% 0);transform:translateY(12px)}
+@media(max-width:760px){[data-m=slide] [data-rv]{transform:translateY(20px)}}
 /* the painting settles into place as the page opens */
-.hero picture.art{animation:settle 2.6s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.09)}}
-/* a light crosses the main button on hover */
-.btn:not(.ghost){position:relative;overflow:hidden}
-.btn:not(.ghost)::before{content:"";position:absolute;inset:0;background:linear-gradient(105deg,transparent 34%,rgba(255,255,255,.38) 50%,transparent 66%);translate:-130% 0;transition:translate .75s ease;pointer-events:none}
-.btn:not(.ghost):hover::before{translate:130% 0}
-.btn:active{transform:translateY(1px) scale(.98)}
-/* pictures breathe: a slow zoom on hover and a drift as they cross the screen */
-.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.06}
+.hero picture.art{animation:settle 2.2s cubic-bezier(.2,.7,.2,1) both}@keyframes settle{from{transform:scale(1.05)}}
+.btn:active{transform:translateY(1px)}
+/* pictures: a slow zoom under the pointer and a slight drift as they cross the screen */
+.ph img{transition:scale 1.1s cubic-bezier(.2,.7,.2,1)}.ph:hover img{scale:1.04}
 @supports(animation-timeline:view()){
-.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3.5%}to{translate:0 3.5%}}
-.sp-v .ph.photo img,.feature .ph.photo img{scale:1.09}
-.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.16) translateY(-5%)}to{transform:scale(1.16) translateY(5%)}}
+.sp-v .ph.photo img,.feature .ph.photo img,.mos .ph img{animation:par linear both;animation-timeline:view();animation-range:cover}@keyframes par{from{translate:0 -3%}to{translate:0 3%}}
+.sp-v .ph.photo img,.feature .ph.photo img{scale:1.08}
+.band picture.art img{animation:bandpar linear both;animation-timeline:view();animation-range:cover}@keyframes bandpar{from{transform:scale(1.14) translateY(-4%)}to{transform:scale(1.14) translateY(4%)}}
 }
 /* answers open smoothly where the browser can animate to an automatic height */
 @supports(interpolate-size:allow-keywords){
 .faq details,.mod details{interpolate-size:allow-keywords}
-.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .45s cubic-bezier(.2,.7,.2,1),content-visibility .45s allow-discrete}
+.faq details::details-content,.mod details::details-content{block-size:0;overflow:clip;transition:block-size .4s cubic-bezier(.2,.7,.2,1),content-visibility .4s allow-discrete}
 .faq details[open]::details-content,.mod details[open]::details-content{block-size:auto}
 }
-.faq summary::after,.mod summary::after{transition:rotate .3s}.faq details[open] summary::after,.mod details[open] summary::after{rotate:180deg}
-/* links and list rows answer the pointer */
-.fd-l li,.sch li,.stp li{transition:padding-left .3s cubic-bezier(.2,.7,.2,1)}.fd-l li:hover{padding-left:.6rem}
-.lb-l a,.door,.tier{will-change:translate}
-.tier:hover{translate:0 -6px}.tier.hot:hover{translate:0 -14px}
-.av{transition:scale .3s}.crowd:hover .av{scale:1.06}
-/* the proof strip can run as a slow ticker (data-mq). It pauses under the pointer */
-.mq{overflow:hidden;flex:1 1 100%;min-width:0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
-.logos .mq ul{flex-wrap:nowrap;width:max-content;justify-content:flex-start;gap:0;animation:mq 38s linear infinite}.logos .mq li{padding-inline:1.5rem;white-space:nowrap}
-.mq:hover ul{animation-play-state:paused}@keyframes mq{to{transform:translateX(-50%)}}
-/* cards can follow the pointer with a soft light (data-spot) or a slight tilt (data-tilt) */
-[data-spot] .card:not(.float),[data-spot] .tile{background-image:radial-gradient(280px circle at var(--mx,-999px) var(--my,-999px),color-mix(in srgb,var(--accent) 16%,transparent),transparent 72%)}
-[data-tilt] .cards .card:hover,[data-tilt] .door:hover,[data-tilt] .qt figure.card:hover,[data-tilt] .tile:hover{transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .12s linear}
 }
-@media print{.prog,.sticky{display:none}}
+@media print{.sticky{display:none}}
+.sh h2 em,.sp-g h2 em,.gu h2 em{color:inherit}.chip-ic{display:block;width:auto;height:auto;background:none;border-radius:0;margin-bottom:1.2rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}.chip-ic .ic{width:28px;height:28px;stroke-width:1.5}.float,.float.f2{animation:none}.tier.hot{box-shadow:0 30px 60px -38px color-mix(in srgb,var(--ink) 55%,transparent)}::selection{background:var(--accent);color:var(--accent-ink)}body{font-feature-settings:'kern','liga','calt';hanging-punctuation:first}.stats b,.st-g b,.hstats b,.tier .pc,.mt td{font-variant-numeric:lining-nums tabular-nums}.sh{margin-bottom:clamp(36px,5vw,64px)}.sh .eyebrow{margin-bottom:1.15rem}.card p,.stp p,.fd-l p{max-width:62ch}a:not(.btn):not(.logo):not(.door):not(.card){text-decoration-thickness:1px;text-underline-offset:.22em}
 /* this site's own variation: Mint Ledger */
 @media(min-width:900px){.sh:not(.center):has(.lead){max-width:none;display:grid;grid-template-columns:1.15fr .85fr;column-gap:clamp(28px,5vw,80px);align-items:end}.sh:not(.center):has(.lead) .eyebrow{grid-column:1/-1}.sh:not(.center):has(.lead) .lead{margin:0 0 .35em}}.card:not(.float):not(.mk){border-top:4px solid var(--accent)}.qt figure.card{border-top-width:4px}main>.sec+.sec:not(.alt):not(.dark):not(.bleed):not(.logos){border-top:max(1px,var(--bw)) solid var(--line)}body{background-image:linear-gradient(color-mix(in srgb,var(--ink) 6%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--ink) 6%,transparent) 1px,transparent 1px);background-size:64px 64px}:root{--t1:#F4C95D;--t2:#BFE5D2;--t3:#D7D3F5;--atmo:radial-gradient(40% 46% at 8% 0,#BFE5D2 0,transparent 70%),radial-gradient(34% 40% at 94% 10%,#F4C95D 0,transparent 70%)}
 </style>
 </head>
 <body class="over o-dark has-sticky">
 <a class="skip" href="#main">Skip to content</a>
-<div class="prog" aria-hidden="true"></div>
 <div class="hdw"><header class="hd"><a class="logo" href="#top">The Tuesday Teardown</a><a class="btn" href="#signup">Subscribe</a></header></div>
 <main id="main">
 <!-- Hero: what arrives, when, how long it takes to read and how many people get it, beside a 1-field form -->
@@ -428,7 +401,7 @@ border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 26px 56px -22px rgba(
 <!-- A real sample issue, shown before anyone is asked to subscribe twice -->
 <section class="sec split  flip"><div class="wrap"><div class="sp-g"><div class="sp-v"><div class="card mk mk-email" role="img" aria-label="Preview of a sample email"><div class="mk-top"><span class="av"><img src="images/you-headshot.jpg" width="240" height="240" alt="" loading="lazy" decoding="async"></span><div><b>The Tuesday Teardown</b><span>Tuesday, 7:00am</span></div><i>Issue 164</i></div><h3>This pricing page hides its <em>best plan</em></h3><p>Morning. This week: a pricing page with 4 plans and no recommendation.</p><p><b>Change 1.</b> Mark 1 plan as the choice most people make.</p><p><b>Change 2.</b> Put the price in the first screen, not behind a toggle.</p><div class="mk-fade" aria-hidden="true"></div></div></div><div><p class="eyebrow">See 1 first</p><h2>What Lands In Your Inbox <em>On Tuesday</em></h2><p>1 real landing page. 3 changes I would make, in the order I would make them. The reason for each, in plain words. That is the whole email.</p><ul class="ticks"><li>5 minutes to read</li><li>No theory you cannot use the same day</li><li>Every back issue is free in the archive</li></ul><div class="acts" style="--i:3"><a class="btn" href="#signup">Subscribe Free</a></div></div></div></div></section>
 <!-- Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof -->
-<section class="sec band mosaic alt  "><div class="wrap"><div class="bd-c"><p class="eyebrow">The Tuesday Teardown</p><h2 class="bd-h">One real page, taken apart. <em>5 minutes to read.</em></h2><div class="acts" style="--i:3"><a class="btn" href="#signup">Subscribe</a></div></div><div class="mos" aria-hidden="true"><div class="ph art" style="--ar:3/4;--pos:18% 42%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/3;--pos:82% 46%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/3;--pos:68% 78%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div></div></div></section>
+<section class="sec band mosaic alt  "><div class="wrap"><div class="bd-c"><p class="eyebrow">The Tuesday Teardown</p><h2 class="bd-h">One real page taken apart, <em>in 5 minutes.</em></h2><div class="acts" style="--i:3"><a class="btn" href="#signup">Subscribe</a></div></div><div class="mos" aria-hidden="true"><div class="ph art" style="--ar:3/4;--pos:18% 42%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/3;--pos:82% 46%;--zoom:2.3"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div><div class="ph art" style="--ar:4/3;--pos:68% 78%;--zoom:2.5"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="" loading="lazy" decoding="async"></div></div></div></section>
 <!-- The open archive: real issues with real titles, readable without subscribing -->
 <section class="sec feed  " id="archive"><div class="wrap"><header class="sh"><p class="eyebrow">The archive</p><h2>Read A Few <em>Before You Decide</em></h2></header><ul class="fd-l"><li><span class="k">No. 164</span><div><h3><a href="https://example.com/connect/article">A coaching sales page with 9 buttons and no price</a></h3><p>What happens when you cut to 1 button and print the number.</p></div><span class="m">10 Nov 2026</span></li><li><span class="k">No. 163</span><div><h3><a href="https://example.com/connect/article">The webinar page that hid its own date</a></h3><p>3 fixes that took 20 minutes.</p></div><span class="m">3 Nov 2026</span></li><li><span class="k">No. 162</span><div><h3><a href="https://example.com/connect/article">A consultant&#x27;s home page that reads like a CV</a></h3><p>Rewriting the first screen around the client&#x27;s problem.</p></div><span class="m">27 Oct 2026</span></li><li><span class="k">No. 161</span><div><h3><a href="https://example.com/connect/article">Why this $19 template shop outsells a $2,000 course</a></h3><p>Clarity, a bundle and a free sample.</p></div><span class="m">20 Oct 2026</span></li></ul><p class="fd-more"><a class="link" href="https://example.com/connect/article-index">Browse all 164 teardowns</a></p></div></section>
 <!-- What to expect: 3 plain promises -->
@@ -460,22 +433,11 @@ var ly=W.scrollY;W.addEventListener('scroll',function(){var y=W.scrollY;R.classL
 if(W.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 /* positions are read directly, not with an observer: an observer cannot see an element that a clip-path is still hiding */
 var vh=W.innerHeight,todo=[],tick=0;
-function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.95)return 1;t.classList.add('in');
-setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1500)})}
+function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.96)return 1;t.classList.add('in');
+setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1200)})}
 q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
-el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%6);q('img[loading=lazy]',el).forEach(function(i){i.loading='eager'});el.setAttribute('data-rv','');todo.push(el)});
+el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%4);q('img[loading=lazy]',el).forEach(function(i){i.loading='eager'});el.setAttribute('data-rv','');todo.push(el)});
 function ask(){if(!tick&&todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener('scroll',ask,{passive:true});W.addEventListener('resize',ask);
-var co=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var b=e.target;co.unobserve(b);
-var m=b.textContent.match(/^(\D*)(\d[\d,]*\.?\d*)([\s\S]*)$/);if(!m)return;var n=parseFloat(m[2].replace(/,/g,'')),dp=(m[2].split('.')[1]||'').length,cm=m[2].indexOf(',')>-1,t0=0;
-if(!cm&&!dp&&n>1900&&n<2100)return;
-W.requestAnimationFrame(function f(t){t0=t0||t;var p=Math.min(1,(t-t0)/1400),s=(n*(1-Math.pow(1-p,3))).toFixed(dp);if(cm)s=s.replace(/\B(?=(\d{3})+(?!\d))/g,',');
-b.textContent=m[1]+s+m[3];if(p<1)W.requestAnimationFrame(f)})})},{threshold:.5});
-q('.st-g b,.tile .big').forEach(function(b){if(!b.children.length&&b.getBoundingClientRect().top>vh*.94)co.observe(b)});
-if(R.hasAttribute('data-mq'))q('.logos ul').forEach(function(u){var w=d.createElement('div');w.className='mq';u.parentNode.insertBefore(w,u);w.appendChild(u);
-q('li',u).forEach(function(li){var c=li.cloneNode(true);c.setAttribute('aria-hidden','true');u.appendChild(c)})});
-if(R.hasAttribute('data-spot')||R.hasAttribute('data-tilt'))d.addEventListener('pointermove',function(e){var c=e.target.closest&&e.target.closest('.card,.tile');if(!c)return;
-var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top,s=c.style;s.setProperty('--mx',x+'px');s.setProperty('--my',y+'px');
-s.setProperty('--rx',((y/r.height-.5)*-5).toFixed(2)+'deg');s.setProperty('--ry',((x/r.width-.5)*5).toFixed(2)+'deg')},{passive:true});
 })();
 </script>
 </body>

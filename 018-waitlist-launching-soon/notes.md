@@ -104,7 +104,7 @@ A waitlist page with almost nothing on it, on purpose. What is coming, when, why
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17.6px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 7 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 17 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.3 to 1 for body text and 11.4 to 1 for large text. On a phone: 6.7 to 1 for body text and 12.8 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 51KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 47KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -175,7 +175,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Quiet Luxury. Ivory, espresso and bronze. Thin rules, small capitals, lots of air. Says premium without shouting.
-This site's own variation: Noir And Champagne. Sections come into focus as they scroll in. It uses numbered section headers, frosted glass cards, a paper grain, a slow light drifting across the hero. The picture band is a painted band set in a rounded frame.
+This site's own variation: Noir And Champagne. Sections fade in as they scroll in. It uses numbered section headers, a paper grain. The picture band is a painted band set in a rounded frame.
 Fonts: Prata + Jost from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

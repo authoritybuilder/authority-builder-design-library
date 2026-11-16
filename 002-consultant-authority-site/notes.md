@@ -96,7 +96,7 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 | A real person is on the page | **Your turn** | 3 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 8.8 and the whole page at grade 10.2 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 8.8 and the whole page at grade 10.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -110,7 +110,7 @@ A B2B consultant site that reads like a board paper: a sharp position, a method,
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Request A Conversation”) ends 479px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 5 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 31 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 9 to 1 for body text and 11.5 to 1 for large text. On a phone: 9.2 to 1 for body text and 10.4 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 65KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 61KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -200,7 +200,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Corporate Calm. White, slate navy and one teal. A serious serif, mono labels, hairline grids. Reassures a board.
-This site's own variation: Slate And Teal. Sections slide in from alternate sides as they scroll in. It uses headers underlined in the accent, outlined cards, hairline section breaks, the method laid out side by side, a proof strip that runs as a ticker. The picture band is 3 crops of the painting beside the line.
+This site's own variation: Slate And Teal. Sections slide in a short way from the side as they scroll in. It uses headers underlined in the accent, outlined cards, hairline section breaks, the method laid out side by side. The picture band is 3 crops of the painting beside the line.
 Fonts: Source Serif 4 + IBM Plex Sans from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

@@ -105,7 +105,7 @@ An article layout built to be read, cited and acted on: a short answer at the to
 | A button is on the first screen of a phone | **Good** | This page opens with reading, so its first button in the page (“Email Me The Template”) is 4730px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 3 were measured. |
-| Page weight | **Good** | The HTML is 59KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 55KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -181,7 +181,7 @@ STRUCTURE, IN THIS ORDER
 
 DESIGN DIRECTION
 Magazine. Black rules, a high-contrast serif, a single red. Reads like a feature in a weekend paper.
-This site's own variation: Blueprint Journal. Sections come into focus as they scroll in. It uses headers split into 2 columns, a drafting grid.
+This site's own variation: Blueprint Journal. Sections fade in as they scroll in. It uses headers split into 2 columns, a drafting grid.
 Fonts: Spectral + Inter from Google Fonts. Keep 1 accent colour and use it only for the main action.
 Mobile-first. Buttons at least 48px tall. Visible focus states. Respect reduced motion.
 

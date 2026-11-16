@@ -120,8 +120,7 @@ background:color-mix(in srgb,var(--bg) 88%,transparent);color:var(--ink);-webkit
 .float.f2 b{font:700 .95rem/1.25 var(--fb);letter-spacing:0;text-transform:none;color:var(--ink)}.float.f2 span{font-size:.8rem;color:var(--ink2)}
 @media(max-width:860px){.float.f2{right:-4px;top:5%}}
 /* buttons and forms */
-.btn{box-shadow:0 14px 28px -14px color-mix(in srgb,var(--accent) 75%,transparent)}
-:where(.btn:not(.ghost)){background-image:linear-gradient(180deg,rgba(255,255,255,.17),rgba(255,255,255,0) 58%)}   /* a soft light across the top of every main button */
+.btn{box-shadow:none}
 .cta.bleed h2{font-size:clamp(1.9rem,calc(3.8vw*var(--hs)),calc(3.1rem*var(--hs)))}
 .stats b,.hstats b,.float b,.tier .price{font-variant-numeric:lining-nums tabular-nums}
 /* the brand name, very large and very quiet, closes every page */
