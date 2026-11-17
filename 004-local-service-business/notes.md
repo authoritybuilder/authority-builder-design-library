@@ -40,14 +40,15 @@ A local business home page that answers the 4 questions every local searcher has
 
 1. Hero: the service, the suburb and the audience in 1 line, with a phone number as a button
 2. Numbers row: proof a local can sanity-check
-3. Services: 3 plain cards, named the way customers ask for them
-4. How it works: 3 steps so starting feels easy
-5. Pricing in the open: 3 tiers with the middle one recommended
-6. Reviews as text with suburb and trade, the details locals trust
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. Contact block: name, address and phone exactly as they appear on the Google Business Profile, plus hours
-9. Questions answered in plain words, written for people, not for markup
-10. Closing call to action: the phone number again, as text
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Services: 3 plain cards, named the way customers ask for them
+5. How it works: 3 steps so starting feels easy
+6. Pricing in the open: 3 tiers with the middle one recommended
+7. Reviews as text with suburb and trade, the details locals trust
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. Contact block: name, address and phone exactly as they appear on the Google Business Profile, plus hours
+10. Questions answered in plain words, written for people, not for markup
+11. Closing call to action: the phone number again, as text
 
 ## Search Card
 
@@ -90,15 +91,15 @@ A local business home page that answers the 4 questions every local searcher has
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Books done. BAS lodged. Weekends back.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 823 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 847 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 394 words of body copy on the main page read at about school grade 3.4 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 406 words of body copy on the main page read at about school grade 3.4 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 16 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 104KB for phones to 368KB for a laptop and a 2560px file for large screens, and the browser picks 1. 7 photo files, the largest 261KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 7 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 17 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 104KB for phones to 368KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 261KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 6.7 and the whole page at grade 7.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 6.7 and the whole page at grade 6.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -113,7 +114,7 @@ A local business home page that answers the 4 questions every local searcher has
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 3 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 15 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 27 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.8 to 1 for body text and 6.9 to 1 for large text. On a phone: 6 to 1 for body text and 8.2 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 66KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 69KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -164,6 +165,7 @@ A local business home page that answers the 4 questions every local searcher has
 Each illustration stands in for a real photo. Shoot these to replace them.
 
 - Guy at the shopfront with the street sign visible. Locals recognise the spot
+- you in the office, about 90 seconds, saying hello and walking through month 1
 
 ## Borrow This
 
@@ -187,14 +189,15 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: the service, the suburb and the audience in 1 line, with a phone number as a button
 2. Numbers row: proof a local can sanity-check
-3. Services: 3 plain cards, named the way customers ask for them
-4. How it works: 3 steps so starting feels easy
-5. Pricing in the open: 3 tiers with the middle one recommended
-6. Reviews as text with suburb and trade, the details locals trust
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. Contact block: name, address and phone exactly as they appear on the Google Business Profile, plus hours
-9. Questions answered in plain words, written for people, not for markup
-10. Closing call to action: the phone number again, as text
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Services: 3 plain cards, named the way customers ask for them
+5. How it works: 3 steps so starting feels easy
+6. Pricing in the open: 3 tiers with the middle one recommended
+7. Reviews as text with suburb and trade, the details locals trust
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. Contact block: name, address and phone exactly as they appear on the Google Business Profile, plus hours
+10. Questions answered in plain words, written for people, not for markup
+11. Closing call to action: the phone number again, as text
 
 DESIGN DIRECTION
 Bright Playful. Butter yellow, coral and navy with sticker shadows and chunky outlines. Friendly and fast.

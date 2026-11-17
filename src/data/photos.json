@@ -52,6 +52,22 @@
     ]
    },
    {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "you to camera at your desk, about 2 minutes, saying who you help and how a first call runs",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.72,
+     0.76,
+     1.5
+    ]
+   },
+   {
     "file": "you-2.jpg",
     "kind": "you",
     "w": 900,
@@ -77,7 +93,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F7F2E8",
+   "bg2": "#EEE4D3",
+   "card": "#FFFDF8",
+   "ink": "#221C16",
+   "ink2": "#5B5045",
+   "accent": "#A8431F",
+   "accent-ink": "#FFF8EF",
+   "dark": "#241C16",
+   "dark-ink": "#F4EBDD"
+  },
+  "brand": "Incognito & Field"
  },
  "002": {
   "dir": "002-consultant-authority-site",
@@ -143,6 +171,39 @@
     ]
    },
    {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "guest-1.jpg",
     "kind": "guest",
     "w": 900,
@@ -179,7 +240,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFFFFF",
+   "bg2": "#F3F5F7",
+   "card": "#FFFFFF",
+   "ink": "#14213D",
+   "ink2": "#4B576F",
+   "accent": "#0F6E66",
+   "accent-ink": "#FFFFFF",
+   "dark": "#14213D",
+   "dark-ink": "#EEF2F7"
+  },
+  "brand": "Incognito Rowe Advisory"
  },
  "003": {
   "dir": "003-creator-hub",
@@ -245,6 +318,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of a recent issue, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-headshot.jpg",
     "kind": "me",
     "w": 240,
@@ -258,7 +353,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#ECEEF0",
+   "bg2": "#E1E4E8",
+   "card": "#FFFFFF",
+   "ink": "#14161A",
+   "ink2": "#525863",
+   "accent": "#1F3FFF",
+   "accent-ink": "#FFFFFF",
+   "dark": "#14161A",
+   "dark-ink": "#F3F4F6"
+  },
+  "brand": "Guy Incognito"
  },
  "004": {
   "dir": "004-local-service-business",
@@ -295,6 +402,22 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "you in the office, about 90 seconds, saying hello and walking through month 1",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.82,
+     0.56,
+     1.5
     ]
    },
    {
@@ -352,7 +475,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFF7E6",
+   "bg2": "#FFE9A8",
+   "card": "#FFFFFF",
+   "ink": "#1B1B3A",
+   "ink2": "#474766",
+   "accent": "#FF5A4F",
+   "accent-ink": "#1B1B3A",
+   "dark": "#1B1B3A",
+   "dark-ink": "#FFF7E6"
+  },
+  "brand": "Tideline Bookkeeping"
  },
  "005": {
   "dir": "005-about-founder-story",
@@ -370,6 +505,22 @@
     "who": "",
     "where": [
      "index.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "you telling your story to camera, 3 minutes at most",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.28,
+     0.76,
+     1.5
     ]
    },
    {
@@ -402,7 +553,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFFFFF",
+   "bg2": "#F5F2EC",
+   "card": "#FFFFFF",
+   "ink": "#111111",
+   "ink2": "#4F4F4F",
+   "accent": "#C8102E",
+   "accent-ink": "#FFFFFF",
+   "dark": "#111111",
+   "dark-ink": "#F5F2EC"
+  },
+  "brand": "Guy Incognito"
  },
  "006": {
   "dir": "006-speaker-media-kit",
@@ -421,6 +584,39 @@
     "where": [
      "index.html",
      "about.html"
+    ]
+   },
+   {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your keynote at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your keynote at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your keynote at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -486,7 +682,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#0F0F11",
+   "bg2": "#17171B",
+   "card": "#1A1A1F",
+   "ink": "#F4F1EA",
+   "ink2": "#B8B3A8",
+   "accent": "#F2B544",
+   "accent-ink": "#0F0F11",
+   "dark": "#F4F1EA",
+   "dark-ink": "#121214"
+  },
+  "brand": "Guy Incognito"
  },
  "007": {
   "dir": "007-signature-program-sales-page",
@@ -571,6 +779,39 @@
     ]
    },
    {
+    "file": "post-1.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-2.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-3.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -625,7 +866,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FAF6EE",
+   "bg2": "#E4EBDD",
+   "card": "#FFFFFF",
+   "ink": "#26352B",
+   "ink2": "#51625A",
+   "accent": "#2F5A40",
+   "accent-ink": "#FAF6EE",
+   "dark": "#26352B",
+   "dark-ink": "#F3EFE4"
+  },
+  "brand": "Guy Incognito Coaching"
  },
  "008": {
   "dir": "008-online-course-sales-page",
@@ -698,6 +951,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of your course library, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -730,7 +1005,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F2EFE8",
+   "bg2": "#E4DFD3",
+   "card": "#FFFFFF",
+   "ink": "#0D0D0D",
+   "ink2": "#46463F",
+   "accent": "#FF4A1C",
+   "accent-ink": "#0D0D0D",
+   "dark": "#0D0D0D",
+   "dark-ink": "#F2EFE8"
+  },
+  "brand": "Guy Incognito Studio"
  },
  "009": {
   "dir": "009-membership-community-join",
@@ -803,6 +1090,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of your community space, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "face-4.jpg",
     "kind": "face",
     "w": 200,
@@ -824,7 +1133,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F0E6D2",
+   "bg2": "#E6D8BD",
+   "card": "#FBF6EA",
+   "ink": "#2B2118",
+   "ink2": "#5A4A3B",
+   "accent": "#C23B1E",
+   "accent-ink": "#FFF6E9",
+   "dark": "#1F4A4F",
+   "dark-ink": "#F6EEDC"
+  },
+  "brand": "The Makers' Table"
  },
  "010": {
   "dir": "010-mastermind-application",
@@ -845,6 +1166,22 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "the room, the table and the conversation, with members' permission",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.46,
+     0.34,
+     1.5
     ]
    },
    {
@@ -896,7 +1233,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F3EEE6",
+   "bg2": "#E9E1D5",
+   "card": "#FAF7F1",
+   "ink": "#26201B",
+   "ink2": "#5F5449",
+   "accent": "#26201B",
+   "accent-ink": "#F3EEE6",
+   "dark": "#1E1915",
+   "dark-ink": "#EDE5D8"
+  },
+  "brand": "The Long Table"
  },
  "011": {
   "dir": "011-services-and-pricing",
@@ -965,6 +1314,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of a client's finished website, with their permission, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -975,7 +1346,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F6F1F0",
+   "bg2": "#EBDFDD",
+   "card": "#FFFBFA",
+   "ink": "#2A1A22",
+   "ink2": "#5E4A54",
+   "accent": "#7A2E4F",
+   "accent-ink": "#FFF5F3",
+   "dark": "#2A1A22",
+   "dark-ink": "#F6E9E6"
+  },
+  "brand": "Fieldnote Brand Studio"
  },
  "012": {
   "dir": "012-digital-product-shop",
@@ -1012,6 +1395,28 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of 1 template open in its editor, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -1069,7 +1474,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFF1F5",
+   "bg2": "#FFD6E4",
+   "card": "#FFFFFF",
+   "ink": "#2A1038",
+   "ink2": "#5A4468",
+   "accent": "#7B2FF7",
+   "accent-ink": "#FFFFFF",
+   "dark": "#2A1038",
+   "dark-ink": "#FFF1F5"
+  },
+  "brand": "Paper & Pixel Co."
  },
  "013": {
   "dir": "013-corporate-training",
@@ -1153,6 +1570,39 @@
     ]
    },
    {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your workshop deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your workshop deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your workshop deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "face-5.jpg",
     "kind": "face",
     "w": 200,
@@ -1174,7 +1624,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFFFFF",
+   "bg2": "#F2F4F8",
+   "card": "#FFFFFF",
+   "ink": "#171A21",
+   "ink2": "#4D5361",
+   "accent": "#2447D6",
+   "accent-ink": "#FFFFFF",
+   "dark": "#131722",
+   "dark-ink": "#EEF1F7"
+  },
+  "brand": "Brightline Learning"
  },
  "014": {
   "dir": "014-lead-magnet-opt-in",
@@ -1231,6 +1693,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of 1 page of your guide, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -1252,7 +1736,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F8F5FA",
+   "bg2": "#E9E2F0",
+   "card": "#FFFFFF",
+   "ink": "#2C2440",
+   "ink2": "#5B5270",
+   "accent": "#5B3F8C",
+   "accent-ink": "#FAF6FF",
+   "dark": "#2C2440",
+   "dark-ink": "#F3EEF8"
+  },
+  "brand": "Guy Incognito Mentoring"
  },
  "015": {
   "dir": "015-webinar-registration",
@@ -1273,6 +1769,39 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your masterclass deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your masterclass deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides exported from your masterclass deck at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -1330,7 +1859,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#0E0B1A",
+   "bg2": "#171228",
+   "card": "#1A1530",
+   "ink": "#F3F0FA",
+   "ink2": "#B9B2CC",
+   "accent": "#B79CFF",
+   "accent-ink": "#0E0B1A",
+   "dark": "#F3F0FA",
+   "dark-ink": "#120E22"
+  },
+  "brand": "Guy Incognito Consulting"
  },
  "016": {
   "dir": "016-quiz-scorecard-landing",
@@ -1351,6 +1892,28 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of a finished quiz result, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -1397,7 +1960,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F1EEE9",
+   "bg2": "#E6E1D9",
+   "card": "#FFFFFF",
+   "ink": "#1A1613",
+   "ink2": "#5A534C",
+   "accent": "#C73E08",
+   "accent-ink": "#FFFFFF",
+   "dark": "#1A1613",
+   "dark-ink": "#F6F2EC"
+  },
+  "brand": "Bright Signal"
  },
  "017": {
   "dir": "017-challenge-page",
@@ -1418,6 +1993,39 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "post-1.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-2.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-3.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -1464,7 +2072,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F6EBDD",
+   "bg2": "#F0D9C0",
+   "card": "#FFF8EE",
+   "ink": "#2A1E3F",
+   "ink2": "#564A6B",
+   "accent": "#C92A60",
+   "accent-ink": "#FFF6E9",
+   "dark": "#2A1E3F",
+   "dark-ink": "#F9EEDD"
+  },
+  "brand": "Good Offer Club"
  },
  "018": {
   "dir": "018-waitlist-launching-soon",
@@ -1521,6 +2141,39 @@
     ]
    },
    {
+    "file": "post-1.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-2.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-3.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -1531,7 +2184,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#14110F",
+   "bg2": "#1C1815",
+   "card": "#1C1815",
+   "ink": "#EFE7DA",
+   "ink2": "#B9AD9B",
+   "accent": "#D9B97C",
+   "accent-ink": "#14110F",
+   "dark": "#EFE7DA",
+   "dark-ink": "#1A1512"
+  },
+  "brand": "Atelier Year"
  },
  "019": {
   "dir": "019-book-a-call",
@@ -1588,6 +2253,22 @@
     ]
    },
    {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "a screen recording of you walking through the call agenda",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.48,
+     0.82,
+     1.5
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -1598,7 +2279,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F4F4EF",
+   "bg2": "#E6E6DD",
+   "card": "#FFFFFF",
+   "ink": "#0B0B0B",
+   "ink2": "#45453F",
+   "accent": "#C6F432",
+   "accent-ink": "#0B0B0B",
+   "dark": "#0B0B0B",
+   "dark-ink": "#F4F4EF"
+  },
+  "brand": "Incognito Strategy"
  },
  "020": {
   "dir": "020-link-in-bio",
@@ -1665,7 +2358,19 @@
      "404.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#EFFBF8",
+   "bg2": "#C9F2E7",
+   "card": "#FFFFFF",
+   "ink": "#0E2A33",
+   "ink2": "#3F5A63",
+   "accent": "#FF7A1A",
+   "accent-ink": "#0E2A33",
+   "dark": "#0E2A33",
+   "dark-ink": "#EFFBF8"
+  },
+  "brand": "Guy Incognito"
  },
  "021": {
   "dir": "021-case-study",
@@ -1706,6 +2411,39 @@
     ]
    },
    {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides from the results deck you presented to the client, with their permission",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides from the results deck you presented to the client, with their permission",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 slides from the results deck you presented to the client, with their permission",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "guest-1.jpg",
     "kind": "guest",
     "w": 900,
@@ -1738,7 +2476,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FFF4EA",
+   "bg2": "#F7E4D2",
+   "card": "#FFFAF4",
+   "ink": "#1A1410",
+   "ink2": "#54483F",
+   "accent": "#0D5C63",
+   "accent-ink": "#FFFFFF",
+   "dark": "#14201F",
+   "dark-ink": "#F7EBDD"
+  },
+  "brand": "Lumen Practice Growth"
  },
  "022": {
   "dir": "022-wall-of-proof",
@@ -1866,7 +2616,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F3F1E7",
+   "bg2": "#E4E2D0",
+   "card": "#FDFCF6",
+   "ink": "#1C2118",
+   "ink2": "#4F5646",
+   "accent": "#4A5D23",
+   "accent-ink": "#FBFAEF",
+   "dark": "#1C2118",
+   "dark-ink": "#EEECDD"
+  },
+  "brand": "Guy Incognito"
  },
  "023": {
   "dir": "023-blog-article",
@@ -1916,7 +2678,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FAFAF7",
+   "bg2": "#EEF0F2",
+   "card": "#FFFFFF",
+   "ink": "#0F1B2D",
+   "ink2": "#4A566A",
+   "accent": "#1B4DD8",
+   "accent-ink": "#FFFFFF",
+   "dark": "#0F1B2D",
+   "dark-ink": "#F1F3F7"
+  },
+  "brand": "Guy Incognito"
  },
  "024": {
   "dir": "024-podcast-home",
@@ -1937,6 +2711,39 @@
      "contact.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "post-1.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-2.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "post-3.jpg",
+    "kind": "post",
+    "w": 1080,
+    "h": 1350,
+    "brief": "A recent post, exported from your social account at 4:5",
+    "who": "",
+    "where": [
+     "index.html"
     ]
    },
    {
@@ -1994,7 +2801,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#071318",
+   "bg2": "#0D1D24",
+   "card": "#10232B",
+   "ink": "#EAF4F2",
+   "ink2": "#A9BFBD",
+   "accent": "#4FE0C0",
+   "accent-ink": "#071318",
+   "dark": "#EAF4F2",
+   "dark-ink": "#0A161B"
+  },
+  "brand": "The Second Act"
  },
  "025": {
   "dir": "025-newsletter-sign-up-archive",
@@ -2051,6 +2870,28 @@
     ]
    },
    {
+    "file": "mock-1.jpg",
+    "kind": "mock",
+    "w": 1600,
+    "h": 1000,
+    "brief": "A screenshot of a recent issue, at 16:10",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "phone-1.jpg",
+    "kind": "phone",
+    "w": 780,
+    "h": 1560,
+    "brief": "The same screen on a phone, as a tall screenshot",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "face-4.jpg",
     "kind": "face",
     "w": 200,
@@ -2072,7 +2913,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#EEF2EF",
+   "bg2": "#E0E7E2",
+   "card": "#FFFFFF",
+   "ink": "#10201A",
+   "ink2": "#4C5C55",
+   "accent": "#0B6B4F",
+   "accent-ink": "#FFFFFF",
+   "dark": "#10201A",
+   "dark-ink": "#EFF5F1"
+  },
+  "brand": "The Tuesday Teardown"
  },
  "026": {
   "dir": "026-book-launch",
@@ -2129,6 +2982,39 @@
     ]
    },
    {
+    "file": "slide-1.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 spreads from your book, exported at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-2.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 spreads from your book, exported at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
+    "file": "slide-3.jpg",
+    "kind": "slide",
+    "w": 1600,
+    "h": 900,
+    "brief": "3 spreads from your book, exported at 16:9",
+    "who": "",
+    "where": [
+     "index.html"
+    ]
+   },
+   {
     "file": "you-1.jpg",
     "kind": "you",
     "w": 900,
@@ -2150,7 +3036,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F1F2EC",
+   "bg2": "#E3E6DA",
+   "card": "#F8F9F4",
+   "ink": "#1F2A22",
+   "ink2": "#4E5948",
+   "accent": "#1F2A22",
+   "accent-ink": "#F1F2EC",
+   "dark": "#1B241D",
+   "dark-ink": "#EDF0E4"
+  },
+  "brand": "Guy Incognito"
  },
  "027": {
   "dir": "027-event-retreat",
@@ -2188,6 +3086,22 @@
      "reserve.html",
      "thank-you.html",
      "404.html"
+    ]
+   },
+   {
+    "file": "video-1.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "a slow walk through the venue, inside and out",
+    "who": "",
+    "where": [
+     "index.html"
+    ],
+    "crop": [
+     0.72,
+     0.7,
+     1.5
     ]
    },
    {
@@ -2261,7 +3175,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#F7F3EC",
+   "bg2": "#EADFD0",
+   "card": "#FFFDF9",
+   "ink": "#33261E",
+   "ink2": "#655447",
+   "accent": "#9A4A2A",
+   "accent-ink": "#FFF6EE",
+   "dark": "#2B3A3D",
+   "dark-ink": "#F2EDE3"
+  },
+  "brand": "Slow Strategy"
  },
  "028": {
   "dir": "028-contact-and-thank-you",
@@ -2294,7 +3220,19 @@
      "about.html"
     ]
    }
-  ]
+  ],
+  "pal": {
+   "bg": "#FBFAF7",
+   "bg2": "#F0EEE7",
+   "card": "#FFFFFF",
+   "ink": "#1E2A24",
+   "ink2": "#50605A",
+   "accent": "#1F5C45",
+   "accent-ink": "#FFFFFF",
+   "dark": "#1E2A24",
+   "dark-ink": "#EEF2EC"
+  },
+  "brand": "Incognito Finch"
  },
  "031": {
   "dir": "031-section-patterns",
@@ -2462,6 +3400,23 @@
     "where": [
      "404.html",
      "index.html"
+    ]
+   },
+   {
+    "file": "video-2.jpg",
+    "kind": "video",
+    "w": 1280,
+    "h": 720,
+    "brief": "you to camera at your desk, about 2 minutes, saying who you help and how a first call runs",
+    "who": "",
+    "where": [
+     "404.html",
+     "index.html"
+    ],
+    "crop": [
+     0.9,
+     0.76,
+     1.5
     ]
    },
    {

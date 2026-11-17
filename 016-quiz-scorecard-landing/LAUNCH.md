@@ -19,6 +19,8 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
+| `mock-1.jpg` | 1600 × 1000 | Your product or work, on a laptop | index.html | A screenshot of a finished quiz result, at 16:10 |
+| `phone-1.jpg` | 780 × 1560 | The same, on a phone | index.html | The same screen on a phone, as a tall screenshot |
 | `face-1.jpg` | 200 × 200 | Ingrid S. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Rahul D. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Bronte A. | index.html | A square headshot, used with their permission |

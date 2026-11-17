@@ -24,6 +24,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | Jo B. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Rav S. | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | Tess W. | index.html | A square headshot, used with their permission |
+| `post-1.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
+| `post-2.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
+| `post-3.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
 | `you-1.jpg` | 900 × 1125 | You | index.html | Guy outdoors, relaxed, mid-laugh. The life the program promises |
 | `face-5.jpg` | 200 × 200 | Imran K. | index.html | A square headshot, used with their permission |
 | `face-6.jpg` | 200 × 200 | Fiona D. | index.html | A square headshot, used with their permission |

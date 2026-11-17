@@ -19,6 +19,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your masterclass deck at 16:9 |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your masterclass deck at 16:9 |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your masterclass deck at 16:9 |
 | `you-1.jpg` | 900 × 1125 | You | index.html | presenting on a call, laptop and notes in frame |
 | `face-1.jpg` | 200 × 200 | Peter H. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Yasmin K. | index.html | A square headshot, used with their permission |

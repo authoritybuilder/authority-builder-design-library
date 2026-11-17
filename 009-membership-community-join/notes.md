@@ -39,13 +39,14 @@ A membership page that sells belonging before features: who is at the table, wha
 
 1. Hero: who the community is for, the feeling, the price and the trial in the first screen
 2. Numbers row: the community's vital signs
-3. What you get: 4 things, each named as a benefit
-4. A month inside: makes an invisible product concrete
-5. Member voices: belonging, shown through specifics
-6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-7. 2 ways to join, with the annual saving in dollars
-8. The usual membership worries
-9. Closing call to action
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. What you get: 4 things, each named as a benefit
+5. A month inside: makes an invisible product concrete
+6. Member voices: belonging, shown through specifics
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. 2 ways to join, with the annual saving in dollars
+9. The usual membership worries
+10. Closing call to action
 
 ## Search Card
 
@@ -88,15 +89,15 @@ A membership page that sells belonging before features: who is at the table, wha
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Stop figuring it out on your own.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 706 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 721 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 1 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 383 words of body copy on the main page read at about school grade 3.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 391 words of body copy on the main page read at about school grade 3.8 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 18 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 134KB for phones to 409KB for a laptop and a 2560px file for large screens, and the browser picks 1. 7 photo files, the largest 290KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 7 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 20 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 134KB for phones to 409KB for a laptop and a 2560px file for large screens, and the browser picks 1. 9 photo files, the largest 290KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 9 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 5.6 and the whole page at grade 5.3 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 5.6 and the whole page at grade 5.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -110,7 +111,7 @@ A membership page that sells belonging before features: who is at the table, wha
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Start A 14-Day Free Trial”) ends 485px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 10 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 18 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 7 to 1 for body text and 4.9 to 1 for large text. On a phone: 7 to 1 for body text and 6.5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 60KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 63KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -183,13 +184,14 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: who the community is for, the feeling, the price and the trial in the first screen
 2. Numbers row: the community's vital signs
-3. What you get: 4 things, each named as a benefit
-4. A month inside: makes an invisible product concrete
-5. Member voices: belonging, shown through specifics
-6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-7. 2 ways to join, with the annual saving in dollars
-8. The usual membership worries
-9. Closing call to action
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. What you get: 4 things, each named as a benefit
+5. A month inside: makes an invisible product concrete
+6. Member voices: belonging, shown through specifics
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. 2 ways to join, with the annual saving in dollars
+9. The usual membership worries
+10. Closing call to action
 
 DESIGN DIRECTION
 Retro Scrapbook. Kraft paper, tomato and teal, taped-on cards and handwritten notes. Warm and a bit cheeky.

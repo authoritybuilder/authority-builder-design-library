@@ -39,13 +39,15 @@ A small digital shop that is quick to scan and quick to buy from. Clear product 
 
 1. Hero: what the products are, who they are for and how fast you get them
 2. Trust strip: delivery, format, licence and refund, answered before anyone asks
-3. Product cards: name, format, 1-line benefit, price and a buy button on each
-4. The bundle: 1 card that makes the saving obvious in dollars
-5. How it works: removes the worry about formats and skills
-6. Short buyer reviews as text
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. A free sample: try before you buy
-9. Format, licence and refund questions
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Product cards: name, format, 1-line benefit, price and a buy button on each
+5. The bundle: 1 card that makes the saving obvious in dollars
+6. How it works: removes the worry about formats and skills
+7. Short buyer reviews as text
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. A free sample: try before you buy
+10. Format, licence and refund questions
+11. Closing call to action: the promise restated beside the button, so the page never ends on a dead stop
 
 ## Search Card
 
@@ -78,7 +80,7 @@ A small digital shop that is quick to scan and quick to buy from. Clear product 
 | 1 version of the address everywhere | **Good** | All 30 of the site's own addresses in the canonical tags, share tags, structured data and sitemap start with https://paperandpixel.example/. |
 | Every page has a canonical tag pointing at itself | **Good** | 8 pages checked. |
 | Nothing important is hidden from Google | **Good** | No page carries a noindex except 404.html and thank-you.html, which should never be found by search. The first version put a noindex on every page, which a new owner could forget to remove. The library now keeps its demo brands out of search with host settings instead. |
-| No broken or dead links inside the site | **Good** | 190 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
+| No broken or dead links inside the site | **Good** | 191 internal links, buttons and form targets checked across 8 pages, 0 broken. Every button leads to a real page or section. The first version had buttons that pointed at their own section and links that went nowhere. |
 | Links that need your own accounts | **Your turn** | 7 links (checkout, social profiles, podcast apps and similar) point at example.com until you connect them. Each is listed in LAUNCH.md. |
 | A page for wrong addresses | **Good** | 404.html exists, says the page is missing and links back to the main page and to Contact. |
 | Redirects, status codes and old sites | **Couldn't check** | These only exist on a live host. After launch, check that http, https, www and non-www all land on 1 address in 1 hop. |
@@ -88,15 +90,15 @@ A small digital shop that is quick to scan and quick to buy from. Clear product 
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Look established by Friday.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 764 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 811 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 385 words of body copy on the main page read at about school grade 4 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 418 words of body copy on the main page read at about school grade 4.1 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 10 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 9KB for phones to 44KB for a laptop and a 2560px file for large screens, and the browser picks 1. 7 photo files, the largest 91KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 7 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 14 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 9KB for phones to 44KB for a laptop and a 2560px file for large screens, and the browser picks 1. 9 photo files, the largest 91KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 9 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 8.3 and the whole page at grade 6.4 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 8.3 and the whole page at grade 6.5 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -111,7 +113,7 @@ A small digital shop that is quick to scan and quick to buy from. Clear product 
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 16 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 19 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 5.9 to 1 for body text and 5.4 to 1 for large text. On a phone: 5.9 to 1 for body text and 3.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 76KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 81KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -184,13 +186,15 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: what the products are, who they are for and how fast you get them
 2. Trust strip: delivery, format, licence and refund, answered before anyone asks
-3. Product cards: name, format, 1-line benefit, price and a buy button on each
-4. The bundle: 1 card that makes the saving obvious in dollars
-5. How it works: removes the worry about formats and skills
-6. Short buyer reviews as text
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. A free sample: try before you buy
-9. Format, licence and refund questions
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Product cards: name, format, 1-line benefit, price and a buy button on each
+5. The bundle: 1 card that makes the saving obvious in dollars
+6. How it works: removes the worry about formats and skills
+7. Short buyer reviews as text
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. A free sample: try before you buy
+10. Format, licence and refund questions
+11. Closing call to action: the promise restated beside the button, so the page never ends on a dead stop
 
 DESIGN DIRECTION
 Bright Playful. Butter yellow, coral and navy with sticker shadows and chunky outlines. Friendly and fast.

@@ -23,6 +23,8 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | Dev P. | index.html | A square headshot, used with their permission |
+| `mock-1.jpg` | 1600 × 1000 | Your product or work, on a laptop | index.html | A screenshot of a recent issue, at 16:10 |
+| `phone-1.jpg` | 780 × 1560 | The same, on a phone | index.html | The same screen on a phone, as a tall screenshot |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.

@@ -51,7 +51,7 @@ border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 20px 44px -24px rgba(
 
 # What reveals. Each item arrives on its own, a beat after the one before it.
 REVEAL = (".sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,"
-          ".gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*")
+          ".gu .card,.sw-g>*,.posts>*,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*")
 
 MOTION_JS = r"""<script>
 /* Movement only. Every word on this page is in the HTML above, so nothing here is needed to read it. Delete this block and the page still works. */

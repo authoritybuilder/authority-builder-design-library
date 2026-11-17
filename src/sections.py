@@ -887,3 +887,52 @@ def band(d, P):
         return sec("band mosaic alt", d, f'{inner}<div class="mos" aria-hidden="true">{pics}</div>')
     row = "".join(crop(i, "4/5" if i % 2 else "1/1") for i in range(6))
     return f'<section class="sec band strip"><div class="wrap">{inner}</div><div class="strip-w" aria-hidden="true"><div class="strip-t">{row}</div></div></section>'
+
+
+# ---------- ASSET SHOWCASE ----------
+# Where a site shows the thing itself: a video, the product on a laptop and a phone, slides from a talk, or recent social posts.
+# Every picture in it is a named file in the images folder (mock-1.jpg, phone-1.jpg, slide-1.jpg, post-1.jpg, video-1.jpg),
+# so the owner drops in a screenshot, an exported slide or a post and it appears in the frame.
+
+@S("showcase", """
+.show .sw-g{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(28px,6vw,88px);align-items:center}
+.show h2{margin-bottom:1rem}.show .lead{margin-top:0}.show .ticks{margin-top:1.2rem}
+.dv{position:relative;padding:0 7% 5%}
+.lap{border-radius:16px 16px 0 0;background:#15171c;padding:2.4% 2.4% 0;box-shadow:0 44px 80px -46px rgba(0,0,0,.6)}
+.lap .ph{border-radius:5px 5px 0 0;box-shadow:none;border:0;rotate:none}
+.lap::after{content:"";display:block;height:clamp(9px,1.2vw,15px);margin:0 -8.5%;background:linear-gradient(#e2e4e8,#b7bac2);border-radius:0 0 14px 14px}
+.fon{position:absolute;right:0;bottom:0;width:21%;border-radius:clamp(12px,2vw,24px);background:#15171c;padding:1.1%;box-shadow:0 30px 56px -26px rgba(0,0,0,.6)}
+.fon .ph{border-radius:clamp(9px,1.6vw,19px);box-shadow:none;border:0;rotate:none}
+.deck{position:relative;aspect-ratio:16/11.4}
+.deck .ph{position:absolute;width:72%;border-radius:10px;box-shadow:0 30px 60px -34px rgba(0,0,0,.55);border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);rotate:none;
+transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.deck .ph:nth-child(1){left:0;top:0;z-index:3}.deck .ph:nth-child(2){left:14%;top:15%;z-index:2}.deck .ph:nth-child(3){left:28%;top:30%;z-index:1}
+.deck:hover .ph:nth-child(1){transform:translate(-2%,-3%)}.deck:hover .ph:nth-child(3){transform:translate(2%,3%)}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,24px)}
+.post{background:var(--card);color:var(--ink);border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),18px);overflow:hidden;box-shadow:var(--shadow)}
+.post header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;font-size:.86rem;font-weight:700}.post header .av{width:32px;height:32px}
+.post .ph{border-radius:0;box-shadow:none;border:0;rotate:none}.post p{padding:.8rem .9rem 1rem;font-size:.9rem;color:var(--ink2);line-height:1.45}
+@media(min-width:861px){.posts .post:nth-child(2){margin-top:clamp(18px,3vw,40px)}}
+@media(max-width:860px){.show .sw-g{grid-template-columns:1fr}.show .sw-m{order:2}
+.posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;margin-inline:calc(clamp(20px,5vw,48px)*-1);padding-inline:clamp(20px,5vw,48px)}
+.post{flex:0 0 72%;scroll-snap-align:center}}
+""")
+def showcase(d, P):
+    k = d["kind"]
+    b = P["brand"]
+    if k == "social":
+        posts = "".join(
+            f'<article class="post"><header>{kit.face(b["person"])}<span>{e(b["name"])}</span></header>'
+            f'{kit.photo("post", f"post{i}", "A recent post, exported from your social account at 4:5", "4/5", alt=f"Social post: {cap}", cls="wide")}<p>{h(cap)}</p></article>'
+            for i, cap in enumerate(d["posts"]))
+        return sec("show", d, sh(dict(d, lead=d["text"])) + f'<div class="posts">{posts}</div>')
+    if k == "video":
+        media = vis({"kind": "video", "label": d["brief"], "cap": d.get("cap", "")})
+    elif k == "device":
+        media = (f'<div class="dv"><div class="lap">{kit.photo("mock", "m1", d["brief"], "16/10", alt=d["alt"], cls="wide")}</div>'
+                 f'<div class="fon">{kit.photo("phone", "p1", "The same screen on a phone, as a tall screenshot", "1/2", alt="The same screen on a phone", cls="wide")}</div></div>')
+    else:
+        media = '<div class="deck">' + "".join(
+            kit.photo("slide", f"s{i}", d["brief"], "16/9", alt=f'{d["alt"]}, {i + 1} of 3', cls="wide") for i in range(3)) + "</div>"
+    text = f'<div class="sw-c">{eyebrow(d.get("eyebrow"))}<h2>{h(d["h"])}</h2><p class="lead">{h(d["text"])}</p>{acts(d).replace(" data-in", "")}</div>'
+    return sec("show", d, f'<div class="sw-g">{text}<div class="sw-m">{media}</div></div>')

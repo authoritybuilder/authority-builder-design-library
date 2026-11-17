@@ -38,11 +38,12 @@ A quiz landing page that shows the first question and a sample result up front, 
 
 1. Hero: the question the quiz answers, with the time and the number of questions
 2. A live preview: 1 real question and a sample result, so the reader has already begun
-3. The 4 results: every outcome is a good one, which makes the quiz safe to take
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
 4. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-5. What happens next: result first, email optional
-6. Proof about what people did with their result
-7. Closing call to action
+5. The 4 results: every outcome is a good one, which makes the quiz safe to take
+6. What happens next: result first, email optional
+7. Proof about what people did with their result
+8. Closing call to action
 
 ## Search Card
 
@@ -84,12 +85,12 @@ A quiz landing page that shows the first question and a sample result up front, 
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “What is your visibility style?”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 691 words are readable in the raw HTML. The page runs 2 small scripts, for movement only and the quiz, whose questions are all in the HTML already. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 710 words are readable in the raw HTML. The page runs 2 small scripts, for movement only and the quiz, whose questions are all in the HTML already. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 218 words of body copy on the main page read at about school grade 3.5 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 230 words of body copy on the main page read at about school grade 3.4 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 6KB for phones to 17KB for a laptop and a 2560px file for large screens, and the browser picks 1. 5 photo files, the largest 78KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 5 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 10 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 6KB for phones to 17KB for a laptop and a 2560px file for large screens, and the browser picks 1. 7 photo files, the largest 78KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 7 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
 | Reading level | **Good** | The first screen reads at grade 5.6 and the whole page at grade 6.1 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
@@ -107,7 +108,7 @@ A quiz landing page that shows the first question and a sample result up front, 
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 1 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 6 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 18 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.6 to 1 for body text and 6.8 to 1 for large text. On a phone: 6.6 to 1 for body text and 6.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 60KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 64KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -174,11 +175,12 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: the question the quiz answers, with the time and the number of questions
 2. A live preview: 1 real question and a sample result, so the reader has already begun
-3. The 4 results: every outcome is a good one, which makes the quiz safe to take
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
 4. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-5. What happens next: result first, email optional
-6. Proof about what people did with their result
-7. Closing call to action
+5. The 4 results: every outcome is a good one, which makes the quiz safe to take
+6. What happens next: result first, email optional
+7. Proof about what people did with their result
+8. Closing call to action
 
 DESIGN DIRECTION
 Bento Grid. Rounded tiles on soft grey, one cobalt accent, lime and lilac for colour. Scans in a glance.

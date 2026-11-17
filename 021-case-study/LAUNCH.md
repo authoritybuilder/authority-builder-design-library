@@ -20,6 +20,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, book.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 | `scene-1.jpg` | 1200 × 900 | A place or moment | index.html | the real clinic's reception or treatment room, with the owner's permission |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides from the results deck you presented to the client, with their permission |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides from the results deck you presented to the client, with their permission |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides from the results deck you presented to the client, with their permission |
 | `guest-1.jpg` | 900 × 1125 | Sam Whitford | index.html | Sam in the clinic, natural light |
 | `face-1.jpg` | 200 × 200 | Sam Whitford | index.html | A square headshot, used with their permission |
 | `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |

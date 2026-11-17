@@ -25,7 +25,7 @@ Every section pattern used across the library, shown once on 1 page.
 | Pricing | 004, 006, 007, 008, 009, 010, 011, 012, 013, 027 |
 | Guarantee | 007, 008 |
 | Questions and answers | 004, 007, 008, 009, 011, 012, 015, 017, 018, 019, 027, 028 |
-| Closing call to action | 001, 002, 003, 004, 007, 008, 009, 011, 015, 016, 017, 019, 021, 022, 025, 027 |
+| Closing call to action | 001, 002, 003, 004, 007, 008, 009, 011, 012, 014, 015, 016, 017, 018, 019, 021, 022, 025, 027, 028 |
 | Content list | 001, 002, 003, 006, 021, 023, 024, 025, 026 |
 | Email capture band | 001, 012, 023, 024, 026 |
 | Agenda or timeline | 005, 009, 013, 015, 017, 027 |
@@ -38,4 +38,5 @@ Every section pattern used across the library, shown once on 1 page.
 | Trust strip | 012, 027 |
 | Side-by-side comparison table | 011 |
 | Show notes and transcript | 024 |
-| Picture band with the main button | 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 015, 016, 017, 019, 021, 022, 024, 025, 026, 027 |
+| Picture band with the main button | 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 021, 022, 024, 025, 026, 027 |
+| Asset showcase: video, device mockup, slides or social posts | 001, 002, 003, 004, 005, 006, 007, 008, 009, 010, 011, 012, 013, 014, 015, 016, 017, 018, 019, 021, 024, 025, 026, 027 |

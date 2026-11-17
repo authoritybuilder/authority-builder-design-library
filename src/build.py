@@ -53,7 +53,7 @@ SECTION_NAMES = {
     "cta": "Closing call to action", "feed": "Content list", "capture": "Email capture band", "schedule": "Agenda or timeline", "article": "Long-form article body",
     "player": "Podcast player", "products": "Product cards", "contact": "Contact form and details", "quiz": "Quiz question and result preview",
     "thanks": "Thank-you confirmation", "bios": "Copy-ready bios", "trust": "Trust strip", "matrix": "Side-by-side comparison table",
-    "shownotes": "Show notes and transcript", "band": "Picture band with the main button",
+    "shownotes": "Show notes and transcript", "band": "Picture band with the main button", "showcase": "Asset showcase: video, device mockup, slides or social posts",
 }
 
 SCHEMA_WHY = {
@@ -809,7 +809,8 @@ def main():
             (site / "event.ics").write_text(trust.ics(upgrades.EVENTS[P["n"]], P), newline="")
         P["photos"] = list(kit.CTX["photos"].values())
         plan[P["num"]] = dict(dir=P["dir"], folder=f"{P['dir']}/site/images", hero=f"{P['dir']}/site/images/hero-2560.webp", person=P["brand"]["person"],
-                              accent=variants.theme(P)["v"]["accent"], photos=P["photos"])
+                              accent=variants.theme(P)["v"]["accent"], photos=P["photos"],
+                              pal={k: variants.theme(P)["v"][k] for k in ("bg", "bg2", "card", "ink", "ink2", "accent", "accent-ink", "dark", "dark-ink")}, brand=P["brand"]["name"])
         (site / "netlify.toml").write_text(trust.NETLIFY)
         (site / "robots.txt").write_text(robots_txt(P))
         (site / "sitemap.xml").write_text(sitemap_xml(P, files))

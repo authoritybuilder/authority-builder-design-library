@@ -23,6 +23,8 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | Tomas Reid | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Kat Brennan | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | Dr Amara Osei | index.html | A square headshot, used with their permission |
+| `mock-1.jpg` | 1600 × 1000 | Your product or work, on a laptop | index.html | A screenshot of a client's finished website, with their permission, at 16:10 |
+| `phone-1.jpg` | 780 × 1560 | The same, on a phone | index.html | The same screen on a phone, as a tall screenshot |
 | `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.

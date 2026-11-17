@@ -69,7 +69,7 @@ TRAITS = {
 # Restraint, applied to every site before its own variation. These undo the habits that make a page look machine-made:
 # a highlighted half on every heading, icons in tinted tiles, coloured glows under buttons and cards, things that bob.
 REFINE = (
-    ".sh h2 em,.sp-g h2 em,.gu h2 em{color:inherit}"                                                    # only the first and last headline carry the accent; section headings stay in ink
+    ".sh h2 em,.sp-g h2 em,.gu h2 em,.show h2 em{color:inherit}"                                                    # only the first and last headline carry the accent; section headings stay in ink
     ".chip-ic{display:block;width:auto;height:auto;background:none;border-radius:0;margin-bottom:1.2rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}"
     ".chip-ic .ic{width:28px;height:28px;stroke-width:1.5}"
     ".float,.float.f2{animation:none}"
@@ -278,10 +278,75 @@ def html_attrs(P):
 BLEED = ("hero_split", "hero_center", "hero_form", "hero_stage", "cta", "band")
 
 
+# The asset showcase on each site: what it shows, and the words beside it. kind is video, device, deck or social.
+SHOW = {
+    1: dict(kind="video", eyebrow="Meet your coach", h="Two Minutes With Guy, *Before You Book*", cap="A 2-minute introduction",
+            text="Hear how the coaching works in his own words, then decide whether a call is worth your time.",
+            brief="Video brief: you to camera at your desk, about 2 minutes, saying who you help and how a first call runs"),
+    4: dict(kind="video", eyebrow="Meet your bookkeeper", h="Put A Face *To The Numbers*", cap="A short hello",
+            text="A short hello from Guy, and what happens in your first month.", brief="Video brief: you in the office, about 90 seconds, saying hello and walking through month 1"),
+    5: dict(kind="video", eyebrow="In his own words", h="The Story, *On Film*", cap="The story, told to camera",
+            text="The years out, the way back and what it taught him about returning to work.", brief="Video brief: you telling your story to camera, 3 minutes at most"),
+    10: dict(kind="video", eyebrow="Inside the room", h="What A Session *Looks Like*", cap="From the last retreat",
+             text="A short film from the last retreat, shared with members' permission.", brief="Video brief: the room, the table and the conversation, with members' permission"),
+    19: dict(kind="video", eyebrow="Before you book", h="See How *The Call Runs*", cap="How the call runs",
+             text="A short walk-through of the call, so nothing on the day is a surprise.", brief="Video brief: a screen recording of you walking through the call agenda"),
+    27: dict(kind="video", eyebrow="The place", h="Walk Through *The Lodge*", cap="A walk through the lodge",
+             text="A short film of the rooms, the valley and the table where the work happens.", brief="Video brief: a slow walk through the venue, inside and out"),
+    2: dict(kind="deck", eyebrow="The thinking", h="The Pricing Review, *In 3 Slides*", alt="Sample slide from the pricing review",
+            text="A sample of the deck partners see in the first conversation.", brief="3 slides exported from your deck at 16:9"),
+    6: dict(kind="deck", eyebrow="The keynote", h="A Look At *The Slides*", alt="Sample slide from the keynote",
+            text="3 slides from the talk, so you can see the style before you book.", brief="3 slides exported from your keynote at 16:9"),
+    13: dict(kind="deck", eyebrow="The workshop", h="What Your Managers *See On The Day*", alt="Sample slide from the workshop",
+             text="Sample slides from the workshop.", brief="3 slides exported from your workshop deck at 16:9"),
+    15: dict(kind="deck", eyebrow="A preview", h="3 Slides From *The Masterclass*", alt="Sample slide from the masterclass",
+             text="A taste of what the hour covers.", brief="3 slides exported from your masterclass deck at 16:9"),
+    21: dict(kind="deck", eyebrow="The evidence", h="The Numbers, *On 3 Slides*", alt="Slide from the results presentation",
+             text="The before and after, as presented to the clinic.", brief="3 slides from the results deck you presented to the client, with their permission"),
+    26: dict(kind="deck", eyebrow="Look inside", h="3 Pages *From The Book*", alt="Sample page from the book",
+             text="Sample spreads from the first chapters.", brief="3 spreads from your book, exported at 16:9"),
+    3: dict(kind="device", eyebrow="The system", h="See It *On Screen*", alt="A recent issue open on a laptop",
+            text="What lands in your inbox each Sunday, on a laptop and on a phone.", brief="A screenshot of a recent issue, at 16:10"),
+    8: dict(kind="device", eyebrow="Inside the course", h="What You See *When You Log In*", alt="The lesson library on a laptop",
+            text="The lesson library on a laptop, and the same lessons on your phone.", brief="A screenshot of your course library, at 16:10"),
+    9: dict(kind="device", eyebrow="Inside the membership", h="Where The Table *Meets*", alt="The members' space on a laptop",
+            text="The members' space, on whichever screen is nearest.", brief="A screenshot of your community space, at 16:10"),
+    11: dict(kind="device", eyebrow="Recent work", h="A Brand, *Out In The World*", alt="A recent client website on a laptop",
+             text="A website and its phone view from a recent Full Identity project.", brief="A screenshot of a client's finished website, with their permission, at 16:10"),
+    12: dict(kind="device", eyebrow="A closer look", h="See A Template *Opened Up*", alt="A template open on a laptop",
+             text="A template on a laptop and a phone, ready for your logo and colours.", brief="A screenshot of 1 template open in its editor, at 16:10"),
+    14: dict(kind="device", eyebrow="A preview", h="A Page *From The Script*", alt="A page of the guide on a laptop",
+             text="What the guide looks like on your screen.", brief="A screenshot of 1 page of your guide, at 16:10"),
+    16: dict(kind="device", eyebrow="Your result", h="What Your Result *Looks Like*", alt="A quiz result on a laptop",
+             text="Your style and your scores, on screen as soon as you finish.", brief="A screenshot of a finished quiz result, at 16:10"),
+    25: dict(kind="device", eyebrow="A sample issue", h="What Lands *Every Tuesday*", alt="A recent teardown open on a laptop",
+             text="A recent teardown, as it looks in your inbox.", brief="A screenshot of a recent issue, at 16:10"),
+    7: dict(kind="social", eyebrow="From the feed", h="The Method, *In Public*", text="3 recent posts. Follow along before you join.",
+            posts=["The 3 things I stopped doing in my business this year.", "What a 4-day week looks like on a calendar.", "The handover checklist I give every member."]),
+    17: dict(kind="social", eyebrow="Join in", h="The Sprint, *Day By Day*", text="Each day's task is posted here too. Share yours with the group.",
+             posts=["Day 1: name the offer in 1 line.", "Day 3: put a price on it.", "Day 5: show it to 3 real people."]),
+    18: dict(kind="social", eyebrow="Follow the build", h="Watch It *Take Shape*", text="I am sharing the build as it happens.",
+             posts=["Why I am building a mentorship, not a course.", "The first session plan, in draft.", "What founding members asked for."]),
+    24: dict(kind="social", eyebrow="Clips", h="Short Clips *From The Show*", text="3 moments from recent episodes.",
+             posts=["On leaving law at 43.", "The first week in a new career.", "The advice that changed the plan."]),
+}
+
+
 def enrich(P):
+    show = SHOW.get(P["n"])
+    if show and len(P["sections"]) >= 3:   # the asset showcase sits early, straight after the first section under the hero
+        P["sections"].insert(2, ("showcase", dict(show, _="Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts")))
     """Add the picture band: a painted break in the middle of the page that repeats the main button, placed after the proof when there is some."""
-    b = V.get(P["n"], {}).get("band")
     secs = P["sections"]
+    hero0 = secs[0][1]
+    last = secs[-1][0]
+    if last not in ("cta", "contact", "capture", "linkbio", "feed", "article") and secs[0][0].startswith("hero") and hero0.get("h"):
+        # a page that ended on its questions or its story now closes by restating the promise beside the button
+        act = P.get("cta") or hero0.get("cta") or ((hero0["form"].get("button", "Get Started"), "#" + hero0.get("fid", "signup")) if hero0.get("form") else None)
+        if act:
+            secs.append(("cta", dict(_="Closing call to action: the promise restated beside the button, so the page never ends on a dead stop",
+                                     h=hero0["h"], cta=act, note=hero0.get("reassure") or (hero0.get("form") or {}).get("note"))))
+    b = V.get(P["n"], {}).get("band")
     if not b or len(secs) < 5:
         return
     names = [n for n, _ in secs]

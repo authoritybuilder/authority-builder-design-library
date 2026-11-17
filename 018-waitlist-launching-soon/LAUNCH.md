@@ -22,6 +22,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
+| `post-1.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
+| `post-2.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
+| `post-3.jpg` | 1080 × 1350 | A social post | index.html | A recent post, exported from your social account at 4:5 |
 | `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 
 - [ ] Replace every photo of you. Use the same headshot on your social profiles so people recognise you.

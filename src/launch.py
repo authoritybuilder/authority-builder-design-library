@@ -51,7 +51,8 @@ def launch_md(P, site):
          "## 2. Your Photos", "",
          "Every picture is a file in `site/images/`. To use your own, save it under the same file name, at about the size shown. Nothing in the code needs to change.",
          "The files that ship are painted stand-ins, each labelled with its file name. The pre-launch check tells you which are still in place.", ""]
-    names = {"you": "You", "me": "You", "guest": "A client", "face": "A client or reader", "scene": "A place or moment", "video": "A video still"}
+    names = {"you": "You", "me": "You", "guest": "A client", "face": "A client or reader", "scene": "A place or moment", "video": "A video still",
+             "mock": "Your product or work, on a laptop", "phone": "The same, on a phone", "slide": "A slide or page", "post": "A social post"}
     L += ["| File | Size | Who Or What | On | The Photo To Take |", "|---|---|---|---|---|"]
     L += ["| `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |"]
     for ph in P.get("photos", []):

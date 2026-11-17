@@ -39,13 +39,14 @@ A services page that ends the awkward how-much email. 3 fixed-price packages, wh
 
 1. Hero: the promise of clarity. Fixed prices, visible
 2. 3 packages side by side, the middle one recommended, each with a timeframe
-3. Comparison table: every package side by side, so the difference is seen in 1 look
-4. What every project includes and excludes: removes scope anxiety
-5. Process with real timings
-6. Proof tied to each package
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. Pricing questions, answered directly
-9. Closing call to action
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Comparison table: every package side by side, so the difference is seen in 1 look
+5. What every project includes and excludes: removes scope anxiety
+6. Process with real timings
+7. Proof tied to each package
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. Pricing questions, answered directly
+10. Closing call to action
 
 ## Search Card
 
@@ -87,12 +88,12 @@ A services page that ends the awkward how-much email. 3 fixed-price packages, wh
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “Three ways to work together. All with a price on them.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 819 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 839 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 400 words of body copy on the main page read at about school grade 3.6 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 412 words of body copy on the main page read at about school grade 3.7 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 14 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 31KB for phones to 67KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 74KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 16 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 31KB for phones to 67KB for a laptop and a 2560px file for large screens, and the browser picks 1. 8 photo files, the largest 74KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 8 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
 | Reading level | **Good** | The first screen reads at grade 7.3 and the whole page at grade 7.7 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
@@ -109,7 +110,7 @@ A services page that ends the awkward how-much email. 3 fixed-price packages, wh
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Compare The Packages”) ends 480px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 11 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 23 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.3 to 1 for body text and 5.4 to 1 for large text. On a phone: 6.8 to 1 for body text and 5.9 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 64KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 67KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -176,13 +177,14 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: the promise of clarity. Fixed prices, visible
 2. 3 packages side by side, the middle one recommended, each with a timeframe
-3. Comparison table: every package side by side, so the difference is seen in 1 look
-4. What every project includes and excludes: removes scope anxiety
-5. Process with real timings
-6. Proof tied to each package
-7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-8. Pricing questions, answered directly
-9. Closing call to action
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. Comparison table: every package side by side, so the difference is seen in 1 look
+5. What every project includes and excludes: removes scope anxiety
+6. Process with real timings
+7. Proof tied to each package
+8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+9. Pricing questions, answered directly
+10. Closing call to action
 
 DESIGN DIRECTION
 Warm Editorial. Paper tones, a bookish serif, italic emphasis. Feels like a considered letter.

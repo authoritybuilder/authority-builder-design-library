@@ -23,6 +23,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your deck at 16:9 |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your deck at 16:9 |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your deck at 16:9 |
 | `guest-1.jpg` | 900 × 1125 | Helen Ashby | index.html | the client, in their own office |
 | `you-2.jpg` | 900 × 1125 | You | index.html | a plain, well-lit portrait. Jacket, no tie, direct eye contact |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, book.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |

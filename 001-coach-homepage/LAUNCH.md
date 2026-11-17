@@ -22,6 +22,7 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | Priya N. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Tom A. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Kirra W. | index.html | A square headshot, used with their permission |
+| `video-1.jpg` | 1280 × 720 | A video still | index.html | you to camera at your desk, about 2 minutes, saying who you help and how a first call runs |
 | `you-2.jpg` | 900 × 1125 | You | index.html | a candid, working shot. Notebook open, coffee, real desk |
 | `you-headshot.jpg` | 240 × 240 | You | index.html, contact.html, book.html, thank-you.html, 404.html | Your headshot, cropped square. It appears small wherever your name does |
 

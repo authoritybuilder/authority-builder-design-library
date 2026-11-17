@@ -153,6 +153,28 @@ h1[data-in]{animation-name:slide}
 .logos li:nth-child(3n+2)::before{border-radius:3px;rotate:45deg}.logos li:nth-child(3n)::before{background:none;border:4px solid currentColor}
 @media(max-width:600px){.logos ul{gap:.7rem 1.4rem}.logos li{font-size:1.02rem}.logos li:nth-child(even){font-size:.78rem}.logos li::before{width:12px;height:12px}}
 
+.show .sw-g{display:grid;grid-template-columns:.82fr 1.18fr;gap:clamp(28px,6vw,88px);align-items:center}
+.show h2{margin-bottom:1rem}.show .lead{margin-top:0}.show .ticks{margin-top:1.2rem}
+.dv{position:relative;padding:0 7% 5%}
+.lap{border-radius:16px 16px 0 0;background:#15171c;padding:2.4% 2.4% 0;box-shadow:0 44px 80px -46px rgba(0,0,0,.6)}
+.lap .ph{border-radius:5px 5px 0 0;box-shadow:none;border:0;rotate:none}
+.lap::after{content:"";display:block;height:clamp(9px,1.2vw,15px);margin:0 -8.5%;background:linear-gradient(#e2e4e8,#b7bac2);border-radius:0 0 14px 14px}
+.fon{position:absolute;right:0;bottom:0;width:21%;border-radius:clamp(12px,2vw,24px);background:#15171c;padding:1.1%;box-shadow:0 30px 56px -26px rgba(0,0,0,.6)}
+.fon .ph{border-radius:clamp(9px,1.6vw,19px);box-shadow:none;border:0;rotate:none}
+.deck{position:relative;aspect-ratio:16/11.4}
+.deck .ph{position:absolute;width:72%;border-radius:10px;box-shadow:0 30px 60px -34px rgba(0,0,0,.55);border:1px solid color-mix(in srgb,var(--ink) 12%,transparent);rotate:none;
+transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.deck .ph:nth-child(1){left:0;top:0;z-index:3}.deck .ph:nth-child(2){left:14%;top:15%;z-index:2}.deck .ph:nth-child(3){left:28%;top:30%;z-index:1}
+.deck:hover .ph:nth-child(1){transform:translate(-2%,-3%)}.deck:hover .ph:nth-child(3){transform:translate(2%,3%)}
+.posts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(12px,1.8vw,24px)}
+.post{background:var(--card);color:var(--ink);border:max(1px,var(--bw)) solid var(--line);border-radius:min(var(--r),18px);overflow:hidden;box-shadow:var(--shadow)}
+.post header{display:flex;align-items:center;gap:.6rem;padding:.75rem .9rem;font-size:.86rem;font-weight:700}.post header .av{width:32px;height:32px}
+.post .ph{border-radius:0;box-shadow:none;border:0;rotate:none}.post p{padding:.8rem .9rem 1rem;font-size:.9rem;color:var(--ink2);line-height:1.45}
+@media(min-width:861px){.posts .post:nth-child(2){margin-top:clamp(18px,3vw,40px)}}
+@media(max-width:860px){.show .sw-g{grid-template-columns:1fr}.show .sw-m{order:2}
+.posts{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.6rem;margin-inline:calc(clamp(20px,5vw,48px)*-1);padding-inline:clamp(20px,5vw,48px)}
+.post{flex:0 0 72%;scroll-snap-align:center}}
+
 .sp-g{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(28px,6vw,84px);align-items:center}
 .sp-g h2{margin-bottom:1.2rem}.sp-g .ticks{margin-top:1.2rem}
 .split.flip .sp-v{order:2}
@@ -412,7 +434,7 @@ border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 20px 44px -24px rgba(
 }
 }
 @media print{.sticky{display:none}}
-.sh h2 em,.sp-g h2 em,.gu h2 em{color:inherit}.chip-ic{display:block;width:auto;height:auto;background:none;border-radius:0;margin-bottom:1.2rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}.chip-ic .ic{width:28px;height:28px;stroke-width:1.5}.float,.float.f2{animation:none}.tier.hot{box-shadow:0 30px 60px -38px color-mix(in srgb,var(--ink) 55%,transparent)}::selection{background:var(--accent);color:var(--accent-ink)}body{font-feature-settings:'kern','liga','calt';hanging-punctuation:first}.stats b,.st-g b,.hstats b,.tier .pc,.mt td{font-variant-numeric:lining-nums tabular-nums}.sh{margin-bottom:clamp(36px,5vw,64px)}.sh .eyebrow{margin-bottom:1.15rem}.card p,.stp p,.fd-l p{max-width:62ch}a:not(.btn):not(.logo):not(.door):not(.card){text-decoration-thickness:1px;text-underline-offset:.22em}
+.sh h2 em,.sp-g h2 em,.gu h2 em,.show h2 em{color:inherit}.chip-ic{display:block;width:auto;height:auto;background:none;border-radius:0;margin-bottom:1.2rem;padding-bottom:1.1rem;border-bottom:1px solid var(--line)}.chip-ic .ic{width:28px;height:28px;stroke-width:1.5}.float,.float.f2{animation:none}.tier.hot{box-shadow:0 30px 60px -38px color-mix(in srgb,var(--ink) 55%,transparent)}::selection{background:var(--accent);color:var(--accent-ink)}body{font-feature-settings:'kern','liga','calt';hanging-punctuation:first}.stats b,.st-g b,.hstats b,.tier .pc,.mt td{font-variant-numeric:lining-nums tabular-nums}.sh{margin-bottom:clamp(36px,5vw,64px)}.sh .eyebrow{margin-bottom:1.15rem}.card p,.stp p,.fd-l p{max-width:62ch}a:not(.btn):not(.logo):not(.door):not(.card){text-decoration-thickness:1px;text-underline-offset:.22em}
 /* this site's own variation: Black And Spotlight Gold */
 .sh{max-width:980px}.sh h2{font-size:clamp(2.05rem,calc(4.5vw*var(--hs)),calc(3.7rem*var(--hs)))}.sec.alt{clip-path:polygon(0 clamp(18px,3.2vw,48px),100% 0,100% calc(100% - clamp(18px,3.2vw,48px)),0 100%);padding-block:clamp(88px,11vw,156px)}@media(min-width:900px){body::after{content:"";position:fixed;inset:0;z-index:45;pointer-events:none;background-image:var(--grain);opacity:.07;mix-blend-mode:overlay}}
 </style>
@@ -425,6 +447,8 @@ border-radius:min(calc(var(--rb) + 0px),40px);box-shadow:0 20px 44px -24px rgba(
 <section class="sec hero hstage bleed t-light  "><picture class="art"><img src="images/hero-960.webp" srcset="images/hero-960.webp 960w, images/hero-1280.webp 1280w, images/hero-1920.webp 1920w, images/hero-2560.webp 2560w" sizes="100vw" width="1920" height="1200" alt="An empty theatre stage with dark curtains under dim light" fetchpriority="high" decoding="async"></picture><div class="wrap"><div class="hst-g"><div><p class="eyebrow">Keynote speaker · Attention at work</p><h1 data-in style="--i:1">Your team is not lazy. <em>They are interrupted.</em></h1><p class="lead" data-in style="--i:2">Guy Incognito shows leaders how to win back 6 hours of focused work a week, per person, without a new app or a single extra meeting.</p><div class="acts" data-in style="--i:3"><a class="btn" href="#book">Check A Date</a><a class="btn ghost" href="#reel">Watch The Reel</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>Keynotes from $12,000 plus travel. A reply within 1 business day.</span></p></div><div class="hst-v" data-in style="--i:2"><!-- Photo brief: on stage, mid-gesture, audience visible in the foreground --><div class="ph photo" style="--ar:3/4"><img src="images/you-1.jpg" width="900" height="1125" alt="Guy Incognito" loading="lazy" decoding="async"></div></div></div><div class="hstats"><div><b>140</b><span>keynotes delivered</span></div><div><b>5,000</b><span>largest live audience</span></div><div><b>9.4 / 10</b><span>average organiser rating</span></div><div><b>12</b><span>countries</span></div></div></div></section>
 <!-- Proof strip: stages spoken on, as text -->
 <section class="sec logos  "><div class="wrap"><p>Stages include</p><ul><li>Future of Work Summit</li><li>People &amp; Culture Live</li><li>NorthTech</li><li>Leaders Forum</li><li>The Operations Show</li></ul></div></section>
+<!-- Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts -->
+<section class="sec show  "><div class="wrap"><div class="sw-g"><div class="sw-c"><p class="eyebrow">The keynote</p><h2>A Look At <em>The Slides</em></h2><p class="lead">3 slides from the talk, so you can see the style before you book.</p></div><div class="sw-m"><div class="deck"><div class="ph photo wide" style="--ar:16/9"><img src="images/slide-1.jpg" width="1600" height="900" alt="Sample slide from the keynote, 1 of 3" loading="lazy" decoding="async"></div><div class="ph photo wide" style="--ar:16/9"><img src="images/slide-2.jpg" width="1600" height="900" alt="Sample slide from the keynote, 2 of 3" loading="lazy" decoding="async"></div><div class="ph photo wide" style="--ar:16/9"><img src="images/slide-3.jpg" width="1600" height="900" alt="Sample slide from the keynote, 3 of 3" loading="lazy" decoding="async"></div></div></div></div></div></section>
 <!-- The reel: a video above the fold of the decision, with a transcript for search -->
 <section class="sec split  " id="reel"><div class="wrap"><div class="sp-g"><div class="sp-v"><!-- Video brief: 3-minute reel. Host it properly and add a text transcript beneath --><div class="ph photo wide vid" style="--ar:16/9"><img src="images/video-1.jpg" width="1280" height="720" alt="" loading="lazy" decoding="async"><i class="play" aria-hidden="true"></i></div></div><div><p class="eyebrow">Speaker reel</p><h2>3 Minutes That Show <em>The Room</em></h2><p>The fastest way to judge a speaker is to watch them work a room. This reel is cut from 4 events in 2026, including a 5,000-seat arena and a 60-person offsite.</p><ul class="ticks"><li>Full 45-minute keynote available on request</li><li>Captions and transcript included</li></ul><div class="acts" style="--i:3"><a class="btn" href="#book">Request The Full Keynote</a></div><p class="reassure"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z M9 12l2 2 4-4"/></svg><span>3 minutes. Captions on. A text summary sits under the video.</span></p></div></div></div></section>
 <!-- Topics: 3 keynotes, each sold by the outcome for the audience -->
@@ -466,7 +490,7 @@ if(W.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
 var vh=W.innerHeight,todo=[],tick=0;
 function show(){tick=0;vh=W.innerHeight;todo=todo.filter(function(t){if(t.getBoundingClientRect().top>vh*.96)return 1;t.classList.add('in');
 setTimeout(function(){t.removeAttribute('data-rv');t.classList.remove('in');t.style.removeProperty('--d')},1200)})}
-q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
+q('.sh,.grid>*,.stp>li,.fd-l>li,.sch>li,.sp-g>*,.cmp>*,.st-g>*,.mod details,.faq details,.wall>figure,.feature>*,.pr-1>*,.pr-q,.pr-a,.mt-g>*,.mxw,.gu .card,.sw-g>*,.posts>*,.cap .wrap>*,.cta .wrap>*,.trust li,.bn>.tile,.band .bd-c>*,.mos>*,.lb-l a,.prose .wrap>*,.art .wrap>*').forEach(function(el){if(el.closest('.hero,.hdw,.sticky,[data-rv]')||el.getBoundingClientRect().top<vh*.94)return;
 el.style.setProperty('--d',[].indexOf.call(el.parentNode.children,el)%4);q('img[loading=lazy]',el).forEach(function(i){i.loading='eager'});el.setAttribute('data-rv','');todo.push(el)});
 function ask(){if(!tick&&todo.length)tick=W.requestAnimationFrame(show)}W.addEventListener('scroll',ask,{passive:true});W.addEventListener('resize',ask);
 })();

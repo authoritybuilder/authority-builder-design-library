@@ -40,16 +40,17 @@ A long-form sales page for a group coaching program. It walks the reader from re
 
 1. Hero: the reader's situation, the outcome and the timeframe. 1 button. No menu
 2. The problem, in the reader's own words: name it, show what it costs, then turn
-3. The named method: 3 stages that make the promise believable
-4. What is inside: 6 modules, each with outcomes, in an accordion that works without JavaScript
-5. Who it is for and who it is not for: protects the reader's right to say no
-6. The guide: why this coach, with specifics
-7. Proof wall: results first, in the client's words, with the results-vary note
-8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-9. Price, shown after the value, with 2 ways to pay and the same total stated plainly
-10. Risk reversal with its terms stated honestly
-11. Objections answered in order of how often they are asked
-12. Closing call to action: the promise, the date and the same single button
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. The named method: 3 stages that make the promise believable
+5. What is inside: 6 modules, each with outcomes, in an accordion that works without JavaScript
+6. Who it is for and who it is not for: protects the reader's right to say no
+7. The guide: why this coach, with specifics
+8. Proof wall: results first, in the client's words, with the results-vary note
+9. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+10. Price, shown after the value, with 2 ways to pay and the same total stated plainly
+11. Risk reversal with its terms stated honestly
+12. Objections answered in order of how often they are asked
+13. Closing call to action: the promise, the date and the same single button
 
 ## Search Card
 
@@ -92,15 +93,15 @@ A long-form sales page for a group coaching program. It walks the reader from re
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 9 pages. This page's reads: “Build the business that does not need you at 9pm.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 1362 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 1413 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 796 words of body copy on the main page read at about school grade 3.6 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 829 words of body copy on the main page read at about school grade 3.6 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 18 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 22KB for phones to 61KB for a laptop and a 2560px file for large screens, and the browser picks 1. 11 photo files, the largest 73KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 3 of the 11 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 24 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 22KB for phones to 61KB for a laptop and a 2560px file for large screens, and the browser picks 1. 14 photo files, the largest 73KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 3 of the 14 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.0 and the whole page at grade 6.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.0 and the whole page at grade 6.1 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -114,7 +115,7 @@ A long-form sales page for a group coaching program. It walks the reader from re
 | A button is on the first screen of a phone | **Good** | On a 390 by 844 phone the first button in the page (“Join The February Intake”) ends 644px down. A bar pinned to the bottom of the phone screen carries the main button the whole way down the page. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 17 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 20 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 6.8 to 1 for body text and 4.9 to 1 for large text. On a phone: 6.7 to 1 for body text and 5 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 66KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 70KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -192,16 +193,17 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: the reader's situation, the outcome and the timeframe. 1 button. No menu
 2. The problem, in the reader's own words: name it, show what it costs, then turn
-3. The named method: 3 stages that make the promise believable
-4. What is inside: 6 modules, each with outcomes, in an accordion that works without JavaScript
-5. Who it is for and who it is not for: protects the reader's right to say no
-6. The guide: why this coach, with specifics
-7. Proof wall: results first, in the client's words, with the results-vary note
-8. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-9. Price, shown after the value, with 2 ways to pay and the same total stated plainly
-10. Risk reversal with its terms stated honestly
-11. Objections answered in order of how often they are asked
-12. Closing call to action: the promise, the date and the same single button
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. The named method: 3 stages that make the promise believable
+5. What is inside: 6 modules, each with outcomes, in an accordion that works without JavaScript
+6. Who it is for and who it is not for: protects the reader's right to say no
+7. The guide: why this coach, with specifics
+8. Proof wall: results first, in the client's words, with the results-vary note
+9. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+10. Price, shown after the value, with 2 ways to pay and the same total stated plainly
+11. Risk reversal with its terms stated honestly
+12. Objections answered in order of how often they are asked
+13. Closing call to action: the promise, the date and the same single button
 
 DESIGN DIRECTION
 Soft Organic. Sage, cream and clay with soft blob shapes. Calm, human and unhurried.

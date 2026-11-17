@@ -38,14 +38,15 @@ A speaker page built for the person who actually books speakers: an event organi
 
 1. Hero: the speaker's 1 idea at full volume, with the numbers an organiser needs
 2. Proof strip: stages spoken on, as text
-3. The reel: a video above the fold of the decision, with a transcript for search
-4. Topics: 3 keynotes, each sold by the outcome for the audience
-5. Testimonials from organisers, not attendees: the buyer's peers
-6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-7. Copy-ready bios: the exact words an organiser can paste into a program
-8. Downloads list: everything an event team asks for, in 1 place
-9. Fee guide: printed, because budget fit is the first thing a planner checks
-10. Booking enquiry: the 4 facts an agent needs, nothing more
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. The reel: a video above the fold of the decision, with a transcript for search
+5. Topics: 3 keynotes, each sold by the outcome for the audience
+6. Testimonials from organisers, not attendees: the buyer's peers
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. Copy-ready bios: the exact words an organiser can paste into a program
+9. Downloads list: everything an event team asks for, in 1 place
+10. Fee guide: printed, because budget fit is the first thing a planner checks
+11. Booking enquiry: the 4 facts an agent needs, nothing more
 
 ## Search Card
 
@@ -89,15 +90,15 @@ A speaker page built for the person who actually books speakers: an event organi
 | Check | Result | What was seen |
 |---|---|---|
 | 1 clear headline Google can read | **Good** | 1 H1 on each of the 8 pages. This page's reads: “Your team is not lazy. They are interrupted.”. It is plain text, not a rotating or animated headline. |
-| The content is in the HTML, not drawn by JavaScript | **Good** | 775 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
+| The content is in the HTML, not drawn by JavaScript | **Good** | 796 words are readable in the raw HTML. The page runs 1 small script, for movement only. AI crawlers that do not run JavaScript see everything a visitor sees. |
 | Forms work | **Good** | 2 forms across the site. Each posts to thank-you.html, names its fields, marks what is required and carries a spam trap. They collect entries on Netlify once form detection is on, or on any host once the action points at your form tool. The first version's forms did nothing. |
-| Plain words | **Good** | The 360 words of body copy on the main page read at about school grade 5.3 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
+| Plain words | **Good** | The 373 words of body copy on the main page read at about school grade 5.1 on the Flesch-Kincaid scale. Unbounce's study of 41,000 landing pages, as reported by Apexure, found pages written at grade 5 to 7 converted at about twice the rate of professional-level copy. |
 | Dates and weekdays agree | **Good** | Every weekday named beside a date is the right one for the coming year. |
-| Images are sized, described and sent in a phone size | **Good** | 8 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 26KB for phones to 74KB for a laptop and a 2560px file for large screens, and the browser picks 1. 6 photo files, the largest 91KB. Only the painting loads early. Everything else waits until it is near the screen. |
-| A real person is on the page | **Your turn** | 2 of the 6 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
+| Images are sized, described and sent in a phone size | **Good** | 11 image tags on the main page, all with alt text, width and height, so nothing jumps as they load. The painting comes in 4 sizes, from 26KB for phones to 74KB for a laptop and a 2560px file for large screens, and the browser picks 1. 9 photo files, the largest 110KB. Only the painting loads early. Everything else waits until it is near the screen. |
+| A real person is on the page | **Your turn** | 2 of the 9 photo files are for pictures of you, and your face appears on the first screen, beside the form and on the thank-you page. The files that ship are painted stand-ins. Save your own under the same names. LAUNCH.md lists each file, its size and the shot to take. |
 | Share tags and a share image | **Fixed** | Open Graph tags are set and share.jpg is a real 1200 by 630 image in the site folder. The first version pointed at an image that did not exist. |
 | No orphan pages | **Good** | Every page is linked from the main page. |
-| Reading level | **Good** | The first screen reads at grade 7.9 and the whole page at grade 9.0 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
+| Reading level | **Good** | The first screen reads at grade 7.9 and the whole page at grade 8.9 (Flesch-Kincaid). Landing pages written at grade 5 to 7 convert best in Unbounce's data. |
 
 ### Speed And Mobile
 
@@ -112,7 +113,7 @@ A speaker page built for the person who actually books speakers: an event organi
 | Form fields do not make a phone zoom in | **Good** | The smallest text in any of the 3 form fields is 17px. Phones zoom the page when a field is under 16px. |
 | Buttons are easy to tap | **Good** | The smallest button or form field on a phone is 48px tall. 12 were measured. |
 | Words on the painting stay readable | **Good** | A contrast checker cannot read text over a picture, so each of the 23 lines of text on a painted section was measured against the pixels directly behind it, at the hardest-to-read part of the line. Lowest result on a desktop: 12.6 to 1 for body text and 13.8 to 1 for large text. On a phone: 13.4 to 1 for body text and 13.1 to 1 for large text. The bar is 4.5 to 1 for body text and 3 to 1 for large text. |
-| Page weight | **Good** | The HTML is 62KB before compression, plus the web fonts and 1 painting. |
+| Page weight | **Good** | The HTML is 66KB before compression, plus the web fonts and 1 painting. |
 | HTTPS and security headers | **Your turn** | netlify.toml sets the security headers and long-term caching for images, and Netlify adds HTTPS by default. On another host, set the same headers there. After launch, check that every address is https. |
 
 ### Structured Data
@@ -190,14 +191,15 @@ ABOUT MY BUSINESS
 STRUCTURE, IN THIS ORDER
 1. Hero: the speaker's 1 idea at full volume, with the numbers an organiser needs
 2. Proof strip: stages spoken on, as text
-3. The reel: a video above the fold of the decision, with a transcript for search
-4. Topics: 3 keynotes, each sold by the outcome for the audience
-5. Testimonials from organisers, not attendees: the buyer's peers
-6. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
-7. Copy-ready bios: the exact words an organiser can paste into a program
-8. Downloads list: everything an event team asks for, in 1 place
-9. Fee guide: printed, because budget fit is the first thing a planner checks
-10. Booking enquiry: the 4 facts an agent needs, nothing more
+3. Asset showcase: the thing itself, shown. Swap the files for your own video still, screenshots, slides or posts
+4. The reel: a video above the fold of the decision, with a transcript for search
+5. Topics: 3 keynotes, each sold by the outcome for the audience
+6. Testimonials from organisers, not attendees: the buyer's peers
+7. Picture band: a painted pause in the middle of the page that repeats the main button, straight after the proof
+8. Copy-ready bios: the exact words an organiser can paste into a program
+9. Downloads list: everything an event team asks for, in 1 place
+10. Fee guide: printed, because budget fit is the first thing a planner checks
+11. Booking enquiry: the 4 facts an agent needs, nothing more
 
 DESIGN DIRECTION
 Dark Stage. Near-black with a spotlight gold and tall condensed capitals. Built for presence.

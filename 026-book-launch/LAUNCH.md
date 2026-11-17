@@ -22,6 +22,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | Ian Mbeki | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Dr Clare Whitby | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | Rosa Delgado | index.html | A square headshot, used with their permission |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 spreads from your book, exported at 16:9 |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 spreads from your book, exported at 16:9 |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 spreads from your book, exported at 16:9 |
 | `you-1.jpg` | 900 × 1125 | You | index.html | the official author photo. Use this same image everywhere the book is listed |
 | `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 

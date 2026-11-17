@@ -19,6 +19,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 |---|---|---|---|---|
 | `hero-2560.webp`, `hero-1920.webp`, `hero-1280.webp`, `hero-960.webp` | 2560, 1920, 1280 and 960 wide, all 16:10 | The background photograph, from Pexels | every section with a picture behind it | It can stay: Pexels photographs are free to use. Your own wide photo with a quiet area for the words is better |
 | `you-1.jpg` | 900 × 1125 | You | index.html, about.html | on stage, mid-gesture, audience visible in the foreground |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your keynote at 16:9 |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your keynote at 16:9 |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your keynote at 16:9 |
 | `video-1.jpg` | 1280 × 720 | A video still | index.html | 3-minute reel. Host it properly and add a text transcript beneath |
 | `face-1.jpg` | 200 × 200 | Mei L. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Andre P. | index.html | A square headshot, used with their permission |

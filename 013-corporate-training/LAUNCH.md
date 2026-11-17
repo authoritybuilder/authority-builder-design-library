@@ -24,6 +24,9 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-2.jpg` | 200 × 200 | Team leader | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
 | `face-4.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
+| `slide-1.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your workshop deck at 16:9 |
+| `slide-2.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your workshop deck at 16:9 |
+| `slide-3.jpg` | 1600 × 900 | A slide or page | index.html | 3 slides exported from your workshop deck at 16:9 |
 | `face-5.jpg` | 200 × 200 | Learning and development lead | index.html | A square headshot, used with their permission |
 | `you-1.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 

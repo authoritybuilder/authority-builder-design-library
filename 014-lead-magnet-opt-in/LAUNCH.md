@@ -22,6 +22,8 @@ The files that ship are painted stand-ins, each labelled with its file name. The
 | `face-1.jpg` | 200 × 200 | Jess T. | index.html | A square headshot, used with their permission |
 | `face-2.jpg` | 200 × 200 | Marcus L. | index.html | A square headshot, used with their permission |
 | `face-3.jpg` | 200 × 200 | A client or reader | index.html | A square headshot, used with their permission |
+| `mock-1.jpg` | 1600 × 1000 | Your product or work, on a laptop | index.html | A screenshot of 1 page of your guide, at 16:10 |
+| `phone-1.jpg` | 780 × 1560 | The same, on a phone | index.html | The same screen on a phone, as a tall screenshot |
 | `you-1.jpg` | 900 × 1125 | You | index.html | friendly, direct, plain background |
 | `you-2.jpg` | 900 × 1125 | You | about.html | a clear, friendly portrait of Guy. Use the same photo on every profile |
 

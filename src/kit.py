@@ -93,7 +93,8 @@ def detail(ar="4/5", whole=False):
     return (f'<div class="ph art" style="--ar:{ar};--pos:{pos};--zoom:{zoom}"><img {SRCSET} alt="" loading="lazy" decoding="async"></div>')
 
 
-SIZES = {"you": (900, 1125), "guest": (900, 1125), "me": (240, 240), "face": (200, 200), "scene": (1200, 900), "video": (1280, 720)}
+SIZES = {"you": (900, 1125), "guest": (900, 1125), "me": (240, 240), "face": (200, 200), "scene": (1200, 900), "video": (1280, 720),
+         "mock": (1600, 1000), "phone": (780, 1560), "slide": (1600, 900), "post": (1080, 1350)}
 
 
 def slot(kind, key, brief="", who=""):

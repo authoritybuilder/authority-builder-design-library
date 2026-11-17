@@ -8,6 +8,7 @@ swaps a photo by saving their own under the same name. This script paints the st
     python3 src/people.py --missing # only files that are not there yet
     python3 src/people.py --owner   # only the pictures of the site owner
     python3 src/people.py --scenes  # only the pictures of places and the video stills
+    python3 src/people.py --assets  # only the stand-ins for screenshots, slides and social posts
 
 A portrait placeholder is a back-lit figure with no face, painted over a soft-focus piece of that site's own painting, so it
 belongs to the page without pretending to be anyone. A place placeholder is a crop of the site's painting. Each large one carries
@@ -185,6 +186,114 @@ def label(img, lines, y=0.66):
     return np.asarray(Image.alpha_composite(im, plate).convert("RGB")).astype(np.float32) / 255
 
 
+def asset(kind, n, hero, pal, brand, w, h, name):
+    """A designed stand-in for a screenshot, a slide or a social post, in the site's own colours with a piece of its photograph.
+    It shows what belongs in the frame without pretending to be the real thing."""
+    C = {k: tuple(int(v[i:i + 2], 16) for i in (1, 3, 5)) for k, v in pal.items()}
+    mix = lambda a, b, t: tuple(int(x * (1 - t) + y * t) for x, y in zip(C[a], C[b]))
+    im = Image.new("RGB", (w, h), C["bg"])
+    d = ImageDraw.Draw(im)
+    u = w / 100
+    pic = lambda cx, cy, pw, ph: Image.fromarray((np.clip(crop_of(hero, cx, cy, 1.5, int(pw), int(ph)), 0, 1) * 255).astype(np.uint8))
+    bar = lambda x, y, ww, hh, col: d.rounded_rectangle((int(x), int(y), int(x + ww), int(y + hh)), radius=int(hh / 2), fill=col)
+    soft, softer = mix("bg", "ink", 0.2), mix("bg", "ink", 0.1)
+
+    def rounded(p, r):
+        m = Image.new("L", p.size, 0)
+        ImageDraw.Draw(m).rounded_rectangle((0, 0, p.size[0], p.size[1]), radius=int(r), fill=255)
+        return m
+
+    if kind == "slide":
+        v = n % 3
+        if v == 1:      # title slide: the photograph, a veil, the title
+            im.paste(pic(0.5, 0.5, w, h))
+            veil = Image.new("RGBA", (w, h), (0, 0, 0, 0))
+            ImageDraw.Draw(veil).rectangle((0, 0, int(w * 0.62), h), fill=(8, 12, 22, 190))
+            im = Image.alpha_composite(im.convert("RGBA"), veil).convert("RGB")
+            d = ImageDraw.Draw(im)
+            d.rectangle((int(7 * u), int(h * 0.3), int(7 * u + 6 * u), int(h * 0.3 + 0.5 * u)), fill=C["accent"])
+            d.text((7 * u, h * 0.36), "Your talk title", font=font(0, int(5.2 * u)), fill=(255, 255, 255))
+            d.text((7 * u, h * 0.36 + 7.6 * u), "goes on this slide", font=font(0, int(5.2 * u)), fill=(255, 255, 255))
+            d.text((7 * u, h * 0.78), brand, font=font(1, int(1.9 * u)), fill=(225, 228, 235))
+        elif v == 2:    # 1 idea, with a picture
+            d.rectangle((int(7 * u), int(h * 0.2), int(13 * u), int(h * 0.2 + 0.5 * u)), fill=C["accent"])
+            d.text((7 * u, h * 0.26), "One idea", font=font(0, int(4.6 * u)), fill=C["ink"])
+            d.text((7 * u, h * 0.26 + 6.4 * u), "per slide", font=font(0, int(4.6 * u)), fill=C["ink"])
+            for i, ww in enumerate((34, 30, 22)):
+                bar(7 * u, h * 0.62 + i * 3.4 * u, ww * u, 1.3 * u, soft)
+            p = pic(0.6, 0.55, 40 * u, h * 0.7)
+            im.paste(p, (int(53 * u), int(h * 0.15)), rounded(p, 1.4 * u))
+        else:           # the number slide
+            d.rectangle((0, 0, w, h), fill=C["dark"])
+            d.text((7 * u, h * 0.2), "72%", font=font(0, int(17 * u)), fill=mix("dark", "dark-ink", 0.92))
+            d.rectangle((int(7 * u), int(h * 0.66), int(13 * u), int(h * 0.66 + 0.5 * u)), fill=C["accent"])
+            for i, ww in enumerate((46, 38)):
+                bar(7 * u, h * 0.72 + i * 3.4 * u, ww * u, 1.3 * u, mix("dark", "dark-ink", 0.4))
+    elif kind == "post":
+        v = n % 3
+        if v == 1:      # a photograph with a caption band
+            im.paste(pic(0.5, 0.45, w, h))
+            d = ImageDraw.Draw(im)
+            d.rectangle((0, int(h * 0.7), w, h), fill=C["dark"])
+            d.text((7 * u, h * 0.745), "Your headline", font=font(0, int(7 * u)), fill=mix("dark", "dark-ink", 0.96))
+            bar(7 * u, h * 0.87, 60 * u, 2 * u, mix("dark", "dark-ink", 0.4))
+            bar(7 * u, h * 0.91, 42 * u, 2 * u, mix("dark", "dark-ink", 0.4))
+        elif v == 2:    # a quote card in the accent colour
+            d.rectangle((0, 0, w, h), fill=C["accent"])
+            d.text((8 * u, h * 0.1), "\u201c", font=font(0, int(34 * u)), fill=C["accent-ink"])
+            for i, ww in enumerate((80, 74, 78, 52)):
+                bar(8 * u, h * 0.42 + i * 6.2 * u, ww * u, 2.6 * u, tuple(int(a * 0.25 + b * 0.75) for a, b in zip(C["accent"], C["accent-ink"])))
+            d.text((8 * u, h * 0.84), brand, font=font(1, int(3.6 * u)), fill=C["accent-ink"])
+        else:           # a numbered tip
+            d.text((8 * u, h * 0.1), "01", font=font(0, int(26 * u)), fill=C["accent"] if sum(C["accent"]) < 600 else C["ink"])
+            d.text((8 * u, h * 0.46), "A tip worth", font=font(0, int(8.4 * u)), fill=C["ink"])
+            d.text((8 * u, h * 0.46 + 11 * u), "saving", font=font(0, int(8.4 * u)), fill=C["ink"])
+            for i, ww in enumerate((76, 70, 48)):
+                bar(8 * u, h * 0.72 + i * 5.6 * u, ww * u, 2.2 * u, soft)
+    elif kind == "mock":   # a product screen: top bar, side menu, a banner and 3 cards
+        d.rectangle((0, 0, w, int(5 * u)), fill=C["card"])
+        d.line((0, int(5 * u), w, int(5 * u)), fill=soft, width=2)
+        d.text((3 * u, 1.5 * u), brand, font=font(0, int(1.7 * u)), fill=C["ink"])
+        for i in range(3):
+            bar(62 * u + i * 9 * u, 2 * u, 6 * u, 1 * u, soft)
+        d.rounded_rectangle((int(90 * u), int(1.2 * u), int(97 * u), int(3.8 * u)), radius=int(1.3 * u), fill=C["accent"])
+        d.rectangle((0, int(5 * u) + 2, int(18 * u), h), fill=mix("bg", "ink", 0.05))
+        for i in range(6):
+            bar(3 * u, 10 * u + i * 4.2 * u, (11 if i % 2 else 9) * u, 1.1 * u, C["accent"] if i == 1 else soft)
+        p = pic(0.5, 0.5, 75 * u, 19 * u)
+        im.paste(p, (int(21.5 * u), int(9 * u)), rounded(p, 1.2 * u))
+        bar(21.5 * u, 32 * u, 30 * u, 1.9 * u, C["ink"])
+        bar(21.5 * u, 36 * u, 46 * u, 1.1 * u, soft)
+        for i in range(3):
+            x = 21.5 * u + i * 25.6 * u
+            d.rounded_rectangle((int(x), int(41 * u), int(x + 23.8 * u), int(59 * u)), radius=int(1.2 * u), fill=C["card"], outline=soft, width=2)
+            bar(x + 2 * u, 44 * u, 12 * u, 1.4 * u, C["ink"])
+            for j, ww in enumerate((19, 17, 11)):
+                bar(x + 2 * u, 48 * u + j * 2.6 * u, ww * u, 1 * u, softer if j else soft)
+    else:                  # the same screen on a phone
+        p = pic(0.5, 0.5, w, h * 0.3)
+        im.paste(p, (0, int(h * 0.06)))
+        d = ImageDraw.Draw(im)
+        d.rectangle((0, 0, w, int(h * 0.06)), fill=C["card"])
+        d.text((6 * u, h * 0.018), brand, font=font(0, int(4.6 * u)), fill=C["ink"])
+        bar(6 * u, h * 0.4, 66 * u, 5 * u, C["ink"])
+        bar(6 * u, h * 0.4 + 8 * u, 50 * u, 5 * u, C["ink"])
+        for i, ww in enumerate((86, 80, 60)):
+            bar(6 * u, h * 0.5 + i * 5 * u, ww * u, 2.2 * u, soft)
+        d.rounded_rectangle((int(6 * u), int(h * 0.62), int(94 * u), int(h * 0.62 + 13 * u)), radius=int(6.5 * u), fill=C["accent"])
+        for i in range(2):
+            y = h * 0.74 + i * h * 0.12
+            d.rounded_rectangle((int(6 * u), int(y), int(94 * u), int(y + h * 0.1)), radius=int(3 * u), fill=C["card"], outline=soft, width=2)
+            bar(11 * u, y + h * 0.028, 40 * u, 2.6 * u, C["ink"])
+            bar(11 * u, y + h * 0.058, 60 * u, 1.8 * u, soft)
+    d = ImageDraw.Draw(im)
+    tag = f"{name} · {w} × {h}"
+    fs = max(13, int(1.25 * u) if kind != "phone" else int(3 * u))
+    tw = font(1, fs).getlength(tag)
+    d.text((w - tw - 2 * u, h - fs - 1.6 * u), tag, font=font(1, fs), fill=mix("bg", "ink", 0.45) if kind in ("mock", "phone") or (kind == "slide" and n % 3 == 2) or (kind == "post" and n % 3 == 0) else (235, 235, 235))
+    return np.asarray(im).astype(np.float32) / 255
+
+
 def write(img, path, q):
     path.parent.mkdir(parents=True, exist_ok=True)
     cv2.imwrite(str(path), cv2.cvtColor((np.clip(img, 0, 1) * 255).astype(np.uint8), cv2.COLOR_RGB2BGR), [cv2.IMWRITE_JPEG_QUALITY, q, cv2.IMWRITE_JPEG_PROGRESSIVE, 1])
@@ -208,7 +317,13 @@ def main():
                 continue
             if "--scenes" in sys.argv and kind not in ("scene", "video"):
                 continue
-            if kind in ("you", "me", "guest", "face"):
+            if "--assets" in sys.argv and kind not in ("mock", "phone", "slide", "post"):
+                continue
+            if kind in ("mock", "phone", "slide", "post"):
+                num_ = int("".join(c for c in name if c.isdigit()) or 1)
+                pal = site.get("pal") or {"bg": "#F6F5F0", "bg2": "#EEEDE6", "card": "#FFFFFF", "ink": "#121B15", "ink2": "#45564B", "accent": "#245010", "accent-ink": "#FFFFFF", "dark": "#0B2A22", "dark-ink": "#F6F5F0"}
+                img = asset(kind, num_, hero, pal, site.get("brand", "Your Brand"), w, h, name)
+            elif kind in ("you", "me", "guest", "face"):
                 who = seed_of(site["dir"] + (site["person"] if kind in ("you", "me") else p["who"]))
                 small = w <= 320
                 k = 3 if small else 1.5                       # painted larger, then cut down, so the brushwork is fine and the edges clean
