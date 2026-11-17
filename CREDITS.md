@@ -88,3 +88,8 @@ not to be sold or redistributed as stand-alone files. Each link leads to the pho
 | 026 | Book Launch | [11987205](https://www.pexels.com/photo/11987205/) | A wheat field in golden evening light |
 | 027 | Event Retreat | [1005258](https://www.pexels.com/photo/1005258/) | A small cabin on a hillside at golden hour, with cloud in the valley |
 | 028 | Contact And Thank You | [19806361](https://www.pexels.com/photo/19806361/) | Green hills and trees under low morning mist |
+
+## Sample Video Clips
+
+Sites 001, 004 and 027 each ship with a 4-second clip at `site/media/video-1.mp4`. Each was generated from that site's Pexels photograph with the open
+Wan 2.2 image-to-video model, run on a public Hugging Face Space. They are AI-generated stand-ins that show how a video slot plays. Replace them with your own footage.
