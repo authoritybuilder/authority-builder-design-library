@@ -786,6 +786,7 @@ def main():
             assert k in canon.C, f"{P['num']}: unknown principle {k}"
         kit.CTX["briefs"] = []
         kit.CTX["photos"] = {}
+        kit.CTX["site"] = site
         (site / "index.html").write_text(sample_html(P))
         P["briefs"] = list(dict.fromkeys(kit.CTX["briefs"]))
         files = [P.get("path", "")]
